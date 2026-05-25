@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "group": "J",
+    "date": "2026-06-16",
+    "status": "UPCOMING",
+
+    "team1": "Argentina",
+    "team2": "Algeria",
+
+    "flag1": "🇦🇷",
+    "flag2": "🇩🇿",
+
+    "score": "-",
+
+    "stadium": "GEHA Field at Arrowhead Stadium",
+    "city": "Kansas City",
+
+    "timeET": "21:00",
+    "timeAR": "23:00"
+  },
+  {
+    "id": 2,
+    "group": "J",
+    "date": "2026-06-17",
+    "status": "UPCOMING",
+
+    "team1": "Austria",
+    "team2": "Jordan",
+
+    "flag1": "🇦🇹",
+    "flag2": "🇯🇴",
+
+    "score": "-",
+
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara",
+
+    "timeET": "00:00",
+    "timeAR": "02:00"
+  },
+  {
+    "id": 3,
+    "group": "J",
+    "date": "2026-06-22",
+    "status": "UPCOMING",
+
+    "team1": "Argentina",
+    "team2": "Austria",
+
+    "flag1": "🇦🇷",
+    "flag2": "🇦🇹",
+
+    "score": "-",
+
+    "stadium": "AT&T Stadium",
+    "city": "Dallas",
+
+    "timeET": "13:00",
+    "timeAR": "15:00"
+  },
+  {
+    "id": 4,
+    "group": "J",
+    "date": "2026-06-22",
+    "status": "UPCOMING",
+
+    "team1": "Jordan",
+    "team2": "Algeria",
+
+    "flag1": "🇯🇴",
+    "flag2": "🇩🇿",
+
+    "score": "-",
+
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara",
+
+    "timeET": "23:00",
+    "timeAR": "01:00"
+  },
+  {
+    "id": 5,
+    "group": "J",
+    "date": "2026-06-27",
+    "status": "UPCOMING",
+
+    "team1": "Jordan",
+    "team2": "Argentina",
+
+    "flag1": "🇯🇴",
+    "flag2": "🇦🇷",
+
+    "score": "-",
+
+    "stadium": "AT&T Stadium",
+    "city": "Dallas",
+
+    "timeET": "22:00",
+    "timeAR": "00:00"
+  },
+  {
+    "id": 6,
+    "group": "J",
+    "date": "2026-06-27",
+    "status": "UPCOMING",
+
+    "team1": "Algeria",
+    "team2": "Austria",
+
+    "flag1": "🇩🇿",
+    "flag2": "🇦🇹",
+
+    "score": "-",
+
+    "stadium": "GEHA Field at Arrowhead Stadium",
+    "city": "Kansas City",
+
+    "timeET": "22:00",
+    "timeAR": "00:00"
+  }
+]
