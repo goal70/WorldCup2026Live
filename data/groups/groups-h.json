@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "group": "H",
+    "date": "2026-06-15",
+    "status": "UPCOMING",
+
+    "team1": "Spain",
+    "team2": "Cabo Verde",
+
+    "flag1": "🇪🇸",
+    "flag2": "🇨🇻",
+
+    "score": "-",
+
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+
+    "timeET": "18:00",
+    "timeAR": "20:00"
+  },
+  {
+    "id": 2,
+    "group": "H",
+    "date": "2026-06-16",
+    "status": "UPCOMING",
+
+    "team1": "Saudi Arabia",
+    "team2": "Uruguay",
+
+    "flag1": "🇸🇦",
+    "flag2": "🇺🇾",
+
+    "score": "-",
+
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+
+    "timeET": "00:00",
+    "timeAR": "02:00"
+  },
+  {
+    "id": 3,
+    "group": "H",
+    "date": "2026-06-21",
+    "status": "UPCOMING",
+
+    "team1": "Spain",
+    "team2": "Saudi Arabia",
+
+    "flag1": "🇪🇸",
+    "flag2": "🇸🇦",
+
+    "score": "-",
+
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+
+    "timeET": "18:00",
+    "timeAR": "20:00"
+  },
+  {
+    "id": 4,
+    "group": "H",
+    "date": "2026-06-22",
+    "status": "UPCOMING",
+
+    "team1": "Uruguay",
+    "team2": "Cabo Verde",
+
+    "flag1": "🇺🇾",
+    "flag2": "🇨🇻",
+
+    "score": "-",
+
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+
+    "timeET": "00:00",
+    "timeAR": "02:00"
+  },
+  {
+    "id": 5,
+    "group": "H",
+    "date": "2026-06-27",
+    "status": "UPCOMING",
+
+    "team1": "Cabo Verde",
+    "team2": "Saudi Arabia",
+
+    "flag1": "🇨🇻",
+    "flag2": "🇸🇦",
+
+    "score": "-",
+
+    "stadium": "NRG Stadium",
+    "city": "Houston",
+
+    "timeET": "02:00",
+    "timeAR": "04:00"
+  },
+  {
+    "id": 6,
+    "group": "H",
+    "date": "2026-06-27",
+    "status": "UPCOMING",
+
+    "team1": "Uruguay",
+    "team2": "Spain",
+
+    "flag1": "🇺🇾",
+    "flag2": "🇪🇸",
+
+    "score": "-",
+
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+
+    "timeET": "02:00",
+    "timeAR": "04:00"
+  }
+]
