@@ -86,38 +86,32 @@ body{
 header{
 
     position:sticky;
-
     top:0;
-
     z-index:1000;
 
-    background:
-    rgba(6,20,14,.95);
+    background:rgba(6,20,14,.96);
 
     backdrop-filter:blur(12px);
 
-    border-bottom:
-    1px solid var(--border);
+    border-bottom:2px solid var(--primary);
+
+    box-shadow:0 3px 15px rgba(0,0,0,.25);
 }
 
 .header-inner{
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 
-    padding:18px 0;
+    min-height:75px;
 }
 
 .logo{
 
     font-size:2rem;
-
-    font-weight:800;
-
-    letter-spacing:.5px;
+    font-weight:900;
+    letter-spacing:1px;
 }
 
 .logo span{
@@ -128,29 +122,34 @@ header{
 nav{
 
     display:flex;
-
-    gap:30px;
+    gap:12px;
 }
 
 nav a{
 
-    color:white;
-
     text-decoration:none;
 
-    font-weight:700;
+    color:white;
+
+    font-weight:800;
+
+    padding:12px 18px;
+
+    border-radius:12px;
 
     transition:.25s;
 }
 
 nav a:hover{
 
-    color:var(--primary);
+    background:#163527;
 }
 
 nav a.active{
 
-    color:var(--primary);
+    background:var(--primary);
+
+    color:black;
 }
 
 /* =========================================
@@ -159,20 +158,20 @@ nav a.active{
 
 .hero{
 
-    margin-top:20px;
+    margin-top:18px;
 
-    border-radius:25px;
+    border-radius:22px;
 
     overflow:hidden;
 
     text-align:center;
 
-    padding:120px 20px;
+    padding:55px 20px;
 
     background:
     linear-gradient(
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.55)
+        rgba(0,0,0,.60),
+        rgba(0,0,0,.60)
     ),
     url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1800");
 
@@ -185,19 +184,93 @@ nav a.active{
 
 .hero h1{
 
-    font-size:4rem;
+    font-size:2.8rem;
 
-    margin-bottom:15px;
+    margin-bottom:10px;
 
-    text-shadow:
-    0 4px 12px rgba(0,0,0,.6);
+    font-weight:900;
 }
 
 .hero p{
 
-    font-size:1.2rem;
-
     color:#E8E8E8;
+
+    font-size:1rem;
+}
+
+/* =========================================
+   MATCH NAVIGATION
+========================================= */
+
+.match-navigation{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:25px;
+
+    margin-bottom:25px;
+
+    flex-wrap:wrap;
+}
+
+.day-btn{
+
+    border:none;
+
+    background:#10291E;
+
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.day-btn:hover{
+
+    background:#17382A;
+}
+
+.day-btn.active{
+
+    background:var(--primary);
+
+    color:black;
+}
+
+/* =========================================
+   TODAY BANNER
+========================================= */
+
+.today-banner{
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        #32f18d
+    );
+
+    color:black;
+
+    font-weight:900;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    margin-bottom:15px;
+
+    box-shadow:var(--shadow);
 }
 
 /* =========================================
@@ -206,19 +279,18 @@ nav a.active{
 
 section{
 
-    margin-top:35px;
+    margin-top:25px;
 }
 
 .section-title{
 
-    font-size:2rem;
+    font-size:1.9rem;
 
-    margin-bottom:25px;
+    margin-bottom:20px;
 
     padding-left:15px;
 
-    border-left:
-    5px solid var(--primary);
+    border-left:5px solid var(--primary);
 }
 
 /* =========================================
@@ -229,7 +301,10 @@ section{
 
     display:grid;
 
-    gap:20px;
+    grid-template-columns:
+    repeat(auto-fit,minmax(380px,1fr));
+
+    gap:16px;
 }
 
 /* =========================================
@@ -242,15 +317,14 @@ section{
     linear-gradient(
         180deg,
         #123426,
-        #0D241B
+        #0E251B
     );
 
-    border:
-    1px solid var(--border);
+    border:1px solid var(--border);
 
-    border-radius:var(--radius);
+    border-radius:16px;
 
-    padding:25px;
+    padding:18px;
 
     box-shadow:var(--shadow);
 
@@ -259,10 +333,9 @@ section{
 
 .match-card:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 
-    background:
-    var(--card-hover);
+    border-color:var(--primary);
 }
 
 .match-top{
@@ -273,7 +346,7 @@ section{
 
     align-items:center;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .match-status{
@@ -284,17 +357,14 @@ section{
 }
 
 .live{
-
     color:var(--live);
 }
 
 .final{
-
     color:var(--final);
 }
 
 .upcoming{
-
     color:var(--upcoming);
 }
 
@@ -320,9 +390,9 @@ section{
 
     display:block;
 
-    font-size:2.5rem;
+    font-size:3rem;
 
-    margin-bottom:8px;
+    margin-bottom:6px;
 }
 
 .team-name{
@@ -341,14 +411,16 @@ section{
 
 .score-number{
 
-    font-size:2.4rem;
+    font-size:3rem;
 
     font-weight:900;
+
+    line-height:1;
 }
 
 .match-details{
 
-    margin-top:20px;
+    margin-top:15px;
 
     display:grid;
 
@@ -394,7 +466,11 @@ section{
 
 .match-btn{
 
-    margin-top:20px;
+    margin-top:15px;
+
+    width:100%;
+
+    text-align:center;
 }
 
 /* =========================================
@@ -440,12 +516,11 @@ td{
 
 .ad-slot{
 
-    height:140px;
+    height:110px;
 
-    border:
-    2px dashed var(--border);
+    border:2px dashed #2D5A47;
 
-    border-radius:var(--radius);
+    border-radius:16px;
 
     display:flex;
 
@@ -453,9 +528,9 @@ td{
 
     align-items:center;
 
-    color:var(--soft);
+    color:#8AA398;
 
-    background:#0C241A;
+    background:#0E241A;
 }
 
 /* =========================================
@@ -466,8 +541,7 @@ footer{
 
     margin-top:60px;
 
-    border-top:
-    1px solid var(--border);
+    border-top:1px solid var(--border);
 }
 
 .footer-inner{
@@ -508,6 +582,18 @@ footer{
 }
 
 /* =========================================
+   DESKTOP IMPROVEMENTS
+========================================= */
+
+@media(min-width:1200px){
+
+    .container{
+
+        width:92%;
+    }
+}
+
+/* =========================================
    MOBILE
 ========================================= */
 
@@ -518,28 +604,44 @@ footer{
         flex-direction:column;
 
         gap:15px;
+
+        padding:15px 0;
     }
 
     nav{
 
-        flex-wrap:wrap;
+        width:100%;
 
         justify-content:center;
+
+        flex-wrap:wrap;
+    }
+
+    nav a{
+
+        padding:10px 14px;
     }
 
     .hero{
 
-        padding:70px 20px;
+        padding:40px 15px;
     }
 
     .hero h1{
 
-        font-size:2.2rem;
+        font-size:2rem;
+    }
+
+    .matches-grid{
+
+        grid-template-columns:1fr;
     }
 
     .match-center{
 
         flex-direction:column;
+
+        gap:15px;
     }
 
     .score{
@@ -549,11 +651,16 @@ footer{
 
     .score-number{
 
-        font-size:2rem;
+        font-size:2.2rem;
     }
 
     .section-title{
 
-        font-size:1.5rem;
+        font-size:1.4rem;
+    }
+
+    .today-banner{
+
+        text-align:center;
     }
 }
