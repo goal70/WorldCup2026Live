@@ -4,22 +4,22 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>World Cup 2026 Live Scores, Fixtures, Standings & Simulator</title>
+<title>World Goal 2026 | FIFA World Cup Live Scores, Fixtures & Standings</title>
 
-<meta name="description" content="Follow FIFA World Cup 2026 live scores, match schedules, standings, statistics, knockout stage, top scorers and prediction simulator.">
+<meta name="description" content="Follow FIFA World Cup 2026 live scores, fixtures, standings, match statistics, knockout stage and prediction simulator.">
 
-<meta name="keywords" content="world cup 2026, fifa world cup 2026, live scores, fixtures, standings, football results, match statistics, simulator">
+<meta name="keywords" content="world cup 2026, fifa world cup, live scores, fixtures, standings, football results, simulator">
 
 <meta name="author" content="World Goal 2026">
 
 <meta name="robots" content="index,follow">
 
-<meta property="og:title" content="World Cup 2026 Live Scores">
-<meta property="og:description" content="Live scores, fixtures, standings and statistics for FIFA World Cup 2026">
+<meta property="og:title" content="World Goal 2026">
+<meta property="og:description" content="Live Scores, Fixtures, Standings and Statistics for FIFA World Cup 2026">
 <meta property="og:type" content="website">
-
 <meta property="og:site_name" content="World Goal 2026">
 
 <meta name="theme-color" content="#071A12">
@@ -27,6 +27,12 @@
 <link rel="canonical" href="/">
 
 <link rel="manifest" href="manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/styles.css">
 
@@ -64,6 +70,8 @@ SIMULATOR
 
 <main class="container">
 
+<!-- HERO -->
+
 <section class="hero">
 
 <div class="hero-content">
@@ -80,21 +88,51 @@ Live Scores • Fixtures • Standings • Statistics
 
 </section>
 
+<!-- QUICK STATS -->
+
+<section class="hero-stats">
+
+<div class="stat-box">
+<span>48</span>
+Teams
+</div>
+
+<div class="stat-box">
+<span>104</span>
+Matches
+</div>
+
+<div class="stat-box">
+<span>16</span>
+Cities
+</div>
+
+<div class="stat-box">
+<span>3</span>
+Host Nations
+</div>
+
+</section>
+
+<!-- MATCH NAVIGATION -->
+
 <section class="match-navigation">
 
-<button class="day-btn">
+<button class="day-btn" id="yesterdayBtn">
 YESTERDAY
 </button>
 
-<button class="day-btn active">
+<button class="day-btn active" id="todayBtn">
 TODAY
 </button>
 
-<button class="day-btn">
+<button class="day-btn" id="tomorrowBtn">
 TOMORROW
 </button>
 
 </section>
+
+<!-- TODAY BANNER -->
 
 <section class="today-banner">
 
@@ -102,37 +140,15 @@ TOMORROW
 
 </section>
 
+<!-- MATCHES -->
+
 <section>
 
 <div class="matches-grid" id="todayMatches"></div>
 
 </section>
 
-<section class="ad-slot">
-
-ADVERTISEMENT
-
-</section>
-
-<section>
-
-<h2 class="section-title">
-PREVIOUS MATCHES
-</h2>
-
-<div class="matches-grid" id="previousMatches"></div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">
-UPCOMING MATCHES
-</h2>
-
-<div class="matches-grid" id="upcomingMatches"></div>
-
-</section>
+<!-- AD -->
 
 <section class="ad-slot">
 
