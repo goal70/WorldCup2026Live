@@ -324,7 +324,7 @@ section{
 
     border-radius:16px;
 
-    padding:18px;
+    padding:15px 18px;
 
     box-shadow:var(--shadow);
 
@@ -651,7 +651,7 @@ footer{
 
     .score-number{
 
-        font-size:2.2rem;
+        font-size:1.8rem;
     }
 
     .section-title{
