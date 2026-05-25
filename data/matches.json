@@ -1,55 +1,23 @@
-{
-  "today": [
-    {
-      "id": 1,
-      "group": "Group A",
-      "team1": "Argentina",
-      "flag1": "🇦🇷",
-      "team2": "Japan",
-      "flag2": "🇯🇵",
-      "score": "2 - 1",
-      "status": "LIVE",
-      "minute": "67'",
-      "timeET": "19:00",
-      "timeAR": "20:00",
-      "stadium": "MetLife Stadium",
-      "city": "New York, USA"
-    }
-  ],
+[
+  {
+    "id":1,
+    "group":"A",
+    "date":"2026-06-11",
+    "status":"scheduled",
 
-  "previous": [
-    {
-      "id": 2,
-      "group": "Group B",
-      "team1": "France",
-      "flag1": "🇫🇷",
-      "team2": "Mexico",
-      "flag2": "🇲🇽",
-      "score": "3 - 1",
-      "status": "FINAL",
-      "minute": "",
-      "timeET": "16:00",
-      "timeAR": "17:00",
-      "stadium": "SoFi Stadium",
-      "city": "Los Angeles, USA"
-    }
-  ],
+    "homeTeam":"Mexico",
+    "awayTeam":"TBD",
 
-  "upcoming": [
-    {
-      "id": 3,
-      "group": "Group C",
-      "team1": "Spain",
-      "flag1": "🇪🇸",
-      "team2": "United States",
-      "flag2": "🇺🇸",
-      "score": "-",
-      "status": "UPCOMING",
-      "minute": "",
-      "timeET": "21:00",
-      "timeAR": "22:00",
-      "stadium": "AT&T Stadium",
-      "city": "Arlington, USA"
-    }
-  ]
-}
+    "homeFlag":"🇲🇽",
+    "awayFlag":"🏳️",
+
+    "homeScore":null,
+    "awayScore":null,
+
+    "stadium":"Estadio Azteca",
+    "city":"Mexico City",
+
+    "localTime":"13:00",
+    "argentinaTime":"16:00"
+  }
+]
