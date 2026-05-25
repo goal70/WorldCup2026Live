@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "group": "I",
+    "date": "2026-06-16",
+    "status": "UPCOMING",
+
+    "team1": "France",
+    "team2": "Senegal",
+
+    "flag1": "🇫🇷",
+    "flag2": "🇸🇳",
+
+    "score": "-",
+
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 2,
+    "group": "I",
+    "date": "2026-06-16",
+    "status": "UPCOMING",
+
+    "team1": "Iraq",
+    "team2": "Norway",
+
+    "flag1": "🇮🇶",
+    "flag2": "🇳🇴",
+
+    "score": "-",
+
+    "stadium": "Gillette Stadium",
+    "city": "Boston",
+
+    "timeET": "18:00",
+    "timeAR": "20:00"
+  },
+  {
+    "id": 3,
+    "group": "I",
+    "date": "2026-06-22",
+    "status": "UPCOMING",
+
+    "team1": "France",
+    "team2": "Iraq",
+
+    "flag1": "🇫🇷",
+    "flag2": "🇮🇶",
+
+    "score": "-",
+
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia",
+
+    "timeET": "17:00",
+    "timeAR": "19:00"
+  },
+  {
+    "id": 4,
+    "group": "I",
+    "date": "2026-06-22",
+    "status": "UPCOMING",
+
+    "team1": "Norway",
+    "team2": "Senegal",
+
+    "flag1": "🇳🇴",
+    "flag2": "🇸🇳",
+
+    "score": "-",
+
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+
+    "timeET": "20:00",
+    "timeAR": "22:00"
+  },
+  {
+    "id": 5,
+    "group": "I",
+    "date": "2026-06-26",
+    "status": "UPCOMING",
+
+    "team1": "Norway",
+    "team2": "France",
+
+    "flag1": "🇳🇴",
+    "flag2": "🇫🇷",
+
+    "score": "-",
+
+    "stadium": "Gillette Stadium",
+    "city": "Boston",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 6,
+    "group": "I",
+    "date": "2026-06-26",
+    "status": "UPCOMING",
+
+    "team1": "Senegal",
+    "team2": "Iraq",
+
+    "flag1": "🇸🇳",
+    "flag2": "🇮🇶",
+
+    "score": "-",
+
+    "stadium": "BMO Field",
+    "city": "Toronto",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  }
+]
