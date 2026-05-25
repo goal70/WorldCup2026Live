@@ -1,82 +1,215 @@
 /*
-=========================================
+=================================
 WORLD GOAL 2026
-MAIN APPLICATION
-=========================================
+APP
+=================================
 */
 
-document.addEventListener("DOMContentLoaded", () => {
+let allMatches = [];
 
-    loadMatches();
+document.addEventListener("DOMContentLoaded", async () => {
+
+    await loadMatches();
+
+    setupNavigation();
 
 });
 
 /*
-=========================================
-LOAD MATCHES
-=========================================
+=================================
+LOAD JSON
+=================================
 */
 
-async function loadMatches() {
+async function loadMatches(){
 
-    try {
+    try{
 
-        const response = await fetch("data/matches.json");
+        const response =
+        await fetch("data/matches.json");
 
-        if (!response.ok) {
-            throw new Error("Unable to load matches.json");
-        }
+        allMatches =
+        await response.json();
 
-        const data = await response.json();
+        showToday();
 
-        renderMatches(
-            data.today || [],
-            "todayMatches"
-        );
+    }
 
-        renderMatches(
-            data.previous || [],
-            "previousMatches"
-        );
-
-        renderMatches(
-            data.upcoming || [],
-            "upcomingMatches"
-        );
-
-    } catch (error) {
+    catch(error){
 
         console.error(error);
 
-        showError("todayMatches");
-        showError("previousMatches");
-        showError("upcomingMatches");
-
+        document.getElementById(
+            "todayMatches"
+        ).innerHTML = `
+            <div class="match-card">
+                Unable to load matches.
+            </div>
+        `;
     }
 
 }
 
 /*
-=========================================
-RENDER MATCHES
-=========================================
+=================================
+DATE FILTERS
+=================================
 */
 
-function renderMatches(matches, containerId) {
+function showToday(){
+
+    const today =
+    new Date().toISOString().split("T")[0];
+
+    const matches =
+    allMatches.filter(
+        m => m.date === today
+    );
+
+    renderMatches(matches);
+
+}
+
+function showYesterday(){
+
+    const date =
+    new Date();
+
+    date.setDate(
+        date.getDate() - 1
+    );
+
+    const target =
+    date.toISOString().split("T")[0];
+
+    const matches =
+    allMatches.filter(
+        m => m.date === target
+    );
+
+    renderMatches(matches);
+
+}
+
+function showTomorrow(){
+
+    const date =
+    new Date();
+
+    date.setDate(
+        date.getDate() + 1
+    );
+
+    const target =
+    date.toISOString().split("T")[0];
+
+    const matches =
+    allMatches.filter(
+        m => m.date === target
+    );
+
+    renderMatches(matches);
+
+}
+
+/*
+=================================
+BUTTONS
+=================================
+*/
+
+function setupNavigation(){
+
+    const yesterday =
+    document.getElementById(
+        "yesterdayBtn"
+    );
+
+    const today =
+    document.getElementById(
+        "todayBtn"
+    );
+
+    const tomorrow =
+    document.getElementById(
+        "tomorrowBtn"
+    );
+
+    yesterday?.addEventListener(
+        "click",
+        () => {
+
+            setActiveButton(
+                yesterday
+            );
+
+            showYesterday();
+        }
+    );
+
+    today?.addEventListener(
+        "click",
+        () => {
+
+            setActiveButton(
+                today
+            );
+
+            showToday();
+        }
+    );
+
+    tomorrow?.addEventListener(
+        "click",
+        () => {
+
+            setActiveButton(
+                tomorrow
+            );
+
+            showTomorrow();
+        }
+    );
+
+}
+
+function setActiveButton(button){
+
+    document
+    .querySelectorAll(".day-btn")
+    .forEach(btn =>
+        btn.classList.remove(
+            "active"
+        )
+    );
+
+    button.classList.add(
+        "active"
+    );
+
+}
+
+/*
+=================================
+RENDER
+=================================
+*/
+
+function renderMatches(matches){
 
     const container =
-        document.getElementById(containerId);
-
-    if (!container) return;
+    document.getElementById(
+        "todayMatches"
+    );
 
     container.innerHTML = "";
 
-    if (matches.length === 0) {
+    if(matches.length === 0){
 
         container.innerHTML = `
-            <div class="match-card">
-                <p>No matches available.</p>
-            </div>
+        <div class="match-card">
+            No matches scheduled.
+        </div>
         `;
 
         return;
@@ -84,175 +217,90 @@ function renderMatches(matches, containerId) {
 
     matches.forEach(match => {
 
-        const statusClass =
-            getStatusClass(match.status);
+        container.innerHTML += `
 
-        const card =
-            createMatchCard(match, statusClass);
+        <article class="match-card">
 
-        container.insertAdjacentHTML(
-            "beforeend",
-            card
-        );
+            <div class="match-top">
+
+                <div class="match-status">
+                    ${match.status}
+                </div>
+
+            </div>
+
+            <div class="match-center">
+
+                <div class="team">
+
+                    <span class="flag">
+                        ${match.homeFlag}
+                    </span>
+
+                    <div class="team-name">
+                        ${match.homeTeam}
+                    </div>
+
+                </div>
+
+                <div class="score">
+
+                    <div class="score-number">
+
+                        ${
+                            match.homeScore !== null
+                            ? `${match.homeScore} - ${match.awayScore}`
+                            : "vs"
+                        }
+
+                    </div>
+
+                </div>
+
+                <div class="team">
+
+                    <span class="flag">
+                        ${match.awayFlag}
+                    </span>
+
+                    <div class="team-name">
+                        ${match.awayTeam}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="match-details">
+
+                <div>
+                    Group ${match.group}
+                </div>
+
+                <div>
+                    🕒 ET:
+                    ${match.localTime}
+                </div>
+
+                <div>
+                    🇦🇷 Argentina:
+                    ${match.argentinaTime}
+                </div>
+
+                <div>
+                    🏟 ${match.stadium}
+                </div>
+
+                <div>
+                    📍 ${match.city}
+                </div>
+
+            </div>
+
+        </article>
+
+        `;
 
     });
 
-}
-
-/*
-=========================================
-MATCH CARD
-=========================================
-*/
-
-function createMatchCard(match, statusClass) {
-
-    return `
-
-    <article class="match-card">
-
-        <div class="match-top">
-
-            <div class="match-status ${statusClass}">
-                ${match.status || ""}
-            </div>
-
-            <div class="match-time">
-                ${match.minute || ""}
-            </div>
-
-        </div>
-
-        <div class="match-center">
-
-            <div class="team">
-
-                <span class="flag">
-                    ${match.flag1 || ""}
-                </span>
-
-                <div class="team-name">
-                    ${match.team1 || ""}
-                </div>
-
-            </div>
-
-            <div class="score">
-
-                <div class="score-number">
-                    ${match.score || "-"}
-                </div>
-
-            </div>
-
-            <div class="team">
-
-                <span class="flag">
-                    ${match.flag2 || ""}
-                </span>
-
-                <div class="team-name">
-                    ${match.team2 || ""}
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="match-details">
-
-            ${match.group ? `
-            <div>
-                <strong>${match.group}</strong>
-            </div>
-            ` : ""}
-
-            ${match.timeET ? `
-            <div>
-                🕒 ET: ${match.timeET}
-            </div>
-            ` : ""}
-
-            ${match.timeAR ? `
-            <div>
-                🇦🇷 Argentina: ${match.timeAR}
-            </div>
-            ` : ""}
-
-            ${match.stadium ? `
-            <div>
-                🏟 ${match.stadium}
-            </div>
-            ` : ""}
-
-            ${match.city ? `
-            <div>
-                📍 ${match.city}
-            </div>
-            ` : ""}
-
-        </div>
-
-        <a href="#"
-           class="btn btn-primary match-btn">
-
-           Match Center
-
-        </a>
-
-    </article>
-
-    `;
-}
-
-/*
-=========================================
-STATUS COLORS
-=========================================
-*/
-
-function getStatusClass(status) {
-
-    switch(status){
-
-        case "LIVE":
-            return "live";
-
-        case "FINAL":
-            return "final";
-
-        case "UPCOMING":
-            return "upcoming";
-
-        default:
-            return "upcoming";
-
-    }
-
-}
-
-/*
-=========================================
-ERROR DISPLAY
-=========================================
-*/
-
-function showError(containerId){
-
-    const container =
-        document.getElementById(containerId);
-
-    if(!container) return;
-
-    container.innerHTML = `
-
-        <div class="match-card">
-
-            <p>
-                Unable to load match data.
-            </p>
-
-        </div>
-
-    `;
 }
