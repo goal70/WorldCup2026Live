@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "group": "G",
+    "date": "2026-06-15",
+    "status": "UPCOMING",
+
+    "team1": "Belgium",
+    "team2": "New Zealand",
+
+    "flag1": "🇧🇪",
+    "flag2": "🇳🇿",
+
+    "score": "-",
+
+    "stadium": "AT&T Stadium",
+    "city": "Dallas",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 2,
+    "group": "G",
+    "date": "2026-06-15",
+    "status": "UPCOMING",
+
+    "team1": "Egypt",
+    "team2": "Iran",
+
+    "flag1": "🇪🇬",
+    "flag2": "🇮🇷",
+
+    "score": "-",
+
+    "stadium": "NRG Stadium",
+    "city": "Houston",
+
+    "timeET": "21:00",
+    "timeAR": "23:00"
+  },
+  {
+    "id": 3,
+    "group": "G",
+    "date": "2026-06-20",
+    "status": "UPCOMING",
+
+    "team1": "New Zealand",
+    "team2": "Egypt",
+
+    "flag1": "🇳🇿",
+    "flag2": "🇪🇬",
+
+    "score": "-",
+
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 4,
+    "group": "G",
+    "date": "2026-06-20",
+    "status": "UPCOMING",
+
+    "team1": "Belgium",
+    "team2": "Iran",
+
+    "flag1": "🇧🇪",
+    "flag2": "🇮🇷",
+
+    "score": "-",
+
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+
+    "timeET": "18:00",
+    "timeAR": "20:00"
+  },
+  {
+    "id": 5,
+    "group": "G",
+    "date": "2026-06-25",
+    "status": "UPCOMING",
+
+    "team1": "Iran",
+    "team2": "New Zealand",
+
+    "flag1": "🇮🇷",
+    "flag2": "🇳🇿",
+
+    "score": "-",
+
+    "stadium": "SoFi Stadium",
+    "city": "Los Angeles",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 6,
+    "group": "G",
+    "date": "2026-06-25",
+    "status": "UPCOMING",
+
+    "team1": "Egypt",
+    "team2": "Belgium",
+
+    "flag1": "🇪🇬",
+    "flag2": "🇧🇪",
+
+    "score": "-",
+
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  }
+]
