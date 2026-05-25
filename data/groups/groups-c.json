@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "group": "C",
+    "date": "2026-06-13",
+    "status": "UPCOMING",
+
+    "team1": "Brazil",
+    "team2": "Scotland",
+
+    "flag1": "🇧🇷",
+    "flag2": "🏴",
+
+    "score": "-",
+
+    "stadium": "SoFi Stadium",
+    "city": "Los Angeles",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 2,
+    "group": "C",
+    "date": "2026-06-13",
+    "status": "UPCOMING",
+
+    "team1": "Morocco",
+    "team2": "Haiti",
+
+    "flag1": "🇲🇦",
+    "flag2": "🇭🇹",
+
+    "score": "-",
+
+    "stadium": "BMO Field",
+    "city": "Toronto",
+
+    "timeET": "18:00",
+    "timeAR": "20:00"
+  },
+  {
+    "id": 3,
+    "group": "C",
+    "date": "2026-06-18",
+    "status": "UPCOMING",
+
+    "team1": "Scotland",
+    "team2": "Morocco",
+
+    "flag1": "🏴",
+    "flag2": "🇲🇦",
+
+    "score": "-",
+
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 4,
+    "group": "C",
+    "date": "2026-06-18",
+    "status": "UPCOMING",
+
+    "team1": "Brazil",
+    "team2": "Haiti",
+
+    "flag1": "🇧🇷",
+    "flag2": "🇭🇹",
+
+    "score": "-",
+
+    "stadium": "SoFi Stadium",
+    "city": "Los Angeles",
+
+    "timeET": "21:00",
+    "timeAR": "23:00"
+  },
+  {
+    "id": 5,
+    "group": "C",
+    "date": "2026-06-24",
+    "status": "UPCOMING",
+
+    "team1": "Morocco",
+    "team2": "Brazil",
+
+    "flag1": "🇲🇦",
+    "flag2": "🇧🇷",
+
+    "score": "-",
+
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 6,
+    "group": "C",
+    "date": "2026-06-24",
+    "status": "UPCOMING",
+
+    "team1": "Haiti",
+    "team2": "Scotland",
+
+    "flag1": "🇭🇹",
+    "flag2": "🏴",
+
+    "score": "-",
+
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  }
+]
