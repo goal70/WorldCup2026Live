@@ -1,62 +1,122 @@
-{
-  "group": "B",
-  "teams": [
-    {
-      "name": "Canadá",
-      "type": "host"
-    },
-    {
-      "name": "Bosnia y Herzegovina"
-    },
-    {
-      "name": "Catar"
-    },
-    {
-      "name": "Suiza"
-    }
-  ],
-  "matches": [
-    {
-      "date": "2026-06-12",
-      "time": "15:00 ET",
-      "home": "Canadá",
-      "away": "Bosnia y Herzegovina",
-      "stadium": "Toronto Stadium"
-    },
-    {
-      "date": "2026-06-13",
-      "time": "15:00 ET",
-      "home": "Catar",
-      "away": "Suiza",
-      "stadium": "Vancouver Stadium"
-    },
-    {
-      "date": "2026-06-18",
-      "time": "15:00 ET",
-      "home": "Suiza",
-      "away": "Bosnia y Herzegovina",
-      "stadium": "Toronto Stadium"
-    },
-    {
-      "date": "2026-06-18",
-      "time": "18:00 ET",
-      "home": "Canadá",
-      "away": "Catar",
-      "stadium": "Vancouver Stadium"
-    },
-    {
-      "date": "2026-06-24",
-      "time": "15:00 ET",
-      "home": "Suiza",
-      "away": "Canadá",
-      "stadium": "Toronto Stadium"
-    },
-    {
-      "date": "2026-06-24",
-      "time": "15:00 ET",
-      "home": "Catar",
-      "away": "Bosnia y Herzegovina",
-      "stadium": "Vancouver Stadium"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "group": "B",
+    "date": "2026-06-12",
+    "status": "UPCOMING",
+
+    "team1": "Canada",
+    "team2": "Bosnia and Herzegovina",
+
+    "flag1": "🇨🇦",
+    "flag2": "🇧🇦",
+
+    "score": "-",
+
+    "stadium": "BMO Field",
+    "city": "Toronto",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 2,
+    "group": "B",
+    "date": "2026-06-13",
+    "status": "UPCOMING",
+
+    "team1": "Qatar",
+    "team2": "Switzerland",
+
+    "flag1": "🇶🇦",
+    "flag2": "🇨🇭",
+
+    "score": "-",
+
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 3,
+    "group": "B",
+    "date": "2026-06-18",
+    "status": "UPCOMING",
+
+    "team1": "Switzerland",
+    "team2": "Bosnia and Herzegovina",
+
+    "flag1": "🇨🇭",
+    "flag2": "🇧🇦",
+
+    "score": "-",
+
+    "stadium": "SoFi Stadium",
+    "city": "Los Angeles",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 4,
+    "group": "B",
+    "date": "2026-06-18",
+    "status": "UPCOMING",
+
+    "team1": "Canada",
+    "team2": "Qatar",
+
+    "flag1": "🇨🇦",
+    "flag2": "🇶🇦",
+
+    "score": "-",
+
+    "stadium": "BC Place",
+    "city": "Vancouver",
+
+    "timeET": "18:00",
+    "timeAR": "20:00"
+  },
+  {
+    "id": 5,
+    "group": "B",
+    "date": "2026-06-24",
+    "status": "UPCOMING",
+
+    "team1": "Switzerland",
+    "team2": "Canada",
+
+    "flag1": "🇨🇭",
+    "flag2": "🇨🇦",
+
+    "score": "-",
+
+    "stadium": "BC Place",
+    "city": "Vancouver",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 6,
+    "group": "B",
+    "date": "2026-06-24",
+    "status": "UPCOMING",
+
+    "team1": "Bosnia and Herzegovina",
+    "team2": "Qatar",
+
+    "flag1": "🇧🇦",
+    "flag2": "🇶🇦",
+
+    "score": "-",
+
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  }
+]
