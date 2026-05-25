@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "group": "L",
+    "date": "2026-06-17",
+    "status": "UPCOMING",
+
+    "team1": "England",
+    "team2": "Panama",
+
+    "flag1": "🏴",
+    "flag2": "🇵🇦",
+
+    "score": "-",
+
+    "stadium": "BMO Field",
+    "city": "Toronto",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 2,
+    "group": "L",
+    "date": "2026-06-17",
+    "status": "UPCOMING",
+
+    "team1": "Croatia",
+    "team2": "Ghana",
+
+    "flag1": "🇭🇷",
+    "flag2": "🇬🇭",
+
+    "score": "-",
+
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+
+    "timeET": "21:00",
+    "timeAR": "23:00"
+  },
+  {
+    "id": 3,
+    "group": "L",
+    "date": "2026-06-22",
+    "status": "UPCOMING",
+
+    "team1": "England",
+    "team2": "Ghana",
+
+    "flag1": "🏴",
+    "flag2": "🇬🇭",
+
+    "score": "-",
+
+    "stadium": "AT&T Stadium",
+    "city": "Dallas",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 4,
+    "group": "L",
+    "date": "2026-06-22",
+    "status": "UPCOMING",
+
+    "team1": "Croatia",
+    "team2": "Panama",
+
+    "flag1": "🇭🇷",
+    "flag2": "🇵🇦",
+
+    "score": "-",
+
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+
+    "timeET": "20:00",
+    "timeAR": "22:00"
+  },
+  {
+    "id": 5,
+    "group": "L",
+    "date": "2026-06-27",
+    "status": "UPCOMING",
+
+    "team1": "Panama",
+    "team2": "Ghana",
+
+    "flag1": "🇵🇦",
+    "flag2": "🇬🇭",
+
+    "score": "-",
+
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 6,
+    "group": "L",
+    "date": "2026-06-27",
+    "status": "UPCOMING",
+
+    "team1": "England",
+    "team2": "Croatia",
+
+    "flag1": "🏴",
+    "flag2": "🇭🇷",
+
+    "score": "-",
+
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  }
+]
