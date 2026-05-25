@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "group": "D",
+    "date": "2026-06-12",
+    "status": "UPCOMING",
+
+    "team1": "United States",
+    "team2": "Paraguay",
+
+    "flag1": "🇺🇸",
+    "flag2": "🇵🇾",
+
+    "score": "-",
+
+    "stadium": "SoFi Stadium",
+    "city": "Los Angeles",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 2,
+    "group": "D",
+    "date": "2026-06-13",
+    "status": "UPCOMING",
+
+    "team1": "Australia",
+    "team2": "Turkey",
+
+    "flag1": "🇦🇺",
+    "flag2": "🇹🇷",
+
+    "score": "-",
+
+    "stadium": "BC Place",
+    "city": "Vancouver",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 3,
+    "group": "D",
+    "date": "2026-06-18",
+    "status": "UPCOMING",
+
+    "team1": "Paraguay",
+    "team2": "Australia",
+
+    "flag1": "🇵🇾",
+    "flag2": "🇦🇺",
+
+    "score": "-",
+
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 4,
+    "group": "D",
+    "date": "2026-06-18",
+    "status": "UPCOMING",
+
+    "team1": "United States",
+    "team2": "Turkey",
+
+    "flag1": "🇺🇸",
+    "flag2": "🇹🇷",
+
+    "score": "-",
+
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+
+    "timeET": "21:00",
+    "timeAR": "23:00"
+  },
+  {
+    "id": 5,
+    "group": "D",
+    "date": "2026-06-24",
+    "status": "UPCOMING",
+
+    "team1": "Australia",
+    "team2": "United States",
+
+    "flag1": "🇦🇺",
+    "flag2": "🇺🇸",
+
+    "score": "-",
+
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 6,
+    "group": "D",
+    "date": "2026-06-24",
+    "status": "UPCOMING",
+
+    "team1": "Turkey",
+    "team2": "Paraguay",
+
+    "flag1": "🇹🇷",
+    "flag2": "🇵🇾",
+
+    "score": "-",
+
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  }
+]
