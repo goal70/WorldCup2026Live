@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "group": "F",
+    "date": "2026-06-14",
+    "status": "UPCOMING",
+
+    "team1": "Netherlands",
+    "team2": "Tunisia",
+
+    "flag1": "🇳🇱",
+    "flag2": "🇹🇳",
+
+    "score": "-",
+
+    "stadium": "AT&T Stadium",
+    "city": "Dallas",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 2,
+    "group": "F",
+    "date": "2026-06-14",
+    "status": "UPCOMING",
+
+    "team1": "Japan",
+    "team2": "Sweden",
+
+    "flag1": "🇯🇵",
+    "flag2": "🇸🇪",
+
+    "score": "-",
+
+    "stadium": "NRG Stadium",
+    "city": "Houston",
+
+    "timeET": "21:00",
+    "timeAR": "23:00"
+  },
+  {
+    "id": 3,
+    "group": "F",
+    "date": "2026-06-19",
+    "status": "UPCOMING",
+
+    "team1": "Sweden",
+    "team2": "Netherlands",
+
+    "flag1": "🇸🇪",
+    "flag2": "🇳🇱",
+
+    "score": "-",
+
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 4,
+    "group": "F",
+    "date": "2026-06-19",
+    "status": "UPCOMING",
+
+    "team1": "Tunisia",
+    "team2": "Japan",
+
+    "flag1": "🇹🇳",
+    "flag2": "🇯🇵",
+
+    "score": "-",
+
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara",
+
+    "timeET": "18:00",
+    "timeAR": "20:00"
+  },
+  {
+    "id": 5,
+    "group": "F",
+    "date": "2026-06-25",
+    "status": "UPCOMING",
+
+    "team1": "Netherlands",
+    "team2": "Japan",
+
+    "flag1": "🇳🇱",
+    "flag2": "🇯🇵",
+
+    "score": "-",
+
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+  {
+    "id": 6,
+    "group": "F",
+    "date": "2026-06-25",
+    "status": "UPCOMING",
+
+    "team1": "Sweden",
+    "team2": "Tunisia",
+
+    "flag1": "🇸🇪",
+    "flag2": "🇹🇳",
+
+    "score": "-",
+
+    "stadium": "SoFi Stadium",
+    "city": "Los Angeles",
+
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  }
+]
