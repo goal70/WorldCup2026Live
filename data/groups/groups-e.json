@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "group": "E",
+    "date": "2026-06-14",
+    "status": "UPCOMING",
+
+    "team1": "Germany",
+    "team2": "Curacao",
+
+    "flag1": "🇩🇪",
+    "flag2": "🇨🇼",
+
+    "score": "-",
+
+    "stadium": "NRG Stadium",
+    "city": "Houston",
+
+    "timeET": "13:00",
+    "timeAR": "15:00"
+  },
+  {
+    "id": 2,
+    "group": "E",
+    "date": "2026-06-14",
+    "status": "UPCOMING",
+
+    "team1": "Costa de Marfil",
+    "team2": "Ecuador",
+
+    "flag1": "🇨🇮",
+    "flag2": "🇪🇨",
+
+    "score": "-",
+
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia",
+
+    "timeET": "19:00",
+    "timeAR": "21:00"
+  },
+  {
+    "id": 3,
+    "group": "E",
+    "date": "2026-06-20",
+    "status": "UPCOMING",
+
+    "team1": "Germany",
+    "team2": "Costa de Marfil",
+
+    "flag1": "🇩🇪",
+    "flag2": "🇨🇮",
+
+    "score": "-",
+
+    "stadium": "BMO Field",
+    "city": "Toronto",
+
+    "timeET": "16:00",
+    "timeAR": "18:00"
+  },
+  {
+    "id": 4,
+    "group": "E",
+    "date": "2026-06-20",
+    "status": "UPCOMING",
+
+    "team1": "Ecuador",
+    "team2": "Curacao",
+
+    "flag1": "🇪🇨",
+    "flag2": "🇨🇼",
+
+    "score": "-",
+
+    "stadium": "Arrowhead Stadium",
+    "city": "Kansas City",
+
+    "timeET": "20:00",
+    "timeAR": "22:00"
+  },
+  {
+    "id": 5,
+    "group": "E",
+    "date": "2026-06-25",
+    "status": "UPCOMING",
+
+    "team1": "Curacao",
+    "team2": "Costa de Marfil",
+
+    "flag1": "🇨🇼",
+    "flag2": "🇨🇮",
+
+    "score": "-",
+
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia",
+
+    "timeET": "16:00",
+    "timeAR": "18:00"
+  },
+  {
+    "id": 6,
+    "group": "E",
+    "date": "2026-06-25",
+    "status": "UPCOMING",
+
+    "team1": "Ecuador",
+    "team2": "Germany",
+
+    "flag1": "🇪🇨",
+    "flag2": "🇩🇪",
+
+    "score": "-",
+
+    "stadium": "MetLife Stadium",
+    "city": "New York/New Jersey",
+
+    "timeET": "16:00",
+    "timeAR": "18:00"
+  }
+]
