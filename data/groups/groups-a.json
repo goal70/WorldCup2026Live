@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "group": "A",
+    "date": "2026-06-11",
+    "status": "UPCOMING",
+
+    "homeTeam": "Mexico",
+    "awayTeam": "TBD",
+
+    "homeFlag": "🇲🇽",
+    "awayFlag": "🏳️",
+
+    "homeScore": null,
+    "awayScore": null,
+
+    "stadium": "Estadio Azteca",
+    "city": "Mexico City",
+
+    "timeET": "13:00",
+    "timeAR": "16:00"
+  }
+]
