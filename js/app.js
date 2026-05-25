@@ -1,296 +1,559 @@
-/*
-=========================================
-WORLD GOAL 2026
-MAIN APPLICATION
-=========================================
-*/
+/* =========================================
+   WORLD GOAL 2026
+   PROFESSIONAL FOOTBALL DESIGN
+========================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+:root{
 
-    loadMatches();
+    --bg:#06140E;
+    --bg2:#0B2017;
 
-});
+    --card:#10291E;
+    --card-hover:#17382A;
 
-/*
-=========================================
-LOAD MATCHES
-=========================================
-*/
+    --primary:#00D26A;
+    --secondary:#FFD447;
 
-async function loadMatches() {
+    --white:#FFFFFF;
+    --text:#D8E4DE;
+    --soft:#94A89D;
 
-    try {
+    --border:#1D4635;
 
-        const response = await fetch("data/matches.json");
+    --live:#00FF84;
+    --final:#FFD447;
+    --upcoming:#6AB8FF;
 
-        if (!response.ok) {
-            throw new Error("Unable to load matches.json");
-        }
+    --radius:18px;
 
-        const data = await response.json();
+    --shadow:
+    0 10px 30px rgba(0,0,0,.35);
 
-        renderMatches(
-            data.today || [],
-            "todayMatches"
-        );
+    --max-width:1400px;
+}
 
-        renderMatches(
-            data.previous || [],
-            "previousMatches"
-        );
+/* =========================================
+   RESET
+========================================= */
 
-        renderMatches(
-            data.upcoming || [],
-            "upcomingMatches"
-        );
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    } catch (error) {
+html{
+    scroll-behavior:smooth;
+}
 
-        console.error(error);
+body{
 
-        showError(
-            "todayMatches"
-        );
+    font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
 
-        showError(
-            "previousMatches"
-        );
+    background:
+    linear-gradient(
+        180deg,
+        var(--bg),
+        var(--bg2)
+    );
 
-        showError(
-            "upcomingMatches"
-        );
+    color:var(--white);
 
+    min-height:100vh;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container{
+
+    width:95%;
+
+    max-width:var(--max-width);
+
+    margin:auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:
+    rgba(6,20,14,.95);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:
+    1px solid var(--border);
+}
+
+.header-inner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+}
+
+.logo{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+}
+
+.logo span{
+
+    color:var(--primary);
+}
+
+nav{
+
+    display:flex;
+
+    gap:30px;
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.25s;
+}
+
+nav a:hover{
+
+    color:var(--primary);
+}
+
+nav a.active{
+
+    color:var(--primary);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+
+    margin-top:20px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    padding:120px 20px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1800");
+
+    background-size:cover;
+
+    background-position:center;
+
+    box-shadow:var(--shadow);
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    margin-bottom:15px;
+
+    text-shadow:
+    0 4px 12px rgba(0,0,0,.6);
+}
+
+.hero p{
+
+    font-size:1.2rem;
+
+    color:#E8E8E8;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+section{
+
+    margin-top:35px;
+}
+
+.section-title{
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+
+    padding-left:15px;
+
+    border-left:
+    5px solid var(--primary);
+}
+
+/* =========================================
+   MATCHES GRID
+========================================= */
+
+.matches-grid{
+
+    display:grid;
+
+    gap:20px;
+}
+
+/* =========================================
+   MATCH CARD
+========================================= */
+
+.match-card{
+
+    background:
+    linear-gradient(
+        180deg,
+        #123426,
+        #0D241B
+    );
+
+    border:
+    1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:.25s;
+}
+
+.match-card:hover{
+
+    transform:translateY(-3px);
+
+    background:
+    var(--card-hover);
+}
+
+.match-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.match-status{
+
+    font-weight:800;
+
+    font-size:.9rem;
+}
+
+.live{
+
+    color:var(--live);
+}
+
+.final{
+
+    color:var(--final);
+}
+
+.upcoming{
+
+    color:var(--upcoming);
+}
+
+.match-center{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.team{
+
+    flex:1;
+
+    text-align:center;
+}
+
+.flag{
+
+    display:block;
+
+    font-size:2.5rem;
+
+    margin-bottom:8px;
+}
+
+.team-name{
+
+    font-size:1.1rem;
+
+    font-weight:700;
+}
+
+.score{
+
+    min-width:140px;
+
+    text-align:center;
+}
+
+.score-number{
+
+    font-size:2.4rem;
+
+    font-weight:900;
+}
+
+.match-details{
+
+    margin-top:20px;
+
+    display:grid;
+
+    gap:8px;
+
+    color:var(--text);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 24px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:black;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-1px);
+}
+
+.match-btn{
+
+    margin-top:20px;
+}
+
+/* =========================================
+   TABLES
+========================================= */
+
+.table-wrapper{
+
+    overflow-x:auto;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+}
+
+th{
+
+    background:#17382A;
+}
+
+th,
+td{
+
+    padding:14px;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+}
+
+/* =========================================
+   ADS
+========================================= */
+
+.ad-slot{
+
+    height:140px;
+
+    border:
+    2px dashed var(--border);
+
+    border-radius:var(--radius);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:var(--soft);
+
+    background:#0C241A;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+    margin-top:60px;
+
+    border-top:
+    1px solid var(--border);
+}
+
+.footer-inner{
+
+    padding:40px 0;
+}
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+
+    color:var(--soft);
+
+    text-decoration:none;
+}
+
+.footer-links a:hover{
+
+    color:white;
+}
+
+.copyright{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:var(--soft);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+    .header-inner{
+
+        flex-direction:column;
+
+        gap:15px;
     }
 
-}
+    nav{
 
-/*
-=========================================
-RENDER MATCHES
-=========================================
-*/
+        flex-wrap:wrap;
 
-function renderMatches(matches, containerId) {
-
-    const container =
-        document.getElementById(containerId);
-
-    if (!container) return;
-
-    container.innerHTML = "";
-
-    if (matches.length === 0) {
-
-        container.innerHTML = `
-        <div class="match-card">
-            <p>No matches available.</p>
-        </div>
-        `;
-
-        return;
+        justify-content:center;
     }
 
-    matches.forEach(match => {
+    .hero{
 
-        const statusClass =
-            getStatusClass(
-                match.status
-            );
-
-        const card = createMatchCard(
-            match,
-            statusClass
-        );
-
-        container.insertAdjacentHTML(
-            "beforeend",
-            card
-        );
-
-    });
-
-}
-
-/*
-=========================================
-MATCH CARD TEMPLATE
-=========================================
-*/
-
-function createMatchCard(match, statusClass) {
-
-    return `
-
-    <article class="match-card">
-
-        <div class="match-top">
-
-            <div class="match-status ${statusClass}">
-                ${match.status || ""}
-            </div>
-
-            <div class="match-time">
-                ${match.minute || ""}
-            </div>
-
-        </div>
-
-        <div class="match-center">
-
-            <div class="team">
-
-                <span class="flag">
-                    ${match.flag1 || ""}
-                </span>
-
-                <div class="team-name">
-                    ${match.team1 || ""}
-                </div>
-
-            </div>
-
-            <div class="score">
-
-                <div class="score-number">
-                    ${match.score || "-"}
-                </div>
-
-            </div>
-
-            <div class="team">
-
-                <span class="flag">
-                    ${match.flag2 || ""}
-                </span>
-
-                <div class="team-name">
-                    ${match.team2 || ""}
-                </div>
-
-            </div>
-
-        </div>
-
-        ${renderExtraInfo(match)}
-
-        <a href="#"
-           class="btn btn-primary match-btn">
-
-           Match Center
-
-        </a>
-
-    </article>
-
-    `;
-}
-
-/*
-=========================================
-EXTRA INFO
-=========================================
-*/
-
-function renderExtraInfo(match) {
-
-    const stadium =
-        match.stadium || "";
-
-    const city =
-        match.city || "";
-
-    const timeET =
-        match.timeET || "";
-
-    const timeAR =
-        match.timeAR || "";
-
-    if (
-        !stadium &&
-        !city &&
-        !timeET &&
-        !timeAR
-    ) {
-        return "";
+        padding:70px 20px;
     }
 
-    return `
+    .hero h1{
 
-    <div class="match-details">
-
-        ${timeET ? `
-        <div>
-            <strong>ET:</strong>
-            ${timeET}
-        </div>
-        ` : ""}
-
-        ${timeAR ? `
-        <div>
-            <strong>Argentina:</strong>
-            ${timeAR}
-        </div>
-        ` : ""}
-
-        ${stadium ? `
-        <div>
-            🏟 ${stadium}
-        </div>
-        ` : ""}
-
-        ${city ? `
-        <div>
-            📍 ${city}
-        </div>
-        ` : ""}
-
-    </div>
-
-    `;
-}
-
-/*
-=========================================
-STATUS COLORS
-=========================================
-*/
-
-function getStatusClass(status) {
-
-    switch (status) {
-
-        case "LIVE":
-            return "live";
-
-        case "FINAL":
-            return "final";
-
-        case "UPCOMING":
-            return "upcoming";
-
-        default:
-            return "upcoming";
-
+        font-size:2.2rem;
     }
 
-}
+    .match-center{
 
-/*
-=========================================
-ERROR HANDLER
-=========================================
-*/
+        flex-direction:column;
+    }
 
-function showError(containerId) {
+    .score{
 
-    const container =
-        document.getElementById(containerId);
+        min-width:auto;
+    }
 
-    if (!container) return;
+    .score-number{
 
-    container.innerHTML = `
-    <div class="match-card">
-        <p>Unable to load data.</p>
-    </div>
-    `;
+        font-size:2rem;
+    }
+
+    .section-title{
+
+        font-size:1.5rem;
+    }
 }
