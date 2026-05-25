@@ -5,19 +5,123 @@
     "date": "2026-06-11",
     "status": "UPCOMING",
 
-    "homeTeam": "Mexico",
-    "awayTeam": "TBD",
+    "team1": "Mexico",
+    "team2": "South Africa",
 
-    "homeFlag": "🇲🇽",
-    "awayFlag": "🏳️",
+    "flag1": "🇲🇽",
+    "flag2": "🇿🇦",
 
-    "homeScore": null,
-    "awayScore": null,
+    "score": "-",
 
     "stadium": "Estadio Azteca",
     "city": "Mexico City",
 
-    "timeET": "13:00",
-    "timeAR": "16:00"
+    "timeET": "15:00",
+    "timeAR": "17:00"
+  },
+
+  {
+    "id": 2,
+    "group": "A",
+    "date": "2026-06-11",
+    "status": "UPCOMING",
+
+    "team1": "South Korea",
+    "team2": "Czech Republic",
+
+    "flag1": "🇰🇷",
+    "flag2": "🇨🇿",
+
+    "score": "-",
+
+    "stadium": "Guadalajara Stadium",
+    "city": "Guadalajara",
+
+    "timeET": "22:00",
+    "timeAR": "00:00"
+  },
+
+  {
+    "id": 3,
+    "group": "A",
+    "date": "2026-06-18",
+    "status": "UPCOMING",
+
+    "team1": "Czech Republic",
+    "team2": "South Africa",
+
+    "flag1": "🇨🇿",
+    "flag2": "🇿🇦",
+
+    "score": "-",
+
+    "stadium": "Atlanta Stadium",
+    "city": "Atlanta",
+
+    "timeET": "12:00",
+    "timeAR": "14:00"
+  },
+
+  {
+    "id": 4,
+    "group": "A",
+    "date": "2026-06-18",
+    "status": "UPCOMING",
+
+    "team1": "Mexico",
+    "team2": "South Korea",
+
+    "flag1": "🇲🇽",
+    "flag2": "🇰🇷",
+
+    "score": "-",
+
+    "stadium": "Guadalajara Stadium",
+    "city": "Guadalajara",
+
+    "timeET": "21:00",
+    "timeAR": "23:00"
+  },
+
+  {
+    "id": 5,
+    "group": "A",
+    "date": "2026-06-24",
+    "status": "UPCOMING",
+
+    "team1": "Czech Republic",
+    "team2": "Mexico",
+
+    "flag1": "🇨🇿",
+    "flag2": "🇲🇽",
+
+    "score": "-",
+
+    "stadium": "Estadio Azteca",
+    "city": "Mexico City",
+
+    "timeET": "21:00",
+    "timeAR": "23:00"
+  },
+
+  {
+    "id": 6,
+    "group": "A",
+    "date": "2026-06-24",
+    "status": "UPCOMING",
+
+    "team1": "South Africa",
+    "team2": "South Korea",
+
+    "flag1": "🇿🇦",
+    "flag2": "🇰🇷",
+
+    "score": "-",
+
+    "stadium": "Monterrey Stadium",
+    "city": "Monterrey",
+
+    "timeET": "21:00",
+    "timeAR": "23:00"
   }
 ]
