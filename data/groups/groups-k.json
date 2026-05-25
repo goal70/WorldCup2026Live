@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "group": "K",
+    "date": "2026-06-17",
+    "status": "UPCOMING",
+
+    "team1": "Portugal",
+    "team2": "Democratic Republic of Congo",
+
+    "flag1": "🇵🇹",
+    "flag2": "🇨🇩",
+
+    "score": "-",
+
+    "stadium": "NRG Stadium",
+    "city": "Houston",
+
+    "timeET": "13:00",
+    "timeAR": "15:00"
+  },
+  {
+    "id": 2,
+    "group": "K",
+    "date": "2026-06-17",
+    "status": "UPCOMING",
+
+    "team1": "Uzbekistan",
+    "team2": "Colombia",
+
+    "flag1": "🇺🇿",
+    "flag2": "🇨🇴",
+
+    "score": "-",
+
+    "stadium": "Estadio Azteca",
+    "city": "Mexico City",
+
+    "timeET": "22:00",
+    "timeAR": "00:00"
+  },
+  {
+    "id": 3,
+    "group": "K",
+    "date": "2026-06-23",
+    "status": "UPCOMING",
+
+    "team1": "Portugal",
+    "team2": "Uzbekistan",
+
+    "flag1": "🇵🇹",
+    "flag2": "🇺🇿",
+
+    "score": "-",
+
+    "stadium": "NRG Stadium",
+    "city": "Houston",
+
+    "timeET": "13:00",
+    "timeAR": "15:00"
+  },
+  {
+    "id": 4,
+    "group": "K",
+    "date": "2026-06-23",
+    "status": "UPCOMING",
+
+    "team1": "Colombia",
+    "team2": "DR Congo",
+
+    "flag1": "🇨🇴",
+    "flag2": "🇨🇩",
+
+    "score": "-",
+
+    "stadium": "Estadio Akron",
+    "city": "Guadalajara",
+
+    "timeET": "22:00",
+    "timeAR": "00:00"
+  },
+  {
+    "id": 5,
+    "group": "K",
+    "date": "2026-06-27",
+    "status": "UPCOMING",
+
+    "team1": "Colombia",
+    "team2": "Portugal",
+
+    "flag1": "🇨🇴",
+    "flag2": "🇵🇹",
+
+    "score": "-",
+
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+
+    "timeET": "19:30",
+    "timeAR": "21:30"
+  },
+  {
+    "id": 6,
+    "group": "K",
+    "date": "2026-06-27",
+    "status": "UPCOMING",
+
+    "team1": "DR Congo",
+    "team2": "Uzbekistan",
+
+    "flag1": "🇨🇩",
+    "flag2": "🇺🇿",
+
+    "score": "-",
+
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+
+    "timeET": "19:30",
+    "timeAR": "21:30"
+  }
+]
