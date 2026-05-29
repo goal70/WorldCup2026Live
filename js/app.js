@@ -102,13 +102,13 @@ DATE FILTERS
 
 function showToday(){
 
-    const today =
-    new Date().toISOString().split("T")[0];
-
-    const matches =
-    allMatches.filter(
-        m => m.date === today
-    );
+    const matches = [...allMatches]
+    .sort(
+        (a,b) =>
+        new Date(a.date) -
+        new Date(b.date)
+    )
+    .slice(0, 8);
 
     renderMatches(matches);
 
