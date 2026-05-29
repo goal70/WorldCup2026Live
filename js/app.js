@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 /*
 =================================
-LOAD JSON
+LOAD GROUPS
 =================================
 */
 
@@ -25,11 +25,55 @@ async function loadMatches(){
 
     try{
 
-        const response =
-        await fetch("data/matches.json");
+        const groups = [
+            "a","b","c","d","e","f",
+            "g","h","i","j","k","l"
+        ];
 
-        allMatches =
-        await response.json();
+        allMatches = [];
+
+        for(const group of groups){
+
+            const response =
+            await fetch(
+                `data/groups/groups-${group}.json`
+            );
+
+            const matches =
+            await response.json();
+
+            matches.forEach(match => {
+
+                allMatches.push({
+
+                    id: match.id,
+
+                    group: match.group,
+
+                    date: match.date,
+
+                    status: match.status,
+
+                    homeTeam: match.team1,
+                    awayTeam: match.team2,
+
+                    homeFlag: match.flag1,
+                    awayFlag: match.flag2,
+
+                    homeScore: null,
+                    awayScore: null,
+
+                    stadium: match.stadium,
+                    city: match.city,
+
+                    localTime: match.timeET,
+                    argentinaTime: match.timeAR
+
+                });
+
+            });
+
+        }
 
         showToday();
 
