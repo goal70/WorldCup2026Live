@@ -29,10 +29,12 @@ async function loadFixtures() {
                 <section class="group-section">
 
                     <h2 class="group-title">
-                        Group ${groupLetter}
+                        GROUP ${groupLetter}
                     </h2>
 
-                    <div id="group-${groupLetter}">
+                    <div
+                    class="group-matches"
+                    id="group-${groupLetter}">
                     </div>
 
                 </section>
@@ -51,7 +53,7 @@ async function loadFixtures() {
 
                     <div class="match-top">
 
-                        <div class="match-status">
+                        <div class="match-status upcoming">
                             ${match.status}
                         </div>
 
@@ -74,7 +76,7 @@ async function loadFixtures() {
                         <div class="score">
 
                             <div class="score-number">
-                                vs
+                                VS
                             </div>
 
                         </div>
@@ -100,13 +102,11 @@ async function loadFixtures() {
                         </div>
 
                         <div>
-                            🕒 ET:
-                            ${match.timeET}
+                            🕒 ET: ${match.timeET}
                         </div>
 
                         <div>
-                            🇦🇷 Argentina:
-                            ${match.timeAR}
+                            🇦🇷 AR: ${match.timeAR}
                         </div>
 
                         <div>
@@ -129,7 +129,10 @@ async function loadFixtures() {
 
         catch(error){
 
-            console.error(error);
+            console.error(
+                `Error loading Group ${group}:`,
+                error
+            );
 
         }
 
