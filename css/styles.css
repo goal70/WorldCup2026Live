@@ -664,3 +664,147 @@ footer{
         text-align:center;
     }
 }
+/* =========================================
+   FIXTURES PAGE
+========================================= */
+
+.group-section{
+
+    margin-bottom:40px;
+}
+
+.group-title{
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        #19f089
+    );
+
+    color:black;
+
+    padding:14px 20px;
+
+    border-radius:14px;
+
+    font-size:1.4rem;
+
+    font-weight:900;
+
+    margin-bottom:15px;
+
+    box-shadow:var(--shadow);
+}
+
+.group-matches{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:14px;
+}
+
+.group-section .match-card{
+
+    padding:12px;
+}
+
+.group-section .flag{
+
+    font-size:2rem;
+}
+
+.group-section .team-name{
+
+    font-size:1rem;
+}
+
+.group-section .score-number{
+
+    font-size:2rem;
+}
+
+.group-section .match-details{
+
+    font-size:.9rem;
+}
+
+/* =========================================
+   SIMULATOR
+========================================= */
+
+.simulator-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+
+    gap:18px;
+}
+
+.sim-card{
+
+    background:
+    linear-gradient(
+        180deg,
+        #123426,
+        #0E251B
+    );
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    box-shadow:var(--shadow);
+}
+
+.sim-card h3{
+
+    margin-bottom:15px;
+
+    color:var(--primary);
+}
+
+.sim-match{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px;
+
+    margin-bottom:10px;
+
+    border-radius:10px;
+
+    background:#163527;
+}
+
+.sim-match input{
+
+    width:60px;
+
+    padding:8px;
+
+    border:none;
+
+    border-radius:8px;
+
+    text-align:center;
+
+    font-weight:bold;
+}
+
+.sim-btn{
+
+    width:100%;
+
+    margin-top:20px;
+}
