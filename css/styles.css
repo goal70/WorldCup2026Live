@@ -808,3 +808,139 @@ footer{
 
     margin-top:20px;
 }
+
+/* =========================================
+   FIXTURE PAGE FIFA STYLE
+========================================= */
+
+.group-section{
+
+    margin-bottom:40px;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        90deg,
+        #0C241A,
+        #071710
+    );
+
+    box-shadow:var(--shadow);
+}
+
+.group-title{
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--primary),
+        #28ef89
+    );
+
+    color:black;
+
+    font-size:1.4rem;
+
+    font-weight:900;
+
+    padding:16px 20px;
+}
+
+/* TABLE */
+
+.group-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+.group-table th{
+
+    background:#17382A;
+
+    color:white;
+
+    padding:12px;
+}
+
+.group-table td{
+
+    padding:12px;
+
+    border-top:1px solid #214434;
+
+    text-align:center;
+}
+
+/* FIXTURES */
+
+.fixture-list{
+
+    padding:15px;
+}
+
+.fixture-row{
+
+    display:grid;
+
+    grid-template-columns:
+    120px
+    1fr
+    120px
+    250px;
+
+    gap:15px;
+
+    align-items:center;
+
+    padding:15px;
+
+    border-bottom:1px solid #214434;
+}
+
+.fixture-row:last-child{
+
+    border-bottom:none;
+}
+
+.fixture-date{
+
+    font-weight:800;
+
+    color:var(--secondary);
+}
+
+.fixture-match{
+
+    font-weight:700;
+
+    font-size:1.05rem;
+}
+
+.fixture-time{
+
+    color:var(--primary);
+
+    font-weight:700;
+}
+
+.fixture-stadium{
+
+    color:var(--text);
+}
+
+@media(max-width:900px){
+
+    .fixture-row{
+
+        grid-template-columns:1fr;
+
+        gap:8px;
+    }
+}
