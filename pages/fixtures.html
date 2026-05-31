@@ -23,23 +23,77 @@ href="../css/style.css"
 
 <body>
 
-<header class="topbar">
+<header>
 
-    <h1>
-        World Cup 2026
-    </h1>
+    <div class="container">
+
+        <div class="header-inner">
+
+            <div class="logo">
+                WORLD <span>GOAL</span> 2026
+            </div>
+
+            <nav>
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a
+                href="fixtures.html"
+                class="active">
+                    Fixtures
+                </a>
+
+                <a href="standings.html">
+                    Standings
+                </a>
+
+                <a href="simulator.html">
+                    Simulator
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
 
 </header>
 
-<main class="main-content">
+<div class="container">
 
-    <h2 class="section-title">
-        Full Group Stage Fixtures
-    </h2>
+    <section class="hero">
 
-    <div id="fixtures"></div>
+        <h1>
+            FIFA WORLD CUP 2026
+        </h1>
 
-</main>
+        <p>
+            Complete Group Stage Schedule
+        </p>
+
+    </section>
+
+    <section>
+
+        <div class="today-banner">
+
+            72 Group Stage Matches
+
+        </div>
+
+        <h2 class="section-title">
+
+            Full Fixtures
+
+        </h2>
+
+        <div id="fixtures"></div>
+
+    </section>
+
+</div>
 
 <script src="../js/fixtures.js"></script>
 
