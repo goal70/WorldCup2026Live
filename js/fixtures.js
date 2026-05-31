@@ -1,4 +1,4 @@
-async function loadFixtures() {
+async function loadFixtures(){
 
     const container =
     document.getElementById("fixtures");
@@ -22,115 +22,125 @@ async function loadFixtures() {
             const matches =
             await response.json();
 
+            if(!matches.length) continue;
+
             const groupLetter =
             matches[0].group;
 
-            container.innerHTML += `
-                <section class="group-section">
-
-                    <h2 class="group-title">
-                        GROUP ${groupLetter}
-                    </h2>
-
-                    <div
-                    class="group-matches"
-                    id="group-${groupLetter}">
-                    </div>
-
-                </section>
-            `;
-
-            const groupContainer =
-            document.getElementById(
-                `group-${groupLetter}`
-            );
+            const teams = [];
 
             matches.forEach(match => {
 
-                groupContainer.innerHTML += `
+                if(!teams.includes(match.team1))
+                    teams.push(match.team1);
 
-                <article class="match-card">
+                if(!teams.includes(match.team2))
+                    teams.push(match.team2);
 
-                    <div class="match-top">
+            });
 
-                        <div class="match-status upcoming">
-                            ${match.status}
-                        </div>
+            let standingsRows = "";
 
-                    </div>
+            teams.forEach(team => {
 
-                    <div class="match-center">
-
-                        <div class="team">
-
-                            <span class="flag">
-                                ${match.flag1}
-                            </span>
-
-                            <div class="team-name">
-                                ${match.team1}
-                            </div>
-
-                        </div>
-
-                        <div class="score">
-
-                            <div class="score-number">
-                                VS
-                            </div>
-
-                        </div>
-
-                        <div class="team">
-
-                            <span class="flag">
-                                ${match.flag2}
-                            </span>
-
-                            <div class="team-name">
-                                ${match.team2}
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="match-details">
-
-                        <div>
-                            📅 ${match.date}
-                        </div>
-
-                        <div>
-                            🕒 ET: ${match.timeET}
-                        </div>
-
-                        <div>
-                            🇦🇷 AR: ${match.timeAR}
-                        </div>
-
-                        <div>
-                            🏟 ${match.stadium}
-                        </div>
-
-                        <div>
-                            📍 ${match.city}
-                        </div>
-
-                    </div>
-
-                </article>
-
+                standingsRows += `
+                <tr>
+                    <td>${team}</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
                 `;
 
             });
+
+            let fixtureRows = "";
+
+            matches.forEach(match => {
+
+                fixtureRows += `
+                <div class="fixture-row">
+
+                    <div class="fixture-date">
+                        ${match.date}
+                    </div>
+
+                    <div class="fixture-match">
+                        ${match.flag1}
+                        ${match.team1}
+                        VS
+                        ${match.flag2}
+                        ${match.team2}
+                    </div>
+
+                    <div class="fixture-time">
+                        ET ${match.timeET}
+                        <br>
+                        AR ${match.timeAR}
+                    </div>
+
+                    <div class="fixture-stadium">
+                        ${match.stadium}
+                        <br>
+                        ${match.city}
+                    </div>
+
+                </div>
+                `;
+
+            });
+
+            container.innerHTML += `
+
+            <section class="group-section">
+
+                <div class="group-title">
+                    GROUP ${groupLetter}
+                </div>
+
+                <table class="group-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Team</th>
+                            <th>Pts</th>
+                            <th>PJ</th>
+                            <th>G</th>
+                            <th>E</th>
+                            <th>P</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        ${standingsRows}
+
+                    </tbody>
+
+                </table>
+
+                <div class="fixture-list">
+
+                    ${fixtureRows}
+
+                </div>
+
+            </section>
+
+            `;
 
         }
 
         catch(error){
 
             console.error(
-                `Error loading Group ${group}:`,
+                `Error Group ${group}`,
                 error
             );
 
