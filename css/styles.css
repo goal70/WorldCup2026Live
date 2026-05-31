@@ -813,9 +813,19 @@ footer{
    FIXTURE PAGE FIFA STYLE
 ========================================= */
 
-.group-section{
+#fixtures{
 
-    margin-bottom:40px;
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+    gap:24px;
+
+    align-items:start;
+}
+
+.group-section{
 
     border:1px solid var(--border);
 
@@ -825,12 +835,19 @@ footer{
 
     background:
     linear-gradient(
-        90deg,
-        #0C241A,
-        #071710
+        180deg,
+        #10291E,
+        #0A1C14
     );
 
     box-shadow:var(--shadow);
+
+    transition:.25s;
+}
+
+.group-section:hover{
+
+    border-color:var(--primary);
 }
 
 .group-title{
@@ -839,16 +856,18 @@ footer{
     linear-gradient(
         90deg,
         var(--primary),
-        #28ef89
+        #34ff9c
     );
 
     color:black;
 
-    font-size:1.4rem;
+    font-size:1.3rem;
 
     font-weight:900;
 
-    padding:16px 20px;
+    padding:14px 18px;
+
+    letter-spacing:.5px;
 }
 
 /* TABLE */
@@ -866,23 +885,33 @@ footer{
 
     color:white;
 
-    padding:12px;
+    padding:8px;
+
+    font-size:.85rem;
 }
 
 .group-table td{
 
-    padding:12px;
+    padding:8px;
+
+    font-size:.85rem;
 
     border-top:1px solid #214434;
 
     text-align:center;
 }
 
-/* FIXTURES */
+.group-table tr:hover{
+
+    background:
+    rgba(0,210,106,.08);
+}
+
+/* FIXTURE LIST */
 
 .fixture-list{
 
-    padding:15px;
+    padding:10px;
 }
 
 .fixture-row{
@@ -890,16 +919,16 @@ footer{
     display:grid;
 
     grid-template-columns:
-    120px
+    70px
     1fr
-    120px
-    250px;
+    80px
+    130px;
 
-    gap:15px;
+    gap:10px;
 
     align-items:center;
 
-    padding:15px;
+    padding:10px;
 
     border-bottom:1px solid #214434;
 }
@@ -909,38 +938,81 @@ footer{
     border-bottom:none;
 }
 
+.fixture-row:hover{
+
+    background:
+    rgba(0,210,106,.08);
+}
+
 .fixture-date{
 
-    font-weight:800;
-
     color:var(--secondary);
+
+    font-size:.85rem;
+
+    font-weight:800;
 }
 
 .fixture-match{
 
+    font-size:.92rem;
+
     font-weight:700;
 
-    font-size:1.05rem;
+    line-height:1.4;
 }
 
 .fixture-time{
 
     color:var(--primary);
 
+    font-size:.85rem;
+
     font-weight:700;
 }
 
 .fixture-stadium{
 
-    color:var(--text);
+    font-size:.82rem;
+
+    color:var(--soft);
 }
 
-@media(max-width:900px){
+/* TABLET */
+
+@media(max-width:1100px){
+
+    #fixtures{
+
+        grid-template-columns:1fr;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .group-title{
+
+        font-size:1.1rem;
+    }
+
+    .group-table{
+
+        font-size:.75rem;
+    }
 
     .fixture-row{
 
         grid-template-columns:1fr;
 
-        gap:8px;
+        gap:5px;
+
+        text-align:center;
+    }
+
+    .fixture-match{
+
+        font-size:.95rem;
     }
 }
