@@ -17,7 +17,7 @@
     "city": "Kansas City",
 
     "timeET": "21:00",
-    "timeAR": "23:00"
+    "timeAR": "22:00"
   },
   {
     "id": 2,
@@ -37,7 +37,7 @@
     "city": "Santa Clara",
 
     "timeET": "00:00",
-    "timeAR": "02:00"
+    "timeAR": "01:00"
   },
   {
     "id": 3,
@@ -57,7 +57,7 @@
     "city": "Dallas",
 
     "timeET": "13:00",
-    "timeAR": "15:00"
+    "timeAR": "14:00"
   },
   {
     "id": 4,
@@ -77,7 +77,7 @@
     "city": "Santa Clara",
 
     "timeET": "23:00",
-    "timeAR": "01:00"
+    "timeAR": "00:00"
   },
   {
     "id": 5,
@@ -97,7 +97,7 @@
     "city": "Dallas",
 
     "timeET": "22:00",
-    "timeAR": "00:00"
+    "timeAR": "23:00"
   },
   {
     "id": 6,
@@ -117,6 +117,6 @@
     "city": "Kansas City",
 
     "timeET": "22:00",
-    "timeAR": "00:00"
+    "timeAR": "23:00"
   }
 ]
