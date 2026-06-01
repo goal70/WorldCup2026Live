@@ -17,7 +17,7 @@
     "city": "New York/New Jersey",
 
     "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeAR": "16:00"
   },
   {
     "id": 2,
@@ -37,7 +37,7 @@
     "city": "Boston",
 
     "timeET": "18:00",
-    "timeAR": "20:00"
+    "timeAR": "19:00"
   },
   {
     "id": 3,
@@ -57,7 +57,7 @@
     "city": "Philadelphia",
 
     "timeET": "17:00",
-    "timeAR": "19:00"
+    "timeAR": "18:00"
   },
   {
     "id": 4,
@@ -77,7 +77,7 @@
     "city": "New York/New Jersey",
 
     "timeET": "20:00",
-    "timeAR": "22:00"
+    "timeAR": "21:00"
   },
   {
     "id": 5,
@@ -97,7 +97,7 @@
     "city": "Boston",
 
     "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeAR": "16:00"
   },
   {
     "id": 6,
@@ -117,6 +117,6 @@
     "city": "Toronto",
 
     "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeAR": "16:00"
   }
 ]
