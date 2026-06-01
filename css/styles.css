@@ -392,7 +392,19 @@ section{
 
     font-size:3rem;
 
+    line-height:1;
+
     margin-bottom:6px;
+
+    font-family:
+    "Segoe UI Emoji",
+    "Noto Color Emoji",
+    "Apple Color Emoji",
+    sans-serif;
+
+    font-variant-emoji:emoji;
+
+    text-rendering:auto;
 }
 
 .team-name{
@@ -888,6 +900,12 @@ footer{
 }
 
 .fixture-match{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
 
     font-size:.92rem;
 
