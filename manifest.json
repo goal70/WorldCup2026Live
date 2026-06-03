@@ -1,0 +1,9 @@
+{
+  "name": "World Goal 2026",
+  "short_name": "WorldGoal",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#06140E",
+  "theme_color": "#00D26A",
+  "icons": []
+}
