@@ -102,13 +102,19 @@ DATE FILTERS
 
 function showToday(){
 
-    const matches = [...allMatches]
+    const firstDate =
+    [...allMatches]
     .sort(
-        (a,b) =>
-        new Date(a.date) -
+        (a,b)=>
+        new Date(a.date)-
         new Date(b.date)
-    )
-    .slice(0, 8);
+    )[0].date;
+
+    const matches =
+    allMatches.filter(
+        match =>
+        match.date === firstDate
+    );
 
     renderMatches(matches);
 
