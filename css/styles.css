@@ -1144,3 +1144,52 @@ footer{
         min-width:100%;
     }
 }
+.third-section{
+
+    margin-top:40px;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:#10291E;
+
+    border:1px solid #1D4635;
+}
+
+.third-section h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:var(--primary);
+}
+
+.third-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:12px;
+}
+
+.third-card{
+
+    background:#17382A;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:700;
+}
+
+.third-card:hover{
+
+    background:#214434;
+}
