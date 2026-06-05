@@ -6,39 +6,47 @@ const groupLetters = [
 const groupsData = {};
 const selectedTeams = {};
 
-async function loadGroups() {
+async function loadGroups(){
 
     const container =
-    document.getElementById("groupsSimulator");
+    document.getElementById(
+        "groupsSimulator"
+    );
 
-    container.innerHTML = `
-        <div class="loading">
-            Loading groups...
-        </div>
-    `;
+    container.innerHTML =
+    "<div class='loading'>Loading Groups...</div>";
 
-    try {
+    try{
+
+        const allGroups =
+        await Promise.all(
+
+            groupLetters.map(letter =>
+
+                fetch(
+                    `../data/groups/groups-${letter}.json`
+                )
+                .then(r=>r.json())
+
+            )
+
+        );
 
         let html = "";
 
-        for (const letter of groupLetters) {
+        allGroups.forEach((matches,index)=>{
 
-            const response =
-            await fetch(
-                `../data/groups/groups-${letter}.json`
-            );
-
-            const matches =
-            await response.json();
+            const letter =
+            groupLetters[index];
 
             const teams = [];
 
-            matches.forEach(match => {
+            matches.forEach(match=>{
 
-                if (!teams.includes(match.team1))
+                if(!teams.includes(match.team1))
                     teams.push(match.team1);
 
-                if (!teams.includes(match.team2))
+                if(!teams.includes(match.team2))
                     teams.push(match.team2);
 
             });
@@ -55,79 +63,22 @@ async function loadGroups() {
                     GROUP ${letter.toUpperCase()}
                 </h3>
 
-                <div class="sim-selects">
+                <div class="group-teams">
 
-                    <label>
-                        1st Place
-                    </label>
+                    ${teams.map(team => `
 
-                    <select
-                    onchange="
-                    savePosition(
-                        '${letter.toUpperCase()}',
-                        'first',
-                        this.value
-                    )">
+                        <div
+                            class="team-option"
+                            data-group="${letter.toUpperCase()}"
+                            data-team="${team}"
+                            onclick="selectTeam(this)"
+                        >
 
-                        <option value="">
-                            Select Team
-                        </option>
+                            ${team}
 
-                        ${teams.map(team => `
-                            <option value="${team}">
-                                ${team}
-                            </option>
-                        `).join("")}
+                        </div>
 
-                    </select>
-
-                    <label>
-                        2nd Place
-                    </label>
-
-                    <select
-                    onchange="
-                    savePosition(
-                        '${letter.toUpperCase()}',
-                        'second',
-                        this.value
-                    )">
-
-                        <option value="">
-                            Select Team
-                        </option>
-
-                        ${teams.map(team => `
-                            <option value="${team}">
-                                ${team}
-                            </option>
-                        `).join("")}
-
-                    </select>
-
-                    <label>
-                        3rd Place
-                    </label>
-
-                    <select
-                    onchange="
-                    savePosition(
-                        '${letter.toUpperCase()}',
-                        'third',
-                        this.value
-                    )">
-
-                        <option value="">
-                            Select Team
-                        </option>
-
-                        ${teams.map(team => `
-                            <option value="${team}">
-                                ${team}
-                            </option>
-                        `).join("")}
-
-                    </select>
+                    `).join("")}
 
                 </div>
 
@@ -135,55 +86,125 @@ async function loadGroups() {
 
             `;
 
-        }
+        });
 
         container.innerHTML = html;
 
-    } catch (error) {
+    }
+    catch(error){
 
         console.error(error);
 
-        container.innerHTML = `
-            <div class="error">
-                Error loading groups
-            </div>
-        `;
+        container.innerHTML =
+
+        `<div class="error">
+            Error Loading Groups
+        </div>`;
 
     }
 
 }
 
-function savePosition(group, position, team) {
+function selectTeam(element){
 
-    if (!selectedTeams[group]) {
-        selectedTeams[group] = {};
+    const group =
+    element.dataset.group;
+
+    const team =
+    element.dataset.team;
+
+    if(!selectedTeams[group]){
+
+        selectedTeams[group]={
+
+            first:null,
+            second:null,
+            third:null
+
+        };
+
     }
 
-    selectedTeams[group][position] = team;
+    const data =
+    selectedTeams[group];
 
-    checkGroupsComplete();
+    if(
+        data.first===team ||
+        data.second===team ||
+        data.third===team
+    ){
+        return;
+    }
+
+    if(!data.first){
+
+        data.first = team;
+
+        element.classList.add(
+            "first-place"
+        );
+
+        element.innerHTML =
+        "🥇 " + team;
+
+    }
+
+    else if(!data.second){
+
+        data.second = team;
+
+        element.classList.add(
+            "second-place"
+        );
+
+        element.innerHTML =
+        "🥈 " + team;
+
+    }
+
+    else if(!data.third){
+
+        data.third = team;
+
+        element.classList.add(
+            "third-place"
+        );
+
+        element.innerHTML =
+        "🥉 " + team;
+
+        checkGroupsComplete();
+
+    }
 
 }
 
-function checkGroupsComplete() {
+function checkGroupsComplete(){
 
     let complete = true;
 
-    for (const group of Object.keys(groupsData)) {
+    Object.keys(groupsData)
+    .forEach(group=>{
 
-        if (
+        if(
+
             !selectedTeams[group] ||
+
             !selectedTeams[group].first ||
+
             !selectedTeams[group].second ||
+
             !selectedTeams[group].third
-        ) {
+
+        ){
+
             complete = false;
-            break;
+
         }
 
-    }
+    });
 
-    if (complete) {
+    if(complete){
 
         renderBestThirds();
 
@@ -191,7 +212,7 @@ function checkGroupsComplete() {
 
 }
 
-function renderBestThirds() {
+function renderBestThirds(){
 
     const container =
     document.getElementById(
@@ -201,12 +222,15 @@ function renderBestThirds() {
     const thirds = [];
 
     Object.keys(selectedTeams)
-    .forEach(group => {
+    .forEach(group=>{
 
         thirds.push({
+
             group,
+
             team:
             selectedTeams[group].third
+
         });
 
     });
@@ -220,12 +244,14 @@ function renderBestThirds() {
             </h2>
 
             <p>
-                Select the 8 best third-placed teams
+                Select 8 Teams
             </p>
 
-            <div class="third-grid">
+            <div
+            id="thirdGrid"
+            class="third-grid">
 
-                ${thirds.map(item => `
+                ${thirds.map(item=>`
 
                     <label
                     class="third-card">
@@ -257,28 +283,24 @@ function renderBestThirds() {
 
 }
 
-function updateThirdSelection() {
+function updateThirdSelection(){
 
     const selected =
+
     document.querySelectorAll(
-        ".third-grid input:checked"
+        "#thirdGrid input:checked"
     );
 
-    if (selected.length > 8) {
-
-        alert(
-            "You can only select 8 teams."
-        );
+    if(selected.length>8){
 
         selected[
-            selected.length - 1
-        ].checked = false;
+            selected.length-1
+        ].checked=false;
 
         return;
-
     }
 
-    if (selected.length === 8) {
+    if(selected.length===8){
 
         document
         .getElementById(
@@ -288,13 +310,12 @@ function updateThirdSelection() {
 
             <div class="ready-box">
 
-                ✅ 8 Best Third-Placed Teams Selected
+                ✅ 8 BEST THIRD-PLACED
+                TEAMS SELECTED
 
                 <br><br>
 
-                Next Step:
-
-                Generate Round of 32
+                ROUND OF 32 READY
 
             </div>
 
