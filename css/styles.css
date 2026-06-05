@@ -1322,3 +1322,54 @@ footer{
     padding:10px;
     cursor:pointer;
 }
+.ready-box{
+
+    background:#06261c;
+
+    border:1px solid #00ff88;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    margin-top:20px;
+
+    font-weight:bold;
+}
+
+.third-section{
+
+    margin-top:40px;
+}
+
+.third-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.third-card{
+
+    background:#08241b;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:10px;
+
+    padding:12px;
+
+    cursor:pointer;
+}
+
+.third-card:hover{
+
+    border-color:#00ff88;
+}
