@@ -1291,3 +1291,34 @@ footer{
 
     color:#fff !important;
 }
+.knockout-container{
+    margin-top:40px;
+}
+
+.round32,
+.round16,
+.quarterfinals,
+.semifinals{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.match-card{
+    background:#051f18;
+    border:1px solid #00ff88;
+    border-radius:10px;
+    padding:12px;
+}
+
+.match-card select{
+    width:100%;
+    margin-bottom:8px;
+}
+
+.match-card button{
+    width:100%;
+    padding:10px;
+    cursor:pointer;
+}
