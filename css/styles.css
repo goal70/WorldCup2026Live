@@ -1241,3 +1241,53 @@ footer{
     border-radius:20px;
     margin-top:30px;
 }
+.group-teams{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.team-option{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:#06251c;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    font-weight:700;
+}
+
+.team-option:hover{
+
+    border-color:#00ff99;
+
+    transform:translateY(-2px);
+}
+
+.first-place{
+
+    background:#ffd700 !important;
+
+    color:#000 !important;
+}
+
+.second-place{
+
+    background:#ff8c00 !important;
+
+    color:#fff !important;
+}
+
+.third-place{
+
+    background:#808080 !important;
+
+    color:#fff !important;
+}
