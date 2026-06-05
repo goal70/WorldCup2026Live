@@ -371,42 +371,117 @@ function renderBestThirds(){
 function updateThirdSelection(){
 
     const selected =
-
     document.querySelectorAll(
         "#thirdGrid input:checked"
     );
 
-    if(selected.length>8){
+    if(selected.length > 8){
 
         selected[
-            selected.length-1
-        ].checked=false;
+            selected.length - 1
+        ].checked = false;
 
         return;
     }
 
-    if(selected.length===8){
+    if(selected.length === 8){
 
-        document
-        .getElementById(
-            "knockoutBracket"
-        )
-        .innerHTML = `
-
-            <div class="ready-box">
-
-                ✅ 8 BEST THIRD-PLACED
-                TEAMS SELECTED
-
-                <br><br>
-
-                ROUND OF 32 READY
-
-            </div>
-
-        `;
+        generateKnockout();
 
     }
+
+}
+
+function generateKnockout(){
+
+    const knockout =
+    document.getElementById(
+        "knockoutBracket"
+    );
+
+    knockout.innerHTML = `
+
+    <div class="knockout-container">
+
+        <h2>ROUND OF 32</h2>
+
+        <div class="round32">
+
+            ${Array(16).fill(0).map(() => `
+
+                <div class="match-card">
+
+                    <select>
+                        <option>Team 1</option>
+                    </select>
+
+                    <select>
+                        <option>Team 2</option>
+                    </select>
+
+                </div>
+
+            `).join("")}
+
+        </div>
+
+        <h2>ROUND OF 16</h2>
+
+        <div class="round16">
+
+            ${Array(8).fill(0).map(() => `
+
+                <div class="match-card">
+                    Winner
+                </div>
+
+            `).join("")}
+
+        </div>
+
+        <h2>QUARTERFINALS</h2>
+
+        <div class="round16">
+
+            ${Array(4).fill(0).map(() => `
+
+                <div class="match-card">
+                    Winner
+                </div>
+
+            `).join("")}
+
+        </div>
+
+        <h2>SEMIFINALS</h2>
+
+        <div class="round16">
+
+            ${Array(2).fill(0).map(() => `
+
+                <div class="match-card">
+                    Winner
+                </div>
+
+            `).join("")}
+
+        </div>
+
+        <h2>THIRD PLACE</h2>
+
+        <div class="match-card">
+            Third Place Match
+        </div>
+
+        <h2>FINAL</h2>
+
+        <div class="match-card">
+            Champion
+        </div>
+
+    </div>
+
+    `;
 
 }
 
