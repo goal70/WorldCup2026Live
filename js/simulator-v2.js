@@ -107,21 +107,106 @@ async function loadGroups(){
 
 function selectTeam(element){
 
-    const group =
-    element.dataset.group;
-
-    const team =
-    element.dataset.team;
+    const group = element.dataset.group;
+    const team = element.dataset.team;
 
     if(!selectedTeams[group]){
 
-        selectedTeams[group]={
-
+        selectedTeams[group] = {
             first:null,
             second:null,
             third:null
-
         };
+
+    }
+
+    const data = selectedTeams[group];
+
+    // DESELECCIONAR
+
+    if(data.first === team){
+
+        data.first = null;
+
+        element.classList.remove(
+            "first-place"
+        );
+
+        element.innerHTML = team;
+
+        return;
+    }
+
+    if(data.second === team){
+
+        data.second = null;
+
+        element.classList.remove(
+            "second-place"
+        );
+
+        element.innerHTML = team;
+
+        return;
+    }
+
+    if(data.third === team){
+
+        data.third = null;
+
+        element.classList.remove(
+            "third-place"
+        );
+
+        element.innerHTML = team;
+
+        return;
+    }
+
+    // SELECCIONAR
+
+    if(!data.first){
+
+        data.first = team;
+
+        element.classList.add(
+            "first-place"
+        );
+
+        element.innerHTML =
+        "🥇 " + team;
+
+    }
+
+    else if(!data.second){
+
+        data.second = team;
+
+        element.classList.add(
+            "second-place"
+        );
+
+        element.innerHTML =
+        "🥈 " + team;
+
+    }
+
+    else if(!data.third){
+
+        data.third = team;
+
+        element.classList.add(
+            "third-place"
+        );
+
+        element.innerHTML =
+        "🥉 " + team;
+
+    }
+
+    checkGroupsComplete();
+
+};
 
     }
 
