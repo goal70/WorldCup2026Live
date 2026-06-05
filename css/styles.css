@@ -1193,3 +1193,51 @@ footer{
 
     background:#214434;
 }
+.third-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    margin-top:20px;
+}
+
+.third-card{
+    background:#17382A;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.third-card:hover{
+    border-color:var(--primary);
+}
+
+.third-card input{
+    margin-right:8px;
+}
+
+.knockout-select{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    background:#17382A;
+    color:white;
+}
+
+.champion-card{
+    text-align:center;
+    background:linear-gradient(
+        135deg,
+        #FFD447,
+        #FFB700
+    );
+    color:black;
+    font-size:2rem;
+    font-weight:900;
+    padding:30px;
+    border-radius:20px;
+    margin-top:30px;
+}
