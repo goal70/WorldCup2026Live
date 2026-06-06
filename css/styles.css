@@ -4,7 +4,6 @@
 ========================================= */
 
 :root{
-
     --bg:#06140E;
     --bg2:#0B2017;
 
@@ -26,283 +25,162 @@
 
     --radius:18px;
 
-    --shadow:
-    0 10px 30px rgba(0,0,0,.35);
+    --shadow:0 10px 30px rgba(0,0,0,.35);
 
     --max-width:1400px;
 }
 
-/* =========================================
-   RESET
-========================================= */
-
+/* RESET */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
-
-    font-family:
-    Inter,
-    Arial,
-    Helvetica,
-    sans-serif;
-
-    background:
-    linear-gradient(
-        180deg,
-        var(--bg),
-        var(--bg2)
-    );
-
+    font-family:Inter, Arial, Helvetica, sans-serif;
+    background:linear-gradient(180deg,var(--bg),var(--bg2));
     color:var(--white);
-
     min-height:100vh;
 }
 
-/* =========================================
-   CONTAINER
-========================================= */
-
+/* CONTAINER */
 .container{
-
     width:95%;
-
     max-width:var(--max-width);
-
     margin:auto;
 }
 
-/* =========================================
-   HEADER
-========================================= */
-
+/* HEADER */
 header{
-
     position:sticky;
     top:0;
     z-index:1000;
-
     background:rgba(6,20,14,.96);
-
     backdrop-filter:blur(12px);
-
     border-bottom:2px solid var(--primary);
-
     box-shadow:0 3px 15px rgba(0,0,0,.25);
 }
 
 .header-inner{
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     min-height:75px;
 }
 
 .logo{
-
     font-size:2rem;
     font-weight:900;
     letter-spacing:1px;
 }
 
-.logo span{
-
-    color:var(--primary);
-}
+.logo span{ color:var(--primary); }
 
 nav{
-
     display:flex;
     gap:12px;
 }
 
 nav a{
-
     text-decoration:none;
-
     color:white;
-
     font-weight:800;
-
     padding:12px 18px;
-
     border-radius:12px;
-
     transition:.25s;
 }
 
-nav a:hover{
-
-    background:#163527;
-}
+nav a:hover{ background:#163527; }
 
 nav a.active{
-
     background:var(--primary);
-
     color:black;
 }
 
-/* =========================================
-   HERO
-========================================= */
-
+/* HERO */
 .hero{
-
     margin-top:18px;
-
     border-radius:22px;
-
     overflow:hidden;
-
     text-align:center;
-
     padding:55px 20px;
-
     background:
-    linear-gradient(
-        rgba(0,0,0,.60),
-        rgba(0,0,0,.60)
-    ),
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
     url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1800");
-
     background-size:cover;
-
     background-position:center;
-
     box-shadow:var(--shadow);
 }
 
 .hero h1{
-
     font-size:2.8rem;
-
     margin-bottom:10px;
-
     font-weight:900;
 }
 
 .hero p{
-
     color:#E8E8E8;
-
     font-size:1rem;
 }
 
-/* =========================================
-   MATCH NAVIGATION
-========================================= */
-
+/* MATCH NAV */
 .match-navigation{
-
     display:flex;
-
     justify-content:center;
-
     gap:12px;
-
-    margin-top:25px;
-
-    margin-bottom:25px;
-
+    margin:25px 0;
     flex-wrap:wrap;
 }
 
 .day-btn{
-
     border:none;
-
     background:#10291E;
-
     color:white;
-
     padding:12px 22px;
-
     border-radius:12px;
-
     font-weight:800;
-
     cursor:pointer;
-
-    transition:.25s;
 }
 
-.day-btn:hover{
-
-    background:#17382A;
-}
+.day-btn:hover{ background:#17382A; }
 
 .day-btn.active{
-
     background:var(--primary);
-
     color:black;
 }
 
-/* =========================================
-   TODAY BANNER
-========================================= */
-
+/* BANNER */
 .today-banner{
-
-    background:linear-gradient(
-        90deg,
-        var(--primary),
-        #32f18d
-    );
-
+    background:linear-gradient(90deg,var(--primary),#32f18d);
     color:black;
-
     font-weight:900;
-
     padding:15px 18px;
-
     border-radius:14px;
-
     margin-bottom:15px;
-
     box-shadow:var(--shadow);
 }
 
-/* =========================================
-   SECTIONS
-========================================= */
-
-section{
-
-    margin-top:25px;
-}
+/* SECTIONS */
+section{ margin-top:25px; }
 
 .section-title{
-
     font-size:1.9rem;
-
     margin-bottom:20px;
-
     padding-left:15px;
-
     border-left:5px solid var(--primary);
 }
 
-/* =========================================
-   MATCHES GRID
-========================================= */
-
+/* MATCH GRID */
 .matches-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
     gap:16px;
 }
 
+/* ✅ MATCH CARD (ÚNICA VERSIÓN FINAL) */
 .match-card{
     background:linear-gradient(180deg,#123426,#0E251B);
     border:1px solid var(--border);
@@ -335,8 +213,8 @@ section{
 
 .match-center{
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
     gap:20px;
 }
 
@@ -346,8 +224,8 @@ section{
 }
 
 .flag{
-    display:block;
     font-size:3rem;
+    display:block;
     margin-bottom:6px;
 }
 
@@ -358,7 +236,6 @@ section{
 
 .score{
     min-width:120px;
-    max-width:160px;
     text-align:center;
 }
 
@@ -374,18 +251,13 @@ section{
     color:var(--text);
 }
 
-/* =========================================
-   BUTTONS
-========================================= */
-
+/* BUTTONS */
 .btn{
     display:inline-block;
     border:none;
     border-radius:12px;
     padding:12px 24px;
     font-weight:800;
-    cursor:pointer;
-    transition:.25s;
 }
 
 .btn-primary{
@@ -393,13 +265,8 @@ section{
     color:black;
 }
 
-.btn-primary:hover{
-    transform:translateY(-1px);
-}
-
-.table-wrapper{
-    overflow-x:auto;
-}
+/* TABLES (UNIFICADO) */
+.table-wrapper{ overflow-x:auto; }
 
 table{
     width:100%;
@@ -415,6 +282,9 @@ th,td{
     border:1px solid var(--border);
 }
 
+th{ background:#17382A; }
+
+/* ADS */
 .ad-slot{
     height:110px;
     border:2px dashed #2D5A47;
@@ -426,78 +296,13 @@ th,td{
     background:#0E241A;
 }
 
-/* =========================================
-   TABLES
-========================================= */
-
-.table-wrapper{
-
-    overflow-x:auto;
-}
-
-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-    background:var(--card);
-
-    border-radius:var(--radius);
-
-    overflow:hidden;
-}
-
-th{
-
-    background:#17382A;
-}
-
-th,
-td{
-
-    padding:14px;
-
-    text-align:center;
-
-    border:1px solid var(--border);
-}
-
-/* =========================================
-   ADS
-========================================= */
-
-.ad-slot{
-
-    height:110px;
-
-    border:2px dashed #2D5A47;
-
-    border-radius:16px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:#8AA398;
-
-    background:#0E241A;
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-
+/* FOOTER */
 footer{
     margin-top:60px;
     border-top:1px solid var(--border);
 }
 
-.footer-inner{
-    padding:40px 0;
-}
+.footer-inner{ padding:40px 0; }
 
 .footer-links{
     display:flex;
@@ -511,9 +316,7 @@ footer{
     text-decoration:none;
 }
 
-.footer-links a:hover{
-    color:white;
-}
+.footer-links a:hover{ color:white; }
 
 .copyright{
     text-align:center;
@@ -521,292 +324,45 @@ footer{
     color:var(--soft);
 }
 
-/* =========================================
-   DESKTOP IMPROVEMENTS
-========================================= */
-
-@media(min-width:1200px){
-
-    .container{
-
-        width:92%;
-    }
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:768px){
-
-    .header-inner{
-        flex-direction:column;
-        gap:15px;
-        padding:15px 0;
-    }
-
-    nav{
-        width:100%;
-        justify-content:center;
-        flex-wrap:wrap;
-    }
-
-    nav a{
-        padding:10px 14px;
-    }
-
-    .hero{
-        padding:40px 15px;
-    }
-
-    .hero h1{
-        font-size:2rem;
-    }
-
-    .matches-grid{
-        grid-template-columns:1fr;
-    }
-
-    .match-center{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .score{
-        min-width:auto;
-    }
-
-    .score-number{
-        font-size:1.8rem;
-    }
-
-    .section-title{
-        font-size:1.4rem;
-    }
-
-    .today-banner{
-        text-align:center;
-    }
-}
-
-/* =========================================
-   FIXTURE PAGE FIFA STYLE
-========================================= */
-
+/* FIXTURES */
 #fixtures{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(2,minmax(0,1fr));
-
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:24px;
-
-    align-items:start;
 }
 
 .group-section{
-
     border:1px solid var(--border);
-
     border-radius:18px;
-
     overflow:hidden;
-
-    background:
-    linear-gradient(
-        180deg,
-        #10291E,
-        #0A1C14
-    );
-
+    background:linear-gradient(180deg,#10291E,#0A1C14);
     box-shadow:var(--shadow);
-
-    transition:.25s;
-}
-
-.group-section:hover{
-
-    border-color:var(--primary);
 }
 
 .group-title{
-
-    background:
-    linear-gradient(
-        90deg,
-        var(--primary),
-        #34ff9c
-    );
-
+    background:linear-gradient(90deg,var(--primary),#34ff9c);
     color:black;
-
     font-size:1.3rem;
-
     font-weight:900;
-
     padding:14px 18px;
-
-    letter-spacing:.5px;
-}
-
-/* TABLE */
-
-.group-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-}
-
-.group-table th{
-
-    background:#17382A;
-
-    color:white;
-
-    padding:8px;
-
-    font-size:.85rem;
-}
-
-.group-table td{
-
-    padding:8px;
-
-    font-size:.85rem;
-
-    border-top:1px solid #214434;
-
-    text-align:center;
-}
-
-.group-table tr:hover{
-
-    background:
-    rgba(0,210,106,.08);
 }
 
 /* FIXTURE LIST */
-
-.fixture-list{
-
-    padding:10px;
-}
+.fixture-list{ padding:10px; }
 
 .fixture-row{
-
     display:grid;
-
-    grid-template-columns:
-    70px
-    1fr
-    80px
-    130px;
-
+    grid-template-columns:70px 1fr 80px 130px;
     gap:10px;
-
-    align-items:center;
-
     padding:10px;
-
     border-bottom:1px solid #214434;
 }
 
-.fixture-row:last-child{
-
-    border-bottom:none;
-}
-
 .fixture-row:hover{
-
-    background:
-    rgba(0,210,106,.08);
+    background:rgba(0,210,106,.08);
 }
 
-.fixture-date{
-
-    color:var(--secondary);
-
-    font-size:.85rem;
-
-    font-weight:800;
-}
-
-.fixture-match{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    font-size:.92rem;
-
-    font-weight:700;
-
-    line-height:1.4;
-}
-
-.fixture-time{
-
-    color:var(--primary);
-
-    font-size:.85rem;
-
-    font-weight:700;
-}
-
-.fixture-stadium{
-
-    font-size:.82rem;
-
-    color:var(--soft);
-}
-
-/* TABLET */
-
-@media(max-width:1100px){
-
-    #fixtures{
-
-        grid-template-columns:1fr;
-    }
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .group-title{
-
-        font-size:1.1rem;
-    }
-
-    .group-table{
-
-        font-size:.75rem;
-    }
-
-    .fixture-row{
-
-        grid-template-columns:1fr;
-
-        gap:5px;
-
-        text-align:center;
-    }
-
-    .fixture-match{
-
-        font-size:.95rem;
-    }
-}
-
-/* =========================================
-   BEST THIRD (ONLY ONE VERSION)
-========================================= */
-
+/* BEST THIRD */
 .third-section{
     margin-top:40px;
     padding:25px;
@@ -815,17 +371,10 @@ footer{
     border:1px solid #1D4635;
 }
 
-.third-section h2{
-    text-align:center;
-    margin-bottom:20px;
-    color:var(--primary);
-}
-
 .third-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:12px;
-    margin-top:20px;
 }
 
 .third-card{
@@ -833,66 +382,25 @@ footer{
     border:1px solid rgba(255,255,255,.15);
     border-radius:10px;
     padding:12px;
-    cursor:pointer;
-    font-weight:700;
-    transition:.2s;
 }
 
-.third-card:hover{
-    border-color:var(--primary);
-}
+/* KNOCKOUT */
+.knockout-container{ margin-top:40px; }
 
-/* =========================================
-   KNOCKOUT CLEAN (FIX REAL)
-========================================= */
-
-.knockout-container{
-    margin-top:40px;
-}
-
-/* IMPORTANT FIX: NO 4-COLUMN GRID */
-.round32,
-.round16{
+.round32,.round16{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:15px;
-    margin-bottom:30px;
 }
 
-/* MATCH CARD (ONLY ONE VERSION) */
-.match-card{
-    background:linear-gradient(180deg,#17382A,#0F251B);
-    border:1px solid var(--primary);
-    border-radius:12px;
-    padding:12px;
-    transition:.2s;
-}
-
-.match-card:hover{
-    transform:translateY(-2px);
-    border-color:#00ff88;
-}
-
-/* =========================================
-   BRACKET (OPTIONAL VISUAL MODE)
-========================================= */
-
+/* BRACKET */
 .bracket-wrapper{
     display:flex;
     gap:25px;
     overflow-x:auto;
-    padding-bottom:20px;
 }
 
-.round{
-    min-width:220px;
-}
-
-.round h3{
-    text-align:center;
-    margin-bottom:20px;
-    color:var(--primary);
-}
+.round{ min-width:220px; }
 
 .bracket-match{
     background:linear-gradient(180deg,#17382A,#0F251B);
@@ -900,64 +408,23 @@ footer{
     border-radius:14px;
     padding:12px;
     margin-bottom:20px;
-    box-shadow:var(--shadow);
 }
 
-.flag-slot{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:2rem;
-    height:55px;
-}
-
-/* MOBILE FIX */
-@media(max-width:768px){
-    .bracket-wrapper{
-        flex-direction:column;
-    }
-
-    .round{
-        min-width:100%;
-    }
-}
-/* =========================================
-   SAFE SIMULATOR FIX (CLEAN VERSION)
-========================================= */
-
+/* SIMULATOR SAFE */
 #groupsSimulator{
     isolation:isolate;
 }
 
-/* SOLO estilo base, sin romper layout global */
 #groupsSimulator .sim-group-card{
     background:linear-gradient(180deg,#123426,#0B1E16);
     border:1px solid var(--border);
     border-radius:18px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
 }
 
-/* títulos seguros */
-#groupsSimulator .sim-group-card h3{
-    background:linear-gradient(90deg,var(--primary),#30ff9d);
-    color:black;
-    text-align:center;
-    padding:14px;
-    font-weight:900;
-}
-
-/* items */
 #groupsSimulator .team-option{
     padding:12px;
     border-radius:10px;
     background:#06251c;
     border:1px solid rgba(255,255,255,.15);
-    cursor:pointer;
-    font-weight:700;
-    color:var(--white);
-}
-
-#groupsSimulator .team-option:hover{
-    border-color:#00ff99;
+    color:white;
 }
