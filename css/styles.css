@@ -428,3 +428,33 @@ footer{
     border:1px solid rgba(255,255,255,.15);
     color:white;
 }
+/* =========================================
+   SIMULATOR MEDALS FIX (RESTORE VISUALS)
+========================================= */
+
+#groupsSimulator .first-place{
+    background:#ffd700 !important;
+    color:#000 !important;
+    font-weight:900;
+}
+
+#groupsSimulator .second-place{
+    background:#ff8c00 !important;
+    color:#fff !important;
+    font-weight:900;
+}
+
+#groupsSimulator .third-place{
+    background:#808080 !important;
+    color:#fff !important;
+    font-weight:900;
+}
+
+/* opcional: mejora visual de selección */
+#groupsSimulator .team-option{
+    transition:.2s;
+}
+
+#groupsSimulator .team-option:hover{
+    transform:translateY(-2px);
+}
