@@ -922,25 +922,42 @@ footer{
     }
 }
 /* =========================================
-   SAFE ISOLATION (SIMULATOR / KNOCKOUT FIX)
+   SAFE SIMULATOR FIX (CLEAN VERSION)
 ========================================= */
 
-/* Evita que otros layouts rompan simulator */
-#groupsSimulator .match-card{
-    all: unset;
+#groupsSimulator{
+    isolation:isolate;
 }
 
-/* reconstruye estilo solo para simulator si lo usas ahí */
-#groupsSimulator .match-card{
-    background: #123426;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 15px;
-    color: var(--white);
-    box-shadow: var(--shadow);
+/* SOLO estilo base, sin romper layout global */
+#groupsSimulator .sim-group-card{
+    background:linear-gradient(180deg,#123426,#0B1E16);
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
 }
 
-/* evita herencias raras en simulator */
-#groupsSimulator *{
-    box-sizing: border-box;
+/* títulos seguros */
+#groupsSimulator .sim-group-card h3{
+    background:linear-gradient(90deg,var(--primary),#30ff9d);
+    color:black;
+    text-align:center;
+    padding:14px;
+    font-weight:900;
+}
+
+/* items */
+#groupsSimulator .team-option{
+    padding:12px;
+    border-radius:10px;
+    background:#06251c;
+    border:1px solid rgba(255,255,255,.15);
+    cursor:pointer;
+    font-weight:700;
+    color:var(--white);
+}
+
+#groupsSimulator .team-option:hover{
+    border-color:#00ff99;
 }
