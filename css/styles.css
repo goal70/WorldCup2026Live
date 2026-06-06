@@ -459,39 +459,79 @@ footer{
     transform:translateY(-2px);
 }
 /* =========================================
-   SIMULATOR ORIGINAL FEEL (RESTORE UX)
+   SIMULATOR ORIGINAL (RESTORE EXACT LOOK)
 ========================================= */
 
-#groupsSimulator .sim-group-card{
+#groupsSimulator{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    margin-bottom:50px;
+}
+
+/* GROUP CARD */
+.sim-group-card{
+    background:linear-gradient(180deg,#123426,#0B1E16);
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
     transition:.25s;
 }
 
-#groupsSimulator .sim-group-card:hover{
+.sim-group-card:hover{
     transform:translateY(-3px);
     border-color:var(--primary);
 }
 
-/* lista de equipos más “viva” */
-#groupsSimulator .group-teams{
+.sim-group-card h3{
+    background:linear-gradient(90deg,var(--primary),#30ff9d);
+    color:black;
+    padding:14px;
+    text-align:center;
+    font-size:1.2rem;
+    font-weight:900;
+}
+
+/* TEAM SELECT */
+.group-teams{
     display:flex;
     flex-direction:column;
     gap:10px;
     padding:12px;
 }
 
-/* selección más clara */
-#groupsSimulator .team-option{
+.team-option{
+    padding:12px;
+    border-radius:10px;
+    background:#06251c;
+    border:1px solid rgba(255,255,255,.15);
+    cursor:pointer;
     transition:.2s;
+    font-weight:700;
+    color:var(--white);
 }
 
-#groupsSimulator .team-option:hover{
+.team-option:hover{
     border-color:#00ff99;
     transform:translateY(-2px);
 }
 
-/* efecto visual cuando ya está seleccionado */
-#groupsSimulator .first-place,
-#groupsSimulator .second-place,
-#groupsSimulator .third-place{
-    box-shadow:0 0 12px rgba(0,0,0,.25);
+/* MEDALLAS */
+.first-place{
+    background:#ffd700 !important;
+    color:#000 !important;
+    font-weight:900;
+}
+
+.second-place{
+    background:#ff8c00 !important;
+    color:#fff !important;
+    font-weight:900;
+}
+
+.third-place{
+    background:#808080 !important;
+    color:#fff !important;
+    font-weight:900;
 }
