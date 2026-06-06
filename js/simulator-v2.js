@@ -218,11 +218,8 @@ function checkGroupsComplete(){
         if(
 
             !selectedTeams[group] ||
-
             !selectedTeams[group].first ||
-
             !selectedTeams[group].second ||
-
             !selectedTeams[group].third
 
         ){
@@ -236,6 +233,12 @@ function checkGroupsComplete(){
     if(complete){
 
         renderBestThirds();
+
+    } else {
+
+        document.getElementById(
+            "bestThirdsSection"
+        ).innerHTML = "";
 
     }
 
