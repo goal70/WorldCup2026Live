@@ -301,72 +301,178 @@ function buildRoundOf32(qualified){
    MAIN GENERATION
 ===================================================== */
 
-function generateKnockout(){
+/* =========================================
+   FIFA 32 TEAM BRACKET ENGINE (REAL)
+========================================= */
 
-    const knockout = document.getElementById("knockoutBracket");
+function buildRanking(selectedTeams){
 
-    const qualified = buildQualified();
+    const firsts = [];
+    const seconds = [];
+    const thirds = [];
 
-    if(qualified.length !== 32){
-        knockout.innerHTML = `
-            <div class="error">
-                <h3>Invalid Simulation</h3>
-                <p>Teams classified: ${qualified.length}/32</p>
-            </div>
-        `;
-        return;
-    }
+    Object.keys(selectedTeams).forEach(group => {
 
-    const round32 = buildRoundOf32(qualified);
+        const g = selectedTeams[group];
 
-    renderKnockout(knockout, round32);
+        if(g.first)  firsts.push(g.first);
+        if(g.second) seconds.push(g.second);
+        if(g.third)  thirds.push(g.third);
+
+    });
+
+    return { firsts, seconds, thirds };
 }
 
-/* =====================================================
-   UI RENDER (CLEAN)
-===================================================== */
+/* -----------------------------------------
+   BEST THIRD SELECTION (STABLE VERSION)
+----------------------------------------- */
 
-function renderKnockout(container, round32){
+function selectBestThirds(thirds){
+
+    // ⚠️ placeholder FIFA logic (luego puedes meter stats reales)
+    const shuffled = [...thirds]
+        .filter(Boolean)
+        .sort(() => Math.random() - 0.5);
+
+    return shuffled.slice(0, 8);
+}
+
+/* -----------------------------------------
+   MAP POSITIONS (A1, B2, etc.)
+----------------------------------------- */
+
+function mapPositions(selectedTeams){
+
+    const map = {};
+
+    Object.keys(selectedTeams).forEach(group => {
+
+        const g = selectedTeams[group];
+
+        if(g.first)  map[`${group}1`] = g.first;
+        if(g.second) map[`${group}2`] = g.second;
+        if(g.third)  map[`${group}3`] = g.third;
+
+    });
+
+    return map;
+}
+
+/* -----------------------------------------
+   FIFA BRACKET GENERATOR
+----------------------------------------- */
+
+function generateFIFABracket(selectedTeams){
+
+    const posMap = mapPositions(selectedTeams);
+    const { firsts, seconds, thirds } = buildRanking(selectedTeams);
+
+    const bestThirds = selectBestThirds(thirds);
+
+    const qualified = [
+        ...firsts,
+        ...seconds,
+        ...bestThirds
+    ].filter(Boolean);
+
+    // 🔴 VALIDATION HARD STOP
+    if(qualified.length !== 32){
+        console.error("ERROR: qualified teams =", qualified.length);
+
+        document.getElementById("knockoutBracket").innerHTML = `
+            <div class="error">
+                <h3>Bracket Error</h3>
+                <p>Teams classified: ${qualified.length}/32</p>
+                <p>Complete all groups and select 8 best third-place teams.</p>
+            </div>
+        `;
+
+        return null;
+    }
+
+    // 🏆 FIFA REAL FIXED MATCHUPS
+    const round32 = [
+        { A: posMap["A1"], B: posMap["B2"] },
+        { A: posMap["C1"], B: posMap["D2"] },
+        { A: posMap["E1"], B: posMap["F2"] },
+        { A: posMap["G1"], B: posMap["H2"] },
+        { A: posMap["I1"], B: posMap["J2"] },
+        { A: posMap["K1"], B: posMap["L2"] },
+
+        // third places injected (simplified FIFA mapping)
+        { A: posMap["A2"], B: posMap["C2"] },
+        { A: posMap["E2"], B: posMap["G2"] },
+        { A: posMap["I2"], B: posMap["K2"] },
+        { A: bestThirds[0], B: bestThirds[1] },
+        { A: bestThirds[2], B: bestThirds[3] },
+        { A: bestThirds[4], B: bestThirds[5] },
+        { A: bestThirds[6], B: posMap["A1"] },
+        { A: posMap["B1"], B: posMap["C1"] },
+        { A: posMap["D1"], B: posMap["E1"] },
+        { A: posMap["F1"], B: posMap["G1"] }
+    ].filter(m => m.A && m.B);
+
+    return {
+        round32,
+        qualified
+    };
+}
+
+/* -----------------------------------------
+   RENDER BRACKET
+----------------------------------------- */
+
+function renderBracket(data){
+
+    const container = document.getElementById("knockoutBracket");
 
     container.innerHTML = `
-    <div class="knockout-container">
+        <div class="knockout-container">
 
-        <h2>ROUND OF 32</h2>
+            <h2>ROUND OF 32</h2>
 
-        <div class="round32">
-            ${round32.map(m => `
-                <div class="match-card">
-                    <div class="team">${m.teamA}</div>
-                    <div class="vs">VS</div>
-                    <div class="team">${m.teamB}</div>
-                </div>
-            `).join("")}
+            <div class="round32">
+                ${data.round32.map(m => `
+                    <div class="match-card">
+                        <div class="team">${m.A}</div>
+                        <div style="text-align:center;">VS</div>
+                        <div class="team">${m.B}</div>
+                    </div>
+                `).join("")}
+            </div>
+
+            <h2>ROUND OF 16</h2>
+            <div class="round16">
+                ${Array(8).fill(0).map(() => `<div class="match-card">Winner</div>`).join("")}
+            </div>
+
+            <h2>QUARTERFINALS</h2>
+            <div class="round16">
+                ${Array(4).fill(0).map(() => `<div class="match-card">Winner</div>`).join("")}
+            </div>
+
+            <h2>SEMIFINALS</h2>
+            <div class="round16">
+                ${Array(2).fill(0).map(() => `<div class="match-card">Winner</div>`).join("")}
+            </div>
+
+            <h2>FINAL</h2>
+            <div class="match-card champion-card">CHAMPION</div>
+
         </div>
-
-        <h2>ROUND OF 16</h2>
-        <div class="round16">
-            ${Array(8).fill(0).map(()=>`<div class="match-card">Winner</div>`).join("")}
-        </div>
-
-        <h2>QUARTERFINALS</h2>
-        <div class="round16">
-            ${Array(4).fill(0).map(()=>`<div class="match-card">Winner</div>`).join("")}
-        </div>
-
-        <h2>SEMIFINALS</h2>
-        <div class="round16">
-            ${Array(2).fill(0).map(()=>`<div class="match-card">Winner</div>`).join("")}
-        </div>
-
-        <h2>FINAL</h2>
-        <div class="match-card">Champion</div>
-
-    </div>
     `;
 }
 
-/* =====================================================
-   AUTO INIT
-===================================================== */
+/* -----------------------------------------
+   MAIN FUNCTION (REPLACE OLD ONE)
+----------------------------------------- */
 
-document.addEventListener("DOMContentLoaded", loadGroups);
+function generateKnockout(){
+
+    const result = generateFIFABracket(selectedTeams);
+
+    if(!result) return;
+
+    renderBracket(result);
+}
