@@ -344,32 +344,53 @@ function generateKnockout(){
     const knockout =
     document.getElementById("knockoutBracket");
 
-    // 1. OBTENER 1ros y 2dos
+    // 1. OBTENER 1ros, 2dos y 3ros
     const firsts = [];
     const seconds = [];
     const thirds = [];
 
     Object.keys(selectedTeams).forEach(group => {
 
-        firsts.push(selectedTeams[group].first);
-        seconds.push(selectedTeams[group].second);
-        thirds.push(selectedTeams[group].third);
+        const g = selectedTeams[group];
+
+        if(g){
+            if(g.first) firsts.push(g.first);
+            if(g.second) seconds.push(g.second);
+            if(g.third) thirds.push(g.third);
+        }
 
     });
 
-    // 2. OBTENER 8 MEJORES TERCEROS (checkboxes)
+    // 2. OBTENER 8 MEJORES TERCEROS
     const bestThirds = Array.from(
         document.querySelectorAll("#thirdGrid input:checked")
-    ).map(el => el.value);
+    ).map(el => el.value)
+     .filter(Boolean);
 
     // 3. TODOS LOS CLASIFICADOS
     const qualified = [
         ...firsts,
         ...seconds,
         ...bestThirds
-    ];
+    ].filter(Boolean);
 
-    // 4. ORDENAMIENTO SIMPLE (placeholder estilo Mundial)
+    // 4. VALIDACIÓN CRÍTICA
+    if (qualified.length !== 32) {
+
+        console.error("QUALIFIED INVALID:", qualified);
+
+        knockout.innerHTML = `
+            <div class="error">
+                <h3>Error generating Knockout</h3>
+                <p>Teams classified: ${qualified.length}/32</p>
+                <p>Make sure all groups are complete and 8 best third-place teams are selected.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    // 5. ROUND OF 32 (emparejamiento estable)
     const round32 = [];
 
     for(let i = 0; i < 16; i++){
@@ -377,11 +398,12 @@ function generateKnockout(){
         const teamA = qualified[i];
         const teamB = qualified[31 - i];
 
-        round32.push({ teamA, teamB });
+        if(!teamA || !teamB) continue;
 
+        round32.push({ teamA, teamB });
     }
 
-    // 5. RENDER
+    // 6. RENDER
     knockout.innerHTML = `
 
     <div class="knockout-container">
@@ -455,5 +477,4 @@ function generateKnockout(){
     </div>
 
     `;
-
 }
