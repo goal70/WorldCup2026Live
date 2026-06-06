@@ -342,10 +342,46 @@ function updateThirdSelection(){
 function generateKnockout(){
 
     const knockout =
-    document.getElementById(
-        "knockoutBracket"
-    );
+    document.getElementById("knockoutBracket");
 
+    // 1. OBTENER 1ros y 2dos
+    const firsts = [];
+    const seconds = [];
+    const thirds = [];
+
+    Object.keys(selectedTeams).forEach(group => {
+
+        firsts.push(selectedTeams[group].first);
+        seconds.push(selectedTeams[group].second);
+        thirds.push(selectedTeams[group].third);
+
+    });
+
+    // 2. OBTENER 8 MEJORES TERCEROS (checkboxes)
+    const bestThirds = Array.from(
+        document.querySelectorAll("#thirdGrid input:checked")
+    ).map(el => el.value);
+
+    // 3. TODOS LOS CLASIFICADOS
+    const qualified = [
+        ...firsts,
+        ...seconds,
+        ...bestThirds
+    ];
+
+    // 4. ORDENAMIENTO SIMPLE (placeholder estilo Mundial)
+    const round32 = [];
+
+    for(let i = 0; i < 16; i++){
+
+        const teamA = qualified[i];
+        const teamB = qualified[31 - i];
+
+        round32.push({ teamA, teamB });
+
+    }
+
+    // 5. RENDER
     knockout.innerHTML = `
 
     <div class="knockout-container">
@@ -354,17 +390,19 @@ function generateKnockout(){
 
         <div class="round32">
 
-            ${Array(16).fill(0).map(() => `
+            ${round32.map(match => `
 
                 <div class="match-card">
 
-                    <select>
-                        <option>Team 1</option>
-                    </select>
+                    <div class="team">
+                        ${match.teamA}
+                    </div>
 
-                    <select>
-                        <option>Team 2</option>
-                    </select>
+                    <div class="vs">VS</div>
+
+                    <div class="team">
+                        ${match.teamB}
+                    </div>
 
                 </div>
 
@@ -377,11 +415,7 @@ function generateKnockout(){
         <div class="round16">
 
             ${Array(8).fill(0).map(() => `
-
-                <div class="match-card">
-                    Winner
-                </div>
-
+                <div class="match-card">Winner</div>
             `).join("")}
 
         </div>
@@ -391,11 +425,7 @@ function generateKnockout(){
         <div class="round16">
 
             ${Array(4).fill(0).map(() => `
-
-                <div class="match-card">
-                    Winner
-                </div>
-
+                <div class="match-card">Winner</div>
             `).join("")}
 
         </div>
@@ -405,11 +435,7 @@ function generateKnockout(){
         <div class="round16">
 
             ${Array(2).fill(0).map(() => `
-
-                <div class="match-card">
-                    Winner
-                </div>
-
+                <div class="match-card">Winner</div>
             `).join("")}
 
         </div>
@@ -431,5 +457,3 @@ function generateKnockout(){
     `;
 
 }
-
-loadGroups();
