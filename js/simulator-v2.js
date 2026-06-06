@@ -349,23 +349,22 @@ function generateKnockout(){
     const seconds = [];
     const thirds = [];
 
-    Object.keys(selectedTeams).forEach(group => {
+    Object.keys(groupsData).forEach(group => {
 
-        const g = selectedTeams[group];
+        const g = selectedTeams[group] || {};
 
-        if(g){
-            if(g.first) firsts.push(g.first);
-            if(g.second) seconds.push(g.second);
-            if(g.third) thirds.push(g.third);
-        }
+        if (g.first) firsts.push(g.first);
+        if (g.second) seconds.push(g.second);
+        if (g.third) thirds.push(g.third);
 
     });
 
     // 2. OBTENER 8 MEJORES TERCEROS
     const bestThirds = Array.from(
         document.querySelectorAll("#thirdGrid input:checked")
-    ).map(el => el.value)
-     .filter(Boolean);
+    )
+    .map(el => el.value)
+    .filter(Boolean);
 
     // 3. TODOS LOS CLASIFICADOS
     const qualified = [
@@ -374,31 +373,28 @@ function generateKnockout(){
         ...bestThirds
     ].filter(Boolean);
 
-    // 4. VALIDACIÓN CRÍTICA
+    // 4. VALIDACIÓN (CLAVE)
     if (qualified.length !== 32) {
-
-        console.error("QUALIFIED INVALID:", qualified);
 
         knockout.innerHTML = `
             <div class="error">
                 <h3>Error generating Knockout</h3>
                 <p>Teams classified: ${qualified.length}/32</p>
-                <p>Make sure all groups are complete and 8 best third-place teams are selected.</p>
             </div>
         `;
 
         return;
     }
 
-    // 5. ROUND OF 32 (emparejamiento estable)
+    // 5. ROUND OF 32 (seguro)
     const round32 = [];
 
-    for(let i = 0; i < 16; i++){
+    const size = qualified.length;
+
+    for (let i = 0; i < size / 2; i++) {
 
         const teamA = qualified[i];
-        const teamB = qualified[31 - i];
-
-        if(!teamA || !teamB) continue;
+        const teamB = qualified[size - 1 - i];
 
         round32.push({ teamA, teamB });
     }
@@ -416,15 +412,9 @@ function generateKnockout(){
 
                 <div class="match-card">
 
-                    <div class="team">
-                        ${match.teamA}
-                    </div>
-
+                    <div class="team">${match.teamA}</div>
                     <div class="vs">VS</div>
-
-                    <div class="team">
-                        ${match.teamB}
-                    </div>
+                    <div class="team">${match.teamB}</div>
 
                 </div>
 
@@ -433,46 +423,25 @@ function generateKnockout(){
         </div>
 
         <h2>ROUND OF 16</h2>
-
         <div class="round16">
-
-            ${Array(8).fill(0).map(() => `
-                <div class="match-card">Winner</div>
-            `).join("")}
-
+            ${Array(8).fill(0).map(() => `<div class="match-card">Winner</div>`).join("")}
         </div>
 
         <h2>QUARTERFINALS</h2>
-
         <div class="round16">
-
-            ${Array(4).fill(0).map(() => `
-                <div class="match-card">Winner</div>
-            `).join("")}
-
+            ${Array(4).fill(0).map(() => `<div class="match-card">Winner</div>`).join("")}
         </div>
 
         <h2>SEMIFINALS</h2>
-
         <div class="round16">
-
-            ${Array(2).fill(0).map(() => `
-                <div class="match-card">Winner</div>
-            `).join("")}
-
+            ${Array(2).fill(0).map(() => `<div class="match-card">Winner</div>`).join("")}
         </div>
 
         <h2>THIRD PLACE</h2>
-
-        <div class="match-card">
-            Third Place Match
-        </div>
+        <div class="match-card">Third Place Match</div>
 
         <h2>FINAL</h2>
-
-        <div class="match-card">
-            Champion
-        </div>
+        <div class="match-card">Champion</div>
 
     </div>
 
