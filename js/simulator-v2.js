@@ -215,14 +215,11 @@ function checkGroupsComplete(){
     Object.keys(groupsData)
     .forEach(group=>{
 
-        if(
-
-            !selectedTeams[group] ||
-            !selectedTeams[group].first ||
-            !selectedTeams[group].second ||
-            !selectedTeams[group].third
-
-        ){
+        if (
+    !selectedTeams[group]?.first ||
+    !selectedTeams[group]?.second ||
+    !selectedTeams[group]?.third
+){
 
             complete = false;
 
