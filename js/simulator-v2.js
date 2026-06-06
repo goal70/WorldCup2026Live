@@ -204,8 +204,9 @@ function selectTeam(element){
 
     }
 
-    checkGroupsComplete();
+   checkGroupsComplete();
 
+}
 
 function checkGroupsComplete(){
 
