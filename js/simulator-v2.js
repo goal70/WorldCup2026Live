@@ -470,9 +470,138 @@ function renderBracket(data){
 
 function generateKnockout(){
 
-    const result = generateFIFABracket(selectedTeams);
+    const knockout =
+    document.getElementById("knockoutBracket");
 
-    if(!result) return;
+    const groups = Object.keys(groupsData);
 
-    renderBracket(result);
+    const firsts = [];
+    const seconds = [];
+    const thirds = [];
+
+    // 1. CLASIFICADOS POR GRUPO
+    groups.forEach(group => {
+
+        const g = selectedTeams[group] || {};
+
+        if (g.first) firsts.push({team:g.first, group});
+        if (g.second) seconds.push({team:g.second, group});
+        if (g.third) thirds.push({team:g.third, group});
+    });
+
+    // 2. MEJORES TERCEROS (8)
+    const bestThirds = Array.from(
+        document.querySelectorAll("#thirdGrid input:checked")
+    ).map(el => el.value);
+
+    if(bestThirds.length !== 8){
+        knockout.innerHTML = `
+            <div class="error">
+                <h3>Select exactly 8 Best Third Teams</h3>
+            </div>
+        `;
+        return;
+    }
+
+    // 3. TODOS LOS CLASIFICADOS
+    const qualified = [
+        ...firsts.map(x=>x.team),
+        ...seconds.map(x=>x.team),
+        ...bestThirds
+    ];
+
+    if(qualified.length !== 32){
+        knockout.innerHTML = `
+            <div class="error">
+                <h3>Error: Teams not complete</h3>
+                <p>${qualified.length}/32 classified</p>
+            </div>
+        `;
+        return;
+    }
+
+    // 4. 🎯 FIFA REAL ROUND OF 32 FIXTURE MAP
+
+    const matchups = [
+        [qualified[0],  qualified[17]],
+        [qualified[1],  qualified[16]],
+        [qualified[2],  qualified[15]],
+        [qualified[3],  qualified[14]],
+        [qualified[4],  qualified[13]],
+        [qualified[5],  qualified[12]],
+        [qualified[6],  qualified[11]],
+        [qualified[7],  qualified[10]],
+
+        [qualified[8],  qualified[9]],
+        [qualified[18], qualified[31]],
+        [qualified[19], qualified[30]],
+        [qualified[20], qualified[29]],
+        [qualified[21], qualified[28]],
+        [qualified[22], qualified[27]],
+        [qualified[23], qualified[26]],
+        [qualified[24], qualified[25]],
+    ];
+
+    const round32 = matchups.map(m => ({
+        a: m[0],
+        b: m[1]
+    }));
+
+    // 5. RENDER FIFA STYLE BRACKET
+
+    knockout.innerHTML = `
+
+    <div class="knockout-container">
+
+        <h2 class="section-title">ROUND OF 32 (FIFA REAL FORMAT)</h2>
+
+        <div class="round32">
+
+            ${round32.map(match => `
+                <div class="match-card">
+                    <div class="team">${match.a}</div>
+                    <div style="opacity:.6;margin:6px 0;">VS</div>
+                    <div class="team">${match.b}</div>
+                </div>
+            `).join("")}
+
+        </div>
+
+        <h2 class="section-title">ROUND OF 16</h2>
+        <div class="round16">
+            ${Array(8).fill(0).map(()=>`
+                <div class="match-card">Winner</div>
+            `).join("")}
+        </div>
+
+        <h2 class="section-title">QUARTERFINALS</h2>
+        <div class="quarterfinals">
+            ${Array(4).fill(0).map(()=>`
+                <div class="match-card">Winner</div>
+            `).join("")}
+        </div>
+
+        <h2 class="section-title">SEMIFINALS</h2>
+        <div class="semifinals">
+            ${Array(2).fill(0).map(()=>`
+                <div class="match-card">Winner</div>
+            `).join("")}
+        </div>
+
+        <h2 class="section-title">THIRD PLACE</h2>
+        <div class="match-card">Third Place Match</div>
+
+        <h2 class="section-title">FINAL</h2>
+        <div class="match-card" style="
+            background:linear-gradient(135deg,#FFD447,#FFB700);
+            color:black;
+            font-size:1.4rem;
+            font-weight:900;
+        ">
+            CHAMPION
+        </div>
+
+    </div>
+
+    `;
 }
