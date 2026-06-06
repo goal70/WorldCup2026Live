@@ -206,63 +206,6 @@ function selectTeam(element){
 
     checkGroupsComplete();
 
-};
-
-    }
-
-    const data =
-    selectedTeams[group];
-
-    if(
-        data.first===team ||
-        data.second===team ||
-        data.third===team
-    ){
-        return;
-    }
-
-    if(!data.first){
-
-        data.first = team;
-
-        element.classList.add(
-            "first-place"
-        );
-
-        element.innerHTML =
-        "🥇 " + team;
-
-    }
-
-    else if(!data.second){
-
-        data.second = team;
-
-        element.classList.add(
-            "second-place"
-        );
-
-        element.innerHTML =
-        "🥈 " + team;
-
-    }
-
-    else if(!data.third){
-
-        data.third = team;
-
-        element.classList.add(
-            "third-place"
-        );
-
-        element.innerHTML =
-        "🥉 " + team;
-
-        checkGroupsComplete();
-
-    }
-
-}
 
 function checkGroupsComplete(){
 
