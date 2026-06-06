@@ -458,3 +458,40 @@ footer{
 #groupsSimulator .team-option:hover{
     transform:translateY(-2px);
 }
+/* =========================================
+   SIMULATOR ORIGINAL FEEL (RESTORE UX)
+========================================= */
+
+#groupsSimulator .sim-group-card{
+    transition:.25s;
+}
+
+#groupsSimulator .sim-group-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--primary);
+}
+
+/* lista de equipos más “viva” */
+#groupsSimulator .group-teams{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:12px;
+}
+
+/* selección más clara */
+#groupsSimulator .team-option{
+    transition:.2s;
+}
+
+#groupsSimulator .team-option:hover{
+    border-color:#00ff99;
+    transform:translateY(-2px);
+}
+
+/* efecto visual cuando ya está seleccionado */
+#groupsSimulator .first-place,
+#groupsSimulator .second-place,
+#groupsSimulator .third-place{
+    box-shadow:0 0 12px rgba(0,0,0,.25);
+}
