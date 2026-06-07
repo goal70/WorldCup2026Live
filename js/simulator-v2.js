@@ -20,11 +20,11 @@ async function loadGroups(){
     try{
 
         const allGroups = await Promise.all(
-            groupLetters.map(letter =>
-                fetch(`../data/groups/groups-${letter}.json`)
-                .then(r => r.json())
-            )
-        );
+    groupLetters.map(letter =>
+        fetch(`data/groups/groups-${letter}.json`)
+        .then(r => r.json())
+    )
+);
 
         let html = "";
 
