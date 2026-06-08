@@ -8,8 +8,8 @@
     "team1": "Mexico",
     "team2": "South Africa",
 
-    "flag1": "🇲🇽",
-    "flag2": "🇿🇦",
+    "flag1": "mx",
+    "flag2": "za",
 
     "score": "-",
 
@@ -29,8 +29,8 @@
     "team1": "South Korea",
     "team2": "Czech Republic",
 
-    "flag1": "🇰🇷",
-    "flag2": "🇨🇿",
+    "flag1": "kr",
+    "flag2": "cz",
 
     "score": "-",
 
@@ -50,8 +50,8 @@
     "team1": "Czech Republic",
     "team2": "South Africa",
 
-    "flag1": "🇨🇿",
-    "flag2": "🇿🇦",
+    "flag1": "cz",
+    "flag2": "za",
 
     "score": "-",
 
@@ -71,8 +71,8 @@
     "team1": "Mexico",
     "team2": "South Korea",
 
-    "flag1": "🇲🇽",
-    "flag2": "🇰🇷",
+    "flag1": "mx",
+    "flag2": "kr",
 
     "score": "-",
 
@@ -92,8 +92,8 @@
     "team1": "Czech Republic",
     "team2": "Mexico",
 
-    "flag1": "🇨🇿",
-    "flag2": "🇲🇽",
+    "flag1": "cz",
+    "flag2": "mx",
 
     "score": "-",
 
@@ -113,8 +113,8 @@
     "team1": "South Africa",
     "team2": "South Korea",
 
-    "flag1": "🇿🇦",
-    "flag2": "🇰🇷",
+    "flag1": "za",
+    "flag2": "kr",
 
     "score": "-",
 
