@@ -388,23 +388,13 @@ section{
 
 .flag{
 
+    width:48px;
+
+    height:auto;
+
     display:block;
 
-    font-size:3rem;
-
-    line-height:1;
-
-    margin-bottom:6px;
-
-    font-family:
-    "Segoe UI Emoji",
-    "Noto Color Emoji",
-    "Apple Color Emoji",
-    sans-serif;
-
-    font-variant-emoji:emoji;
-
-    text-rendering:auto;
+    margin:0 auto 6px;
 }
 
 .team-name{
