@@ -387,21 +387,11 @@ section{
 }
 
 .flag{
-
+    width:48px;
+    height:36px;
+    object-fit:cover;
     display:block;
-
-    font-size:3rem;
-
-    line-height:1;
-
-    margin-bottom:6px;
-
-    font-family:
-        "Segoe UI Emoji",
-        "Noto Color Emoji",
-        "Apple Color Emoji",
-        "Twemoji Mozilla",
-        sans-serif;
+    margin:0 auto 6px;
 }
 .team-name{
 
@@ -891,17 +881,6 @@ footer{
     .flag{
         width:36px;
         height:27px;
-    }
-
-}
-@supports (font-variation-settings: normal){
-
-    .flag{
-        font-family:
-            "Segoe UI Emoji",
-            "Noto Color Emoji",
-            "Apple Color Emoji",
-            sans-serif;
     }
 
 }
