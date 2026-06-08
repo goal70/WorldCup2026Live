@@ -283,9 +283,11 @@ function renderMatches(matches){
 
                <div class="team">
 
-    <span class="flag">
-    ${match.homeFlag}
-</span>
+    <img
+        class="flag"
+        src="https://flagcdn.com/w80/${match.homeFlag}.png"
+        alt="${match.homeTeam}"
+    >
 
     <div class="team-name">
         ${match.homeTeam}
@@ -309,9 +311,11 @@ function renderMatches(matches){
 
                 <div class="team">
 
-    <span class="flag">
-    ${match.awayFlag}
-</span>
+    <img
+        class="flag"
+        src="https://flagcdn.com/w80/${match.awayFlag}.png"
+        alt="${match.awayTeam}"
+    >
 
     <div class="team-name">
         ${match.awayTeam}
