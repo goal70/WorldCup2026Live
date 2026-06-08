@@ -637,7 +637,7 @@ footer{
 
     .match-center{
 
-        flex-direction:column;
+        flex-direction:row;
 
         gap:15px;
     }
