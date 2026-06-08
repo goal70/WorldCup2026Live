@@ -1,3 +1,4 @@
+console.log("SIMULATOR JS LOADED");
 
 const groupLetters = [
     "a","b","c","d","e","f",
