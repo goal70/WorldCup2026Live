@@ -1,68 +1,73 @@
-async function testLiveMatch() {
+async function updateLiveMatches() {
 
     try {
 
-        const response = await fetch(
+        const res = await fetch(
             "https://footbal-api.otanomix.workers.dev/fixtures?live=all"
         );
 
-        const data = await response.json();
+        const data = await res.json();
 
-        const match = data.response.find(m =>
+        if (!data.response) return;
 
-            m.teams.home.name === "Saudi Arabia" &&
-            m.teams.away.name === "Senegal"
+        data.response.forEach(match => {
 
-        );
+            const home = match.teams.home.name;
+            const away = match.teams.away.name;
 
-        if (!match) {
+            const homeGoals = match.goals.home;
+            const awayGoals = match.goals.away;
 
-            console.log("Match not found");
-            return;
-        }
+            const minute = match.fixture.status.elapsed;
 
-        const minute =
-            match.fixture.status.elapsed;
+            // Buscar TODAS las cards del DOM
+            const cards = document.querySelectorAll(".match-card");
 
-        const homeGoals =
-            match.goals.home;
+            cards.forEach(card => {
 
-        const awayGoals =
-            match.goals.away;
+                const homeName =
+                    card.querySelector(".team-name")?.innerText;
 
-        console.log(
-            "LIVE",
-            minute,
-            homeGoals,
-            awayGoals
-        );
+                const scoreEl =
+                    card.querySelector(".score-number");
 
-        const score =
-            document.querySelector(
-                ".score-number"
-            );
+                const statusEl =
+                    card.querySelector(".match-status");
 
-        if (score) {
+                // Match con la tarjeta del HOME
+                if (
+                    homeName === home ||
+                    homeName === away
+                ) {
 
-            score.innerHTML =
-                `<span style="color:red;">
-                    ${homeGoals} - ${awayGoals}
-                </span>`;
-        }
+                    if (scoreEl) {
 
+                        scoreEl.innerHTML = `
+                            <span style="color:red;font-weight:900;">
+                                ${homeGoals} - ${awayGoals}
+                            </span>
+                        `;
+                    }
+
+                    if (statusEl) {
+
+                        statusEl.innerHTML = `
+                            🔴 LIVE ${minute || ""}
+                        `;
+                        statusEl.classList.add("live");
+                    }
+                }
+            });
+
+        });
+
+    } catch (err) {
+        console.error("LIVE ERROR", err);
     }
-
-    catch(error) {
-
-        console.error(error);
-
-    }
-
 }
 
-testLiveMatch();
+// primera carga
+updateLiveMatches();
 
-setInterval(
-    testLiveMatch,
-    60000
-);
+// update cada 30 segundos
+setInterval(updateLiveMatches, 30000);
