@@ -1,4 +1,4 @@
-async function updateLiveMatches() {
+async function updateLive() {
 
     try {
 
@@ -10,64 +10,63 @@ async function updateLiveMatches() {
 
         if (!data.response) return;
 
-        data.response.forEach(match => {
+        const cards = document.querySelectorAll(".match-card");
 
-            const home = match.teams.home.name;
-            const away = match.teams.away.name;
+        cards.forEach(card => {
+
+            const homeTeam =
+                card.querySelectorAll(".team-name")[0]?.innerText.trim();
+
+            const awayTeam =
+                card.querySelectorAll(".team-name")[1]?.innerText.trim();
+
+            const scoreEl =
+                card.querySelector(".score-number");
+
+            const statusEl =
+                card.querySelector(".match-status");
+
+            const match = data.response.find(m =>
+                m.teams.home.name.trim() === homeTeam &&
+                m.teams.away.name.trim() === awayTeam
+            );
+
+            if (!match) return;
 
             const homeGoals = match.goals.home;
             const awayGoals = match.goals.away;
-
             const minute = match.fixture.status.elapsed;
 
-            // Buscar TODAS las cards del DOM
-            const cards = document.querySelectorAll(".match-card");
+            // SCORE
+            if (scoreEl) {
+                scoreEl.innerHTML = `
+                    <span style="color:#ff2d2d;font-weight:900;">
+                        ${homeGoals} - ${awayGoals}
+                    </span>
+                `;
+            }
 
-            cards.forEach(card => {
+            // STATUS
+            if (statusEl) {
 
-                const homeName =
-                    card.querySelector(".team-name")?.innerText;
+                const isLive =
+                    match.fixture.status.short === "1H" ||
+                    match.fixture.status.short === "2H";
 
-                const scoreEl =
-                    card.querySelector(".score-number");
+                statusEl.innerHTML = isLive
+                    ? `🔴 LIVE ${minute || ""}'`
+                    : match.fixture.status.long;
 
-                const statusEl =
-                    card.querySelector(".match-status");
-
-                // Match con la tarjeta del HOME
-                if (
-                    homeName === home ||
-                    homeName === away
-                ) {
-
-                    if (scoreEl) {
-
-                        scoreEl.innerHTML = `
-                            <span style="color:red;font-weight:900;">
-                                ${homeGoals} - ${awayGoals}
-                            </span>
-                        `;
-                    }
-
-                    if (statusEl) {
-
-                        statusEl.innerHTML = `
-                            🔴 LIVE ${minute || ""}
-                        `;
-                        statusEl.classList.add("live");
-                    }
-                }
-            });
+                statusEl.classList.toggle("live", isLive);
+                statusEl.classList.toggle("upcoming", !isLive);
+            }
 
         });
 
     } catch (err) {
-        console.error("LIVE ERROR", err);
+        console.error("LIVE ERROR:", err);
     }
 }
 
-// primera carga
-updateLiveMatches();
-
-// update cada 30 segundos
-setInterval(updateLiveMatches, 30000);
+updateLive();
+setInterval(updateLive, 30000);
