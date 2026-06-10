@@ -884,3 +884,13 @@ footer{
     }
 
 }
+#google_translate_element{
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:10px;
+
+    background:#10291E;
+}
