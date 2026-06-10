@@ -43,16 +43,39 @@ href="css/styles.css"
 
   <script>
 function googleTranslateElementInit() {
+
     new google.translate.TranslateElement(
         {
-            pageLanguage: 'en'
+            pageLanguage: 'en',
+            autoDisplay: false
         },
         'google_translate_element'
     );
+
+    const lang = navigator.language || navigator.userLanguage;
+    const targetLang = lang.split('-')[0];
+
+    setTimeout(() => {
+
+        const select =
+            document.querySelector('.goog-te-combo');
+
+        if(select){
+
+            select.value = targetLang;
+            select.dispatchEvent(
+                new Event('change')
+            );
+        }
+
+    }, 3000);
+
 }
 </script>
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
 <body>
 
   <div id="google_translate_element"></div>
