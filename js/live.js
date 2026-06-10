@@ -10,97 +10,73 @@ async function updateLive() {
 
         if (!data.response) return;
 
-        const teamMap = {
-            "Islandia": "Iceland",
-            "Argentina": "Argentine",
-            "Corea del Sur": "South Korea",
-            "Estados Unidos": "USA"
-        };
+        // PARTIDO REAL QUE ESTÁ JUGANDO AHORA
+        const match = data.response.find(m =>
 
-        const cards = document.querySelectorAll(".match-card");
+            m.teams.home.name === "Saudi Arabia" &&
+            m.teams.away.name === "Senegal"
 
-        cards.forEach(card => {
+        );
 
-            const teamNames =
-                card.querySelectorAll(".team-name");
+        if (!match) return;
 
-            if (teamNames.length < 2) return;
+        const card =
+            document.querySelector(".match-card");
 
-            const homeTeam =
-                teamNames[0].innerText.trim();
+        if (!card) return;
 
-            const awayTeam =
-                teamNames[1].innerText.trim();
+        const scoreEl =
+            card.querySelector(".score-number");
 
-            const homeApi =
-                teamMap[homeTeam] || homeTeam;
+        const statusEl =
+            card.querySelector(".match-status");
 
-            const awayApi =
-                teamMap[awayTeam] || awayTeam;
+        const homeGoals =
+            match.goals.home ?? 0;
 
-            const scoreEl =
-                card.querySelector(".score-number");
+        const awayGoals =
+            match.goals.away ?? 0;
 
-            const statusEl =
-                card.querySelector(".match-status");
+        const minute =
+            match.fixture.status.elapsed || "";
 
-            const match = data.response.find(m =>
+        const status =
+            match.fixture.status.short;
 
-                m.teams.home.name === homeApi &&
-                m.teams.away.name === awayApi
+        if (scoreEl) {
 
-            );
+            scoreEl.innerHTML = `
+                <span style="
+                    color:#ff2d2d;
+                    font-weight:900;
+                ">
+                    ${homeGoals} - ${awayGoals}
+                </span>
+            `;
+        }
 
-            if (!match) return;
+        if (statusEl) {
 
-            const homeGoals =
-                match.goals.home ?? 0;
+            if (
+                status === "1H" ||
+                status === "2H" ||
+                status === "HT" ||
+                status === "ET"
+            ) {
 
-            const awayGoals =
-                match.goals.away ?? 0;
+                statusEl.innerHTML =
+                    `🔴 LIVE ${minute}'`;
 
-            const minute =
-                match.fixture.status.elapsed || "";
+                statusEl.classList.add(
+                    "live"
+                );
 
-            const status =
-                match.fixture.status.short;
+            } else {
 
-            if (scoreEl) {
-
-                scoreEl.innerHTML = `
-                    <span style="
-                        color:#ff2d2d;
-                        font-weight:900;
-                    ">
-                        ${homeGoals} - ${awayGoals}
-                    </span>
-                `;
+                statusEl.innerHTML =
+                    match.fixture.status.long;
             }
-
-            if (statusEl) {
-
-                if (
-                    status === "1H" ||
-                    status === "2H" ||
-                    status === "HT" ||
-                    status === "ET"
-                ) {
-
-                    statusEl.innerHTML =
-                        `🔴 LIVE ${minute}'`;
-
-                    statusEl.classList.add(
-                        "live"
-                    );
-
-                } else {
-
-                    statusEl.innerHTML =
-                        match.fixture.status.long;
-                }
-            }
-
-        });
+        }
 
     }
 
