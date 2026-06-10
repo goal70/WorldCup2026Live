@@ -41,7 +41,7 @@ href="css/styles.css"
 
 </head>
 
-  <script>
+ <script>
 function googleTranslateElementInit() {
 
     new google.translate.TranslateElement(
@@ -52,23 +52,25 @@ function googleTranslateElementInit() {
         'google_translate_element'
     );
 
-    const lang = navigator.language || navigator.userLanguage;
-    const targetLang = lang.split('-')[0];
+    const lang =
+        navigator.language.split('-')[0];
 
-    setTimeout(() => {
+    const waitForGoogle = setInterval(() => {
 
         const select =
             document.querySelector('.goog-te-combo');
 
         if(select){
 
-            select.value = targetLang;
+            select.value = lang;
             select.dispatchEvent(
                 new Event('change')
             );
+
+            clearInterval(waitForGoogle);
         }
 
-    }, 3000);
+    }, 500);
 
 }
 </script>
