@@ -883,14 +883,18 @@ footer{
         height:27px;
     }
 
+.goog-te-banner-frame.skiptranslate{
+    display:none !important;
 }
+
+body{
+    top:0 !important;
+}
+
+.skiptranslate iframe{
+    display:none !important;
+}
+
 #google_translate_element{
-
-    display:flex;
-
-    justify-content:center;
-
-    padding:10px;
-
-    background:#10291E;
+    display:none;
 }
