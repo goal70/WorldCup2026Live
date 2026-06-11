@@ -10,90 +10,83 @@ async function updateLive() {
 
         if (!data.response) return;
 
-        // PARTIDO REAL QUE ESTÁ JUGANDO AHORA
+        // 🔥 PARTIDO INICIAL: Mexico vs South Africa
         const match = data.response.find(m =>
-
-            m.teams.home.name === "Saudi Arabia" &&
-            m.teams.away.name === "Senegal"
-
+            m.teams.home.name.toLowerCase() === "mexico" &&
+            m.teams.away.name.toLowerCase() === "south africa"
         );
 
         if (!match) return;
 
-        const card =
-            document.querySelector(".match-card");
+        // 🔥 BUSCAR TODAS LAS TARJETAS
+        const cards = document.querySelectorAll(".match-card");
 
-        if (!card) return;
+        cards.forEach(card => {
 
-        const scoreEl =
-            card.querySelector(".score-number");
+            const teams = card.querySelectorAll(".team-name");
 
-        const statusEl =
-            card.querySelector(".match-status");
+            if (!teams || teams.length < 2) return;
 
-        const homeGoals =
-            match.goals.home ?? 0;
+            const home = teams[0].innerText.trim().toLowerCase();
+            const away = teams[1].innerText.trim().toLowerCase();
 
-        const awayGoals =
-            match.goals.away ?? 0;
-
-        const minute =
-            match.fixture.status.elapsed || "";
-
-        const status =
-            match.fixture.status.short;
-
-        if (scoreEl) {
-
-            scoreEl.innerHTML = `
-                <span style="
-                    color:#ff2d2d;
-                    font-weight:900;
-                ">
-                    ${homeGoals} - ${awayGoals}
-                </span>
-            `;
-        }
-
-        if (statusEl) {
-
+            // 🔥 SOLO ACTUALIZA EL PARTIDO CORRECTO
             if (
-                status === "1H" ||
-                status === "2H" ||
-                status === "HT" ||
-                status === "ET"
+                home === "mexico" &&
+                away === "south africa"
             ) {
 
-                statusEl.innerHTML =
-                    `🔴 LIVE ${minute}'`;
+                const scoreEl = card.querySelector(".score-number");
+                const statusEl = card.querySelector(".match-status");
 
-                statusEl.classList.add(
-                    "live"
-                );
+                const homeGoals = match.goals.home ?? 0;
+                const awayGoals = match.goals.away ?? 0;
 
-            } else {
+                const minute = match.fixture.status.elapsed || "";
+                const status = match.fixture.status.short;
 
-                statusEl.innerHTML =
-                    match.fixture.status.long;
+                // 🔥 SCORE LIVE
+                if (scoreEl) {
+                    scoreEl.innerHTML = `
+                        <span style="
+                            color:#ff2d2d;
+                            font-weight:900;
+                        ">
+                            ${homeGoals} - ${awayGoals}
+                        </span>
+                    `;
+                }
+
+                // 🔥 STATUS LIVE
+                if (statusEl) {
+
+                    if (
+                        status === "1H" ||
+                        status === "2H" ||
+                        status === "HT" ||
+                        status === "ET"
+                    ) {
+
+                        statusEl.innerHTML = `🔴 LIVE ${minute}'`;
+                        statusEl.classList.add("live");
+
+                    } else {
+
+                        statusEl.innerHTML = match.fixture.status.long;
+                    }
+                }
             }
-        }
+        });
 
     }
 
     catch(error) {
-
-        console.error(
-            "LIVE ERROR:",
-            error
-        );
-
+        console.error("LIVE ERROR:", error);
     }
 
 }
 
+// 🔥 EJECUCIÓN
 updateLive();
 
-setInterval(
-    updateLive,
-    30000
-);
+setInterval(updateLive, 30000);
