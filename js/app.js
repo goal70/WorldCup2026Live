@@ -354,13 +354,13 @@ function renderMatches(matches){
             <!-- 🔥 BOTONES A LA DERECHA -->
             <div class="match-actions">
 
-                ${match.links?.length ? match.links.map(link => `
-                    <a href="${link.url}" target="_blank">
-                        <img src="https://images.seeklogo.com/logo-png/50/2/telefe-2018-logo-png_seeklogo-503362.png" alt="${link.name}">
-                    </a>
-                `).join('') : ''}
+    ${match.links?.map(link => `
+        <a href="${link.url}" target="_blank">
+            <img src="${link.logo}" alt="${link.name}">
+        </a>
+    `).join('') || ''}
 
-            </div>
+</div>
 
         </article>
 
