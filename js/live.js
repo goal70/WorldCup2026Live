@@ -10,38 +10,30 @@ async function updateLive() {
 
         if (!data.response) return;
 
-        // 🔥 partidos en vivo reales
-        const liveMatches = data.response.filter(m => {
-            const s = m.fixture.status.short;
-            return ["1H", "2H", "HT", "ET"].includes(s);
-        });
+        const liveMatches = data.response.filter(m =>
+            ["1H", "2H", "HT", "ET"].includes(m.fixture.status.short)
+        );
 
         const cards = document.querySelectorAll(".match-card");
 
         cards.forEach(card => {
 
             const teams = card.querySelectorAll(".team-name");
-            if (teams.length < 2) return;
+            if (!teams || teams.length < 2) return;
 
-            const home = teams[0].innerText.trim().toLowerCase();
-            const away = teams[1].innerText.trim().toLowerCase();
+            const home = teams[0].innerText.trim();
+            const away = teams[1].innerText.trim();
 
-            // 🔥 MATCH INTELIGENTE (NO EXACT MATCH)
-            const match = liveMatches.find(m => {
+            // 🔥 BUSCAR MATCH POR NOMBRES UI vs API
+            const match = liveMatches.find(m =>
+                m.teams.home.name.trim().toLowerCase() === home.toLowerCase() &&
+                m.teams.away.name.trim().toLowerCase() === away.toLowerCase()
+            );
 
-                const apiHome = m.teams.home.name.toLowerCase();
-                const apiAway = m.teams.away.name.toLowerCase();
-
-                return (
-                    (apiHome.includes(home) && apiAway.includes(away)) ||
-                    (apiHome.includes(away) && apiAway.includes(home))
-                );
-            });
+            if (!match) return;
 
             const scoreEl = card.querySelector(".score-number");
             const statusEl = card.querySelector(".match-status");
-
-            if (!match) return;
 
             const homeGoals = match.goals.home ?? 0;
             const awayGoals = match.goals.away ?? 0;
@@ -62,12 +54,10 @@ async function updateLive() {
 
         });
 
-    }
-
-    catch (error) {
+    } catch (error) {
         console.error("LIVE ERROR:", error);
     }
 }
 
 updateLive();
-setInterval(updateLive, 15000);
+setInterval(updateLive, 30000);
