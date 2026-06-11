@@ -898,3 +898,20 @@ body{
 #google_translate_element{
     display:none;
 }
+/* ONLY OPENING CEREMONY (HOME) */
+.special-event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.special-event .match-info {
+    text-align: center;
+    flex: 1;
+}
+
+.special-event .match-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
