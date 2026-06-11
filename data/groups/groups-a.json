@@ -17,7 +17,14 @@
     "city": "Mexico City",
 
     "timeET": "15:00",
-    "timeAR": "16:00"
+    "timeAR": "16:00",
+
+    "links": [
+      {
+        "name": "Telefe",
+        "url": "https://TU_LINK_AQUI_1"
+      }
+    ]
   },
 
   {
@@ -38,9 +45,16 @@
     "city": "Guadalajara",
 
     "timeET": "22:00",
-    "timeAR": "23:00"
-  },
+    "timeAR": "23:00",
 
+    "links": [
+      {
+        "name": "Telefe",
+        "url": "https://TU_LINK_AQUI_2"
+         }
+    ]
+  },
+  
   {
     "id": 3,
     "group": "A",
