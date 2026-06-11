@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>World Goal 2026 | FIFA World Cup Live Scores, Fixtures & Standings</title>
@@ -14,7 +13,6 @@
 <meta name="keywords" content="world cup 2026, fifa world cup, live scores, fixtures, standings, football results, simulator">
 
 <meta name="author" content="World Goal 2026">
-
 <meta name="robots" content="index,follow">
 
 <meta property="og:title" content="World Goal 2026">
@@ -25,23 +23,23 @@
 <meta name="theme-color" content="#071A12">
 
 <link rel="canonical" href="/">
-
 <link rel="manifest" href="manifest.json">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link
-rel="stylesheet"
-href="css/styles.css"
-/>
+<link rel="stylesheet" href="css/styles.css">
 
 </head>
 
- <script>
+<body>
+
+<!-- GOOGLE TRANSLATE -->
+<div id="google_translate_element"></div>
+
+<script>
 function googleTranslateElementInit() {
 
     new google.translate.TranslateElement(
@@ -52,20 +50,16 @@ function googleTranslateElementInit() {
         'google_translate_element'
     );
 
-    const lang =
-        navigator.language.split('-')[0];
+    const lang = navigator.language.split('-')[0];
 
     const waitForGoogle = setInterval(() => {
 
-        const select =
-            document.querySelector('.goog-te-combo');
+        const select = document.querySelector('.goog-te-combo');
 
         if(select){
 
             select.value = lang;
-            select.dispatchEvent(
-                new Event('change')
-            );
+            select.dispatchEvent(new Event('change'));
 
             clearInterval(waitForGoogle);
         }
@@ -77,69 +71,41 @@ function googleTranslateElementInit() {
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-</body>
-<body>
-
-  <div id="google_translate_element"></div>
+<!-- HEADER -->
 <header>
 
 <div class="container header-inner">
 
-<div class="logo">
-⚽ <span>WORLD GOAL 2026</span>
-</div>
+    <div class="logo">
+        ⚽ <span>WORLD GOAL 2026</span>
+    </div>
 
-<nav>
-
-<a href="index.html" class="active">
-HOME
-</a>
-
-<a href="pages/fixtures.html">
-FIXTURE
-</a>
-
-</nav>
+    <nav>
+        <a href="index.html" class="active">HOME</a>
+        <a href="pages/fixtures.html">FIXTURE</a>
+    </nav>
 
 </div>
 
 </header>
 
+<!-- MAIN -->
 <main class="container">
 
 <!-- HERO -->
-
 <section class="hero">
-
-<div class="hero-content">
-
-<h1>
-FIFA WORLD CUP 2026
-</h1>
-
-<p>
-Live Scores • Fixtures • Standings • Statistics
-</p>
-
-</div>
-
+    <div class="hero-content">
+        <h1>FIFA WORLD CUP 2026</h1>
+        <p>Live Scores • Fixtures • Standings • Statistics</p>
+    </div>
 </section>
 
 <!-- MATCH NAVIGATION -->
-
 <section class="match-navigation">
 
-<button class="day-btn" id="yesterdayBtn">
-YESTERDAY
-</button>
-
-<button class="day-btn active" id="todayBtn">
-11 June
-</button>
-
-<button class="day-btn" id="tomorrowBtn">
-TOMORROW
-</button>
+    <button class="day-btn" id="yesterdayBtn">YESTERDAY</button>
+    <button class="day-btn active" id="todayBtn">11 June</button>
+    <button class="day-btn" id="tomorrowBtn">TOMORROW</button>
 
 </section>
 
@@ -150,79 +116,65 @@ TOMORROW
 
 <section class="matches-wrapper">
 
-  <!-- OPENING CEREMONY -->
-  <div class="match-card special-event">
+<!-- OPENING CEREMONY -->
+<div class="match-card special-event">
 
     <div class="match-info">
 
-      <h3>OPENING CEREMONY</h3>
+        <h3>OPENING CEREMONY</h3>
 
-      <p>🏟️ Stadium: Estadio Monumental, Buenos Aires</p>
+        <p>🏟️ Stadium: Estadio Monumental, Buenos Aires</p>
 
-      <p>🇦🇷 Argentina Time: 14:30</p>
-      <p>🇺🇸 ET (USA): 13:30</p>
-      <p>🇲🇽 Mexico: 11:30</p>
+        <p>🇦🇷 Argentina Time: 14:30</p>
+        <p>🇺🇸 ET (USA): 13:30</p>
+        <p>🇲🇽 Mexico: 11:30</p>
 
     </div>
 
     <div class="match-actions">
 
-      <a href="https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vdGVsZWZlLnBocA==" target="_blank">
-        <img src="https://images.seeklogo.com/logo-png/50/2/telefe-2018-logo-png_seeklogo-503362.png" style="width:80px;">
-      </a>
+        <a href="https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vdGVsZWZlLnBocA==" target="_blank">
+            <img src="https://images.seeklogo.com/logo-png/50/2/telefe-2018-logo-png_seeklogo-503362.png" alt="Telefe">
+        </a>
 
     </div>
 
-  </div>
+</div>
 
-  <!-- MATCHES -->
-  <div class="matches-grid" id="todayMatches"></div>
+<!-- MATCHES -->
+<div class="matches-grid" id="todayMatches"></div>
 
 </section>
 
 <!-- AD -->
-
 <section class="ad-slot">
-
 ADVERTISEMENT
-
 </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer>
 
 <div class="container footer-inner">
 
-<div class="footer-links">
+    <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
-<a href="privacy.html">
-Privacy Policy
-</a>
-
-<a href="terms.html">
-Terms & Conditions
-</a>
-
-<a href="contact.html">
-Contact
-</a>
-
-</div>
-
-<p class="copyright">
-
-© 2026 World Goal 2026
-
-</p>
+    <p class="copyright">
+        © 2026 World Goal 2026
+    </p>
 
 </div>
 
 </footer>
 
+<!-- SCRIPTS -->
 <script src="js/app.js"></script>
-  <script src="js/live.js"></script>
+<script src="js/live.js"></script>
 
 </body>
-
 </html>
