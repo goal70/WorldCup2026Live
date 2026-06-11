@@ -852,67 +852,51 @@ footer{
 
 @media(max-width:768px){
 
-    .group-title{
-
-        font-size:1.1rem;
-    }
-
-    .group-table{
-
-        font-size:.75rem;
-    }
-
-    .fixture-row{
-
-        grid-template-columns:1fr;
-
-        gap:5px;
-
-        text-align:center;
-    }
-
-    .fixture-match{
-
-        font-size:.95rem;
-    }
-}
-@media(max-width:768px){
-
     .flag{
         width:36px;
         height:27px;
     }
 
-.goog-te-banner-frame.skiptranslate{
-    display:none !important;
+    .goog-te-banner-frame.skiptranslate{
+        display:none !important;
+    }
+
+    body{
+        top:0 !important;
+    }
+
+    .skiptranslate iframe{
+        display:none !important;
+    }
+
+    #google_translate_element{
+        display:none;
+    }
 }
 
-body{
-    top:0 !important;
-}
+/* =========================================
+   OPENING CEREMONY (HOME) - FIXED
+========================================= */
 
-.skiptranslate iframe{
-    display:none !important;
-}
-
-#google_translate_element{
-    display:none;
-}
-/* ONLY OPENING CEREMONY (HOME) */
 .special-event {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 30px; /* espacio real con partidos */
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, #123426, #0E251B);
+    box-shadow: var(--shadow);
 }
 
-/* CENTRADO REAL DEL TEXTO */
+/* INFO CENTRADA PERFECTA */
 .special-event .match-info {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     gap: 6px;
 }
@@ -922,10 +906,18 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 120px;
 }
 
+/* LOGO */
 .special-event .match-actions img {
     width: 90px;
     height: auto;
     display: block;
+    cursor: pointer;
+    transition: transform .2s ease;
+}
+
+.special-event .match-actions img:hover {
+    transform: scale(1.08);
 }
