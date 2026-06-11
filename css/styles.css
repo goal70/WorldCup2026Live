@@ -907,11 +907,17 @@ body{
     margin-bottom: 25px;
 }
 
+/* CENTRADO REAL DEL TEXTO */
 .special-event .match-info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 6px;
 }
 
+/* BOTÓN A LA DERECHA */
 .special-event .match-actions {
     display: flex;
     justify-content: center;
