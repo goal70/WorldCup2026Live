@@ -903,15 +903,23 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
+    margin-bottom: 25px;
 }
 
 .special-event .match-info {
-    text-align: center;
     flex: 1;
+    text-align: center;
 }
 
 .special-event .match-actions {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.special-event .match-actions img {
+    width: 90px;
+    height: auto;
+    display: block;
 }
