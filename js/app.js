@@ -283,17 +283,17 @@ function renderMatches(matches){
 
                <div class="team">
 
-    <img
-        class="flag"
-        src="https://flagcdn.com/w80/${match.homeFlag}.png"
-        alt="${match.homeTeam}"
-    >
+                    <img
+                        class="flag"
+                        src="https://flagcdn.com/w80/${match.homeFlag}.png"
+                        alt="${match.homeTeam}"
+                    >
 
-    <div class="team-name">
-        ${match.homeTeam}
-    </div>
+                    <div class="team-name">
+                        ${match.homeTeam}
+                    </div>
 
-</div>
+                </div>
 
                 <div class="score">
 
@@ -311,17 +311,17 @@ function renderMatches(matches){
 
                 <div class="team">
 
-    <img
-        class="flag"
-        src="https://flagcdn.com/w80/${match.awayFlag}.png"
-        alt="${match.awayTeam}"
-    >
+                    <img
+                        class="flag"
+                        src="https://flagcdn.com/w80/${match.awayFlag}.png"
+                        alt="${match.awayTeam}"
+                    >
 
-    <div class="team-name">
-        ${match.awayTeam}
-    </div>
+                    <div class="team-name">
+                        ${match.awayTeam}
+                    </div>
 
-</div>
+                </div>
 
             </div>
 
@@ -348,6 +348,17 @@ function renderMatches(matches){
                 <div>
                     📍 ${match.city}
                 </div>
+
+            </div>
+
+            <!-- 🔥 BOTONES A LA DERECHA -->
+            <div class="match-actions">
+
+                ${match.links?.length ? match.links.map(link => `
+                    <a href="${link.url}" target="_blank">
+                        <img src="https://images.seeklogo.com/logo-png/50/2/telefe-2018-logo-png_seeklogo-503362.png" alt="${link.name}">
+                    </a>
+                `).join('') : ''}
 
             </div>
 
