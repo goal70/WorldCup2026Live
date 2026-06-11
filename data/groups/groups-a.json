@@ -26,8 +26,8 @@
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vdGVsZWZlLnBocA=="
       }
     ]
-  }
-]
+  },
+
   {
     "id": 2,
     "group": "A",
@@ -52,10 +52,10 @@
       {
         "name": "Telefe",
         "url": "https://TU_LINK_AQUI_2"
-         }
+      }
     ]
   },
-  
+
   {
     "id": 3,
     "group": "A",
