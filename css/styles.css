@@ -943,3 +943,85 @@ footer{
 .match-actions img:hover {
     transform: scale(1.1);
 }
+
+/* TÍTULO DE GRUPO */
+.group-title {
+    margin: 20px 0 10px;
+    font-weight: bold;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* TARJETA DE PARTIDO */
+.match-card {
+    background: #111;
+    color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* CABECERA (EQUIPOS + RESULTADO) */
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* EQUIPOS */
+.team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+/* BANDERAS */
+.flag {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+/* RESULTADO */
+.score {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* EVENTOS (GOLES / ROJAS) */
+.events {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* cada evento */
+.event div {
+    margin: 3px 0;
+}
+
+/* minuto */
+.event span {
+    opacity: 0.6;
+    margin-left: 6px;
+}
+
+/* GOLES */
+.goals div {
+    color: #4ade80;
+}
+
+/* TARJETAS ROJAS */
+.reds div {
+    color: #f87171;
+}
+
+/* FOOTER DEL PARTIDO */
+.match-footer {
+    margin-top: 10px;
+    font-size: 12px;
+    opacity: 0.6;
+}
