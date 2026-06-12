@@ -1,1 +1,31 @@
-[]
+[
+  {
+    "id": 1,
+    "group": "A",
+    "homeTeam": "Mexico",
+    "awayTeam": "South Africa",
+    "homeScore": 2,
+    "awayScore": 0,
+    "played": true,
+    "goals": [
+      { "team": "Mexico", "player": "Jimenez", "minute": 34 },
+      { "team": "Mexico", "player": "Lozano", "minute": 78 }
+    ],
+    "redCards": []
+  },
+  {
+    "id": 2,
+    "group": "A",
+    "homeTeam": "South Korea",
+    "awayTeam": "Czech Republic",
+    "homeScore": 2,
+    "awayScore": 1,
+    "played": true,
+    "goals": [
+      { "team": "South Korea", "player": "Son Heung-min", "minute": 12 },
+      { "team": "Czech Republic", "player": "Schick", "minute": 44 },
+      { "team": "South Korea", "player": "Hwang", "minute": 81 }
+    ],
+    "redCards": []
+  }
+]
