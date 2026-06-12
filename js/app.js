@@ -8,11 +8,8 @@ APP
 let allMatches = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
-
     await loadMatches();
-
     setupNavigation();
-
 });
 
 /*
@@ -21,7 +18,7 @@ LOAD MATCHES
 =================================
 */
 
-async function loadMatches(){
+async function loadMatches() {
 
     try {
 
@@ -32,15 +29,10 @@ async function loadMatches(){
 
         allMatches = [];
 
-        for(const group of groups){
+        for (const group of groups) {
 
-            const res =
-            await fetch(
-                `data/groups/groups-${group}.json`
-            );
-
-            const matches =
-            await res.json();
+            const res = await fetch(`data/groups/groups-${group}.json`);
+            const matches = await res.json();
 
             matches.forEach(match => {
 
@@ -58,7 +50,13 @@ async function loadMatches(){
                     homeFlag: match.flag1,
                     awayFlag: match.flag2,
 
-                    score: match.score || "-",
+                    homeScore: match.homeScore ?? null,
+                    awayScore: match.awayScore ?? null,
+
+                    played: match.played ?? false,
+
+                    goals: match.goals ?? [],
+                    redCards: match.redCards ?? [],
 
                     localTime: match.timeET,
                     argentinaTime: match.timeAR,
@@ -76,17 +74,9 @@ async function loadMatches(){
 
         showToday();
 
+    } catch (err) {
+        console.error("LOAD MATCHES ERROR", err);
     }
-
-    catch(err){
-
-        console.error(
-            "LOAD MATCHES ERROR",
-            err
-        );
-
-    }
-
 }
 
 /*
@@ -95,62 +85,37 @@ DATE FILTERS
 =================================
 */
 
-function showToday(){
+function showToday() {
 
-    const today =
-    new Date()
-    .toISOString()
-    .split("T")[0];
+    const today = new Date().toISOString().split("T")[0];
 
-    const matches =
-    allMatches.filter(
-        m => m.date === today
-    );
+    const matches = allMatches.filter(m => m.date === today);
 
     renderMatches(matches);
-
 }
 
-function showYesterday(){
+function showYesterday() {
 
     const d = new Date();
+    d.setDate(d.getDate() - 1);
 
-    d.setDate(
-        d.getDate() - 1
-    );
+    const target = d.toISOString().split("T")[0];
 
-    const target =
-    d.toISOString()
-    .split("T")[0];
-
-    const matches =
-    allMatches.filter(
-        m => m.date === target
-    );
+    const matches = allMatches.filter(m => m.date === target);
 
     renderMatches(matches);
-
 }
 
-function showTomorrow(){
+function showTomorrow() {
 
     const d = new Date();
+    d.setDate(d.getDate() + 1);
 
-    d.setDate(
-        d.getDate() + 1
-    );
+    const target = d.toISOString().split("T")[0];
 
-    const target =
-    d.toISOString()
-    .split("T")[0];
-
-    const matches =
-    allMatches.filter(
-        m => m.date === target
-    );
+    const matches = allMatches.filter(m => m.date === target);
 
     renderMatches(matches);
-
 }
 
 /*
@@ -159,71 +124,33 @@ NAVIGATION
 =================================
 */
 
-function setupNavigation(){
+function setupNavigation() {
 
-    document
-    .getElementById("yesterdayBtn")
-    ?.addEventListener(
-        "click",
-        () => {
+    document.getElementById("yesterdayBtn")
+    ?.addEventListener("click", () => {
+        setActiveButton(document.getElementById("yesterdayBtn"));
+        showYesterday();
+    });
 
-            setActiveButton(
-                document.getElementById(
-                    "yesterdayBtn"
-                )
-            );
+    document.getElementById("todayBtn")
+    ?.addEventListener("click", () => {
+        setActiveButton(document.getElementById("todayBtn"));
+        showToday();
+    });
 
-            showYesterday();
-
-        }
-    );
-
-    document
-    .getElementById("todayBtn")
-    ?.addEventListener(
-        "click",
-        () => {
-
-            setActiveButton(
-                document.getElementById(
-                    "todayBtn"
-                )
-            );
-
-            showToday();
-
-        }
-    );
-
-    document
-    .getElementById("tomorrowBtn")
-    ?.addEventListener(
-        "click",
-        () => {
-
-            setActiveButton(
-                document.getElementById(
-                    "tomorrowBtn"
-                )
-            );
-
-            showTomorrow();
-
-        }
-    );
-
+    document.getElementById("tomorrowBtn")
+    ?.addEventListener("click", () => {
+        setActiveButton(document.getElementById("tomorrowBtn"));
+        showTomorrow();
+    });
 }
 
-function setActiveButton(button){
+function setActiveButton(button) {
 
-    document
-    .querySelectorAll(".day-btn")
-    .forEach(btn =>
-        btn.classList.remove("active")
-    );
+    document.querySelectorAll(".day-btn")
+    .forEach(btn => btn.classList.remove("active"));
 
     button.classList.add("active");
-
 }
 
 /*
@@ -232,164 +159,44 @@ RENDER MATCHES
 =================================
 */
 
-function renderMatches(matches){
+function renderMatches(matches) {
 
-    const container =
-    document.getElementById(
-        "todayMatches"
-    );
+    const container = document.getElementById("fixture");
 
-    container.innerHTML = "";
+    const groups = {};
 
-    if(!matches.length){
-
-        container.innerHTML = `
-
-        <article class="match-card">
-
-            <div class="match-status">
-                NO MATCHES FOUND
-            </div>
-
-        </article>
-
-        `;
-
-        return;
-
-    }
-
-    matches.forEach(match => {
-
-        let statusClass = "";
-
-        if(match.status === "LIVE")
-            statusClass = "live";
-
-        if(match.status === "FINISHED")
-            statusClass = "final";
-
-        if(match.status === "UPCOMING")
-            statusClass = "upcoming";
-
-        container.innerHTML += `
-
-        <article
-            class="match-card"
-            data-id="${match.id}"
-        >
-
-            <div class="match-top">
-
-                <div
-                    class="match-status ${statusClass}"
-                >
-                    ${match.status}
-                </div>
-
-            </div>
-
-            <div class="match-center">
-
-                <div class="team">
-
-                    <img
-                        class="flag"
-                        src="https://flagcdn.com/w80/${match.homeFlag}.png"
-                    >
-
-                    <div class="team-name">
-                        ${match.homeTeam}
-                    </div>
-
-                </div>
-
-                <div class="score">
-
-                    <div class="score-number">
-
-                        ${
-                            match.score &&
-                            match.score !== "-"
-                            ? match.score
-                            : "VS"
-                        }
-
-                    </div>
-
-                </div>
-
-                <div class="team">
-
-                    <img
-                        class="flag"
-                        src="https://flagcdn.com/w80/${match.awayFlag}.png"
-                    >
-
-                    <div class="team-name">
-                        ${match.awayTeam}
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="match-details">
-
-                <div>
-                    Group ${match.group}
-                </div>
-
-                <div>
-                    🕒 ET ${match.localTime}
-                </div>
-
-                <div>
-                    🇦🇷 AR ${match.argentinaTime}
-                </div>
-
-                <div>
-                    🏟 ${match.stadium}
-                </div>
-
-                <div>
-                    📍 ${match.city}
-                </div>
-
-            </div>
-
-            ${
-                match.links.length
-                ?
-                `
-                <div class="match-actions">
-
-                    ${match.links.map(link => `
-
-                        <a
-                            href="${link.url}"
-                            target="_blank"
-                        >
-
-                            <img
-                                src="${link.logo}"
-                                alt="${link.name}"
-                            >
-
-                        </a>
-
-                    `).join("")}
-
-                </div>
-                `
-                :
-                ""
-            }
-
-        </article>
-
-        `;
-
+    matches.forEach(m => {
+        if (!groups[m.group]) groups[m.group] = [];
+        groups[m.group].push(m);
     });
 
+    container.innerHTML = Object.keys(groups).map(group => `
+
+        <h2>Group ${group}</h2>
+
+        ${groups[group].map(m => `
+
+            <div class="match">
+
+                <b>${m.homeTeam}</b>
+                ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
+                <b>${m.awayTeam}</b>
+
+                <div class="goals">
+                    ${m.goals?.map(g =>
+                        `⚽ ${g.player} (${g.minute}')`
+                    ).join("<br>") || ""}
+                </div>
+
+                <div class="cards">
+                    ${m.redCards?.map(r =>
+                        `🟥 ${r.player} (${r.minute}')`
+                    ).join("<br>") || ""}
+                </div>
+
+            </div>
+
+        `).join("")}
+
+    `).join("");
 }
