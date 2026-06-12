@@ -216,3 +216,70 @@ footer{
     border-top:1px solid var(--border);
     text-align:center;
 }
+/* =========================================
+   FIXTURE RESTORE (FIFA STYLE GRID)
+========================================= */
+
+#fixtures{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    margin-top:20px;
+}
+
+/* grupo */
+.group-section{
+    background:linear-gradient(180deg,#0f2a1d,#0b1d14);
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
+}
+
+/* título grupo */
+.group-title{
+    background:linear-gradient(90deg,var(--primary),#2ef59a);
+    color:black;
+    font-weight:900;
+    padding:12px;
+    text-align:center;
+}
+
+/* fila fixture */
+.fixture-row{
+    display:grid;
+    grid-template-columns:70px 1fr 80px 140px;
+    align-items:center;
+    padding:10px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* match texto */
+.fixture-match{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-weight:700;
+}
+
+/* tiempo */
+.fixture-time{
+    color:var(--primary);
+    font-weight:800;
+    text-align:center;
+}
+
+/* estadio */
+.fixture-stadium{
+    font-size:12px;
+    opacity:.7;
+    text-align:right;
+}
+
+/* responsive */
+@media(max-width:900px){
+    #fixtures{
+        grid-template-columns:1fr;
+    }
+}
