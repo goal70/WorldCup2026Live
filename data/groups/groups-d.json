@@ -18,6 +18,12 @@
 
     "timeET": "21:00",
     "timeAR": "22:00"
+
+    "links": [
+      {
+        "name": "DirecTV Sports",
+        "logo": "https://static.wikia.nocookie.net/logopedia/images/9/91/DirecTV_Sports_2013.png/revision/latest?cb=20200706222755&path-prefix=es",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRzcG9ydHM="
   },
   {
     "id": 2,
