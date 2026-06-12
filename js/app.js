@@ -5,20 +5,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     setupNavigation();
 });
 
-/*
-=================================
-LOAD MATCHES
-=================================
-*/
+/* =========================
+   LOAD MATCHES
+========================= */
 
 async function loadMatches() {
 
     try {
 
-        const groups = [
-            "a","b","c","d","e","f",
-            "g","h","i","j","k","l"
-        ];
+        const groups = ["a","b","c","d","e","f","g","h","i","j","k","l"];
 
         allMatches = [];
 
@@ -27,27 +22,27 @@ async function loadMatches() {
             const res = await fetch(`data/groups/groups-${group}.json`);
             const matches = await res.json();
 
-            matches.forEach(match => {
+            matches.forEach(m => {
 
                 allMatches.push({
-                    id: match.id,
-                    group: match.group,
-                    date: match.date,
-                    status: match.status,
-                    homeTeam: match.team1,
-                    awayTeam: match.team2,
-                    homeFlag: match.flag1,
-                    awayFlag: match.flag2,
-                    homeScore: match.homeScore ?? null,
-                    awayScore: match.awayScore ?? null,
-                    played: match.played ?? false,
-                    goals: match.goals ?? [],
-                    redCards: match.redCards ?? [],
-                    localTime: match.timeET,
-                    argentinaTime: match.timeAR,
-                    stadium: match.stadium,
-                    city: match.city,
-                    links: match.links || []
+                    id: m.id,
+                    group: m.group,
+                    date: m.date,
+
+                    homeTeam: m.team1,
+                    awayTeam: m.team2,
+
+                    homeFlag: m.flag1,
+                    awayFlag: m.flag2,
+
+                    homeScore: m.homeScore,
+                    awayScore: m.awayScore,
+
+                    goals: m.goals || [],
+                    redCards: m.redCards || [],
+
+                    stadium: m.stadium,
+                    city: m.city
                 });
 
             });
@@ -57,154 +52,135 @@ async function loadMatches() {
         showToday();
 
     } catch (err) {
-        console.error("LOAD MATCHES ERROR", err);
+        console.error("LOAD ERROR", err);
     }
 }
 
-/*
-=================================
-DATE HELPERS (LOCAL SAFE)
-=================================
-*/
+/* =========================
+   DATE FIX (IMPORTANT)
+========================= */
 
 function getLocalDate(offset = 0) {
     const d = new Date();
+    d.setHours(0,0,0,0);
     d.setDate(d.getDate() + offset);
-    return d.toLocaleDateString("en-CA"); // YYYY-MM-DD local safe
+
+    const y = d.getFullYear();
+    const m = String(d.getMonth()+1).padStart(2,"0");
+    const day = String(d.getDate()).padStart(2,"0");
+
+    return `${y}-${m}-${day}`;
 }
 
-/*
-=================================
-FILTERS
-=================================
-*/
+/* =========================
+   FILTERS
+========================= */
 
 function showToday() {
-    const target = getLocalDate(0);
-    const matches = allMatches.filter(m => m.date === target);
-    renderMatches(matches, "todayMatches");
+    render("todayMatches", getLocalDate(0));
 }
 
 function showYesterday() {
-    const target = getLocalDate(-1);
-    const matches = allMatches.filter(m => m.date === target);
-    renderMatches(matches, "yesterdayMatches");
+    render("yesterdayMatches", getLocalDate(-1));
 }
 
 function showTomorrow() {
-    const target = getLocalDate(1);
-    const matches = allMatches.filter(m => m.date === target);
-    renderMatches(matches, "tomorrowMatches");
+    render("tomorrowMatches", getLocalDate(1));
 }
 
-/*
-=================================
-NAVIGATION
-=================================
-*/
+/* =========================
+   NAV
+========================= */
 
 function setupNavigation() {
 
-    document.getElementById("yesterdayBtn")
-    ?.addEventListener("click", () => {
-        setActiveButton("yesterdayBtn");
+    document.getElementById("yesterdayBtn").onclick = () => {
+        setActive("yesterdayBtn");
         showYesterday();
-    });
+    };
 
-    document.getElementById("todayBtn")
-    ?.addEventListener("click", () => {
-        setActiveButton("todayBtn");
+    document.getElementById("todayBtn").onclick = () => {
+        setActive("todayBtn");
         showToday();
-    });
+    };
 
-    document.getElementById("tomorrowBtn")
-    ?.addEventListener("click", () => {
-        setActiveButton("tomorrowBtn");
+    document.getElementById("tomorrowBtn").onclick = () => {
+        setActive("tomorrowBtn");
         showTomorrow();
-    });
+    };
 }
 
-function setActiveButton(activeId) {
-
-    document.querySelectorAll(".day-btn")
-    .forEach(btn => btn.classList.remove("active"));
-
-    document.getElementById(activeId)?.classList.add("active");
+function setActive(id) {
+    document.querySelectorAll(".day-btn").forEach(b => b.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
 }
 
-/*
-=================================
-RENDER
-=================================
-*/
+/* =========================
+   RENDER
+========================= */
 
-function renderMatches(matches, containerId) {
+function render(containerId, date) {
 
-    // 🔥 OCULTAR TODOS LOS CONTENEDORES PRIMERO
     document.getElementById("yesterdayMatches").style.display = "none";
     document.getElementById("todayMatches").style.display = "none";
     document.getElementById("tomorrowMatches").style.display = "none";
 
-    // 🔥 MOSTRAR SOLO EL ACTIVO
     const container = document.getElementById(containerId);
-    container.style.display = "block";
+    container.style.display = "grid";
+
+    const matches = allMatches.filter(m => m.date === date);
 
     const groups = {};
-
     matches.forEach(m => {
         if (!groups[m.group]) groups[m.group] = [];
         groups[m.group].push(m);
     });
 
-    container.innerHTML = Object.keys(groups).map(group => `
+    container.innerHTML = Object.keys(groups).map(g => `
 
-        <div class="group-title">Group ${group}</div>
+        <div class="group-title">Group ${g}</div>
 
-        <div class="group-block">
+        ${groups[g].map(m => `
 
-            ${groups[group].map(m => `
+            <div class="match-card">
 
-                <div class="match-card">
+                <div class="match-header">
 
-                    <div class="match-header">
-
-                        <div class="team">
-                            <img src="${m.homeFlag}" class="flag" />
-                            <span>${m.homeTeam}</span>
-                        </div>
-
-                        <div class="score">
-                            ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
-                        </div>
-
-                        <div class="team">
-                            <span>${m.awayTeam}</span>
-                            <img src="${m.awayFlag}" class="flag" />
-                        </div>
-
+                    <div class="team">
+                        ${m.homeFlag ? `<img src="${m.homeFlag}" class="flag">` : ""}
+                        <span>${m.homeTeam}</span>
                     </div>
 
-                    <div class="events">
-
-                        ${m.goals?.length ? m.goals.map(g =>
-                            `<div class="goal">⚽ ${g.player} <span>${g.minute}'</span></div>`
-                        ).join("") : ""}
-
-                        ${m.redCards?.length ? m.redCards.map(r =>
-                            `<div class="red">🟥 ${r.player} <span>${r.minute}'</span></div>`
-                        ).join("") : ""}
-
+                    <div class="score">
+                        ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
                     </div>
 
-                    <div class="match-footer">
-                        🏟 ${m.stadium} • ${m.city}
+                    <div class="team">
+                        <span>${m.awayTeam}</span>
+                        ${m.awayFlag ? `<img src="${m.awayFlag}" class="flag">` : ""}
                     </div>
 
                 </div>
 
-            `).join("")}
+                <div class="events">
 
-        </div>
+                    ${m.goals.map(g =>
+                        `<div class="goal">⚽ ${g.player} ${g.minute}'</div>`
+                    ).join("")}
+
+                    ${m.redCards.map(r =>
+                        `<div class="red">🟥 ${r.player} ${r.minute}'</div>`
+                    ).join("")}
+
+                </div>
+
+                <div class="match-footer">
+                    🏟 ${m.stadium} • ${m.city}
+                </div>
+
+            </div>
+
+        `).join("")}
 
     `).join("");
 }
