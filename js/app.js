@@ -65,10 +65,17 @@ async function loadMatches(){
 
 function showToday(){
 
-    const firstDate =
-        [...allMatches].sort((a,b)=> new Date(a.date)-new Date(b.date))[0].date;
+    const today =
+    new Date()
+    .toISOString()
+    .split("T")[0];
 
-    renderMatches(allMatches.filter(m => m.date === firstDate));
+    renderMatches(
+        allMatches.filter(
+            m => m.date === today
+        )
+    );
+
 }
 
 function renderMatches(matches){
