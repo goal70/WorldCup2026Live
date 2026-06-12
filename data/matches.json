@@ -27,5 +27,30 @@
       { "team": "South Korea", "player": "Hwang", "minute": 81 }
     ],
     "redCards": []
+  },
+  {
+    "id": 7,
+    "group": "B",
+    "homeTeam": "Canada",
+    "awayTeam": "Bosnia",
+    "homeScore": 0,
+    "awayScore": 2,
+    "played": true,
+    "goals": [
+      { "team": "Bosnia", "player": "Dzeko", "minute": 30 },
+      { "team": "Bosnia", "player": "Hadziahmetovic", "minute": 66 }
+    ],
+    "redCards": []
+  },
+  {
+    "id": 8,
+    "group": "B",
+    "homeTeam": "Switzerland",
+    "awayTeam": "Qatar",
+    "homeScore": null,
+    "awayScore": null,
+    "played": false,
+    "goals": [],
+    "redCards": []
   }
 ]
