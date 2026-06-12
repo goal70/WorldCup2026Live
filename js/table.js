@@ -1,31 +1,35 @@
 function calculateStandings(matches) {
   const table = {};
 
-  matches.forEach(match => {
-    const { teamA, teamB, scoreA, scoreB, played } = match;
-
-    if (!table[teamA]) {
-      table[teamA] = { points: 0, gf: 0, ga: 0 };
+  matches.forEach(m => {
+    if (!table[m.teamA]) {
+      table[m.teamA] = { pj: 0, g: 0, e: 0, p: 0, gf: 0, ga: 0, pts: 0 };
     }
-    if (!table[teamB]) {
-      table[teamB] = { points: 0, gf: 0, ga: 0 };
+    if (!table[m.teamB]) {
+      table[m.teamB] = { pj: 0, g: 0, e: 0, p: 0, gf: 0, ga: 0, pts: 0 };
     }
 
-    if (!played) return;
+    if (!m.played) return;
 
-    table[teamA].gf += scoreA;
-    table[teamA].ga += scoreB;
+    const A = table[m.teamA];
+    const B = table[m.teamB];
 
-    table[teamB].gf += scoreB;
-    table[teamB].ga += scoreA;
+    A.pj++; B.pj++;
+    A.gf += m.scoreA;
+    A.ga += m.scoreB;
+    B.gf += m.scoreB;
+    B.ga += m.scoreA;
 
-    if (scoreA > scoreB) {
-      table[teamA].points += 3;
-    } else if (scoreB > scoreA) {
-      table[teamB].points += 3;
+    if (m.scoreA > m.scoreB) {
+      A.g++; B.p++;
+      A.pts += 3;
+    } else if (m.scoreB > m.scoreA) {
+      B.g++; A.p++;
+      B.pts += 3;
     } else {
-      table[teamA].points += 1;
-      table[teamB].points += 1;
+      A.e++; B.e++;
+      A.pts += 1;
+      B.pts += 1;
     }
   });
 
