@@ -14,45 +14,41 @@ async function updateLive() {
             ["1H","2H","HT","ET"].includes(m.fixture.status.short)
         );
 
-        document.querySelectorAll(".match-card").forEach(card => {
+        const cards = document.querySelectorAll(".match-card");
 
-            if (card.classList.contains("special-event")) return;
+        cards.forEach(card => {
 
-            const id = card.getAttribute("data-id");
-            if (!id) return;
+            const home = card.querySelectorAll(".team-name")[0]?.innerText.trim();
+            const away = card.querySelectorAll(".team-name")[1]?.innerText.trim();
 
-            const localMatch = allMatches.find(m => m.id == id);
-            if (!localMatch) return;
+            if (!home || !away) return;
 
-            const apiMatch = liveMatches.find(m =>
-                m.teams.home.name.toLowerCase() === localMatch.homeTeam.toLowerCase() &&
-                m.teams.away.name.toLowerCase() === localMatch.awayTeam.toLowerCase()
+            const match = liveMatches.find(m =>
+                m.teams.home.name.trim().toLowerCase() === home.toLowerCase() &&
+                m.teams.away.name.trim().toLowerCase() === away.toLowerCase()
             );
 
-            if (!apiMatch) return;
+            if (!match) return;
 
             const scoreEl = card.querySelector(".score-number");
             const statusEl = card.querySelector(".match-status");
 
-            const home = apiMatch.goals.home ?? 0;
-            const away = apiMatch.goals.away ?? 0;
-            const minute = apiMatch.fixture.status.elapsed || "";
+            const homeGoals = match.goals.home ?? 0;
+            const awayGoals = match.goals.away ?? 0;
+            const minute = match.fixture.status.elapsed || "";
 
             if (scoreEl) {
-                scoreEl.innerHTML = `<span style="color:#ff2d2d;font-weight:900;">
-                    ${home} - ${away}
-                </span>`;
+                scoreEl.innerHTML = `${homeGoals} - ${awayGoals}`;
             }
 
             if (statusEl) {
                 statusEl.innerHTML = `🔴 LIVE ${minute}'`;
                 statusEl.classList.add("live");
             }
-
         });
 
-    } catch (err) {
-        console.error("LIVE ERROR:", err);
+    } catch (e) {
+        console.error("LIVE ERROR", e);
     }
 }
 
