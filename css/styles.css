@@ -283,3 +283,38 @@ footer{
         grid-template-columns:1fr;
     }
 }
+/* =========================================
+   FUTURISTIC GLOW EFFECT
+========================================= */
+
+.match-card{
+    position:relative;
+    overflow:hidden;
+}
+
+/* glow animado */
+.match-card::before{
+    content:"";
+    position:absolute;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle,rgba(0,210,106,.15),transparent 60%);
+    animation:glowMove 6s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes glowMove{
+    0%{transform:translate(0,0);}
+    50%{transform:translate(10px,10px);}
+    100%{transform:translate(0,0);}
+}
+
+/* borde brillante */
+.match-card{
+    border:1px solid rgba(0,210,106,.25);
+    box-shadow:
+        0 0 20px rgba(0,210,106,.08),
+        0 15px 35px rgba(0,0,0,.4);
+}
