@@ -2,20 +2,17 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>World Goal 2026 | Live Scores</title>
 
 <link rel="stylesheet" href="css/styles.css">
-
 </head>
 
 <body>
 
 <header>
-
     <div class="container header-inner">
 
         <div class="logo">
@@ -23,90 +20,60 @@
         </div>
 
         <nav>
-            <a href="index.html" class="active">
-                HOME
-            </a>
-
-            <a href="pages/fixtures.html">
-                FIXTURE
-            </a>
+            <a href="index.html" class="active">HOME</a>
+            <a href="pages/fixtures.html">FIXTURE</a>
         </nav>
 
     </div>
-
 </header>
 
 <main class="container">
 
     <!-- HERO -->
-
     <section class="hero">
-
-        <h1>
-            FIFA WORLD CUP 2026
-        </h1>
-
-        <p>
-            Live Scores • Fixtures • Standings
-        </p>
-
+        <h1>FIFA WORLD CUP 2026</h1>
+        <p>Live Scores • Fixtures • Standings</p>
     </section>
 
     <!-- NAVIGATION -->
-
     <section class="match-navigation">
 
-        <button class="day-btn" id="yesterdayBtn">
-            YESTERDAY
-        </button>
-
-        <button class="day-btn active" id="todayBtn">
-            TODAY
-        </button>
-
-        <button class="day-btn" id="tomorrowBtn">
-            TOMORROW
-        </button>
+        <button class="day-btn" id="yesterdayBtn">YESTERDAY</button>
+        <button class="day-btn active" id="todayBtn">TODAY</button>
+        <button class="day-btn" id="tomorrowBtn">TOMORROW</button>
 
     </section>
 
     <!-- BANNER -->
-
     <section class="today-banner">
-        ⚽ TODAY'S WORLD CUP MATCHES
+        ⚽ WORLD CUP MATCHES
     </section>
 
-    <!-- MATCHES -->
+    <!-- MATCHES WRAPPER -->
 
     <section class="matches-wrapper">
 
-        <!-- CORRECCIÓN IMPORTANTE -->
+        <!-- YESTERDAY -->
+        <div class="matches-grid" id="yesterdayMatches" style="display:none;"></div>
+
+        <!-- TODAY -->
         <div class="matches-grid" id="todayMatches"></div>
+
+        <!-- TOMORROW -->
+        <div class="matches-grid" id="tomorrowMatches" style="display:none;"></div>
 
     </section>
 
 </main>
-
-<!-- FOOTER -->
 
 <footer>
 
     <div class="container footer-inner">
 
         <div class="footer-links">
-
-            <a href="privacy.html">
-                Privacy Policy
-            </a>
-
-            <a href="terms.html">
-                Terms & Conditions
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="contact.html">Contact</a>
         </div>
 
         <p class="copyright">
@@ -118,7 +85,6 @@
 </footer>
 
 <!-- SCRIPTS -->
-
 <script src="js/app.js"></script>
 <script src="js/live.js"></script>
 
