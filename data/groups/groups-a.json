@@ -24,7 +24,7 @@
     "id": 2,
     "group": "A",
     "date": "2026-06-11",
-    "status": "UPCOMING",
+    "status": "FINISHED",
 
     "team1": "South Korea",
     "team2": "Czech Republic",
@@ -32,7 +32,7 @@
     "flag1": "kr",
     "flag2": "cz",
 
-    "score": "-",
+    "score": "2-1",
 
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara",
