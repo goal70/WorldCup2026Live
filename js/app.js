@@ -161,7 +161,7 @@ RENDER MATCHES
 
 function renderMatches(matches) {
 
-    const container = document.getElementById("fixture");
+    const container = document.getElementById("todayMatches");
 
     const groups = {};
 
@@ -176,19 +176,19 @@ function renderMatches(matches) {
 
         ${groups[group].map(m => `
 
-            <div class="match">
+            <div>
 
                 <b>${m.homeTeam}</b>
                 ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
                 <b>${m.awayTeam}</b>
 
-                <div class="goals">
+                <div>
                     ${m.goals?.map(g =>
                         `⚽ ${g.player} (${g.minute}')`
                     ).join("<br>") || ""}
                 </div>
 
-                <div class="cards">
+                <div>
                     ${m.redCards?.map(r =>
                         `🟥 ${r.player} (${r.minute}')`
                     ).join("<br>") || ""}
