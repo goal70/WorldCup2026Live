@@ -130,6 +130,13 @@ function render(containerId, date) {
 
     const matches = allMatches.filter(m => m.date === date);
 
+    if (!matches.length) {
+        container.innerHTML = `<div style="text-align:center;opacity:.6;padding:20px;">
+            No matches for this day
+        </div>`;
+        return;
+    }
+
     const groups = {};
     matches.forEach(m => {
         if (!groups[m.group]) groups[m.group] = [];
@@ -147,7 +154,7 @@ function render(containerId, date) {
                 <div class="match-header">
 
                     <div class="team">
-                        ${m.homeFlag ? `<img src="${m.homeFlag}" class="flag">` : ""}
+                        ${m.homeFlag ? `<img src="${m.homeFlag}" class="flag">` : `<div class="flag"></div>`}
                         <span>${m.homeTeam}</span>
                     </div>
 
@@ -157,25 +164,25 @@ function render(containerId, date) {
 
                     <div class="team">
                         <span>${m.awayTeam}</span>
-                        ${m.awayFlag ? `<img src="${m.awayFlag}" class="flag">` : ""}
+                        ${m.awayFlag ? `<img src="${m.awayFlag}" class="flag">` : `<div class="flag"></div>`}
                     </div>
 
                 </div>
 
                 <div class="events">
 
-                    ${m.goals.map(g =>
+                    ${(m.goals || []).map(g =>
                         `<div class="goal">⚽ ${g.player} ${g.minute}'</div>`
                     ).join("")}
 
-                    ${m.redCards.map(r =>
+                    ${(m.redCards || []).map(r =>
                         `<div class="red">🟥 ${r.player} ${r.minute}'</div>`
                     ).join("")}
 
                 </div>
 
                 <div class="match-footer">
-                    🏟 ${m.stadium} • ${m.city}
+                    🏟 ${m.stadium || ""} • ${m.city || ""}
                 </div>
 
             </div>
