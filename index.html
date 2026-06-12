@@ -2,54 +2,138 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>World Goal 2026 | Live Scores</title>
 
 <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 <body>
 
 <header>
-<div class="container header-inner">
 
-    <div class="logo">⚽ <span>WORLD GOAL 2026</span></div>
+    <div class="container header-inner">
 
-    <nav>
-        <a href="index.html" class="active">HOME</a>
-        <a href="pages/fixtures.html">FIXTURE</a>
-    </nav>
+        <div class="logo">
+            ⚽ <span>WORLD GOAL 2026</span>
+        </div>
 
-</div>
+        <nav>
+            <a href="index.html" class="active">
+                HOME
+            </a>
+
+            <a href="pages/fixtures.html">
+                FIXTURE
+            </a>
+        </nav>
+
+    </div>
+
 </header>
 
 <main class="container">
 
-<section class="hero">
-    <h1>FIFA WORLD CUP 2026</h1>
-    <p>Live Scores • Fixtures • Standings</p>
-</section>
+    <!-- HERO -->
 
-<section class="match-navigation">
-    <button class="day-btn" id="yesterdayBtn">YESTERDAY</button>
-    <button class="day-btn active" id="todayBtn">TODAY</button>
-    <button class="day-btn" id="tomorrowBtn">TOMORROW</button>
-</section>
+    <section class="hero">
 
-<section class="today-banner">
-⚽ TODAY'S WORLD CUP MATCHES
-</section>
+        <h1>
+            FIFA WORLD CUP 2026
+        </h1>
 
-<section class="matches-wrapper">
+        <p>
+            Live Scores • Fixtures • Standings
+        </p>
 
-    <!-- LIVE MATCHES -->
-    <div class="matches-grid" id="todayMatches"></div>
+    </section>
 
-</section>
+    <!-- NAVIGATION -->
+
+    <section class="match-navigation">
+
+        <button
+            class="day-btn"
+            id="yesterdayBtn">
+
+            YESTERDAY
+
+        </button>
+
+        <button
+            class="day-btn active"
+            id="todayBtn">
+
+            TODAY
+
+        </button>
+
+        <button
+            class="day-btn"
+            id="tomorrowBtn">
+
+            TOMORROW
+
+        </button>
+
+    </section>
+
+    <!-- BANNER -->
+
+    <section class="today-banner">
+
+        ⚽ TODAY'S WORLD CUP MATCHES
+
+    </section>
+
+    <!-- MATCHES -->
+
+    <section class="matches-wrapper">
+
+        <div
+            class="matches-grid"
+            id="todayMatches">
+        </div>
+
+    </section>
 
 </main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div class="footer-links">
+
+            <a href="privacy.html">
+                Privacy Policy
+            </a>
+
+            <a href="terms.html">
+                Terms & Conditions
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 World Goal 2026
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- SCRIPTS -->
 
 <script src="js/app.js"></script>
 <script src="js/live.js"></script>
