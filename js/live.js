@@ -3,7 +3,7 @@ async function updateLive() {
     try {
 
         const res = await fetch(
-            "https://footbal-api.otanomix.workers.dev/fixtures?live=all"
+            "https://footbal-api.wg26.workers.dev/fixtures?live=all"
         );
 
         const data = await res.json();
