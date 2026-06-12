@@ -140,8 +140,14 @@ RENDER
 
 function renderMatches(matches, containerId) {
 
+    // 🔥 OCULTAR TODOS LOS CONTENEDORES PRIMERO
+    document.getElementById("yesterdayMatches").style.display = "none";
+    document.getElementById("todayMatches").style.display = "none";
+    document.getElementById("tomorrowMatches").style.display = "none";
+
+    // 🔥 MOSTRAR SOLO EL ACTIVO
     const container = document.getElementById(containerId);
-    if (!container) return;
+    container.style.display = "block";
 
     const groups = {};
 
@@ -154,58 +160,51 @@ function renderMatches(matches, containerId) {
 
         <div class="group-title">Group ${group}</div>
 
-        ${groups[group].map(m => `
+        <div class="group-block">
 
-            <div class="match-card">
+            ${groups[group].map(m => `
 
-                <!-- TEAMS HEADER -->
-                <div class="match-header">
+                <div class="match-card">
 
-                    <div class="team">
-                        <img src="${m.homeFlag}" class="flag" />
-                        <span>${m.homeTeam}</span>
-                    </div>
+                    <div class="match-header">
 
-                    <div class="score">
-                        ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
-                    </div>
-
-                    <div class="team">
-                        <span>${m.awayTeam}</span>
-                        <img src="${m.awayFlag}" class="flag" />
-                    </div>
-
-                </div>
-
-                <!-- GOALS -->
-                <div class="events">
-
-                    ${m.goals?.length ? `
-                        <div class="event goals">
-                            ${m.goals.map(g => `
-                                <div>⚽ ${g.player} <span>${g.minute}'</span></div>
-                            `).join("")}
+                        <div class="team">
+                            <img src="${m.homeFlag}" class="flag" />
+                            <span>${m.homeTeam}</span>
                         </div>
-                    ` : ""}
 
-                    ${m.redCards?.length ? `
-                        <div class="event reds">
-                            ${m.redCards.map(r => `
-                                <div>🟥 ${r.player} <span>${r.minute}'</span></div>
-                            `).join("")}
+                        <div class="score">
+                            ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
                         </div>
-                    ` : ""}
+
+                        <div class="team">
+                            <span>${m.awayTeam}</span>
+                            <img src="${m.awayFlag}" class="flag" />
+                        </div>
+
+                    </div>
+
+                    <div class="events">
+
+                        ${m.goals?.length ? m.goals.map(g =>
+                            `<div class="goal">⚽ ${g.player} <span>${g.minute}'</span></div>`
+                        ).join("") : ""}
+
+                        ${m.redCards?.length ? m.redCards.map(r =>
+                            `<div class="red">🟥 ${r.player} <span>${r.minute}'</span></div>`
+                        ).join("") : ""}
+
+                    </div>
+
+                    <div class="match-footer">
+                        🏟 ${m.stadium} • ${m.city}
+                    </div>
 
                 </div>
 
-                <!-- FOOTER INFO -->
-                <div class="match-footer">
-                    🏟 ${m.stadium} • ${m.city}
-                </div>
+            `).join("")}
 
-            </div>
-
-        `).join("")}
+        </div>
 
     `).join("");
 }
