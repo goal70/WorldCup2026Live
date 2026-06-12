@@ -141,7 +141,6 @@ RENDER
 function renderMatches(matches, containerId) {
 
     const container = document.getElementById(containerId);
-
     if (!container) return;
 
     const groups = {};
@@ -153,30 +152,55 @@ function renderMatches(matches, containerId) {
 
     container.innerHTML = Object.keys(groups).map(group => `
 
-        <h2>Group ${group}</h2>
+        <div class="group-title">Group ${group}</div>
 
         ${groups[group].map(m => `
 
             <div class="match-card">
 
-                <b>${m.homeTeam}</b>
-                ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
-                <b>${m.awayTeam}</b>
+                <!-- TEAMS HEADER -->
+                <div class="match-header">
 
-                <div class="match-details">
+                    <div class="team">
+                        <img src="${m.homeFlag}" class="flag" />
+                        <span>${m.homeTeam}</span>
+                    </div>
 
-                    ${m.goals?.map(g =>
-                        `⚽ ${g.player} (${g.minute}')`
-                    ).join("<br>") || ""}
+                    <div class="score">
+                        ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
+                    </div>
+
+                    <div class="team">
+                        <span>${m.awayTeam}</span>
+                        <img src="${m.awayFlag}" class="flag" />
+                    </div>
 
                 </div>
 
-                <div class="match-cards">
+                <!-- GOALS -->
+                <div class="events">
 
-                    ${m.redCards?.map(r =>
-                        `🟥 ${r.player} (${r.minute}')`
-                    ).join("<br>") || ""}
+                    ${m.goals?.length ? `
+                        <div class="event goals">
+                            ${m.goals.map(g => `
+                                <div>⚽ ${g.player} <span>${g.minute}'</span></div>
+                            `).join("")}
+                        </div>
+                    ` : ""}
 
+                    ${m.redCards?.length ? `
+                        <div class="event reds">
+                            ${m.redCards.map(r => `
+                                <div>🟥 ${r.player} <span>${r.minute}'</span></div>
+                            `).join("")}
+                        </div>
+                    ` : ""}
+
+                </div>
+
+                <!-- FOOTER INFO -->
+                <div class="match-footer">
+                    🏟 ${m.stadium} • ${m.city}
                 </div>
 
             </div>
