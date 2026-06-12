@@ -8,8 +8,8 @@
     "team1": "Canada",
     "team2": "Bosnia and Herzegovina",
 
-    "flag1": "🇨🇦",
-    "flag2": "🇧🇦",
+    "flag1": "ca",
+    "flag2": "ba",
 
     "score": "-",
 
@@ -28,8 +28,8 @@
     "team1": "Qatar",
     "team2": "Switzerland",
 
-    "flag1": "🇶🇦",
-    "flag2": "🇨🇭",
+    "flag1": "qa",
+    "flag2": "ch",
 
     "score": "-",
 
@@ -48,8 +48,8 @@
     "team1": "Switzerland",
     "team2": "Bosnia and Herzegovina",
 
-    "flag1": "🇨🇭",
-    "flag2": "🇧🇦",
+    "flag1": "ch",
+    "flag2": "ba",
 
     "score": "-",
 
@@ -68,8 +68,8 @@
     "team1": "Canada",
     "team2": "Qatar",
 
-    "flag1": "🇨🇦",
-    "flag2": "🇶🇦",
+    "flag1": "ca",
+    "flag2": "qa",
 
     "score": "-",
 
@@ -88,8 +88,8 @@
     "team1": "Switzerland",
     "team2": "Canada",
 
-    "flag1": "🇨🇭",
-    "flag2": "🇨🇦",
+    "flag1": "ch",
+    "flag2": "ca",
 
     "score": "-",
 
@@ -108,8 +108,8 @@
     "team1": "Bosnia and Herzegovina",
     "team2": "Qatar",
 
-    "flag1": "🇧🇦",
-    "flag2": "🇶🇦",
+    "flag1": "ba",
+    "flag2": "qa",
 
     "score": "-",
 
