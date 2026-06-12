@@ -1,10 +1,3 @@
-/*
-=================================
-WORLD GOAL 2026
-APP
-=================================
-*/
-
 let allMatches = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -37,35 +30,24 @@ async function loadMatches() {
             matches.forEach(match => {
 
                 allMatches.push({
-
                     id: match.id,
                     group: match.group,
-
                     date: match.date,
                     status: match.status,
-
                     homeTeam: match.team1,
                     awayTeam: match.team2,
-
                     homeFlag: match.flag1,
                     awayFlag: match.flag2,
-
                     homeScore: match.homeScore ?? null,
                     awayScore: match.awayScore ?? null,
-
                     played: match.played ?? false,
-
                     goals: match.goals ?? [],
                     redCards: match.redCards ?? [],
-
                     localTime: match.timeET,
                     argentinaTime: match.timeAR,
-
                     stadium: match.stadium,
                     city: match.city,
-
                     links: match.links || []
-
                 });
 
             });
@@ -81,41 +63,38 @@ async function loadMatches() {
 
 /*
 =================================
-DATE FILTERS
+DATE HELPERS (LOCAL SAFE)
+=================================
+*/
+
+function getLocalDate(offset = 0) {
+    const d = new Date();
+    d.setDate(d.getDate() + offset);
+    return d.toLocaleDateString("en-CA"); // YYYY-MM-DD local safe
+}
+
+/*
+=================================
+FILTERS
 =================================
 */
 
 function showToday() {
-
-    const today = new Date().toISOString().split("T")[0];
-
-    const matches = allMatches.filter(m => m.date === today);
-
-    renderMatches(matches);
+    const target = getLocalDate(0);
+    const matches = allMatches.filter(m => m.date === target);
+    renderMatches(matches, "todayMatches");
 }
 
 function showYesterday() {
-
-    const d = new Date();
-    d.setDate(d.getDate() - 1);
-
-    const target = d.toISOString().split("T")[0];
-
+    const target = getLocalDate(-1);
     const matches = allMatches.filter(m => m.date === target);
-
-    renderMatches(matches);
+    renderMatches(matches, "yesterdayMatches");
 }
 
 function showTomorrow() {
-
-    const d = new Date();
-    d.setDate(d.getDate() + 1);
-
-    const target = d.toISOString().split("T")[0];
-
+    const target = getLocalDate(1);
     const matches = allMatches.filter(m => m.date === target);
-
-    renderMatches(matches);
+    renderMatches(matches, "tomorrowMatches");
 }
 
 /*
@@ -128,40 +107,42 @@ function setupNavigation() {
 
     document.getElementById("yesterdayBtn")
     ?.addEventListener("click", () => {
-        setActiveButton(document.getElementById("yesterdayBtn"));
+        setActiveButton("yesterdayBtn");
         showYesterday();
     });
 
     document.getElementById("todayBtn")
     ?.addEventListener("click", () => {
-        setActiveButton(document.getElementById("todayBtn"));
+        setActiveButton("todayBtn");
         showToday();
     });
 
     document.getElementById("tomorrowBtn")
     ?.addEventListener("click", () => {
-        setActiveButton(document.getElementById("tomorrowBtn"));
+        setActiveButton("tomorrowBtn");
         showTomorrow();
     });
 }
 
-function setActiveButton(button) {
+function setActiveButton(activeId) {
 
     document.querySelectorAll(".day-btn")
     .forEach(btn => btn.classList.remove("active"));
 
-    button.classList.add("active");
+    document.getElementById(activeId)?.classList.add("active");
 }
 
 /*
 =================================
-RENDER MATCHES
+RENDER
 =================================
 */
 
-function renderMatches(matches) {
+function renderMatches(matches, containerId) {
 
-    const container = document.getElementById("todayMatches");
+    const container = document.getElementById(containerId);
+
+    if (!container) return;
 
     const groups = {};
 
@@ -176,22 +157,26 @@ function renderMatches(matches) {
 
         ${groups[group].map(m => `
 
-            <div>
+            <div class="match-card">
 
                 <b>${m.homeTeam}</b>
                 ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
                 <b>${m.awayTeam}</b>
 
-                <div>
+                <div class="match-details">
+
                     ${m.goals?.map(g =>
                         `⚽ ${g.player} (${g.minute}')`
                     ).join("<br>") || ""}
+
                 </div>
 
-                <div>
+                <div class="match-cards">
+
                     ${m.redCards?.map(r =>
                         `🟥 ${r.player} (${r.minute}')`
                     ).join("<br>") || ""}
+
                 </div>
 
             </div>
