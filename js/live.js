@@ -11,40 +11,37 @@ async function updateLive() {
         if (!data.response) return;
 
         const liveMatches = data.response.filter(m =>
-            ["1H", "2H", "HT", "ET"].includes(m.fixture.status.short)
+            ["1H","2H","HT","ET"].includes(m.fixture.status.short)
         );
 
-        const cards = document.querySelectorAll(".match-card");
+        document.querySelectorAll(".match-card").forEach(card => {
 
-        cards.forEach(card => {
+            if (card.classList.contains("special-event")) return;
 
-            const teams = card.querySelectorAll(".team-name");
-            if (!teams || teams.length < 2) return;
+            const id = card.getAttribute("data-id");
+            if (!id) return;
 
-            const home = teams[0].innerText.trim();
-            const away = teams[1].innerText.trim();
+            const localMatch = allMatches.find(m => m.id == id);
+            if (!localMatch) return;
 
-            // 🔥 BUSCAR MATCH POR NOMBRES UI vs API
-            const match = liveMatches.find(m =>
-                m.teams.home.name.trim().toLowerCase() === home.toLowerCase() &&
-                m.teams.away.name.trim().toLowerCase() === away.toLowerCase()
+            const apiMatch = liveMatches.find(m =>
+                m.teams.home.name.toLowerCase() === localMatch.homeTeam.toLowerCase() &&
+                m.teams.away.name.toLowerCase() === localMatch.awayTeam.toLowerCase()
             );
 
-            if (!match) return;
+            if (!apiMatch) return;
 
             const scoreEl = card.querySelector(".score-number");
             const statusEl = card.querySelector(".match-status");
 
-            const homeGoals = match.goals.home ?? 0;
-            const awayGoals = match.goals.away ?? 0;
-            const minute = match.fixture.status.elapsed || "";
+            const home = apiMatch.goals.home ?? 0;
+            const away = apiMatch.goals.away ?? 0;
+            const minute = apiMatch.fixture.status.elapsed || "";
 
             if (scoreEl) {
-                scoreEl.innerHTML = `
-                    <span style="color:#ff2d2d;font-weight:900;">
-                        ${homeGoals} - ${awayGoals}
-                    </span>
-                `;
+                scoreEl.innerHTML = `<span style="color:#ff2d2d;font-weight:900;">
+                    ${home} - ${away}
+                </span>`;
             }
 
             if (statusEl) {
@@ -54,10 +51,10 @@ async function updateLive() {
 
         });
 
-    } catch (error) {
-        console.error("LIVE ERROR:", error);
+    } catch (err) {
+        console.error("LIVE ERROR:", err);
     }
 }
 
 updateLive();
-setInterval(updateLive, 30000);
+setInterval(updateLive, 15000);
