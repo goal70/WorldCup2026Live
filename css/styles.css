@@ -1,17 +1,13 @@
 /* =========================================
-   WORLD GOAL 2026 - FINAL FIXED SYSTEM
-   HOME + FIXTURE + FIFA BROADCAST MODE
+   WORLD GOAL 2026 - FIFA BROADCAST SYSTEM
 ========================================= */
 
 :root{
     --bg:#06140E;
     --bg2:#0B2017;
-
     --primary:#00D26A;
     --border:#1D4635;
     --text:#D8E4DE;
-
-    --radius:16px;
 }
 
 /* RESET */
@@ -22,8 +18,8 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(180deg,var(--bg),var(--bg2));
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(180deg,var(--bg),var(--bg2));
     color:white;
 }
 
@@ -34,9 +30,9 @@ body{
     margin:auto;
 }
 
-/* =========================================
+/* =========================
    HEADER
-========================================= */
+========================= */
 
 header{
     position:sticky;
@@ -58,9 +54,7 @@ header{
     font-weight:900;
 }
 
-.logo span{
-    color:var(--primary);
-}
+.logo span{ color:var(--primary); }
 
 nav{
     display:flex;
@@ -80,27 +74,25 @@ nav a.active{
     color:black;
 }
 
-/* =========================================
+/* =========================
    HERO
-========================================= */
+========================= */
 
 .hero{
     margin-top:15px;
     padding:45px 20px;
     text-align:center;
     border-radius:20px;
-
     background:
         linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
         url("https://images.unsplash.com/photo-1574629810360-7efbbe195018");
-
     background-size:cover;
     background-position:center;
 }
 
-/* =========================================
-   MATCH NAVIGATION
-========================================= */
+/* =========================
+   NAV BUTTONS
+========================= */
 
 .match-navigation{
     display:flex;
@@ -125,24 +117,24 @@ nav a.active{
     color:black;
 }
 
-/* =========================================
+/* =========================
    TODAY BANNER
-========================================= */
+========================= */
 
 .today-banner{
     background:rgba(0,210,106,.12);
     border:1px solid var(--primary);
     color:var(--primary);
-    padding:10px 12px;
+    padding:10px;
     border-radius:12px;
     text-align:center;
     font-weight:800;
     margin-bottom:15px;
 }
 
-/* =========================================
-   MATCH LIST
-========================================= */
+/* =========================
+   MATCH GRID
+========================= */
 
 .matches-grid{
     display:flex;
@@ -150,32 +142,33 @@ nav a.active{
     gap:14px;
 }
 
-/* =========================================
-   MATCH CARD - FIFA BROADCAST CLEAN
-========================================= */
+/* =========================
+   MATCH CARD FIFA BROADCAST
+========================= */
 
 .match-card{
-    background: linear-gradient(135deg,#0b2a1d,#071a13);
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,#0b2a1d,#071a13);
     border:1px solid rgba(0,210,106,.25);
     border-radius:16px;
     padding:14px;
-
-    position:relative;
-    overflow:hidden;
-    z-index:1;
-
     box-shadow:0 10px 25px rgba(0,0,0,.35);
+    transition:.2s;
 }
 
-/* GLASS / GLOW (FIX ÚNICO, SIN DUPLICADOS) */
+.match-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--primary);
+}
+
+/* LIVE GLOW ANIMATION */
 .match-card::before{
     content:"";
     position:absolute;
     inset:-50%;
     background:radial-gradient(circle,rgba(0,210,106,.10),transparent 60%);
     animation:glowMove 6s linear infinite;
-    pointer-events:none;
-    z-index:0;
 }
 
 @keyframes glowMove{
@@ -184,45 +177,77 @@ nav a.active{
     100%{transform:translate(0,0);}
 }
 
-/* HEADER */
+/* =========================
+   STATUS BADGE
+========================= */
+
+.match-status{
+    text-align:center;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.match-status.live{
+    color:#00ff84;
+    animation:pulseText 1s infinite;
+}
+
+.match-status.finished{
+    color:#ff6b6b;
+}
+
+.match-status.upcoming{
+    color:#ffd166;
+}
+
+@keyframes pulseText{
+    0%,100%{opacity:1;}
+    50%{opacity:.4;}
+}
+
+/* =========================
+   MATCH HEADER
+========================= */
+
 .match-header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:10px;
     position:relative;
     z-index:2;
+    margin-bottom:10px;
 }
 
-/* TEAMS */
 .team{
     display:flex;
     flex-direction:column;
     align-items:center;
     gap:6px;
     width:40%;
-    text-align:center;
     font-weight:700;
+    text-align:center;
 }
 
-/* FLAGS */
 .flag{
     width:34px;
     height:22px;
-    object-fit:cover;
     border-radius:3px;
-    box-shadow:0 2px 6px rgba(0,0,0,.4);
+    object-fit:cover;
+    box-shadow:0 2px 8px rgba(0,0,0,.4);
 }
 
-/* SCORE */
 .score{
-    font-size:22px;
+    font-size:28px;
     font-weight:900;
-    min-width:70px;
-    text-align:center;
+    letter-spacing:2px;
+    text-shadow:0 0 15px rgba(0,210,106,.4);
 }
 
-/* EVENTS */
+/* =========================
+   EVENTS (GOALS + CARDS)
+========================= */
+
 .events{
     margin-top:10px;
     padding-top:8px;
@@ -232,68 +257,101 @@ nav a.active{
     z-index:2;
 }
 
-.goal{ color:#4ade80; margin:4px 0; }
-.red{ color:#f87171; margin:4px 0; }
-
-/* FOOTER */
-.match-footer{
-    position:relative;
-    z-index:2;
-    margin-top:10px;
-    font-size:12px;
-    opacity:.8;
+.goal{
+    color:#4ade80;
+    animation:goalPop .3s ease;
 }
 
-/* =========================================
-   MATCH LINKS (FIX REAL - NO DUPLICADO)
-========================================= */
+.red{
+    color:#f87171;
+}
+
+@keyframes goalPop{
+    from{transform:scale(1.2);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+/* =========================
+   FOOTER MATCH INFO
+========================= */
+
+.match-footer{
+    margin-top:10px;
+    font-size:12px;
+    opacity:.7;
+    position:relative;
+    z-index:2;
+}
+
+/* =========================
+   MATCH LINKS (DIRECTV ETC)
+========================= */
 
 .match-links{
     display:flex;
     gap:10px;
-    margin-top:12px;
     flex-wrap:wrap;
+    margin-top:10px;
     justify-content:center;
-
     position:relative;
-    z-index:5; /* 🔥 CLAVE PARA CLICK */
+    z-index:5;
 }
 
 .match-link{
     display:flex;
     align-items:center;
     gap:6px;
-
     padding:6px 10px;
     border-radius:8px;
-
     background:#10291E;
     border:1px solid rgba(0,210,106,.25);
-
     color:white;
     font-size:12px;
     text-decoration:none;
-
+    cursor:pointer;
     transition:.2s;
-    position:relative;
-    z-index:5;
 }
 
 .match-link:hover{
-    background:#00D26A;
+    background:var(--primary);
     color:black;
     transform:translateY(-2px);
 }
 
 .match-link img{
-    width:16px;
-    height:16px;
+    width:18px;
+    height:18px;
     border-radius:3px;
 }
 
-/* =========================================
-   FOOTER SITE
-========================================= */
+/* =========================
+   FIXTURE GRID
+========================= */
+
+#fixtures{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.group-title{
+    background:linear-gradient(90deg,var(--primary),#2ef59a);
+    color:black;
+    font-weight:900;
+    padding:10px;
+    text-align:center;
+    letter-spacing:1px;
+    border-radius:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    #fixtures{grid-template-columns:1fr;}
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     margin-top:60px;
@@ -311,51 +369,21 @@ footer{
 
 .footer-links{
     display:flex;
-    justify-content:center;
     gap:25px;
     flex-wrap:wrap;
-    padding:10px 0;
 }
 
 .footer-links a{
     color:#94A89D;
     text-decoration:none;
     font-weight:600;
-    padding:6px 10px;
-    border-radius:8px;
 }
 
 .footer-links a:hover{
     color:white;
-    background:rgba(0,210,106,.1);
 }
 
 .copyright{
-    color:#94A89D;
     font-size:12px;
-}
-
-/* =========================================
-   FIXTURE SYSTEM
-========================================= */
-
-#fixtures{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-    margin-top:20px;
-}
-
-.group-title{
-    background:linear-gradient(90deg,var(--primary),#2ef59a);
-    color:black;
-    font-weight:900;
-    padding:10px;
-    text-align:center;
-}
-
-@media(max-width:900px){
-    #fixtures{
-        grid-template-columns:1fr;
-    }
+    color:#94A89D;
 }
