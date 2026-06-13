@@ -133,12 +133,12 @@ nav a.active{
 }
 
 /* =========================
-   MATCH GRID (HOME FIX)
+   MATCH GRID FIX (2 POR FILA)
 ========================= */
 
 .matches-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2, 1fr);
     gap:16px;
     align-items:stretch;
 }
@@ -401,7 +401,7 @@ footer{
    RESPONSIVE FINAL FIX
 ========================= */
 
-@media(max-width:900px){
+@media (max-width: 900px){
     .matches-grid{
         grid-template-columns:1fr;
     }
@@ -411,7 +411,7 @@ footer{
     }
 }
 
-@media(max-width:480px){
+@media (max-width: 480px){
     .score{
         font-size:22px;
     }
