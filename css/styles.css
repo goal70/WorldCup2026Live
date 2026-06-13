@@ -453,3 +453,38 @@ footer{
     height:16px;
     border-radius:3px;
 }
+.match-links{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+    flex-wrap:wrap;
+    position:relative;
+    z-index:5;
+}
+
+.match-link{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:6px 10px;
+    background:#10291E;
+    border-radius:8px;
+    text-decoration:none;
+    color:white;
+    font-size:12px;
+    border:1px solid #1d4635;
+    cursor:pointer;
+    position:relative;
+    z-index:5;
+}
+
+.match-link:hover{
+    border-color:#00D26A;
+    transform:scale(1.03);
+    transition:0.2s;
+}
+
+.match-link img{
+    width:18px;
+    height:18px;
+}
