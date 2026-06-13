@@ -35,6 +35,11 @@
         "player": "Balogun",
         "minute": "45+5",
         "team": "home"
+      },
+      {
+        "player": "Mauricio",
+        "minute": 73,
+        "team": "away"
       }
     ],
 
