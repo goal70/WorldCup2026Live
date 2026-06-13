@@ -142,86 +142,68 @@ function render(containerId, date) {
     const matches = allMatches.filter(m => m.date === date);
 
     if (!matches.length) {
-        container.innerHTML = `
-            <div class="no-matches">
-                No matches for this day
-            </div>`;
+        container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
         return;
     }
 
-    // agrupar
-    const groups = {};
-    matches.forEach(m => {
-        if (!groups[m.group]) groups[m.group] = [];
-        groups[m.group].push(m);
-    });
+    container.innerHTML = matches.map(m => {
 
-    container.innerHTML = Object.keys(groups).map(groupKey => {
+        const linksHTML = (m.links || []).map(l => `
+            <a class="match-link" href="${l.url}" target="_blank">
+                <img src="${l.logo}" alt="">
+                <span>${l.name}</span>
+            </a>
+        `).join("");
 
-        const matchesHTML = groups[groupKey].map(m => {
-
-            const linksHTML = (m.links || []).map(l => `
-                <a class="match-link" href="${l.url}" target="_blank">
-                    <img src="${l.logo}" alt="">
-                    <span>${l.name}</span>
-                </a>
-            `).join("");
-
-            const goalsHTML = (m.goals || []).map(g => `
-                <div class="goal">
-                    ⚽ ${g.player} (${g.minute}')
-                </div>
-            `).join("");
-
-            return `
-            <div class="match-card">
-
-                <div class="match-status ${m.status.toLowerCase()}">
-                    ${m.status}
-                </div>
-
-                <div class="match-header">
-
-                    <div class="team">
-                        <img src="${flagUrl(m.flag1)}" class="flag">
-                        <span>${m.team1}</span>
-                    </div>
-
-                    <div class="score">
-                        ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
-                    </div>
-
-                    <div class="team">
-                        <span>${m.team2}</span>
-                        <img src="${flagUrl(m.flag2)}" class="flag">
-                    </div>
-
-                </div>
-
-                <div class="events">
-                    ${goalsHTML}
-                </div>
-
-                <div class="match-footer">
-                    🏟 ${m.stadium} • ${m.city} <br>
-                    🕒 ET ${m.timeET} | AR ${m.timeAR}
-                </div>
-
-                <div class="match-links">
-                    ${linksHTML}
-                </div>
-
-            </div>
-            `;
-        }).join("");
+        const goalsHTML = (m.goals || []).map(g => `
+            <div class="goal">⚽ ${g.player} (${g.minute}')</div>
+        `).join("");
 
         return `
-            <div class="group-title">GRUPO ${groupKey}</div>
-            <div class="matches-grid">
-                ${matchesHTML}
-            </div>
-        `;
+        <div class="match-card">
 
+            <div class="match-status ${m.status.toLowerCase()}">
+                ${m.status}
+            </div>
+
+            <!-- SOLO TEXTO ARRIBA DEL PARTIDO -->
+            <div style="text-align:center;font-weight:900;color:#00D26A;margin-bottom:6px;">
+                GRUPO ${m.group}
+            </div>
+
+            <div class="match-header">
+
+                <div class="team">
+                    <img src="${flagUrl(m.flag1)}" class="flag">
+                    <span>${m.team1}</span>
+                </div>
+
+                <div class="score">
+                    ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
+                </div>
+
+                <div class="team">
+                    <span>${m.team2}</span>
+                    <img src="${flagUrl(m.flag2)}" class="flag">
+                </div>
+
+            </div>
+
+            <div class="events">
+                ${goalsHTML}
+            </div>
+
+            <div class="match-footer">
+                🏟 ${m.stadium} • ${m.city} <br>
+                🕒 ET ${m.timeET} | AR ${m.timeAR}
+            </div>
+
+            <div class="match-links">
+                ${linksHTML}
+            </div>
+
+        </div>
+        `;
     }).join("");
 }
 
