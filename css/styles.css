@@ -421,3 +421,23 @@ footer{
         justify-content:center;
     }
 }
+/* =========================
+   GROUP TITLE CLEAN FIFA STYLE
+========================= */
+
+.group-header{
+    text-align:center;
+    margin:18px 0 10px;
+    position:relative;
+}
+
+.group-header span{
+    display:inline-block;
+    font-weight:900;
+    letter-spacing:2px;
+    font-size:14px;
+    color:#00D26A;
+    padding:6px 14px;
+    border-bottom:2px solid rgba(0,210,106,.5);
+    text-transform:uppercase;
+}
