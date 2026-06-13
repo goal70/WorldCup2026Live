@@ -1,5 +1,5 @@
 /*************************************************
- * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FIXED + FIFA MODE)
+ * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FIXED FIFA RESTORE)
  *************************************************/
 
 let allMatches = [];
@@ -10,16 +10,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 /* =========================
-   FLAG SYSTEM (FIX CRÍTICO)
+   FLAG SYSTEM
 ========================= */
 
 function flagUrl(code) {
     if (!code) return "";
-    return `https://flagcdn.com/w40/${String(code).toLowerCase()}.png`;
+    return `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
 }
 
 /* =========================
-   LOAD MATCHES
+   LOAD MATCHES (FIXED FULL MODEL)
 ========================= */
 
 async function loadMatches() {
@@ -42,22 +42,24 @@ async function loadMatches() {
                     group: m.group,
                     date: m.date,
 
-                    homeTeam: m.team1,
-                    awayTeam: m.team2,
+                    status: m.status || "UPCOMING",
 
-                    homeFlag: m.flag1,
-                    awayFlag: m.flag2,
+                    team1: m.team1,
+                    team2: m.team2,
 
-                    homeScore: m.homeScore ?? null,
-                    awayScore: m.awayScore ?? null,
+                    flag1: m.flag1,
+                    flag2: m.flag2,
 
-                    goals: m.goals || [],
-                    redCards: m.redCards || [],
+                    score: m.score || "-",
 
                     stadium: m.stadium,
                     city: m.city,
 
-                    links: m.links || []
+                    timeET: m.timeET,
+                    timeAR: m.timeAR,
+
+                    goals: m.goals || [],
+                    redCards: m.redCards || []
                 });
 
             });
@@ -72,19 +74,14 @@ async function loadMatches() {
 }
 
 /* =========================
-   DATE NORMALIZATION (FIX CRÍTICO)
+   DATE NORMALIZATION
 ========================= */
 
 function getLocalDate(offset = 0) {
     const d = new Date();
     d.setHours(0,0,0,0);
     d.setDate(d.getDate() + offset);
-
-    const y = d.getFullYear();
-    const m = String(d.getMonth()+1).padStart(2,"0");
-    const day = String(d.getDate()).padStart(2,"0");
-
-    return `${y}-${m}-${day}`;
+    return d.toISOString().split("T")[0];
 }
 
 /* =========================
@@ -123,7 +120,7 @@ function setActive(id) {
 }
 
 /* =========================
-   RENDER ENGINE (FIFA BROADCAST FINAL PATCH)
+   RENDER ENGINE (FIFA BROADCAST RESTORED)
 ========================= */
 
 function render(containerId, date) {
@@ -144,14 +141,14 @@ function render(containerId, date) {
 
     if (!matches.length) {
         container.innerHTML = `
-            <div class="no-matches">
+            <div style="text-align:center;opacity:.6;padding:20px;">
                 No matches for this day
             </div>`;
         return;
     }
 
+    /* GROUP FIX */
     const groups = {};
-
     matches.forEach(m => {
         if (!groups[m.group]) groups[m.group] = [];
         groups[m.group].push(m);
@@ -159,34 +156,39 @@ function render(containerId, date) {
 
     container.innerHTML = Object.keys(groups).map(g => `
 
-        <div class="group-title">GROUP ${g}</div>
+        <div class="group-title">Group ${g}</div>
 
-        ${groups[g].map(m => {
+        ${groups[g].map(m => `
 
-            const score =
-                (m.homeScore !== null && m.awayScore !== null)
-                ? `${m.homeScore} - ${m.awayScore}`
-                : "- -";
-
-            return `
             <div class="match-card">
 
+                <!-- STATUS -->
+                <div style="display:flex;justify-content:center;margin-bottom:8px;">
+                    <span class="${m.status === "FINISHED" ? "final" : m.status === "LIVE" ? "live" : "upcoming"}">
+                        ${m.status}
+                    </span>
+                </div>
+
+                <!-- MATCH HEADER -->
                 <div class="match-header">
 
                     <div class="team">
-                        <img src="${flagUrl(m.homeFlag)}" class="flag" loading="lazy">
-                        <span>${m.homeTeam}</span>
+                        <img src="${flagUrl(m.flag1)}" class="flag">
+                        <span>${m.team1}</span>
                     </div>
 
-                    <div class="score">${score}</div>
+                    <div class="score">
+                        ${m.score}
+                    </div>
 
                     <div class="team">
-                        <span>${m.awayTeam}</span>
-                        <img src="${flagUrl(m.awayFlag)}" class="flag" loading="lazy">
+                        <span>${m.team2}</span>
+                        <img src="${flagUrl(m.flag2)}" class="flag">
                     </div>
 
                 </div>
 
+                <!-- DETAILS RESTORED -->
                 <div class="events">
 
                     ${(m.goals || []).map(g =>
@@ -199,28 +201,21 @@ function render(containerId, date) {
 
                 </div>
 
+                <!-- FULL INFO BLOCK (FIX QUE TE FALTABA) -->
                 <div class="match-footer">
-                    🏟 ${m.stadium || ""} • ${m.city || ""}
+                    🏟 ${m.stadium || ""} • ${m.city || ""} <br>
+                    🕒 ET ${m.timeET || "-"} | AR ${m.timeAR || "-"}
                 </div>
 
-                ${m.links.length ? `
-                <div class="links">
-                    ${m.links.map(l => `
-                        <a class="link-btn" href="${l.url}" target="_blank">
-                            ${l.name}
-                        </a>
-                    `).join("")}
-                </div>` : ""}
-
             </div>
-            `;
-        }).join("")}
+
+        `).join("")}
 
     `).join("");
 }
 
 /* =========================================================
-   🚀 ENTERPRISE MONETIZATION LAYER (UNCHANGED SAFE)
+   MONETIZATION (NO TOCADO)
 ========================================================= */
 
 const USER = {
@@ -288,12 +283,10 @@ function shouldMonetize() {
     window.addEventListener("click", () => engaged = true, { once: true });
 
     setTimeout(() => {
-
         if (shouldMonetize() && cooldownOk && engaged) {
             loadPopunder();
             localStorage.setItem(KEY, now);
         }
-
     }, 18000);
 
 })();
