@@ -20,6 +20,19 @@
     "timeET": "21:00",
     "timeAR": "22:00",
 
+    "goals": [
+      {
+        "player": "Bobadilla(GEC)",
+        "minute": 7,
+        "team": "home"
+      },
+      {
+        "player": "Balogun",
+        "minute": 31,
+        "team": "home"
+      }
+    ],
+
     "links": [
       {
         "name": "DirecTV Sports",
@@ -27,115 +40,5 @@
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRzcG9ydHM="
       }
     ]
-  },
-
-  {
-    "id": 2,
-    "group": "D",
-    "date": "2026-06-13",
-    "status": "UPCOMING",
-
-    "team1": "Australia",
-    "team2": "Turkey",
-
-    "flag1": "au",
-    "flag2": "tr",
-
-    "homeScore": null,
-    "awayScore": null,
-
-    "stadium": "BC Place",
-    "city": "Vancouver",
-
-    "timeET": "15:00",
-    "timeAR": "17:00"
-  },
-
-  {
-    "id": 3,
-    "group": "D",
-    "date": "2026-06-18",
-    "status": "UPCOMING",
-
-    "team1": "Paraguay",
-    "team2": "Australia",
-
-    "flag1": "py",
-    "flag2": "au",
-
-    "homeScore": null,
-    "awayScore": null,
-
-    "stadium": "Levi's Stadium",
-    "city": "Santa Clara",
-
-    "timeET": "15:00",
-    "timeAR": "17:00"
-  },
-
-  {
-    "id": 4,
-    "group": "D",
-    "date": "2026-06-18",
-    "status": "UPCOMING",
-
-    "team1": "United States",
-    "team2": "Turkey",
-
-    "flag1": "us",
-    "flag2": "tr",
-
-    "homeScore": null,
-    "awayScore": null,
-
-    "stadium": "Lumen Field",
-    "city": "Seattle",
-
-    "timeET": "21:00",
-    "timeAR": "23:00"
-  },
-
-  {
-    "id": 5,
-    "group": "D",
-    "date": "2026-06-24",
-    "status": "UPCOMING",
-
-    "team1": "Australia",
-    "team2": "United States",
-
-    "flag1": "au",
-    "flag2": "us",
-
-    "homeScore": null,
-    "awayScore": null,
-
-    "stadium": "MetLife Stadium",
-    "city": "New York/New Jersey",
-
-    "timeET": "15:00",
-    "timeAR": "17:00"
-  },
-
-  {
-    "id": 6,
-    "group": "D",
-    "date": "2026-06-24",
-    "status": "UPCOMING",
-
-    "team1": "Turkey",
-    "team2": "Paraguay",
-
-    "flag1": "tr",
-    "flag2": "py",
-
-    "homeScore": null,
-    "awayScore": null,
-
-    "stadium": "Hard Rock Stadium",
-    "city": "Miami",
-
-    "timeET": "15:00",
-    "timeAR": "17:00"
   }
 ]
