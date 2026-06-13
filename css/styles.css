@@ -286,8 +286,11 @@ nav a.active{
 }
 
 .minute{
-    opacity:.7;
-    font-weight:700;
+    opacity:.75;
+    font-size:11px;
+    margin-left:4px;
+    margin-right:2px;
+    white-space:nowrap;
 }
 
 /* =========================
