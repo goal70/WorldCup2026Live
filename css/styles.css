@@ -341,3 +341,74 @@ footer{
         grid-template-columns:1fr;
     }
 }
+/* =========================
+   FIFA FINAL GLOW UPGRADE
+========================= */
+
+.match-card{
+    position:relative;
+    overflow:hidden;
+}
+
+/* glow dinámico */
+.match-card::before{
+    content:"";
+    position:absolute;
+    inset:-50%;
+    background:radial-gradient(circle,rgba(0,210,106,.12),transparent 60%);
+    animation:glowMove 6s linear infinite;
+}
+
+@keyframes glowMove{
+    0%{transform:translate(0,0);}
+    50%{transform:translate(20px,10px);}
+    100%{transform:translate(0,0);}
+}
+
+/* FLAGS FIX VISUAL */
+.flag{
+    width:34px;
+    height:22px;
+    border-radius:3px;
+    object-fit:cover;
+    box-shadow:0 2px 10px rgba(0,0,0,.4);
+}
+
+/* SCORE FIFA */
+.score{
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-shadow:0 0 15px rgba(0,210,106,.4);
+}
+
+/* LINKS STREAMING */
+.links{
+    margin-top:10px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.link-btn{
+    padding:6px 10px;
+    font-size:12px;
+    border-radius:8px;
+    background:#00D26A;
+    color:black;
+    font-weight:800;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.link-btn:hover{
+    transform:scale(1.05);
+}
+
+/* NO MATCHES */
+.no-matches{
+    text-align:center;
+    opacity:.6;
+    padding:20px;
+}
