@@ -234,13 +234,46 @@ nav a.active{
 .red{ color:#f87171; margin:4px 0; }
 
 /* FOOTER */
-.match-footer{
-    margin-top:10px;
-    font-size:12px;
-    opacity:.6;
+footer{
+    margin-top:60px;
+    padding:40px 0;
+    border-top:1px solid rgba(255,255,255,.08);
     text-align:center;
-    position:relative;
-    z-index:2;
+}
+
+.footer-inner{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    align-items:center;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    padding:10px 0;
+}
+
+.footer-links a{
+    color:#94A89D;
+    text-decoration:none;
+    font-weight:600;
+    padding:6px 10px;
+    border-radius:8px;
+    transition:.2s;
+}
+
+.footer-links a:hover{
+    color:white;
+    background:rgba(0,210,106,.1);
+}
+
+.copyright{
+    margin-top:10px;
+    color:#94A89D;
+    font-size:12px;
 }
 
 /* =========================================
