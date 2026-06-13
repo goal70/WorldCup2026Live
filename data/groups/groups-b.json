@@ -18,15 +18,7 @@
     "city": "Toronto",
 
     "timeET": "15:00",
-    "timeAR": "16:00",
-
-    "links": [
-      {
-        "name": "Telemundo",
-        "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3Z3WNRcnuhTxMOlZtslC2MAwymXrWLNNgi-_LHvFmxlavSH6_taHFqfXqLKVIKpDJUVzZOc2NsVbXG-JIZnNkrQxdStUBocGNL3nJsE-GTeZJYkA66LWkD_iA79me5t1F3EceZStySek/s340/TelemundoInternacional-2018.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdGVsZW11bmRvLnBocA=="
-      }
-    ]
+    "timeAR": "16:00"
   },
 
   {
@@ -47,7 +39,20 @@
     "city": "Santa Clara",
 
     "timeET": "15:00",
-    "timeAR": "16:00"
+    "timeAR": "16:00",
+    
+ "links": [
+      {
+        "name": "DSports",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5a/DSports.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
+      },
+      {
+        "name": "Telemundo",
+        "logo": "hhttps://i0.wp.com/mycielo.org/wp-content/uploads/2020/10/telemundo-logo.png?ssl=1",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdGVsZW11bmRvLnBocA=="
+      }
+    ]
   },
 
   {
