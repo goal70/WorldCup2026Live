@@ -25,7 +25,7 @@
     "id": 2,
     "group": "B",
     "date": "2026-06-13",
-    "status": "UPCOMING",
+    "status": "FINISHED",
 
     "team1": "Qatar",
     "team2": "Switzerland",
@@ -33,7 +33,8 @@
     "flag1": "qa",
     "flag2": "ch",
 
-    "score": "-",
+    "homeScore": 1,
+    "awayScore": 1,
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
