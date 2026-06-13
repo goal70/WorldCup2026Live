@@ -6,17 +6,17 @@
     "status": "UPCOMING",
 
     "team1": "Netherlands",
-    "team2": "Tunisia",
+    "team2": "Japan",
 
-    "flag1": "🇳🇱",
-    "flag2": "🇹🇳",
+    "flag1": "nl",
+    "flag2": "jp",
 
     "score": "-",
 
     "stadium": "AT&T Stadium",
     "city": "Dallas",
 
-    "timeET": "15:00",
+    "timeET": "16:00",
     "timeAR": "17:00"
   },
   {
@@ -25,18 +25,18 @@
     "date": "2026-06-14",
     "status": "UPCOMING",
 
-    "team1": "Japan",
-    "team2": "Sweden",
+    "team1": "Sweden",
+    "team2": "Tunisia",
 
-    "flag1": "🇯🇵",
-    "flag2": "🇸🇪",
+    "flag1": "se",
+    "flag2": "tn",
 
     "score": "-",
 
     "stadium": "NRG Stadium",
     "city": "Houston",
 
-    "timeET": "21:00",
+    "timeET": "22:00",
     "timeAR": "23:00"
   },
   {
