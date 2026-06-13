@@ -22,7 +22,7 @@
 
     "goals": [
       {
-        "player": "Bobadilla(GEC)",
+        "player": "Bobadilla (GEC)",
         "minute": 7,
         "team": "home"
       },
@@ -33,7 +33,7 @@
       },
       {
         "player": "Balogun",
-        "minute": 45+5,
+        "minute": "45+5",
         "team": "home"
       }
     ],
