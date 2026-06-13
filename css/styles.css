@@ -126,7 +126,7 @@ nav a.active{
 }
 
 /* =========================================
-   TODAY BANNER (FIX CUADRO VERDE PROBLEMA)
+   TODAY BANNER
 ========================================= */
 
 .today-banner{
@@ -141,7 +141,7 @@ nav a.active{
 }
 
 /* =========================================
-   MATCH LIST (HOME FIX)
+   MATCH LIST
 ========================================= */
 
 .matches-grid{
@@ -159,26 +159,29 @@ nav a.active{
     border:1px solid rgba(0,210,106,.25);
     border-radius:16px;
     padding:14px;
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
     position:relative;
     overflow:hidden;
+    z-index:1;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 
-/* glow suave */
+/* GLASS / GLOW (FIX ÚNICO, SIN DUPLICADOS) */
 .match-card::before{
     content:"";
     position:absolute;
-    top:-50%;
-    left:-50%;
-    width:200%;
-    height:200%;
-    background: radial-gradient(circle, rgba(0,210,106,.08), transparent 60%);
-    animation: pulse 5s infinite ease-in-out;
+    inset:-50%;
+    background:radial-gradient(circle,rgba(0,210,106,.10),transparent 60%);
+    animation:glowMove 6s linear infinite;
+    pointer-events:none;
+    z-index:0;
 }
 
-@keyframes pulse{
-    0%,100%{ transform:scale(1); opacity:.3; }
-    50%{ transform:scale(1.1); opacity:.6; }
+@keyframes glowMove{
+    0%{transform:translate(0,0);}
+    50%{transform:translate(20px,10px);}
+    100%{transform:translate(0,0);}
 }
 
 /* HEADER */
@@ -202,17 +205,16 @@ nav a.active{
     font-weight:700;
 }
 
-/* FLAGS FIX DEFINITIVO */
+/* FLAGS */
 .flag{
     width:34px;
     height:22px;
     object-fit:cover;
     border-radius:3px;
     box-shadow:0 2px 6px rgba(0,0,0,.4);
-    display:block;
 }
 
-/* SCORE FIX */
+/* SCORE */
 .score{
     font-size:22px;
     font-weight:900;
@@ -234,6 +236,65 @@ nav a.active{
 .red{ color:#f87171; margin:4px 0; }
 
 /* FOOTER */
+.match-footer{
+    position:relative;
+    z-index:2;
+    margin-top:10px;
+    font-size:12px;
+    opacity:.8;
+}
+
+/* =========================================
+   MATCH LINKS (FIX REAL - NO DUPLICADO)
+========================================= */
+
+.match-links{
+    display:flex;
+    gap:10px;
+    margin-top:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+
+    position:relative;
+    z-index:5; /* 🔥 CLAVE PARA CLICK */
+}
+
+.match-link{
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    padding:6px 10px;
+    border-radius:8px;
+
+    background:#10291E;
+    border:1px solid rgba(0,210,106,.25);
+
+    color:white;
+    font-size:12px;
+    text-decoration:none;
+
+    transition:.2s;
+    position:relative;
+    z-index:5;
+}
+
+.match-link:hover{
+    background:#00D26A;
+    color:black;
+    transform:translateY(-2px);
+}
+
+.match-link img{
+    width:16px;
+    height:16px;
+    border-radius:3px;
+}
+
+/* =========================================
+   FOOTER SITE
+========================================= */
+
 footer{
     margin-top:60px;
     padding:40px 0;
@@ -262,7 +323,6 @@ footer{
     font-weight:600;
     padding:6px 10px;
     border-radius:8px;
-    transition:.2s;
 }
 
 .footer-links a:hover{
@@ -271,13 +331,12 @@ footer{
 }
 
 .copyright{
-    margin-top:10px;
     color:#94A89D;
     font-size:12px;
 }
 
 /* =========================================
-   FIXTURE SYSTEM (ARREGLADO COMPLETO)
+   FIXTURE SYSTEM
 ========================================= */
 
 #fixtures{
@@ -287,204 +346,16 @@ footer{
     margin-top:20px;
 }
 
-/* GROUP CARD */
-.group-section{
-    background:linear-gradient(180deg,#0f2a1d,#0b1d14);
-    border:1px solid rgba(0,210,106,.25);
-    border-radius:16px;
-    overflow:hidden;
-}
-
-/* GROUP TITLE FIX (YA NO EXPLOTA UI) */
 .group-title{
     background:linear-gradient(90deg,var(--primary),#2ef59a);
     color:black;
     font-weight:900;
     padding:10px;
     text-align:center;
-    letter-spacing:1px;
 }
 
-/* FIXTURE ROW */
-.fixture-row{
-    display:grid;
-    grid-template-columns:70px 1fr 80px 120px;
-    gap:10px;
-    align-items:center;
-    padding:10px;
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.fixture-match{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    font-weight:700;
-}
-
-.fixture-time{
-    color:var(--primary);
-    font-weight:800;
-    text-align:center;
-}
-
-.fixture-stadium{
-    font-size:12px;
-    opacity:.7;
-    text-align:right;
-}
-
-/* RESPONSIVE FIX */
 @media(max-width:900px){
     #fixtures{
         grid-template-columns:1fr;
     }
-}
-/* =========================
-   FIFA FINAL GLOW UPGRADE
-========================= */
-
-.match-card{
-    position:relative;
-    overflow:hidden;
-}
-
-/* glow dinámico */
-.match-card::before{
-    content:"";
-    position:absolute;
-    inset:-50%;
-    background:radial-gradient(circle,rgba(0,210,106,.12),transparent 60%);
-    animation:glowMove 6s linear infinite;
-}
-
-@keyframes glowMove{
-    0%{transform:translate(0,0);}
-    50%{transform:translate(20px,10px);}
-    100%{transform:translate(0,0);}
-}
-
-/* FLAGS FIX VISUAL */
-.flag{
-    width:34px;
-    height:22px;
-    border-radius:3px;
-    object-fit:cover;
-    box-shadow:0 2px 10px rgba(0,0,0,.4);
-}
-
-/* SCORE FIFA */
-.score{
-    font-size:28px;
-    font-weight:900;
-    letter-spacing:2px;
-    text-shadow:0 0 15px rgba(0,210,106,.4);
-}
-
-/* LINKS STREAMING */
-.links{
-    margin-top:10px;
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.link-btn{
-    padding:6px 10px;
-    font-size:12px;
-    border-radius:8px;
-    background:#00D26A;
-    color:black;
-    font-weight:800;
-    text-decoration:none;
-    transition:.2s;
-}
-
-.link-btn:hover{
-    transform:scale(1.05);
-}
-
-/* NO MATCHES */
-.no-matches{
-    text-align:center;
-    opacity:.6;
-    padding:20px;
-}
-/* =========================
-   MATCH LINKS (HOME BUTTONS)
-========================= */
-
-.match-links{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:12px;
-    justify-content:center;
-}
-
-.match-link{
-    display:flex;
-    align-items:center;
-    gap:6px;
-
-    padding:6px 10px;
-    border-radius:8px;
-
-    background:#10291E;
-    border:1px solid rgba(0,210,106,.25);
-
-    color:white;
-    font-size:12px;
-    text-decoration:none;
-
-    transition:.2s;
-}
-
-.match-link:hover{
-    background:#00D26A;
-    color:black;
-    transform:translateY(-2px);
-}
-
-.match-link img{
-    width:16px;
-    height:16px;
-    border-radius:3px;
-}
-.match-links{
-    display:flex;
-    gap:10px;
-    margin-top:10px;
-    flex-wrap:wrap;
-    position:relative;
-    z-index:5;
-}
-
-.match-link{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    padding:6px 10px;
-    background:#10291E;
-    border-radius:8px;
-    text-decoration:none;
-    color:white;
-    font-size:12px;
-    border:1px solid #1d4635;
-    cursor:pointer;
-    position:relative;
-    z-index:5;
-}
-
-.match-link:hover{
-    border-color:#00D26A;
-    transform:scale(1.03);
-    transition:0.2s;
-}
-
-.match-link img{
-    width:18px;
-    height:18px;
 }
