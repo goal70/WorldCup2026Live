@@ -1,5 +1,5 @@
 /*************************************************
- * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FINAL FIX FIFA SCORE + LINKS)
+ * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FINAL FIX GOALS SIDE)
  *************************************************/
 
 let allMatches = [];
@@ -41,6 +41,7 @@ async function loadMatches() {
                     id: m.id,
                     group: m.group,
                     date: m.date,
+
                     status: m.status || "UPCOMING",
 
                     team1: m.team1,
@@ -49,8 +50,8 @@ async function loadMatches() {
                     flag1: m.flag1,
                     flag2: m.flag2,
 
-                    homeScore: m.homeScore ?? 0,
-                    awayScore: m.awayScore ?? 0,
+                    homeScore: m.homeScore ?? null,
+                    awayScore: m.awayScore ?? null,
 
                     stadium: m.stadium,
                     city: m.city,
@@ -121,7 +122,7 @@ function setActive(id) {
 }
 
 /* =========================
-   RENDER ENGINE (FIXED FIFA MODE)
+   RENDER ENGINE (FIX GOALS LEFT/RIGHT)
 ========================= */
 
 function render(containerId, date) {
@@ -147,20 +148,6 @@ function render(containerId, date) {
 
     container.innerHTML = matches.map(m => {
 
-        /* =========================
-           SCORE FIX (HOME / AWAY REAL)
-        ========================= */
-
-        const homeGoals = (m.goals || []).filter(g => g.team === "home").length;
-        const awayGoals = (m.goals || []).filter(g => g.team === "away").length;
-
-        const scoreHome = m.homeScore ?? homeGoals;
-        const scoreAway = m.awayScore ?? awayGoals;
-
-        /* =========================
-           LINKS FIX
-        ========================= */
-
         const linksHTML = (m.links || []).map(l => `
             <a class="match-link" href="${l.url}" target="_blank">
                 <img src="${l.logo}" alt="">
@@ -168,14 +155,19 @@ function render(containerId, date) {
             </a>
         `).join("");
 
-        /* =========================
-           GOALS FIX (FIFA STYLE)
-        ========================= */
+        /* 🔥 FIX: separar goles por equipo */
+        const homeGoals = (m.goals || []).filter(g => g.team === "home");
+        const awayGoals = (m.goals || []).filter(g => g.team === "away");
 
-        const goalsHTML = (m.goals || []).map(g => `
-            <div class="goal">
-                <span>⚽ ${g.player}</span>
-                <span class="minute">${g.minute}'</span>
+        const homeGoalsHTML = homeGoals.map(g => `
+            <div class="goal left">
+                ⚽ ${g.player} <span class="minute">${g.minute}'</span>
+            </div>
+        `).join("");
+
+        const awayGoalsHTML = awayGoals.map(g => `
+            <div class="goal right">
+                <span class="minute">${g.minute}'</span> ${g.player} ⚽
             </div>
         `).join("");
 
@@ -191,7 +183,6 @@ function render(containerId, date) {
                 GRUPO ${m.group}
             </div>
 
-            <!-- HEADER -->
             <div class="match-header">
 
                 <div class="team">
@@ -200,7 +191,7 @@ function render(containerId, date) {
                 </div>
 
                 <div class="score">
-                    ${scoreHome} - ${scoreAway}
+                    ${m.homeScore ?? 0} - ${m.awayScore ?? 0}
                 </div>
 
                 <div class="team">
@@ -210,18 +201,24 @@ function render(containerId, date) {
 
             </div>
 
-            <!-- EVENTS -->
+            <!-- 🔥 GOLES POR LADO -->
             <div class="events">
-                ${goalsHTML}
+
+                <div class="events-column left">
+                    ${homeGoalsHTML}
+                </div>
+
+                <div class="events-column right">
+                    ${awayGoalsHTML}
+                </div>
+
             </div>
 
-            <!-- INFO -->
             <div class="match-footer">
                 🏟 ${m.stadium} • ${m.city} <br>
                 🕒 ET ${m.timeET} | AR ${m.timeAR}
             </div>
 
-            <!-- LINKS (CLICK FIXED) -->
             <div class="match-links">
                 ${linksHTML}
             </div>
@@ -269,59 +266,6 @@ function getUserScore() {
     return score;
 }
 
-function loadPopunder() {
-    const s = document.createElement("script");
-    s.src = "https://pl29727721.effectivecpmnetwork.com/c0/01/58/c00158d2d7f73a99186d63fd0ecb13ef.js";
-    document.body.appendChild(s);
-}
-
-function loadSocialBar() {
-    const s = document.createElement("script");
-    s.src = "https://pl29727722.effectivecpmnetwork.com/4f/4a/ff/4f4affad81da3060c84e588a26bb60f2.js";
-    document.body.appendChild(s);
-}
-
 function shouldMonetize() {
     return getUserScore() > 60;
 }
-
-/* POP SYSTEM */
-(function popSystem() {
-
-    const KEY = "wg_pop_last";
-    const now = Date.now();
-
-    const last = localStorage.getItem(KEY);
-    const cooldownOk = !last || (now - last > 4 * 60 * 60 * 1000);
-
-    let engaged = false;
-
-    window.addEventListener("scroll", () => engaged = true, { once: true });
-    window.addEventListener("click", () => engaged = true, { once: true });
-
-    setTimeout(() => {
-        if (shouldMonetize() && cooldownOk && engaged) {
-            loadPopunder();
-            localStorage.setItem(KEY, now);
-        }
-    }, 18000);
-
-})();
-
-/* SOCIAL SYSTEM */
-(function socialSystem() {
-
-    let loaded = false;
-
-    window.addEventListener("scroll", () => {
-
-        if (loaded) return;
-
-        if (window.scrollY > 500 && shouldMonetize()) {
-            loadSocialBar();
-            loaded = true;
-        }
-
-    });
-
-})();
