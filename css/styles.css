@@ -1,5 +1,5 @@
 /* =========================================
-   WORLD GOAL 2026 - FIFA BROADCAST SYSTEM
+   WORLD GOAL 2026 - FIFA BROADCAST SYSTEM FINAL
 ========================================= */
 
 :root{
@@ -118,7 +118,7 @@ nav a.active{
 }
 
 /* =========================
-   TODAY BANNER
+   BANNER
 ========================= */
 
 .today-banner{
@@ -133,7 +133,7 @@ nav a.active{
 }
 
 /* =========================
-   MATCH GRID (GLOBAL 2 POR FILA)
+   MATCH GRID (2 POR FILA)
 ========================= */
 
 .matches-grid{
@@ -144,7 +144,7 @@ nav a.active{
 }
 
 /* =========================
-   MATCH CARD FIFA BROADCAST
+   MATCH CARD FIFA STYLE
 ========================= */
 
 .match-card{
@@ -214,17 +214,15 @@ nav a.active{
 }
 
 /* =========================
-   GRUPO SOLO TEXTO (NO CAJA)
+   GROUP TEXT (NO BOX)
 ========================= */
 
-.group-label{
+.match-group{
     text-align:center;
     font-weight:900;
-    font-size:13px;
-    letter-spacing:2px;
-    color:#00D26A;
-    margin:6px 0 10px;
-    text-transform:uppercase;
+    color:var(--primary);
+    margin-bottom:6px;
+    letter-spacing:1px;
 }
 
 /* =========================
@@ -258,6 +256,7 @@ nav a.active{
     box-shadow:0 2px 8px rgba(0,0,0,.4);
 }
 
+/* SCORE */
 .score{
     font-size:28px;
     font-weight:900;
@@ -268,7 +267,7 @@ nav a.active{
 }
 
 /* =========================
-   EVENTS
+   EVENTS (GOALS)
 ========================= */
 
 .events{
@@ -276,18 +275,14 @@ nav a.active{
     padding-top:8px;
     border-top:1px solid rgba(255,255,255,.08);
     font-size:13px;
-    position:relative;
-    z-index:2;
 }
 
 .goal{
     display:flex;
     justify-content:space-between;
+    align-items:center;
     color:#4ade80;
-}
-
-.red{
-    color:#f87171;
+    padding:2px 0;
 }
 
 .minute{
@@ -303,8 +298,6 @@ nav a.active{
     margin-top:10px;
     font-size:12px;
     opacity:.8;
-    position:relative;
-    z-index:2;
 }
 
 /* =========================
@@ -318,7 +311,7 @@ nav a.active{
     margin-top:10px;
     justify-content:center;
     position:relative;
-    z-index:10;
+    z-index:5;
 }
 
 .match-link{
@@ -368,10 +361,8 @@ footer{
 
 .footer-links{
     display:flex;
-    justify-content:center;
-    gap:30px;
+    gap:25px;
     flex-wrap:wrap;
-    padding:15px 0;
 }
 
 .footer-links a{
@@ -385,25 +376,11 @@ footer{
 }
 
 /* =========================
-   FIXTURE GRID
-========================= */
-
-#fixtures{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-}
-
-/* =========================
    RESPONSIVE FINAL
 ========================= */
 
 @media (max-width: 900px){
     .matches-grid{
-        grid-template-columns:1fr;
-    }
-
-    #fixtures{
         grid-template-columns:1fr;
     }
 }
