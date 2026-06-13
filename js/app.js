@@ -50,8 +50,8 @@ async function loadMatches() {
                     flag1: m.flag1,
                     flag2: m.flag2,
 
-                    homeScore: m.homeScore ?? null,
-                    awayScore: m.awayScore ?? null,
+                    homeScore: m.homeScore ?? 0,
+                    awayScore: m.awayScore ?? 0,
 
                     stadium: m.stadium,
                     city: m.city,
@@ -122,7 +122,7 @@ function setActive(id) {
 }
 
 /* =========================
-   RENDER ENGINE (FIX GOALS LEFT/RIGHT)
+   RENDER ENGINE (FIX GOALS SIDE CORRECT)
 ========================= */
 
 function render(containerId, date) {
@@ -155,19 +155,22 @@ function render(containerId, date) {
             </a>
         `).join("");
 
-        /* 🔥 FIX: separar goles por equipo */
+        /* =========================
+           FIX GOALS SPLIT HOME / AWAY
+        ========================= */
+
         const homeGoals = (m.goals || []).filter(g => g.team === "home");
         const awayGoals = (m.goals || []).filter(g => g.team === "away");
 
         const homeGoalsHTML = homeGoals.map(g => `
             <div class="goal left">
-                ⚽ ${g.player} <span class="minute">${g.minute}'</span>
+                ⚽ ${g.player} <span class="minute">${g.minute}</span>
             </div>
         `).join("");
 
         const awayGoalsHTML = awayGoals.map(g => `
             <div class="goal right">
-                <span class="minute">${g.minute}'</span> ${g.player} ⚽
+                <span class="minute">${g.minute}</span> ${g.player} ⚽
             </div>
         `).join("");
 
@@ -178,7 +181,6 @@ function render(containerId, date) {
                 ${m.status}
             </div>
 
-            <!-- GRUPO SOLO TEXTO -->
             <div style="text-align:center;font-weight:900;color:#00D26A;margin-bottom:6px;">
                 GRUPO ${m.group}
             </div>
@@ -201,7 +203,7 @@ function render(containerId, date) {
 
             </div>
 
-            <!-- 🔥 GOLES POR LADO -->
+            <!-- GOALS SIDE SYSTEM -->
             <div class="events">
 
                 <div class="events-column left">
