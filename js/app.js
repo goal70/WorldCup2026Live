@@ -1,5 +1,5 @@
 /*************************************************
- * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FIXED FIFA RESTORE)
+ * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FINAL FIFA RESTORE)
  *************************************************/
 
 let allMatches = [];
@@ -19,7 +19,7 @@ function flagUrl(code) {
 }
 
 /* =========================
-   LOAD MATCHES (FIXED FULL MODEL)
+   LOAD MATCHES (FULL SAFE MODEL)
 ========================= */
 
 async function loadMatches() {
@@ -50,13 +50,15 @@ async function loadMatches() {
                     flag1: m.flag1,
                     flag2: m.flag2,
 
-                    score: m.score || "-",
+                    score: m.score ?? `${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}`,
 
                     stadium: m.stadium,
                     city: m.city,
 
                     timeET: m.timeET,
                     timeAR: m.timeAR,
+
+                    links: m.links || [],
 
                     goals: m.goals || [],
                     redCards: m.redCards || []
@@ -120,7 +122,7 @@ function setActive(id) {
 }
 
 /* =========================
-   RENDER ENGINE (FIFA BROADCAST RESTORED)
+   RENDER ENGINE (FULL FIFA BROADCAST RESTORE)
 ========================= */
 
 function render(containerId, date) {
@@ -147,7 +149,6 @@ function render(containerId, date) {
         return;
     }
 
-    /* GROUP FIX */
     const groups = {};
     matches.forEach(m => {
         if (!groups[m.group]) groups[m.group] = [];
@@ -158,18 +159,25 @@ function render(containerId, date) {
 
         <div class="group-title">Group ${g}</div>
 
-        ${groups[g].map(m => `
+        ${groups[g].map(m => {
+
+            const linksHTML = (m.links || []).map(l => `
+                <a class="match-link" href="${l.url}" target="_blank">
+                    <img src="${l.logo}" alt="${l.name}">
+                    <span>${l.name}</span>
+                </a>
+            `).join("");
+
+            return `
 
             <div class="match-card">
 
                 <!-- STATUS -->
-                <div style="display:flex;justify-content:center;margin-bottom:8px;">
-                    <span class="${m.status === "FINISHED" ? "final" : m.status === "LIVE" ? "live" : "upcoming"}">
-                        ${m.status}
-                    </span>
+                <div class="match-status ${m.status.toLowerCase()}">
+                    ${m.status}
                 </div>
 
-                <!-- MATCH HEADER -->
+                <!-- HEADER -->
                 <div class="match-header">
 
                     <div class="team">
@@ -188,7 +196,7 @@ function render(containerId, date) {
 
                 </div>
 
-                <!-- DETAILS RESTORED -->
+                <!-- EVENTS -->
                 <div class="events">
 
                     ${(m.goals || []).map(g =>
@@ -201,21 +209,27 @@ function render(containerId, date) {
 
                 </div>
 
-                <!-- FULL INFO BLOCK (FIX QUE TE FALTABA) -->
+                <!-- INFO RESTORED -->
                 <div class="match-footer">
                     🏟 ${m.stadium || ""} • ${m.city || ""} <br>
                     🕒 ET ${m.timeET || "-"} | AR ${m.timeAR || "-"}
                 </div>
 
+                <!-- LINKS -->
+                <div class="match-links">
+                    ${linksHTML}
+                </div>
+
             </div>
 
-        `).join("")}
+            `;
+        }).join("")}
 
     `).join("");
 }
 
 /* =========================================================
-   MONETIZATION (NO TOCADO)
+   MONETIZATION (UNCHANGED SAFE)
 ========================================================= */
 
 const USER = {
