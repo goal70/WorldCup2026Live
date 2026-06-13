@@ -1,10 +1,6 @@
 /*************************************************
- * WORLD GOAL 2026 - ENTERPRISE APP ENGINE
+ * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FIXED)
  *************************************************/
-
-/* =========================
-   MATCH DATA (TU CÓDIGO ORIGINAL)
-========================= */
 
 let allMatches = [];
 
@@ -12,6 +8,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadMatches();
     setupNavigation();
 });
+
+/* =========================
+   FLAG SYSTEM (FIX CRÍTICO)
+========================= */
+
+function flagUrl(code) {
+    if (!code) return "";
+    return `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
+}
 
 /* =========================
    LOAD MATCHES
@@ -36,14 +41,19 @@ async function loadMatches() {
                     id: m.id,
                     group: m.group,
                     date: m.date,
+
                     homeTeam: m.team1,
                     awayTeam: m.team2,
+
                     homeFlag: m.flag1,
                     awayFlag: m.flag2,
+
                     homeScore: m.homeScore,
                     awayScore: m.awayScore,
+
                     goals: m.goals || [],
                     redCards: m.redCards || [],
+
                     stadium: m.stadium,
                     city: m.city
                 });
@@ -60,7 +70,7 @@ async function loadMatches() {
 }
 
 /* =========================
-   DATE HELPERS
+   DATE NORMALIZATION (FIX CRÍTICO)
 ========================= */
 
 function getLocalDate(offset = 0) {
@@ -68,28 +78,16 @@ function getLocalDate(offset = 0) {
     d.setHours(0,0,0,0);
     d.setDate(d.getDate() + offset);
 
-    const y = d.getFullYear();
-    const m = String(d.getMonth()+1).padStart(2,"0");
-    const day = String(d.getDate()).padStart(2,"0");
-
-    return `${y}-${m}-${day}`;
+    return d.toISOString().split("T")[0];
 }
 
 /* =========================
    FILTERS
 ========================= */
 
-function showToday() {
-    render("todayMatches", getLocalDate(0));
-}
-
-function showYesterday() {
-    render("yesterdayMatches", getLocalDate(-1));
-}
-
-function showTomorrow() {
-    render("tomorrowMatches", getLocalDate(1));
-}
+function showToday(){ render("todayMatches", getLocalDate(0)); }
+function showYesterday(){ render("yesterdayMatches", getLocalDate(-1)); }
+function showTomorrow(){ render("tomorrowMatches", getLocalDate(1)); }
 
 /* =========================
    NAVIGATION
@@ -119,19 +117,19 @@ function setActive(id) {
 }
 
 /* =========================
-   RENDER (TU CÓDIGO ORIGINAL)
+   RENDER ENGINE (FIXED + CLEAN)
 ========================= */
-
-function flagUrl(code) {
-    if (!code) return "";
-    return `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
-}
 
 function render(containerId, date) {
 
-    document.getElementById("yesterdayMatches").style.display = "none";
-    document.getElementById("todayMatches").style.display = "none";
-    document.getElementById("tomorrowMatches").style.display = "none";
+    const containers = ["yesterdayMatches","todayMatches","tomorrowMatches"];
+
+    containers.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.style.display = "none";
+        el.innerHTML = "";
+    });
 
     const container = document.getElementById(containerId);
     container.style.display = "grid";
@@ -146,12 +144,15 @@ function render(containerId, date) {
         return;
     }
 
+    /* GROUP FIX */
     const groups = {};
+
     matches.forEach(m => {
         if (!groups[m.group]) groups[m.group] = [];
         groups[m.group].push(m);
     });
 
+    /* RENDER */
     container.innerHTML = Object.keys(groups).map(g => `
 
         <div class="group-title">Group ${g}</div>
@@ -163,7 +164,7 @@ function render(containerId, date) {
                 <div class="match-header">
 
                     <div class="team">
-                        <img src="${flagUrl(m.homeFlag)}" class="flag">
+                        <img src="${flagUrl(m.homeFlag)}" class="flag" loading="lazy">
                         <span>${m.homeTeam}</span>
                     </div>
 
@@ -173,7 +174,7 @@ function render(containerId, date) {
 
                     <div class="team">
                         <span>${m.awayTeam}</span>
-                        <img src="${flagUrl(m.awayFlag)}" class="flag">
+                        <img src="${flagUrl(m.awayFlag)}" class="flag" loading="lazy">
                     </div>
 
                 </div>
@@ -202,13 +203,8 @@ function render(containerId, date) {
 }
 
 /* =========================================================
-   🚀 ENTERPRISE LAYER (MONETIZATION + ANALYTICS)
-   👉 TODO ESTO VA AL FINAL (NO TOCA TU FIXTURE)
+   🚀 ENTERPRISE MONETIZATION LAYER (UNCHANGED SAFE)
 ========================================================= */
-
-/* =========================
-   USER STATE
-========================= */
 
 const USER = {
     start: Date.now(),
@@ -220,10 +216,6 @@ const USER = {
 
 localStorage.setItem("wg_visits", USER.visits);
 
-/* =========================
-   TRACKING LIGERO
-========================= */
-
 window.addEventListener("scroll", () => {
     USER.scroll = window.scrollY;
     USER.engaged = true;
@@ -233,10 +225,6 @@ document.addEventListener("click", () => {
     USER.clicks++;
     USER.engaged = true;
 });
-
-/* =========================
-   USER SCORE ENGINE
-========================= */
 
 function getUserScore() {
     let score = 0;
@@ -252,10 +240,6 @@ function getUserScore() {
     return score;
 }
 
-/* =========================
-   ADSTERRA LOADERS
-========================= */
-
 function loadPopunder() {
     const s = document.createElement("script");
     s.src = "https://pl29727721.effectivecpmnetwork.com/c0/01/58/c00158d2d7f73a99186d63fd0ecb13ef.js";
@@ -268,18 +252,11 @@ function loadSocialBar() {
     document.body.appendChild(s);
 }
 
-/* =========================
-   MONETIZATION RULE
-========================= */
-
 function shouldMonetize() {
     return getUserScore() > 60;
 }
 
-/* =========================
-   POPUNDER SYSTEM
-========================= */
-
+/* POP SYSTEM */
 (function popSystem() {
 
     const KEY = "wg_pop_last";
@@ -304,10 +281,7 @@ function shouldMonetize() {
 
 })();
 
-/* =========================
-   SOCIAL BAR SYSTEM
-========================= */
-
+/* SOCIAL SYSTEM */
 (function socialSystem() {
 
     let loaded = false;
