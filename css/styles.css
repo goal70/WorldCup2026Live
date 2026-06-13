@@ -133,7 +133,7 @@ nav a.active{
 }
 
 /* =========================
-   MATCH GRID FIX (2 POR FILA)
+   MATCH GRID (GLOBAL 2 POR FILA)
 ========================= */
 
 .matches-grid{
@@ -214,16 +214,30 @@ nav a.active{
 }
 
 /* =========================
-   HEADER MATCH
+   GRUPO SOLO TEXTO (NO CAJA)
+========================= */
+
+.group-label{
+    text-align:center;
+    font-weight:900;
+    font-size:13px;
+    letter-spacing:2px;
+    color:#00D26A;
+    margin:6px 0 10px;
+    text-transform:uppercase;
+}
+
+/* =========================
+   MATCH HEADER
 ========================= */
 
 .match-header{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    margin-bottom:10px;
     position:relative;
     z-index:2;
-    margin-bottom:10px;
 }
 
 .team{
@@ -254,7 +268,7 @@ nav a.active{
 }
 
 /* =========================
-   EVENTS (GOALS + CARDS)
+   EVENTS
 ========================= */
 
 .events{
@@ -270,7 +284,6 @@ nav a.active{
     display:flex;
     justify-content:space-between;
     color:#4ade80;
-    animation:goalPop .3s ease;
 }
 
 .red{
@@ -282,13 +295,8 @@ nav a.active{
     font-weight:700;
 }
 
-@keyframes goalPop{
-    from{transform:scale(1.2);opacity:0;}
-    to{transform:scale(1);opacity:1;}
-}
-
 /* =========================
-   FOOTER MATCH INFO
+   FOOTER MATCH
 ========================= */
 
 .match-footer{
@@ -300,7 +308,7 @@ nav a.active{
 }
 
 /* =========================
-   LINKS STREAMING (FIX CLICK)
+   LINKS STREAMING
 ========================= */
 
 .match-links{
@@ -326,7 +334,6 @@ nav a.active{
     text-decoration:none;
     cursor:pointer;
     transition:.2s;
-    pointer-events:auto;
 }
 
 .match-link:hover{
@@ -342,7 +349,7 @@ nav a.active{
 }
 
 /* =========================
-   FOOTER FIX
+   FOOTER
 ========================= */
 
 footer{
@@ -365,7 +372,6 @@ footer{
     gap:30px;
     flex-wrap:wrap;
     padding:15px 0;
-    line-height:2;
 }
 
 .footer-links a{
@@ -379,7 +385,7 @@ footer{
 }
 
 /* =========================
-   FIXTURE
+   FIXTURE GRID
 ========================= */
 
 #fixtures{
@@ -388,17 +394,8 @@ footer{
     gap:18px;
 }
 
-.group-title{
-    background:linear-gradient(90deg,var(--primary),#2ef59a);
-    color:black;
-    font-weight:900;
-    padding:10px;
-    text-align:center;
-    border-radius:10px;
-}
-
 /* =========================
-   RESPONSIVE FINAL FIX
+   RESPONSIVE FINAL
 ========================= */
 
 @media (max-width: 900px){
@@ -420,24 +417,4 @@ footer{
         flex-wrap:wrap;
         justify-content:center;
     }
-}
-/* =========================
-   GROUP TITLE CLEAN FIFA STYLE
-========================= */
-
-.group-header{
-    text-align:center;
-    margin:18px 0 10px;
-    position:relative;
-}
-
-.group-header span{
-    display:inline-block;
-    font-weight:900;
-    letter-spacing:2px;
-    font-size:14px;
-    color:#00D26A;
-    padding:6px 14px;
-    border-bottom:2px solid rgba(0,210,106,.5);
-    text-transform:uppercase;
 }
