@@ -1,5 +1,5 @@
 /*************************************************
- * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FINAL FIX LINKS)
+ * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FINAL FIX FIFA SCORE + LINKS)
  *************************************************/
 
 let allMatches = [];
@@ -41,7 +41,6 @@ async function loadMatches() {
                     id: m.id,
                     group: m.group,
                     date: m.date,
-
                     status: m.status || "UPCOMING",
 
                     team1: m.team1,
@@ -50,7 +49,8 @@ async function loadMatches() {
                     flag1: m.flag1,
                     flag2: m.flag2,
 
-                    score: m.score ?? `${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}`,
+                    homeScore: m.homeScore ?? 0,
+                    awayScore: m.awayScore ?? 0,
 
                     stadium: m.stadium,
                     city: m.city,
@@ -58,8 +58,7 @@ async function loadMatches() {
                     timeET: m.timeET,
                     timeAR: m.timeAR,
 
-                    links: m.links || [],   // 🔥 FIX IMPORTANTE
-
+                    links: m.links || [],
                     goals: m.goals || [],
                     redCards: m.redCards || []
                 });
@@ -122,7 +121,7 @@ function setActive(id) {
 }
 
 /* =========================
-   RENDER ENGINE (FIX LINKS + FIFA UI)
+   RENDER ENGINE (FIXED FIFA MODE)
 ========================= */
 
 function render(containerId, date) {
@@ -148,6 +147,20 @@ function render(containerId, date) {
 
     container.innerHTML = matches.map(m => {
 
+        /* =========================
+           SCORE FIX (HOME / AWAY REAL)
+        ========================= */
+
+        const homeGoals = (m.goals || []).filter(g => g.team === "home").length;
+        const awayGoals = (m.goals || []).filter(g => g.team === "away").length;
+
+        const scoreHome = m.homeScore ?? homeGoals;
+        const scoreAway = m.awayScore ?? awayGoals;
+
+        /* =========================
+           LINKS FIX
+        ========================= */
+
         const linksHTML = (m.links || []).map(l => `
             <a class="match-link" href="${l.url}" target="_blank">
                 <img src="${l.logo}" alt="">
@@ -155,8 +168,15 @@ function render(containerId, date) {
             </a>
         `).join("");
 
+        /* =========================
+           GOALS FIX (FIFA STYLE)
+        ========================= */
+
         const goalsHTML = (m.goals || []).map(g => `
-            <div class="goal">⚽ ${g.player} (${g.minute}')</div>
+            <div class="goal">
+                <span>⚽ ${g.player}</span>
+                <span class="minute">${g.minute}'</span>
+            </div>
         `).join("");
 
         return `
@@ -166,11 +186,12 @@ function render(containerId, date) {
                 ${m.status}
             </div>
 
-            <!-- SOLO TEXTO ARRIBA DEL PARTIDO -->
+            <!-- GRUPO SOLO TEXTO -->
             <div style="text-align:center;font-weight:900;color:#00D26A;margin-bottom:6px;">
                 GRUPO ${m.group}
             </div>
 
+            <!-- HEADER -->
             <div class="match-header">
 
                 <div class="team">
@@ -179,7 +200,7 @@ function render(containerId, date) {
                 </div>
 
                 <div class="score">
-                    ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
+                    ${scoreHome} - ${scoreAway}
                 </div>
 
                 <div class="team">
@@ -189,15 +210,18 @@ function render(containerId, date) {
 
             </div>
 
+            <!-- EVENTS -->
             <div class="events">
                 ${goalsHTML}
             </div>
 
+            <!-- INFO -->
             <div class="match-footer">
                 🏟 ${m.stadium} • ${m.city} <br>
                 🕒 ET ${m.timeET} | AR ${m.timeAR}
             </div>
 
+            <!-- LINKS (CLICK FIXED) -->
             <div class="match-links">
                 ${linksHTML}
             </div>
