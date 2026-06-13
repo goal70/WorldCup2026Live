@@ -1,5 +1,5 @@
 /*************************************************
- * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FINAL FIFA RESTORE)
+ * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FINAL FIX LINKS)
  *************************************************/
 
 let allMatches = [];
@@ -19,7 +19,7 @@ function flagUrl(code) {
 }
 
 /* =========================
-   LOAD MATCHES (FULL SAFE MODEL)
+   LOAD MATCHES
 ========================= */
 
 async function loadMatches() {
@@ -58,7 +58,7 @@ async function loadMatches() {
                     timeET: m.timeET,
                     timeAR: m.timeAR,
 
-                    links: m.links || [],
+                    links: m.links || [],   // 🔥 FIX IMPORTANTE
 
                     goals: m.goals || [],
                     redCards: m.redCards || []
@@ -122,7 +122,7 @@ function setActive(id) {
 }
 
 /* =========================
-   RENDER ENGINE (FULL FIFA BROADCAST RESTORE)
+   RENDER ENGINE (FIX LINKS + FIFA UI)
 ========================= */
 
 function render(containerId, date) {
@@ -161,23 +161,20 @@ function render(containerId, date) {
 
         ${groups[g].map(m => {
 
-            const linksHTML = (m.links || []).map(l => `
-                <a class="match-link" href="${l.url}" target="_blank">
-                    <img src="${l.logo}" alt="${l.name}">
-                    <span>${l.name}</span>
-                </a>
-            `).join("");
+            /* 🔥 LINKS FIXED SAFE RENDER */
+            const linksHTML = (m.links && m.links.length)
+                ? m.links.map(l => `
+                    <a class="match-link" href="${l.url}" target="_blank" rel="noopener noreferrer">
+                        <img src="${l.logo}" alt="${l.name}">
+                        <span>${l.name}</span>
+                    </a>
+                `).join("")
+                : "";
 
             return `
 
             <div class="match-card">
 
-                <!-- STATUS -->
-                <div class="match-status ${m.status.toLowerCase()}">
-                    ${m.status}
-                </div>
-
-                <!-- HEADER -->
                 <div class="match-header">
 
                     <div class="team">
@@ -196,7 +193,6 @@ function render(containerId, date) {
 
                 </div>
 
-                <!-- EVENTS -->
                 <div class="events">
 
                     ${(m.goals || []).map(g =>
@@ -209,16 +205,12 @@ function render(containerId, date) {
 
                 </div>
 
-                <!-- INFO RESTORED -->
                 <div class="match-footer">
                     🏟 ${m.stadium || ""} • ${m.city || ""} <br>
                     🕒 ET ${m.timeET || "-"} | AR ${m.timeAR || "-"}
                 </div>
 
-                <!-- LINKS -->
-                <div class="match-links">
-                    ${linksHTML}
-                </div>
+                ${linksHTML ? `<div class="match-links">${linksHTML}</div>` : ""}
 
             </div>
 
