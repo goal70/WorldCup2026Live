@@ -1,5 +1,5 @@
 /*************************************************
- * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FIXED)
+ * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FIXED + FIFA MODE)
  *************************************************/
 
 let allMatches = [];
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function flagUrl(code) {
     if (!code) return "";
-    return `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
+    return `https://flagcdn.com/w40/${String(code).toLowerCase()}.png`;
 }
 
 /* =========================
@@ -48,14 +48,16 @@ async function loadMatches() {
                     homeFlag: m.flag1,
                     awayFlag: m.flag2,
 
-                    homeScore: m.homeScore,
-                    awayScore: m.awayScore,
+                    homeScore: m.homeScore ?? null,
+                    awayScore: m.awayScore ?? null,
 
                     goals: m.goals || [],
                     redCards: m.redCards || [],
 
                     stadium: m.stadium,
-                    city: m.city
+                    city: m.city,
+
+                    links: m.links || []
                 });
 
             });
@@ -78,7 +80,11 @@ function getLocalDate(offset = 0) {
     d.setHours(0,0,0,0);
     d.setDate(d.getDate() + offset);
 
-    return d.toISOString().split("T")[0];
+    const y = d.getFullYear();
+    const m = String(d.getMonth()+1).padStart(2,"0");
+    const day = String(d.getDate()).padStart(2,"0");
+
+    return `${y}-${m}-${day}`;
 }
 
 /* =========================
@@ -117,7 +123,7 @@ function setActive(id) {
 }
 
 /* =========================
-   RENDER ENGINE (FIXED + CLEAN)
+   RENDER ENGINE (FIFA BROADCAST FINAL PATCH)
 ========================= */
 
 function render(containerId, date) {
@@ -138,13 +144,12 @@ function render(containerId, date) {
 
     if (!matches.length) {
         container.innerHTML = `
-            <div style="text-align:center;opacity:.6;padding:20px;">
+            <div class="no-matches">
                 No matches for this day
             </div>`;
         return;
     }
 
-    /* GROUP FIX */
     const groups = {};
 
     matches.forEach(m => {
@@ -152,13 +157,18 @@ function render(containerId, date) {
         groups[m.group].push(m);
     });
 
-    /* RENDER */
     container.innerHTML = Object.keys(groups).map(g => `
 
-        <div class="group-title">Group ${g}</div>
+        <div class="group-title">GROUP ${g}</div>
 
-        ${groups[g].map(m => `
+        ${groups[g].map(m => {
 
+            const score =
+                (m.homeScore !== null && m.awayScore !== null)
+                ? `${m.homeScore} - ${m.awayScore}`
+                : "- -";
+
+            return `
             <div class="match-card">
 
                 <div class="match-header">
@@ -168,9 +178,7 @@ function render(containerId, date) {
                         <span>${m.homeTeam}</span>
                     </div>
 
-                    <div class="score">
-                        ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
-                    </div>
+                    <div class="score">${score}</div>
 
                     <div class="team">
                         <span>${m.awayTeam}</span>
@@ -195,9 +203,18 @@ function render(containerId, date) {
                     🏟 ${m.stadium || ""} • ${m.city || ""}
                 </div>
 
-            </div>
+                ${m.links.length ? `
+                <div class="links">
+                    ${m.links.map(l => `
+                        <a class="link-btn" href="${l.url}" target="_blank">
+                            ${l.name}
+                        </a>
+                    `).join("")}
+                </div>` : ""}
 
-        `).join("")}
+            </div>
+            `;
+        }).join("")}
 
     `).join("");
 }
