@@ -8,8 +8,8 @@
     "team1": "Germany",
     "team2": "Curacao",
 
-    "flag1": "🇩🇪",
-    "flag2": "🇨🇼",
+    "flag1": "de",
+    "flag2": "cw",
 
     "score": "-",
 
@@ -17,7 +17,7 @@
     "city": "Houston",
 
     "timeET": "13:00",
-    "timeAR": "15:00"
+    "timeAR": "14:00"
   },
   {
     "id": 2,
@@ -28,8 +28,8 @@
     "team1": "Costa de Marfil",
     "team2": "Ecuador",
 
-    "flag1": "🇨🇮",
-    "flag2": "🇪🇨",
+    "flag1": "ci",
+    "flag2": "ec",
 
     "score": "-",
 
@@ -37,7 +37,7 @@
     "city": "Philadelphia",
 
     "timeET": "19:00",
-    "timeAR": "21:00"
+    "timeAR": "20:00"
   },
   {
     "id": 3,
