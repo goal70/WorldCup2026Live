@@ -728,3 +728,49 @@ td:first-child{
     text-align:left;
     font-weight:700;
 }
+/* =========================
+   PROMIEDOS TABLE SYSTEM
+========================= */
+
+.tables-wrapper{
+    margin-top:20px;
+}
+
+.group-table{
+    margin-bottom:30px;
+    background:#0b2a1d;
+    border:1px solid rgba(0,210,106,.25);
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.group-table h3{
+    background:#10291E;
+    padding:10px;
+    color:#00D26A;
+    font-weight:900;
+    text-align:center;
+}
+
+.group-table table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+}
+
+.group-table th,
+.group-table td{
+    padding:8px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.group-table th{
+    color:#00D26A;
+    font-size:12px;
+    background:#071a13;
+}
+
+.group-table td{
+    color:white;
+}
