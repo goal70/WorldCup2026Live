@@ -11,20 +11,24 @@
     "flag1": "us",
     "flag2": "py",
 
-    "score": "-",
+    "homeScore": null,
+    "awayScore": null,
 
     "stadium": "SoFi Stadium",
     "city": "Los Angeles",
 
     "timeET": "21:00",
-    "timeAR": "22:00"
+    "timeAR": "22:00",
 
     "links": [
       {
         "name": "DirecTV Sports",
-        "logo": "https://static.wikia.nocookie.net/logopedia/images/9/91/DirecTV_Sports_2013.png/revision/latest?cb=20200706222755&path-prefix=es",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRzcG9ydHM="
+        "logo": "https://static.wikia.nocookie.net/logopedia/images/9/91/DirecTV_Sports_2013.png",
+        "url": "https://example.com/directv"
+      }
+    ]
   },
+
   {
     "id": 2,
     "group": "D",
@@ -34,10 +38,11 @@
     "team1": "Australia",
     "team2": "Turkey",
 
-    "flag1": "🇦🇺",
-    "flag2": "🇹🇷",
+    "flag1": "au",
+    "flag2": "tr",
 
-    "score": "-",
+    "homeScore": null,
+    "awayScore": null,
 
     "stadium": "BC Place",
     "city": "Vancouver",
@@ -45,6 +50,7 @@
     "timeET": "15:00",
     "timeAR": "17:00"
   },
+
   {
     "id": 3,
     "group": "D",
@@ -54,10 +60,11 @@
     "team1": "Paraguay",
     "team2": "Australia",
 
-    "flag1": "🇵🇾",
-    "flag2": "🇦🇺",
+    "flag1": "py",
+    "flag2": "au",
 
-    "score": "-",
+    "homeScore": null,
+    "awayScore": null,
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
@@ -65,6 +72,7 @@
     "timeET": "15:00",
     "timeAR": "17:00"
   },
+
   {
     "id": 4,
     "group": "D",
@@ -74,10 +82,11 @@
     "team1": "United States",
     "team2": "Turkey",
 
-    "flag1": "🇺🇸",
-    "flag2": "🇹🇷",
+    "flag1": "us",
+    "flag2": "tr",
 
-    "score": "-",
+    "homeScore": null,
+    "awayScore": null,
 
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -85,6 +94,7 @@
     "timeET": "21:00",
     "timeAR": "23:00"
   },
+
   {
     "id": 5,
     "group": "D",
@@ -94,10 +104,11 @@
     "team1": "Australia",
     "team2": "United States",
 
-    "flag1": "🇦🇺",
-    "flag2": "🇺🇸",
+    "flag1": "au",
+    "flag2": "us",
 
-    "score": "-",
+    "homeScore": null,
+    "awayScore": null,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
@@ -105,6 +116,7 @@
     "timeET": "15:00",
     "timeAR": "17:00"
   },
+
   {
     "id": 6,
     "group": "D",
@@ -114,10 +126,11 @@
     "team1": "Turkey",
     "team2": "Paraguay",
 
-    "flag1": "🇹🇷",
-    "flag2": "🇵🇾",
+    "flag1": "tr",
+    "flag2": "py",
 
-    "score": "-",
+    "homeScore": null,
+    "awayScore": null,
 
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
