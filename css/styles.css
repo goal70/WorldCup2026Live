@@ -395,3 +395,33 @@ footer{
         justify-content:center;
     }
 }
+/* =========================
+   EVENTS FIX (HOME / AWAY SIDES)
+========================= */
+
+.events{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.events-column{
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.goal.left{
+    text-align:left;
+}
+
+.goal.right{
+    text-align:right;
+}
+
+.minute{
+    opacity:.7;
+    font-size:11px;
+    margin:0 4px;
+}
