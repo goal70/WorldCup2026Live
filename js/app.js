@@ -1,5 +1,5 @@
 /*************************************************
- * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FINAL FIX GOALS SIDE)
+ * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FINAL FIX GOALS SIDE + PROMIEDOS TABLES)
  *************************************************/
 
 let allMatches = [];
@@ -7,6 +7,9 @@ let allMatches = [];
 document.addEventListener("DOMContentLoaded", async () => {
     await loadMatches();
     setupNavigation();
+
+    // 🔥 AUTO LOAD TABLES (PROMIEDOS SYSTEM)
+    renderTables();
 });
 
 /* =========================
@@ -70,6 +73,9 @@ async function loadMatches() {
 
         showToday();
 
+        // 🔥 recalcular tablas cuando cargan partidos
+        renderTables();
+
     } catch (err) {
         console.error("LOAD ERROR", err);
     }
@@ -90,9 +96,9 @@ function getLocalDate(offset = 0) {
    FILTERS
 ========================= */
 
-function showToday(){ render("todayMatches", getLocalDate(0)); }
-function showYesterday(){ render("yesterdayMatches", getLocalDate(-1)); }
-function showTomorrow(){ render("tomorrowMatches", getLocalDate(1)); }
+function showToday(){ render("todayMatches", getLocalDate(0)); renderTables(); }
+function showYesterday(){ render("yesterdayMatches", getLocalDate(-1)); renderTables(); }
+function showTomorrow(){ render("tomorrowMatches", getLocalDate(1)); renderTables(); }
 
 /* =========================
    NAVIGATION
@@ -122,7 +128,7 @@ function setActive(id) {
 }
 
 /* =========================
-   RENDER ENGINE (FIX GOALS SIDE CORRECT)
+   RENDER MATCHES (FIXED GOALS SIDE)
 ========================= */
 
 function render(containerId, date) {
@@ -154,10 +160,6 @@ function render(containerId, date) {
                 <span>${l.name}</span>
             </a>
         `).join("");
-
-        /* =========================
-           FIX GOALS SPLIT HOME / AWAY
-        ========================= */
 
         const homeGoals = (m.goals || []).filter(g => g.team === "home");
         const awayGoals = (m.goals || []).filter(g => g.team === "away");
@@ -193,7 +195,7 @@ function render(containerId, date) {
                 </div>
 
                 <div class="score">
-                    ${m.homeScore ?? 0} - ${m.awayScore ?? 0}
+                    ${m.homeScore} - ${m.awayScore}
                 </div>
 
                 <div class="team">
@@ -203,17 +205,9 @@ function render(containerId, date) {
 
             </div>
 
-            <!-- GOALS SIDE SYSTEM -->
             <div class="events">
-
-                <div class="events-column left">
-                    ${homeGoalsHTML}
-                </div>
-
-                <div class="events-column right">
-                    ${awayGoalsHTML}
-                </div>
-
+                <div class="events-column left">${homeGoalsHTML}</div>
+                <div class="events-column right">${awayGoalsHTML}</div>
             </div>
 
             <div class="match-footer">
@@ -230,44 +224,118 @@ function render(containerId, date) {
     }).join("");
 }
 
-/* =========================================================
-   MONETIZATION (UNCHANGED SAFE)
-========================================================= */
+/* =========================
+   PROMIEDOS TABLE SYSTEM
+========================= */
 
-const USER = {
-    start: Date.now(),
-    engaged: false,
-    clicks: 0,
-    scroll: 0,
-    visits: Number(localStorage.getItem("wg_visits") || 0) + 1
-};
+function buildTables() {
 
-localStorage.setItem("wg_visits", USER.visits);
+    const tables = {};
 
-window.addEventListener("scroll", () => {
-    USER.scroll = window.scrollY;
-    USER.engaged = true;
-});
+    allMatches.forEach(m => {
 
-document.addEventListener("click", () => {
-    USER.clicks++;
-    USER.engaged = true;
-});
+        if (!tables[m.group]) tables[m.group] = {};
 
-function getUserScore() {
-    let score = 0;
+        [m.team1, m.team2].forEach(team => {
+            if (!tables[m.group][team]) {
+                tables[m.group][team] = {
+                    team,
+                    pts: 0,
+                    pj: 0,
+                    pg: 0,
+                    pe: 0,
+                    pp: 0,
+                    gf: 0,
+                    gc: 0,
+                    dg: 0
+                };
+            }
+        });
+    });
 
-    const time = Date.now() - USER.start;
+    allMatches.forEach(m => {
 
-    if (USER.engaged) score += 25;
-    if (USER.scroll > 300) score += 20;
-    if (USER.clicks > 1) score += 20;
-    if (time > 15000) score += 20;
-    if (USER.visits > 2) score += 15;
+        if (m.status === "UPCOMING") return;
 
-    return score;
+        const home = tables[m.group][m.team1];
+        const away = tables[m.group][m.team2];
+
+        const hs = m.homeScore ?? 0;
+        const as = m.awayScore ?? 0;
+
+        home.pj++; away.pj++;
+        home.gf += hs; home.gc += as;
+        away.gf += as; away.gc += hs;
+
+        if (hs > as) {
+            home.pg++; home.pts += 3;
+            away.pp++;
+        } else if (as > hs) {
+            away.pg++; away.pts += 3;
+            home.pp++;
+        } else {
+            home.pe++; away.pe++;
+            home.pts += 1; away.pts += 1;
+        }
+
+        home.dg = home.gf - home.gc;
+        away.dg = away.gf - away.gc;
+    });
+
+    return tables;
 }
 
-function shouldMonetize() {
-    return getUserScore() > 60;
+function renderTables() {
+
+    const tables = buildTables();
+    const container = document.getElementById("tables");
+
+    if (!container) return;
+
+    container.innerHTML = Object.keys(tables).map(group => {
+
+        const rows = Object.values(tables[group])
+            .sort((a,b) =>
+                b.pts - a.pts ||
+                b.dg - a.dg ||
+                b.gf - a.gf
+            )
+            .map(t => `
+                <tr>
+                    <td>${t.team}</td>
+                    <td>${t.pj}</td>
+                    <td>${t.pg}</td>
+                    <td>${t.pe}</td>
+                    <td>${t.pp}</td>
+                    <td>${t.gf}</td>
+                    <td>${t.gc}</td>
+                    <td>${t.dg}</td>
+                    <td><b>${t.pts}</b></td>
+                </tr>
+            `).join("");
+
+        return `
+        <div class="group-table">
+            <h3>GROUP ${group}</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>PJ</th>
+                        <th>PG</th>
+                        <th>PE</th>
+                        <th>PP</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>PTS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${rows}
+                </tbody>
+            </table>
+        </div>
+        `;
+    }).join("");
 }
