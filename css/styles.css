@@ -693,3 +693,38 @@ footer{
         grid-template-columns:1fr;
     }
 }
+.group-table{
+    margin:20px 0;
+    padding:15px;
+    background:#0b2a1d;
+    border-radius:12px;
+    border:1px solid rgba(0,210,106,.25);
+}
+
+.group-table h3{
+    color:#00D26A;
+    margin-bottom:10px;
+    text-align:center;
+    letter-spacing:2px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+}
+
+th, td{
+    padding:8px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+th{
+    color:#00D26A;
+}
+
+td:first-child{
+    text-align:left;
+    font-weight:700;
+}
