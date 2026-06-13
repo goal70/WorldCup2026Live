@@ -412,3 +412,44 @@ footer{
     opacity:.6;
     padding:20px;
 }
+/* =========================
+   MATCH LINKS (HOME BUTTONS)
+========================= */
+
+.match-links{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:12px;
+    justify-content:center;
+}
+
+.match-link{
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    padding:6px 10px;
+    border-radius:8px;
+
+    background:#10291E;
+    border:1px solid rgba(0,210,106,.25);
+
+    color:white;
+    font-size:12px;
+    text-decoration:none;
+
+    transition:.2s;
+}
+
+.match-link:hover{
+    background:#00D26A;
+    color:black;
+    transform:translateY(-2px);
+}
+
+.match-link img{
+    width:16px;
+    height:16px;
+    border-radius:3px;
+}
