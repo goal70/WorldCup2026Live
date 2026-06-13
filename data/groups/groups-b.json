@@ -11,7 +11,8 @@
     "flag1": "ca",
     "flag2": "ba",
 
-    "score": "1-1",
+    "homeScore": 1,
+    "awayScore": 1,
 
     "stadium": "BMO Field",
     "city": "Toronto",
