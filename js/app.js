@@ -157,7 +157,9 @@ function render(containerId, date) {
 
     container.innerHTML = Object.keys(groups).map(g => `
 
-        <div class="group-title">Group ${g}</div>
+        <div class="group-header">
+    <span>GROUP ${g}</span>
+</div>
 
         ${groups[g].map(m => {
 
