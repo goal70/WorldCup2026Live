@@ -11,8 +11,8 @@
     "flag1": "us",
     "flag2": "py",
 
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "SoFi Stadium",
     "city": "Los Angeles",
