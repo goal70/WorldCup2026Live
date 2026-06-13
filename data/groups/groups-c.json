@@ -3,7 +3,7 @@
     "id": 1,
     "group": "C",
     "date": "2026-06-13",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Brazil",
     "team2": "Marruecos",
@@ -11,7 +11,8 @@
     "flag1": "br",
     "flag2": "ma",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "MetLife Stadium",
     "city": "New Jersey",
