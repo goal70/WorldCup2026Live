@@ -11,7 +11,7 @@
     "flag1": "us",
     "flag2": "py",
 
-    "homeScore": 2,
+    "homeScore": 3,
     "awayScore": 0,
 
     "stadium": "SoFi Stadium",
@@ -29,6 +29,11 @@
       {
         "player": "Balogun",
         "minute": 31,
+        "team": "home"
+      },
+      {
+        "player": "Balogun",
+        "minute": 45+5,
         "team": "home"
       }
     ],
