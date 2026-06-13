@@ -20,6 +20,19 @@
     "timeET": "18:00",
     "timeAR": "19:00",
 
+     "goals": [
+      {
+        "player": "Vinicius",
+        "minute": 32,
+        "team": "home"
+      },
+      {
+        "player": "Saibari",
+        "minute": 21,
+        "team": "away"
+      }
+    ],
+
     "links": [
   {
     "name": "DSports",
