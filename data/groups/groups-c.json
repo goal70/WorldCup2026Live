@@ -6,18 +6,18 @@
     "status": "UPCOMING",
 
     "team1": "Brazil",
-    "team2": "Scotland",
+    "team2": "Marruecos",
 
-    "flag1": "🇧🇷",
-    "flag2": "🏴",
+    "flag1": "br",
+    "flag2": "ma",
 
     "score": "-",
 
     "stadium": "SoFi Stadium",
     "city": "Los Angeles",
 
-    "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeET": "18:00",
+    "timeAR": "19:00"
   },
   {
     "id": 2,
@@ -25,19 +25,19 @@
     "date": "2026-06-13",
     "status": "UPCOMING",
 
-    "team1": "Morocco",
-    "team2": "Haiti",
+    "team1": "Haiti",
+    "team2": "Escocia",
 
-    "flag1": "🇲🇦",
-    "flag2": "🇭🇹",
+    "flag1": "ht",
+    "flag2": "sc",
 
     "score": "-",
 
     "stadium": "BMO Field",
     "city": "Toronto",
 
-    "timeET": "18:00",
-    "timeAR": "20:00"
+    "timeET": "21:00",
+    "timeAR": "22:00"
   },
   {
     "id": 3,
@@ -48,8 +48,8 @@
     "team1": "Scotland",
     "team2": "Morocco",
 
-    "flag1": "🏴",
-    "flag2": "🇲🇦",
+    "flag1": "sc",
+    "flag2": "ma",
 
     "score": "-",
 
