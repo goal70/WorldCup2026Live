@@ -143,39 +143,42 @@ function render(containerId, date) {
 
     if (!matches.length) {
         container.innerHTML = `
-            <div style="text-align:center;opacity:.6;padding:20px;">
+            <div class="no-matches">
                 No matches for this day
             </div>`;
         return;
     }
 
+    // agrupar
     const groups = {};
     matches.forEach(m => {
         if (!groups[m.group]) groups[m.group] = [];
         groups[m.group].push(m);
     });
 
-    container.innerHTML = Object.keys(groups).map(g => `
+    container.innerHTML = Object.keys(groups).map(groupKey => {
 
-        <div class="group-header">
-    <span>GROUP ${g}</span>
-</div>
+        const matchesHTML = groups[groupKey].map(m => {
 
-        ${groups[g].map(m => {
+            const linksHTML = (m.links || []).map(l => `
+                <a class="match-link" href="${l.url}" target="_blank">
+                    <img src="${l.logo}" alt="">
+                    <span>${l.name}</span>
+                </a>
+            `).join("");
 
-            /* 🔥 LINKS FIXED SAFE RENDER */
-            const linksHTML = (m.links && m.links.length)
-                ? m.links.map(l => `
-                    <a class="match-link" href="${l.url}" target="_blank" rel="noopener noreferrer">
-                        <img src="${l.logo}" alt="${l.name}">
-                        <span>${l.name}</span>
-                    </a>
-                `).join("")
-                : "";
+            const goalsHTML = (m.goals || []).map(g => `
+                <div class="goal">
+                    ⚽ ${g.player} (${g.minute}')
+                </div>
+            `).join("");
 
             return `
-
             <div class="match-card">
+
+                <div class="match-status ${m.status.toLowerCase()}">
+                    ${m.status}
+                </div>
 
                 <div class="match-header">
 
@@ -185,7 +188,7 @@ function render(containerId, date) {
                     </div>
 
                     <div class="score">
-                        ${m.score}
+                        ${m.homeScore ?? "-"} - ${m.awayScore ?? "-"}
                     </div>
 
                     <div class="team">
@@ -196,30 +199,30 @@ function render(containerId, date) {
                 </div>
 
                 <div class="events">
-
-                    ${(m.goals || []).map(g =>
-                        `<div class="goal">⚽ ${g.player} ${g.minute}'</div>`
-                    ).join("")}
-
-                    ${(m.redCards || []).map(r =>
-                        `<div class="red">🟥 ${r.player} ${r.minute}'</div>`
-                    ).join("")}
-
+                    ${goalsHTML}
                 </div>
 
                 <div class="match-footer">
-                    🏟 ${m.stadium || ""} • ${m.city || ""} <br>
-                    🕒 ET ${m.timeET || "-"} | AR ${m.timeAR || "-"}
+                    🏟 ${m.stadium} • ${m.city} <br>
+                    🕒 ET ${m.timeET} | AR ${m.timeAR}
                 </div>
 
-                ${linksHTML ? `<div class="match-links">${linksHTML}</div>` : ""}
+                <div class="match-links">
+                    ${linksHTML}
+                </div>
 
             </div>
-
             `;
-        }).join("")}
+        }).join("");
 
-    `).join("");
+        return `
+            <div class="group-title">GRUPO ${groupKey}</div>
+            <div class="matches-grid">
+                ${matchesHTML}
+            </div>
+        `;
+
+    }).join("");
 }
 
 /* =========================================================
