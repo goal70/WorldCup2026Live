@@ -505,3 +505,191 @@ footer{
     margin-bottom:6px;
     letter-spacing:1px;
 }
+/* =========================================
+   FIXTURE PRO SYSTEM v2 (SAFE PATCH)
+   SOLO FIXTURE - NO ROMPE HOME
+========================================= */
+
+/* =========================
+   GRID FIXTURE (2 POR FILA)
+========================= */
+
+#fixtures{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px;
+}
+
+/* RESPONSIVE FIXTURE */
+@media (max-width: 900px){
+    #fixtures{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================
+   MATCH CARD FIXTURE STYLE CLEAN
+========================= */
+
+.match-card{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,#0b2a1d,#071a13);
+    border:1px solid rgba(0,210,106,.25);
+    border-radius:14px;
+    padding:14px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+/* hover suave tipo pro */
+.match-card:hover{
+    transform:translateY(-2px);
+    border-color:#00D26A;
+}
+
+/* =========================
+   GRUPO (SOLO TEXTO ARRIBA)
+========================= */
+
+.match-group{
+    text-align:center;
+    font-weight:900;
+    font-size:13px;
+    color:#00D26A;
+    margin-bottom:6px;
+    letter-spacing:1px;
+}
+
+/* =========================
+   HEADER MATCH
+========================= */
+
+.match-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.team{
+    width:40%;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+    font-weight:700;
+}
+
+.flag{
+    width:32px;
+    height:22px;
+    border-radius:3px;
+}
+
+.score{
+    font-size:26px;
+    font-weight:900;
+    text-align:center;
+    min-width:70px;
+}
+
+/* =========================
+   EVENTS FIX (PROMIEDOS STYLE)
+   HOME IZQUIERDA / AWAY DERECHA
+========================= */
+
+.events{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1px solid rgba(255,255,255,.08);
+    font-size:12px;
+}
+
+/* columnas */
+.events-column{
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+/* GOLES */
+.goal{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    line-height:1.2;
+    color:#4ade80;
+}
+
+/* HOME (izquierda) */
+.events-column.left .goal{
+    justify-content:flex-start;
+    text-align:left;
+}
+
+/* AWAY (derecha) */
+.events-column.right .goal{
+    justify-content:flex-end;
+    text-align:right;
+    flex-direction:row-reverse;
+}
+
+/* MINUTO MÁS PEGADO AL NOMBRE (AJUSTE FINO) */
+.minute{
+    font-size:11px;
+    opacity:.75;
+    margin-left:4px;
+    white-space:nowrap;
+}
+
+/* =========================
+   FOOTER FIXTURE INFO
+========================= */
+
+.match-footer{
+    margin-top:10px;
+    font-size:11px;
+    opacity:.75;
+    text-align:center;
+}
+
+/* =========================
+   LINKS FIXTURE
+========================= */
+
+.match-links{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:10px;
+}
+
+.match-link{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:11px;
+    padding:6px 10px;
+    background:#10291E;
+    border-radius:8px;
+    border:1px solid rgba(0,210,106,.2);
+    text-decoration:none;
+    color:white;
+}
+
+/* =========================
+   SAFE FIX MOBILE
+========================= */
+
+@media (max-width: 900px){
+    #fixtures{
+        grid-template-columns:1fr;
+    }
+}
