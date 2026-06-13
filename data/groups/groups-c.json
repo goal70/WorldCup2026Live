@@ -17,10 +17,33 @@
     "city": "New Jersey",
 
     "timeET": "18:00",
-    "timeAR": "19:00"
+    "timeAR": "19:00",
+
+    "links": [
+  {
+    "name": "DSports",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5a/DSports.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
   },
   {
-    "id": 2,
+    "name": "TUDN",
+    "logo": "https://cdn2.mediotiempo.com/uploads/media/2025/09/06/tudn-sumara-un-refuerzo-en.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHVkbm14LnBocA=="
+  },
+  {
+    "name": "Azteca 7",
+    "logo": "https://w1.pngwing.com/pngs/51/22/png-transparent-tv-logo-tv-azteca-television-azteca-7-television-channel-kazd-wdca.png",
+    "url": "https://www.rojadirectatvhd.net/ver/913/brasil-vs-marruecos"
+  },
+  {
+    "name": "SportTV (Br)",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/26/SporTV_2021.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvc3BvcnR2MS5waHA="
+  }
+]
+},
+{
+  "id": 2,
     "group": "C",
     "date": "2026-06-13",
     "status": "UPCOMING",
