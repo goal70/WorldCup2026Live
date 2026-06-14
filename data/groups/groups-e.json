@@ -57,7 +57,7 @@
   "id": 2,
     "group": "E",
     "date": "2026-06-14",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Costa de Marfil",
     "team2": "Ecuador",
@@ -65,7 +65,8 @@
     "flag1": "ci",
     "flag2": "ec",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
