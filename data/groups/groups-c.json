@@ -60,7 +60,7 @@
   "id": 2,
     "group": "C",
     "date": "2026-06-13",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Haiti",
     "team2": "Escocia",
@@ -68,7 +68,8 @@
     "flag1": "ht",
     "flag2": "gb",
 
-    "score": "-",
+    "homeScore": 0,
+  "awayScore": 0,
 
     "stadium": "Gillette Stadium",
     "city": "Foxborough",
