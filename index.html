@@ -88,18 +88,31 @@
 
 <script>
 window.addEventListener("load", () => {
+
     const ads1 = document.createElement("script");
     ads1.src = "https://pl29727721.effectivecpmnetwork.com/c0/01/58/c00158d2d7f73a99186d63fd0ecb13ef.js";
+    ads1.async = true;
     document.body.appendChild(ads1);
 
     const ads2 = document.createElement("script");
     ads2.src = "https://pl29727722.effectivecpmnetwork.com/4f/4a/ff/4f4affad81da3060c84e588a26bb60f2.js";
+    ads2.async = true;
     document.body.appendChild(ads2);
+
 });
 </script>
 
-<!-- APP CORE (FIX IMPORTANTE) -->
-<script src="js/index.js"></script>
+<!-- APP CORE (FIX CRÍTICO) -->
+<script>
+try {
+    const script = document.createElement("script");
+    script.src = "/js/index.js";  // 🔥 FIX IMPORTANTE (ruta absoluta)
+    script.async = true;
+    document.body.appendChild(script);
+} catch (e) {
+    console.error("APP CORE ERROR", e);
+}
+</script>
 
 </body>
 </html>
