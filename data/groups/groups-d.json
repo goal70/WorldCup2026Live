@@ -69,8 +69,8 @@
     "flag1": "au",
     "flag2": "tr",
 
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 1,
+    "awayScore": 0,
 
     "stadium": "BC Place",
     "city": "Vancouver",
