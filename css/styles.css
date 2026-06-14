@@ -196,16 +196,16 @@ nav a.active{
 }
 
 .match-status.live{
-    color:#00ff84;
+    color:#ff2b2b;
     animation:pulseText 1s infinite;
 }
 
 .match-status.finished{
-    color:#ff6b6b;
+    color:#ffd600;
 }
 
 .match-status.upcoming{
-    color:#ffd166;
+    color:#7aa7ff;
 }
 
 @keyframes pulseText{
