@@ -31,8 +31,26 @@
       "minute": 67,
       "team": "home"
     }
-  ]
-},
+  ],
+
+  "redCards": [
+  {
+    "player": "Sithole",
+    "minute": 49,
+    "team": "away"
+  },
+    {
+    "player": "Zwane",
+    "minute": 84,
+    "team": "away"
+  },
+  {
+    "player": "Montes",
+    "minute": "90+2",
+    "team": "home"
+  }
+]
+    
 {
   "id": 2,
     "group": "A",
