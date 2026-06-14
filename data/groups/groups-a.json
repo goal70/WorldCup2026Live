@@ -103,14 +103,9 @@
 
     "links": [
       {
-        "name": "TyC Sports",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwAuzoIE-2HsigQKzCVW0I5Mch4hi9RqqzOA&s",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXR5Y3Nwb3J0cw=="
-      },
-      {
-        "name": "DSports",
-        "logo": "https://yt3.googleusercontent.com/TMzi1CE7Cg1HUYJbbYfGSgAVKzYrEPztlDflq6x170GGq53c1Yxv_JAs10QjdHeQ6fiW99hSHg=s900-c-k-c0x00ffffff-no-rj",
-        "url": "https://tarjetarojaonline.net/2026/11/corea-del-sur-vs-republica-checa.php"
+        "name": "Youtube",
+        "logo": "https://i.blogs.es/73dec2/youtube/840_560.jpg",
+        "url": "https://www.youtube.com/watch?v=9xT60wOvsMY"
       }
     ]
   },
