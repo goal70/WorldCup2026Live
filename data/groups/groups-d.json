@@ -77,10 +77,32 @@
 
     "timeET": "21:00 (Vancoucer - Canadá",
     "timeAR": "01:00 (14/6)"
-  },
 
+     "links": [
   {
-    "id": 3,
+    "name": "sportv",
+    "logo": "https://s01.video.glbimg.com/x720/11869976.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvc3BvcnR2MS5waHA="
+  },
+  {
+    "name": "Tipik",
+    "logo": "https://medias.lenodal.com/medias/photos/original/2020/tipik-jpd-roulette-2020.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdGlwbGlrLnBocA=="
+  },
+  {
+    "name": "Telemundo",
+    "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdGVsZW11bmRvLnBocA=="
+  },  
+  {
+    "name": "CazeTV",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/2/22/Logotipo_da_Caz%C3%A9TV.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
+  }
+]
+},
+{
+  "id": 3,
     "group": "D",
     "date": "2026-06-18",
     "status": "UPCOMING",
