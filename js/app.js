@@ -110,26 +110,33 @@ function showCustomDate(date){
 
 function setupNavigation() {
 
-    document.getElementById("yesterdayBtn").onclick = () => {
-        setActive("yesterdayBtn");
-        showYesterday();
-    };
+    const yesterdayBtn = document.getElementById("yesterdayBtn");
+    const todayBtn = document.getElementById("todayBtn");
+    const tomorrowBtn = document.getElementById("tomorrowBtn");
 
-    document.getElementById("todayBtn").onclick = () => {
-        setActive("todayBtn");
-        showToday();
-    };
+    if (yesterdayBtn) {
+        yesterdayBtn.onclick = () => {
+            setActive("yesterdayBtn");
+            showYesterday();
+        };
+    }
 
-    document.getElementById("tomorrowBtn").onclick = () => {
-        setActive("tomorrowBtn");
-        showTomorrow();
-    };
+    if (todayBtn) {
+        todayBtn.onclick = () => {
+            setActive("todayBtn");
+            showToday();
+        };
+    }
 
-    /* FECHAS EXTRA */
+    if (tomorrowBtn) {
+        tomorrowBtn.onclick = () => {
+            setActive("tomorrowBtn");
+            showTomorrow();
+        };
+    }
 
     const prevBtn = document.getElementById("prevDateBtn");
-
-    if(prevBtn){
+    if (prevBtn) {
         prevBtn.onclick = () => {
             setActive("prevDateBtn");
             showCustomDate("2026-06-11");
@@ -137,17 +144,15 @@ function setupNavigation() {
     }
 
     const prevBtn2 = document.getElementById("prevDateBtn2");
-
-if(prevBtn2){
-    prevBtn2.onclick = () => {
-        setActive("prevDateBtn2");
-        showCustomDate("2026-06-12");
-    };
-}
+    if (prevBtn2) {
+        prevBtn2.onclick = () => {
+            setActive("prevDateBtn2");
+            showCustomDate("2026-06-12");
+        };
+    }
 
     const nextBtn = document.getElementById("nextDateBtn");
-
-    if(nextBtn){
+    if (nextBtn) {
         nextBtn.onclick = () => {
             setActive("nextDateBtn");
             showCustomDate("2026-06-14");
@@ -179,16 +184,19 @@ function render(containerId, date) {
         el.innerHTML = "";
     });
 
-    const container = document.getElementById(containerId);
-    container.style.display = "grid";
+   const container = document.getElementById(containerId);
 
-    const matches = allMatches.filter(m => m.date === date);
+// ✅ FIX seguro
+if (!container) return;
 
-    if (!matches.length) {
-        container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
-        return;
-    }
+container.style.display = "grid";
 
+const matches = allMatches.filter(m => m.date === date);
+
+if (!matches.length) {
+    container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
+    return;
+}
     container.innerHTML = matches.map(m => {
 
         const linksHTML = (m.links || []).map(l => `
