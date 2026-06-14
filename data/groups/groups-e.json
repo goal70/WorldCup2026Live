@@ -17,10 +17,33 @@
     "city": "Houston",
 
     "timeET": "13:00",
-    "timeAR": "14:00"
+    "timeAR": "14:00",
+
+   "links": [
+  {
+    "name": "DSports",
+    "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
   },
   {
-    "id": 2,
+    "name": "Tipik",
+    "logo": "https://medias.lenodal.com/medias/photos/original/2020/tipik-jpd-roulette-2020.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdGlwbGlrLnBocA=="
+  },
+  {
+    "name": "Telemundo",
+    "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdGVsZW11bmRvLnBocA=="
+  },  
+  {
+    "name": "CazeTV",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/2/22/Logotipo_da_Caz%C3%A9TV.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
+  }
+]
+},
+{
+  "id": 2,
     "group": "E",
     "date": "2026-06-14",
     "status": "UPCOMING",
