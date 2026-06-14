@@ -20,10 +20,10 @@
         </a>
 
         <nav>
-            <a href="index.html" class="active">HOME</a>
-            <a href="pages/fixtures.html">FIXTURES</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <a href="index.html" class="active">HOME</a>
+    <a href="pages/fixtures.html">FIXTURES</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
     </div>
 </header>
@@ -38,16 +38,33 @@
     <!-- NAV HOME -->
     <section class="match-navigation">
 
-        <button class="day-btn date-btn" id="prevDateBtn">11/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn2">12/6</button>
+    <!-- fecha anterior cargada -->
+    <button class="day-btn date-btn" id="prevDateBtn">
+        11/6
+    </button>
 
-        <button class="day-btn" id="yesterdayBtn">YESTERDAY</button>
-        <button class="day-btn active" id="todayBtn">TODAY</button>
-        <button class="day-btn" id="tomorrowBtn">TOMORROW</button>
+    <button class="day-btn date-btn" id="prevDateBtn2">
+        12/6
+    </button>
 
-        <button class="day-btn date-btn" id="nextDateBtn">16/6</button>
+    <button class="day-btn" id="yesterdayBtn">
+        YESTERDAY
+    </button>
 
-    </section>
+    <button class="day-btn active" id="todayBtn">
+        TODAY
+    </button>
+
+    <button class="day-btn" id="tomorrowBtn">
+        TOMORROW
+    </button>
+
+    <!-- fecha siguiente cargada -->
+    <button class="day-btn date-btn" id="nextDateBtn">
+        16/6
+    </button>
+
+</section>
 
     <section class="today-banner">
         ⚽ WORLD CUP MATCHES
@@ -56,15 +73,15 @@
     <!-- HOME MATCHES -->
     <section class="matches-wrapper">
 
-        <div class="matches-grid" id="yesterdayMatches" style="display:none;"></div>
+    <div class="matches-grid" id="yesterdayMatches" style="display:none;"></div>
 
-        <div class="matches-grid" id="todayMatches"></div>
+    <div class="matches-grid" id="todayMatches"></div>
 
-        <div class="matches-grid" id="tomorrowMatches" style="display:none;"></div>
+    <div class="matches-grid" id="tomorrowMatches" style="display:none;"></div>
 
-        <div class="matches-grid" id="customDateMatches" style="display:none;"></div>
+    <div class="matches-grid" id="customDateMatches" style="display:none;"></div>
 
-    </section>
+</section>
 
 </main>
 
@@ -84,35 +101,24 @@
 
 <!-- =========================
      ADS SYSTEM (SAFE ORDER FIX)
+     NO DUPLICATION BUG
 ========================= -->
 
 <script>
 window.addEventListener("load", () => {
-
     const ads1 = document.createElement("script");
     ads1.src = "https://pl29727721.effectivecpmnetwork.com/c0/01/58/c00158d2d7f73a99186d63fd0ecb13ef.js";
-    ads1.async = true;
     document.body.appendChild(ads1);
 
     const ads2 = document.createElement("script");
     ads2.src = "https://pl29727722.effectivecpmnetwork.com/4f/4a/ff/4f4affad81da3060c84e588a26bb60f2.js";
-    ads2.async = true;
     document.body.appendChild(ads2);
-
 });
 </script>
 
-<!-- APP CORE (FIX CRÍTICO) -->
-<script>
-try {
-    const script = document.createElement("script");
-    script.src = "/js/index.js";  // 🔥 FIX IMPORTANTE (ruta absoluta)
-    script.async = true;
-    document.body.appendChild(script);
-} catch (e) {
-    console.error("APP CORE ERROR", e);
-}
-</script>
+<!-- APP CORE -->
+ <script src="../js/app.js"></script>   
+<!-- <script src="../js/live.js"></script> -->
 
 </body>
 </html>
