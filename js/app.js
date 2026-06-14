@@ -35,7 +35,14 @@ async function loadMatches() {
 
         for (const group of groups) {
 
-            const res = await fetch(`data/groups/groups-${group}.json`);
+            // 🔥 FIX IMPORTANTE: ruta absoluta
+            const res = await fetch(`/data/groups/groups-${group}.json`);
+
+            if (!res.ok) {
+                console.warn(`Missing group ${group}`);
+                continue;
+            }
+
             const matches = await res.json();
 
             matches.forEach(m => {
@@ -73,7 +80,6 @@ async function loadMatches() {
 
         showToday();
 
-        // 🔥 recalcular tablas cuando cargan partidos
         renderTables();
 
     } catch (err) {
