@@ -99,6 +99,10 @@ function getLocalDate(offset = 0) {
 function showToday(){ render("todayMatches", getLocalDate(0)); renderTables(); }
 function showYesterday(){ render("yesterdayMatches", getLocalDate(-1)); renderTables(); }
 function showTomorrow(){ render("tomorrowMatches", getLocalDate(1)); renderTables(); }
+function showCustomDate(date){
+    render("customDateMatches", date);
+    renderTables();
+}
 
 /* =========================
    NAVIGATION
@@ -120,6 +124,26 @@ function setupNavigation() {
         setActive("tomorrowBtn");
         showTomorrow();
     };
+
+    /* FECHAS EXTRA */
+
+    const prevBtn = document.getElementById("prevDateBtn");
+
+    if(prevBtn){
+        prevBtn.onclick = () => {
+            setActive("prevDateBtn");
+            showCustomDate("2026-06-11");
+        };
+    }
+
+    const nextBtn = document.getElementById("nextDateBtn");
+
+    if(nextBtn){
+        nextBtn.onclick = () => {
+            setActive("nextDateBtn");
+            showCustomDate("2026-06-14");
+        };
+    }
 }
 
 function setActive(id) {
@@ -133,8 +157,12 @@ function setActive(id) {
 
 function render(containerId, date) {
 
-    const containers = ["yesterdayMatches","todayMatches","tomorrowMatches"];
-
+    const containers = [
+    "yesterdayMatches",
+    "todayMatches",
+    "tomorrowMatches",
+    "customDateMatches"
+];
     containers.forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
