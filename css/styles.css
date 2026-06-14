@@ -152,16 +152,17 @@ nav a.active{
     overflow:hidden;
     background:linear-gradient(135deg,#0b2a1d,#071a13);
     border:1px solid rgba(0,210,106,.25);
-    border-radius:16px;
-    padding:14px;
+    border-radius:14px;
+
+    padding:10px 12px;
 
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
     transition:.2s;
-    min-height:230px;
+
+    min-height:auto;
 }
 
 .match-card:hover{
@@ -233,19 +234,18 @@ nav a.active{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:10px;
-    position:relative;
-    z-index:2;
+    margin-bottom:4px;
 }
 
 .team{
+    width:40%;
+    text-align:center;
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:6px;
-    width:40%;
+    gap:2px;
     font-weight:700;
-    text-align:center;
+    font-size:14px;
 }
 
 .flag{
@@ -271,10 +271,15 @@ nav a.active{
 ========================= */
 
 .events{
-    margin-top:10px;
-    padding-top:8px;
+    display:flex;
+    justify-content:space-between;
+
+    margin-top:4px;
+    padding-top:4px;
+
     border-top:1px solid rgba(255,255,255,.08);
-    font-size:13px;
+
+    font-size:11px;
 }
 
 .goal{
@@ -412,7 +417,7 @@ footer{
     width:50%;
     display:flex;
     flex-direction:column;
-    gap:4px;
+    gap:1px;
 }
 
 .goal.left{
@@ -773,4 +778,49 @@ td:first-child{
 
 .group-table td{
     color:white;
+}
+/* =========================================
+   COMPACT FIXTURE CARDS
+========================================= */
+
+.match-card{
+    padding:10px 12px !important;
+    min-height:auto !important;
+}
+
+.match-header{
+    margin-bottom:4px !important;
+}
+
+.team{
+    gap:2px !important;
+    font-size:14px !important;
+}
+
+.score{
+    font-size:24px !important;
+    min-width:65px !important;
+}
+
+.events{
+    margin-top:4px !important;
+    padding-top:4px !important;
+    font-size:11px !important;
+}
+
+.events-column{
+    gap:1px !important;
+}
+
+.goal{
+    line-height:1.1 !important;
+}
+
+.match-footer{
+    margin-top:6px !important;
+    font-size:11px !important;
+}
+
+.match-links{
+    display:none !important;
 }
