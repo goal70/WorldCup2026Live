@@ -1,27 +1,40 @@
 [
   {
-    "id": 1,
-    "group": "A",
-    "date": "2026-06-11",
-    "status": "FINISHED",
+     "id": 1,
+  "group": "A",
+  "date": "2026-06-11",
+  "status": "FINISHED",
 
-    "team1": "Mexico",
-    "team2": "South Africa",
+  "team1": "Mexico",
+  "team2": "South Africa",
 
-    "flag1": "mx",
-    "flag2": "za",
+  "flag1": "mx",
+  "flag2": "za",
 
-    "score": "2-0",
+  "homeScore": 2,
+  "awayScore": 0,
 
-    "stadium": "Estadio Azteca",
-    "city": "Mexico City",
+  "stadium": "Estadio Azteca",
+  "city": "Mexico City",
 
-    "timeET": "15:00",
-    "timeAR": "16:00"
-  },
+  "timeET": "15:00",
+  "timeAR": "16:00",
 
-  {
-    "id": 2,
+  "goals": [
+    {
+      "player": "Quiñones",
+      "minute": 9,
+      "team": "home"
+    },
+    {
+      "player": "Jiménez",
+      "minute": 67,
+      "team": "home"
+    }
+  ]
+},
+{
+  "id": 2,
     "group": "A",
     "date": "2026-06-11",
     "status": "FINISHED",
