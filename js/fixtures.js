@@ -1,7 +1,6 @@
 async function loadFixtures() {
 
-    const container =
-        document.getElementById("fixtures");
+    const container = document.getElementById("fixtures");
 
     const groups = [
         "a", "b", "c", "d", "e", "f",
@@ -14,53 +13,124 @@ async function loadFixtures() {
 
         try {
 
-            const response =
-                await fetch(
-                    `../data/groups/groups-${group}.json`
-                );
+            const response = await fetch(
+                `../data/groups/groups-${group}.json`
+            );
 
-            // FIX 1: validar respuesta HTTP
             if (!response.ok) {
                 console.warn(`Group ${group} not found`);
                 continue;
             }
 
-            const matches =
-                await response.json();
+            const matches = await response.json();
 
-            if (!Array.isArray(matches) || !matches.length) continue;
+            if (!Array.isArray(matches) || !matches.length)
+                continue;
 
-            const groupLetter =
-                matches[0].group;
+            const groupLetter = matches[0].group;
 
-            const teams = [];
+            const standings = {};
 
             matches.forEach(match => {
 
-                if (!teams.includes(match.team1))
-                    teams.push(match.team1);
+                if (!standings[match.team1]) {
+                    standings[match.team1] = {
+                        team: match.team1,
+                        pts: 0,
+                        pj: 0,
+                        pg: 0,
+                        pe: 0,
+                        pp: 0,
+                        gf: 0,
+                        gc: 0,
+                        dg: 0
+                    };
+                }
 
-                if (!teams.includes(match.team2))
-                    teams.push(match.team2);
+                if (!standings[match.team2]) {
+                    standings[match.team2] = {
+                        team: match.team2,
+                        pts: 0,
+                        pj: 0,
+                        pg: 0,
+                        pe: 0,
+                        pp: 0,
+                        gf: 0,
+                        gc: 0,
+                        dg: 0
+                    };
+                }
+
+                if (
+                    match.status !== "FINISHED" &&
+                    match.status !== "LIVE"
+                ) {
+                    return;
+                }
+
+                const home = standings[match.team1];
+                const away = standings[match.team2];
+
+                const hs = match.homeScore ?? 0;
+                const as = match.awayScore ?? 0;
+
+                home.pj++;
+                away.pj++;
+
+                home.gf += hs;
+                home.gc += as;
+
+                away.gf += as;
+                away.gc += hs;
+
+                if (hs > as) {
+
+                    home.pg++;
+                    home.pts += 3;
+
+                    away.pp++;
+
+                }
+                else if (as > hs) {
+
+                    away.pg++;
+                    away.pts += 3;
+
+                    home.pp++;
+
+                }
+                else {
+
+                    home.pe++;
+                    away.pe++;
+
+                    home.pts++;
+                    away.pts++;
+
+                }
+
+                home.dg = home.gf - home.gc;
+                away.dg = away.gf - away.gc;
 
             });
 
-            let standingsRows = "";
-
-            teams.forEach(team => {
-
-                standingsRows += `
-                <tr>
-                    <td>${team}</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                `;
-
-            });
+            const standingsRows = Object.values(standings)
+                .sort((a, b) =>
+                    b.pts - a.pts ||
+                    b.dg - a.dg ||
+                    b.gf - a.gf
+                )
+                .map(team => `
+                    <tr>
+                        <td>${team.team}</td>
+                        <td><b>${team.pts}</b></td>
+                        <td>${team.pj}</td>
+                        <td>${team.pg}</td>
+                        <td>${team.pe}</td>
+                        <td>${team.pp}</td>
+                    </tr>
+                `)
+                .join("");
 
             let fixtureRows = "";
 
@@ -72,10 +142,8 @@ async function loadFixtures() {
                     match.status === "FINISHED" ||
                     match.status === "LIVE"
                 ) {
-
                     scoreDisplay =
                         `${match.homeScore} - ${match.awayScore}`;
-
                 }
 
                 fixtureRows += `
@@ -100,9 +168,7 @@ async function loadFixtures() {
                                 alt="${match.team1}"
                             >
 
-                            <span>
-                                ${match.team1}
-                            </span>
+                            <span>${match.team1}</span>
 
                         </div>
 
@@ -118,9 +184,7 @@ async function loadFixtures() {
                                 alt="${match.team2}"
                             >
 
-                            <span>
-                                ${match.team2}
-                            </span>
+                            <span>${match.team2}</span>
 
                         </div>
 
@@ -162,14 +226,12 @@ async function loadFixtures() {
                     <thead>
 
                         <tr>
-
                             <th>Team</th>
-                            <th>Pts</th>
+                            <th>PTS</th>
                             <th>PJ</th>
-                            <th>G</th>
-                            <th>E</th>
-                            <th>P</th>
-
+                            <th>PG</th>
+                            <th>PE</th>
+                            <th>PP</th>
                         </tr>
 
                     </thead>
@@ -193,7 +255,6 @@ async function loadFixtures() {
             `;
 
         }
-
         catch (error) {
 
             console.error(
