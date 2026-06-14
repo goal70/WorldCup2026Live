@@ -3,7 +3,7 @@
     "id": 1,
     "group": "E",
     "date": "2026-06-14",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Alemania",
     "team2": "Curazao",
@@ -11,7 +11,8 @@
     "flag1": "de",
     "flag2": "cw",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "NRG Stadium",
     "city": "Houston",
