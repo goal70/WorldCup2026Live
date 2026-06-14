@@ -49,7 +49,9 @@
         "minute": "90+2",
         "team": "home"
       }
-    ]
+    ],
+
+    "links": []
   },
 
   {
@@ -91,6 +93,8 @@
       }
     ],
 
+    "redCards": [],
+
     "links": [
       {
         "name": "TyC Sports",
@@ -103,8 +107,7 @@
         "url": "https://tarjetarojaonline.net/2026/11/corea-del-sur-vs-republica-checa.php"
       }
     ]
-  }
-]
+  },
 
   {
     "id": 3,
@@ -118,13 +121,18 @@
     "flag1": "cz",
     "flag2": "za",
 
-    "score": "-",
+    "homeScore": null,
+    "awayScore": null,
 
     "stadium": "Atlanta Stadium",
     "city": "Atlanta",
 
     "timeET": "12:00",
-    "timeAR": "13:00"
+    "timeAR": "13:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
   },
 
   {
@@ -139,13 +147,18 @@
     "flag1": "mx",
     "flag2": "kr",
 
-    "score": "-",
+    "homeScore": null,
+    "awayScore": null,
 
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara",
 
     "timeET": "21:00",
-    "timeAR": "22:00"
+    "timeAR": "22:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
   },
 
   {
@@ -160,13 +173,18 @@
     "flag1": "cz",
     "flag2": "mx",
 
-    "score": "-",
+    "homeScore": null,
+    "awayScore": null,
 
     "stadium": "Estadio Azteca",
     "city": "Mexico City",
 
     "timeET": "21:00",
-    "timeAR": "22:00"
+    "timeAR": "22:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
   },
 
   {
@@ -181,12 +199,17 @@
     "flag1": "za",
     "flag2": "kr",
 
-    "score": "-",
+    "homeScore": null,
+    "awayScore": null,
 
     "stadium": "Monterrey Stadium",
     "city": "Monterrey",
 
     "timeET": "21:00",
-    "timeAR": "22:00"
+    "timeAR": "22:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
   }
 ]
