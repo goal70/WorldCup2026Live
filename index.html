@@ -20,10 +20,10 @@
         </a>
 
         <nav>
-    <a href="index.html" class="active">HOME</a>
-    <a href="pages/fixtures.html">FIXTURES</a>
-    <a href="contact.html">Contact</a>
-</nav>
+            <a href="index.html" class="active">HOME</a>
+            <a href="pages/fixtures.html">FIXTURES</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
     </div>
 </header>
@@ -38,33 +38,16 @@
     <!-- NAV HOME -->
     <section class="match-navigation">
 
-    <!-- fecha anterior cargada -->
-    <button class="day-btn date-btn" id="prevDateBtn">
-        11/6
-    </button>
+        <button class="day-btn date-btn" id="prevDateBtn">11/6</button>
+        <button class="day-btn date-btn" id="prevDateBtn2">12/6</button>
 
-    <button class="day-btn date-btn" id="prevDateBtn2">
-        12/6
-    </button>
+        <button class="day-btn" id="yesterdayBtn">YESTERDAY</button>
+        <button class="day-btn active" id="todayBtn">TODAY</button>
+        <button class="day-btn" id="tomorrowBtn">TOMORROW</button>
 
-    <button class="day-btn" id="yesterdayBtn">
-        YESTERDAY
-    </button>
+        <button class="day-btn date-btn" id="nextDateBtn">16/6</button>
 
-    <button class="day-btn active" id="todayBtn">
-        TODAY
-    </button>
-
-    <button class="day-btn" id="tomorrowBtn">
-        TOMORROW
-    </button>
-
-    <!-- fecha siguiente cargada -->
-    <button class="day-btn date-btn" id="nextDateBtn">
-        16/6
-    </button>
-
-</section>
+    </section>
 
     <section class="today-banner">
         ⚽ WORLD CUP MATCHES
@@ -73,15 +56,15 @@
     <!-- HOME MATCHES -->
     <section class="matches-wrapper">
 
-    <div class="matches-grid" id="yesterdayMatches" style="display:none;"></div>
+        <div class="matches-grid" id="yesterdayMatches" style="display:none;"></div>
 
-    <div class="matches-grid" id="todayMatches"></div>
+        <div class="matches-grid" id="todayMatches"></div>
 
-    <div class="matches-grid" id="tomorrowMatches" style="display:none;"></div>
+        <div class="matches-grid" id="tomorrowMatches" style="display:none;"></div>
 
-    <div class="matches-grid" id="customDateMatches" style="display:none;"></div>
+        <div class="matches-grid" id="customDateMatches" style="display:none;"></div>
 
-</section>
+    </section>
 
 </main>
 
@@ -101,7 +84,6 @@
 
 <!-- =========================
      ADS SYSTEM (SAFE ORDER FIX)
-     NO DUPLICATION BUG
 ========================= -->
 
 <script>
@@ -116,8 +98,8 @@ window.addEventListener("load", () => {
 });
 </script>
 
-<!-- APP CORE -->
-<!-- <script src="../js/live.js"></script> -->
+<!-- APP CORE (FIX IMPORTANTE) -->
+<script src="js/index.js"></script>
 
 </body>
 </html>
