@@ -60,40 +60,31 @@ async function loadFixtures() {
 
             matches.forEach(match => {
 
-                let scoreDisplay = "";
+                let scoreDisplay = "VS";
 
                 if (
                     match.status === "FINISHED" ||
                     match.status === "LIVE"
                 ) {
 
-                    scoreDisplay = `
-                    <div class="fixture-score">
-                        ${match.homeScore}
-                        -
-                        ${match.awayScore}
-                    </div>
-                    `;
-
-                } else {
-
-                    scoreDisplay = `
-                    <div class="fixture-score">
-                        VS
-                    </div>
-                    `;
+                    scoreDisplay =
+                        `${match.homeScore} - ${match.awayScore}`;
 
                 }
 
                 fixtureRows += `
 
-                <div class="fixture-row">
+                <div class="match-card">
 
-                    <div class="fixture-date">
-                        ${match.date}
+                    <div class="match-status ${match.status.toLowerCase()}">
+                        ${match.status}
                     </div>
 
-                    <div class="fixture-match">
+                    <div class="match-group">
+                        GROUP ${match.group}
+                    </div>
+
+                    <div class="match-header">
 
                         <div class="team">
 
@@ -109,7 +100,9 @@ async function loadFixtures() {
 
                         </div>
 
-                        ${scoreDisplay}
+                        <div class="score">
+                            ${scoreDisplay}
+                        </div>
 
                         <div class="team">
 
@@ -127,19 +120,20 @@ async function loadFixtures() {
 
                     </div>
 
-                    <div class="fixture-time">
+                    <div class="match-footer">
 
-                        ET ${match.timeET}
+                        📅 ${match.date}
                         <br>
+
+                        🏟 ${match.stadium}
+                        <br>
+
+                        📍 ${match.city}
+                        <br>
+
+                        🕒 ET ${match.timeET}
+                        |
                         AR ${match.timeAR}
-
-                    </div>
-
-                    <div class="fixture-stadium">
-
-                        ${match.stadium}
-                        <br>
-                        ${match.city}
 
                     </div>
 
