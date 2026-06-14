@@ -5,7 +5,7 @@
     "date": "2026-06-13",
     "status": "FINISHED",
 
-    "team1": "Brazil",
+    "team1": "Brasil",
     "team2": "Marruecos",
 
     "flag1": "br",
@@ -106,8 +106,8 @@
     "date": "2026-06-18",
     "status": "UPCOMING",
 
-    "team1": "Scotland",
-    "team2": "Morocco",
+    "team1": "Escocia",
+    "team2": "Marruecos",
 
     "flag1": "sc",
     "flag2": "ma",
@@ -126,11 +126,11 @@
     "date": "2026-06-18",
     "status": "UPCOMING",
 
-    "team1": "Brazil",
+    "team1": "Brasil",
     "team2": "Haiti",
 
-    "flag1": "🇧🇷",
-    "flag2": "🇭🇹",
+    "flag1": "br",
+    "flag2": "ht",
 
     "score": "-",
 
@@ -146,11 +146,11 @@
     "date": "2026-06-24",
     "status": "UPCOMING",
 
-    "team1": "Morocco",
-    "team2": "Brazil",
+    "team1": "Marruecos",
+    "team2": "Haiti",
 
-    "flag1": "🇲🇦",
-    "flag2": "🇧🇷",
+    "flag1": "ma",
+    "flag2": "ht",
 
     "score": "-",
 
@@ -166,11 +166,11 @@
     "date": "2026-06-24",
     "status": "UPCOMING",
 
-    "team1": "Haiti",
-    "team2": "Scotland",
+    "team1": "Escocia",
+    "team2": "Brasil",
 
-    "flag1": "🇭🇹",
-    "flag2": "🏴",
+    "flag1": "ht",
+    "flag2": "gb",
 
     "score": "-",
 
