@@ -61,7 +61,7 @@
     "id": 2,
     "group": "D",
     "date": "2026-06-13",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Australia",
     "team2": "Turkey",
@@ -69,7 +69,7 @@
     "flag1": "au",
     "flag2": "tr",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 0,
 
     "stadium": "BC Place",
