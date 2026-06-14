@@ -19,10 +19,16 @@ async function loadFixtures() {
                     `../data/groups/groups-${group}.json`
                 );
 
+            // FIX 1: validar respuesta HTTP
+            if (!response.ok) {
+                console.warn(`Group ${group} not found`);
+                continue;
+            }
+
             const matches =
                 await response.json();
 
-            if (!matches.length) continue;
+            if (!Array.isArray(matches) || !matches.length) continue;
 
             const groupLetter =
                 matches[0].group;
@@ -122,18 +128,18 @@ async function loadFixtures() {
 
                     <div class="match-footer">
 
-                        📅 ${match.date}
+                        📅 ${match.date || "TBA"}
                         <br>
 
-                        🏟 ${match.stadium}
+                        🏟 ${match.stadium || "TBA"}
                         <br>
 
-                        📍 ${match.city}
+                        📍 ${match.city || "TBA"}
                         <br>
 
-                        🕒 ET ${match.timeET}
+                        🕒 ET ${match.timeET || "-"}
                         |
-                        AR ${match.timeAR}
+                        AR ${match.timeAR || "-"}
 
                     </div>
 
