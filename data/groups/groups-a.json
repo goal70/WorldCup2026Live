@@ -71,6 +71,24 @@
     "timeET": "22:00",
     "timeAR": "23:00",
 
+     "goals": [
+    {
+      "player": "Krejčí",
+      "minute": 59,
+      "team": "away"
+    },
+    {
+      "player": "Hwang",
+      "minute": 67,
+      "team": "home"
+    },
+       {
+      "player": "Hyeon-Gyu",
+      "minute": 80,
+      "team": "home"
+    }
+  ],
+
     "links": [
       {
         "name": "TyC Sports",
