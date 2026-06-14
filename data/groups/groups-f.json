@@ -5,8 +5,8 @@
     "date": "2026-06-14",
     "status": "UPCOMING",
 
-    "team1": "Netherlands",
-    "team2": "Japan",
+    "team1": "Paises Bajos",
+    "team2": "Japon",
 
     "flag1": "nl",
     "flag2": "jp",
@@ -25,8 +25,8 @@
     "date": "2026-06-14",
     "status": "UPCOMING",
 
-    "team1": "Sweden",
-    "team2": "Tunisia",
+    "team1": "Suecia",
+    "team2": "Tunez",
 
     "flag1": "se",
     "flag2": "tn",
@@ -48,16 +48,16 @@
     "team1": "Sweden",
     "team2": "Netherlands",
 
-    "flag1": "🇸🇪",
-    "flag2": "🇳🇱",
+    "flag1": "se",
+    "flag2": "nl",
 
     "score": "-",
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
 
-    "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeET": "13:00",
+    "timeAR": "14:00"
   },
   {
     "id": 4,
@@ -65,19 +65,19 @@
     "date": "2026-06-19",
     "status": "UPCOMING",
 
-    "team1": "Tunisia",
-    "team2": "Japan",
+    "team1": "Tunez",
+    "team2": "Japon",
 
-    "flag1": "🇹🇳",
-    "flag2": "🇯🇵",
+    "flag1": "tn",
+    "flag2": "jp",
 
     "score": "-",
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
 
-    "timeET": "18:00",
-    "timeAR": "20:00"
+    "timeET": "22:00 (Monterrey)",
+    "timeAR": "01:00 (21/6)"
   },
   {
     "id": 5,
@@ -85,19 +85,19 @@
     "date": "2026-06-25",
     "status": "UPCOMING",
 
-    "team1": "Netherlands",
-    "team2": "Japan",
+    "team1": "Suecia",
+    "team2": "Japon",
 
-    "flag1": "🇳🇱",
-    "flag2": "🇯🇵",
+    "flag1": "se",
+    "flag2": "jp",
 
     "score": "-",
 
     "stadium": "Lumen Field",
     "city": "Seattle",
 
-    "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeET": "19:00",
+    "timeAR": "20:00"
   },
   {
     "id": 6,
@@ -105,18 +105,18 @@
     "date": "2026-06-25",
     "status": "UPCOMING",
 
-    "team1": "Sweden",
-    "team2": "Tunisia",
+    "team1": "Paises Bajos",
+    "team2": "Tunez",
 
-    "flag1": "🇸🇪",
-    "flag2": "🇹🇳",
+    "flag1": "nl",
+    "flag2": "tn",
 
     "score": "-",
 
     "stadium": "SoFi Stadium",
     "city": "Los Angeles",
 
-    "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeET": "19:00",
+    "timeAR": "20:00"
   }
 ]
