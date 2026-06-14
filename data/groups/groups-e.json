@@ -5,8 +5,8 @@
     "date": "2026-06-14",
     "status": "UPCOMING",
 
-    "team1": "Germany",
-    "team2": "Curacao",
+    "team1": "Alemania",
+    "team2": "Curazao",
 
     "flag1": "de",
     "flag2": "cw",
@@ -45,11 +45,11 @@
     "date": "2026-06-20",
     "status": "UPCOMING",
 
-    "team1": "Germany",
+    "team1": "Alemania",
     "team2": "Costa de Marfil",
 
-    "flag1": "🇩🇪",
-    "flag2": "🇨🇮",
+    "flag1": "de",
+    "flag2": "ci",
 
     "score": "-",
 
@@ -66,10 +66,10 @@
     "status": "UPCOMING",
 
     "team1": "Ecuador",
-    "team2": "Curacao",
+    "team2": "Curazao",
 
-    "flag1": "🇪🇨",
-    "flag2": "🇨🇼",
+    "flag1": "ec",
+    "flag2": "cw",
 
     "score": "-",
 
@@ -85,11 +85,11 @@
     "date": "2026-06-25",
     "status": "UPCOMING",
 
-    "team1": "Curacao",
+    "team1": "Curazao",
     "team2": "Costa de Marfil",
 
-    "flag1": "🇨🇼",
-    "flag2": "🇨🇮",
+    "flag1": "cw",
+    "flag2": "ci",
 
     "score": "-",
 
@@ -106,10 +106,10 @@
     "status": "UPCOMING",
 
     "team1": "Ecuador",
-    "team2": "Germany",
+    "team2": "Alemania",
 
-    "flag1": "🇪🇨",
-    "flag2": "🇩🇪",
+    "flag1": "ec",
+    "flag2": "de",
 
     "score": "-",
 
