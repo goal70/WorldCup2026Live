@@ -1,58 +1,59 @@
 [
   {
-     "id": 1,
-  "group": "A",
-  "date": "2026-06-11",
-  "status": "FINISHED",
+    "id": 1,
+    "group": "A",
+    "date": "2026-06-11",
+    "status": "FINISHED",
 
-  "team1": "Mexico",
-  "team2": "South Africa",
+    "team1": "Mexico",
+    "team2": "South Africa",
 
-  "flag1": "mx",
-  "flag2": "za",
+    "flag1": "mx",
+    "flag2": "za",
 
-  "homeScore": 2,
-  "awayScore": 0,
+    "homeScore": 2,
+    "awayScore": 0,
 
-  "stadium": "Estadio Azteca",
-  "city": "Mexico City",
+    "stadium": "Estadio Azteca",
+    "city": "Mexico City",
 
-  "timeET": "15:00",
-  "timeAR": "16:00",
+    "timeET": "15:00",
+    "timeAR": "16:00",
 
-  "goals": [
-    {
-      "player": "Quiñones",
-      "minute": 9,
-      "team": "home"
-    },
-    {
-      "player": "Jiménez",
-      "minute": 67,
-      "team": "home"
-    }
-  ],
+    "goals": [
+      {
+        "player": "Quiñones",
+        "minute": 9,
+        "team": "home"
+      },
+      {
+        "player": "Jiménez",
+        "minute": 67,
+        "team": "home"
+      }
+    ],
 
-  "redCards": [
-  {
-    "player": "Sithole",
-    "minute": 49,
-    "team": "away"
+    "redCards": [
+      {
+        "player": "Sithole",
+        "minute": 49,
+        "team": "away"
+      },
+      {
+        "player": "Zwane",
+        "minute": 84,
+        "team": "away"
+      },
+      {
+        "player": "Montes",
+        "minute": "90+2",
+        "team": "home"
+      }
+    ]
   },
-    {
-    "player": "Zwane",
-    "minute": 84,
-    "team": "away"
-  },
+
   {
-    "player": "Montes",
-    "minute": "90+2",
-    "team": "home"
-  }
-]
-    
-{
-  "id": 2,
+    "id": 2,
     "group": "A",
     "date": "2026-06-11",
     "status": "FINISHED",
@@ -63,7 +64,8 @@
     "flag1": "kr",
     "flag2": "cz",
 
-    "score": "2-1",
+    "homeScore": 2,
+    "awayScore": 1,
 
     "stadium": "Guadalajara Stadium",
     "city": "Guadalajara",
@@ -71,23 +73,23 @@
     "timeET": "22:00",
     "timeAR": "23:00",
 
-     "goals": [
-    {
-      "player": "Krejčí",
-      "minute": 59,
-      "team": "away"
-    },
-    {
-      "player": "Hwang",
-      "minute": 67,
-      "team": "home"
-    },
-       {
-      "player": "Hyeon-Gyu",
-      "minute": 80,
-      "team": "home"
-    }
-  ],
+    "goals": [
+      {
+        "player": "Krejčí",
+        "minute": 59,
+        "team": "away"
+      },
+      {
+        "player": "Hwang",
+        "minute": 67,
+        "team": "home"
+      },
+      {
+        "player": "Hyeon-Gyu",
+        "minute": 80,
+        "team": "home"
+      }
+    ],
 
     "links": [
       {
@@ -101,7 +103,8 @@
         "url": "https://tarjetarojaonline.net/2026/11/corea-del-sur-vs-republica-checa.php"
       }
     ]
-  },
+  }
+]
 
   {
     "id": 3,
