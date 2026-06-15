@@ -20,6 +20,35 @@
     "timeAR": "13:00",
 
      "links": [
+      {
+        "name": "Resumen",
+        "logo": "https://crystalpng.com/wp-content/uploads/2025/03/youTube-logo.png",
+        "url": "https://www.youtube.com/watch?v=UIYMnTnXzjk"
+    }
+    ]
+  },
+  
+  {
+    "id": 2,
+    "group": "H",
+    "date": "2026-06-15",
+    "status": "PROXIMAMENTE",
+
+    "team1": "Arabia Saudita",
+    "team2": "Uruguay",
+
+    "flag1": "sa",
+    "flag2": "uy",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+
+    "timeAR": "19:00",
+
+      "links": [
   {
     "name": "Direct TV",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
@@ -55,35 +84,6 @@
         "logo": "https://img2.sport-tv-guide.live/images/tv-station-tsn1-188.png",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHNuMS5waHA="
       }
-    ]
-  },
-  
-  {
-    "id": 2,
-    "group": "H",
-    "date": "2026-06-15",
-    "status": "PROXIMAMENTE",
-
-    "team1": "Arabia Saudita",
-    "team2": "Uruguay",
-
-    "flag1": "sa",
-    "flag2": "uy",
-
-    "homeScore": 0,
-    "awayScore": 0,
-
-    "stadium": "Hard Rock Stadium",
-    "city": "Miami",
-
-    "timeAR": "19:00",
-
-      "links": [
-      {
-        "name": "Resumen",
-        "logo": "https://crystalpng.com/wp-content/uploads/2025/03/youTube-logo.png",
-        "url": "https://www.youtube.com/watch?v=dwuo-oNu1LE"
-    }
     ]
   },
 
