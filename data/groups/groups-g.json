@@ -13,10 +13,9 @@
 
     "score": "-",
 
-    "stadium": "AT&T Stadium",
-    "city": "Dallas",
+    "stadium": "Lumen Field",
+    "city": "Seattle",
 
-    "timeET": "15:00",
     "timeAR": "16:00"
   },
   {
@@ -33,8 +32,8 @@
 
     "score": "-",
 
-    "stadium": "NRG Stadium",
-    "city": "Houston",
+    "stadium": "SoFi Stadium",
+    "city": "Los Angeles",
 
     "timeAR": "22:00"
   },
