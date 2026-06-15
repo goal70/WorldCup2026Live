@@ -11,14 +11,24 @@
     "flag1": "es",
     "flag2": "cv",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
 
     "timeET": "12:00",
-    "timeAR": "13:00"
+    "timeAR": "13:00",
+
+     "links": [
+      {
+        "name": "DirecTV Sports",
+        "logo": "https://static.wikia.nocookie.net/logopedia/images/9/91/DirecTV_Sports_2013.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRzcG9ydHM="
+      }
+    ]
   },
+
   {
     "id": 2,
     "group": "H",
@@ -31,14 +41,34 @@
     "flag1": "sa",
     "flag2": "uy",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
 
     "timeET": "18:00",
-    "timeAR": "19:00"
+    "timeAR": "19:00",
+
+     "links": [
+  {
+    "name": "DAZN Mundial",
+    "logo": "https://s01.video.glbimg.com/x720/11869976.jpg",
+    "url": "https://zonatvlive.xyz/tvtodo/dazn-mundial.php"
   },
+       {
+    "name": "TeLeFe",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Telefe-logo-1.jpg",
+    "url": "https://zonatvlive.xyz/tvtodo/telefe.php"
+  },
+       {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://zonatvlive.xyz/tvtodo/telemundo.php"
+      }
+    ]
+  },
+
   {
     "id": 3,
     "group": "H",
