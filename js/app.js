@@ -141,28 +141,28 @@ function setupNavigation() {
     }
 
     const prevBtn = document.getElementById("prevDateBtn");
-    if (prevBtn) {
-        prevBtn.onclick = () => {
-            setActive("prevDateBtn");
-            showCustomDate("2026-06-11");
-        };
-    }
+if (prevBtn) {
+    prevBtn.onclick = () => {
+        setActive("prevDateBtn");
+        showCustomDate("2026-06-11");
+    };
+}
 
-    const prevBtn2 = document.getElementById("prevDateBtn2");
-    if (prevBtn2) {
-        prevBtn2.onclick = () => {
-            setActive("prevDateBtn2");
-            showCustomDate("2026-06-12");
-        };
-    }
+const prevBtn2 = document.getElementById("prevDateBtn2");
+if (prevBtn2) {
+    prevBtn2.onclick = () => {
+        setActive("prevDateBtn2");
+        showCustomDate("2026-06-12");
+    };
+}
 
-    const prevBtn2 = document.getElementById("prevDateBtn2");
-    if (prevBtn2) {
-        prevBtn2.onclick = () => {
-            setActive("prevDateBtn2");
-            showCustomDate("2026-06-13");
-        };
-    }
+const prevBtn3 = document.getElementById("prevDateBtn3");
+if (prevBtn3) {
+    prevBtn3.onclick = () => {
+        setActive("prevDateBtn3");
+        showCustomDate("2026-06-13");
+    };
+}
 
     const nextBtn = document.getElementById("nextDateBtn");
     if (nextBtn) {
