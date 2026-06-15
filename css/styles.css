@@ -887,3 +887,36 @@ td:first-child{
     text-shadow:
         0 0 12px rgba(0,210,106,.6);
 }
+
+/* =========================================
+   FIFA FRAME EFFECT
+========================================= */
+
+.group-table,
+.match-card{
+    position:relative;
+}
+
+.group-table::before,
+.match-card::before{
+    content:"";
+    position:absolute;
+    inset:6px;
+    border:1px solid rgba(0,255,136,.15);
+    pointer-events:none;
+}
+
+.group-table::after,
+.match-card::after{
+    content:"";
+    position:absolute;
+    width:24px;
+    height:24px;
+    top:8px;
+    left:8px;
+
+    border-top:2px solid rgba(0,255,136,.8);
+    border-left:2px solid rgba(0,255,136,.8);
+
+    pointer-events:none;
+}
