@@ -66,7 +66,6 @@ async function loadMatches() {
                     stadium: m.stadium,
                     city: m.city,
 
-                    timeET: m.timeET,
                     timeAR: m.timeAR,
 
                     links: m.links || [],
@@ -262,9 +261,9 @@ if (!matches.length) {
             </div>
 
             <div class="match-footer">
-                🏟 ${m.stadium} • ${m.city} <br>
-                🕒 ET ${m.timeET} | AR ${m.timeAR}
-            </div>
+    🏟 ${m.stadium} • ${m.city} <br>
+    🕒 ${m.timeAR || "-"}
+</div>
 
             <div class="match-links">
                 ${linksHTML}
