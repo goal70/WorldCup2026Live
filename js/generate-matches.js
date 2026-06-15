@@ -43,7 +43,6 @@ files.forEach(file => {
       stadium: match.stadium,
       city: match.city,
 
-      localTime: match.timeET,
       argentinaTime: match.timeAR
 
     });
