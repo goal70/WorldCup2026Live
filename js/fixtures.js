@@ -192,20 +192,18 @@ async function loadFixtures() {
 
                     <div class="match-footer">
 
-                        📅 ${match.date || "TBA"}
-                        <br>
+    📅 ${match.date || "TBA"}
+    <br>
 
-                        🏟 ${match.stadium || "TBA"}
-                        <br>
+    🏟 ${match.stadium || "TBA"}
+    <br>
 
-                        📍 ${match.city || "TBA"}
-                        <br>
+    📍 ${match.city || "TBA"}
+    <br>
 
-                        🕒 ET ${match.timeET || "-"}
-                        |
-                        AR ${match.timeAR || "-"}
+    🕒 ${match.timeAR || "-"}
 
-                    </div>
+</div>
 
                 </div>
 
