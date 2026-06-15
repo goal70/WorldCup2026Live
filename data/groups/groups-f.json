@@ -72,7 +72,7 @@
   "id": 2,
     "group": "F",
     "date": "2026-06-14",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Suecia",
     "team2": "Tunez",
@@ -80,7 +80,7 @@
     "flag1": "se",
     "flag2": "tn",
 
-    "homeScore": 2,
+    "homeScore": 5,
     "awayScore": 1,
 
     "stadium": "NRG Stadium",
