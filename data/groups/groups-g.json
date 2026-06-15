@@ -12,7 +12,7 @@
     "flag2": "eg",
 
     "homeScore": 0,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "Lumen Field",
     "city": "Seattle",
