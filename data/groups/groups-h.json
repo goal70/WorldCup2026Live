@@ -99,7 +99,6 @@
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
 
-    "timeET": "18:00",
     "timeAR": "19:00"
   },
   {
@@ -119,7 +118,6 @@
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
 
-    "timeET": "00:00",
     "timeAR": "01:00"
   },
   {
@@ -139,7 +137,6 @@
     "stadium": "NRG Stadium",
     "city": "Houston",
 
-    "timeET": "02:00",
     "timeAR": "03:00"
   },
   {
