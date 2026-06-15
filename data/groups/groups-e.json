@@ -20,6 +20,49 @@
     "timeET": "13:00",
     "timeAR": "14:00",
 
+     "goals": [
+      {
+        "player": "Nmecha",
+        "minute": 6,
+        "team": "home"
+      },
+      {
+        "player": "Comenencia",
+        "minute": 21,
+        "team": "away"
+      }
+      {
+        "player": "Schlotterbeck",
+        "minute": 38,
+        "team": "home"
+      },
+      {
+        "player": "Havertz (p)",
+        "minute": "45+5",
+        "team": "home"
+      },
+      {
+        "player": "Musiala",
+        "minute": 47,
+        "team": "home"
+      },
+       {
+        "player": "Brown",
+        "minute": 68,
+        "team": "home"
+      },
+       {
+        "player": "Undav",
+        "minute": 78,
+        "team": "home"
+      },
+       {
+        "player": "Havertz",
+        "minute": 88,
+        "team": "home"
+      }
+    ],
+
    "links": [
   {
     "name": "DSports",
