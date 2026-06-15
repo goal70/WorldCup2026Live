@@ -920,3 +920,45 @@ td:first-child{
 
     pointer-events:none;
 }
+
+.featured-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.featured-article {
+    background: #111;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.featured-date {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.featured-card {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.featured-img img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.featured-content h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.featured-content p {
+    font-size: 14px;
+    opacity: 0.85;
+}
