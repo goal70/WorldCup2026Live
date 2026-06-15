@@ -17,7 +17,6 @@
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
 
-    "timeET": "12:00",
     "timeAR": "13:00",
 
      "links": [
@@ -62,7 +61,6 @@
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
 
-    "timeET": "18:00",
     "timeAR": "19:00",
 
      "links": [
@@ -161,7 +159,6 @@
     "stadium": "Estadio Akron",
     "city": "Guadalajara",
 
-    "timeET": "02:00",
     "timeAR": "03:00"
   }
 ]
