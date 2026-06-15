@@ -5,39 +5,39 @@
     "date": "2026-06-15",
     "status": "UPCOMING",
 
-    "team1": "Spain",
+    "team1": "España",
     "team2": "Cabo Verde",
 
-    "flag1": "🇪🇸",
-    "flag2": "🇨🇻",
+    "flag1": "es",
+    "flag2": "cv",
 
     "score": "-",
 
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
 
-    "timeET": "18:00",
-    "timeAR": "19:00"
+    "timeET": "12:00",
+    "timeAR": "13:00"
   },
   {
     "id": 2,
     "group": "H",
-    "date": "2026-06-16",
+    "date": "2026-06-15",
     "status": "UPCOMING",
 
-    "team1": "Saudi Arabia",
+    "team1": "Arabia Saudita",
     "team2": "Uruguay",
 
-    "flag1": "🇸🇦",
-    "flag2": "🇺🇾",
+    "flag1": "sa",
+    "flag2": "uy",
 
     "score": "-",
 
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
 
-    "timeET": "00:00",
-    "timeAR": "01:00"
+    "timeET": "18:00",
+    "timeAR": "19:00"
   },
   {
     "id": 3,
