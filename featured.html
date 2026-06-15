@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>World Goal 2026 | Destacados</title>
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container header-inner">
+
+        <a href="index.html" class="logo">
+            ⚽ <span>WORLD GOAL 2026</span>
+        </a>
+
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="pages/fixtures.html">FIXTURES</a>
+            <a href="featured.html" class="active">DESTACADOS</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h1>⭐ DESTACADOS</h1>
+        <p>Noticias, análisis y momentos clave del Mundial 2026</p>
+    </section>
+
+    <!-- DESTACADOS LISTA -->
+    <section class="featured-page">
+
+        <!-- ITEM -->
+        <div class="featured-article">
+
+            <div class="featured-date">13/06/2026</div>
+
+            <div class="featured-card">
+
+                <div class="featured-img">
+                    <img src="img/match1.jpg" onclick="openImage(this)">
+                </div>
+
+                <div class="featured-content">
+                    <h2>Argentina domina el partido</h2>
+
+                    <div class="line"></div>
+
+                    <p>
+                        Argentina mostró un control total del encuentro con posesión dominante y ataques constantes
+                        que dejaron sin respuesta a su rival.
+                    </p>
+
+                    <a href="https://tulink.com" class="gallery-btn">Leer más</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="featured-article">
+
+            <div class="featured-date">12/06/2026</div>
+
+            <div class="featured-card">
+
+                <div class="featured-img">
+                    <img src="img/match2.jpg" onclick="openImage(this)">
+                </div>
+
+                <div class="featured-content">
+                    <h2>Francia vs Alemania: clásico europeo</h2>
+
+                    <div class="line"></div>
+
+                    <p>
+                        Un partido intenso en el mediocampo con pocas oportunidades claras pero mucha estrategia.
+                    </p>
+
+                    <a href="https://tulink.com" class="gallery-btn">Leer más</a>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <p class="copyright">© 2026 World Goal 2026</p>
+
+    </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+<script>
+function openImage(img) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = img.src;
+}
+
+function closeImage() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
