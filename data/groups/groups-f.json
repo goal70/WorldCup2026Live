@@ -120,14 +120,14 @@
 {
     "id": 3,
     "group": "F",
-    "date": "2026-06-19",
+    "date": "2026-06-20",
     "status": "UPCOMING",
 
-    "team1": "Sweden",
-    "team2": "Netherlands",
+    "team1": "Paises Bajos",
+    "team2": "Suecia",
 
-    "flag1": "se",
-    "flag2": "nl",
+    "flag1": "nl",
+    "flag2": "se",
 
     "score": "-",
 
@@ -140,7 +140,7 @@
   {
     "id": 4,
     "group": "F",
-    "date": "2026-06-19",
+    "date": "2026-06-21",
     "status": "UPCOMING",
 
     "team1": "Tunez",
@@ -154,7 +154,7 @@
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
 
-    "timeET": "22:00 (Monterrey)",
+    "timeET": "22:00 (20/6 Monterrey)",
     "timeAR": "01:00 (21/6)"
   },
   {
@@ -163,11 +163,11 @@
     "date": "2026-06-25",
     "status": "UPCOMING",
 
-    "team1": "Suecia",
-    "team2": "Japon",
+    "team1": "Japon",
+    "team2": "Suecia",
 
-    "flag1": "se",
-    "flag2": "jp",
+    "flag1": "jp",
+    "flag2": "se",
 
     "score": "-",
 
