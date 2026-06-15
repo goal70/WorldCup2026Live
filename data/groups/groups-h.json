@@ -35,7 +35,8 @@
     "name": "Telemundo",
     "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
     "url": "https://zonatvlive.xyz/tvtodo/telemundo.php"
-  {
+  },
+{
     "name": "RCN",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Logo-rcn-2019.jpg",
     "url": "https://zonatvlive.xyz/tvtodo/rcn.php"
@@ -89,11 +90,11 @@
     "date": "2026-06-21",
     "status": "UPCOMING",
 
-    "team1": "Spain",
-    "team2": "Saudi Arabia",
+    "team1": "España",
+    "team2": "Arabia Saudita",
 
-    "flag1": "🇪🇸",
-    "flag2": "🇸🇦",
+    "flag1": "es",
+    "flag2": "sa",
 
     "score": "-",
 
@@ -112,8 +113,8 @@
     "team1": "Uruguay",
     "team2": "Cabo Verde",
 
-    "flag1": "🇺🇾",
-    "flag2": "🇨🇻",
+    "flag1": "uy",
+    "flag2": "cv",
 
     "score": "-",
 
@@ -130,10 +131,10 @@
     "status": "UPCOMING",
 
     "team1": "Cabo Verde",
-    "team2": "Saudi Arabia",
+    "team2": "Arabia Saudita",
 
-    "flag1": "🇨🇻",
-    "flag2": "🇸🇦",
+    "flag1": "cv",
+    "flag2": "sa",
 
     "score": "-",
 
@@ -150,10 +151,10 @@
     "status": "UPCOMING",
 
     "team1": "Uruguay",
-    "team2": "Spain",
+    "team2": "España",
 
-    "flag1": "🇺🇾",
-    "flag2": "🇪🇸",
+    "flag1": "uy",
+    "flag2": "es",
 
     "score": "-",
 
