@@ -171,6 +171,14 @@ if (prevBtn3) {
             showCustomDate("2026-06-14");
         };
     }
+
+    const nextBtn = document.getElementById("nextDateBtn");
+    if (nextBtn) {
+        nextBtn.onclick = () => {
+            setActive("nextDateBtn");
+            showCustomDate("2026-06-15");
+        };
+    }
 }
 
 function setActive(id) {
