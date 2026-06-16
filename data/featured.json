@@ -4,7 +4,7 @@
     "date": "2026-06-13",
     "title": "Brasil 1-1 Marruecos",
     "description": "Brasil llegó con la chapa de casi favorito, con los flashes, con los videos de gambetas en redes sociales y con media prensa ya poniéndolo en cuartos. Los africanos le jugaron de igual a igual al gigante sudamericano y le arrancaron un empate que no sabe a hazaña, puesto que Marruecos hace mucho dejó de ser una sorpresa.",
-    "image": "img/match1.jpg",
+    "image": "https://diarionucleo.com/media/cache/1e/3e/basil-marruecos-c49687.webp",
     "category": "HIGHLIGHTS",
     "flag1": "br",
     "flag2": "ma"
@@ -14,8 +14,8 @@
     "date": "2026-06-12",
     "title": "Estados Unidos 4-1 Paraguay",
     "description": "Una de las actuaciones más impactantes de la primera jornada. Miren que Paraguay suele ser duro. Suele pelear. Suele raspar. Suele complicar. Bueno... esta vez no. Estados Unidos pasó por arriba como una topadora sin frenos. Cuatro goles, dominio absoluto y una exhibición que hizo ruido en todo el planeta fútbol. Los paraguayos recibieron un cachetazo de realidad y ahora están obligados a reaccionar o las valijas van a empezar a aparecer demasiado temprano.",
-    "image": "img/match3.jpg",
-    "category": "NEWS",
+    "image": "https://files.winsports.co/cms/2026/06/12220712/Estados-Unidos-aplasto-4-1-a-Paraguay-en-la-Copa-Mundial-de-la-FIFA%E2%84%A2-%40USMNT.jpg",
+    "category": "DESTACADO",
     "flag1": "us",
     "flag2": "py"
   }
