@@ -109,7 +109,8 @@ function setupNavigation() {
 
     const bind = (id, fn) => {
         const el = document.getElementById(id);
-        if (el) el.onclick = fn;
+        if (!el) return console.warn("Missing button:", id);
+        el.addEventListener("click", fn);
     };
 
     bind("yesterdayBtn", () => {
