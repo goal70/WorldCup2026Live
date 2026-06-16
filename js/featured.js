@@ -4,50 +4,28 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
 
+        console.log("JS OK");
+
         const response = await fetch("featured.json");
-        const articles = await response.json();
 
-        articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+        console.log("STATUS:", response.status);
 
-        container.innerHTML = articles.map(article => `
+        const text = await response.text();
 
-            <article class="featured-card">
+        console.log("RAW:", text);
 
-                <div class="featured-date">
-                    ${article.date}
-                </div>
+        const articles = JSON.parse(text);
 
-                <div class="featured-layout">
-
-                    <div class="featured-image">
-                        <img src="${article.image}" alt="${article.title}">
-                    </div>
-
-                    <div class="featured-content">
-
-                        <span class="featured-category">
-                            ${article.category}
-                        </span>
-
-                        <h2>${article.title}</h2>
-
-                        <p>${article.description}</p>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        `).join("");
+        container.innerHTML =
+            `<h2 style="color:white">Artículos encontrados: ${articles.length}</h2>`;
 
     } catch (err) {
 
-        console.error(err);
+        console.error("ERROR:", err);
 
         container.innerHTML = `
-            <div class="error-box">
-                Error loading featured articles.
+            <div style="padding:20px;color:red">
+                ${err}
             </div>
         `;
     }
