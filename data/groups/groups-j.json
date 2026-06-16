@@ -6,17 +6,16 @@
     "status": "UPCOMING",
 
     "team1": "Argentina",
-    "team2": "Algeria",
+    "team2": "Argelia",
 
-    "flag1": "🇦🇷",
-    "flag2": "🇩🇿",
+    "flag1": "ar",
+    "flag2": "dz",
 
     "score": "-",
 
     "stadium": "GEHA Field at Arrowhead Stadium",
     "city": "Kansas City",
 
-    "timeET": "21:00",
     "timeAR": "22:00"
   },
   {
@@ -26,17 +25,16 @@
     "status": "UPCOMING",
 
     "team1": "Austria",
-    "team2": "Jordan",
+    "team2": "Jordania",
 
-    "flag1": "🇦🇹",
-    "flag2": "🇯🇴",
+    "flag1": "at",
+    "flag2": "jo",
 
     "score": "-",
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
 
-    "timeET": "00:00",
     "timeAR": "01:00"
   },
   {
@@ -48,35 +46,33 @@
     "team1": "Argentina",
     "team2": "Austria",
 
-    "flag1": "🇦🇷",
-    "flag2": "🇦🇹",
+    "flag1": "ar",
+    "flag2": "at",
 
     "score": "-",
 
     "stadium": "AT&T Stadium",
     "city": "Dallas",
 
-    "timeET": "13:00",
     "timeAR": "14:00"
   },
   {
     "id": 4,
     "group": "J",
-    "date": "2026-06-22",
+    "date": "2026-06-23",
     "status": "UPCOMING",
 
-    "team1": "Jordan",
-    "team2": "Algeria",
+    "team1": "Jordania",
+    "team2": "Argelia",
 
-    "flag1": "🇯🇴",
-    "flag2": "🇩🇿",
+    "flag1": "jo",
+    "flag2": "dz",
 
     "score": "-",
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
 
-    "timeET": "23:00",
     "timeAR": "00:00"
   },
   {
@@ -85,18 +81,17 @@
     "date": "2026-06-27",
     "status": "UPCOMING",
 
-    "team1": "Jordan",
+    "team1": "Jordania",
     "team2": "Argentina",
 
-    "flag1": "🇯🇴",
-    "flag2": "🇦🇷",
+    "flag1": "jo",
+    "flag2": "ar",
 
     "score": "-",
 
     "stadium": "AT&T Stadium",
     "city": "Dallas",
 
-    "timeET": "22:00",
     "timeAR": "23:00"
   },
   {
@@ -105,18 +100,17 @@
     "date": "2026-06-27",
     "status": "UPCOMING",
 
-    "team1": "Algeria",
+    "team1": "Argelia",
     "team2": "Austria",
 
-    "flag1": "🇩🇿",
-    "flag2": "🇦🇹",
+    "flag1": "dz",
+    "flag2": "at",
 
     "score": "-",
 
     "stadium": "GEHA Field at Arrowhead Stadium",
     "city": "Kansas City",
 
-    "timeET": "22:00",
     "timeAR": "23:00"
   }
 ]
