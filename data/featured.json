@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-06-13",
+    "title": "br Brasil 1-1 Marruecos ma",
+    "description": "El talento brasileño apareció, pero Marruecos volvió a demostrar que ya no es sorpresa para nadie. Fue una batalla intensa, llena de momentos brillantes, donde los africanos resistieron y respondieron golpe por golpe ante una de las máximas favoritas.",
+    "image": "img/match1.jpg",
+    "link": "featured.html#argentina",
+    "category": "HIGHLIGHTS"
+  },
+  {
+    "date": "2026-06-12",
+    "title": "us Estados Unidos 4-1 Paraguay py",
+    "description": "Una de las actuaciones más impactantes de la primera jornada. Estados Unidos salió decidido a enviar un mensaje al mundo y aplastó a Paraguay con un fútbol dinámico, agresivo y contundente. Los norteamericanos ya se ganaron el respeto del torneo.",
+    "image": "img/match2.jpg",
+    "link": "featured.html#francia",
+    "category": "ANALYSIS"
+  },
+  {
+    "date": "2026-06-11",
+    "title": "mx México 2-0 Sudáfrica za",
+    "description": "El Mundial abrió sus puertas en un Azteca vibrante y México respondió al llamado de su gente. Con personalidad, intensidad y corazón, el Tri hizo explotar las tribunas y comenzó su aventura mundialista con una victoria que alimenta la ilusión de todo un país.",
+    "image": "img/match3.jpg",
+    "link": "featured.html#brasil",
+    "category": "NEWS"
+  }
+]
