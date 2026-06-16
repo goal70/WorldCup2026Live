@@ -164,7 +164,7 @@ if (prevBtn3) {
     };
 }
 
-    const nextBtn = document.getElementById("nextDateBtn");
+    const nextBtn = document.getElementById("prevDateBtn4");
     if (nextBtn) {
         nextBtn.onclick = () => {
             setActive("nextDateBtn");
