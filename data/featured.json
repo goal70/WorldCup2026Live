@@ -1,11 +1,13 @@
 [
   {
+    "id": "brasil-marruecos",
     "date": "2026-06-13",
-    "title": "br Brasil 1-1 Marruecos ma",
+    "title": "Brasil 1-1 Marruecos",
     "description": "El talento brasileño apareció, pero Marruecos volvió a demostrar que ya no es sorpresa para nadie. Fue una batalla intensa, llena de momentos brillantes, donde los africanos resistieron y respondieron golpe por golpe ante una de las máximas favoritas.",
     "image": "img/match1.jpg",
-    "link": "featured.html#argentina",
-    "category": "HIGHLIGHTS"
+  "category": "HIGHLIGHTS",
+  "flag1": "br",
+  "flag2": "ma"
   },
   {
     "date": "2026-06-12",
