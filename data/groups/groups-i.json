@@ -12,7 +12,7 @@
     "flag2": "sn",
 
     "homeScore": 2,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
@@ -29,6 +29,11 @@
         "player": "Barcola",
         "minute": 82,
         "team": "home"
+        },
+       {
+        "player": "Mbaye",
+        "minute": "90+5",
+        "team": "away"
         }
     ],
 
