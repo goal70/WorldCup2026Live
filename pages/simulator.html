@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Available</title>
 
-    <script>
-        window.location.href = "../index.html";
-    </script>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>World Goal 2026 | Simulator</title>
+
+<link rel="stylesheet" href="../css/styles.css">
+
+<style>
+/* opcional mini override ESPN */
+body {
+    background: #0b0f1a;
+}
+</style>
+
 </head>
+
 <body>
+
+<header>
+    <div class="container header-inner">
+
+        <a href="../index.html" class="logo">
+            ⚽ <span>WORLD GOAL 2026</span>
+        </a>
+
+        <nav>
+            <a href="../index.html">HOME</a>
+            <a href="fixtures.html">FIXTURES</a>
+            <a class="active" href="simulator.html">SIMULATOR</a>
+            <a href="../featured.html">⭐ DESTACADOS</a>
+        </nav>
+
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h1>World Cup Simulator</h1>
+        <p>Fase de grupos → 16avos → Final</p>
+    </section>
+
+    <!-- SIMULATOR APP -->
+    <section id="simulator-root"></section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <p class="copyright">© 2026 World Goal 2026</p>
+    </div>
+</footer>
+
+<script src="../js/simulator.js"></script>
+
 </body>
 </html>
