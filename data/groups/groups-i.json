@@ -79,7 +79,7 @@
     "flag2": "no",
 
     "homeScore": 1,
-    "awayScore": 2,
+    "awayScore": 3,
 
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -100,6 +100,11 @@
        {
         "player": "Haaland",
         "minute": 43,
+        "team": "away"
+        },
+      {
+        "player": "Ostigard",
+        "minute": 76,
         "team": "away"
         }
     ],
