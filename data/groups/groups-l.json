@@ -5,19 +5,18 @@
     "date": "2026-06-17",
     "status": "UPCOMING",
 
-    "team1": "England",
+    "team1": "Inglateraa",
     "team2": "Panama",
 
-    "flag1": "🏴",
-    "flag2": "🇵🇦",
+    "flag1": "en",
+    "flag2": "pa",
 
     "score": "-",
 
     "stadium": "BMO Field",
     "city": "Toronto",
 
-    "timeET": "15:00",
-    "timeAR": "16:00"
+    "timeAR": "17:00"
   },
   {
     "id": 2,
@@ -25,59 +24,56 @@
     "date": "2026-06-17",
     "status": "UPCOMING",
 
-    "team1": "Croatia",
+    "team1": "Croacia",
     "team2": "Ghana",
 
-    "flag1": "🇭🇷",
-    "flag2": "🇬🇭",
+    "flag1": "hr",
+    "flag2": "gh",
 
     "score": "-",
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
 
-    "timeET": "21:00",
-    "timeAR": "22:00"
+    "timeAR": "20:00"
   },
   {
     "id": 3,
     "group": "L",
-    "date": "2026-06-22",
+    "date": "2026-06-23",
     "status": "UPCOMING",
 
-    "team1": "England",
+    "team1": "Inglaterra",
     "team2": "Ghana",
 
-    "flag1": "🏴",
-    "flag2": "🇬🇭",
+    "flag1": "en",
+    "flag2": "gh",
 
     "score": "-",
 
     "stadium": "AT&T Stadium",
     "city": "Dallas",
 
-    "timeET": "15:00",
-    "timeAR": "16:00"
+    "timeAR": "17:00"
   },
   {
     "id": 4,
     "group": "L",
-    "date": "2026-06-22",
+    "date": "2026-06-23",
     "status": "UPCOMING",
 
-    "team1": "Croatia",
+    "team1": "Croacia",
     "team2": "Panama",
 
-    "flag1": "🇭🇷",
-    "flag2": "🇵🇦",
+    "flag1": "hr",
+    "flag2": "pa",
 
     "score": "-",
 
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
 
-    "timeET": "20:00",
-    "timeAR": "21:00"
+    "timeAR": "20:00"
   },
   {
     "id": 5,
@@ -96,8 +92,7 @@
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
 
-    "timeET": "15:00",
-    "timeAR": "16:00"
+    "timeAR": "18:00"
   },
   {
     "id": 6,
@@ -105,18 +100,17 @@
     "date": "2026-06-27",
     "status": "UPCOMING",
 
-    "team1": "England",
-    "team2": "Croatia",
+    "team1": "Inglaterra",
+    "team2": "Croacia",
 
-    "flag1": "🏴",
-    "flag2": "🇭🇷",
+    "flag1": "en",
+    "flag2": "hr",
 
     "score": "-",
 
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
 
-    "timeET": "15:00",
-    "timeAR": "16:00"
+    "timeAR": "18:00"
   }
 ]
