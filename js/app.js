@@ -164,21 +164,22 @@ if (prevBtn3) {
     };
 }
 
-    const nextBtn = document.getElementById("prevDateBtn4");
-    if (nextBtn) {
-        nextBtn.onclick = () => {
-            setActive("nextDateBtn");
-            showCustomDate("2026-06-14");
-        };
-    }
+    const nextBtn1 = document.getElementById("prevDateBtn4");
 
-    const nextBtn = document.getElementById("nextDateBtn");
-    if (nextBtn) {
-        nextBtn.onclick = () => {
-            setActive("nextDateBtn");
-            showCustomDate("2026-06-15");
-        };
-    }
+if (nextBtn1) {
+    nextBtn1.onclick = () => {
+        setActive("nextDateBtn");
+        showCustomDate("2026-06-14");
+    };
+}
+
+const nextBtn2 = document.getElementById("nextDateBtn");
+
+if (nextBtn2) {
+    nextBtn2.onclick = () => {
+        setActive("nextDateBtn");
+        showCustomDate("2026-06-15");
+    };
 }
 
 function setActive(id) {
