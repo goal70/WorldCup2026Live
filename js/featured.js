@@ -4,28 +4,55 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
 
-        console.log("JS OK");
+        const response = await fetch("/featured.json");
 
-        const response = await fetch("featured.json");
+        if (!response.ok) {
+            throw new Error(`featured.json not found (${response.status})`);
+        }
 
-        console.log("STATUS:", response.status);
+        const articles = await response.json();
 
-        const text = await response.text();
+        articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        console.log("RAW:", text);
+        container.innerHTML = articles.map(article => `
 
-        const articles = JSON.parse(text);
+            <article class="featured-card">
 
-        container.innerHTML =
-            `<h2 style="color:white">Artículos encontrados: ${articles.length}</h2>`;
+                <div class="featured-date">
+                    ${article.date}
+                </div>
+
+                <div class="featured-layout">
+
+                    <div class="featured-image">
+                        <img src="${article.image}" alt="${article.title}">
+                    </div>
+
+                    <div class="featured-content">
+
+                        <span class="featured-category">
+                            ${article.category}
+                        </span>
+
+                        <h2>${article.title}</h2>
+
+                        <p>${article.description}</p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        `).join("");
 
     } catch (err) {
 
-        console.error("ERROR:", err);
+        console.error(err);
 
         container.innerHTML = `
-            <div style="padding:20px;color:red">
-                ${err}
+            <div class="error-box">
+                Featured articles unavailable.
             </div>
         `;
     }
