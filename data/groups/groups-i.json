@@ -70,7 +70,7 @@
     "id": 2,
     "group": "I",
     "date": "2026-06-16",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Irak",
     "team2": "Noruega",
@@ -78,12 +78,31 @@
     "flag1": "iq",
     "flag2": "no",
 
-    "score": "-",
+    "homeScore": 1,
+    "awayScore": 2,
 
     "stadium": "Gillette Stadium",
     "city": "Boston",
 
     "timeAR": "19:00",
+
+    "goals": [
+      {
+        "player": "Haaland",
+        "minute": 29,
+        "team": "away"
+        },
+      {
+        "player": "Hussein",
+        "minute": 39,
+        "team": "home"
+        },
+       {
+        "player": "Haaland",
+        "minute": 43,
+        "team": "away"
+        }
+    ],
 
     "links": [
   {
