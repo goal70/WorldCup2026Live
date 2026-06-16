@@ -3,7 +3,7 @@
     "id": 1,
     "group": "I",
     "date": "2026-06-16",
-    "status": "UPCOMING",
+    "status": "PRONTO",
 
     "team1": "Francia",
     "team2": "Senegal",
@@ -17,7 +17,7 @@
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
 
-    "timeAR": "16:00"
+    "timeAR": "16:00",
 
     "links": [
   {
