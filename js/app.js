@@ -147,11 +147,6 @@ function setupNavigation() {
         setActive("prevDateBtn4");
         showCustomDate("2026-06-14");
     });
-
-    bind("nextDateBtn", () => {
-        setActive("nextDateBtn");
-        showCustomDate("2026-06-15");
-    });
 }
 
 /* =========================
