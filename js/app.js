@@ -1,5 +1,6 @@
 /*************************************************
- * WORLD GOAL 2026 - ENTERPRISE APP ENGINE (FINAL FIX GOALS SIDE + PROMIEDOS TABLES)
+ * WORLD GOAL 2026 - ENTERPRISE APP ENGINE
+ * CLEAN FIX VERSION
  *************************************************/
 
 let allMatches = [];
@@ -7,8 +8,6 @@ let allMatches = [];
 document.addEventListener("DOMContentLoaded", async () => {
     await loadMatches();
     setupNavigation();
-
-    // 🔥 AUTO LOAD TABLES (PROMIEDOS SYSTEM)
     renderTables();
 });
 
@@ -30,12 +29,10 @@ async function loadMatches() {
     try {
 
         const groups = ["a","b","c","d","e","f","g","h","i","j","k","l"];
-
         allMatches = [];
 
         for (const group of groups) {
 
-            // 🔥 FIX IMPORTANTE: ruta absoluta
             const res = await fetch(`/data/groups/groups-${group}.json`);
 
             if (!res.ok) {
@@ -46,12 +43,10 @@ async function loadMatches() {
             const matches = await res.json();
 
             matches.forEach(m => {
-
                 allMatches.push({
                     id: m.id,
                     group: m.group,
                     date: m.date,
-
                     status: m.status || "UPCOMING",
 
                     team1: m.team1,
@@ -65,20 +60,16 @@ async function loadMatches() {
 
                     stadium: m.stadium,
                     city: m.city,
-
                     timeAR: m.timeAR,
 
                     links: m.links || [],
                     goals: m.goals || [],
                     redCards: m.redCards || []
                 });
-
             });
-
         }
 
         showToday();
-
         renderTables();
 
     } catch (err) {
@@ -87,7 +78,7 @@ async function loadMatches() {
 }
 
 /* =========================
-   DATE NORMALIZATION
+   DATE HELPERS
 ========================= */
 
 function getLocalDate(offset = 0) {
@@ -104,6 +95,7 @@ function getLocalDate(offset = 0) {
 function showToday(){ render("todayMatches", getLocalDate(0)); renderTables(); }
 function showYesterday(){ render("yesterdayMatches", getLocalDate(-1)); renderTables(); }
 function showTomorrow(){ render("tomorrowMatches", getLocalDate(1)); renderTables(); }
+
 function showCustomDate(date){
     render("customDateMatches", date);
     renderTables();
@@ -115,90 +107,76 @@ function showCustomDate(date){
 
 function setupNavigation() {
 
-    const yesterdayBtn = document.getElementById("yesterdayBtn");
-    const todayBtn = document.getElementById("todayBtn");
-    const tomorrowBtn = document.getElementById("tomorrowBtn");
+    const bind = (id, fn) => {
+        const el = document.getElementById(id);
+        if (el) el.onclick = fn;
+    };
 
-    if (yesterdayBtn) {
-        yesterdayBtn.onclick = () => {
-            setActive("yesterdayBtn");
-            showYesterday();
-        };
-    }
+    bind("yesterdayBtn", () => {
+        setActive("yesterdayBtn");
+        showYesterday();
+    });
 
-    if (todayBtn) {
-        todayBtn.onclick = () => {
-            setActive("todayBtn");
-            showToday();
-        };
-    }
+    bind("todayBtn", () => {
+        setActive("todayBtn");
+        showToday();
+    });
 
-    if (tomorrowBtn) {
-        tomorrowBtn.onclick = () => {
-            setActive("tomorrowBtn");
-            showTomorrow();
-        };
-    }
+    bind("tomorrowBtn", () => {
+        setActive("tomorrowBtn");
+        showTomorrow();
+    });
 
-    const prevBtn = document.getElementById("prevDateBtn");
-if (prevBtn) {
-    prevBtn.onclick = () => {
+    bind("prevDateBtn", () => {
         setActive("prevDateBtn");
         showCustomDate("2026-06-11");
-    };
-}
+    });
 
-const prevBtn2 = document.getElementById("prevDateBtn2");
-if (prevBtn2) {
-    prevBtn2.onclick = () => {
+    bind("prevDateBtn2", () => {
         setActive("prevDateBtn2");
         showCustomDate("2026-06-12");
-    };
-}
+    });
 
-const prevBtn3 = document.getElementById("prevDateBtn3");
-if (prevBtn3) {
-    prevBtn3.onclick = () => {
+    bind("prevDateBtn3", () => {
         setActive("prevDateBtn3");
         showCustomDate("2026-06-13");
-    };
-}
+    });
 
-    const nextBtn1 = document.getElementById("prevDateBtn4");
-
-if (nextBtn1) {
-    nextBtn1.onclick = () => {
-        setActive("nextDateBtn");
+    bind("prevDateBtn4", () => {
+        setActive("prevDateBtn4");
         showCustomDate("2026-06-14");
-    };
-}
+    });
 
-const nextBtn2 = document.getElementById("nextDateBtn");
-
-if (nextBtn2) {
-    nextBtn2.onclick = () => {
+    bind("nextDateBtn", () => {
         setActive("nextDateBtn");
         showCustomDate("2026-06-15");
-    };
+    });
 }
 
+/* =========================
+   ACTIVE BUTTON
+========================= */
+
 function setActive(id) {
-    document.querySelectorAll(".day-btn").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".day-btn")
+        .forEach(b => b.classList.remove("active"));
+
     document.getElementById(id)?.classList.add("active");
 }
 
 /* =========================
-   RENDER MATCHES (FIXED GOALS SIDE)
+   RENDER MATCHES
 ========================= */
 
 function render(containerId, date) {
 
     const containers = [
-    "yesterdayMatches",
-    "todayMatches",
-    "tomorrowMatches",
-    "customDateMatches"
-];
+        "yesterdayMatches",
+        "todayMatches",
+        "tomorrowMatches",
+        "customDateMatches"
+    ];
+
     containers.forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
@@ -206,19 +184,18 @@ function render(containerId, date) {
         el.innerHTML = "";
     });
 
-   const container = document.getElementById(containerId);
+    const container = document.getElementById(containerId);
+    if (!container) return;
 
-// ✅ FIX seguro
-if (!container) return;
+    container.style.display = "grid";
 
-container.style.display = "grid";
+    const matches = allMatches.filter(m => m.date === date);
 
-const matches = allMatches.filter(m => m.date === date);
+    if (!matches.length) {
+        container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
+        return;
+    }
 
-if (!matches.length) {
-    container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
-    return;
-}
     container.innerHTML = matches.map(m => {
 
         const linksHTML = (m.links || []).map(l => `
@@ -278,9 +255,9 @@ if (!matches.length) {
             </div>
 
             <div class="match-footer">
-    🏟 ${m.stadium} • ${m.city} <br>
-    🕒 ${m.timeAR || "-"}
-</div>
+                🏟 ${m.stadium} • ${m.city} <br>
+                🕒 ${m.timeAR || "-"}
+            </div>
 
             <div class="match-links">
                 ${linksHTML}
@@ -292,7 +269,7 @@ if (!matches.length) {
 }
 
 /* =========================
-   PROMIEDOS TABLE SYSTEM
+   TABLE SYSTEM
 ========================= */
 
 function buildTables() {
@@ -307,14 +284,8 @@ function buildTables() {
             if (!tables[m.group][team]) {
                 tables[m.group][team] = {
                     team,
-                    pts: 0,
-                    pj: 0,
-                    pg: 0,
-                    pe: 0,
-                    pp: 0,
-                    gf: 0,
-                    gc: 0,
-                    dg: 0
+                    pts: 0, pj: 0, pg: 0, pe: 0, pp: 0,
+                    gf: 0, gc: 0, dg: 0
                 };
             }
         });
@@ -342,7 +313,7 @@ function buildTables() {
             home.pp++;
         } else {
             home.pe++; away.pe++;
-            home.pts += 1; away.pts += 1;
+            home.pts++; away.pts++;
         }
 
         home.dg = home.gf - home.gc;
