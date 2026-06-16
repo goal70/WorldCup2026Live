@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                     <div class="featured-content">
 
-                        <span class="featured-category">
+                        <span class="featured-category ${article.category.toLowerCase()}">
                             ${article.category}
                         </span>
 
