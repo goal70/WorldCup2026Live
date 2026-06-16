@@ -3,20 +3,20 @@
     "id": "brasil-marruecos",
     "date": "2026-06-13",
     "title": "Brasil 1-1 Marruecos",
-    "description": "Brasil llegó con la chapa de casi favorito, con los flashes, con los videos de gambetas en redes sociales y con media prensa ya poniéndolo en cuartos. Los africanos le jugaron de igual a igual al gigante sudamericano y le arrancaron un empate que no sabe a hazaña puesto que Marruecos hace mucho dejo de ser una sorpresa",
+    "description": "Brasil llegó con la chapa de casi favorito, con los flashes, con los videos de gambetas en redes sociales y con media prensa ya poniéndolo en cuartos. Los africanos le jugaron de igual a igual al gigante sudamericano y le arrancaron un empate que no sabe a hazaña, puesto que Marruecos hace mucho dejó de ser una sorpresa.",
     "image": "img/match1.jpg",
-  "category": "HIGHLIGHTS",
-  "flag1": "br",
-  "flag2": "ma"
+    "category": "HIGHLIGHTS",
+    "flag1": "br",
+    "flag2": "ma"
   },
   {
+    "id": "usa-paraguay",
     "date": "2026-06-12",
-    "title": "us Estados Unidos 4-1 Paraguay py",
-    "description": "Una de las actuaciones más impactantes de la primera jornada. Miren que Paraguay suele ser duro. Suele pelear. Suele raspar. Suele complicar."
-"Bueno... esta vez no."
-"Estados Unidos pasó por arriba como una topadora sin frenos. Cuatro goles, dominio absoluto y una exhibición que hizo ruido en todo el planeta fútbol. Los paraguayos recibieron un cachetazo de realidad y ahora están obligados a reaccionar o las valijas van a empezar a aparecer demasiado temprano.", 
+    "title": "Estados Unidos 4-1 Paraguay",
+    "description": "Una de las actuaciones más impactantes de la primera jornada. Miren que Paraguay suele ser duro. Suele pelear. Suele raspar. Suele complicar. Bueno... esta vez no. Estados Unidos pasó por arriba como una topadora sin frenos. Cuatro goles, dominio absoluto y una exhibición que hizo ruido en todo el planeta fútbol. Los paraguayos recibieron un cachetazo de realidad y ahora están obligados a reaccionar o las valijas van a empezar a aparecer demasiado temprano.",
     "image": "img/match3.jpg",
-    "link": "featured.html#brasil",
-    "category": "NEWS"
+    "category": "NEWS",
+    "flag1": "us",
+    "flag2": "py"
   }
 ]
