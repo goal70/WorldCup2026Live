@@ -962,3 +962,113 @@ td:first-child{
     font-size: 14px;
     opacity: 0.85;
 }
+
+/* =========================
+   SIMULATOR - ESPN STYLE
+========================= */
+/* ===== ESPN STYLE BASE ===== */
+
+.espn-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.espn-sub {
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+/* ===== GROUPS ===== */
+
+.espn-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.espn-group {
+    background: #0f0f0f;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.group-header {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* ===== MATCH CARD ===== */
+
+.match-es {
+    padding: 6px;
+    margin: 5px 0;
+    background: #151515;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.match-es:hover {
+    transform: scale(1.02);
+}
+
+.match-es .glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: gold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.match-es.pulse .glow {
+    opacity: 0.2;
+}
+
+/* ===== THIRD STAGE ===== */
+
+.third-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.third-card {
+    padding: 10px;
+    background: #111;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.third-card.active {
+    border: 2px solid gold;
+}
+
+/* ===== BRACKET ===== */
+
+.bracket-wrap {
+    position: relative;
+}
+
+.bracket-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.match-box {
+    background: #111;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* SVG lines */
+.bracket-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
