@@ -11,13 +11,21 @@
     "flag1": "fr",
     "flag2": "sn",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 0,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
 
     "timeAR": "16:00",
+
+    "goals": [
+      {
+        "player": "Mbappe",
+        "minute": 66,
+        "team": "home"
+        }
+    ],
 
     "links": [
   {
