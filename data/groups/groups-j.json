@@ -35,8 +35,17 @@
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
 
-    "timeAR": "01:00"
-  },
+    "timeAR": "01:00",
+
+    "links": [
+  {
+    "name": "DSports",
+    "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
+  }
+]
+},
+  
   {
     "id": 3,
     "group": "J",
