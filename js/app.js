@@ -190,7 +190,9 @@ function render(containerId, date) {
 
     container.style.display = "grid";
 
-    const matches = allMatches.filter(m => m.date === date);
+    const matches = allMatches.filter(m =>
+    (m.date || "").slice(0,10) === date
+);
 
     if (!matches.length) {
         container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
