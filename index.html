@@ -31,11 +31,11 @@ window.addEventListener("DOMContentLoaded", () => {
         </a>
 
         <nav>
-    <a href="index.html" class="active">HOME</a>
-    <a href="pages/fixtures.html">FIXTURES</a>
-    <a href="featured.html">⭐ DESTACADOS</a>
-    <a href="contact.html">Contact</a>
-</nav>
+            <a href="index.html" class="active">HOME</a>
+            <a href="pages/fixtures.html">FIXTURES</a>
+            <a href="featured.html">⭐ DESTACADOS</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
     </div>
 </header>
@@ -50,64 +50,40 @@ window.addEventListener("DOMContentLoaded", () => {
     <!-- NAV HOME -->
     <section class="match-navigation">
 
-    <!-- fecha anterior cargada -->
-    <button class="day-btn date-btn" id="prevDateBtn">
-        11/6
-    </button>
+        <button class="day-btn date-btn">11/6</button>
+        <button class="day-btn date-btn">12/6</button>
+        <button class="day-btn date-btn">13/6</button>
+        <button class="day-btn" id="yesterdayBtn">YESTERDAY</button>
+        <button class="day-btn active" id="todayBtn">TODAY</button>
+        <button class="day-btn" id="tomorrowBtn">TOMORROW</button>
 
-    <button class="day-btn date-btn" id="prevDateBtn2">
-        12/6
-    </button>
-
-        <button class="day-btn date-btn" id="prevDateBtn3">
-        13/6
-    </button>
-
-        <button class="day-btn date-btn" id="prevDateBtn4">
-        14/6
-    </button>
-
-    <button class="day-btn" id="yesterdayBtn">
-        YESTERDAY
-    </button>
-
-    <button class="day-btn active" id="todayBtn">
-        TODAY
-    </button>
-
-    <button class="day-btn" id="tomorrowBtn">
-        TOMORROW
-    </button>
-
-</section>
+    </section>
 
     <section class="today-banner">
         ⚽ WORLD CUP MATCHES
     </section>
 
-    <!-- HOME MATCHES -->
+    <!-- MATCHES -->
     <section class="matches-wrapper">
 
-    <div class="matches-grid" id="yesterdayMatches" style="display:none;"></div>
+        <div class="matches-grid" id="yesterdayMatches" style="display:none;"></div>
+        <div class="matches-grid" id="todayMatches"></div>
+        <div class="matches-grid" id="tomorrowMatches" style="display:none;"></div>
+        <div class="matches-grid" id="customDateMatches" style="display:none;"></div>
 
-    <div class="matches-grid" id="todayMatches"></div>
+    </section>
 
-    <div class="matches-grid" id="tomorrowMatches" style="display:none;"></div>
-
-    <div class="matches-grid" id="customDateMatches" style="display:none;"></div>
-
-        </section>
-
-   <!-- ⭐ DESTACADOS (SOLO DINÁMICO) -->
-    <section class="featured-section">
+    <!-- ⭐ DESTACADOS (SOLO CONTENEDOR) -->
+    <section class="featured-section" id="featured-section">
 
         <h2 class="featured-title">⭐ DESTACADOS</h2>
 
+        <!-- SOLO ESTE CONTENEDOR, NADA MÁS -->
         <div id="featured-container"></div>
 
     </section>
 
-    <!-- 📸 GALERÍA (INDEPENDIENTE) -->
+    <!-- 📸 GALERÍA -->
     <section class="gallery-wrapper">
 
         <h2 class="gallery-title">📸 Match Gallery</h2>
@@ -123,8 +99,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 <div class="gallery-content">
                     <h2>Argentina vs Brazil</h2>
                     <div class="line"></div>
-                    <p>Un partido intenso con dominio alternado y gran actuación ofensiva.</p>
-                    <a href="https://tulink.com" class="gallery-btn">Ver más</a>
+                    <p>Un partido intenso con dominio alternado.</p>
+                    <a href="#" class="gallery-btn">Ver más</a>
                 </div>
             </div>
         </div>
@@ -140,8 +116,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 <div class="gallery-content">
                     <h2>France vs Germany</h2>
                     <div class="line"></div>
-                    <p>Un clásico europeo con mucha intensidad en el medio campo.</p>
-                    <a href="https://tulink.com" class="gallery-btn">Ver más</a>
+                    <p>Un clásico europeo con mucha intensidad.</p>
+                    <a href="#" class="gallery-btn">Ver más</a>
                 </div>
             </div>
         </div>
