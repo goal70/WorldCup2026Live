@@ -11,7 +11,7 @@
     "flag1": "fr",
     "flag2": "sn",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 0,
 
     "stadium": "MetLife Stadium",
@@ -23,6 +23,11 @@
       {
         "player": "Mbappe",
         "minute": 66,
+        "team": "home"
+        },
+      {
+        "player": "Barcola",
+        "minute": 82,
         "team": "home"
         }
     ],
