@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
 
-        const response = await fetch("/featured.json");
+        const response = await fetch("data/featured.json");
 
         if (!response.ok) {
-            throw new Error(`featured.json not found (${response.status})`);
+            throw new Error(`Error ${response.status}`);
         }
 
         const articles = await response.json();
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         container.innerHTML = `
             <div class="error-box">
-                Featured articles unavailable.
+                Error loading featured articles.
             </div>
         `;
     }
