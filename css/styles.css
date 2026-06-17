@@ -1291,3 +1291,29 @@ margin-bottom:30px;
 .pos-3{
     border:2px solid #cd7f32;
 }
+
+.round32-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+.bracket-match{
+    background:#111827;
+    border:1px solid #1f2937;
+    border-radius:10px;
+    padding:15px;
+}
+
+.bracket-team{
+    font-weight:700;
+    padding:8px;
+}
+
+.bracket-vs{
+    text-align:center;
+    opacity:.6;
+    margin:8px 0;
+}
