@@ -150,34 +150,35 @@ window.cycleTeam = function(group, team) {
 
     const key = `${group}-${team}`;
 
-    let current =
+    const current =
         Simulator.rankings[key] || 0;
 
-    let next = current + 1;
+    const next =
+        current >= 3 ? 0 : current + 1;
 
-    if (next > 3)
-        next = 0;
+    // Si el equipo pierde posición
+    if(next === 0){
 
-    // eliminar posición repetida
-    if (next > 0) {
+        delete Simulator.rankings[key];
+
+    } else {
+
+        // Ningún otro equipo del grupo puede tener
+        // esa misma posición
 
         Object.keys(Simulator.rankings)
-            .forEach(k => {
+        .forEach(k => {
 
-                if (
-                    k.startsWith(group + "-") &&
-                    Simulator.rankings[k] === next
-                ) {
-                    delete Simulator.rankings[k];
-                }
+            if(
+                k !== key &&
+                k.startsWith(group + "-") &&
+                Simulator.rankings[k] === next
+            ){
+                delete Simulator.rankings[k];
+            }
 
-            });
+        });
 
-    }
-
-    if (next === 0) {
-        delete Simulator.rankings[key];
-    } else {
         Simulator.rankings[key] = next;
     }
 
