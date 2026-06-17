@@ -111,14 +111,14 @@ function renderGroup(group) {
 
             return `
             <div
-                class="sim-team"
+                class="sim-team pos-${pos}"
                 onclick="cycleTeam(
                     '${group.letter}',
                     '${team.replace(/'/g,"")}'
                 )"
             >
 
-                <span>
+                <span class="sim-medal">
                     ${getMedal(pos)}
                 </span>
 
