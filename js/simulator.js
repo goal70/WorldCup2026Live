@@ -148,39 +148,38 @@ function getMedal(pos) {
 
 window.cycleTeam = function(group, team) {
 
-    const key =
-        `${group}-${team}`;
+    const key = `${group}-${team}`;
 
     let current =
         Simulator.rankings[key] || 0;
 
-    current++;
+    let next = current + 1;
 
-    if(current > 3)
-        current = 0;
+    if (next > 3)
+        next = 0;
 
-    Object.keys(
-        Simulator.rankings
-    ).forEach(k => {
+    // eliminar posición repetida
+    if (next > 0) {
 
-        if(
-            k.startsWith(group + "-")
-        ){
+        Object.keys(Simulator.rankings)
+            .forEach(k => {
 
-            if(
-                Simulator.rankings[k]
-                === current
-            ){
-                delete Simulator.rankings[k];
-            }
-        }
-    });
+                if (
+                    k.startsWith(group + "-") &&
+                    Simulator.rankings[k] === next
+                ) {
+                    delete Simulator.rankings[k];
+                }
 
-    if(current)
-        Simulator.rankings[key] =
-            current;
-    else
+            });
+
+    }
+
+    if (next === 0) {
         delete Simulator.rankings[key];
+    } else {
+        Simulator.rankings[key] = next;
+    }
 
     renderGroups();
 };
