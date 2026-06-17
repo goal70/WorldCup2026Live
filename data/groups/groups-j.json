@@ -11,7 +11,7 @@
     "flag1": "ar",
     "flag2": "dz",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 0,
 
     "stadium": "GEHA Field at Arrowhead Stadium",
@@ -23,6 +23,11 @@
       {
         "player": "MESSI",
         "minute": 16,
+        "team": "home"
+        },
+       {
+        "player": "MESSI",
+        "minute": 60,
         "team": "home"
         }
        ],
