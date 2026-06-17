@@ -18,5 +18,16 @@
     "category": "DESTACADO",
     "flag1": "us",
     "flag2": "py"
+  },
+   {
+    "id": "mexico-sudafrica",
+    "date": "2026-06-11",
+    "title": "Mexico 4-1 Sudafrica",
+    "description": "Arrancó el Mundial y el Azteca rugió como si estuviera por explotar. México salió con el cuchillo entre los dientes, empujado por miles y miles de almas que soñaban con ver a su selección tocar el cielo. Sudáfrica aguantó lo que pudo, pero cuando el gigante mexicano acelera en casa, no hay mucho para discutir. Primer golpe sobre la mesa ya que la mayoría de Sudamerica y Europa no tenian fe a Mexico",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XhoSU8Mv4eRCSn8On_OqeynoJKSpIWfAXrx-LBfeep4OMhbZEw8tct1X&s=10",
+    "category": "DESTACADO",
+    "flag1": "mx",
+    "flag2": "za"
   }
+]
 ]
