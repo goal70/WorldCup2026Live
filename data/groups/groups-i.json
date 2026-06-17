@@ -70,7 +70,7 @@
     "id": 2,
     "group": "I",
     "date": "2026-06-16",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Irak",
     "team2": "Noruega",
@@ -79,7 +79,7 @@
     "flag2": "no",
 
     "homeScore": 1,
-    "awayScore": 3,
+    "awayScore": 4,
 
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -105,6 +105,11 @@
       {
         "player": "Ostigard",
         "minute": 76,
+        "team": "away"
+        },
+      {
+        "player": "Thorstvedt",
+        "minute": "90+6",
         "team": "away"
         }
     ],
