@@ -74,7 +74,7 @@
     "id": 2,
     "group": "J",
     "date": "2026-06-17",
-    "status": "UPCOMING",
+    "status": "FINISHED",
 
     "team1": "Austria",
     "team2": "Jordania",
@@ -82,7 +82,9 @@
     "flag1": "at",
     "flag2": "jo",
 
-    "score": "-",
+    "homeScore": 3,
+    "awayScore": 1,
+
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
