@@ -19,6 +19,19 @@
 
     "timeAR": "17:00",
 
+    "goals": [
+      {
+        "player": "Kane (pen.)",
+        "minute": 12,
+        "team": "home"
+        },
+       {
+        "player": "Baturina",
+        "minute": 36,
+        "team": "away"
+        }
+       ],
+
     "links": [
   {
     "name": "DSports",
