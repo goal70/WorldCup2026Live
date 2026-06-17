@@ -38,38 +38,18 @@
        ],
 
     "links": [
-  {
-    "name": "DSports",
-    "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0czIucGhw"
-  },
-  {
-    "name": "Telemundo",
-    "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyP0ik0UB0dl-6jZIiqHKZcxEi_xqqJlk8m0mb9TcQnSZpgtNDE8cb8cs02s0OLcMNystOt702BlVKUyjNtFrC3vwAqgz63ZeUK2YHgB6EKGikNn_aYz1t8Qbv-6LTS2vcOdr-kgRy7hw/s1600/GDG.+Telemundo+internacional+4.jpg",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdGVsZW11bmRvLnBocA=="
-  },
-  {
-    "name": "TUDN (Mx)",
-    "logo": "https://static.wikia.nocookie.net/youtubepedia/images/3/32/TUDN_M%C3%A9xico.jpg/revision/latest?cb=20211120191946&path-prefix=es",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHVkbm14LnBocA=="
-  },
-  {
-    "name": "SportDigital",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Sport-Digital.svg/960px-Sport-Digital.svg.png",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvc3BvcnRkaWdpdGFsLnBocA=="
-  },
-  {
-    "name": "TyC Sports",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9av3BMXwBjs247UtPbCYJXXbEJBGHAEQhGQ&s",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXR5Y3Nwb3J0cw=="
-  },
       {
-    "name": "Disney+",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRXEOBt658oYJST_Loao2XwgNMnPF10E8a7Q&s",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRpc25leTI="
-  }
-]
-},
+        "name": "RESUMEN",
+        "logo": "https://crystalpng.com/wp-content/uploads/2025/03/youTube-logo.png",
+        "url": "https://www.youtube.com/watch?v=teS58iZ6BV8"
+    },
+      {
+        "name": "Reaccion",
+        "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGdaVjf6enAxwLZQdldZDKKa6oaXg5xuZfuzjHg84mFlz1DctKxmNQARcW2lzvVlrCqk9bMB0iQAnJVwFejOPdEuwh_0GW98wX5UC9La6OSdAwbOoPNvz6a8XX5yzcMSU5NUlgzxXH2fo/w1200-h630-p-k-no-nu/Logo-diney-sport.jpg",
+        "url": "https://www.youtube.com/watch?v=YuNhFZAyjSk"
+    }
+    ]
+  },
 {
     "id": 2,
     "group": "J",
