@@ -11,13 +11,21 @@
     "flag1": "pt",
     "flag2": "cd",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 0,
 
     "stadium": "NRG Stadium",
     "city": "Houston",
 
     "timeAR": "14:00",
+
+    "goals": [
+      {
+        "player": "Neves",
+        "minute": 6,
+        "team": "home"
+        }
+       ],
 
     "links": [
   {
