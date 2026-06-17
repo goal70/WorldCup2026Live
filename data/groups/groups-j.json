@@ -11,7 +11,7 @@
     "flag1": "ar",
     "flag2": "dz",
 
-    "homeScore": 2,
+    "homeScore": 3,
     "awayScore": 0,
 
     "stadium": "GEHA Field at Arrowhead Stadium",
@@ -28,6 +28,11 @@
        {
         "player": "MESSI",
         "minute": 60,
+        "team": "home"
+        },
+       {
+        "player": "MESSI (iguala a Klose)",
+        "minute": 76,
         "team": "home"
         }
        ],
