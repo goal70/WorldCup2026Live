@@ -103,7 +103,7 @@
   {
     "id": 3,
     "group": "C",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "status": "UPCOMING",
 
     "team1": "Escocia",
@@ -117,13 +117,12 @@
     "stadium": "Lumen Field",
     "city": "Seattle",
 
-    "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeAR": "19:00"
   },
   {
     "id": 4,
     "group": "C",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "status": "UPCOMING",
 
     "team1": "Brasil",
@@ -137,8 +136,7 @@
     "stadium": "SoFi Stadium",
     "city": "Los Angeles",
 
-    "timeET": "21:00",
-    "timeAR": "23:00"
+    "timeAR": "21:30"
   },
   {
     "id": 5,
@@ -157,8 +155,7 @@
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
 
-    "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeAR": "19:00"
   },
   {
     "id": 6,
@@ -177,7 +174,6 @@
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
 
-    "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeAR": "19:00"
   }
 ]
