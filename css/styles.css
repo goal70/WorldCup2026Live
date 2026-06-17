@@ -1195,3 +1195,81 @@ td:first-child{
     }
 
 }
+
+/* ==================================
+SIMULATOR ESPN PRO
+================================== */
+
+.sim-groups-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fill,minmax(260px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.sim-group{
+background:#031d1b;
+border:1px solid #00ffb3;
+border-radius:14px;
+padding:15px;
+box-shadow:
+0 0 20px rgba(0,255,180,.15);
+}
+
+.sim-group-title{
+color:#00ffb3;
+font-weight:700;
+text-align:center;
+margin-bottom:15px;
+}
+
+.sim-team{
+padding:10px;
+margin:6px 0;
+cursor:pointer;
+border-radius:8px;
+background:#062824;
+transition:.2s;
+}
+
+.sim-team:hover{
+transform:translateX(5px);
+background:#0a3932;
+}
+
+.sim-continue-btn{
+display:block;
+margin:30px auto;
+padding:14px 30px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:700;
+font-size:16px;
+}
+
+.third-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fill,minmax(200px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.third-card{
+padding:18px;
+cursor:pointer;
+border-radius:12px;
+text-align:center;
+background:#062824;
+}
+
+.selected-third{
+border:2px solid gold;
+}
+
+.sim-header{
+text-align:center;
+margin-bottom:30px;
+}
