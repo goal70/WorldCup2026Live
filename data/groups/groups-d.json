@@ -5,7 +5,7 @@
     "date": "2026-06-12",
     "status": "FINISHED",
 
-    "team1": "United States",
+    "team1": "Estados Unidos",
     "team2": "Paraguay",
 
     "flag1": "us",
@@ -64,7 +64,7 @@
     "status": "FINISHED",
 
     "team1": "Australia",
-    "team2": "Turkey",
+    "team2": "Turquia",
 
     "flag1": "au",
     "flag2": "tr",
@@ -107,6 +107,48 @@
     "date": "2026-06-18",
     "status": "UPCOMING",
 
+    "team1": "Estados Unidos",
+    "team2": "Australia",
+
+    "flag1": "us",
+    "flag2": "au",
+
+    "homeScore": null,
+    "awayScore": null,
+
+    "stadium": "Levi's Stadium",
+    "city": "Santa Clara",
+
+    "timeAR": "16:00"
+  },
+
+  {
+    "id": 4,
+    "group": "D",
+    "date": "2026-06-20",
+    "status": "UPCOMING",
+
+    "team1": "Paraguay",
+    "team2": "Turquia",
+
+    "flag1": "py",
+    "flag2": "tr",
+
+    "homeScore": null,
+    "awayScore": null,
+
+    "stadium": "Lumen Field",
+    "city": "Seattle",
+
+    "timeAR": "00:00"
+  },
+
+  {
+    "id": 5,
+    "group": "D",
+    "date": "2026-06-25",
+    "status": "UPCOMING",
+
     "team1": "Paraguay",
     "team2": "Australia",
 
@@ -116,55 +158,10 @@
     "homeScore": null,
     "awayScore": null,
 
-    "stadium": "Levi's Stadium",
-    "city": "Santa Clara",
-
-    "timeET": "15:00",
-    "timeAR": "17:00"
-  },
-
-  {
-    "id": 4,
-    "group": "D",
-    "date": "2026-06-18",
-    "status": "UPCOMING",
-
-    "team1": "United States",
-    "team2": "Turkey",
-
-    "flag1": "us",
-    "flag2": "tr",
-
-    "homeScore": null,
-    "awayScore": null,
-
-    "stadium": "Lumen Field",
-    "city": "Seattle",
-
-    "timeET": "21:00",
-    "timeAR": "23:00"
-  },
-
-  {
-    "id": 5,
-    "group": "D",
-    "date": "2026-06-24",
-    "status": "UPCOMING",
-
-    "team1": "Australia",
-    "team2": "United States",
-
-    "flag1": "au",
-    "flag2": "us",
-
-    "homeScore": null,
-    "awayScore": null,
-
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
 
-    "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeAR": "23:00"
   },
 
   {
@@ -173,11 +170,11 @@
     "date": "2026-06-24",
     "status": "UPCOMING",
 
-    "team1": "Turkey",
-    "team2": "Paraguay",
+    "team1": "Turquia",
+    "team2": "Estados Unidos",
 
     "flag1": "tr",
-    "flag2": "py",
+    "flag2": "us",
 
     "homeScore": null,
     "awayScore": null,
@@ -185,7 +182,6 @@
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
 
-    "timeET": "15:00",
-    "timeAR": "17:00"
+    "timeAR": "23:00"
   }
 ]
