@@ -19,6 +19,14 @@
 
     "timeAR": "22:00",
 
+     "goals": [
+      {
+        "player": "MESSI",
+        "minute": 16,
+        "team": "home"
+        }
+       ],
+
     "links": [
   {
     "name": "DSports",
