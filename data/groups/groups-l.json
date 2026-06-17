@@ -11,7 +11,7 @@
     "flag1": "gb",
     "flag2": "hr",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 1,
 
     "stadium": "BMO Field",
@@ -29,7 +29,12 @@
         "player": "Baturina",
         "minute": 36,
         "team": "away"
-        }
+        },
+       {
+        "player": "Kane",
+        "minute": 42,
+        "team": "home"
+        },
        ],
 
     "links": [
