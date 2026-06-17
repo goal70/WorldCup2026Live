@@ -11,7 +11,7 @@
     "flag1": "gb",
     "flag2": "hr",
 
-    "homeScore": 3,
+    "homeScore": 4,
     "awayScore": 2,
 
     "stadium": "BMO Field",
@@ -43,6 +43,11 @@
       {
         "player": "Bellingham",
         "minute": 46,
+        "team": "home"
+        },
+      {
+        "player": "Rashford",
+        "minute": 85,
         "team": "home"
         }
        ],
