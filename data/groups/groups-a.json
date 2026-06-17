@@ -6,7 +6,7 @@
     "status": "FINISHED",
 
     "team1": "Mexico",
-    "team2": "South Africa",
+    "team2": "Sudafrica",
 
     "flag1": "mx",
     "flag2": "za",
@@ -66,8 +66,8 @@
     "date": "2026-06-11",
     "status": "FINISHED",
 
-    "team1": "South Korea",
-    "team2": "Czech Republic",
+    "team1": "Corea del Sur",
+    "team2": "Rep. Checa",
 
     "flag1": "kr",
     "flag2": "cz",
@@ -116,8 +116,8 @@
     "date": "2026-06-18",
     "status": "UPCOMING",
 
-    "team1": "Czech Republic",
-    "team2": "South Africa",
+    "team1": "Rep. Checa",
+    "team2": "Sudafrica",
 
     "flag1": "cz",
     "flag2": "za",
@@ -125,10 +125,9 @@
     "homeScore": null,
     "awayScore": null,
 
-    "stadium": "Atlanta Stadium",
+    "stadium": "Mercedes-Benz",
     "city": "Atlanta",
 
-    "timeET": "12:00",
     "timeAR": "13:00",
 
     "goals": [],
@@ -143,7 +142,7 @@
     "status": "UPCOMING",
 
     "team1": "Mexico",
-    "team2": "South Korea",
+    "team2": "Corea del Sur",
 
     "flag1": "mx",
     "flag2": "kr",
@@ -151,10 +150,9 @@
     "homeScore": null,
     "awayScore": null,
 
-    "stadium": "Guadalajara Stadium",
+    "stadium": "AKRON",
     "city": "Guadalajara",
 
-    "timeET": "21:00",
     "timeAR": "22:00",
 
     "goals": [],
