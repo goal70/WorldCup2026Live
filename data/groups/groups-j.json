@@ -91,14 +91,37 @@
 
     "timeAR": "01:00",
 
+  "goals": [
+      {
+        "player": "Schmid",
+        "minute": 21,
+        "team": "home"
+        },
+       {
+        "player": "Alowan",
+        "minute": 50,
+        "team": "away"
+        },
+       {
+        "player": "Al-Arab (E.C)",
+        "minute": 76,
+        "team": "home"
+        },
+    {
+        "player": "Arnautovic (Pen.)",
+        "minute": "90+12",
+        "team": "home"
+        }
+       ],
+
     "links": [
-  {
-    "name": "DSports",
-    "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-  }
-]
-},
+      {
+        "name": "Resumen",
+        "logo": "https://crystalpng.com/wp-content/uploads/2025/03/youTube-logo.png",
+        "url": "https://www.youtube.com/watch?v=k69FaQE5DPU"
+    }
+    ]
+  },
   
   {
     "id": 3,
