@@ -1,335 +1,359 @@
-/*************************************************
- * WORLD GOAL 2026 - ESPN PRO SIMULATOR ENGINE
- * Visual Tournament System (Groups → Knockout)
- *************************************************/
+/********************************************
+ WORLD GOAL 2026
+ ESPN PRO SIMULATOR
+********************************************/
+
+const GROUPS = [
+"A","B","C","D","E","F",
+"G","H","I","J","K","L"
+];
 
 const Simulator = {
-    stage: "groups",
-
     groups: [],
-
-    medals: new Map(),
-
-    thirdPlaces: [],
-
-    bestThirds: [],
-
-    knockout: []
+    rankings: {},
+    thirds: [],
+    selectedThirds: []
 };
 
-/* =========================================
-   INIT
-========================================= */
+document.addEventListener("DOMContentLoaded", async () => {
 
-document.addEventListener("DOMContentLoaded", () => {
-    const root = document.getElementById("simulator");
-    if (!root) return;
+    await loadGroups();
 
     renderGroups();
+
 });
 
-/* =========================================
-   VISUAL GROUP STAGE (ESPN STYLE)
-========================================= */
+/* =========================
+   LOAD GROUPS
+========================= */
 
-function renderGroups() {
+async function loadGroups() {
 
-    const container = document.getElementById("simulator");
+    Simulator.groups = [];
 
-    container.innerHTML = `
-        <div class="espn-title">🏆 GROUP STAGE</div>
-        <div class="espn-sub">Click teams to assign medals</div>
+    for (const letter of GROUPS) {
 
-        <div class="espn-groups"></div>
-    `;
+        try {
 
-    const grid = container.querySelector(".espn-groups");
+            const response = await fetch(
+                `../data/groups/groups-${letter.toLowerCase()}.json`
+            );
 
-    Simulator.groups.forEach(group => {
+            const matches = await response.json();
 
-        const box = document.createElement("div");
-        box.className = "espn-group";
+            const teams = [...new Set(
+                matches.flatMap(m => [
+                    m.team1,
+                    m.team2
+                ])
+            )];
 
-        box.innerHTML = `
-            <div class="group-header">GROUP ${group.name}</div>
+            Simulator.groups.push({
+                letter,
+                teams
+            });
 
-            <div class="group-teams">
-                ${group.teams.map(t => `
-                    <div class="team-pill">${t}</div>
-                `).join("")}
-            </div>
+        } catch(err) {
 
-            <div class="group-matches">
-                ${group.matches.map(m => renderMatch(m)).join("")}
-            </div>
-        `;
-
-        grid.appendChild(box);
-    });
-}
-
-/* =========================================
-   MATCH CARD (ESPN INTERACTIVE)
-========================================= */
-
-function renderMatch(match) {
-
-    const medal = Simulator.medals.get(match.id);
-
-    return `
-        <div class="match-es" onclick="cycleMedal('${match.id}', this)">
-
-            <div class="teams">
-                ${match.team1} <span>vs</span> ${match.team2}
-            </div>
-
-            <div class="medals">
-                ${medal === "gold" ? "🥇" : ""}
-                ${medal === "silver" ? "🥈" : ""}
-                ${medal === "bronze" ? "🥉" : ""}
-            </div>
-
-            <div class="glow"></div>
-        </div>
-    `;
-}
-
-/* =========================================
-   MEDAL SYSTEM (ANIMATED)
-========================================= */
-
-function cycleMedal(id, el) {
-
-    const current = Simulator.medals.get(id);
-
-    let next =
-        !current ? "gold" :
-        current === "gold" ? "silver" :
-        current === "silver" ? "bronze" :
-        null;
-
-    if (next) {
-        Simulator.medals.set(id, next);
-    } else {
-        Simulator.medals.delete(id);
-    }
-
-    // 🔥 ANIMATION FEEDBACK
-    el.classList.add("pulse");
-    setTimeout(() => el.classList.remove("pulse"), 300);
-
-    refresh();
-}
-
-/* =========================================
-   REFRESH GROUPS (light rerender)
-========================================= */
-
-function refresh() {
-    if (Simulator.stage === "groups") {
-        renderGroups();
-
-        if (isComplete()) {
-            setTimeout(showThirdStage, 800);
+            console.error(
+                "Error loading group",
+                letter,
+                err
+            );
         }
     }
 }
 
-/* =========================================
-   GROUP COMPLETION CHECK
-========================================= */
+/* =========================
+   GROUP SCREEN
+========================= */
 
-function isComplete() {
-    let total = 0;
+function renderGroups() {
 
-    Simulator.groups.forEach(g => total += g.matches.length);
+    const root =
+        document.getElementById("simulator-root");
 
-    return Simulator.medals.size === total;
-}
-
-/* =========================================
-   THIRD PLACE STAGE (TV STYLE SCREEN)
-========================================= */
-
-function showThirdStage() {
-
-    Simulator.stage = "thirds";
-
-    Simulator.thirdPlaces = generateThirds();
-
-    const container = document.getElementById("simulator");
-
-    container.innerHTML = `
-        <div class="espn-title">🥉 BEST THIRD PLACES</div>
-        <div class="espn-sub">Select 8 teams for knockout</div>
-
-        <div class="third-grid">
-            ${Simulator.thirdPlaces.map(t => `
-                <div class="third-card" onclick="toggleThird('${t.id}', this)">
-                    ${t.name}
-                </div>
-            `).join("")}
+    root.innerHTML = `
+        <div class="sim-header">
+            <h2>🏆 GROUP STAGE</h2>
+            <p>Select 1st, 2nd and 3rd place</p>
         </div>
 
-        <button class="espn-btn" onclick="buildKnockout()">
-            Generate Round of 16
+        <div class="sim-groups-grid">
+            ${Simulator.groups.map(renderGroup).join("")}
+        </div>
+
+        <div id="continue-wrapper"></div>
+    `;
+
+    updateContinueButton();
+}
+
+/* =========================
+   GROUP CARD
+========================= */
+
+function renderGroup(group) {
+
+    return `
+    <div class="sim-group">
+
+        <div class="sim-group-title">
+            GROUP ${group.letter}
+        </div>
+
+        ${group.teams.map(team => {
+
+            const pos =
+                Simulator.rankings[
+                    `${group.letter}-${team}`
+                ] || 0;
+
+            return `
+            <div
+                class="sim-team"
+                onclick="cycleTeam(
+                    '${group.letter}',
+                    '${team.replace(/'/g,"")}'
+                )"
+            >
+
+                <span>
+                    ${getMedal(pos)}
+                </span>
+
+                ${team}
+
+            </div>
+            `;
+
+        }).join("")}
+
+    </div>
+    `;
+}
+
+/* =========================
+   MEDALS
+========================= */
+
+function getMedal(pos) {
+
+    if(pos===1) return "🥇";
+    if(pos===2) return "🥈";
+    if(pos===3) return "🥉";
+
+    return "";
+}
+
+window.cycleTeam = function(group, team) {
+
+    const key =
+        `${group}-${team}`;
+
+    let current =
+        Simulator.rankings[key] || 0;
+
+    current++;
+
+    if(current > 3)
+        current = 0;
+
+    Object.keys(
+        Simulator.rankings
+    ).forEach(k => {
+
+        if(
+            k.startsWith(group + "-")
+        ){
+
+            if(
+                Simulator.rankings[k]
+                === current
+            ){
+                delete Simulator.rankings[k];
+            }
+        }
+    });
+
+    if(current)
+        Simulator.rankings[key] =
+            current;
+    else
+        delete Simulator.rankings[key];
+
+    renderGroups();
+};
+
+/* =========================
+   VALIDATION
+========================= */
+
+function groupsComplete() {
+
+    return Simulator.groups.every(g => {
+
+        const values =
+            Object.entries(
+                Simulator.rankings
+            )
+            .filter(([k]) =>
+                k.startsWith(g.letter+"-")
+            )
+            .map(x => x[1]);
+
+        return (
+            values.includes(1) &&
+            values.includes(2) &&
+            values.includes(3)
+        );
+
+    });
+}
+
+function updateContinueButton() {
+
+    const wrapper =
+        document.getElementById(
+            "continue-wrapper"
+        );
+
+    if(!wrapper) return;
+
+    if(!groupsComplete()) {
+
+        wrapper.innerHTML = "";
+
+        return;
+    }
+
+    wrapper.innerHTML = `
+        <button
+            class="sim-continue-btn"
+            onclick="showThirds()"
+        >
+            CONTINUE →
         </button>
     `;
 }
 
-/* =========================================
-   TOGGLE THIRD PLACE (MAX 8)
-========================================= */
+/* =========================
+   THIRD PLACE SCREEN
+========================= */
 
-function toggleThird(id, el) {
+window.showThirds = function() {
 
-    const exists = Simulator.bestThirds.includes(id);
+    const root =
+        document.getElementById(
+            "simulator-root"
+        );
 
-    if (exists) {
-        Simulator.bestThirds = Simulator.bestThirds.filter(x => x !== id);
-        el.classList.remove("active");
-    } else {
-        if (Simulator.bestThirds.length < 8) {
-            Simulator.bestThirds.push(id);
-            el.classList.add("active");
-        }
-    }
-}
-
-/* =========================================
-   BUILD KNOCKOUT
-========================================= */
-
-function buildKnockout() {
-
-    Simulator.stage = "knockout";
-
-    const qualified = buildQualified();
-
-    Simulator.knockout = buildBracket(qualified);
-
-    renderBracket();
-}
-
-/* =========================================
-   QUALIFIED TEAMS
-========================================= */
-
-function buildQualified() {
-
-    let top = [];
+    Simulator.thirds = [];
 
     Simulator.groups.forEach(g => {
-        top.push(...g.teams.slice(0, 2));
-    });
 
-    let thirds = Simulator.thirdPlaces
-        .filter(t => Simulator.bestThirds.includes(t.id))
-        .map(t => t.name);
+        const third =
+            Object.entries(
+                Simulator.rankings
+            ).find(([k,v]) =>
+                k.startsWith(g.letter+"-")
+                && v===3
+            );
 
-    return [...top, ...thirds];
-}
+        if(third){
 
-/* =========================================
-   FIFA ROUND OF 16 STRUCTURE
-========================================= */
-
-function buildBracket(teams) {
-
-    return [
-        [teams[0], teams[1]],
-        [teams[2], teams[3]],
-        [teams[4], teams[5]],
-        [teams[6], teams[7]],
-        [teams[8], teams[9]],
-        [teams[10], teams[11]],
-        [teams[12], teams[13]],
-        [teams[14], teams[15]]
-    ];
-}
-
-/* =========================================
-   VISUAL BRACKET (ESPN STYLE + LINES)
-========================================= */
-
-function renderBracket() {
-
-    const container = document.getElementById("simulator");
-
-    container.innerHTML = `
-        <div class="espn-title">⚔️ ROUND OF 16</div>
-
-        <div class="bracket-wrap">
-            <svg class="bracket-lines"></svg>
-
-            <div class="bracket-grid">
-                ${Simulator.knockout.map((m, i) => `
-                    <div class="match-box" data-index="${i}">
-                        <div>${m[0]}</div>
-                        <div class="vs">VS</div>
-                        <div>${m[1]}</div>
-                    </div>
-                `).join("")}
-            </div>
-        </div>
-    `;
-
-    drawBracketLines();
-}
-
-/* =========================================
-   SVG BRACKET LINES (ESPN STYLE CONNECTOR)
-========================================= */
-
-function drawBracketLines() {
-
-    const svg = document.querySelector(".bracket-lines");
-    const matches = document.querySelectorAll(".match-box");
-
-    if (!svg || !matches.length) return;
-
-    svg.innerHTML = "";
-
-    matches.forEach((el, i) => {
-
-        if (i % 2 === 0) {
-
-            const a = el.getBoundingClientRect();
-            const b = matches[i + 1]?.getBoundingClientRect();
-
-            if (!b) return;
-
-            const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
-
-            const x1 = a.right;
-            const y1 = a.top + 20;
-            const x2 = b.right;
-            const y2 = b.top + 20;
-
-            line.setAttribute("d", `M ${x1} ${y1} H ${x1+20} V ${y2} H ${x2}`);
-            line.setAttribute("stroke", "#aaa");
-            line.setAttribute("fill", "none");
-
-            svg.appendChild(line);
+            Simulator.thirds.push({
+                group:g.letter,
+                team:
+                third[0]
+                .replace(g.letter+"-","")
+            });
         }
     });
-}
 
-/* =========================================
-   HELPERS (placeholder data)
-========================================= */
+    root.innerHTML = `
+        <h2>🥉 BEST THIRD PLACES</h2>
 
-function generateThirds() {
-    return Simulator.groups.map((g, i) => ({
-        id: "t" + i,
-        name: `3rd ${g.name || i}`
-    }));
-}
+        <div class="third-grid">
 
-/* =========================================
-   GLOBAL EXPORT
-========================================= */
+        ${Simulator.thirds.map((t,i)=>`
 
-window.cycleMedal = cycleMedal;
-window.toggleThird = toggleThird;
-window.buildKnockout = buildKnockout;
+            <div
+                class="third-card"
+                onclick="toggleThird(${i},this)"
+            >
+                ${t.team}
+            </div>
+
+        `).join("")}
+
+        </div>
+
+        <button
+            class="sim-continue-btn"
+            onclick="generateBracket()"
+        >
+            GENERATE ROUND OF 32
+        </button>
+    `;
+};
+
+window.toggleThird =
+function(index, el){
+
+    const pos =
+        Simulator.selectedThirds
+        .indexOf(index);
+
+    if(pos>-1){
+
+        Simulator.selectedThirds
+        .splice(pos,1);
+
+        el.classList.remove(
+            "selected-third"
+        );
+
+    }else{
+
+        if(
+            Simulator.selectedThirds
+            .length >= 8
+        ) return;
+
+        Simulator.selectedThirds
+        .push(index);
+
+        el.classList.add(
+            "selected-third"
+        );
+    }
+};
+
+/* =========================
+   BRACKET PLACEHOLDER
+========================= */
+
+window.generateBracket =
+function(){
+
+    const root =
+        document.getElementById(
+            "simulator-root"
+        );
+
+    root.innerHTML = `
+        <div class="espn-bracket">
+
+            <h2>
+                ⚔️ ROUND OF 32
+            </h2>
+
+            <p>
+                FIFA bracket generation
+                will appear here.
+            </p>
+
+        </div>
+    `;
+};
