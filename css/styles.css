@@ -1273,3 +1273,21 @@ border:2px solid gold;
 text-align:center;
 margin-bottom:30px;
 }
+
+.sim-medal{
+    width:40px;
+    display:inline-block;
+    text-align:center;
+}
+
+.pos-1{
+    border:2px solid gold;
+}
+
+.pos-2{
+    border:2px solid silver;
+}
+
+.pos-3{
+    border:2px solid #cd7f32;
+}
