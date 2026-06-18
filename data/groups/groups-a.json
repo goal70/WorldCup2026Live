@@ -130,6 +130,14 @@
 
     "timeAR": "13:00",
 
+    "goals": [
+      {
+        "player": "Sadilek",
+        "minute": 6,
+        "team": "home"
+      }
+    ],
+
     "links": [
   {
     "name": "Direct TV",
