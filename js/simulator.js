@@ -14,6 +14,17 @@ const Simulator = {
     selectedThirds: new Set()
 };
 
+/* NUEVO: BRACKET ELIMINATORIO */
+
+const Knockout = {
+    r32: [],
+    r16: [],
+    qf: [],
+    sf: [],
+    final: [],
+    champion: ""
+};
+
 /* =========================
    INIT
 ========================= */
@@ -34,17 +45,29 @@ async function loadGroups() {
     for (const letter of GROUPS) {
 
         try {
-            const res = await fetch(`../data/groups/groups-${letter.toLowerCase()}.json`);
+
+            const res = await fetch(
+                `../data/groups/groups-${letter.toLowerCase()}.json`
+            );
+
             const matches = await res.json();
 
             const teams = [...new Set(
                 matches.flatMap(m => [m.team1, m.team2])
             )];
 
-            Simulator.groups.push({ letter, teams });
+            Simulator.groups.push({
+                letter,
+                teams
+            });
 
         } catch (e) {
-            console.error("Error loading group", letter, e);
+
+            console.error(
+                "Error loading group",
+                letter,
+                e
+            );
         }
     }
 }
@@ -207,6 +230,8 @@ function updateContinueButton() {
 
 window.showThirds = function() {
 
+    Simulator.selectedThirds.clear();
+
     const root = document.getElementById("simulator-root");
 
     const thirds = {};
@@ -214,11 +239,11 @@ window.showThirds = function() {
     Simulator.groups.forEach(g => {
 
         const third = Object.entries(Simulator.rankings)
-            .find(([k,v]) => k.startsWith(g.letter+"-") && v === 3);
+            .find(([k,v]) => k.startsWith(g.letter + "-") && v === 3);
 
         if (third) {
             thirds[g.letter] =
-                third[0].replace(g.letter+"-", "");
+                third[0].replace(g.letter + "-", "");
         }
     });
 
@@ -227,7 +252,7 @@ window.showThirds = function() {
 
         <div class="third-grid">
 
-            ${Object.entries(thirds).map(([g,team])=>`
+            ${Object.entries(thirds).map(([g,team]) => `
                 <div class="third-card"
                      onclick="toggleThird('${g}','${team}',this)">
                     ${team}
@@ -318,7 +343,7 @@ window.generateBracket = function() {
 
     const data = buildQualifiedTeams();
 
-    data.thirds = buildThirdsMap(); // 🔥 FIX CLAVE
+    data.thirds = buildThirdsMap();
 
     const resolveThird = (options, thirdsMap) => {
 
@@ -331,31 +356,37 @@ window.generateBracket = function() {
         return "TBD";
     };
 
-    const resolve = (code) => {
+    const resolve = code => {
 
         if (code.startsWith("1")) {
-            const g = code[1];
-            return data.firsts[g] || "TBD";
+            return data.firsts[code[1]] || "TBD";
         }
 
         if (code.startsWith("2")) {
-            const g = code[1];
-            return data.seconds[g] || "TBD";
+            return data.seconds[code[1]] || "TBD";
         }
 
         if (code.startsWith("3")) {
-            return resolveThird(code.slice(1), data.thirds);
+            return resolveThird(
+                code.slice(1),
+                data.thirds
+            );
         }
 
         return "TBD";
     };
 
-    const matches = FIXED_ROUND32.map(([a,b]) => [
-        resolve(a),
-        resolve(b)
-    ]);
+    Knockout.r32 = FIXED_ROUND32.map(
+        ([a,b]) => [resolve(a), resolve(b)]
+    );
 
-    renderRound32(matches);
+    Knockout.r16 = new Array(16).fill("");
+    Knockout.qf = new Array(8).fill("");
+    Knockout.sf = new Array(4).fill("");
+    Knockout.final = new Array(2).fill("");
+    Knockout.champion = "";
+
+    renderKnockout();
 };
 
 /* =========================
@@ -391,10 +422,64 @@ function buildQualifiedTeams() {
    RENDER BRACKET
 ========================= */
 
-function renderRound32(matches) {
+window.advanceTeam = function(round, matchIndex, teamIndex){
 
-    const left = matches.slice(0,8);
-    const right = matches.slice(8,16);
+    let winner;
+
+    if(round === 32){
+
+        winner = Knockout.r32[matchIndex][teamIndex];
+
+        const slot = Math.floor(matchIndex / 2);
+
+        if(matchIndex % 2 === 0)
+            Knockout.r16[slot * 2] = winner;
+        else
+            Knockout.r16[slot * 2 + 1] = winner;
+    }
+
+    else if(round === 16){
+
+        winner = Knockout.r16[matchIndex];
+
+        const slot = Math.floor(matchIndex / 2);
+
+        if(matchIndex % 2 === 0)
+            Knockout.qf[slot * 2] = winner;
+        else
+            Knockout.qf[slot * 2 + 1] = winner;
+    }
+
+    else if(round === 8){
+
+        winner = Knockout.qf[matchIndex];
+
+        const slot = Math.floor(matchIndex / 2);
+
+        if(matchIndex % 2 === 0)
+            Knockout.sf[slot * 2] = winner;
+        else
+            Knockout.sf[slot * 2 + 1] = winner;
+    }
+
+    else if(round === 4){
+
+        winner = Knockout.sf[matchIndex];
+
+        Knockout.final[matchIndex] = winner;
+    }
+
+    else if(round === 2){
+
+        winner = Knockout.final[matchIndex];
+
+        Knockout.champion = winner;
+    }
+
+    renderKnockout();
+};
+
+function renderKnockout(){
 
     const root = document.getElementById("simulator-root");
 
@@ -402,82 +487,95 @@ function renderRound32(matches) {
 
     <div class="worldcup-bracket">
 
-        <div class="bracket-column">
+        <div class="round-column">
 
-            <div class="round-title">ROUND OF 32</div>
+            <h3>ROUND OF 32</h3>
 
-            ${left.map(m => `
-                <div class="bracket-match">
-                    <div class="bracket-team">${m[0]}</div>
-                    <div class="bracket-team">${m[1]}</div>
+            ${Knockout.r32.map((m,i)=>`
+
+                <div class="match-box">
+
+                    <div class="team-btn"
+                        onclick="advanceTeam(32,${i},0)">
+                        ${m[0]}
+                    </div>
+
+                    <div class="team-btn"
+                        onclick="advanceTeam(32,${i},1)">
+                        ${m[1]}
+                    </div>
+
                 </div>
+
+            `).join("")}
+
+        </div>
+
+        <div class="round-column">
+
+            <h3>ROUND OF 16</h3>
+
+            ${Knockout.r16.map((team,i)=>`
+
+                <div class="team-btn"
+                    onclick="${team ? `advanceTeam(16,${i})` : ''}">
+                    ${team || ""}
+                </div>
+
+            `).join("")}
+
+        </div>
+
+        <div class="round-column">
+
+            <h3>QUARTERFINALS</h3>
+
+            ${Knockout.qf.map((team,i)=>`
+
+                <div class="team-btn"
+                    onclick="${team ? `advanceTeam(8,${i})` : ''}">
+                    ${team || ""}
+                </div>
+
+            `).join("")}
+
+        </div>
+
+        <div class="round-column">
+
+            <h3>SEMIFINALS</h3>
+
+            ${Knockout.sf.map((team,i)=>`
+
+                <div class="team-btn"
+                    onclick="${team ? `advanceTeam(4,${i})` : ''}">
+                    ${team || ""}
+                </div>
+
             `).join("")}
 
         </div>
 
         <div class="bracket-center">
 
-            <div class="round-title">FINAL</div>
-
             <div class="trophy">🏆</div>
 
-            <div class="final-box">
-                WORLD CUP FINAL
+            <div class="final-box"
+                 onclick="${Knockout.final[0] ? `advanceTeam(2,0)` : ''}">
+                 ${Knockout.final[0] || "Finalist"}
             </div>
 
-        </div>
+            <div class="final-box"
+                 onclick="${Knockout.final[1] ? `advanceTeam(2,1)` : ''}">
+                 ${Knockout.final[1] || "Finalist"}
+            </div>
 
-        <div class="bracket-column">
-
-            <div class="round-title">ROUND OF 32</div>
-
-            ${right.map(m => `
-                <div class="bracket-match">
-                    <div class="bracket-team">${m[0]}</div>
-                    <div class="bracket-team">${m[1]}</div>
-                </div>
-            `).join("")}
+            <div class="champion-box">
+                ${Knockout.champion || "WORLD CHAMPION"}
+            </div>
 
         </div>
 
     </div>
     `;
-}
-
-function drawBracketLines() {
-
-    const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
-    svg.classList.add("bracket-svg");
-
-    document.querySelector(".world-bracket").appendChild(svg);
-
-    const draw = (x1,y1,x2,y2) => {
-        const line = document.createElementNS("http://www.w3.org/2000/svg","line");
-        line.setAttribute("x1",x1);
-        line.setAttribute("y1",y1);
-        line.setAttribute("x2",x2);
-        line.setAttribute("y2",y2);
-        line.setAttribute("stroke","#00ffb3");
-        line.setAttribute("stroke-width","2");
-        svg.appendChild(line);
-    };
-
-    const matches = document.querySelectorAll(".bracket-match");
-
-    matches.forEach((m,i)=>{
-        if(i === matches.length-1) return;
-
-        const a = m.getBoundingClientRect();
-        const b = matches[i+1]?.getBoundingClientRect();
-        const s = svg.getBoundingClientRect();
-
-        if(!b) return;
-
-        draw(
-            a.right - s.left,
-            a.top + a.height/2 - s.top,
-            b.left - s.left,
-            b.top + b.height/2 - s.top
-        );
-    });
 }
