@@ -123,7 +123,7 @@
     "flag2": "za",
 
     "homeScore": 1,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "Mercedes-Benz",
     "city": "Atlanta",
@@ -135,6 +135,12 @@
         "player": "Sadilek",
         "minute": 6,
         "team": "home"
+      },
+      "goals": [
+      {
+        "player": "Mokoena (pen.)",
+        "minute": 83,
+        "team": "away"
       }
     ],
 
