@@ -395,42 +395,87 @@ function renderRound32(matches) {
 
     const root = document.getElementById("simulator-root");
 
-    const left = matches.slice(0, 8);
-    const right = matches.slice(8, 16);
-
     root.innerHTML = `
-        <div class="bracket-worldcup">
+        <div class="espn-bracket">
 
-            <!-- LEFT SIDE -->
-            <div class="bracket-column left">
-                <h3>ROUND OF 32</h3>
-                ${left.map((m,i)=>`
-                    <div class="match-box">
-                        <div>${m[0]}</div>
-                        <div class="vs">VS</div>
-                        <div>${m[1]}</div>
-                    </div>
-                `).join("")}
-            </div>
+            <h2 class="bracket-title">⚔️ ROUND OF 32</h2>
 
-            <!-- CENTER TROPHY -->
-            <div class="bracket-center">
-                <div class="cup">🏆</div>
-                <div class="cup-title">WORLD CUP</div>
-            </div>
+            <div class="bracket-container">
 
-            <!-- RIGHT SIDE -->
-            <div class="bracket-column right">
-                <h3>ROUND OF 32</h3>
-                ${right.map((m,i)=>`
-                    <div class="match-box">
-                        <div>${m[0]}</div>
-                        <div class="vs">VS</div>
-                        <div>${m[1]}</div>
-                    </div>
-                `).join("")}
+                <!-- LEFT SIDE -->
+                <div class="bracket-side left">
+                    ${matches.slice(0, 8).map((m,i)=>`
+                        <div class="bracket-match">
+                            <div class="bracket-game">M${i+1}</div>
+                            <div class="bracket-team">${m[0]}</div>
+                            <div class="bracket-vs">VS</div>
+                            <div class="bracket-team">${m[1]}</div>
+                        </div>
+                    `).join("")}
+                </div>
+
+                <!-- CENTER LINES -->
+                <svg class="bracket-lines"></svg>
+
+                <!-- RIGHT SIDE -->
+                <div class="bracket-side right">
+                    ${matches.slice(8).map((m,i)=>`
+                        <div class="bracket-match">
+                            <div class="bracket-game">M${i+9}</div>
+                            <div class="bracket-team">${m[0]}</div>
+                            <div class="bracket-vs">VS</div>
+                            <div class="bracket-team">${m[1]}</div>
+                        </div>
+                    `).join("")}
+                </div>
+
             </div>
 
         </div>
     `;
+
+    setTimeout(drawBracketLines, 50);
+}
+
+function drawBracketLines() {
+
+    const svg = document.querySelector(".bracket-lines");
+    if (!svg) return;
+
+    svg.innerHTML = "";
+
+    const left = document.querySelectorAll(".left .bracket-match");
+    const right = document.querySelectorAll(".right .bracket-match");
+
+    const drawLine = (x1,y1,x2,y2) => {
+        const line = document.createElementNS("http://www.w3.org/2000/svg","line");
+
+        line.setAttribute("x1", x1);
+        line.setAttribute("y1", y1);
+        line.setAttribute("x2", x2);
+        line.setAttribute("y2", y2);
+
+        line.setAttribute("stroke", "#00ffb3");
+        line.setAttribute("stroke-width", "2");
+
+        svg.appendChild(line);
+    };
+
+    left.forEach((el, i) => {
+
+        const r = right[i];
+
+        if (!r) return;
+
+        const a = el.getBoundingClientRect();
+        const b = r.getBoundingClientRect();
+        const s = svg.getBoundingClientRect();
+
+        drawLine(
+            a.right - s.left,
+            a.top + a.height/2 - s.top,
+            b.left - s.left,
+            b.top + b.height/2 - s.top
+        );
+    });
 }
