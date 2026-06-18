@@ -432,43 +432,68 @@ function buildQualifiedTeams() {
 }
 
 /* =========================
-   OFFICIAL ROUND OF 32
+   SHUFFLE ARRAY
+========================= */
+
+function shuffle(array) {
+
+    const arr = [...array];
+
+    for (let i = arr.length - 1; i > 0; i--) {
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [arr[i], arr[j]] =
+        [arr[j], arr[i]];
+    }
+
+    return arr;
+}
+
+/* =========================
+   ROUND OF 32
 ========================= */
 
 function createOfficialRound32(data) {
 
     const F = data.firsts;
     const S = data.seconds;
-    const T = data.thirds;
+
+    const thirds =
+        shuffle(
+            Object.values(data.thirds)
+        );
 
     return [
 
-        [F.A, T.B || T.C || T.D],
+        [F.A, thirds[0]],
         [S.A, S.B],
 
-        [F.C, T.E || T.F || T.G],
+        [F.B, thirds[1]],
         [S.C, S.D],
 
-        [F.E, T.H || T.I || T.J],
+        [F.C, thirds[2]],
         [S.E, S.F],
 
-        [F.G, T.K || T.L || T.A],
+        [F.D, thirds[3]],
         [S.G, S.H],
 
-        [F.I, T.B || T.E || T.H],
+        [F.E, thirds[4]],
         [S.I, S.J],
 
-        [F.K, T.C || T.F || T.I],
+        [F.F, thirds[5]],
         [S.K, S.L],
 
-        [F.B, T.D || T.G || T.J],
-        [F.D, T.A || T.H || T.K],
+        [F.G, thirds[6]],
+        [F.H, thirds[7]],
 
-        [F.F, T.L || T.C || T.E],
-        [F.H, F.J]
+        [F.I, F.J],
+        [F.K, F.L]
 
     ];
-
 }
 
 /* =========================
@@ -498,7 +523,7 @@ function renderRound32(matches) {
                     <div class="bracket-match">
 
                         <div class="bracket-game">
-                            Match ${index + 1}
+                            MATCH ${index + 1}
                         </div>
 
                         <div class="bracket-team">
