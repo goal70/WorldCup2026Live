@@ -44,7 +44,7 @@
     "id": 2,
     "group": "K",
     "date": "2026-06-17",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Uzbekistan",
     "team2": "Colombia",
@@ -59,6 +59,14 @@
     "city": "Mexico City",
 
     "timeAR": "23:00",
+
+     "goals": [
+      {
+        "player": "",
+        "minute": "",
+        "team": "away"
+        }
+       ],
 
     "links": [
   {
