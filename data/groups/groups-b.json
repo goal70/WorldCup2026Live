@@ -176,6 +176,11 @@
         "player": "J. David",
         "minute": 29,
         "team": "home"
+        },
+      {
+        "player": "J. David",
+        "minute": "40+3",
+        "team": "home"
         }
        ],
 
