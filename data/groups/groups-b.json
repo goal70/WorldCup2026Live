@@ -158,13 +158,21 @@
     "flag1": "ca",
     "flag2": "qa",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 0,
 
     "stadium": "BC Place",
     "city": "Vancouver",
 
     "timeAR": "19:00",
+
+    "goals": [
+      {
+        "player": "Larin",
+        "minute": 16,
+        "team": "home"
+        }
+       ],
 
     "links": [
   {
