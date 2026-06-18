@@ -33,7 +33,7 @@ async function loadMatches() {
 
         for (const group of groups) {
 
-            const res = await fetch(`/data/groups/groups-${group}.json`);
+            const res = await fetch(`data/groups/groups-${group}.json`);
 
             if (!res.ok) {
                 console.warn(`Missing group ${group}`);
