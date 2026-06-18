@@ -1,6 +1,6 @@
 /********************************************
  WORLD GOAL 2026
- ESPN PRO SIMULATOR (FIXED BRACKET SYSTEM)
+ FIFA PRO SIMULATOR ENGINE (REAL SLOT SYSTEM)
 ********************************************/
 
 const GROUPS = [
@@ -10,8 +10,8 @@ const GROUPS = [
 
 const Simulator = {
     groups: [],
-    rankings: {},
-    thirds: [],
+    rankings: {},       // A-Team -> position
+    thirds: {},         // group -> team
     selectedThirds: new Set()
 };
 
@@ -33,12 +33,10 @@ async function loadGroups() {
     Simulator.groups = [];
 
     for (const letter of GROUPS) {
-        try {
-            const response = await fetch(
-                `../data/groups/groups-${letter.toLowerCase()}.json`
-            );
 
-            const matches = await response.json();
+        try {
+            const res = await fetch(`../data/groups/groups-${letter.toLowerCase()}.json`);
+            const matches = await res.json();
 
             const teams = [...new Set(
                 matches.flatMap(m => [m.team1, m.team2])
@@ -46,14 +44,14 @@ async function loadGroups() {
 
             Simulator.groups.push({ letter, teams });
 
-        } catch (err) {
-            console.error("Error loading group", letter, err);
+        } catch (e) {
+            console.error("Error loading group", letter, e);
         }
     }
 }
 
 /* =========================
-   RENDER GROUP STAGE
+   GROUP STAGE
 ========================= */
 
 function renderGroups() {
@@ -100,12 +98,11 @@ function renderGroup(group) {
                 ${team}
             </div>`;
         }).join("")}
-
     </div>`;
 }
 
 /* =========================
-   EVENTS (SAFE)
+   EVENTS
 ========================= */
 
 function attachGroupEvents() {
@@ -140,7 +137,6 @@ window.cycleTeam = function(group, team) {
         .filter(k => k.startsWith(group + "-"))
         .sort((a,b) => Simulator.rankings[a] - Simulator.rankings[b]);
 
-    // REMOVE
     if (Simulator.rankings[key]) {
 
         delete Simulator.rankings[key];
@@ -149,15 +145,12 @@ window.cycleTeam = function(group, team) {
             .filter(k => k.startsWith(group + "-"))
             .sort((a,b) => Simulator.rankings[a] - Simulator.rankings[b]);
 
-        remaining.forEach((k, i) => {
-            Simulator.rankings[k] = i + 1;
-        });
+        remaining.forEach((k, i) => Simulator.rankings[k] = i + 1);
 
         renderGroups();
         return;
     }
 
-    // LIMIT 3
     if (groupKeys.length >= 3) return;
 
     Simulator.rankings[key] = groupKeys.length + 1;
@@ -188,7 +181,7 @@ function groupsComplete() {
 }
 
 /* =========================
-   CONTINUE BUTTON
+   CONTINUE
 ========================= */
 
 function updateContinueButton() {
@@ -210,27 +203,23 @@ function updateContinueButton() {
 }
 
 /* =========================
-   THIRD PLACE SCREEN
+   THIRD STAGE
 ========================= */
 
 window.showThirds = function() {
 
     const root = document.getElementById("simulator-root");
 
-    Simulator.thirds = [];
+    Simulator.thirds = {};
 
     Simulator.groups.forEach(g => {
 
         const third = Object.entries(Simulator.rankings)
-            .find(([k,v]) =>
-                k.startsWith(g.letter + "-") && v === 3
-            );
+            .find(([k,v]) => k.startsWith(g.letter+"-") && v === 3);
 
         if (third) {
-            Simulator.thirds.push({
-                group: g.letter,
-                team: third[0].replace(g.letter + "-", "")
-            });
+            Simulator.thirds[g.letter] =
+                third[0].replace(g.letter+"-", "");
         }
     });
 
@@ -239,10 +228,10 @@ window.showThirds = function() {
 
         <div class="third-grid">
 
-            ${Simulator.thirds.map((t,i)=>`
+            ${Object.entries(Simulator.thirds).map(([g,team],i)=>`
                 <div class="third-card"
-                     onclick="toggleThird(${i},this)">
-                    ${t.team}
+                     onclick="toggleThird('${g}','${team}',this)">
+                    ${team}
                 </div>
             `).join("")}
 
@@ -255,13 +244,12 @@ window.showThirds = function() {
 };
 
 /* =========================
-   THIRD SELECTION
+   THIRD SELECT
 ========================= */
 
-window.toggleThird = function(index, el) {
+window.toggleThird = function(group, team, el) {
 
-    const third = Simulator.thirds[index];
-    const id = `${third.group}-${third.team}`;
+    const id = `${group}-${team}`;
 
     if (Simulator.selectedThirds.has(id)) {
 
@@ -278,31 +266,50 @@ window.toggleThird = function(index, el) {
 };
 
 /* =========================
+   FIFA REAL ENGINE
+   (NO SHUFFLE - SLOT SYSTEM)
+========================= */
+
+const FIFA_BRACKET = [
+    ["A1","C2"], ["B1","A3"], ["C1","B3"], ["D1","C3"],
+    ["E1","F2"], ["F1","E3"], ["G1","H2"], ["H1","G3"],
+
+    ["I1","J2"], ["J1","I3"], ["K1","L2"], ["L1","K3"],
+
+    ["A2","B2"], ["D2","E2"], ["F3","G2"], ["H3","I2"]
+];
+
+/* =========================
    GENERATE BRACKET
 ========================= */
 
 window.generateBracket = function() {
 
     if (Simulator.selectedThirds.size !== 8) {
-        alert("Select exactly 8 best third-place teams");
+        alert("Select exactly 8 third-place teams");
         return;
     }
 
-    const qualified = buildQualifiedTeams();
-    const matches = createOfficialRound32(qualified);
+    const data = buildQualifiedTeams();
+
+    const map = buildTeamMap(data);
+
+    const matches = FIFA_BRACKET.map(([a,b]) => [
+        map[a] || "TBD",
+        map[b] || "TBD"
+    ]);
 
     renderRound32(matches);
 };
 
 /* =========================
-   BUILD TEAMS
+   BUILD QUALIFIED
 ========================= */
 
 function buildQualifiedTeams() {
 
     const firsts = {};
     const seconds = {};
-    const thirds = {};
 
     Simulator.groups.forEach(g => {
 
@@ -317,64 +324,39 @@ function buildQualifiedTeams() {
         if (get(2)) seconds[g.letter] = get(2);
     });
 
-    Simulator.selectedThirds.forEach(id => {
-        const [group, team] = id.split("-");
-        thirds[group] = team;
-    });
-
-    return { firsts, seconds, thirds };
+    return {
+        firsts,
+        seconds,
+        thirds: Simulator.thirds
+    };
 }
 
 /* =========================
-   SHUFFLE
+   SLOT RESOLVER (CORE FIFA LOGIC)
+========================= */
+
+function buildTeamMap(data) {
+
+    const map = {};
+
+    Object.entries(data.firsts).forEach(([g,t]) => map[`${g}1`] = t);
+    Object.entries(data.seconds).forEach(([g,t]) => map[`${g}2`] = t);
+    Object.entries(data.thirds).forEach(([g,t]) => map[`${g}3`] = t);
+
+    return map;
+}
+
+/* =========================
+   SHUFFLE (solo UI opcional)
 ========================= */
 
 function shuffle(arr) {
     const a = [...arr];
-
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
+    for (let i=a.length-1;i>0;i--) {
+        const j = Math.floor(Math.random()*(i+1));
+        [a[i],a[j]] = [a[j],a[i]];
     }
-
     return a;
-}
-
-/* =========================
-   ROUND OF 32 (FIXED STRUCTURE)
-   ⚠️ SLOT-BASED SYSTEM (NO RANDOM BRACKETS)
-========================= */
-
-function createOfficialRound32(data) {
-
-    const F = data.firsts;
-    const S = data.seconds;
-    const T = Object.values(data.thirds);
-
-    const safe = v => v || "TBD";
-
-    return [
-
-        // LEFT SIDE
-        [safe(F.A), safe(T[0])],
-        [safe(F.B), safe(S.H)],
-        [safe(F.C), safe(T[1])],
-        [safe(F.D), safe(S.G)],
-        [safe(F.E), safe(T[2])],
-        [safe(F.F), safe(S.C)],
-        [safe(F.G), safe(T[3])],
-        [safe(F.H), safe(S.B)],
-
-        // RIGHT SIDE
-        [safe(F.I), safe(T[4])],
-        [safe(F.J), safe(S.F)],
-        [safe(F.K), safe(T[5])],
-        [safe(F.L), safe(S.E)],
-        [safe(S.A), safe(T[6])],
-        [safe(S.D), safe(F.B)],
-        [safe(S.I), safe(T[7])],
-        [safe(S.J), safe(S.K)]
-    ];
 }
 
 /* =========================
@@ -388,10 +370,6 @@ function renderRound32(matches) {
     root.innerHTML = `
         <div class="espn-bracket">
             <h2>⚔️ ROUND OF 32</h2>
-
-            <p style="text-align:center;margin-bottom:20px;color:#aaa;">
-                FIFA 2026 style bracket
-            </p>
 
             <div class="round32-grid">
 
