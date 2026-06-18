@@ -52,8 +52,8 @@
     "flag1": "uz",
     "flag2": "co",
 
-    "homeScore": 0,
-    "awayScore": 0,
+    "homeScore": 1,
+    "awayScore": 3,
 
     "stadium": "Estadio Azteca",
     "city": "Mexico City",
@@ -62,8 +62,23 @@
 
      "goals": [
       {
-        "player": "",
-        "minute": "",
+        "player": "Muñoz",
+        "minute": "40",
+        "team": "away"
+        },
+       {
+        "player": "Fayzullaev",
+        "minute": 60,
+        "team": "home"
+        },
+       {
+        "player": "Diaz",
+        "minute": 65,
+        "team": "away"
+        },
+       {
+        "player": "Campaz",
+        "minute": "90+9",
         "team": "away"
         }
        ],
