@@ -1383,216 +1383,192 @@ SIMULATOR ESPN PRO
     position:relative;
     margin-top:30px;
 }
-/* =========================
-   WORLD CUP BRACKET PRO
-========================= */
+/* =====================================
+   WORLD GOAL 2026 - KNOCKOUT BRACKET
+===================================== */
 
-.world-bracket{
-    position:relative;
-    padding:40px 20px;
+.worldcup-bracket{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:25px;
+    padding:30px;
     overflow-x:auto;
 }
 
-/* estructura general */
-.bracket-flow{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    min-width:1400px;
+/* COLUMNAS */
+
+.round-column{
+    min-width:220px;
 }
 
-/* columnas fases */
-.bracket-column{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-}
-
-/* rondas */
-.round-label{
+.round-column h3{
     text-align:center;
     color:#00ffb3;
-    font-weight:700;
-    margin-bottom:10px;
+    margin-bottom:15px;
+    text-transform:uppercase;
     letter-spacing:1px;
+    font-size:15px;
 }
 
-/* match card */
-.bracket-match{
-    background:#0f172a;
-    border:1px solid #243244;
-    border-radius:10px;
+/* PARTIDOS */
+
+.match-box{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    margin-bottom:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+}
+
+/* EQUIPOS */
+
+.team-btn{
     padding:12px;
-    width:200px;
-    position:relative;
-    transition:.2s;
-}
-
-.bracket-match:hover{
-    transform:translateY(-3px);
-    border-color:#00ffb3;
-}
-
-/* teams */
-.bracket-team{
-    padding:5px 0;
+    cursor:pointer;
+    transition:.25s;
+    border-bottom:1px solid rgba(255,255,255,.05);
     font-weight:600;
     color:#e5e7eb;
 }
 
-/* connector lines */
-.bracket-svg{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    pointer-events:none;
+.team-btn:last-child{
+    border-bottom:none;
 }
 
-/* ===== CENTRAL CUP ===== */
-
-.world-cup-center{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-    z-index:10;
+.team-btn:hover{
+    background:#00ffb3;
+    color:#000;
+    font-weight:700;
+    transform:translateX(4px);
 }
 
-.world-cup-center img{
-    width:120px;
-    filter:drop-shadow(0 0 20px gold);
-}
-
-.world-cup-title{
-    color:#00ffb3;
-    font-weight:800;
-    margin-top:10px;
-}
-
-/* FINAL NODE */
-.final-match{
-    background:#111827;
-    border:2px solid gold;
-}
-/* lados */
-.bracket-side{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-    width:45%;
-}
-
-/* centro SVG */
-.bracket-lines{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    pointer-events:none;
-}
-.espn-bracket{
-    padding:20px;
-}
-
-.bracket-title{
-    text-align:center;
-    margin-bottom:20px;
-    color:#00ffb3;
-    letter-spacing:2px;
-}
-
-/* =====================================
-WORLD CUP BRACKET
-===================================== */
-
-.worldcup-bracket{
-    display:grid;
-    grid-template-columns:1fr 320px 1fr;
-    gap:40px;
-    margin-top:40px;
-    align-items:center;
-}
-
-.bracket-side{
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-}
+/* CENTRO */
 
 .bracket-center{
+    min-width:260px;
+    text-align:center;
+
     display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
-    min-height:900px;
+    align-items:center;
+
+    gap:15px;
 }
 
-.round-title{
-    text-align:center;
-    color:#00ffb3;
-    font-weight:700;
-    margin-bottom:20px;
-    letter-spacing:2px;
-}
+/* COPA */
 
 .trophy{
-    font-size:90px;
-    margin:20px 0;
+    font-size:70px;
     animation:floatCup 3s ease-in-out infinite;
 }
 
 @keyframes floatCup{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0);}
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
 }
+
+/* FINALISTAS */
 
 .final-box{
     width:220px;
-    background:#0f172a;
-    border:2px solid gold;
-    border-radius:10px;
+
     padding:15px;
-    margin:10px 0;
-    text-align:center;
-    font-weight:700;
-}
 
-.bracket-match{
-    background:#0f172a;
-    border:1px solid #243244;
     border-radius:12px;
-    padding:12px;
-    position:relative;
+
+    background:#1f2937;
+
+    border:2px solid gold;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.25s;
 }
 
-.bracket-team{
-    padding:8px;
-    font-weight:600;
+.final-box:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 15px rgba(255,215,0,.4);
 }
 
-/* líneas hacia el centro */
+/* CAMPEÓN */
 
-.left .bracket-match::after{
-    content:"";
-    position:absolute;
-    right:-20px;
-    top:50%;
-    width:20px;
-    height:2px;
-    background:#00ffb3;
+.champion-box{
+
+    width:240px;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        #ffd700,
+        #ffb800
+    );
+
+    color:#000;
+
+    font-weight:800;
+
+    font-size:18px;
+
+    text-align:center;
+
+    box-shadow:0 0 25px rgba(255,215,0,.5);
 }
 
-.right .bracket-match::before{
-    content:"";
-    position:absolute;
-    left:-20px;
-    top:50%;
-    width:20px;
-    height:2px;
-    background:#00ffb3;
+/* RESPONSIVE */
+
+@media (max-width:768px){
+
+    .worldcup-bracket{
+
+        justify-content:flex-start;
+
+        overflow-x:auto;
+
+        padding:20px;
+    }
+
+    .round-column{
+
+        min-width:180px;
+    }
+
+    .team-btn{
+
+        font-size:13px;
+    }
+
+    .final-box{
+
+        width:180px;
+    }
+
+    .champion-box{
+
+        width:180px;
+
+        font-size:16px;
+    }
+
+    .trophy{
+
+        font-size:55px;
+    }
 }
