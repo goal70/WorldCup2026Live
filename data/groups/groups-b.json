@@ -233,7 +233,8 @@
     "flag1": "ch",
     "flag2": "ca",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "BC Place",
     "city": "Vancouver",
@@ -254,7 +255,8 @@
     "flag1": "ba",
     "flag2": "qa",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Lumen Field",
     "city": "Seattle",
