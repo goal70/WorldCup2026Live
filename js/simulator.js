@@ -11,7 +11,6 @@ const GROUPS = [
 const Simulator = {
     groups: [],
     rankings: {},       // A-Team -> position
-    thirds: {},         // group -> team
     selectedThirds: new Set()
 };
 
@@ -181,7 +180,7 @@ function groupsComplete() {
 }
 
 /* =========================
-   CONTINUE
+   CONTINUE BUTTON
 ========================= */
 
 function updateContinueButton() {
@@ -210,7 +209,7 @@ window.showThirds = function() {
 
     const root = document.getElementById("simulator-root");
 
-    Simulator.thirds = {};
+    const thirds = {};
 
     Simulator.groups.forEach(g => {
 
@@ -218,7 +217,7 @@ window.showThirds = function() {
             .find(([k,v]) => k.startsWith(g.letter+"-") && v === 3);
 
         if (third) {
-            Simulator.thirds[g.letter] =
+            thirds[g.letter] =
                 third[0].replace(g.letter+"-", "");
         }
     });
@@ -228,7 +227,7 @@ window.showThirds = function() {
 
         <div class="third-grid">
 
-            ${Object.entries(Simulator.thirds).map(([g,team],i)=>`
+            ${Object.entries(thirds).map(([g,team])=>`
                 <div class="third-card"
                      onclick="toggleThird('${g}','${team}',this)">
                     ${team}
@@ -266,18 +265,45 @@ window.toggleThird = function(group, team, el) {
 };
 
 /* =========================
-   FIFA REAL ENGINE
-   (NO SHUFFLE - SLOT SYSTEM)
+   FIXED BRACKET
 ========================= */
 
-const FIFA_BRACKET = [
-    ["A1","C2"], ["B1","A3"], ["C1","B3"], ["D1","C3"],
-    ["E1","F2"], ["F1","E3"], ["G1","H2"], ["H1","G3"],
+const FIXED_ROUND32 = [
+  ["1E", "3A/B/C/D/F"],
+  ["1I", "3C/D/F/G/H"],
+  ["2A", "2B"],
+  ["1F", "2C"],
+  ["2K", "2L"],
+  ["1H", "2J"],
+  ["1D", "3B/E/F/I/J"],
+  ["1G", "3A/E/H/I/J"],
 
-    ["I1","J2"], ["J1","I3"], ["K1","L2"], ["L1","K3"],
+  ["1C", "2F"],
+  ["2E", "2I"],
+  ["1A", "3C/E/F/H/I"],
+  ["1L", "3E/H/I/J/K"],
 
-    ["A2","B2"], ["D2","E2"], ["F3","G2"], ["H3","I2"]
+  ["1J", "1H"],
+  ["2D", "2G"],
+  ["1B", "3E/F/G/I/J"],
+  ["1K", "3D/E/I/J/L"]
 ];
+
+/* =========================
+   THIRD MAP BUILDER
+========================= */
+
+function buildThirdsMap() {
+
+    const map = {};
+
+    Simulator.selectedThirds.forEach(id => {
+        const [g, team] = id.split("-");
+        map[g] = team;
+    });
+
+    return map;
+}
 
 /* =========================
    GENERATE BRACKET
@@ -292,18 +318,48 @@ window.generateBracket = function() {
 
     const data = buildQualifiedTeams();
 
-    const map = buildTeamMap(data);
+    data.thirds = buildThirdsMap(); // 🔥 FIX CLAVE
 
-    const matches = FIFA_BRACKET.map(([a,b]) => [
-        map[a] || "TBD",
-        map[b] || "TBD"
+    const resolveThird = (options, thirdsMap) => {
+
+        const candidates = options.split("/");
+
+        for (let g of candidates) {
+            if (thirdsMap[g]) return thirdsMap[g];
+        }
+
+        return "TBD";
+    };
+
+    const resolve = (code) => {
+
+        if (code.startsWith("1")) {
+            const g = code[1];
+            return data.firsts[g] || "TBD";
+        }
+
+        if (code.startsWith("2")) {
+            const g = code[1];
+            return data.seconds[g] || "TBD";
+        }
+
+        if (code.startsWith("3")) {
+            return resolveThird(code.slice(1), data.thirds);
+        }
+
+        return "TBD";
+    };
+
+    const matches = FIXED_ROUND32.map(([a,b]) => [
+        resolve(a),
+        resolve(b)
     ]);
 
     renderRound32(matches);
 };
 
 /* =========================
-   BUILD QUALIFIED
+   BUILD QUALIFIED TEAMS
 ========================= */
 
 function buildQualifiedTeams() {
@@ -327,36 +383,8 @@ function buildQualifiedTeams() {
     return {
         firsts,
         seconds,
-        thirds: Simulator.thirds
+        thirds: {}
     };
-}
-
-/* =========================
-   SLOT RESOLVER (CORE FIFA LOGIC)
-========================= */
-
-function buildTeamMap(data) {
-
-    const map = {};
-
-    Object.entries(data.firsts).forEach(([g,t]) => map[`${g}1`] = t);
-    Object.entries(data.seconds).forEach(([g,t]) => map[`${g}2`] = t);
-    Object.entries(data.thirds).forEach(([g,t]) => map[`${g}3`] = t);
-
-    return map;
-}
-
-/* =========================
-   SHUFFLE (solo UI opcional)
-========================= */
-
-function shuffle(arr) {
-    const a = [...arr];
-    for (let i=a.length-1;i>0;i--) {
-        const j = Math.floor(Math.random()*(i+1));
-        [a[i],a[j]] = [a[j],a[i]];
-    }
-    return a;
 }
 
 /* =========================
