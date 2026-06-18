@@ -68,7 +68,7 @@
     "flag1": "ch",
     "flag2": "ba",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 0,
 
     "stadium": "SoFi Stadium",
@@ -80,6 +80,11 @@
       {
         "player": "Manzambi",
         "minute": 74,
+        "team": "home"
+        },
+      {
+        "player": "Vargas",
+        "minute": 84,
         "team": "home"
         }
        ],
