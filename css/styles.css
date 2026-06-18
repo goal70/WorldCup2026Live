@@ -1383,7 +1383,100 @@ SIMULATOR ESPN PRO
     position:relative;
     margin-top:30px;
 }
+/* =========================
+   WORLD CUP BRACKET PRO
+========================= */
 
+.world-bracket{
+    position:relative;
+    padding:40px 20px;
+    overflow-x:auto;
+}
+
+/* estructura general */
+.bracket-flow{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    min-width:1400px;
+}
+
+/* columnas fases */
+.bracket-column{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* rondas */
+.round-label{
+    text-align:center;
+    color:#00ffb3;
+    font-weight:700;
+    margin-bottom:10px;
+    letter-spacing:1px;
+}
+
+/* match card */
+.bracket-match{
+    background:#0f172a;
+    border:1px solid #243244;
+    border-radius:10px;
+    padding:12px;
+    width:200px;
+    position:relative;
+    transition:.2s;
+}
+
+.bracket-match:hover{
+    transform:translateY(-3px);
+    border-color:#00ffb3;
+}
+
+/* teams */
+.bracket-team{
+    padding:5px 0;
+    font-weight:600;
+    color:#e5e7eb;
+}
+
+/* connector lines */
+.bracket-svg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+/* ===== CENTRAL CUP ===== */
+
+.world-cup-center{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:10;
+}
+
+.world-cup-center img{
+    width:120px;
+    filter:drop-shadow(0 0 20px gold);
+}
+
+.world-cup-title{
+    color:#00ffb3;
+    font-weight:800;
+    margin-top:10px;
+}
+
+/* FINAL NODE */
+.final-match{
+    background:#111827;
+    border:2px solid gold;
+}
 /* lados */
 .bracket-side{
     display:flex;
@@ -1400,4 +1493,14 @@ SIMULATOR ESPN PRO
     width:100%;
     height:100%;
     pointer-events:none;
+}
+.espn-bracket{
+    padding:20px;
+}
+
+.bracket-title{
+    text-align:center;
+    margin-bottom:20px;
+    color:#00ffb3;
+    letter-spacing:2px;
 }
