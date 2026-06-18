@@ -338,8 +338,144 @@ function(index, el){
    BRACKET PLACEHOLDER
 ========================= */
 
-window.generateBracket =
-function(){
+window.generateBracket = function() {
+
+    if(
+        Simulator.selectedThirds.length !== 8
+    ){
+        alert(
+            "Select exactly 8 best third-place teams"
+        );
+        return;
+    }
+
+    const qualified =
+        buildQualifiedTeams();
+
+    const matches =
+        createOfficialRound32(
+            qualified
+        );
+
+    renderRound32(matches);
+};
+
+/* =========================
+   BUILD QUALIFIED TEAMS
+========================= */
+
+function buildQualifiedTeams() {
+
+    const firsts = {};
+    const seconds = {};
+    const thirds = {};
+
+    Simulator.groups.forEach(g => {
+
+        const teams =
+            Object.entries(
+                Simulator.rankings
+            )
+            .filter(([k]) =>
+                k.startsWith(
+                    g.letter + "-"
+                )
+            );
+
+        const first =
+            teams.find(
+                ([k,v]) => v === 1
+            );
+
+        const second =
+            teams.find(
+                ([k,v]) => v === 2
+            );
+
+        if(first){
+
+            firsts[g.letter] =
+                first[0].replace(
+                    g.letter + "-",
+                    ""
+                );
+        }
+
+        if(second){
+
+            seconds[g.letter] =
+                second[0].replace(
+                    g.letter + "-",
+                    ""
+                );
+        }
+
+    });
+
+    Simulator.selectedThirds
+    .forEach(index => {
+
+        const third =
+            Simulator.thirds[index];
+
+        thirds[
+            third.group
+        ] = third.team;
+
+    });
+
+    return {
+        firsts,
+        seconds,
+        thirds
+    };
+}
+
+/* =========================
+   OFFICIAL ROUND OF 32
+========================= */
+
+function createOfficialRound32(data) {
+
+    const F = data.firsts;
+    const S = data.seconds;
+    const T = data.thirds;
+
+    return [
+
+        [F.A, T.B || T.C || T.D],
+        [S.A, S.B],
+
+        [F.C, T.E || T.F || T.G],
+        [S.C, S.D],
+
+        [F.E, T.H || T.I || T.J],
+        [S.E, S.F],
+
+        [F.G, T.K || T.L || T.A],
+        [S.G, S.H],
+
+        [F.I, T.B || T.E || T.H],
+        [S.I, S.J],
+
+        [F.K, T.C || T.F || T.I],
+        [S.K, S.L],
+
+        [F.B, T.D || T.G || T.J],
+        [F.D, T.A || T.H || T.K],
+
+        [F.F, T.L || T.C || T.E],
+        [F.H, F.J]
+
+    ];
+
+}
+
+/* =========================
+   RENDER ROUND OF 32
+========================= */
+
+function renderRound32(matches) {
 
     const root =
         document.getElementById(
@@ -347,17 +483,44 @@ function(){
         );
 
     root.innerHTML = `
+
         <div class="espn-bracket">
 
             <h2>
                 ⚔️ ROUND OF 32
             </h2>
 
-            <p>
-                FIFA bracket generation
-                will appear here.
-            </p>
+            <div class="round32-grid">
+
+                ${matches.map(
+                    (match,index) => `
+
+                    <div class="bracket-match">
+
+                        <div class="bracket-game">
+                            Match ${index + 1}
+                        </div>
+
+                        <div class="bracket-team">
+                            ${match[0] || "TBD"}
+                        </div>
+
+                        <div class="bracket-vs">
+                            VS
+                        </div>
+
+                        <div class="bracket-team">
+                            ${match[1] || "TBD"}
+                        </div>
+
+                    </div>
+
+                `
+                ).join("")}
+
+            </div>
 
         </div>
+
     `;
-};
+}
