@@ -393,59 +393,61 @@ function buildQualifiedTeams() {
 
 function renderRound32(matches) {
 
+    const left = matches.slice(0,8);
+    const right = matches.slice(8,16);
+
     const root = document.getElementById("simulator-root");
 
     root.innerHTML = `
-        <div class="world-bracket">
 
-            <div class="world-cup-center">
-                <img src="https://upload.wikimedia.org/wikipedia/en/e/e3/FIFA_World_Cup_Trophy.svg">
-                <div class="world-cup-title">WORLD CUP 2026</div>
+    <div class="worldcup-bracket">
+
+        <div class="bracket-side left">
+
+            <div class="round-title">ROUND OF 32</div>
+
+            ${left.map((m,i)=>`
+                <div class="bracket-match">
+                    <div class="bracket-team">${m[0]}</div>
+                    <div class="bracket-team">${m[1]}</div>
+                </div>
+            `).join("")}
+
+        </div>
+
+        <div class="bracket-center">
+
+            <div class="round-title">FINAL</div>
+
+            <div class="trophy">
+                🏆
             </div>
 
-            <div class="bracket-flow">
+            <div class="final-box">
+                Winner SF1
+            </div>
 
-                <!-- ROUND OF 32 -->
-                <div class="bracket-column" id="r32">
-                    <div class="round-label">ROUND OF 32</div>
-                    ${matches.map((m,i)=>`
-                        <div class="bracket-match">
-                            <div class="bracket-team">${m[0]}</div>
-                            <div class="bracket-team">${m[1]}</div>
-                        </div>
-                    `).join("")}
-                </div>
-
-                <!-- ROUND OF 16 -->
-                <div class="bracket-column" id="r16">
-                    <div class="round-label">ROUND OF 16</div>
-                </div>
-
-                <!-- QUARTERFINALS -->
-                <div class="bracket-column" id="qf">
-                    <div class="round-label">QUARTERFINALS</div>
-                </div>
-
-                <!-- SEMIFINALS -->
-                <div class="bracket-column" id="sf">
-                    <div class="round-label">SEMIFINALS</div>
-                </div>
-
-                <!-- FINAL -->
-                <div class="bracket-column" id="final">
-                    <div class="round-label">FINAL</div>
-                    <div class="bracket-match final-match">
-                        <div class="bracket-team">WINNER SF1</div>
-                        <div class="bracket-team">WINNER SF2</div>
-                    </div>
-                </div>
-
+            <div class="final-box">
+                Winner SF2
             </div>
 
         </div>
-    `;
 
-    drawBracketLines();
+        <div class="bracket-side right">
+
+            <div class="round-title">ROUND OF 32</div>
+
+            ${right.map((m,i)=>`
+                <div class="bracket-match">
+                    <div class="bracket-team">${m[0]}</div>
+                    <div class="bracket-team">${m[1]}</div>
+                </div>
+            `).join("")}
+
+        </div>
+
+    </div>
+    `;
 }
 
 function drawBracketLines() {
