@@ -60,7 +60,7 @@
     "id": 3,
     "group": "B",
     "date": "2026-06-18",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Suiza",
     "team2": "Bosnia y Herzegovina",
@@ -68,8 +68,8 @@
     "flag1": "ch",
     "flag2": "ba",
 
-    "homeScore": 3,
-    "awayScore": 0,
+    "homeScore": 4,
+    "awayScore": 1,
 
     "stadium": "SoFi Stadium",
     "city": "Los Angeles",
@@ -95,6 +95,11 @@
       {
         "player": "Mahmic",
         "minute": "90+3",
+        "team": "away"
+        },
+      {
+        "player": "Xhaka (pen.)",
+        "minute": "90+7",
         "team": "away"
         }
        ],
