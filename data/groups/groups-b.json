@@ -76,6 +76,15 @@
 
     "timeAR": "16:00",
 
+    "goals": [
+      {
+        "player": "Manzambi",
+        "minute": 74,
+        "team": "home"
+        }
+       ],
+
+
     "links": [
   {
     "name": "DSports",
