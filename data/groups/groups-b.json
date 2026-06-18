@@ -89,6 +89,13 @@
         }
        ],
 
+    "redCards": [
+      {
+        "player": "Muharemovic",
+        "minute": 80,
+        "team": "away"
+      }
+    ],
 
     "links": [
   {
