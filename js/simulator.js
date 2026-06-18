@@ -402,11 +402,11 @@ function renderRound32(matches) {
 
     <div class="worldcup-bracket">
 
-        <div class="bracket-side left">
+        <div class="bracket-column">
 
             <div class="round-title">ROUND OF 32</div>
 
-            ${left.map((m,i)=>`
+            ${left.map(m => `
                 <div class="bracket-match">
                     <div class="bracket-team">${m[0]}</div>
                     <div class="bracket-team">${m[1]}</div>
@@ -419,25 +419,19 @@ function renderRound32(matches) {
 
             <div class="round-title">FINAL</div>
 
-            <div class="trophy">
-                🏆
-            </div>
+            <div class="trophy">🏆</div>
 
             <div class="final-box">
-                Winner SF1
-            </div>
-
-            <div class="final-box">
-                Winner SF2
+                WORLD CUP FINAL
             </div>
 
         </div>
 
-        <div class="bracket-side right">
+        <div class="bracket-column">
 
             <div class="round-title">ROUND OF 32</div>
 
-            ${right.map((m,i)=>`
+            ${right.map(m => `
                 <div class="bracket-match">
                     <div class="bracket-team">${m[0]}</div>
                     <div class="bracket-team">${m[1]}</div>
