@@ -1504,3 +1504,95 @@ SIMULATOR ESPN PRO
     color:#00ffb3;
     letter-spacing:2px;
 }
+
+/* =====================================
+WORLD CUP BRACKET
+===================================== */
+
+.worldcup-bracket{
+    display:grid;
+    grid-template-columns:1fr 320px 1fr;
+    gap:40px;
+    margin-top:40px;
+    align-items:center;
+}
+
+.bracket-side{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.bracket-center{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:900px;
+}
+
+.round-title{
+    text-align:center;
+    color:#00ffb3;
+    font-weight:700;
+    margin-bottom:20px;
+    letter-spacing:2px;
+}
+
+.trophy{
+    font-size:90px;
+    margin:20px 0;
+    animation:floatCup 3s ease-in-out infinite;
+}
+
+@keyframes floatCup{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+
+.final-box{
+    width:220px;
+    background:#0f172a;
+    border:2px solid gold;
+    border-radius:10px;
+    padding:15px;
+    margin:10px 0;
+    text-align:center;
+    font-weight:700;
+}
+
+.bracket-match{
+    background:#0f172a;
+    border:1px solid #243244;
+    border-radius:12px;
+    padding:12px;
+    position:relative;
+}
+
+.bracket-team{
+    padding:8px;
+    font-weight:600;
+}
+
+/* líneas hacia el centro */
+
+.left .bracket-match::after{
+    content:"";
+    position:absolute;
+    right:-20px;
+    top:50%;
+    width:20px;
+    height:2px;
+    background:#00ffb3;
+}
+
+.right .bracket-match::before{
+    content:"";
+    position:absolute;
+    left:-20px;
+    top:50%;
+    width:20px;
+    height:2px;
+    background:#00ffb3;
+}
