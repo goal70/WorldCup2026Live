@@ -181,6 +181,16 @@
         "player": "J. David",
         "minute": "40+3",
         "team": "home"
+        },
+      {
+        "player": "Saliba",
+        "minute": 64,
+        "team": "home"
+        },
+      {
+        "player": "Al-Mannai (E.C)",
+        "minute": 75,
+        "team": "home"
         }
        ],
 
