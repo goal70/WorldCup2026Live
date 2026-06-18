@@ -1317,3 +1317,36 @@ margin-bottom:30px;
     opacity:.6;
     margin:8px 0;
 }
+.round32-grid{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(260px,1fr)
+    );
+    gap:18px;
+    margin-top:25px;
+}
+
+.bracket-match{
+    background:#111827;
+    border:1px solid #2a3446;
+    border-radius:12px;
+    padding:18px;
+}
+
+.bracket-game{
+    color:#f5c542;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.bracket-team{
+    font-weight:600;
+    padding:8px 0;
+}
+
+.bracket-vs{
+    opacity:.6;
+    text-align:center;
+    margin:6px 0;
+}
