@@ -97,13 +97,21 @@
     "flag1": "gh",
     "flag2": "pa",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 0,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
 
     "timeAR": "20:00",
+
+     "goals": [
+      {
+        "player": "Yirenkyi",
+        "minute": "90+4",
+        "team": "home"
+        }
+       ],
 
     "links": [
   {
