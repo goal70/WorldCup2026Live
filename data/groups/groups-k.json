@@ -72,13 +72,47 @@
     "flag1": "uz",
     "flag2": "co",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Estadio Azteca",
     "city": "Mexico City",
 
     "timeAR": "23:00"
+
+    "links": [
+  {
+    "name": "DSports",
+    "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRzcG9ydHM="
   },
+  {
+    "name": "TyC Sports",
+    "logo": "https://television.com.ar/wp-content/uploads/2024/08/tyc.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXR5Y3Nwb3J0cw=="
+  },
+  {
+    "name": "FOX Sports",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Fox_Sports_Premium_%28Argentina%29_-_2018_logo.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZm94MXVzLnBocA=="
+  },
+  {
+    "name": "RCN TV",
+    "logo": "https://logowik.com/content/uploads/images/rcn-television-y-radio7292.logowik.com.webp",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvcmNuLnBocA=="
+  },
+      {
+    "name": "Disney+",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRXEOBt658oYJST_Loao2XwgNMnPF10E8a7Q&s",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRpc25leTI="
+  },
+  {
+    "name": "CazeTV",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/2/22/Logotipo_da_Caz%C3%A9TV.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTIucGhw"
+  }
+]
+},
   {
     "id": 3,
     "group": "K",
