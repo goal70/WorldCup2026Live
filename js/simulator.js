@@ -395,22 +395,42 @@ function renderRound32(matches) {
 
     const root = document.getElementById("simulator-root");
 
+    const left = matches.slice(0, 8);
+    const right = matches.slice(8, 16);
+
     root.innerHTML = `
-        <div class="espn-bracket">
-            <h2>⚔️ ROUND OF 32</h2>
+        <div class="bracket-worldcup">
 
-            <div class="round32-grid">
-
-                ${matches.map((m,i)=>`
-                    <div class="bracket-match">
-                        <div class="bracket-game">MATCH ${i+1}</div>
-                        <div class="bracket-team">${m[0]}</div>
-                        <div class="bracket-vs">VS</div>
-                        <div class="bracket-team">${m[1]}</div>
+            <!-- LEFT SIDE -->
+            <div class="bracket-column left">
+                <h3>ROUND OF 32</h3>
+                ${left.map((m,i)=>`
+                    <div class="match-box">
+                        <div>${m[0]}</div>
+                        <div class="vs">VS</div>
+                        <div>${m[1]}</div>
                     </div>
                 `).join("")}
-
             </div>
+
+            <!-- CENTER TROPHY -->
+            <div class="bracket-center">
+                <div class="cup">🏆</div>
+                <div class="cup-title">WORLD CUP</div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="bracket-column right">
+                <h3>ROUND OF 32</h3>
+                ${right.map((m,i)=>`
+                    <div class="match-box">
+                        <div>${m[0]}</div>
+                        <div class="vs">VS</div>
+                        <div>${m[1]}</div>
+                    </div>
+                `).join("")}
+            </div>
+
         </div>
     `;
 }
