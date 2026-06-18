@@ -10,9 +10,9 @@ const GROUPS = [
 
 const Simulator = {
     groups: [],
-    rankings: {},
+    rankings: {},      // key: group-team -> position
     thirds: [],
-    selectedThirds: []
+    selectedThirds: new Set() // FIX: evita índices frágiles
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -69,9 +69,7 @@ async function loadGroups() {
 ========================= */
 
 function renderGroups() {
-
-    const root =
-        document.getElementById("simulator-root");
+    const root = document.getElementById("simulator-root");
 
     root.innerHTML = `
         <div class="sim-header">
@@ -86,6 +84,7 @@ function renderGroups() {
         <div id="continue-wrapper"></div>
     `;
 
+    attachGroupEvents(); // 🔥 FIX
     updateContinueButton();
 }
 
@@ -94,43 +93,26 @@ function renderGroups() {
 ========================= */
 
 function renderGroup(group) {
-
     return `
     <div class="sim-group">
-
-        <div class="sim-group-title">
-            GROUP ${group.letter}
-        </div>
+        <div class="sim-group-title">GROUP ${group.letter}</div>
 
         ${group.teams.map(team => {
 
-            const pos =
-                Simulator.rankings[
-                    `${group.letter}-${team}`
-                ] || 0;
+            const key = `${group.letter}-${team}`;
+            const pos = Simulator.rankings[key] || 0;
 
             return `
-            <div
-                class="sim-team pos-${pos}"
-                onclick="cycleTeam(
-                    '${group.letter}',
-                    '${team.replace(/'/g,"")}'
-                )"
-            >
+            <div class="sim-team pos-${pos}"
+                 data-group="${group.letter}"
+                 data-team="${team}">
 
-                <span class="sim-medal">
-                    ${getMedal(pos)}
-                </span>
-
+                <span class="sim-medal">${getMedal(pos)}</span>
                 ${team}
 
-            </div>
-            `;
-
+            </div>`;
         }).join("")}
-
-    </div>
-    `;
+    </div>`;
 }
 
 /* =========================
@@ -147,44 +129,33 @@ function getMedal(pos) {
 }
 
 window.cycleTeam = function(group, team) {
-
     const key = `${group}-${team}`;
 
-    const groupTeams = Object.keys(
-        Simulator.rankings
-    ).filter(k =>
-        k.startsWith(group + "-")
-    );
+    const groupKeys = Object.keys(Simulator.rankings)
+        .filter(k => k.startsWith(group + "-"))
+        .sort((a,b) => Simulator.rankings[a] - Simulator.rankings[b]);
 
-    // Si ya estaba seleccionado lo quitamos
+    // 🔴 remove
     if (Simulator.rankings[key]) {
-
         delete Simulator.rankings[key];
 
-        const ordered = Object.keys(
-            Simulator.rankings
-        )
-        .filter(k =>
-            k.startsWith(group + "-")
-        );
+        // recompute clean order
+        const remaining = Object.keys(Simulator.rankings)
+            .filter(k => k.startsWith(group + "-"))
+            .sort((a,b) => Simulator.rankings[a] - Simulator.rankings[b]);
 
-        ordered.forEach((k,index) => {
-            Simulator.rankings[k] =
-                index + 1;
+        remaining.forEach((k, i) => {
+            Simulator.rankings[k] = i + 1;
         });
 
         renderGroups();
         return;
     }
 
-    const used =
-        groupTeams.length;
+    // limit 3
+    if (groupKeys.length >= 3) return;
 
-    if (used >= 3)
-        return;
-
-    Simulator.rankings[key] =
-        used + 1;
+    Simulator.rankings[key] = groupKeys.length + 1;
 
     renderGroups();
 };
@@ -194,24 +165,15 @@ window.cycleTeam = function(group, team) {
 ========================= */
 
 function groupsComplete() {
-
     return Simulator.groups.every(g => {
+        const values = Object.entries(Simulator.rankings)
+            .filter(([k]) => k.startsWith(g.letter + "-"))
+            .map(([,v]) => v);
 
-        const values =
-            Object.entries(
-                Simulator.rankings
-            )
-            .filter(([k]) =>
-                k.startsWith(g.letter+"-")
-            )
-            .map(x => x[1]);
+        if (values.length !== 3) return false;
 
-        return (
-            values.includes(1) &&
-            values.includes(2) &&
-            values.includes(3)
-        );
-
+        const sorted = values.sort((a,b)=>a-b);
+        return sorted[0] === 1 && sorted[1] === 2 && sorted[2] === 3;
     });
 }
 
@@ -302,35 +264,19 @@ window.showThirds = function() {
     `;
 };
 
-window.toggleThird =
-function(index, el){
+window.toggleThird = function(index, el) {
 
-    const pos =
-        Simulator.selectedThirds
-        .indexOf(index);
+    const third = Simulator.thirds[index];
+    const id = `${third.group}-${third.team}`;
 
-    if(pos>-1){
+    if (Simulator.selectedThirds.has(id)) {
+        Simulator.selectedThirds.delete(id);
+        el.classList.remove("selected-third");
+    } else {
+        if (Simulator.selectedThirds.size >= 8) return;
 
-        Simulator.selectedThirds
-        .splice(pos,1);
-
-        el.classList.remove(
-            "selected-third"
-        );
-
-    }else{
-
-        if(
-            Simulator.selectedThirds
-            .length >= 8
-        ) return;
-
-        Simulator.selectedThirds
-        .push(index);
-
-        el.classList.add(
-            "selected-third"
-        );
+        Simulator.selectedThirds.add(id);
+        el.classList.add("selected-third");
     }
 };
 
@@ -372,65 +318,26 @@ function buildQualifiedTeams() {
 
     Simulator.groups.forEach(g => {
 
-        const teams =
-            Object.entries(
-                Simulator.rankings
-            )
-            .filter(([k]) =>
-                k.startsWith(
-                    g.letter + "-"
-                )
-            );
+        const entries = Object.entries(Simulator.rankings)
+            .filter(([k]) => k.startsWith(g.letter + "-"));
 
-        const first =
-            teams.find(
-                ([k,v]) => v === 1
-            );
+        const getTeam = pos =>
+            entries.find(([,v]) => v === pos)?.[0]?.replace(g.letter + "-", "");
 
-        const second =
-            teams.find(
-                ([k,v]) => v === 2
-            );
+        const first = getTeam(1);
+        const second = getTeam(2);
 
-        if(first){
-
-            firsts[g.letter] =
-                first[0].replace(
-                    g.letter + "-",
-                    ""
-                );
-        }
-
-        if(second){
-
-            seconds[g.letter] =
-                second[0].replace(
-                    g.letter + "-",
-                    ""
-                );
-        }
-
+        if (first) firsts[g.letter] = first;
+        if (second) seconds[g.letter] = second;
     });
 
-    Simulator.selectedThirds
-    .forEach(index => {
-
-        const third =
-            Simulator.thirds[index];
-
-        thirds[
-            third.group
-        ] = third.team;
-
+    Simulator.selectedThirds.forEach(id => {
+        const [group, team] = id.split("-");
+        thirds[group] = team;
     });
 
-    return {
-        firsts,
-        seconds,
-        thirds
-    };
+    return { firsts, seconds, thirds };
 }
-
 /* =========================
    SHUFFLE ARRAY
 ========================= */
@@ -454,7 +361,7 @@ function shuffle(array) {
 }
 
 /* =========================
-   ROUND OF 32
+   ROUND OF 32 (FIFA STYLE)
 ========================= */
 
 function createOfficialRound32(data) {
@@ -462,38 +369,49 @@ function createOfficialRound32(data) {
     const F = data.firsts;
     const S = data.seconds;
 
-    const thirds =
-        shuffle(
-            Object.values(data.thirds)
-        );
+    const T = shuffle(Object.values(data.thirds || []));
+
+    const safe = (v) => v || "TBD";
 
     return [
+        [safe(F.E), safe(T[0])],
+        [safe(F.I), safe(F.L)],
+        [safe(S.A), safe(S.B)],
+        [safe(F.F), safe(S.C)],
+        [safe(S.K), safe(S.L)],
+        [safe(F.H), safe(S.J)],
+        [safe(T[1]), safe(F.G)],
+        [safe(F.C), safe(S.F)],
 
-        [F.A, thirds[0]],
-        [S.A, S.B],
-
-        [F.B, thirds[1]],
-        [S.C, S.D],
-
-        [F.C, thirds[2]],
-        [S.E, S.F],
-
-        [F.D, thirds[3]],
-        [S.G, S.H],
-
-        [F.E, thirds[4]],
-        [S.I, S.J],
-
-        [F.F, thirds[5]],
-        [S.K, S.L],
-
-        [F.G, thirds[6]],
-        [F.H, thirds[7]],
-
-        [F.I, F.J],
-        [F.K, F.L]
-
+        [safe(S.E), safe(S.I)],
+        [safe(F.A), safe(T[2])],
+        [safe(F.J), safe(T[3])],
+        [safe(S.H), safe(S.D)],
+        [safe(S.G), safe(F.B)],
+        [safe(T[4]), safe(F.K)],
+        [safe(F.D), safe(T[5])],
+        [safe(T[6]), safe(T[7])]
     ];
+}
+
+/* =========================
+   BRACKET HELPERS
+========================= */
+
+function createNextRound(matches) {
+
+    const nextRound = [];
+
+    for(let i=0; i<matches.length; i+=2){
+
+        nextRound.push([
+            `Winner M${i+1}`,
+            `Winner M${i+2}`
+        ]);
+
+    }
+
+    return nextRound;
 }
 
 /* =========================
@@ -512,8 +430,15 @@ function renderRound32(matches) {
         <div class="espn-bracket">
 
             <h2>
-                ⚔️ ROUND OF 32
-            </h2>
+    ⚔️ ROUND OF 32
+</h2>
+
+<p style="
+text-align:center;
+margin-bottom:20px;
+color:#aaa;">
+FIFA 2026 style bracket
+</p>
 
             <div class="round32-grid">
 
