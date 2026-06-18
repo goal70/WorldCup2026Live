@@ -1,6 +1,6 @@
 /********************************************
  WORLD GOAL 2026
- ESPN PRO SIMULATOR
+ ESPN PRO SIMULATOR (FIXED BRACKET SYSTEM)
 ********************************************/
 
 const GROUPS = [
@@ -15,6 +15,10 @@ const Simulator = {
     selectedThirds: new Set()
 };
 
+/* =========================
+   INIT
+========================= */
+
 document.addEventListener("DOMContentLoaded", async () => {
     await loadGroups();
     renderGroups();
@@ -25,6 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 ========================= */
 
 async function loadGroups() {
+
     Simulator.groups = [];
 
     for (const letter of GROUPS) {
@@ -41,17 +46,18 @@ async function loadGroups() {
 
             Simulator.groups.push({ letter, teams });
 
-        } catch(err) {
+        } catch (err) {
             console.error("Error loading group", letter, err);
         }
     }
 }
 
 /* =========================
-   GROUP SCREEN
+   RENDER GROUP STAGE
 ========================= */
 
 function renderGroups() {
+
     const root = document.getElementById("simulator-root");
 
     root.innerHTML = `
@@ -76,6 +82,7 @@ function renderGroups() {
 ========================= */
 
 function renderGroup(group) {
+
     return `
     <div class="sim-group">
         <div class="sim-group-title">GROUP ${group.letter}</div>
@@ -93,18 +100,20 @@ function renderGroup(group) {
                 ${team}
             </div>`;
         }).join("")}
+
     </div>`;
 }
 
 /* =========================
-   EVENTS (FIX IMPORTANTE)
+   EVENTS (SAFE)
 ========================= */
 
 function attachGroupEvents() {
+
     document.querySelectorAll(".sim-team").forEach(el => {
-        el.addEventListener("click", () => {
+        el.onclick = () => {
             cycleTeam(el.dataset.group, el.dataset.team);
-        });
+        };
     });
 }
 
@@ -113,36 +122,42 @@ function attachGroupEvents() {
 ========================= */
 
 function getMedal(pos) {
-    if(pos===1) return "🥇";
-    if(pos===2) return "🥈";
-    if(pos===3) return "🥉";
+    if (pos === 1) return "🥇";
+    if (pos === 2) return "🥈";
+    if (pos === 3) return "🥉";
     return "";
 }
 
 /* =========================
-   TEAM SELECTION LOGIC
+   SELECTION LOGIC
 ========================= */
 
 window.cycleTeam = function(group, team) {
+
     const key = `${group}-${team}`;
 
     const groupKeys = Object.keys(Simulator.rankings)
         .filter(k => k.startsWith(group + "-"))
         .sort((a,b) => Simulator.rankings[a] - Simulator.rankings[b]);
 
+    // REMOVE
     if (Simulator.rankings[key]) {
+
         delete Simulator.rankings[key];
 
         const remaining = Object.keys(Simulator.rankings)
             .filter(k => k.startsWith(group + "-"))
             .sort((a,b) => Simulator.rankings[a] - Simulator.rankings[b]);
 
-        remaining.forEach((k, i) => Simulator.rankings[k] = i + 1);
+        remaining.forEach((k, i) => {
+            Simulator.rankings[k] = i + 1;
+        });
 
         renderGroups();
         return;
     }
 
+    // LIMIT 3
     if (groupKeys.length >= 3) return;
 
     Simulator.rankings[key] = groupKeys.length + 1;
@@ -155,19 +170,29 @@ window.cycleTeam = function(group, team) {
 ========================= */
 
 function groupsComplete() {
+
     return Simulator.groups.every(g => {
+
         const values = Object.entries(Simulator.rankings)
             .filter(([k]) => k.startsWith(g.letter + "-"))
             .map(([,v]) => v);
 
         if (values.length !== 3) return false;
 
-        const sorted = values.sort((a,b)=>a-b);
-        return sorted[0] === 1 && sorted[1] === 2 && sorted[2] === 3;
+        values.sort((a,b)=>a-b);
+
+        return values[0] === 1 &&
+               values[1] === 2 &&
+               values[2] === 3;
     });
 }
 
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
 function updateContinueButton() {
+
     const wrapper = document.getElementById("continue-wrapper");
 
     if (!wrapper) return;
@@ -189,18 +214,22 @@ function updateContinueButton() {
 ========================= */
 
 window.showThirds = function() {
+
     const root = document.getElementById("simulator-root");
 
     Simulator.thirds = [];
 
     Simulator.groups.forEach(g => {
+
         const third = Object.entries(Simulator.rankings)
-            .find(([k,v]) => k.startsWith(g.letter+"-") && v===3);
+            .find(([k,v]) =>
+                k.startsWith(g.letter + "-") && v === 3
+            );
 
         if (third) {
             Simulator.thirds.push({
                 group: g.letter,
-                team: third[0].replace(g.letter+"-","")
+                team: third[0].replace(g.letter + "-", "")
             });
         }
     });
@@ -209,12 +238,14 @@ window.showThirds = function() {
         <h2>🥉 BEST THIRD PLACES</h2>
 
         <div class="third-grid">
+
             ${Simulator.thirds.map((t,i)=>`
                 <div class="third-card"
                      onclick="toggleThird(${i},this)">
                     ${t.team}
                 </div>
             `).join("")}
+
         </div>
 
         <button class="sim-continue-btn" onclick="generateBracket()">
@@ -228,13 +259,17 @@ window.showThirds = function() {
 ========================= */
 
 window.toggleThird = function(index, el) {
+
     const third = Simulator.thirds[index];
     const id = `${third.group}-${third.team}`;
 
     if (Simulator.selectedThirds.has(id)) {
+
         Simulator.selectedThirds.delete(id);
         el.classList.remove("selected-third");
+
     } else {
+
         if (Simulator.selectedThirds.size >= 8) return;
 
         Simulator.selectedThirds.add(id);
@@ -243,7 +278,7 @@ window.toggleThird = function(index, el) {
 };
 
 /* =========================
-   BRACKET GENERATION
+   GENERATE BRACKET
 ========================= */
 
 window.generateBracket = function() {
@@ -260,7 +295,7 @@ window.generateBracket = function() {
 };
 
 /* =========================
-   QUALIFIED TEAMS
+   BUILD TEAMS
 ========================= */
 
 function buildQualifiedTeams() {
@@ -274,14 +309,12 @@ function buildQualifiedTeams() {
         const entries = Object.entries(Simulator.rankings)
             .filter(([k]) => k.startsWith(g.letter + "-"));
 
-        const getTeam = pos =>
-            entries.find(([,v]) => v === pos)?.[0]?.replace(g.letter + "-", "");
+        const get = pos =>
+            entries.find(([,v]) => v === pos)
+            ?.[0]?.replace(g.letter + "-", "");
 
-        const first = getTeam(1);
-        const second = getTeam(2);
-
-        if (first) firsts[g.letter] = first;
-        if (second) seconds[g.letter] = second;
+        if (get(1)) firsts[g.letter] = get(1);
+        if (get(2)) seconds[g.letter] = get(2);
     });
 
     Simulator.selectedThirds.forEach(id => {
@@ -296,48 +329,51 @@ function buildQualifiedTeams() {
    SHUFFLE
 ========================= */
 
-function shuffle(array) {
-    const arr = [...array];
+function shuffle(arr) {
+    const a = [...arr];
 
-    for (let i = arr.length - 1; i > 0; i--) {
+    for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+        [a[i], a[j]] = [a[j], a[i]];
     }
 
-    return arr;
+    return a;
 }
 
 /* =========================
-   ROUND OF 32
+   ROUND OF 32 (FIXED STRUCTURE)
+   ⚠️ SLOT-BASED SYSTEM (NO RANDOM BRACKETS)
 ========================= */
 
 function createOfficialRound32(data) {
 
     const F = data.firsts;
     const S = data.seconds;
+    const T = Object.values(data.thirds);
 
-    const T = shuffle(Object.values(data.thirds || []));
-
-    const safe = (v) => v || "TBD";
+    const safe = v => v || "TBD";
 
     return [
-        [safe(F.E), safe(T[0])],
-        [safe(F.I), safe(F.L)],
-        [safe(S.A), safe(S.B)],
-        [safe(F.F), safe(S.C)],
-        [safe(S.K), safe(S.L)],
-        [safe(F.H), safe(S.J)],
-        [safe(T[1]), safe(F.G)],
-        [safe(F.C), safe(S.F)],
 
-        [safe(S.E), safe(S.I)],
-        [safe(F.A), safe(T[2])],
-        [safe(F.J), safe(T[3])],
-        [safe(S.H), safe(S.D)],
-        [safe(S.G), safe(F.B)],
-        [safe(T[4]), safe(F.K)],
-        [safe(F.D), safe(T[5])],
-        [safe(T[6]), safe(T[7])]
+        // LEFT SIDE
+        [safe(F.A), safe(T[0])],
+        [safe(F.B), safe(S.H)],
+        [safe(F.C), safe(T[1])],
+        [safe(F.D), safe(S.G)],
+        [safe(F.E), safe(T[2])],
+        [safe(F.F), safe(S.C)],
+        [safe(F.G), safe(T[3])],
+        [safe(F.H), safe(S.B)],
+
+        // RIGHT SIDE
+        [safe(F.I), safe(T[4])],
+        [safe(F.J), safe(S.F)],
+        [safe(F.K), safe(T[5])],
+        [safe(F.L), safe(S.E)],
+        [safe(S.A), safe(T[6])],
+        [safe(S.D), safe(F.B)],
+        [safe(S.I), safe(T[7])],
+        [safe(S.J), safe(S.K)]
     ];
 }
 
@@ -346,24 +382,28 @@ function createOfficialRound32(data) {
 ========================= */
 
 function renderRound32(matches) {
+
     const root = document.getElementById("simulator-root");
 
     root.innerHTML = `
         <div class="espn-bracket">
             <h2>⚔️ ROUND OF 32</h2>
+
             <p style="text-align:center;margin-bottom:20px;color:#aaa;">
                 FIFA 2026 style bracket
             </p>
 
             <div class="round32-grid">
-                ${matches.map((match,index)=>`
+
+                ${matches.map((m,i)=>`
                     <div class="bracket-match">
-                        <div class="bracket-game">MATCH ${index + 1}</div>
-                        <div class="bracket-team">${match[0]}</div>
+                        <div class="bracket-game">MATCH ${i+1}</div>
+                        <div class="bracket-team">${m[0]}</div>
                         <div class="bracket-vs">VS</div>
-                        <div class="bracket-team">${match[1]}</div>
+                        <div class="bracket-team">${m[1]}</div>
                     </div>
                 `).join("")}
+
             </div>
         </div>
     `;
