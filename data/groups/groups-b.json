@@ -158,7 +158,7 @@
     "flag1": "ca",
     "flag2": "qa",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 0,
 
     "stadium": "BC Place",
@@ -170,6 +170,11 @@
       {
         "player": "Larin",
         "minute": 16,
+        "team": "home"
+        },
+      {
+        "player": "J. David",
+        "minute": 29,
         "team": "home"
         }
        ],
