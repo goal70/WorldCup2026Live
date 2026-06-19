@@ -1577,6 +1577,11 @@ SIMULATOR ESPN PRO
    ESCALADO POR RONDA
 ========================= */
 
+
+/* =========================
+   ESCALADO POR RONDA
+========================= */
+
 /* ROUND OF 32 (normal) */
 .round-column:nth-child(1) .team-btn{
     font-size:15px;
@@ -1599,4 +1604,19 @@ SIMULATOR ESPN PRO
 .round-column:nth-child(4) .team-btn{
     font-size:12px;
     padding:7px;
+}
+.round-column{
+    min-width:220px;
+}
+
+.round-column:nth-child(2){
+    min-width:200px;
+}
+
+.round-column:nth-child(3){
+    min-width:180px;
+}
+
+.round-column:nth-child(4){
+    min-width:160px;
 }
