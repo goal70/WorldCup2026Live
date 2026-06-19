@@ -342,8 +342,10 @@ window.generateBracket = function() {
     }
 
     const data = buildQualifiedTeams();
-
     data.thirds = buildThirdsMap();
+
+    // 🔥 BLOQUE GLOBAL DE DUPLICADOS
+    const UsedTeams = new Set();
 
     const resolveThird = (options, thirdsMap) => {
 
@@ -358,22 +360,29 @@ window.generateBracket = function() {
 
     const resolve = code => {
 
+        let team = "TBD";
+
         if (code.startsWith("1")) {
-            return data.firsts[code[1]] || "TBD";
+            team = data.firsts[code[1]] || "TBD";
         }
 
-        if (code.startsWith("2")) {
-            return data.seconds[code[1]] || "TBD";
+        else if (code.startsWith("2")) {
+            team = data.seconds[code[1]] || "TBD";
         }
 
-        if (code.startsWith("3")) {
-            return resolveThird(
-                code.slice(1),
-                data.thirds
-            );
+        else if (code.startsWith("3")) {
+            team = resolveThird(code.slice(1), data.thirds);
         }
 
-        return "TBD";
+        // 🔥 BLOQUEO ANTI DUPLICADOS (CLAVE)
+        if (team !== "TBD") {
+            if (UsedTeams.has(team)) {
+                return "TBD";
+            }
+            UsedTeams.add(team);
+        }
+
+        return team;
     };
 
     Knockout.r32 = FIXED_ROUND32.map(
