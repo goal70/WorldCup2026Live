@@ -1391,24 +1391,26 @@ SIMULATOR ESPN PRO
     display:flex;
     justify-content:center;
     align-items:flex-start;
-    gap:25px;
+    gap:18px;
     padding:30px;
     overflow-x:auto;
+    box-sizing:border-box;
 }
 
 /* COLUMNAS */
 
 .round-column{
-    min-width:220px;
+    min-width:200px;
+    transition:.3s;
 }
 
 .round-column h3{
     text-align:center;
     color:#00ffb3;
-    margin-bottom:15px;
+    margin-bottom:12px;
     text-transform:uppercase;
     letter-spacing:1px;
-    font-size:15px;
+    font-size:14px;
 }
 
 /* PARTIDOS */
@@ -1417,7 +1419,7 @@ SIMULATOR ESPN PRO
     background:#111827;
     border:1px solid rgba(255,255,255,.08);
     border-radius:12px;
-    margin-bottom:12px;
+    margin-bottom:10px;
     overflow:hidden;
     box-shadow:0 4px 10px rgba(0,0,0,.25);
 }
@@ -1425,12 +1427,13 @@ SIMULATOR ESPN PRO
 /* EQUIPOS */
 
 .team-btn{
-    padding:12px;
+    padding:10px;
     cursor:pointer;
-    transition:.25s;
+    transition:.2s;
     border-bottom:1px solid rgba(255,255,255,.05);
     font-weight:600;
     color:#e5e7eb;
+    font-size:14px;
 }
 
 .team-btn:last-child{
@@ -1441,13 +1444,13 @@ SIMULATOR ESPN PRO
     background:#00ffb3;
     color:#000;
     font-weight:700;
-    transform:translateX(4px);
+    transform:translateX(3px);
 }
 
 /* CENTRO */
 
 .bracket-center{
-    min-width:260px;
+    min-width:240px;
     text-align:center;
 
     display:flex;
@@ -1455,48 +1458,32 @@ SIMULATOR ESPN PRO
     justify-content:center;
     align-items:center;
 
-    gap:15px;
+    gap:12px;
 }
 
 /* COPA */
 
 .trophy{
-    font-size:70px;
+    font-size:65px;
     animation:floatCup 3s ease-in-out infinite;
 }
 
 @keyframes floatCup{
-
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+    100%{ transform:translateY(0); }
 }
 
 /* FINALISTAS */
 
 .final-box{
-    width:220px;
-
-    padding:15px;
-
+    width:200px;
+    padding:12px;
     border-radius:12px;
-
     background:#1f2937;
-
     border:2px solid gold;
-
     cursor:pointer;
-
     font-weight:700;
-
     transition:.25s;
 }
 
@@ -1508,27 +1495,14 @@ SIMULATOR ESPN PRO
 /* CAMPEÓN */
 
 .champion-box{
-
-    width:240px;
-
-    padding:18px;
-
+    width:220px;
+    padding:16px;
     border-radius:14px;
-
-    background:linear-gradient(
-        135deg,
-        #ffd700,
-        #ffb800
-    );
-
+    background:linear-gradient(135deg,#ffd700,#ffb800);
     color:#000;
-
     font-weight:800;
-
-    font-size:18px;
-
+    font-size:17px;
     text-align:center;
-
     box-shadow:0 0 25px rgba(255,215,0,.5);
 }
 
@@ -1537,39 +1511,31 @@ SIMULATOR ESPN PRO
 @media (max-width:768px){
 
     .worldcup-bracket{
-
         justify-content:flex-start;
-
-        overflow-x:auto;
-
-        padding:20px;
+        gap:14px;
+        padding:18px;
     }
 
     .round-column{
-
-        min-width:180px;
+        min-width:170px;
     }
 
     .team-btn{
-
-        font-size:13px;
+        font-size:12.5px;
+        padding:8px;
     }
 
     .final-box{
-
-        width:180px;
+        width:170px;
     }
 
     .champion-box{
-
-        width:180px;
-
-        font-size:16px;
+        width:170px;
+        font-size:15px;
     }
 
     .trophy{
-
-        font-size:55px;
+        font-size:50px;
     }
 }
 
@@ -1577,46 +1543,32 @@ SIMULATOR ESPN PRO
    ESCALADO POR RONDA
 ========================= */
 
-
-/* =========================
-   ESCALADO POR RONDA
-========================= */
-
-/* ROUND OF 32 (normal) */
+/* 32avos */
 .round-column:nth-child(1) .team-btn{
-    font-size:15px;
-    padding:11px;
-}
-
-/* ROUND OF 16 */
-.round-column:nth-child(2) .team-btn{
-    font-size:14px;
+    font-size:13.5px;
     padding:9px;
 }
 
-/* QUARTERFINALS */
-.round-column:nth-child(3) .team-btn{
+/* 16avos */
+.round-column:nth-child(2) .team-btn{
     font-size:13px;
     padding:8px;
 }
 
-/* SEMIFINALS */
-.round-column:nth-child(4) .team-btn{
-    font-size:12px;
+/* Cuartos */
+.round-column:nth-child(3) .team-btn{
+    font-size:12.5px;
     padding:7px;
 }
-.round-column{
-    min-width:220px;
+
+/* Semis */
+.round-column:nth-child(4) .team-btn{
+    font-size:12px;
+    padding:6px;
 }
 
-.round-column:nth-child(2){
-    min-width:200px;
-}
-
-.round-column:nth-child(3){
-    min-width:180px;
-}
-
-.round-column:nth-child(4){
-    min-width:160px;
-}
+/* Ajuste progresivo de columnas */
+.round-column:nth-child(1){ min-width:200px; }
+.round-column:nth-child(2){ min-width:190px; }
+.round-column:nth-child(3){ min-width:180px; }
+.round-column:nth-child(4){ min-width:170px; }
