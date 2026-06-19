@@ -113,8 +113,8 @@
     "flag1": "us",
     "flag2": "au",
 
-    "homeScore": 4,
-    "awayScore": 1,
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
