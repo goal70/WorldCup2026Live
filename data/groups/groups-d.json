@@ -113,13 +113,26 @@
     "flag1": "us",
     "flag2": "au",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 0,
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
 
     "timeAR": "16:00",
+
+  "goals": [
+      {
+        "player": "Burgess (E.C)",
+        "minute": 11,
+        "team": "home"
+      },
+      {
+        "player": "Freeman",
+        "minute": 43,
+        "team": "away"
+      }
+    ],
 
   "links": [
   {
