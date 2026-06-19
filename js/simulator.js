@@ -392,50 +392,109 @@ function renderKnockout() {
     const root = document.getElementById("simulator-root");
 
     root.innerHTML = `
-    <div class="worldcup-bracket">
+    <div class="worldcup-bracket fifa-bracket">
 
-        <div class="round-column">
+        <!-- ROUND OF 32 -->
+        <div class="round-column round32">
             <h3>ROUND OF 32</h3>
+
             ${Knockout.r32.map((m,i)=>`
                 <div class="match-box">
-                    <div class="team-btn" onclick="advanceTeam(32,${i},0)">${m[0]}</div>
-                    <div class="team-btn" onclick="advanceTeam(32,${i},1)">${m[1]}</div>
+                    <div class="team-btn selectable"
+                         onclick="advanceTeam(32,${i},0)">
+                        ${m[0]}
+                    </div>
+
+                    <div class="team-btn selectable"
+                         onclick="advanceTeam(32,${i},1)">
+                        ${m[1]}
+                    </div>
                 </div>
             `).join("")}
         </div>
 
-        <div class="round-column">
+        <!-- ROUND OF 16 -->
+        <div class="round-column round16">
             <h3>ROUND OF 16</h3>
-            ${Knockout.r16.map((t,i)=>`
-                <div class="team-btn" onclick="${t ? `advanceTeam(16,${i})` : ''}">
-                    ${t || ""}
+
+            ${Array.from({length:8}).map((_,i)=>`
+                <div class="match-box">
+
+                    <div class="team-btn selectable"
+                         onclick="${Knockout.r16[i*2] ? `advanceTeam(16,${i*2})` : ''}">
+                        ${Knockout.r16[i*2] || ""}
+                    </div>
+
+                    <div class="team-btn selectable"
+                         onclick="${Knockout.r16[i*2+1] ? `advanceTeam(16,${i*2+1})` : ''}">
+                        ${Knockout.r16[i*2+1] || ""}
+                    </div>
+
                 </div>
             `).join("")}
         </div>
 
-        <div class="round-column">
+        <!-- QUARTERS -->
+        <div class="round-column quarter">
             <h3>QUARTERS</h3>
-            ${Knockout.qf.map((t,i)=>`
-                <div class="team-btn" onclick="${t ? `advanceTeam(8,${i})` : ''}">
-                    ${t || ""}
+
+            ${Array.from({length:4}).map((_,i)=>`
+                <div class="match-box">
+
+                    <div class="team-btn selectable"
+                         onclick="${Knockout.qf[i*2] ? `advanceTeam(8,${i*2})` : ''}">
+                        ${Knockout.qf[i*2] || ""}
+                    </div>
+
+                    <div class="team-btn selectable"
+                         onclick="${Knockout.qf[i*2+1] ? `advanceTeam(8,${i*2+1})` : ''}">
+                        ${Knockout.qf[i*2+1] || ""}
+                    </div>
+
                 </div>
             `).join("")}
         </div>
 
-        <div class="round-column">
-            <h3>SEMI</h3>
-            ${Knockout.sf.map((t,i)=>`
-                <div class="team-btn" onclick="${t ? `advanceTeam(4,${i})` : ''}">
-                    ${t || ""}
+        <!-- SEMI -->
+        <div class="round-column semi">
+            <h3>SEMI FINAL</h3>
+
+            ${Array.from({length:2}).map((_,i)=>`
+                <div class="match-box">
+
+                    <div class="team-btn selectable"
+                         onclick="${Knockout.sf[i*2] ? `advanceTeam(4,${i*2})` : ''}">
+                        ${Knockout.sf[i*2] || ""}
+                    </div>
+
+                    <div class="team-btn selectable"
+                         onclick="${Knockout.sf[i*2+1] ? `advanceTeam(4,${i*2+1})` : ''}">
+                        ${Knockout.sf[i*2+1] || ""}
+                    </div>
+
                 </div>
             `).join("")}
         </div>
 
+        <!-- FINAL -->
         <div class="bracket-center">
+
             <div class="trophy">🏆</div>
-            <div class="final-box">${Knockout.final[0] || "Finalist"}</div>
-            <div class="final-box">${Knockout.final[1] || "Finalist"}</div>
-            <div class="champion-box">${Knockout.champion || "WORLD CHAMPION"}</div>
+
+            <div class="final-box selectable"
+                 onclick="${Knockout.final[0] ? `advanceTeam(2,0)` : ''}">
+                ${Knockout.final[0] || "FINALIST"}
+            </div>
+
+            <div class="final-box selectable"
+                 onclick="${Knockout.final[1] ? `advanceTeam(2,1)` : ''}">
+                ${Knockout.final[1] || "FINALIST"}
+            </div>
+
+            <div class="champion-box">
+                ${Knockout.champion || "WORLD CHAMPION"}
+            </div>
+
         </div>
 
     </div>`;
