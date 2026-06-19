@@ -120,6 +120,14 @@
 
     "timeAR": "19:00",
 
+    "goals": [
+      {
+        "player": "Saibari",
+        "minute": 1,
+        "team": "away"
+      }
+    ],
+
     "links": [
   {
     "name": "DSports",
