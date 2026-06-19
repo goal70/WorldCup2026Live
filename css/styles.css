@@ -1385,11 +1385,12 @@ SIMULATOR ESPN PRO
 }
 /* =====================================
    WORLD GOAL 2026 - KNOCKOUT BRACKET
+   CLEAN STRUCTURE (FIXED)
 ===================================== */
 
 .worldcup-bracket{
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:flex-start;
     gap:18px;
     padding:30px;
@@ -1398,34 +1399,38 @@ SIMULATOR ESPN PRO
 }
 
 /* COLUMNAS */
-
 .round-column{
-    min-width:200px;
-    transition:.3s;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
 
+/* ANCHO PROGRESIVO REAL DEL TORNEO */
+.round-32   { min-width:210px; }
+.round-16   { min-width:195px; }
+.round-8    { min-width:180px; }
+.round-4    { min-width:165px; }
+.round-final{ min-width:150px; }
+
+/* TÍTULOS */
 .round-column h3{
     text-align:center;
     color:#00ffb3;
-    margin-bottom:12px;
-    text-transform:uppercase;
-    letter-spacing:1px;
     font-size:14px;
+    margin-bottom:10px;
+    text-transform:uppercase;
 }
 
 /* PARTIDOS */
-
 .match-box{
     background:#111827;
     border:1px solid rgba(255,255,255,.08);
     border-radius:12px;
-    margin-bottom:10px;
     overflow:hidden;
     box-shadow:0 4px 10px rgba(0,0,0,.25);
 }
 
-/* EQUIPOS */
-
+/* BOTONES */
 .team-btn{
     padding:10px;
     cursor:pointer;
@@ -1433,7 +1438,7 @@ SIMULATOR ESPN PRO
     border-bottom:1px solid rgba(255,255,255,.05);
     font-weight:600;
     color:#e5e7eb;
-    font-size:14px;
+    font-size:13.5px;
 }
 
 .team-btn:last-child{
@@ -1447,22 +1452,25 @@ SIMULATOR ESPN PRO
     transform:translateX(3px);
 }
 
-/* CENTRO */
+/* ESCALADO SUAVE POR RONDA */
+.round-32   .team-btn{ font-size:13.5px; padding:9px; }
+.round-16   .team-btn{ font-size:13px;   padding:8px; }
+.round-8    .team-btn{ font-size:12.5px; padding:7px; }
+.round-4    .team-btn{ font-size:12px;   padding:6px; }
+.round-final .team-btn{ font-size:12px;   padding:6px; }
 
+/* CENTRO */
 .bracket-center{
     min-width:240px;
     text-align:center;
-
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-
     gap:12px;
 }
 
-/* COPA */
-
+/* TROFEO */
 .trophy{
     font-size:65px;
     animation:floatCup 3s ease-in-out infinite;
@@ -1475,7 +1483,6 @@ SIMULATOR ESPN PRO
 }
 
 /* FINALISTAS */
-
 .final-box{
     width:200px;
     padding:12px;
@@ -1493,7 +1500,6 @@ SIMULATOR ESPN PRO
 }
 
 /* CAMPEÓN */
-
 .champion-box{
     width:220px;
     padding:16px;
@@ -1507,68 +1513,24 @@ SIMULATOR ESPN PRO
 }
 
 /* RESPONSIVE */
-
 @media (max-width:768px){
-
     .worldcup-bracket{
-        justify-content:flex-start;
         gap:14px;
         padding:18px;
     }
 
-    .round-column{
-        min-width:170px;
-    }
+    .round-32   { min-width:180px; }
+    .round-16   { min-width:170px; }
+    .round-8    { min-width:160px; }
+    .round-4    { min-width:150px; }
+    .round-final{ min-width:140px; }
 
     .team-btn{
-        font-size:12.5px;
+        font-size:12px;
         padding:8px;
-    }
-
-    .final-box{
-        width:170px;
-    }
-
-    .champion-box{
-        width:170px;
-        font-size:15px;
     }
 
     .trophy{
         font-size:50px;
     }
 }
-
-/* =========================
-   ESCALADO POR RONDA
-========================= */
-
-/* 32avos */
-.round-column:nth-child(1) .team-btn{
-    font-size:13.5px;
-    padding:9px;
-}
-
-/* 16avos */
-.round-column:nth-child(2) .team-btn{
-    font-size:13px;
-    padding:8px;
-}
-
-/* Cuartos */
-.round-column:nth-child(3) .team-btn{
-    font-size:12.5px;
-    padding:7px;
-}
-
-/* Semis */
-.round-column:nth-child(4) .team-btn{
-    font-size:12px;
-    padding:6px;
-}
-
-/* Ajuste progresivo de columnas */
-.round-column:nth-child(1){ min-width:200px; }
-.round-column:nth-child(2){ min-width:190px; }
-.round-column:nth-child(3){ min-width:180px; }
-.round-column:nth-child(4){ min-width:170px; }
