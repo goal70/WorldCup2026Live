@@ -1390,12 +1390,12 @@ SIMULATOR ESPN PRO
 
 .worldcup-bracket{
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     justify-content:center;
-    gap:35px;
-    padding:40px;
+    gap:20px;
+    padding:20px;
     overflow-x:auto;
-    min-width:max-content;
+    min-width:1200px;
 }
 
 /* COLUMNAS */
@@ -1408,40 +1408,42 @@ SIMULATOR ESPN PRO
 
 /* DISTANCIAS REALES ENTRE RONDAS */
 
+/* ROUND OF 32 */
 .round-column:nth-child(1) .match-box{
-    margin-bottom:18px;
+    margin-bottom:12px;
 }
 
-.round-column:nth-child(2) .match-box{
-    margin-bottom:65px;
+/* ROUND OF 16 */
+.round-column:nth-child(2) .team-btn{
+    margin-bottom:34px;
 }
 
-.round-column:nth-child(3) .match-box{
-    margin-bottom:140px;
+/* QUARTERS */
+.round-column:nth-child(3) .team-btn{
+    margin-bottom:82px;
 }
 
-.round-column:nth-child(4) .match-box{
-    margin-bottom:300px;
+/* SEMIFINALS */
+.round-column:nth-child(4) .team-btn{
+    margin-bottom:180px;
 }
-
 /* ANCHOS */
 
 .round-column:nth-child(1){
-    width:240px;
+    width:190px;
 }
 
 .round-column:nth-child(2){
-    width:220px;
+    width:180px;
 }
 
 .round-column:nth-child(3){
-    width:210px;
+    width:170px;
 }
 
 .round-column:nth-child(4){
-    width:200px;
+    width:160px;
 }
-
 /* TITULOS */
 
 .round-column h3{
@@ -1523,7 +1525,7 @@ SIMULATOR ESPN PRO
 
 .bracket-center{
 
-    min-width:280px;
+    min-width:200px;
 
     display:flex;
     flex-direction:column;
