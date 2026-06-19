@@ -171,7 +171,7 @@
     "id": 4,
     "group": "A",
     "date": "2026-06-18",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Mexico",
     "team2": "Corea del Sur",
@@ -179,13 +179,21 @@
     "flag1": "mx",
     "flag2": "kr",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 0,
 
     "stadium": "AKRON",
     "city": "Guadalajara",
 
     "timeAR": "22:00",
+
+    "goals": [
+      {
+        "player": "Romo",
+        "minute": 50,
+        "team": "home"
+      }
+    ],
 
     "links": [
   {
