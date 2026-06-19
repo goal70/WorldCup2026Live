@@ -261,19 +261,27 @@ window.generateBracket = function() {
         return;
     }
 
-    const data = buildQualifiedTeams();
-    data.thirds = buildThirdsMap();
+    const usedThirdGroups = new Set();
 
-    GlobalState.usedTeams = new Set(); // RESET GLOBAL
+const resolveThird = (options, thirdsMap) => {
 
-    const resolveThird = (options, thirdsMap) => {
-        const candidates = options.split("/");
+    const candidates = options.split("/");
 
-        for (let g of candidates) {
-            if (thirdsMap[g]) return thirdsMap[g];
+    for (const g of candidates) {
+
+        if (
+            thirdsMap[g] &&
+            !usedThirdGroups.has(g)
+        ) {
+
+            usedThirdGroups.add(g);
+
+            return thirdsMap[g];
         }
-        return "TBD";
-    };
+    }
+
+    return "TBD";
+};
 
     const resolve = (code) => {
 
