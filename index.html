@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" href="css/styles.css">
 
-    <!-- MONETAG IN-PAGE PUSH -->
+<!-- MONETAG IN-PAGE PUSH -->
 <script>
 window.addEventListener("DOMContentLoaded", () => {
     const s = document.createElement("script");
@@ -50,20 +50,18 @@ window.addEventListener("DOMContentLoaded", () => {
     <!-- NAV HOME -->
     <section class="match-navigation">
 
-    <!-- FECHAS -->
-    <button class="day-btn date-btn" id="prevDateBtn">11/6</button>
-    <button class="day-btn date-btn" id="prevDateBtn2">12/6</button>
-    <button class="day-btn date-btn" id="prevDateBtn3">13/6</button>
-    <button class="day-btn date-btn" id="prevDateBtn4">14/6</button>
-    <button class="day-btn date-btn" id="prevDateBtn5">15/6</button>
-    <button class="day-btn date-btn" id="prevDateBtn6">16/6</button>
+        <button class="day-btn date-btn" id="prevDateBtn">11/6</button>
+        <button class="day-btn date-btn" id="prevDateBtn2">12/6</button>
+        <button class="day-btn date-btn" id="prevDateBtn3">13/6</button>
+        <button class="day-btn date-btn" id="prevDateBtn4">14/6</button>
+        <button class="day-btn date-btn" id="prevDateBtn5">15/6</button>
+        <button class="day-btn date-btn" id="prevDateBtn6">16/6</button>
 
-    <!-- NAV PRINCIPAL -->
-    <button class="day-btn" id="yesterdayBtn">YESTERDAY</button>
-    <button class="day-btn active" id="todayBtn">TODAY</button>
-    <button class="day-btn" id="tomorrowBtn">TOMORROW</button>
+        <button class="day-btn" id="yesterdayBtn">YESTERDAY</button>
+        <button class="day-btn active" id="todayBtn">TODAY</button>
+        <button class="day-btn" id="tomorrowBtn">TOMORROW</button>
 
-</section>
+    </section>
 
     <section class="today-banner">
         ⚽ WORLD CUP MATCHES
@@ -79,9 +77,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     </section>
 
-    <!-- (OPTIONAL) SIMULATOR PLACEHOLDER -->
-    <section id="simulatorContainer"></section>
-    
 </main>
 
 <footer>
@@ -99,25 +94,32 @@ window.addEventListener("DOMContentLoaded", () => {
 </footer>
 
 <!-- =========================
-     ADS SYSTEM (SAFE ORDER FIX)
-     NO DUPLICATION BUG
+     ADS SYSTEM (SAFE LOAD)
 ========================= -->
 
 <script>
 window.addEventListener("load", () => {
+
     const ads1 = document.createElement("script");
     ads1.src = "https://pl29727721.effectivecpmnetwork.com/c0/01/58/c00158d2d7f73a99186d63fd0ecb13ef.js";
+    ads1.async = true;
     document.body.appendChild(ads1);
 
     const ads2 = document.createElement("script");
     ads2.src = "https://pl29727722.effectivecpmnetwork.com/4f/4a/ff/4f4affad81da3060c84e588a26bb60f2.js";
+    ads2.async = true;
     document.body.appendChild(ads2);
+
 });
+
 </script>
 
 <!-- APP CORE -->
- <script src="./js/app.js"></script>
-<!-- <script src="../js/live.js"></script> -->
+<script src="./js/app.js"></script>
+
+<!-- FUTURE MODULES -->
+<!-- <script src="./js/simulator.js"></script> -->
+<!-- <script src="./js/live.js"></script> -->
 
 </body>
 </html>
