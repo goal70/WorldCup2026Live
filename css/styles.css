@@ -1572,3 +1572,31 @@ SIMULATOR ESPN PRO
         font-size:55px;
     }
 }
+
+/* =========================
+   ESCALADO POR RONDA
+========================= */
+
+/* ROUND OF 32 (normal) */
+.round-column:nth-child(1) .team-btn{
+    font-size:15px;
+    padding:11px;
+}
+
+/* ROUND OF 16 */
+.round-column:nth-child(2) .team-btn{
+    font-size:14px;
+    padding:9px;
+}
+
+/* QUARTERFINALS */
+.round-column:nth-child(3) .team-btn{
+    font-size:13px;
+    padding:8px;
+}
+
+/* SEMIFINALS */
+.round-column:nth-child(4) .team-btn{
+    font-size:12px;
+    padding:7px;
+}
