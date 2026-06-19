@@ -112,7 +112,8 @@
     "flag1": "sc",
     "flag2": "ma",
 
-    "score": "-",
+    "homeScore": 0,
+  "awayScore": 0,
 
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -167,9 +168,8 @@
     "city": "Los Angeles",
 
     "timeAR": "21:30",
-
     
-  },"links": [
+  "links": [
       {
         "name": "DirecTV Sports",
         "logo": "https://static.wikia.nocookie.net/logopedia/images/9/91/DirecTV_Sports_2013.png",
