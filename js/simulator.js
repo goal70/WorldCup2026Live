@@ -250,38 +250,48 @@ window.toggleThird = function(group, team, el) {
     }
 };
 
-/* =========================
-   GENERATE BRACKET (FIX CLAVE)
-========================= */
-
-window.generateBracket = function() {
+window.generateBracket = function () {
 
     if (Simulator.selectedThirds.size !== 8) {
         alert("Select exactly 8 third-place teams");
         return;
     }
 
+    /* RESET ANTI-DUPLICADOS */
+    GlobalState.usedTeams.clear();
+
+    /* EQUIPOS CLASIFICADOS */
+    const data = buildQualifiedTeams();
+
+    /* TERCEROS SELECCIONADOS */
+    Simulator.selectedThirds.forEach(item => {
+
+        const [group, team] = item.split("-");
+
+        data.thirds[group] = team;
+    });
+
     const usedThirdGroups = new Set();
 
-const resolveThird = (options, thirdsMap) => {
+    const resolveThird = (options, thirdsMap) => {
 
-    const candidates = options.split("/");
+        const candidates = options.split("/");
 
-    for (const g of candidates) {
+        for (const g of candidates) {
 
-        if (
-            thirdsMap[g] &&
-            !usedThirdGroups.has(g)
-        ) {
+            if (
+                thirdsMap[g] &&
+                !usedThirdGroups.has(g)
+            ) {
 
-            usedThirdGroups.add(g);
+                usedThirdGroups.add(g);
 
-            return thirdsMap[g];
+                return thirdsMap[g];
+            }
         }
-    }
 
-    return "TBD";
-};
+        return "TBD";
+    };
 
     const resolve = (code) => {
 
@@ -297,11 +307,10 @@ const resolveThird = (options, thirdsMap) => {
             team = resolveThird(code.slice(1), data.thirds);
         }
 
-        /* 🔥 ANTI DUPLICADOS ABSOLUTO */
         if (team !== "TBD") {
 
             if (GlobalState.usedTeams.has(team)) {
-                return "TBD"; // evita repetidos en 16avos
+                return "TBD";
             }
 
             GlobalState.usedTeams.add(team);
@@ -315,10 +324,10 @@ const resolveThird = (options, thirdsMap) => {
         resolve(b)
     ]);
 
-    Knockout.r16 = new Array(16).fill("");
-    Knockout.qf = new Array(8).fill("");
-    Knockout.sf = new Array(4).fill("");
-    Knockout.final = new Array(2).fill("");
+    Knockout.r16 = new Array(16).fill(null);
+    Knockout.qf = new Array(8).fill(null);
+    Knockout.sf = new Array(4).fill(null);
+    Knockout.final = new Array(2).fill(null);
     Knockout.champion = "";
 
     renderKnockout();
