@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,13 +10,13 @@
 
 <link rel="stylesheet" href="../css/styles.css">
 
-<!-- 🔥 EA SPORTS LAYER FIX (IMPORTANTE PARA SVG + OVERLAY) -->
 <style>
-    .simulator-page{
-        position:relative;
-        width:100%;
-        overflow-x:auto;
-    }
+.simulator-page{
+    position:relative;
+    width:100%;
+    overflow-x:auto;
+    min-height:700px;
+}
 </style>
 
 </head>
@@ -41,16 +42,13 @@
 
 <main class="container">
 
-    <!-- HERO -->
     <section class="hero">
         <h1>World Cup Simulator</h1>
         <p>Group Stage → Knockout → Final</p>
     </section>
 
-    <!-- SIMULATOR ROOT -->
     <section class="simulator-page">
 
-        <!-- 🔥 ROOT (JS CONTROLA TODO) -->
         <div id="simulator-root"></div>
 
     </section>
@@ -59,13 +57,14 @@
 
 <footer>
     <div class="container footer-inner">
-        <p class="copyright">© 2026 World Goal 2026</p>
+        <p class="copyright">
+            © 2026 World Goal 2026
+        </p>
     </div>
 </footer>
 
-<!-- 🔊 EA SPORTS AUDIO READY HOOK -->
 <script>
-    window.__EA_MODE = true;
+window.__EA_MODE = true;
 </script>
 
 <script src="../js/simulator.js"></script>
