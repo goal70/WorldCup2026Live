@@ -1396,6 +1396,36 @@ SIMULATOR ESPN PRO
     padding:30px;
     overflow-x:auto;
     min-width:1400px;
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,255,179,.05),
+            transparent 70%
+        );
+}
+
+.worldcup-bracket::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,255,179,.08),
+            transparent 75%
+        );
+
+    animation:ambientGlow 8s ease infinite;
+}
+
+@keyframes ambientGlow{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.04);}
+    100%{transform:scale(1);}
 }
 
 /* COLUMNAS */
@@ -1406,14 +1436,12 @@ SIMULATOR ESPN PRO
     position:relative;
 }
 
-/* ANCHOS */
-
 .round32{ width:220px; }
 .round16{ width:210px; }
 .quarter{ width:200px; }
 .semi{ width:190px; }
 
-/* ALINEACIÓN */
+/* ALINEACION */
 
 .round32 .match-box{
     margin-bottom:14px;
@@ -1443,105 +1471,122 @@ SIMULATOR ESPN PRO
     margin-bottom:320px;
 }
 
-/* LÍNEAS DE CRUCE */
+/* CRUCES */
 
 .round16::before,
 .quarter::before,
 .semi::before{
+
     content:"";
+
     position:absolute;
+
     left:-18px;
     top:0;
+
     width:18px;
     height:100%;
-    border-left:3px solid rgba(0,255,179,.55);
+
+    border-left:3px solid #00ffb3;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(0,255,179,.5)
+        );
 }
 
 .match-box{
     position:relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #172554,
+            #0f172a
+        );
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,.35);
+
+    transition:.25s;
 }
 
 .match-box::after{
+
     content:"";
+
     position:absolute;
+
     right:-12px;
     top:50%;
+
     width:12px;
+
     border-top:3px solid rgba(0,255,179,.55);
-}
-
-/* TITULOS */
-
-.round-column h3{
-    text-align:center;
-    color:#00ffb3;
-    margin-bottom:18px;
-    font-size:12px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    font-weight:800;
-}
-
-/* PARTIDOS */
-
-.match-box{
-    background:#0f172a;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:12px;
-    overflow:hidden;
-
-    box-shadow:
-        0 0 0 1px rgba(255,255,255,.02),
-        0 10px 25px rgba(0,0,0,.25);
-
-    transition:.25s;
-
-    opacity:1;
-    transform:none;
-
-    animation:slideBracket .45s ease forwards;
 }
 
 .match-box:hover{
     transform:translateY(-2px);
 }
 
-@keyframes slideBracket{
-    from{
-        opacity:0;
-        transform:translateX(-20px);
-    }
+/* TITULOS */
 
-    to{
-        opacity:1;
-        transform:translateX(0);
-    }
+.round-column h3{
+
+    text-align:center;
+
+    color:#00ffb3;
+
+    margin-bottom:18px;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    font-weight:800;
 }
 
 /* EQUIPOS */
 
 .team-btn{
+
     position:relative;
+
     overflow:hidden;
 
-    padding:10px 12px;
-
-    min-height:42px;
-
     display:flex;
+
     align-items:center;
+
+    min-height:44px;
+
+    padding:10px 12px;
 
     cursor:pointer;
 
     color:#e5e7eb;
 
-    font-weight:600;
-
     font-size:13px;
+
+    font-weight:700;
 
     border-bottom:1px solid rgba(255,255,255,.05);
 
-    transition:.2s;
+    transition:.25s;
+
+    user-select:none;
+
+    -webkit-tap-highlight-color:transparent;
 }
 
 .team-btn:last-child{
@@ -1549,98 +1594,67 @@ SIMULATOR ESPN PRO
 }
 
 .team-btn:hover{
-    background:#00ffb3;
-    color:#000;
 
-    transform:translateX(4px);
+    background:#00ffb3;
+
+    color:#000;
 
     box-shadow:
         0 0 15px rgba(0,255,179,.35);
 }
 
-/* SELECCIONADO */
+/* GANADOR */
 
 .team-btn.selected{
 
-    background:linear-gradient(
-        90deg,
-        #00ffb3,
-        #00d68f
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #00ffb3,
+            #00d68f
+        );
 
     color:#00140d;
 
     font-weight:900;
 
-    transform:scale(1.03);
-
     box-shadow:
         0 0 18px rgba(0,255,179,.7);
-
-    animation:selectedPulse 1.2s infinite;
-}
-
-@keyframes selectedPulse{
-
-    0%{
-        box-shadow:0 0 10px rgba(0,255,179,.3);
-    }
-
-    50%{
-        box-shadow:0 0 25px rgba(0,255,179,.8);
-    }
-
-    100%{
-        box-shadow:0 0 10px rgba(0,255,179,.3);
-    }
-}
-
-/* GANADOR */
-
-.winner-flash{
-    animation:winnerPulse .6s ease;
-}
-
-@keyframes winnerPulse{
-
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.06);
-    }
-
-    100%{
-        transform:scale(1);
-    }
 }
 
 /* CENTRO */
 
 .bracket-center{
 
-    min-width:280px;
+    min-width:300px;
 
-    background:rgba(0,255,179,.05);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,255,179,.08),
+            rgba(255,215,0,.08)
+        );
 
-    border:1px solid rgba(0,255,179,.15);
+    border:1px solid rgba(255,255,255,.12);
 
-    border-radius:18px;
+    border-radius:22px;
 
-    padding:25px;
+    padding:28px;
 
     display:flex;
     flex-direction:column;
     align-items:center;
     gap:18px;
+
+    box-shadow:
+        0 0 40px rgba(0,255,179,.15);
 }
 
 /* TROFEO */
 
 .trophy{
 
-    font-size:72px;
+    font-size:80px;
 
     animation:
         floatCup 3s ease-in-out infinite,
@@ -1648,30 +1662,18 @@ SIMULATOR ESPN PRO
 }
 
 @keyframes floatCup{
-
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
 }
 
 @keyframes glowCup{
-
     0%{
         filter:drop-shadow(0 0 0 gold);
     }
-
     50%{
-        filter:drop-shadow(0 0 20px gold);
+        filter:drop-shadow(0 0 25px gold);
     }
-
     100%{
         filter:drop-shadow(0 0 0 gold);
     }
@@ -1700,39 +1702,135 @@ SIMULATOR ESPN PRO
 
 .final-box:hover{
 
-    transform:scale(1.04);
+    transform:scale(1.03);
 
     box-shadow:
         0 0 20px rgba(255,215,0,.35);
-    }
+}
+
+/* TERCER PUESTO */
+
+.third-place-box{
+
+    width:240px;
+
+    margin-top:12px;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.third-place-box h4{
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+    color:#cd7f32;
+}
+
+.third-winner{
+
+    margin-top:10px;
+
+    text-align:center;
+
+    color:#cd7f32;
+
+    font-weight:800;
 }
 
 /* CAMPEON */
 
 .champion-box{
 
-    width:240px;
+    width:260px;
 
-    padding:18px;
+    padding:22px;
 
-    border-radius:16px;
+    border-radius:18px;
 
-    background:linear-gradient(
-        135deg,
-        #ffd700,
-        #ffb800
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ffd700,
+            #ffb800,
+            #fff1a0
+        );
 
     color:#000;
 
-    font-size:18px;
+    font-size:22px;
 
     font-weight:900;
 
     text-align:center;
 
     box-shadow:
-        0 0 25px rgba(255,215,0,.35);
+        0 0 35px rgba(255,215,0,.6);
+
+    animation:championGlow 2s infinite;
+}
+
+@keyframes championGlow{
+
+    0%{
+        box-shadow:0 0 15px rgba(255,215,0,.3);
+    }
+
+    50%{
+        box-shadow:0 0 45px rgba(255,215,0,.9);
+    }
+
+    100%{
+        box-shadow:0 0 15px rgba(255,215,0,.3);
+    }
+}
+
+/* CONFETTI */
+
+.champion-celebration{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:99999;
+}
+
+.confetti{
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    animation:
+        fallConfetti 4s linear forwards;
+}
+
+@keyframes fallConfetti{
+
+    from{
+        transform:
+            translateY(-40px)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
 }
 
 /* MOBILE */
@@ -1759,11 +1857,11 @@ SIMULATOR ESPN PRO
     }
 
     .trophy{
-        font-size:56px;
+        font-size:60px;
     }
 
     .champion-box{
-        width:200px;
-        font-size:15px;
+        width:220px;
+        font-size:16px;
     }
 }
