@@ -215,46 +215,50 @@ function render(containerId, date) {
 
     const share = getShareLinks(m);
 
+    const goals = (m.goals && Array.isArray(m.goals)) ? m.goals : [];
+    const redCards = (m.redCards && Array.isArray(m.redCards)) ? m.redCards : [];
+    const links = (m.links && Array.isArray(m.links)) ? m.links : [];
+
     return `
     <div class="match-card">
 
-        <div class="match-status ${m.status.toLowerCase()}">
-            ${m.status}
+        <div class="match-status ${m.status ? m.status.toLowerCase() : ''}">
+            ${m.status || ""}
         </div>
 
         <div class="group-label">
-            GRUPO ${m.group}
+            GRUPO ${m.group || ""}
         </div>
 
         <div class="match-header">
 
             <div class="team">
                 <img src="${flagUrl(m.flag1)}" class="flag">
-                <span>${m.team1}</span>
+                <span>${m.team1 || ""}</span>
             </div>
 
             <div class="score">
-                ${m.homeScore} - ${m.awayScore}
+                ${m.homeScore ?? 0} - ${m.awayScore ?? 0}
             </div>
 
             <div class="team">
-                <span>${m.team2}</span>
+                <span>${m.team2 || ""}</span>
                 <img src="${flagUrl(m.flag2)}" class="flag">
             </div>
 
         </div>
 
         <div class="match-footer">
-            🏟 ${m.stadium} • ${m.city} <br>
+            🏟 ${m.stadium || ""} • ${m.city || ""} <br>
             🕒 ${m.timeAR || "-"}
         </div>
 
-        ${(m.goals?.length || m.redCards?.length || m.links?.length) ? `
+        ${(goals.length || redCards.length || links.length) ? `
         <div class="match-extra">
 
-            ${m.goals?.length ? `
+            ${goals.length ? `
             <div class="goals">
-                ${m.goals.map(g => `
+                ${goals.map(g => `
                     <div class="event goal">
                         ⚽ ${g.player} (${g.minute}')
                     </div>
@@ -262,9 +266,9 @@ function render(containerId, date) {
             </div>
             ` : ""}
 
-            ${m.redCards?.length ? `
+            ${redCards.length ? `
             <div class="redcards">
-                ${m.redCards.map(r => `
+                ${redCards.map(r => `
                     <div class="event red">
                         🟥 ${r.player} (${r.minute}')
                     </div>
@@ -272,11 +276,11 @@ function render(containerId, date) {
             </div>
             ` : ""}
 
-            ${m.links?.length ? `
+            ${links.length ? `
             <div class="match-links-extra">
-                ${m.links.map(l => `
+                ${links.map(l => `
                     <a href="${l.url}" target="_blank">
-                        <img src="${l.logo || ''}" alt="${l.name || 'link'}">
+                        ${l.logo ? `<img src="${l.logo}" alt="">` : ""}
                         ${l.name || "Link"}
                     </a>
                 `).join("")}
