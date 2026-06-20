@@ -567,7 +567,8 @@ window.advanceTeam = function(round, matchIndex, teamIndex){
 
     if(round === 32){
 
-        winner = Knockout.r32[matchIndex][teamIndex];
+        winner = Knockout.r32?.[matchIndex]?.[teamIndex];
+        if (!winner || winner === "TBD") return;
 
         const slot = Math.floor(matchIndex / 2);
 
@@ -586,6 +587,7 @@ window.advanceTeam = function(round, matchIndex, teamIndex){
     renderKnockout();
 };
 
+
 window.advanceKnockoutWinner = function(round, match, side){
 
     let winner;
@@ -594,8 +596,10 @@ window.advanceKnockoutWinner = function(round, match, side){
     if(round === 16){
 
         winner = side === 0
-            ? Knockout.r16[match*2]
-            : Knockout.r16[match*2+1];
+            ? Knockout.r16?.[match*2]
+            : Knockout.r16?.[match*2+1];
+
+        if (!winner || winner === "TBD") return;
 
         Knockout.qf[match] = winner;
 
@@ -608,8 +612,10 @@ window.advanceKnockoutWinner = function(round, match, side){
     else if(round === 8){
 
         winner = side === 0
-            ? Knockout.qf[match*2]
-            : Knockout.qf[match*2+1];
+            ? Knockout.qf?.[match*2]
+            : Knockout.qf?.[match*2+1];
+
+        if (!winner || winner === "TBD") return;
 
         const semiSlot = Math.floor(match / 2);
 
@@ -627,8 +633,10 @@ window.advanceKnockoutWinner = function(round, match, side){
     else if(round === 4){
 
         winner = side === 0
-            ? Knockout.sf[match*2]
-            : Knockout.sf[match*2+1];
+            ? Knockout.sf?.[match*2]
+            : Knockout.sf?.[match*2+1];
+
+        if (!winner || winner === "TBD") return;
 
         Knockout.final[match] = winner;
 
@@ -639,10 +647,17 @@ window.advanceKnockoutWinner = function(round, match, side){
     else if(round === 2){
 
         winner = side === 0
-            ? Knockout.final[0]
-            : Knockout.final[1];
+            ? Knockout.final?.[0]
+            : Knockout.final?.[1];
+
+        if (!winner || winner === "TBD") return;
 
         Knockout.champion = winner;
+
+        if (!championCelebrated) {
+            championCelebrated = true;
+            launchConfetti();
+        }
     }
 
     renderKnockout();
