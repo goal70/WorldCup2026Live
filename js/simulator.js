@@ -423,14 +423,14 @@ function renderKnockout() {
 <div class="match-box">
 
     <div class="team-btn selectable"
-         onclick="advanceKnockoutWinner(16,${i},0)">
-        ${Knockout.r16[i*2] || ""}
-    </div>
+     onclick="advanceKnockoutWinner(16,${i},0)">
+    ${Knockout.r16[i*2] || ""}
+</div>
 
-    <div class="team-btn selectable"
-         onclick="advanceKnockoutWinner(16,${i},1)">
-        ${Knockout.r16[i*2+1] || ""}
-    </div>
+<div class="team-btn selectable"
+     onclick="advanceKnockoutWinner(16,${i},1)">
+    ${Knockout.r16[i*2+1] || ""}
+</div>
 
 </div>
 `).join("")}
@@ -443,15 +443,19 @@ function renderKnockout() {
             ${Array.from({length:4}).map((_,i)=>`
                 <div class="match-box">
 
-                    <div class="team-btn selectable"
-                         onclick="${Knockout.qf[i*2] ? `advanceTeam(8,${i*2})` : ''}">
-                        ${Knockout.qf[i*2] || ""}
-                    </div>
+                   <div class="team-btn selectable"
+     onclick="${Knockout.qf[i*2]
+        ? `advanceKnockoutWinner(8,${i},0)`
+        : ''}">
+    ${Knockout.qf[i*2] || ""}
+</div>
 
-                    <div class="team-btn selectable"
-                         onclick="${Knockout.qf[i*2+1] ? `advanceTeam(8,${i*2+1})` : ''}">
-                        ${Knockout.qf[i*2+1] || ""}
-                    </div>
+<div class="team-btn selectable"
+     onclick="${Knockout.qf[i*2+1]
+        ? `advanceKnockoutWinner(8,${i},1)`
+        : ''}">
+    ${Knockout.qf[i*2+1] || ""}
+</div>
 
                 </div>
             `).join("")}
@@ -465,15 +469,18 @@ function renderKnockout() {
                 <div class="match-box">
 
                     <div class="team-btn selectable"
-                         onclick="${Knockout.sf[i*2] ? `advanceTeam(4,${i*2})` : ''}">
-                        ${Knockout.sf[i*2] || ""}
-                    </div>
+     onclick="${Knockout.sf[i*2]
+        ? `advanceKnockoutWinner(4,${i},0)`
+        : ''}">
+    ${Knockout.sf[i*2] || ""}
+</div>
 
-                    <div class="team-btn selectable"
-                         onclick="${Knockout.sf[i*2+1] ? `advanceTeam(4,${i*2+1})` : ''}">
-                        ${Knockout.sf[i*2+1] || ""}
-                    </div>
-
+<div class="team-btn selectable"
+     onclick="${Knockout.sf[i*2+1]
+        ? `advanceKnockoutWinner(4,${i},1)`
+        : ''}">
+    ${Knockout.sf[i*2+1] || ""}
+</div>
                 </div>
             `).join("")}
         </div>
@@ -484,14 +491,18 @@ function renderKnockout() {
             <div class="trophy">🏆</div>
 
             <div class="final-box selectable"
-                 onclick="${Knockout.final[0] ? `advanceTeam(2,0)` : ''}">
-                ${Knockout.final[0] || "FINALIST"}
-            </div>
+     onclick="${Knockout.final[0]
+        ? `advanceKnockoutWinner(2,0,0)`
+        : ''}">
+    ${Knockout.final[0] || "FINALIST"}
+</div>
 
-            <div class="final-box selectable"
-                 onclick="${Knockout.final[1] ? `advanceTeam(2,1)` : ''}">
-                ${Knockout.final[1] || "FINALIST"}
-            </div>
+<div class="final-box selectable"
+     onclick="${Knockout.final[1]
+        ? `advanceKnockoutWinner(2,0,1)`
+        : ''}">
+    ${Knockout.final[1] || "FINALIST"}
+</div>
 
             <div class="champion-box">
                 ${Knockout.champion || "WORLD CHAMPION"}
@@ -510,7 +521,6 @@ window.advanceTeam = function(round, matchIndex, teamIndex){
 
     let winner;
 
-    /* ROUND OF 32 → ROUND OF 16 */
     if(round === 32){
 
         winner = Knockout.r32[matchIndex][teamIndex];
@@ -523,70 +533,10 @@ window.advanceTeam = function(round, matchIndex, teamIndex){
             Knockout.r16[slot*2+1] = winner;
         }
 
-        /* limpia rondas posteriores */
         Knockout.qf.fill(null);
         Knockout.sf.fill(null);
         Knockout.final.fill(null);
         Knockout.champion = "";
-    }
-
-    /* ROUND OF 16 → QUARTERS */
-    else if(round === 16){
-
-    winner = Knockout.r16[matchIndex];
-
-    const quarterMatch = Math.floor(matchIndex / 2);
-
-    const slot = quarterMatch * 2;
-
-    if(matchIndex % 2 === 0){
-        Knockout.qf[slot] = winner;
-    }else{
-        Knockout.qf[slot + 1] = winner;
-    }
-
-    Knockout.sf.fill(null);
-    Knockout.final.fill(null);
-    Knockout.champion = "";
-}
-
-    /* QUARTERS → SEMI */
-    else if(round === 8){
-
-    winner = Knockout.qf[matchIndex];
-
-    const semiMatch = Math.floor(matchIndex / 2);
-
-    if(matchIndex % 2 === 0){
-        Knockout.sf[semiMatch * 2] = winner;
-    }else{
-        Knockout.sf[semiMatch * 2 + 1] = winner;
-    }
-
-    Knockout.final.fill(null);
-    Knockout.champion = "";
-}
-
-    /* SEMI → FINAL */
-    else if(round === 4){
-
-    winner = Knockout.sf[matchIndex];
-
-    if(matchIndex % 2 === 0){
-        Knockout.final[0] = winner;
-    }else{
-        Knockout.final[1] = winner;
-    }
-
-    Knockout.champion = "";
-}
-
-    /* FINAL → CHAMPION */
-    else if(round === 2){
-
-        winner = Knockout.final[matchIndex];
-
-        Knockout.champion = winner;
     }
 
     renderKnockout();
@@ -596,33 +546,40 @@ window.advanceKnockoutWinner = function(round, match, side){
 
     let winner;
 
+    /* OCTAVOS → CUARTOS */
     if(round === 16){
 
         winner = side === 0
             ? Knockout.r16[match*2]
             : Knockout.r16[match*2+1];
 
-        Knockout.qf[match*2] = winner;
-        Knockout.qf[match*2+1] = null;
+        Knockout.qf[match] = winner;
 
         Knockout.sf.fill(null);
         Knockout.final.fill(null);
         Knockout.champion = "";
     }
 
+    /* CUARTOS → SEMI */
     else if(round === 8){
 
         winner = side === 0
             ? Knockout.qf[match*2]
             : Knockout.qf[match*2+1];
 
-        Knockout.sf[match*2] = winner;
-        Knockout.sf[match*2+1] = null;
+        const semiSlot = Math.floor(match / 2);
+
+        if(match % 2 === 0){
+            Knockout.sf[semiSlot * 2] = winner;
+        }else{
+            Knockout.sf[semiSlot * 2 + 1] = winner;
+        }
 
         Knockout.final.fill(null);
         Knockout.champion = "";
     }
 
+    /* SEMI → FINAL */
     else if(round === 4){
 
         winner = side === 0
@@ -634,6 +591,7 @@ window.advanceKnockoutWinner = function(round, match, side){
         Knockout.champion = "";
     }
 
+    /* FINAL → CAMPEÓN */
     else if(round === 2){
 
         winner = side === 0
@@ -644,4 +602,4 @@ window.advanceKnockoutWinner = function(round, match, side){
     }
 
     renderKnockout();
-}
+};
