@@ -1682,8 +1682,124 @@ SIMULATOR ESPN PRO
 }
 
 /*************************************************
-  WORLD GOAL 2026 - UI FIXED
+  WORLD GOAL 2026 - UI FINAL FIX
 *************************************************/
+
+/* =========================
+   GLOBAL SAFETY RESET
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* =========================
+   MATCH GRID SAFE
+========================= */
+
+.matches-grid{
+    display:grid;
+    gap:15px;
+}
+
+/* =========================
+   MATCH CARD FIX
+========================= */
+
+.match-card{
+    position:relative;
+    overflow:hidden;
+}
+
+/* evita desbordes visuales de contenido */
+.match-footer,
+.match-links,
+.share-buttons{
+    width:100%;
+}
+
+/* =========================
+   SHARE BOX (HEADER)
+========================= */
+
+header .share-box{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    margin:10px 0;
+    position:relative;
+    z-index:10;
+}
+
+/* fallback seguro */
+.share-box{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* =========================
+   SHARE BUTTONS (HEADER)
+========================= */
+
+.share-btn{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    flex-shrink:0;
+    transition:transform 0.2s ease;
+}
+
+.share-btn:hover{
+    transform:scale(1.1);
+}
+
+/* COLORES */
+.whatsapp{background:#25D366;}
+.twitter{background:#000;}
+.facebook{background:#1877F2;}
+.reddit{background:#FF4500;}
+.threads{background:#111;}
+.quora{background:#B92B27;}
+
+/* =========================
+   SHARE BUTTONS (MATCH CARDS)
+========================= */
+
+.share-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:12px;
+}
+
+/* =========================
+   NAV BUTTONS
+========================= */
+
+.day-btn{
+    cursor:pointer;
+    transition:0.2s ease;
+}
+
+.day-btn.active{
+    transform:scale(1.05);
+}
 
 /* =========================
    RESPONSIVE BRACKET
@@ -1718,110 +1834,4 @@ SIMULATOR ESPN PRO
         width:220px;
         font-size:16px;
     }
-}
-
-/* =========================
-   SHARE BOX (HEADER)
-========================= */
-
-header .share-box{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    margin:10px 0;
-    position:relative;
-    z-index:10;
-}
-
-/* reset seguro para evitar conflictos globales */
-.share-box{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-}
-
-/* =========================
-   SHARE BUTTONS
-========================= */
-
-.share-btn{
-    width:40px;
-    height:40px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:10px;
-    color:#fff;
-    text-decoration:none;
-    font-size:20px;
-    flex-shrink:0;
-    transition:transform 0.2s ease;
-}
-
-.share-btn:hover{
-    transform:scale(1.1);
-}
-
-/* COLORES */
-.whatsapp{background:#25D366;}
-.twitter{background:#000;}
-.facebook{background:#1877F2;}
-.reddit{background:#FF4500;}
-.threads{background:#111;}
-.quora{background:#B92B27;}
-
-/* =========================
-   MATCH CARD FIX (IMPORTANTE)
-========================= */
-
-.match-card{
-    position:relative;
-    overflow:hidden;
-}
-
-/* evita que los botones se “salgan visualmente” */
-.share-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-top:12px;
-}
-
-/* =========================
-   MATCH GRID SAFE
-========================= */
-
-.matches-grid{
-    display:grid;
-    gap:15px;
-}
-
-/* =========================
-   ACTIVE / NAV BUTTONS (si usas day-btn)
-========================= */
-
-.day-btn{
-    cursor:pointer;
-    transition:0.2s ease;
-}
-
-.day-btn.active{
-    transform:scale(1.05);
-}
-
-/* =========================
-   SAFETY RESET (EVITA BUGS VISUALES)
-========================= */
-
-*{
-    box-sizing:border-box;
-}
-
-img{
-    max-width:100%;
-    display:block;
 }
