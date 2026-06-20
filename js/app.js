@@ -1,16 +1,19 @@
 /*************************************************
  * WORLD GOAL 2026 - ENTERPRISE APP ENGINE
- * SHARE SYSTEM + FIXED VERSION
+ * FIXED + CLEAN VERSION
  *************************************************/
 
 let allMatches = [];
+
+/* =========================
+   INIT
+========================= */
 
 document.addEventListener("DOMContentLoaded", async () => {
     await loadMatches();
     setupNavigation();
     renderTables();
-
-    setShareHome(); // 👈 ESTO ES LO QUE TE FALTABA
+    setShareHome();
 });
 
 /* =========================
@@ -27,14 +30,11 @@ function flagUrl(code) {
 ========================= */
 
 async function loadMatches() {
-
     try {
-
         const groups = ["a","b","c","d","e","f","g","h","i","j","k","l"];
         allMatches = [];
 
         for (const group of groups) {
-
             const res = await fetch(`data/groups/groups-${group}.json`);
 
             if (!res.ok) {
@@ -94,13 +94,12 @@ function getLocalDate(offset = 0) {
    FILTERS
 ========================= */
 
-function showToday(){ render("todayMatches", getLocalDate(0)); renderTables(); }
-function showYesterday(){ render("yesterdayMatches", getLocalDate(-1)); renderTables(); }
-function showTomorrow(){ render("tomorrowMatches", getLocalDate(1)); renderTables(); }
+function showToday(){ render("todayMatches", getLocalDate(0)); }
+function showYesterday(){ render("yesterdayMatches", getLocalDate(-1)); }
+function showTomorrow(){ render("tomorrowMatches", getLocalDate(1)); }
 
 function showCustomDate(date){
     render("customDateMatches", date);
-    renderTables();
 }
 
 /* =========================
@@ -130,34 +129,20 @@ function setupNavigation() {
         showTomorrow();
     });
 
-    bind("prevDateBtn", () => {
-        setActive("prevDateBtn");
-        showCustomDate("2026-06-11");
-    });
+    const customDays = [
+        "2026-06-11",
+        "2026-06-12",
+        "2026-06-13",
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16"
+    ];
 
-    bind("prevDateBtn2", () => {
-        setActive("prevDateBtn2");
-        showCustomDate("2026-06-12");
-    });
-
-    bind("prevDateBtn3", () => {
-        setActive("prevDateBtn3");
-        showCustomDate("2026-06-13");
-    });
-
-    bind("prevDateBtn4", () => {
-        setActive("prevDateBtn4");
-        showCustomDate("2026-06-14");
-    });
-
-    bind("prevDateBtn5", () => {
-        setActive("prevDateBtn5");
-        showCustomDate("2026-06-15");
-    });
-
-    bind("prevDateBtn6", () => {
-        setActive("prevDateBtn6");
-        showCustomDate("2026-06-16");
+    customDays.forEach((date, i) => {
+        bind(`prevDateBtn${i ? i+1 : ""}`, () => {
+            setActive(`prevDateBtn${i ? i+1 : ""}`);
+            showCustomDate(date);
+        });
     });
 }
 
@@ -173,13 +158,12 @@ function setActive(id) {
 }
 
 /* =========================
-   SHARE SYSTEM
+   SHARE SYSTEM (MATCH)
 ========================= */
 
 function getShareLinks(match) {
 
     const text = `⚽ ${match.team1} ${match.homeScore ?? 0} - ${match.awayScore ?? 0} ${match.team2} | World Goal 2026`;
-
     const url = window.location.href;
 
     return {
@@ -241,18 +225,6 @@ function render(containerId, date) {
         const homeGoals = (m.goals || []).filter(g => g.team === "home");
         const awayGoals = (m.goals || []).filter(g => g.team === "away");
 
-        const homeGoalsHTML = homeGoals.map(g => `
-            <div class="goal left">
-                ⚽ ${g.player} <span class="minute">${g.minute}</span>
-            </div>
-        `).join("");
-
-        const awayGoalsHTML = awayGoals.map(g => `
-            <div class="goal right">
-                <span class="minute">${g.minute}</span> ${g.player} ⚽
-            </div>
-        `).join("");
-
         return `
         <div class="match-card">
 
@@ -260,7 +232,7 @@ function render(containerId, date) {
                 ${m.status}
             </div>
 
-            <div style="text-align:center;font-weight:900;color:#00D26A;margin-bottom:6px;">
+            <div class="group-label">
                 GRUPO ${m.group}
             </div>
 
@@ -282,11 +254,6 @@ function render(containerId, date) {
 
             </div>
 
-            <div class="events">
-                <div class="events-column left">${homeGoalsHTML}</div>
-                <div class="events-column right">${awayGoalsHTML}</div>
-            </div>
-
             <div class="match-footer">
                 🏟 ${m.stadium} • ${m.city} <br>
                 🕒 ${m.timeAR || "-"}
@@ -296,9 +263,7 @@ function render(containerId, date) {
                 ${linksHTML}
             </div>
 
-            <!-- SHARE BUTTONS -->
             <div class="share-buttons">
-
                 <a target="_blank" href="${share.whatsapp}">WhatsApp</a>
                 <a target="_blank" href="${share.twitter}">Twitter</a>
                 <a target="_blank" href="${share.facebook}">Facebook</a>
@@ -306,7 +271,6 @@ function render(containerId, date) {
                 <a target="_blank" href="${share.threads}">Threads</a>
                 <a target="_blank" href="${share.quora}">Quora</a>
                 <a target="_blank" href="${share.youtube}">YouTube</a>
-
             </div>
 
         </div>
@@ -323,7 +287,6 @@ function buildTables() {
     const tables = {};
 
     allMatches.forEach(m => {
-
         if (!tables[m.group]) tables[m.group] = {};
 
         [m.team1, m.team2].forEach(team => {
@@ -424,35 +387,6 @@ function renderTables() {
     }).join("");
 }
 
-function setShareLinks() {
-
-    const url = window.location.href;
-    const text = "⚽ World Goal 2026 - Live Matches";
-
-    const encodedUrl = encodeURIComponent(url);
-    const encodedText = encodeURIComponent(text);
-
-    document.getElementById("share-wa").href =
-        `https://wa.me/?text=${encodedText}%20${encodedUrl}`;
-
-    document.getElementById("share-tw").href =
-        `https://twitter.com/intent/tweet?text=${encodedText}%20${encodedUrl}`;
-
-    document.getElementById("share-fb").href =
-        `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-
-    document.getElementById("share-re").href =
-        `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedText}`;
-
-    document.getElementById("share-th").href =
-        `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
-
-    document.getElementById("share-qu").href =
-        `https://www.quora.com/share?url=${encodedUrl}`;
-}
-
-document.addEventListener("DOMContentLoaded", setShareLinks);
-
 /* =========================
    SHARE HOME
 ========================= */
@@ -466,36 +400,18 @@ function setShareHome() {
     const th = document.getElementById("share-th");
     const qu = document.getElementById("share-qu");
 
-    if(!wa || !tw || !fb || !re || !th) return;
+    if (!wa || !tw || !fb || !re || !th) return;
 
     const url = window.location.href;
     const text = "⚽ World Goal 2026 - Live Matches";
 
-    wa.href =
-        `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
+    wa.href = `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
+    tw.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + " " + url)}`;
+    fb.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+    re.href = `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`;
+    th.href = `https://www.threads.net/intent/post?text=${encodeURIComponent(text + " " + url)}`;
 
-    tw.href =
-        `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + " " + url)}`;
-
-    fb.href =
-        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-
-    re.href =
-        `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`;
-
-    th.href =
-        `https://www.threads.net/intent/post?text=${encodeURIComponent(text + " " + url)}`;
-
-    if(qu){
-        qu.href =
-            `https://www.quora.com/share?url=${encodeURIComponent(url)}`;
+    if (qu) {
+        qu.href = `https://www.quora.com/share?url=${encodeURIComponent(url)}`;
     }
 }
-
-/* =========================
-   INIT SHARE
-========================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-    setShareHome();
-});
