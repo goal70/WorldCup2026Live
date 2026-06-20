@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadMatches();
     setupNavigation();
     renderTables();
+
+    setShareHome(); // 👈 ESTO ES LO QUE TE FALTABA
 });
 
 /* =========================
