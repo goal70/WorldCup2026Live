@@ -1681,8 +1681,12 @@ SIMULATOR ESPN PRO
     to{transform:translateY(110vh) rotate(720deg);}
 }
 
+/*************************************************
+  WORLD GOAL 2026 - UI FIXED
+*************************************************/
+
 /* =========================
-   RESPONSIVE
+   RESPONSIVE BRACKET
 ========================= */
 
 @media(max-width:900px){
@@ -1697,7 +1701,7 @@ SIMULATOR ESPN PRO
     .quarter,
     .semi{
         width:180px;
-        margin-top:0; /* 🔥 evita ruptura móvil */
+        margin-top:0;
     }
 
     .team-btn{
@@ -1715,15 +1719,35 @@ SIMULATOR ESPN PRO
         font-size:16px;
     }
 }
+
+/* =========================
+   SHARE BOX (HEADER)
+========================= */
+
+header .share-box{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    margin:10px 0;
+    position:relative;
+    z-index:10;
+}
+
+/* reset seguro para evitar conflictos globales */
 .share-box{
     display:flex;
     gap:10px;
     justify-content:center;
+    align-items:center;
     flex-wrap:wrap;
-    margin:10px 0;
 }
 
-/* BOTONES */
+/* =========================
+   SHARE BUTTONS
+========================= */
+
 .share-btn{
     width:40px;
     height:40px;
@@ -1734,6 +1758,12 @@ SIMULATOR ESPN PRO
     color:#fff;
     text-decoration:none;
     font-size:20px;
+    flex-shrink:0;
+    transition:transform 0.2s ease;
+}
+
+.share-btn:hover{
+    transform:scale(1.1);
 }
 
 /* COLORES */
@@ -1743,3 +1773,55 @@ SIMULATOR ESPN PRO
 .reddit{background:#FF4500;}
 .threads{background:#111;}
 .quora{background:#B92B27;}
+
+/* =========================
+   MATCH CARD FIX (IMPORTANTE)
+========================= */
+
+.match-card{
+    position:relative;
+    overflow:hidden;
+}
+
+/* evita que los botones se “salgan visualmente” */
+.share-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:12px;
+}
+
+/* =========================
+   MATCH GRID SAFE
+========================= */
+
+.matches-grid{
+    display:grid;
+    gap:15px;
+}
+
+/* =========================
+   ACTIVE / NAV BUTTONS (si usas day-btn)
+========================= */
+
+.day-btn{
+    cursor:pointer;
+    transition:0.2s ease;
+}
+
+.day-btn.active{
+    transform:scale(1.05);
+}
+
+/* =========================
+   SAFETY RESET (EVITA BUGS VISUALES)
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
