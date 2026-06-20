@@ -18,6 +18,8 @@ World Cup 2026 Fixtures
 rel="stylesheet"
 href="../css/styles.css"
 />
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- MONETAG IN-PAGE PUSH -->
 <script>
@@ -43,20 +45,34 @@ href="../css/styles.css"
 
         <div class="header-inner">
 
-            <div class="logo">
-                WORLD <span>GOAL</span> 2026
-            </div>
+            <a href="../index.html" class="logo">
+    WORLD <span>GOAL</span> 2026
+</a>
 
             <!-- 🔥 SHARE BUTTONS -->
     <div class="share-box">
 
-        <a class="share-btn whatsapp" id="share-wa" target="_blank">🟢</a>
-        <a class="share-btn twitter" id="share-tw" target="_blank">𝕏</a>
-        <a class="share-btn facebook" id="share-fb" target="_blank">f</a>
-        <a class="share-btn reddit" id="share-re" target="_blank">r</a>
-        <a class="share-btn threads" id="share-th" target="_blank">@</a>
+    <a class="share-btn whatsapp" id="share-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    </div>
+    <a class="share-btn twitter" id="share-tw" target="_blank">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <a class="share-btn facebook" id="share-fb" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a class="share-btn reddit" id="share-re" target="_blank">
+        <i class="fab fa-reddit-alien"></i>
+    </a>
+
+    <a class="share-btn threads" id="share-th" target="_blank">
+        <i class="fa-brands fa-threads"></i>
+    </a>
+
+</div>
             
             <nav>
 
@@ -66,7 +82,7 @@ href="../css/styles.css"
 
                 <!-- FIX: corregido nombre del archivo -->
                 <a
-                href="fixture.html"
+                href="fixtures.html"
                 class="active">
                     Fixtures
                 </a>
@@ -134,22 +150,46 @@ href="../css/styles.css"
 </div>
 
 <!-- =========================
-     SOCIAL BAR (FIXED VERSION)
+     SOCIAL BAR / ADS SYSTEM
 ========================= -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    const script = document.createElement("script");
-    script.src = "https://pl29727722.effectivecpmnetwork.com/4f/4a/ff/4f4affad81da3060c84e588a26bb60f2.js";
-    script.async = true;
+    const socialBar = document.createElement("script");
+    socialBar.src = "https://pl29727722.effectivecpmnetwork.com/4f/4a/ff/4f4affad81da3060c84e588a26bb60f2.js";
+    socialBar.async = true;
 
-    document.body.appendChild(script);
+    document.body.appendChild(socialBar);
+
+});
+</script>
+
+<!-- SHARE FIXTURES -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent("⚽ World Goal 2026 - Fixtures");
+
+    document.getElementById("share-wa").href =
+        `https://wa.me/?text=${text}%20${url}`;
+
+    document.getElementById("share-tw").href =
+        `https://twitter.com/intent/tweet?text=${text}%20${url}`;
+
+    document.getElementById("share-fb").href =
+        `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+
+    document.getElementById("share-re").href =
+        `https://www.reddit.com/submit?url=${url}&title=${text}`;
+
+    document.getElementById("share-th").href =
+        `https://www.threads.net/intent/post?text=${text}%20${url}`;
 
 });
 </script>
 
 <script src="../js/fixtures.js"></script>
-<!-- <script src="../js/live.js"></script> -->
 
 </body>
 </html>
