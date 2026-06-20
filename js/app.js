@@ -421,3 +421,27 @@ function renderTables() {
         `;
     }).join("");
 }
+
+function setShareHome() {
+
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent("⚽ World Goal 2026 - Live Matches");
+
+    document.getElementById("share-wa").href =
+        `https://wa.me/?text=${text}%20${url}`;
+
+    document.getElementById("share-tw").href =
+        `https://twitter.com/intent/tweet?text=${text}%20${url}`;
+
+    document.getElementById("share-fb").href =
+        `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+
+    document.getElementById("share-re").href =
+        `https://www.reddit.com/submit?url=${url}&title=${text}`;
+
+    document.getElementById("share-th").href =
+        `https://www.threads.net/intent/post?text=${text}%20${url}`;
+
+    document.getElementById("share-qu").href =
+        `https://www.quora.com/share?url=${url}`;
+}
