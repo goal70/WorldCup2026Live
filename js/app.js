@@ -254,16 +254,6 @@ function render(containerId, date) {
                 🕒 ${m.timeAR || "-"}
             </div>
 
-            <div class="share-buttons">
-                <a target="_blank" href="${share.whatsapp}">WhatsApp</a>
-                <a target="_blank" href="${share.twitter}">Twitter</a>
-                <a target="_blank" href="${share.facebook}">Facebook</a>
-                <a target="_blank" href="${share.reddit}">Reddit</a>
-                <a target="_blank" href="${share.threads}">Threads</a>
-                <a target="_blank" href="${share.quora}">Quora</a>
-                <a target="_blank" href="${share.youtube}">YouTube</a>
-            </div>
-
         </div>
         `;
     }).join("");
