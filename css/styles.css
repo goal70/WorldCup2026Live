@@ -1390,21 +1390,19 @@ SIMULATOR ESPN PRO
 
 .worldcup-bracket{
     display:flex;
-    align-items:flex-start;
-    justify-content:center;
-    gap:24px;
+    align-items:center; /* 🔥 CLAVE PIRÁMIDE */
+    justify-content:flex-start;
+    gap:26px;
     padding:30px;
+
     overflow-x:auto;
-    width: max-content;
+    width:max-content;
     min-width:100%;
+
     position:relative;
 
     background:
-        radial-gradient(
-            circle at center,
-            rgba(0,255,179,.05),
-            transparent 70%
-        );
+        radial-gradient(circle at center, rgba(0,255,179,.05), transparent 70%);
 }
 
 /* GLOW AMBIENT */
@@ -1415,11 +1413,7 @@ SIMULATOR ESPN PRO
     pointer-events:none;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(0,255,179,.08),
-            transparent 75%
-        );
+        radial-gradient(circle, rgba(0,255,179,.08), transparent 75%);
 
     animation:ambientGlow 8s ease infinite;
 }
@@ -1431,44 +1425,22 @@ SIMULATOR ESPN PRO
 }
 
 /* =========================
-   COLUMNAS
+   COLUMNAS (PIRÁMIDE REAL)
 ========================= */
 
 .round-column{
     display:flex;
     flex-direction:column;
+    justify-content:center; /* 🔥 centra vertical */
     position:relative;
+    gap:18px;
 }
 
+/* progresión visual tipo bracket */
 .round32{ width:220px; }
-.round16{ width:210px; }
-.quarter{ width:200px; }
-.semi{ width:190px; }
-
-/* spacing uniforme (FIX IMPORTANTE) */
-.round-column .match-box{
-    margin-bottom:18px;
-}
-
-/* =========================
-   CONECTORES (FIX PRO)
-========================= */
-
-.round16::before,
-.quarter::before,
-.semi::before{
-    content:"";
-    position:absolute;
-    left:-14px;
-    top:60px;
-    bottom:60px;
-
-    width:2px;
-    background:#00ffb3;
-
-    opacity:.6;
-    filter:drop-shadow(0 0 6px rgba(0,255,179,.5));
-}
+.round16{ width:210px; transform:translateY(40px); }
+.quarter{ width:200px; transform:translateY(120px); }
+.semi{ width:190px; transform:translateY(220px); }
 
 /* =========================
    MATCH BOX
@@ -1492,20 +1464,18 @@ SIMULATOR ESPN PRO
     transition:.25s;
 }
 
-.match-box::after{
-    content:"";
-
-    position:absolute;
-    right:-12px;
-    top:50%;
-
-    width:12px;
-
-    border-top:3px solid rgba(0,255,179,.55);
-}
-
 .match-box:hover{
     transform:translateY(-2px);
+}
+
+/* conexión visual */
+.match-box::after{
+    content:"";
+    position:absolute;
+    right:-14px;
+    top:50%;
+    width:14px;
+    border-top:3px solid rgba(0,255,179,.55);
 }
 
 /* =========================
@@ -1527,7 +1497,6 @@ SIMULATOR ESPN PRO
 ========================= */
 
 .team-btn{
-    position:relative;
     display:flex;
     align-items:center;
     justify-content:flex-start;
@@ -1546,7 +1515,6 @@ SIMULATOR ESPN PRO
     transition:.25s;
 
     user-select:none;
-    -webkit-tap-highlight-color:transparent;
 }
 
 .team-btn:last-child{
@@ -1629,11 +1597,12 @@ SIMULATOR ESPN PRO
     text-align:center;
     font-weight:700;
 
+    cursor:pointer;
     transition:.25s;
 }
 
 .final-box:hover{
-    transform:scale(1.03);
+    transform:scale(1.05);
     box-shadow:0 0 20px rgba(255,215,0,.35);
 }
 
@@ -1651,7 +1620,7 @@ SIMULATOR ESPN PRO
     font-weight:900;
     text-align:center;
 
-    box-shadow:0 0 35px rgba(255,215,0,.6);
+    box-shadow:0 0 45px rgba(255,215,0,.7);
 
     animation:championGlow 2s infinite;
 }
@@ -1682,12 +1651,8 @@ SIMULATOR ESPN PRO
 }
 
 @keyframes fallConfetti{
-    from{
-        transform:translateY(-40px) rotate(0deg);
-    }
-    to{
-        transform:translateY(110vh) rotate(720deg);
-    }
+    from{transform:translateY(-40px) rotate(0deg);}
+    to{transform:translateY(110vh) rotate(720deg);}
 }
 
 /* =========================
@@ -1706,6 +1671,7 @@ SIMULATOR ESPN PRO
     .quarter,
     .semi{
         width:180px;
+        transform:none; /* 🔥 evita ruptura móvil */
     }
 
     .team-btn{
