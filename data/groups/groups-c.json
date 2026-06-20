@@ -161,7 +161,7 @@
     "id": 4,
     "group": "C",
     "date": "2026-06-19",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Brasil",
     "team2": "Haiti",
@@ -169,7 +169,7 @@
     "flag1": "br",
     "flag2": "ht",
 
-    "homeScore": 0,
+    "homeScore": 3,
   "awayScore": 0,
 
     "stadium": "SoFi Stadium",
