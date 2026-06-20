@@ -175,13 +175,21 @@
     "flag1": "py",
     "flag2": "tr",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 0,
 
     "stadium": "Lumen Field",
     "city": "Seattle",
 
     "timeAR": "00:00",
+
+    "goals": [
+      {
+        "player": "Galarza",
+        "minute": 1,
+        "team": "home"
+      }
+    ],
 
     "links": [
   {
