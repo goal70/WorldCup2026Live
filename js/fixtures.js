@@ -267,3 +267,29 @@ async function loadFixtures() {
 }
 
 loadFixtures();
+
+function setShareFixture() {
+
+    const url = window.location.href;
+    const text = "📅 World Cup 2026 Fixtures";
+
+    const encodedUrl = encodeURIComponent(url);
+    const encodedText = encodeURIComponent(text);
+
+    document.getElementById("share-wa").href =
+        `https://wa.me/?text=${encodedText}%20${encodedUrl}`;
+
+    document.getElementById("share-tw").href =
+        `https://twitter.com/intent/tweet?text=${encodedText}%20${encodedUrl}`;
+
+    document.getElementById("share-fb").href =
+        `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+
+    document.getElementById("share-re").href =
+        `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedText}`;
+
+    document.getElementById("share-th").href =
+        `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
+}
+
+document.addEventListener("DOMContentLoaded", setShareFixture);
