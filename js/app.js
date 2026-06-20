@@ -452,3 +452,50 @@ function setShareLinks() {
 }
 
 document.addEventListener("DOMContentLoaded", setShareLinks);
+
+/* =========================
+   SHARE HOME
+========================= */
+
+function setShareHome() {
+
+    const wa = document.getElementById("share-wa");
+    const tw = document.getElementById("share-tw");
+    const fb = document.getElementById("share-fb");
+    const re = document.getElementById("share-re");
+    const th = document.getElementById("share-th");
+    const qu = document.getElementById("share-qu");
+
+    if(!wa || !tw || !fb || !re || !th) return;
+
+    const url = window.location.href;
+    const text = "⚽ World Goal 2026 - Live Matches";
+
+    wa.href =
+        `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
+
+    tw.href =
+        `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + " " + url)}`;
+
+    fb.href =
+        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+
+    re.href =
+        `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`;
+
+    th.href =
+        `https://www.threads.net/intent/post?text=${encodeURIComponent(text + " " + url)}`;
+
+    if(qu){
+        qu.href =
+            `https://www.quora.com/share?url=${encodeURIComponent(url)}`;
+    }
+}
+
+/* =========================
+   INIT SHARE
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    setShareHome();
+});
