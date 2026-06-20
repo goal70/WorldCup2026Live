@@ -1390,7 +1390,7 @@ SIMULATOR ESPN PRO
 
 .worldcup-bracket{
     display:flex;
-    align-items:center; /* 🔥 CLAVE PIRÁMIDE */
+    align-items:center; /* 🔥 PIRÁMIDE REAL */
     justify-content:flex-start;
     gap:26px;
     padding:30px;
@@ -1425,22 +1425,21 @@ SIMULATOR ESPN PRO
 }
 
 /* =========================
-   COLUMNAS (PIRÁMIDE REAL)
+   COLUMNAS (PIRÁMIDE ESTABLE)
 ========================= */
 
 .round-column{
     display:flex;
     flex-direction:column;
-    justify-content:center; /* 🔥 centra vertical */
+    justify-content:center;
     position:relative;
     gap:18px;
 }
 
-/* progresión visual tipo bracket */
 .round32{ width:220px; }
-.round16{ width:210px; transform:translateY(40px); }
-.quarter{ width:200px; transform:translateY(120px); }
-.semi{ width:190px; transform:translateY(220px); }
+.round16{ width:210px; margin-top:40px; }
+.quarter{ width:200px; margin-top:120px; }
+.semi{ width:190px; margin-top:220px; }
 
 /* =========================
    MATCH BOX
@@ -1585,7 +1584,10 @@ SIMULATOR ESPN PRO
     100%{filter:drop-shadow(0 0 0 gold);}
 }
 
-/* FINALISTAS */
+/* =========================
+   FINAL BOX (UNIFICADO SIN BUGS)
+========================= */
+
 .final-box{
     width:220px;
     padding:14px;
@@ -1599,14 +1601,38 @@ SIMULATOR ESPN PRO
 
     cursor:pointer;
     transition:.25s;
+    position:relative;
 }
 
-.final-box:hover{
+/* hover solo si NO está activo */
+.final-box:not(.active):hover{
     transform:scale(1.05);
     box-shadow:0 0 20px rgba(255,215,0,.35);
 }
 
-/* CAMPEÓN */
+/* estado activo */
+.final-box.active{
+    border-color:#ffd700;
+    box-shadow:0 0 22px rgba(255,215,0,.5);
+    animation:pulseFinal 1.6s ease-in-out infinite;
+}
+
+/* evitar conflicto hover + active */
+.final-box.active:hover{
+    transform:scale(1.02);
+}
+
+/* pulse limpio */
+@keyframes pulseFinal {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* =========================
+   CAMPEÓN
+========================= */
+
 .champion-box{
     width:260px;
     padding:22px;
@@ -1671,7 +1697,7 @@ SIMULATOR ESPN PRO
     .quarter,
     .semi{
         width:180px;
-        transform:none; /* 🔥 evita ruptura móvil */
+        margin-top:0; /* 🔥 evita ruptura móvil */
     }
 
     .team-btn{
