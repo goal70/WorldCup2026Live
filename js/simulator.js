@@ -400,6 +400,7 @@ function renderKnockout() {
 
             ${Knockout.r32.map((m,i)=>`
                 <div class="match-box">
+
                     <div class="team-btn selectable"
                          onclick="advanceTeam(32,${i},0)">
                         ${m[0]}
@@ -409,6 +410,7 @@ function renderKnockout() {
                          onclick="advanceTeam(32,${i},1)">
                         ${m[1]}
                     </div>
+
                 </div>
             `).join("")}
         </div>
@@ -508,34 +510,77 @@ window.advanceTeam = function(round, matchIndex, teamIndex){
 
     let winner;
 
+    /* ROUND OF 32 → ROUND OF 16 */
     if(round === 32){
+
         winner = Knockout.r32[matchIndex][teamIndex];
+
         const slot = Math.floor(matchIndex / 2);
-        if(matchIndex % 2 === 0) Knockout.r16[slot*2] = winner;
-        else Knockout.r16[slot*2+1] = winner;
+
+        if(matchIndex % 2 === 0){
+            Knockout.r16[slot*2] = winner;
+        }else{
+            Knockout.r16[slot*2+1] = winner;
+        }
+
+        /* limpia rondas posteriores */
+        Knockout.qf.fill(null);
+        Knockout.sf.fill(null);
+        Knockout.final.fill(null);
+        Knockout.champion = "";
     }
 
+    /* ROUND OF 16 → QUARTERS */
     else if(round === 16){
+
         winner = Knockout.r16[matchIndex];
-        const slot = Math.floor(matchIndex / 2);
-        if(matchIndex % 2 === 0) Knockout.qf[slot*2] = winner;
-        else Knockout.qf[slot*2+1] = winner;
+
+        const pairStart = Math.floor(matchIndex / 2) * 2;
+
+        Knockout.qf[pairStart] = null;
+        Knockout.qf[pairStart + 1] = null;
+
+        Knockout.qf[matchIndex] = winner;
+
+        Knockout.sf.fill(null);
+        Knockout.final.fill(null);
+        Knockout.champion = "";
     }
 
+    /* QUARTERS → SEMI */
     else if(round === 8){
+
         winner = Knockout.qf[matchIndex];
-        const slot = Math.floor(matchIndex / 2);
-        if(matchIndex % 2 === 0) Knockout.sf[slot*2] = winner;
-        else Knockout.sf[slot*2+1] = winner;
+
+        const pairStart = Math.floor(matchIndex / 2) * 2;
+
+        Knockout.sf[pairStart] = null;
+        Knockout.sf[pairStart + 1] = null;
+
+        Knockout.sf[matchIndex] = winner;
+
+        Knockout.final.fill(null);
+        Knockout.champion = "";
     }
 
+    /* SEMI → FINAL */
     else if(round === 4){
+
         winner = Knockout.sf[matchIndex];
+
+        Knockout.final[0] = null;
+        Knockout.final[1] = null;
+
         Knockout.final[matchIndex] = winner;
+
+        Knockout.champion = "";
     }
 
+    /* FINAL → CHAMPION */
     else if(round === 2){
+
         winner = Knockout.final[matchIndex];
+
         Knockout.champion = winner;
     }
 
