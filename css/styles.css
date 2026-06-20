@@ -1860,3 +1860,27 @@ header .share-box{
         font-size:16px;
     }
 }
+/* =========================================
+   FIX ICONOS PEQUEÑOS EN PARTIDOS
+========================================= */
+
+.match-links img,
+.match-link img,
+.share-buttons img{
+    width:14px !important;
+    height:14px !important;
+    max-width:14px !important;
+    max-height:14px !important;
+    object-fit:contain;
+}
+
+.match-link,
+.share-buttons a{
+    font-size:11px !important;
+    padding:4px 8px !important;
+}
+
+.match-links,
+.share-buttons{
+    gap:6px !important;
+}
