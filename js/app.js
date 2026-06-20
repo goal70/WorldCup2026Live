@@ -64,9 +64,7 @@ async function loadMatches() {
                     city: m.city,
                     timeAR: m.timeAR,
 
-                    links: m.links || [],
-                    goals: m.goals || [],
-                    redCards: m.redCards || []
+                    links: m.links || []
                 });
             });
         }
@@ -217,9 +215,6 @@ function render(containerId, date) {
 
         const share = getShareLinks(m);
 
-        const homeGoals = (m.goals || []).filter(g => g.team === "home");
-        const awayGoals = (m.goals || []).filter(g => g.team === "away");
-
         return `
         <div class="match-card">
 
@@ -253,6 +248,14 @@ function render(containerId, date) {
                 🏟 ${m.stadium} • ${m.city} <br>
                 🕒 ${m.timeAR || "-"}
             </div>
+
+            ${(m.links || []).length ? `
+            <div class="match-links-extra">
+                ${m.links.map(l => `
+                    <a href="${l.url}" target="_blank">${l.label || "Link"}</a>
+                `).join("")}
+            </div>
+            ` : ""}
 
         </div>
         `;
