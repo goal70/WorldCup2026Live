@@ -1736,3 +1736,57 @@ SIMULATOR ESPN PRO
 .share-buttons a:hover{
     background:#00d26a;
 }
+
+.share-box{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:15px 0;
+    justify-content:center;
+}
+
+.share-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+
+    padding:10px 14px;
+    border-radius:10px;
+
+    font-size:13px;
+    font-weight:700;
+    text-decoration:none;
+
+    color:white;
+}
+
+/* WhatsApp */
+.share-btn.whatsapp{
+    background:#25D366;
+}
+
+/* Twitter / X */
+.share-btn.twitter{
+    background:#1DA1F2;
+}
+
+/* Facebook */
+.share-btn.facebook{
+    background:#1877F2;
+}
+
+/* Reddit */
+.share-btn.reddit{
+    background:#FF4500;
+}
+
+/* Threads */
+.share-btn.threads{
+    background:#000000;
+}
+
+/* Quora */
+.share-btn.quora{
+    background:#B92B27;
+}
