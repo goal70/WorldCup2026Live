@@ -1,19 +1,16 @@
 /*************************************************
  * WORLD GOAL 2026 - ENTERPRISE APP ENGINE
- * STABLE + FIXED VERSION (NO CRASH MODE)
+ * SHARE SYSTEM + FIXED VERSION
  *************************************************/
 
 let allMatches = [];
-
-/* =========================
-   INIT
-========================= */
 
 document.addEventListener("DOMContentLoaded", async () => {
     await loadMatches();
     setupNavigation();
     renderTables();
-    setShareHome();
+
+    setShareHome(); // 👈 ESTO ES LO QUE TE FALTABA
 });
 
 /* =========================
@@ -22,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function flagUrl(code) {
     if (!code) return "";
-    return `https://flagcdn.com/w40/${String(code).toLowerCase()}.png`;
+    return `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
 }
 
 /* =========================
@@ -30,40 +27,46 @@ function flagUrl(code) {
 ========================= */
 
 async function loadMatches() {
+
     try {
+
         const groups = ["a","b","c","d","e","f","g","h","i","j","k","l"];
         allMatches = [];
 
         for (const group of groups) {
+
             const res = await fetch(`data/groups/groups-${group}.json`);
 
-            if (!res.ok) continue;
+            if (!res.ok) {
+                console.warn(`Missing group ${group}`);
+                continue;
+            }
 
             const matches = await res.json();
 
-            (Array.isArray(matches) ? matches : []).forEach(m => {
+            matches.forEach(m => {
                 allMatches.push({
-                    id: m.id || "",
-                    group: m.group || "",
-                    date: m.date || "",
+                    id: m.id,
+                    group: m.group,
+                    date: m.date,
                     status: m.status || "UPCOMING",
 
-                    team1: m.team1 || "",
-                    team2: m.team2 || "",
+                    team1: m.team1,
+                    team2: m.team2,
 
-                    flag1: m.flag1 || "",
-                    flag2: m.flag2 || "",
+                    flag1: m.flag1,
+                    flag2: m.flag2,
 
-                    homeScore: Number(m.homeScore ?? 0),
-                    awayScore: Number(m.awayScore ?? 0),
+                    homeScore: m.homeScore ?? 0,
+                    awayScore: m.awayScore ?? 0,
 
-                    stadium: m.stadium || "",
-                    city: m.city || "",
-                    timeAR: m.timeAR || "",
+                    stadium: m.stadium,
+                    city: m.city,
+                    timeAR: m.timeAR,
 
-                    goals: Array.isArray(m.goals) ? m.goals : [],
-                    redCards: Array.isArray(m.redCards) ? m.redCards : [],
-                    links: Array.isArray(m.links) ? m.links : []
+                    links: m.links || [],
+                    goals: m.goals || [],
+                    redCards: m.redCards || []
                 });
             });
         }
@@ -91,12 +94,13 @@ function getLocalDate(offset = 0) {
    FILTERS
 ========================= */
 
-function showToday(){ render("todayMatches", getLocalDate(0)); }
-function showYesterday(){ render("yesterdayMatches", getLocalDate(-1)); }
-function showTomorrow(){ render("tomorrowMatches", getLocalDate(1)); }
+function showToday(){ render("todayMatches", getLocalDate(0)); renderTables(); }
+function showYesterday(){ render("yesterdayMatches", getLocalDate(-1)); renderTables(); }
+function showTomorrow(){ render("tomorrowMatches", getLocalDate(1)); renderTables(); }
 
 function showCustomDate(date){
     render("customDateMatches", date);
+    renderTables();
 }
 
 /* =========================
@@ -107,7 +111,8 @@ function setupNavigation() {
 
     const bind = (id, fn) => {
         const el = document.getElementById(id);
-        if (el) el.addEventListener("click", fn);
+        if (!el) return console.warn("Missing button:", id);
+        el.addEventListener("click", fn);
     };
 
     bind("yesterdayBtn", () => {
@@ -125,16 +130,34 @@ function setupNavigation() {
         showTomorrow();
     });
 
-    const customDays = [
-        "2026-06-11","2026-06-12","2026-06-13","2026-06-14",
-        "2026-06-15","2026-06-16","2026-06-17","2026-06-18"
-    ];
+    bind("prevDateBtn", () => {
+        setActive("prevDateBtn");
+        showCustomDate("2026-06-11");
+    });
 
-    customDays.forEach((date, i) => {
-        bind(`prevDateBtn${i ? i+1 : ""}`, () => {
-            setActive(`prevDateBtn${i ? i+1 : ""}`);
-            showCustomDate(date);
-        });
+    bind("prevDateBtn2", () => {
+        setActive("prevDateBtn2");
+        showCustomDate("2026-06-12");
+    });
+
+    bind("prevDateBtn3", () => {
+        setActive("prevDateBtn3");
+        showCustomDate("2026-06-13");
+    });
+
+    bind("prevDateBtn4", () => {
+        setActive("prevDateBtn4");
+        showCustomDate("2026-06-14");
+    });
+
+    bind("prevDateBtn5", () => {
+        setActive("prevDateBtn5");
+        showCustomDate("2026-06-15");
+    });
+
+    bind("prevDateBtn6", () => {
+        setActive("prevDateBtn6");
+        showCustomDate("2026-06-16");
     });
 }
 
@@ -155,7 +178,8 @@ function setActive(id) {
 
 function getShareLinks(match) {
 
-    const text = `⚽ ${match.team1} ${match.homeScore} - ${match.awayScore} ${match.team2} | World Goal 2026`;
+    const text = `⚽ ${match.team1} ${match.homeScore ?? 0} - ${match.awayScore ?? 0} ${match.team2} | World Goal 2026`;
+
     const url = window.location.href;
 
     return {
@@ -164,7 +188,8 @@ function getShareLinks(match) {
         facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
         reddit: `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`,
         threads: `https://www.threads.net/intent/post?text=${encodeURIComponent(text + " " + url)}`,
-        quora: `https://www.quora.com/share?url=${encodeURIComponent(url)}`
+        quora: `https://www.quora.com/share?url=${encodeURIComponent(url)}`,
+        youtube: match.links?.[0]?.url || url
     };
 }
 
@@ -174,19 +199,18 @@ function getShareLinks(match) {
 
 function render(containerId, date) {
 
-    const allContainers = [
+    const containers = [
         "yesterdayMatches",
         "todayMatches",
         "tomorrowMatches",
         "customDateMatches"
     ];
 
-    allContainers.forEach(id => {
+    containers.forEach(id => {
         const el = document.getElementById(id);
-        if (el) {
-            el.style.display = "none";
-            el.innerHTML = "";
-        }
+        if (!el) return;
+        el.style.display = "none";
+        el.innerHTML = "";
     });
 
     const container = document.getElementById(containerId);
@@ -194,10 +218,9 @@ function render(containerId, date) {
 
     container.style.display = "grid";
 
-    const matches = allMatches.filter(m => {
-        const matchDate = (m.date || "").substring(0,10);
-        return matchDate === date;
-    });
+    const matches = allMatches.filter(m =>
+        (m.date || "").slice(0,10) === date
+    );
 
     if (!matches.length) {
         container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
@@ -206,20 +229,38 @@ function render(containerId, date) {
 
     container.innerHTML = matches.map(m => {
 
-        const goals = m.goals;
-        const redCards = m.redCards;
-        const links = m.links;
+        const share = getShareLinks(m);
 
-        const status = (m.status || "UPCOMING").trim().toLowerCase();
+        const linksHTML = (m.links || []).map(l => `
+            <a class="match-link" href="${l.url}" target="_blank">
+                <img src="${l.logo}" alt="">
+                <span>${l.name}</span>
+            </a>
+        `).join("");
+
+        const homeGoals = (m.goals || []).filter(g => g.team === "home");
+        const awayGoals = (m.goals || []).filter(g => g.team === "away");
+
+        const homeGoalsHTML = homeGoals.map(g => `
+            <div class="goal left">
+                ⚽ ${g.player} <span class="minute">${g.minute}</span>
+            </div>
+        `).join("");
+
+        const awayGoalsHTML = awayGoals.map(g => `
+            <div class="goal right">
+                <span class="minute">${g.minute}</span> ${g.player} ⚽
+            </div>
+        `).join("");
 
         return `
         <div class="match-card">
 
-            <div class="match-status ${status}">
+            <div class="match-status ${m.status.toLowerCase()}">
                 ${m.status}
             </div>
 
-            <div class="group-label">
+            <div style="text-align:center;font-weight:900;color:#00D26A;margin-bottom:6px;">
                 GRUPO ${m.group}
             </div>
 
@@ -241,33 +282,32 @@ function render(containerId, date) {
 
             </div>
 
+            <div class="events">
+                <div class="events-column left">${homeGoalsHTML}</div>
+                <div class="events-column right">${awayGoalsHTML}</div>
+            </div>
+
             <div class="match-footer">
                 🏟 ${m.stadium} • ${m.city} <br>
-                🕒 ${m.timeAR}
+                🕒 ${m.timeAR || "-"}
             </div>
 
-            ${(goals.length || redCards.length || links.length) ? `
-            <div class="match-extra">
+            <div class="match-links">
+                ${linksHTML}
+            </div>
 
-                ${goals.map(g => `
-                    <div class="event goal">⚽ ${g.player} (${g.minute}')</div>
-                `).join("")}
+            <!-- SHARE BUTTONS -->
+            <div class="share-buttons">
 
-                ${redCards.map(r => `
-                    <div class="event red">🟥 ${r.player} (${r.minute}')</div>
-                `).join("")}
-
-                ${links.map(l => `
-                    <div class="match-links-extra">
-                        <a href="${l.url}" target="_blank">
-                            ${l.logo ? `<img src="${l.logo}">` : ""}
-                            ${l.name || "Link"}
-                        </a>
-                    </div>
-                `).join("")}
+                <a target="_blank" href="${share.whatsapp}">WhatsApp</a>
+                <a target="_blank" href="${share.twitter}">Twitter</a>
+                <a target="_blank" href="${share.facebook}">Facebook</a>
+                <a target="_blank" href="${share.reddit}">Reddit</a>
+                <a target="_blank" href="${share.threads}">Threads</a>
+                <a target="_blank" href="${share.quora}">Quora</a>
+                <a target="_blank" href="${share.youtube}">YouTube</a>
 
             </div>
-            ` : ""}
 
         </div>
         `;
@@ -275,7 +315,7 @@ function render(containerId, date) {
 }
 
 /* =========================
-   TABLES
+   TABLE SYSTEM
 ========================= */
 
 function buildTables() {
@@ -283,6 +323,7 @@ function buildTables() {
     const tables = {};
 
     allMatches.forEach(m => {
+
         if (!tables[m.group]) tables[m.group] = {};
 
         [m.team1, m.team2].forEach(team => {
@@ -303,8 +344,8 @@ function buildTables() {
         const home = tables[m.group][m.team1];
         const away = tables[m.group][m.team2];
 
-        const hs = m.homeScore;
-        const as = m.awayScore;
+        const hs = m.homeScore ?? 0;
+        const as = m.awayScore ?? 0;
 
         home.pj++; away.pj++;
         home.gf += hs; home.gc += as;
@@ -330,15 +371,19 @@ function buildTables() {
 
 function renderTables() {
 
-    const container = document.getElementById("tables");
-    if (!container) return;
-
     const tables = buildTables();
+    const container = document.getElementById("tables");
+
+    if (!container) return;
 
     container.innerHTML = Object.keys(tables).map(group => {
 
         const rows = Object.values(tables[group])
-            .sort((a,b) => b.pts - a.pts || b.dg - a.dg || b.gf - a.gf)
+            .sort((a,b) =>
+                b.pts - a.pts ||
+                b.dg - a.dg ||
+                b.gf - a.gf
+            )
             .map(t => `
                 <tr>
                     <td>${t.team}</td>
@@ -359,36 +404,51 @@ function renderTables() {
             <table>
                 <thead>
                     <tr>
-                        <th>Team</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>GF</th><th>GC</th><th>DG</th><th>PTS</th>
+                        <th>Team</th>
+                        <th>PJ</th>
+                        <th>PG</th>
+                        <th>PE</th>
+                        <th>PP</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>PTS</th>
                     </tr>
                 </thead>
-                <tbody>${rows}</tbody>
+                <tbody>
+                    ${rows}
+                </tbody>
             </table>
         </div>
         `;
     }).join("");
 }
 
-/* =========================
-   SHARE HOME
-========================= */
-
-function setShareHome() {
-
-    const wa = document.getElementById("share-wa");
-    const tw = document.getElementById("share-tw");
-    const fb = document.getElementById("share-fb");
-    const re = document.getElementById("share-re");
-    const th = document.getElementById("share-th");
-
-    if (!wa || !tw || !fb || !re || !th) return;
+function setShareLinks() {
 
     const url = window.location.href;
     const text = "⚽ World Goal 2026 - Live Matches";
 
-    wa.href = `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
-    tw.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + " " + url)}`;
-    fb.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-    re.href = `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`;
-    th.href = `https://www.threads.net/intent/post?text=${encodeURIComponent(text + " " + url)}`;
+    const encodedUrl = encodeURIComponent(url);
+    const encodedText = encodeURIComponent(text);
+
+    document.getElementById("share-wa").href =
+        `https://wa.me/?text=${encodedText}%20${encodedUrl}`;
+
+    document.getElementById("share-tw").href =
+        `https://twitter.com/intent/tweet?text=${encodedText}%20${encodedUrl}`;
+
+    document.getElementById("share-fb").href =
+        `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+
+    document.getElementById("share-re").href =
+        `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedText}`;
+
+    document.getElementById("share-th").href =
+        `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
+
+    document.getElementById("share-qu").href =
+        `https://www.quora.com/share?url=${encodedUrl}`;
 }
+
+document.addEventListener("DOMContentLoaded", setShareLinks);
