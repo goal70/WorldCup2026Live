@@ -533,48 +533,51 @@ window.advanceTeam = function(round, matchIndex, teamIndex){
     /* ROUND OF 16 → QUARTERS */
     else if(round === 16){
 
-        winner = Knockout.r16[matchIndex];
+    winner = Knockout.r16[matchIndex];
 
-        const pairStart = Math.floor(matchIndex / 2) * 2;
+    const quarterMatch = Math.floor(matchIndex / 2);
 
-        Knockout.qf[pairStart] = null;
-        Knockout.qf[pairStart + 1] = null;
-
-        Knockout.qf[matchIndex] = winner;
-
-        Knockout.sf.fill(null);
-        Knockout.final.fill(null);
-        Knockout.champion = "";
+    if(matchIndex % 2 === 0){
+        Knockout.qf[quarterMatch * 2] = winner;
+    }else{
+        Knockout.qf[quarterMatch * 2 + 1] = winner;
     }
+
+    Knockout.sf.fill(null);
+    Knockout.final.fill(null);
+    Knockout.champion = "";
+}
 
     /* QUARTERS → SEMI */
     else if(round === 8){
 
-        winner = Knockout.qf[matchIndex];
+    winner = Knockout.qf[matchIndex];
 
-        const pairStart = Math.floor(matchIndex / 2) * 2;
+    const semiMatch = Math.floor(matchIndex / 2);
 
-        Knockout.sf[pairStart] = null;
-        Knockout.sf[pairStart + 1] = null;
-
-        Knockout.sf[matchIndex] = winner;
-
-        Knockout.final.fill(null);
-        Knockout.champion = "";
+    if(matchIndex % 2 === 0){
+        Knockout.sf[semiMatch * 2] = winner;
+    }else{
+        Knockout.sf[semiMatch * 2 + 1] = winner;
     }
+
+    Knockout.final.fill(null);
+    Knockout.champion = "";
+}
 
     /* SEMI → FINAL */
     else if(round === 4){
 
-        winner = Knockout.sf[matchIndex];
+    winner = Knockout.sf[matchIndex];
 
-        Knockout.final[0] = null;
-        Knockout.final[1] = null;
-
-        Knockout.final[matchIndex] = winner;
-
-        Knockout.champion = "";
+    if(matchIndex % 2 === 0){
+        Knockout.final[0] = winner;
+    }else{
+        Knockout.final[1] = winner;
     }
+
+    Knockout.champion = "";
+}
 
     /* FINAL → CHAMPION */
     else if(round === 2){
