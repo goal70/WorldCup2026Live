@@ -215,13 +215,6 @@ function render(containerId, date) {
 
         const share = getShareLinks(m);
 
-        const linksHTML = (m.links || []).map(l => `
-            <a class="match-link" href="${l.url}" target="_blank">
-                <img src="${l.logo}" alt="">
-                <span>${l.name}</span>
-            </a>
-        `).join("");
-
         const homeGoals = (m.goals || []).filter(g => g.team === "home");
         const awayGoals = (m.goals || []).filter(g => g.team === "away");
 
@@ -257,10 +250,6 @@ function render(containerId, date) {
             <div class="match-footer">
                 🏟 ${m.stadium} • ${m.city} <br>
                 🕒 ${m.timeAR || "-"}
-            </div>
-
-            <div class="match-links">
-                ${linksHTML}
             </div>
 
             <div class="share-buttons">
