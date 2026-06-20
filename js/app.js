@@ -213,54 +213,82 @@ function render(containerId, date) {
 
     container.innerHTML = matches.map(m => {
 
-        const share = getShareLinks(m);
+    const share = getShareLinks(m);
 
-        return `
-        <div class="match-card">
+    return `
+    <div class="match-card">
 
-            <div class="match-status ${m.status.toLowerCase()}">
-                ${m.status}
+        <div class="match-status ${m.status.toLowerCase()}">
+            ${m.status}
+        </div>
+
+        <div class="group-label">
+            GRUPO ${m.group}
+        </div>
+
+        <div class="match-header">
+
+            <div class="team">
+                <img src="${flagUrl(m.flag1)}" class="flag">
+                <span>${m.team1}</span>
             </div>
 
-            <div class="group-label">
-                GRUPO ${m.group}
+            <div class="score">
+                ${m.homeScore} - ${m.awayScore}
             </div>
 
-            <div class="match-header">
-
-                <div class="team">
-                    <img src="${flagUrl(m.flag1)}" class="flag">
-                    <span>${m.team1}</span>
-                </div>
-
-                <div class="score">
-                    ${m.homeScore} - ${m.awayScore}
-                </div>
-
-                <div class="team">
-                    <span>${m.team2}</span>
-                    <img src="${flagUrl(m.flag2)}" class="flag">
-                </div>
-
+            <div class="team">
+                <span>${m.team2}</span>
+                <img src="${flagUrl(m.flag2)}" class="flag">
             </div>
 
-            <div class="match-footer">
-                🏟 ${m.stadium} • ${m.city} <br>
-                🕒 ${m.timeAR || "-"}
-            </div>
+        </div>
 
-            ${(m.links || []).length ? `
+        <div class="match-footer">
+            🏟 ${m.stadium} • ${m.city} <br>
+            🕒 ${m.timeAR || "-"}
+        </div>
+
+        ${(m.goals?.length || m.redCards?.length || m.links?.length) ? `
+        <div class="match-extra">
+
+            ${m.goals?.length ? `
+            <div class="goals">
+                ${m.goals.map(g => `
+                    <div class="event goal">
+                        ⚽ ${g.player} (${g.minute}')
+                    </div>
+                `).join("")}
+            </div>
+            ` : ""}
+
+            ${m.redCards?.length ? `
+            <div class="redcards">
+                ${m.redCards.map(r => `
+                    <div class="event red">
+                        🟥 ${r.player} (${r.minute}')
+                    </div>
+                `).join("")}
+            </div>
+            ` : ""}
+
+            ${m.links?.length ? `
             <div class="match-links-extra">
                 ${m.links.map(l => `
-                    <a href="${l.url}" target="_blank">${l.label || "Link"}</a>
+                    <a href="${l.url}" target="_blank">
+                        <img src="${l.logo || ''}" alt="${l.name || 'link'}">
+                        ${l.name || "Link"}
+                    </a>
                 `).join("")}
             </div>
             ` : ""}
 
         </div>
-        `;
-    }).join("");
-}
+        ` : ""}
+
+    </div>
+    `;
+}).join("");
 
 /* =========================
    TABLE SYSTEM
