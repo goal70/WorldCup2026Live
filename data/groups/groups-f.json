@@ -121,7 +121,7 @@
     "id": 3,
     "group": "F",
     "date": "2026-06-20",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Paises Bajos",
     "team2": "Suecia",
@@ -129,8 +129,8 @@
     "flag1": "nl",
     "flag2": "se",
 
-    "homeScore": 0,
-    "awayScore": 0,
+    "homeScore": 5,
+    "awayScore": 1,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
