@@ -75,6 +75,20 @@ nav a.active{
 }
 
 /* =========================
+   SHARE HEADER (ICONOS PEQUEÑOS)
+========================= */
+
+.share-btn{
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    font-size:14px;
+}
+
+/* =========================
    HERO
 ========================= */
 
@@ -133,18 +147,17 @@ nav a.active{
 }
 
 /* =========================
-   MATCH GRID (2 POR FILA)
+   MATCH GRID
 ========================= */
 
 .matches-grid{
     display:grid;
     grid-template-columns:repeat(2, 1fr);
     gap:16px;
-    align-items:stretch;
 }
 
 /* =========================
-   MATCH CARD FIFA STYLE
+   MATCH CARD
 ========================= */
 
 .match-card{
@@ -153,36 +166,16 @@ nav a.active{
     background:linear-gradient(135deg,#0b2a1d,#071a13);
     border:1px solid rgba(0,210,106,.25);
     border-radius:14px;
-
     padding:10px 12px;
-
     display:flex;
     flex-direction:column;
-
     box-shadow:0 6px 18px rgba(0,0,0,.25);
     transition:.2s;
-
-    min-height:auto;
 }
 
 .match-card:hover{
     transform:translateY(-3px);
     border-color:var(--primary);
-}
-
-/* LIVE GLOW */
-.match-card::before{
-    content:"";
-    position:absolute;
-    inset:-50%;
-    background:radial-gradient(circle,rgba(0,210,106,.10),transparent 60%);
-    animation:glowMove 6s linear infinite;
-}
-
-@keyframes glowMove{
-    0%{transform:translate(0,0);}
-    50%{transform:translate(20px,10px);}
-    100%{transform:translate(0,0);}
 }
 
 /* =========================
@@ -193,37 +186,32 @@ nav a.active{
     text-align:center;
     font-size:12px;
     font-weight:800;
-    margin-bottom:8px;
+    margin-bottom:6px;
 }
 
-.match-status.live{
-    color:#ff2b2b;
-    animation:pulseText 1s infinite;
-}
-
-.match-status.finished{
-    color:#ffd600;
-}
-
-.match-status.upcoming{
-    color:#7aa7ff;
-}
-
-@keyframes pulseText{
-    0%,100%{opacity:1;}
-    50%{opacity:.4;}
-}
+.match-status.live{ color:#ff2b2b; }
+.match-status.finished{ color:#ffd600; }
+.match-status.upcoming{ color:#7aa7ff; }
 
 /* =========================
-   GROUP TEXT (NO BOX)
+   🔥 GRUPO (CORREGIDO)
 ========================= */
 
-.match-group{
-    text-align:center;
-    font-weight:900;
-    color:var(--primary);
-    margin-bottom:6px;
+.group-label{
+    position:absolute;
+    top:6px;
+    left:8px;
+
+    font-size:10px;
+    font-weight:800;
     letter-spacing:1px;
+
+    color:var(--primary);
+    opacity:0.75;
+
+    background:rgba(0,0,0,0.25);
+    padding:2px 6px;
+    border-radius:6px;
 }
 
 /* =========================
@@ -234,7 +222,6 @@ nav a.active{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:4px;
 }
 
 .team{
@@ -249,108 +236,72 @@ nav a.active{
 }
 
 .flag{
-    width:34px;
-    height:22px;
+    width:32px;
+    height:20px;
     border-radius:3px;
     object-fit:cover;
-    box-shadow:0 2px 8px rgba(0,0,0,.4);
 }
 
-/* SCORE */
 .score{
-    font-size:28px;
+    font-size:26px;
     font-weight:900;
-    letter-spacing:2px;
-    text-shadow:0 0 15px rgba(0,210,106,.4);
-    min-width:80px;
+    min-width:70px;
     text-align:center;
 }
 
 /* =========================
-   EVENTS (GOALS)
-========================= */
-
-.events{
-    display:flex;
-    justify-content:space-between;
-
-    margin-top:4px;
-    padding-top:4px;
-
-    border-top:1px solid rgba(255,255,255,.08);
-
-    font-size:11px;
-}
-
-.goal{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    color:#4ade80;
-    padding:2px 0;
-}
-
-.minute{
-    opacity:.75;
-    font-size:11px;
-    margin-left:14px;
-    margin-right:2px;
-    white-space:nowrap;
-}
-
-/* =========================
-   FOOTER MATCH
+   FOOTER
 ========================= */
 
 .match-footer{
-    margin-top:10px;
+    margin-top:8px;
     font-size:12px;
     opacity:.8;
 }
 
 /* =========================
-   LINKS STREAMING
+   LINKS (CORREGIDO Y PEQUEÑO)
 ========================= */
 
-.match-links{
+.match-links-extra{
     display:flex;
-    gap:10px;
+    gap:6px;
     flex-wrap:wrap;
-    margin-top:10px;
+    margin-top:8px;
     justify-content:center;
-    position:relative;
-    z-index:5;
 }
 
-.match-link{
+.match-links-extra a{
     display:flex;
     align-items:center;
-    gap:6px;
-    padding:6px 10px;
-    border-radius:8px;
+    gap:5px;
+
+    padding:4px 8px;
+    font-size:11px;
+
     background:#10291E;
     border:1px solid rgba(0,210,106,.25);
+    border-radius:6px;
+
     color:white;
-    font-size:12px;
     text-decoration:none;
-    cursor:pointer;
+
     transition:.2s;
 }
 
-.match-link:hover{
+.match-links-extra a:hover{
     background:var(--primary);
     color:black;
-    transform:translateY(-2px);
 }
 
-.match-link img{
-    width:18px;
-    height:18px;
+.match-links-extra a img{
+    width:14px;
+    height:14px;
     border-radius:3px;
 }
 
 /* =========================
-   FOOTER
+   FOOTER PAGE
 ========================= */
 
 footer{
@@ -382,13 +333,16 @@ footer{
 .footer-links a:hover{
     color:white;
 }
-
 /* =========================
    RESPONSIVE FINAL
 ========================= */
 
 @media (max-width: 900px){
     .matches-grid{
+        grid-template-columns:1fr;
+    }
+
+    #fixtures{
         grid-template-columns:1fr;
     }
 }
@@ -403,39 +357,10 @@ footer{
         justify-content:center;
     }
 }
+
 /* =========================
-   EVENTS FIX (HOME / AWAY SIDES)
+   EVENTS (HOME STYLE LIMPIO)
 ========================= */
-
-.events{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-}
-
-.events-column{
-    width:50%;
-    display:flex;
-    flex-direction:column;
-    gap:1px;
-}
-
-.goal.left{
-    text-align:left;
-}
-
-.goal.right{
-    text-align:right;
-}
-
-.minute{
-    opacity:.7;
-    font-size:11px;
-    margin:0 4px;
-}
-/* =====================================================
-   FIX PATCH - EVENTS HOME / AWAY (NO ROMPE UI)
-===================================================== */
 
 .events{
     display:flex;
@@ -447,7 +372,6 @@ footer{
     font-size:12px;
 }
 
-/* columnas home / away */
 .events-column{
     width:50%;
     display:flex;
@@ -455,7 +379,7 @@ footer{
     gap:4px;
 }
 
-/* cada gol */
+/* GOAL ITEM */
 .goal{
     display:flex;
     align-items:center;
@@ -463,77 +387,26 @@ footer{
     line-height:1.2;
 }
 
-/* HOME alineado izquierda */
+/* HOME / AWAY ALIGN */
 .events-column.left .goal{
     justify-content:flex-start;
 }
 
-/* AWAY alineado derecha */
 .events-column.right .goal{
     justify-content:flex-end;
     text-align:right;
 }
 
-/* minuto pegado al jugador (lo que pediste) */
+/* MINUTE MÁS PEQUEÑO Y PEGADO */
 .minute{
     opacity:.75;
-    font-size:11px;
-    margin-left:4px;   /* MÁS CERCA del nombre */
+    font-size:10px;
+    margin-left:4px;
     white-space:nowrap;
 }
 
-/* =====================================================
-   FIX GRID SAFE (NO CAMBIA TU DISEÑO)
-===================================================== */
-
-.matches-grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:16px;
-}
-
-/* móvil */
-@media (max-width:900px){
-    .matches-grid{
-        grid-template-columns:1fr;
-    }
-}
-
-/* =====================================================
-   FIX GROUP LABEL (solo texto, sin caja)
-===================================================== */
-
-.match-group{
-    text-align:center;
-    font-weight:900;
-    color:var(--primary);
-    margin-bottom:6px;
-    letter-spacing:1px;
-}
-/* =========================================
-   FIXTURE PRO SYSTEM v2 (SAFE PATCH)
-   SOLO FIXTURE - NO ROMPE HOME
-========================================= */
-
 /* =========================
-   GRID FIXTURE (2 POR FILA)
-========================= */
-
-#fixtures{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:18px;
-}
-
-/* RESPONSIVE FIXTURE */
-@media (max-width: 900px){
-    #fixtures{
-        grid-template-columns:1fr;
-    }
-}
-
-/* =========================
-   MATCH CARD FIXTURE STYLE CLEAN
+   MATCH CARD (ÚNICA DEFINICIÓN)
 ========================= */
 
 .match-card{
@@ -542,29 +415,82 @@ footer{
     background:linear-gradient(135deg,#0b2a1d,#071a13);
     border:1px solid rgba(0,210,106,.25);
     border-radius:14px;
-    padding:14px;
+    padding:12px;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+    transition:.2s;
 }
 
-/* hover suave tipo pro */
 .match-card:hover{
     transform:translateY(-2px);
-    border-color:#00D26A;
+    border-color:var(--primary);
 }
 
 /* =========================
-   GRUPO (SOLO TEXTO ARRIBA)
+   STATUS (MÁS LIMPIO)
+========================= */
+
+.match-status{
+    text-align:center;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:6px;
+}
+
+.match-status.live{ color:#ff2b2b; }
+.match-status.finished{ color:#ffd600; }
+.match-status.upcoming{ color:#7aa7ff; }
+
+/* =========================
+   GROUP LABEL (LO QUE PEDISTE)
 ========================= */
 
 .match-group{
     text-align:center;
-    font-weight:900;
-    font-size:13px;
-    color:#00D26A;
+    font-weight:800;
+    font-size:11px;   /* MÁS PEQUEÑO */
+    color:var(--primary);
     margin-bottom:6px;
     letter-spacing:1px;
+    opacity:.9;
+}
+
+/* =========================
+   FLAGS (LOGOS MÁS PEQUEÑOS)
+========================= */
+
+.flag{
+    width:26px;   /* MÁS PEQUEÑO */
+    height:18px;
+    border-radius:3px;
+    object-fit:cover;
+}
+
+/* =========================
+   LINKS (ICONOS MÁS PEQUEÑOS)
+========================= */
+
+.match-link img{
+    width:14px;  /* MÁS PEQUEÑO */
+    height:14px;
+}
+
+/* =========================
+   FIXTURE GRID
+========================= */
+
+#fixtures{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:16px;
+}
+
+/* RESPONSIVE FIXTURE */
+@media (max-width:900px){
+    #fixtures{
+        grid-template-columns:1fr;
+    }
 }
 
 /* =========================
@@ -575,7 +501,7 @@ footer{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:10px;
+    margin-bottom:6px;
 }
 
 .team{
@@ -584,319 +510,190 @@ footer{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:5px;
+    gap:3px;
     font-weight:700;
+    font-size:14px;
 }
 
 .flag{
-    width:32px;
-    height:22px;
+    width:26px;   /* MÁS PEQUEÑO como pediste */
+    height:18px;
     border-radius:3px;
+    object-fit:cover;
 }
 
 .score{
-    font-size:26px;
+    font-size:24px;
     font-weight:900;
     text-align:center;
-    min-width:70px;
+    min-width:65px;
+    text-shadow:0 0 10px rgba(0,210,106,.5);
 }
 
 /* =========================
-   EVENTS FIX (PROMIEDOS STYLE)
-   HOME IZQUIERDA / AWAY DERECHA
+   GROUP LABEL (ARRIBA DEL PARTIDO)
+========================= */
+
+.group-label{
+    text-align:center;
+    font-size:11px;   /* MÁS PEQUEÑO */
+    font-weight:800;
+    color:#00D26A;
+    letter-spacing:1px;
+    margin-bottom:6px;
+    opacity:.9;
+}
+
+/* =========================
+   EVENTS (HOME / AWAY STYLE LIMPIO)
 ========================= */
 
 .events{
     display:flex;
     justify-content:space-between;
-    margin-top:10px;
-    padding-top:8px;
+    margin-top:6px;
+    padding-top:6px;
     border-top:1px solid rgba(255,255,255,.08);
-    font-size:12px;
+    font-size:11px;
 }
 
-/* columnas */
 .events-column{
     width:50%;
     display:flex;
     flex-direction:column;
-    gap:4px;
+    gap:3px;
 }
 
-/* GOLES */
+/* GOAL ITEM */
 .goal{
     display:flex;
     align-items:center;
     gap:6px;
-    line-height:1.2;
+    line-height:1.1;
     color:#4ade80;
 }
 
-/* HOME (izquierda) */
+/* HOME */
 .events-column.left .goal{
     justify-content:flex-start;
-    text-align:left;
 }
 
-/* AWAY (derecha) */
+/* AWAY */
 .events-column.right .goal{
     justify-content:flex-end;
-    text-align:right;
     flex-direction:row-reverse;
 }
 
-/* MINUTO MÁS PEGADO AL NOMBRE (AJUSTE FINO) */
+/* MINUTE MÁS PEGADO (como pediste) */
 .minute{
-    font-size:11px;
-    opacity:.75;
-    margin-left:4px;
+    font-size:10px;
+    opacity:.7;
+    margin-left:3px;
     white-space:nowrap;
 }
 
 /* =========================
-   FOOTER FIXTURE INFO
+   FOOTER MATCH INFO
 ========================= */
 
 .match-footer{
-    margin-top:10px;
+    margin-top:6px;
     font-size:11px;
     opacity:.75;
     text-align:center;
 }
 
 /* =========================
-   LINKS FIXTURE
+   LINKS (ICONOS PEQUEÑOS)
 ========================= */
 
-.match-links{
+.match-links,
+.match-links-extra{
     display:flex;
     justify-content:center;
     gap:8px;
     flex-wrap:wrap;
-    margin-top:10px;
+    margin-top:8px;
 }
 
-.match-link{
+.match-link,
+.match-links-extra a{
     display:flex;
     align-items:center;
     gap:6px;
     font-size:11px;
-    padding:6px 10px;
+    padding:5px 8px;
     background:#10291E;
     border-radius:8px;
-    border:1px solid rgba(0,210,106,.2);
+    border:1px solid rgba(0,210,106,.25);
     text-decoration:none;
     color:white;
 }
 
+.match-link img,
+.match-links-extra img{
+    width:14px;   /* MÁS PEQUEÑO */
+    height:14px;
+    border-radius:2px;
+}
+
 /* =========================
-   SAFE FIX MOBILE
+   MATCH CARD (UNIFICADO)
 ========================= */
 
-@media (max-width: 900px){
-    #fixtures{
-        grid-template-columns:1fr;
-    }
-}
-.group-table{
-    margin:20px 0;
-    padding:15px;
-    background:#0b2a1d;
-    border-radius:12px;
-    border:1px solid rgba(0,210,106,.25);
-}
-
-.group-table h3{
-    color:#00D26A;
-    margin-bottom:10px;
-    text-align:center;
-    letter-spacing:2px;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    font-size:13px;
-}
-
-th, td{
-    padding:8px;
-    text-align:center;
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-th{
-    color:#00D26A;
-}
-
-td:first-child{
-    text-align:left;
-    font-weight:700;
-}
-/* =========================
-   PROMIEDOS TABLE SYSTEM
-========================= */
-
-.tables-wrapper{
-    margin-top:20px;
-}
-
-.group-table{
-    margin-bottom:30px;
-    background:#0b2a1d;
-    border:1px solid rgba(0,210,106,.25);
-    border-radius:12px;
+.match-card{
+    position:relative;
     overflow:hidden;
-}
-
-.group-table h3{
-    background:#10291E;
-    padding:10px;
-    color:#00D26A;
-    font-weight:900;
-    text-align:center;
-}
-
-.group-table table{
-    width:100%;
-    border-collapse:collapse;
-    font-size:13px;
-}
-
-.group-table th,
-.group-table td{
-    padding:8px;
-    text-align:center;
-    border-bottom:1px solid rgba(255,255,255,.05);
-}
-
-.group-table th{
-    color:#00D26A;
-    font-size:12px;
-    background:#071a13;
-}
-
-.group-table td{
-    color:white;
-}
-/* =========================================
-   COMPACT FIXTURE CARDS
-========================================= */
-
-.match-card{
-    padding:10px 12px !important;
-    min-height:auto !important;
-}
-
-.match-header{
-    margin-bottom:4px !important;
-}
-
-.team{
-    gap:2px !important;
-    font-size:14px !important;
-}
-
-.score{
-    font-size:24px !important;
-    min-width:65px !important;
-}
-
-.events{
-    margin-top:4px !important;
-    padding-top:4px !important;
-    font-size:11px !important;
-}
-
-.events-column{
-    gap:1px !important;
-}
-
-.goal{
-    line-height:1.1 !important;
-}
-
-.match-footer{
-    margin-top:6px !important;
-    font-size:11px !important;
-}
-
-/*
-.match-links{
-    display:none !important;
-}
-*/
-
-/* =========================================
-   FUTURE FIFA GLOW SYSTEM
-========================================= */
-
-.group-table{
-    background:rgba(5,25,18,.95) !important;
-
-    border:2px solid rgba(0,210,106,.45) !important;
-
-    box-shadow:
-        0 0 12px rgba(0,210,106,.25),
-        inset 0 0 12px rgba(0,210,106,.08);
-}
-
-.group-table h3{
-    color:#00ff88 !important;
-
-    text-shadow:
-        0 0 10px rgba(0,255,136,.6);
-}
-
-.match-card{
-
-    border:2px solid rgba(0,210,106,.25) !important;
-
-    box-shadow:
-        0 0 10px rgba(0,210,106,.15);
-
-    transition:.25s;
+    background:linear-gradient(135deg,#0b2a1d,#071a13);
+    border:1px solid rgba(0,210,106,.25);
+    border-radius:14px;
+    padding:10px 12px;
+    display:flex;
+    flex-direction:column;
+    transition:.2s;
 }
 
 .match-card:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 0 18px rgba(0,210,106,.35);
+    transform:translateY(-2px);
+    border-color:#00D26A;
 }
 
-.match-status.live{
+/* =========================
+   STATUS
+========================= */
 
-    color:#ff3b3b !important;
-
-    text-shadow:
-        0 0 8px red;
+.match-status{
+    text-align:center;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:6px;
 }
 
-.match-status.finished{
+.match-status.live{ color:#ff3b3b; }
+.match-status.finished{ color:#ffd600; }
+.match-status.upcoming{ color:#7aa7ff; }
 
-    color:#ffd600 !important;
+/* =========================
+   RESPONSIVE
+========================= */
 
-    text-shadow:
-        0 0 6px rgba(255,214,0,.5);
-}
-
-.score{
-
-    text-shadow:
-        0 0 12px rgba(0,210,106,.6);
+@media (max-width: 900px){
+    .matches-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 /* =========================================
-   FIFA FRAME EFFECT
+   FIFA FRAME EFFECT (FIXED SAFE VERSION)
 ========================================= */
 
 .group-table,
 .match-card{
     position:relative;
+    overflow:hidden;
 }
 
+/* borde interior */
 .group-table::before,
 .match-card::before{
     content:"";
@@ -904,192 +701,53 @@ td:first-child{
     inset:6px;
     border:1px solid rgba(0,255,136,.15);
     pointer-events:none;
+    z-index:1;
 }
 
+/* esquina estilo FIFA */
 .group-table::after,
 .match-card::after{
     content:"";
     position:absolute;
-    width:24px;
-    height:24px;
+    width:22px;
+    height:22px;
     top:8px;
     left:8px;
-
     border-top:2px solid rgba(0,255,136,.8);
     border-left:2px solid rgba(0,255,136,.8);
-
     pointer-events:none;
+    z-index:1;
 }
 
-.featured-page {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* asegurar contenido arriba del frame */
+.group-table *,
+.match-card *{
+    position:relative;
+    z-index:2;
 }
 
-.featured-article {
-    background: #111;
-    padding: 15px;
-    border-radius: 12px;
-}
-
-.featured-date {
-    font-size: 13px;
-    opacity: 0.7;
-    margin-bottom: 10px;
-}
-
-.featured-card {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.featured-img img {
-    width: 180px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.featured-content h2 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.featured-content p {
-    font-size: 14px;
-    opacity: 0.85;
-}
-
-/* =========================
-   SIMULATOR - ESPN STYLE
-========================= */
-/* ===== ESPN STYLE BASE ===== */
-
-.espn-title {
-    font-size: 26px;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 5px;
-}
-
-.espn-sub {
-    color: #aaa;
-    margin-bottom: 15px;
-}
-
-/* ===== GROUPS ===== */
-
-.espn-groups {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-}
-
-.espn-group {
-    background: #0f0f0f;
-    border-radius: 12px;
-    padding: 10px;
-}
-
-.group-header {
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-/* ===== MATCH CARD ===== */
-
-.match-es {
-    padding: 6px;
-    margin: 5px 0;
-    background: #151515;
-    border-radius: 8px;
-    cursor: pointer;
-    position: relative;
-    transition: 0.2s;
-}
-
-.match-es:hover {
-    transform: scale(1.02);
-}
-
-.match-es .glow {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    background: gold;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.match-es.pulse .glow {
-    opacity: 0.2;
-}
-
-/* ===== THIRD STAGE ===== */
-
-.third-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-.third-card {
-    padding: 10px;
-    background: #111;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.third-card.active {
-    border: 2px solid gold;
-}
-
-/* ===== BRACKET ===== */
-
-.bracket-wrap {
-    position: relative;
-}
-
-.bracket-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.match-box {
-    background: #111;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-/* SVG lines */
-.bracket-lines {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-/* ===================================
-   ⭐ DESTACADOS - WORLD GOAL 2026
-=================================== */
+/* =========================================
+   FEATURED / DESTACADOS (UNIFICADO)
+========================================= */
 
 #featured-container{
     display:flex;
     flex-direction:column;
     gap:30px;
-    margin-top:30px;
-    margin-bottom:40px;
+    margin:30px 0 40px;
 }
 
+/* CARD ÚNICA (ARREGLADA) */
 .featured-card{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:25px;
+
     background:#111827;
     border:1px solid rgba(255,255,255,.08);
     border-radius:18px;
     overflow:hidden;
+
     transition:.25s;
     box-shadow:0 8px 30px rgba(0,0,0,.35);
 }
@@ -1099,6 +757,7 @@ td:first-child{
     border-color:#facc15;
 }
 
+/* FECHA (ÚNICA) */
 .featured-date{
     background:#facc15;
     color:#000;
@@ -1108,12 +767,7 @@ td:first-child{
     letter-spacing:.5px;
 }
 
-.featured-layout{
-    display:grid;
-    grid-template-columns:380px 1fr;
-    gap:25px;
-}
-
+/* IMAGEN */
 .featured-image{
     height:260px;
     overflow:hidden;
@@ -1126,6 +780,7 @@ td:first-child{
     display:block;
 }
 
+/* CONTENIDO */
 .featured-content{
     padding:25px;
     display:flex;
@@ -1136,16 +791,21 @@ td:first-child{
 .featured-category{
     display:inline-block;
     width:max-content;
-    background:#2563eb;
-    color:#fff;
     padding:6px 12px;
     border-radius:999px;
     font-size:.75rem;
     font-weight:700;
     letter-spacing:.5px;
     margin-bottom:15px;
+    color:#fff;
 }
 
+/* categorías */
+.featured-category.news{ background:#dc2626; }
+.featured-category.analysis{ background:#7c3aed; }
+.featured-category.highlights{ background:#2563eb; }
+
+/* texto */
 .featured-content h2{
     font-size:2rem;
     margin-bottom:15px;
@@ -1158,31 +818,75 @@ td:first-child{
     font-size:1rem;
 }
 
-/* Categorías */
+/* =========================================
+   ESPN SIMULATOR (SIN CAMBIOS ROTOS)
+========================================= */
 
-.featured-category.news{
-    background:#dc2626;
+.espn-title{
+    font-size:26px;
+    font-weight:800;
+    color:white;
+    margin-bottom:5px;
 }
 
-.featured-category.analysis{
-    background:#7c3aed;
+.espn-sub{
+    color:#aaa;
+    margin-bottom:15px;
 }
 
-.featured-category.highlights{
-    background:#2563eb;
+.espn-groups{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
 }
 
-/* Hero destacados */
-
-.hero h1{
-    letter-spacing:1px;
+.espn-group{
+    background:#0f0f0f;
+    border-radius:12px;
+    padding:10px;
 }
 
-/* Responsive */
+.group-header{
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.match-es{
+    padding:6px;
+    margin:5px 0;
+    background:#151515;
+    border-radius:8px;
+    transition:.2s;
+}
+
+.match-es:hover{
+    transform:scale(1.02);
+}
+
+/* =========================================
+   BRACKET
+========================================= */
+
+.bracket-wrap{ position:relative; }
+
+.bracket-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.match-box{
+    background:#111;
+    padding:10px;
+    border-radius:10px;
+}
+
+/* =========================================
+   RESPONSIVE FEATURED
+========================================= */
 
 @media(max-width:900px){
-
-    .featured-layout{
+    .featured-card{
         grid-template-columns:1fr;
     }
 
@@ -1193,7 +897,6 @@ td:first-child{
     .featured-content h2{
         font-size:1.5rem;
     }
-
 }
 
 /* ==================================
