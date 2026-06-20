@@ -533,29 +533,34 @@ function renderKnockout() {
             }).join("")}
         </div>
 
-        <!-- FINAL -->
-        <div class="bracket-center">
+      <!-- FINAL -->
+<div class="bracket-center">
 
-            <div class="trophy">🏆</div>
+    <div class="trophy">🏆</div>
 
-            <div class="final-box selectable"
-                ${Knockout.final?.[0] ? `onclick="advanceKnockoutWinner(2,0,0)"` : ""}>
-                ${Knockout.final?.[0] || "FINALIST"}
-            </div>
+    <div class="${Knockout.final?.[0] && Knockout.final?.[0] !== "TBD"
+        ? "final-box selectable active"
+        : "final-box selectable"}"
+        ${Knockout.final?.[0] && Knockout.final?.[0] !== "TBD"
+            ? `onclick="advanceKnockoutWinner(2,0,0)"`
+            : ""}>
+        ${Knockout.final?.[0] || "FINALIST"}
+    </div>
 
-            <div class="final-box selectable"
-                ${Knockout.final?.[1] ? `onclick="advanceKnockoutWinner(2,0,1)"` : ""}>
-                ${Knockout.final?.[1] || "FINALIST"}
-            </div>
+    <div class="${Knockout.final?.[1] && Knockout.final?.[1] !== "TBD"
+        ? "final-box selectable active"
+        : "final-box selectable"}"
+        ${Knockout.final?.[1] && Knockout.final?.[1] !== "TBD"
+            ? `onclick="advanceKnockoutWinner(2,0,1)"`
+            : ""}>
+        ${Knockout.final?.[1] || "FINALIST"}
+    </div>
 
-            <div class="champion-box">
-                ${Knockout.champion || "WORLD CHAMPION"}
-            </div>
+    <div class="champion-box">
+        ${Knockout.champion || "WORLD CHAMPION"}
+    </div>
 
-        </div>
-
-    </div>`;
-}
+</div>
 
 /* =========================
    ADVANCE (igual tu lógica)
