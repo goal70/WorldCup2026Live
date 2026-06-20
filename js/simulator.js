@@ -537,10 +537,12 @@ window.advanceTeam = function(round, matchIndex, teamIndex){
 
     const quarterMatch = Math.floor(matchIndex / 2);
 
+    const slot = quarterMatch * 2;
+
     if(matchIndex % 2 === 0){
-        Knockout.qf[quarterMatch * 2] = winner;
+        Knockout.qf[slot] = winner;
     }else{
-        Knockout.qf[quarterMatch * 2 + 1] = winner;
+        Knockout.qf[slot + 1] = winner;
     }
 
     Knockout.sf.fill(null);
