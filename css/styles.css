@@ -1681,153 +1681,8 @@ SIMULATOR ESPN PRO
     to{transform:translateY(110vh) rotate(720deg);}
 }
 
-/*************************************************
-  WORLD GOAL 2026 - UI FINAL FIX
-*************************************************/
-
 /* =========================
-   GLOBAL SAFETY RESET
-========================= */
-
-*{
-    box-sizing:border-box;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-/* =========================
-   MATCH GRID SAFE
-========================= */
-
-.matches-grid{
-    display:grid;
-    gap:15px;
-}
-
-/* =========================
-   MATCH CARD FIX
-========================= */
-
-.match-card{
-    position:relative;
-    overflow:hidden;
-}
-
-/* evita desbordes visuales de contenido */
-.match-footer,
-.match-links,
-.share-buttons{
-    width:100%;
-}
-
-/* =========================
-   SHARE BOX (HEADER)
-========================= */
-
-header .share-box{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    margin:10px 0;
-    position:relative;
-    z-index:10;
-}
-
-/* fallback seguro */
-.share-box{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-}
-
-/* =========================
-   SHARE BUTTONS (HEADER)
-========================= */
-
-.share-btn{
-    width:40px;
-    height:40px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:10px;
-    color:#fff;
-    text-decoration:none;
-    font-size:20px;
-    flex-shrink:0;
-    transition:transform 0.2s ease;
-}
-
-.share-btn:hover{
-    transform:scale(1.1);
-}
-
-/* COLORES HEADER */
-.whatsapp{background:#25D366;}
-.twitter{background:#000;}
-.facebook{background:#1877F2;}
-.reddit{background:#FF4500;}
-.threads{background:#111;}
-.quora{background:#B92B27;}
-
-/* =========================
-   SHARE BUTTONS (MATCH CARDS)
-========================= */
-
-.share-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-top:12px;
-}
-
-/* 🔥 FIX CRÍTICO: estilos de links dentro de match */
-.share-buttons a{
-    display:inline-block;
-    padding:6px 10px;
-    border-radius:6px;
-    text-decoration:none;
-    font-size:12px;
-    color:#fff;
-    transition:transform 0.2s ease, opacity 0.2s ease;
-}
-
-.share-buttons a:hover{
-    transform:scale(1.05);
-    opacity:0.9;
-}
-
-/* COLORES MATCH BUTTONS */
-.share-buttons a:nth-child(1){ background:#25D366; } /* WhatsApp */
-.share-buttons a:nth-child(2){ background:#000; }    /* Twitter */
-.share-buttons a:nth-child(3){ background:#1877F2; } /* Facebook */
-.share-buttons a:nth-child(4){ background:#FF4500; } /* Reddit */
-.share-buttons a:nth-child(5){ background:#111; }    /* Threads */
-.share-buttons a:nth-child(6){ background:#B92B27; } /* Quora */
-.share-buttons a:nth-child(7){ background:#FF0000; } /* YouTube */
-
-/* =========================
-   NAV BUTTONS
-========================= */
-
-.day-btn{
-    cursor:pointer;
-    transition:0.2s ease;
-}
-
-.day-btn.active{
-    transform:scale(1.05);
-}
-
-/* =========================
-   RESPONSIVE BRACKET
+   RESPONSIVE
 ========================= */
 
 @media(max-width:900px){
@@ -1842,7 +1697,7 @@ header .share-box{
     .quarter,
     .semi{
         width:180px;
-        margin-top:0;
+        margin-top:0; /* 🔥 evita ruptura móvil */
     }
 
     .team-btn{
@@ -1860,27 +1715,31 @@ header .share-box{
         font-size:16px;
     }
 }
-/* =========================================
-   FIX ICONOS PEQUEÑOS EN PARTIDOS
-========================================= */
-
-.match-links img,
-.match-link img,
-.share-buttons img{
-    width:14px !important;
-    height:14px !important;
-    max-width:14px !important;
-    max-height:14px !important;
-    object-fit:contain;
+.share-box{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin:10px 0;
 }
 
-.match-link,
-.share-buttons a{
-    font-size:11px !important;
-    padding:4px 8px !important;
+/* BOTONES */
+.share-btn{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
 }
 
-.match-links,
-.share-buttons{
-    gap:6px !important;
-}
+/* COLORES */
+.whatsapp{background:#25D366;}
+.twitter{background:#000;}
+.facebook{background:#1877F2;}
+.reddit{background:#FF4500;}
+.threads{background:#111;}
+.quora{background:#B92B27;}
