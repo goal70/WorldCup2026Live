@@ -175,14 +175,42 @@
     "flag1": "py",
     "flag2": "tr",
 
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Lumen Field",
     "city": "Seattle",
 
-    "timeAR": "00:00"
+    "timeAR": "00:00",
+
+    "links": [
+  {
+    "name": "DSports",
+    "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRzcG9ydHM="
+    },
+  {
+    "name": "Telemundo",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOZ85nn2xwnWxoY4wH5K92aOqFKrujywct_H4UiP3rQ2dZ4NDt3KPFjCE&s=10",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHZlbGExLnBocA=="
   },
+  {
+    "name": "Disney+",
+    "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdhsY8X-02mpMvDgZea_Je-bPG8qnqFLb4bHrLpQ5Gluam6M-jMUm8rsXigVpzz6dDV-Mc-kVUtvqovFn2T3S1cZ15yOE2MAMu6f_ng-jxkv-oXHGeVv4JajAT0KimCb5-LImrnxd23Le4/s1600/disney%252B.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRpc25leTE="
+  },
+      {
+    "name": "FOX Sports",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/FOX_Sports_logo.svg/1280px-FOX_Sports_logo.svg.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZm94MXVzLnBocA=="
+  },
+  {
+    "name": "Caze TV",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/2/22/Logotipo_da_Caz%C3%A9TV.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTIucGhw"
+  }
+]
+},
 
   {
     "id": 5,
