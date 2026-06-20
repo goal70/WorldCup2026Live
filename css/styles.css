@@ -1715,78 +1715,32 @@ SIMULATOR ESPN PRO
         font-size:16px;
     }
 }
-
-.share-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:10px;
-    justify-content:center;
-}
-
-.share-buttons a{
-    padding:6px 10px;
-    background:#111;
-    color:#fff;
-    border-radius:6px;
-    font-size:12px;
-    text-decoration:none;
-}
-
-.share-buttons a:hover{
-    background:#00d26a;
-}
-
 .share-box{
     display:flex;
     gap:10px;
-    flex-wrap:wrap;
-    margin:15px 0;
     justify-content:center;
+    flex-wrap:wrap;
+    margin:10px 0;
 }
 
+/* BOTONES */
 .share-btn{
+    width:40px;
+    height:40px;
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:6px;
-
-    padding:10px 14px;
     border-radius:10px;
-
-    font-size:13px;
-    font-weight:700;
-    text-decoration:none;
-
     color:white;
+    font-size:18px;
+    text-decoration:none;
+    font-weight:700;
 }
 
-/* WhatsApp */
-.share-btn.whatsapp{
-    background:#25D366;
-}
-
-/* Twitter / X */
-.share-btn.twitter{
-    background:#1DA1F2;
-}
-
-/* Facebook */
-.share-btn.facebook{
-    background:#1877F2;
-}
-
-/* Reddit */
-.share-btn.reddit{
-    background:#FF4500;
-}
-
-/* Threads */
-.share-btn.threads{
-    background:#000000;
-}
-
-/* Quora */
-.share-btn.quora{
-    background:#B92B27;
-}
+/* COLORES */
+.whatsapp{background:#25D366;}
+.twitter{background:#000;}
+.facebook{background:#1877F2;}
+.reddit{background:#FF4500;}
+.threads{background:#111;}
+.quora{background:#B92B27;}
