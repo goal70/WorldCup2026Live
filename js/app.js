@@ -424,26 +424,31 @@ function renderTables() {
     }).join("");
 }
 
-function setShareHome() {
+function setShareLinks() {
 
-    const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent("⚽ World Goal 2026 - Live Matches");
+    const url = window.location.href;
+    const text = "⚽ World Goal 2026 - Live Matches";
+
+    const encodedUrl = encodeURIComponent(url);
+    const encodedText = encodeURIComponent(text);
 
     document.getElementById("share-wa").href =
-        `https://wa.me/?text=${text}%20${url}`;
+        `https://wa.me/?text=${encodedText}%20${encodedUrl}`;
 
     document.getElementById("share-tw").href =
-        `https://twitter.com/intent/tweet?text=${text}%20${url}`;
+        `https://twitter.com/intent/tweet?text=${encodedText}%20${encodedUrl}`;
 
     document.getElementById("share-fb").href =
-        `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
 
     document.getElementById("share-re").href =
-        `https://www.reddit.com/submit?url=${url}&title=${text}`;
+        `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedText}`;
 
     document.getElementById("share-th").href =
-        `https://www.threads.net/intent/post?text=${text}%20${url}`;
+        `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
 
     document.getElementById("share-qu").href =
-        `https://www.quora.com/share?url=${url}`;
+        `https://www.quora.com/share?url=${encodedUrl}`;
 }
+
+document.addEventListener("DOMContentLoaded", setShareLinks);
