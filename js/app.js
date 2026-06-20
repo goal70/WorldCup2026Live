@@ -385,3 +385,20 @@ function renderTables() {
         `;
     }).join("");
 }
+
+function getShareLinks(match) {
+
+    const text = `⚽ ${match.team1} ${match.homeScore ?? 0} - ${match.awayScore ?? 0} ${match.team2} | World Goal 2026`;
+
+    const url = window.location.href;
+
+    return {
+        whatsapp: `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`,
+        twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + " " + url)}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+        reddit: `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`,
+        threads: `https://www.threads.net/intent/post?text=${encodeURIComponent(text + " " + url)}`,
+        quora: `https://www.quora.com/share?url=${encodeURIComponent(url)}`,
+        youtube: match.links?.[0]?.url || url
+    };
+}
