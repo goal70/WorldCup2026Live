@@ -647,3 +647,35 @@ window.advanceKnockoutWinner = function(round, match, side){
 
     renderKnockout();
 };
+/***********************
+ * UTILIDADES
+***********************/
+function launchConfetti() {
+    const colors = ["#ff0040", "#ffcc00", "#00c3ff", "#7cff00", "#ff7aff"];
+
+    for (let i = 0; i < 80; i++) {
+        const conf = document.createElement("div");
+
+        conf.style.position = "fixed";
+        conf.style.width = "8px";
+        conf.style.height = "8px";
+        conf.style.background = colors[Math.floor(Math.random() * colors.length)];
+        conf.style.left = Math.random() * 100 + "vw";
+        conf.style.top = "-10px";
+        conf.style.opacity = Math.random();
+        conf.style.zIndex = 9999;
+        conf.style.borderRadius = "2px";
+
+        document.body.appendChild(conf);
+
+        const fall = conf.animate([
+            { transform: "translateY(0px) rotate(0deg)" },
+            { transform: `translateY(${window.innerHeight + 100}px) rotate(720deg)` }
+        ], {
+            duration: 2000 + Math.random() * 2000,
+            easing: "cubic-bezier(.2,.6,.2,1)"
+        });
+
+        fall.onfinish = () => conf.remove();
+    }
+}
