@@ -431,13 +431,11 @@ function renderKnockout() {
     root.innerHTML = `
     <div class="worldcup-bracket fifa-bracket">
 
-        <!-- ROUND OF 32 -->
         <div class="round-column round32">
             <h3>ROUND OF 32</h3>
 
             ${Knockout.r32.map((m, i) => `
                 <div class="match-box">
-
                     <div class="team-btn selectable"
                          onclick="advanceTeam(32,${i},0)">
                         ${teamLabel(m?.[0] || "")}
@@ -447,23 +445,19 @@ function renderKnockout() {
                          onclick="advanceTeam(32,${i},1)">
                         ${teamLabel(m?.[1] || "")}
                     </div>
-
                 </div>
             `).join("")}
         </div>
 
-        <!-- ROUND OF 16 -->
         <div class="round-column round16">
             <h3>ROUND OF 16</h3>
 
             ${Array.from({ length: 8 }).map((_, i) => {
-
                 const t1 = Knockout.r16?.[i * 2];
                 const t2 = Knockout.r16?.[i * 2 + 1];
 
                 return `
                 <div class="match-box">
-
                     <div class="team-btn selectable"
                         ${t1 ? `onclick="advanceKnockoutWinner(16,${i},0)"` : ""}>
                         ${t1 ? teamLabel(t1) : ""}
@@ -473,94 +467,76 @@ function renderKnockout() {
                         ${t2 ? `onclick="advanceKnockoutWinner(16,${i},1)"` : ""}>
                         ${t2 ? teamLabel(t2) : ""}
                     </div>
-
                 </div>
                 `;
             }).join("")}
         </div>
 
-        <!-- QUARTERS -->
         <div class="round-column quarter">
             <h3>QUARTERS</h3>
 
             ${Array.from({ length: 4 }).map((_, i) => {
-
                 const t1 = Knockout.qf?.[i * 2];
                 const t2 = Knockout.qf?.[i * 2 + 1];
 
                 return `
                 <div class="match-box">
-
                     <div class="team-btn selectable"
                         ${t1 ? `onclick="advanceKnockoutWinner(8,${i},0)"` : ""}>
-                        ${t1 || ""}
+                        ${t1 ? teamLabel(t1) : ""}
                     </div>
 
                     <div class="team-btn selectable"
                         ${t2 ? `onclick="advanceKnockoutWinner(8,${i},1)"` : ""}>
-                        ${t2 || ""}
+                        ${t2 ? teamLabel(t2) : ""}
                     </div>
-
                 </div>
                 `;
             }).join("")}
         </div>
 
-        <!-- SEMI FINAL -->
         <div class="round-column semi">
             <h3>SEMI FINAL</h3>
 
             ${Array.from({ length: 2 }).map((_, i) => {
-
                 const t1 = Knockout.sf?.[i * 2];
                 const t2 = Knockout.sf?.[i * 2 + 1];
 
                 return `
                 <div class="match-box">
-
                     <div class="team-btn selectable"
                         ${t1 ? `onclick="advanceKnockoutWinner(4,${i},0)"` : ""}>
-                        ${t1 || ""}
+                        ${t1 ? teamLabel(t1) : ""}
                     </div>
 
                     <div class="team-btn selectable"
                         ${t2 ? `onclick="advanceKnockoutWinner(4,${i},1)"` : ""}>
-                        ${t2 || ""}
+                        ${t2 ? teamLabel(t2) : ""}
                     </div>
-
                 </div>
                 `;
             }).join("")}
         </div>
 
-      <!-- FINAL -->
-<div class="bracket-center">
+        <div class="bracket-center">
+            <div class="trophy">🏆</div>
 
-    <div class="trophy">🏆</div>
+            <div class="final-box selectable">
+                ${Knockout.final?.[0] || "FINALIST"}
+            </div>
 
-    <div class="${Knockout.final?.[0] && Knockout.final?.[0] !== "TBD"
-        ? "final-box selectable active"
-        : "final-box selectable"}"
-        ${Knockout.final?.[0] && Knockout.final?.[0] !== "TBD"
-            ? `onclick="advanceKnockoutWinner(2,0,0)"`
-            : ""}>
-        ${Knockout.final?.[0] || "FINALIST"}
+            <div class="final-box selectable">
+                ${Knockout.final?.[1] || "FINALIST"}
+            </div>
+
+            <div class="champion-box">
+                ${Knockout.champion || "WORLD CHAMPION"}
+            </div>
+        </div>
+
     </div>
-
-    <div class="${Knockout.final?.[1] && Knockout.final?.[1] !== "TBD"
-        ? "final-box selectable active"
-        : "final-box selectable"}"
-        ${Knockout.final?.[1] && Knockout.final?.[1] !== "TBD"
-            ? `onclick="advanceKnockoutWinner(2,0,1)"`
-            : ""}>
-        ${Knockout.final?.[1] || "FINALIST"}
-    </div>
-
-    <div class="champion-box">
-        ${Knockout.champion || "WORLD CHAMPION"}
-    </div>
-
-</div>
+    `;
+}
 
 /* =========================
    ADVANCE (igual tu lógica)
