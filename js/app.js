@@ -1,6 +1,6 @@
 /*************************************************
  * WORLD GOAL 2026 - ENTERPRISE APP ENGINE
- * CLEAN FIX VERSION
+ * SHARE SYSTEM + FIXED VERSION
  *************************************************/
 
 let allMatches = [];
@@ -171,6 +171,27 @@ function setActive(id) {
 }
 
 /* =========================
+   SHARE SYSTEM
+========================= */
+
+function getShareLinks(match) {
+
+    const text = `⚽ ${match.team1} ${match.homeScore ?? 0} - ${match.awayScore ?? 0} ${match.team2} | World Goal 2026`;
+
+    const url = window.location.href;
+
+    return {
+        whatsapp: `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`,
+        twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + " " + url)}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+        reddit: `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`,
+        threads: `https://www.threads.net/intent/post?text=${encodeURIComponent(text + " " + url)}`,
+        quora: `https://www.quora.com/share?url=${encodeURIComponent(url)}`,
+        youtube: match.links?.[0]?.url || url
+    };
+}
+
+/* =========================
    RENDER MATCHES
 ========================= */
 
@@ -196,8 +217,8 @@ function render(containerId, date) {
     container.style.display = "grid";
 
     const matches = allMatches.filter(m =>
-    (m.date || "").slice(0,10) === date
-);
+        (m.date || "").slice(0,10) === date
+    );
 
     if (!matches.length) {
         container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
@@ -205,6 +226,8 @@ function render(containerId, date) {
     }
 
     container.innerHTML = matches.map(m => {
+
+        const share = getShareLinks(m);
 
         const linksHTML = (m.links || []).map(l => `
             <a class="match-link" href="${l.url}" target="_blank">
@@ -269,6 +292,19 @@ function render(containerId, date) {
 
             <div class="match-links">
                 ${linksHTML}
+            </div>
+
+            <!-- SHARE BUTTONS -->
+            <div class="share-buttons">
+
+                <a target="_blank" href="${share.whatsapp}">WhatsApp</a>
+                <a target="_blank" href="${share.twitter}">Twitter</a>
+                <a target="_blank" href="${share.facebook}">Facebook</a>
+                <a target="_blank" href="${share.reddit}">Reddit</a>
+                <a target="_blank" href="${share.threads}">Threads</a>
+                <a target="_blank" href="${share.quora}">Quora</a>
+                <a target="_blank" href="${share.youtube}">YouTube</a>
+
             </div>
 
         </div>
@@ -384,21 +420,4 @@ function renderTables() {
         </div>
         `;
     }).join("");
-}
-
-function getShareLinks(match) {
-
-    const text = `⚽ ${match.team1} ${match.homeScore ?? 0} - ${match.awayScore ?? 0} ${match.team2} | World Goal 2026`;
-
-    const url = window.location.href;
-
-    return {
-        whatsapp: `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`,
-        twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + " " + url)}`,
-        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-        reddit: `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`,
-        threads: `https://www.threads.net/intent/post?text=${encodeURIComponent(text + " " + url)}`,
-        quora: `https://www.quora.com/share?url=${encodeURIComponent(url)}`,
-        youtube: match.links?.[0]?.url || url
-    };
 }
