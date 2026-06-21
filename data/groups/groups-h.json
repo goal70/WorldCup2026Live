@@ -91,7 +91,7 @@
     "id": 3,
     "group": "H",
     "date": "2026-06-21",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "España",
     "team2": "Arabia Saudita",
@@ -99,7 +99,7 @@
     "flag1": "es",
     "flag2": "sa",
 
-    "homeScore": 0,
+    "homeScore": 4,
     "awayScore": 0,
 
     "stadium": "Mercedes-Benz Stadium",
