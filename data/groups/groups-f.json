@@ -172,7 +172,8 @@
     "flag1": "tn",
     "flag2": "jp",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 4,
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
