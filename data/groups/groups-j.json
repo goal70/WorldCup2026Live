@@ -115,7 +115,7 @@
     "flag1": "ar",
     "flag2": "at",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 0,
 
     "stadium": "AT&T Stadium",
@@ -127,6 +127,11 @@
       {
         "player": "MESSI (Record: Máximo goleador histórico en Mundiales, llega a 17 goles)",
         "minute": 38,
+        "team": "home"
+        },
+      {
+        "player": "MESSI (Asistencia de Paredes)",
+        "minute": "90+5",
         "team": "home"
         }
        ],
