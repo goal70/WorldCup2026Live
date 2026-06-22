@@ -155,7 +155,8 @@
     "flag1": "fr",
     "flag2": "iq",
 
-    "score": "-",
+    "homeScore": 1,
+    "awayScore": 0,
 
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
@@ -184,7 +185,7 @@
     "id": 4,
     "group": "I",
     "date": "2026-06-22",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Noruega",
     "team2": "Senegal",
@@ -192,7 +193,8 @@
     "flag1": "no",
     "flag2": "sn",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
