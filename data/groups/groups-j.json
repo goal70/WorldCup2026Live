@@ -115,12 +115,21 @@
     "flag1": "ar",
     "flag2": "at",
 
-    "score": "-",
+    "homeScore": 1,
+    "awayScore": 0,
 
     "stadium": "AT&T Stadium",
     "city": "Dallas",
 
     "timeAR": "14:00",
+
+    "goals": [
+      {
+        "player": "MESSI (Record: Màximo goleador historico en Mundiales, llega a 17 goles)",
+        "minute": 38,
+        "team": "home"
+        }
+       ],
 
     "links": [
   {
