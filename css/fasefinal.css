@@ -26,15 +26,16 @@
 .fasefinal-header::before{
 
     content:"";
-
     position:absolute;
     inset:0;
 
     background:
-        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat;
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2000&q=80")
+        center center / cover no-repeat; /* 🔥 mejora clave */
 
-    opacity:0.18; /* 👈 un poco más visible pero todavía elegante */
+    transform:scale(1.02); /* 🔥 elimina bordes vacíos */
+
+    opacity:0.18;
 
     filter:brightness(0.45) contrast(1.15);
 
@@ -69,43 +70,35 @@
 /* BOTON HOME */
 
 .home-button{
-
     position:absolute;
-
     left:20px;
     top:20px;
 
-    display:flex;
+    display:inline-flex;
     align-items:center;
+    justify-content:center;
+
     gap:8px;
 
     padding:10px 18px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #00D26A,
-            #00A854
-        );
-
+    background:linear-gradient(135deg,#00D26A,#00A854);
     color:#fff;
 
     text-decoration:none;
-
     font-weight:800;
 
     border-radius:10px;
 
     transition:.25s;
 
-    box-shadow:
-        0 0 15px rgba(0,210,106,.25);
+    box-shadow:0 0 15px rgba(0,210,106,.25);
+
+    cursor:pointer; /* 🔥 clave */
 }
 
-.home-button:hover{
-    transform:translateY(-2px);
-    box-shadow:
-        0 0 25px rgba(0,210,106,.45);
+.home-button *{
+    pointer-events:none; /* 🔥 todo el botón clickeable, no solo texto */
 }
 
 /* TITULO */
@@ -345,22 +338,25 @@
     width:140px;
     height:140px;
 
-    max-width:140px;
-    max-height:140px;
+    min-width:140px;
+    min-height:140px;
 
     margin:0 auto;
 
     display:block;
 
+    position:relative;
+    z-index:5; /* 🔥 asegura visibilidad */
+
     background:
         url("https://png.pngtree.com/png-clipart/20250628/original/pngtree-golden-fifa-2026-trophy-isolated-on-clean-white-background-png-image_21215061.png")
-        center/contain no-repeat;
+        center center / contain no-repeat;
+
+    opacity:1 !important;
 
     filter:
-        drop-shadow(0 0 10px rgba(255,215,0,.7))
-        drop-shadow(0 0 25px rgba(255,200,0,.4));
-
-    transition:.3s ease;
+        drop-shadow(0 0 12px rgba(255,215,0,.8))
+        drop-shadow(0 0 30px rgba(255,200,0,.5));
 
     animation: goldGlow 2.5s infinite ease-in-out;
 }
