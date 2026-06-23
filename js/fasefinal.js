@@ -1,15 +1,15 @@
-async function loadKnockout() {
+async function loadFaseFinal() {
     try {
 
-        const res = await fetch("data/knockout.json");
+        const res = await fetch("data/fasefinal.json");
 
         if (!res.ok) {
-            throw new Error("No se pudo cargar knockout.json");
+            throw new Error("No se pudo cargar fasefinal.json");
         }
 
         const matches = await res.json();
 
-        const container = document.getElementById("knockoutBracket");
+        const container = document.getElementById("fasefinalBracket");
 
         if (!container) return;
 
@@ -21,7 +21,7 @@ async function loadKnockout() {
             <div class="round-title">16AVOS</div>
 
             ${round16.map(m => `
-                <div class="knockout-match">
+                <div class="fasefinal-match">
 
                     <div class="match-meta">
                         ${m.date} • ${m.time}
@@ -47,7 +47,7 @@ async function loadKnockout() {
             <div class="round-title">OCTAVOS</div>
 
             ${Array.from({ length: 8 }).map((_, i) => `
-                <div class="knockout-match placeholder">
+                <div class="fasefinal-match placeholder">
                     Ganador M${i * 2 + 1}<br>
                     vs<br>
                     Ganador M${i * 2 + 2}
@@ -59,7 +59,7 @@ async function loadKnockout() {
             <div class="round-title">CUARTOS</div>
 
             ${Array.from({ length: 4 }).map(() => `
-                <div class="knockout-match placeholder">
+                <div class="fasefinal-match placeholder">
                     Clasificado
                 </div>
             `).join("")}
@@ -69,7 +69,7 @@ async function loadKnockout() {
             <div class="round-title">SEMIFINAL</div>
 
             ${Array.from({ length: 2 }).map(() => `
-                <div class="knockout-match placeholder">
+                <div class="fasefinal-match placeholder">
                     Clasificado
                 </div>
             `).join("")}
@@ -78,19 +78,19 @@ async function loadKnockout() {
         <div class="round final">
             <div class="round-title">FINAL</div>
 
-            <div class="knockout-match placeholder">
+            <div class="fasefinal-match placeholder">
                 GRAN FINAL
             </div>
 
-            <div class="knockout-match placeholder">
+            <div class="fasefinal-match placeholder">
                 TERCER PUESTO
             </div>
         </div>
         `;
 
     } catch (error) {
-        console.error("Error loading knockout:", error);
+        console.error("Error loading fasefinal:", error);
     }
 }
 
-loadKnockout();
+loadFaseFinal();
