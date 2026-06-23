@@ -476,30 +476,3 @@
 .page-section{
     width:100%;
 }
-
-/* RELLENO TOTAL DE LA PAGINA FASE FINAL */
-
-.fasefinal-page{
-
-    width:100%;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(0,210,106,.10),
-            transparent 65%
-        ),
-        linear-gradient(
-            180deg,
-            #02130d,
-            #05261a,
-            #02130d
-        );
-
-    border-radius:16px;
-}
-
-.page-container,
-.page-section{
-    width:100%;
-}
