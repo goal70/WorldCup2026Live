@@ -8,24 +8,62 @@
 
     text-align:center;
 
-    margin-bottom:20px; /* 🔥 antes 40px */
+    margin-bottom:20px;
 
-    padding:22px 20px; /* 🔥 más compacto */
+    padding:22px 20px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 0 30px rgba(0,210,106,.08);
+}
+
+/* 🔥 FONDO CANCHA (LINK REAL) */
+.fasefinal-header::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+
+    opacity:0.18; /* 👈 un poco más visible pero todavía elegante */
+
+    filter:brightness(0.45) contrast(1.15);
+
+    z-index:0;
+}
+
+/* 🔥 CAPA OSCURA ENCIMA DEL FONDO */
+.fasefinal-header::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
 
     background:
         linear-gradient(
             180deg,
-            rgba(255,255,255,.03),
-            rgba(255,255,255,.01)
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.70)
         );
 
-    border:
-        1px solid rgba(255,255,255,.08);
+    z-index:1;
+}
 
-    border-radius:16px;
+/* 🔥 TODO EL CONTENIDO ENCIMA */
+.fasefinal-header > *{
 
-    box-shadow:
-        0 0 30px rgba(0,210,106,.08);
+    position:relative;
+    z-index:2;
 }
 
 /* BOTON HOME */
@@ -78,7 +116,7 @@
     font-weight:700;
     letter-spacing:3px;
     text-transform:uppercase;
-    margin-bottom:6px; /* 🔥 antes 10px */
+    margin-bottom:6px;
 }
 
 .fasefinal-title h1{
@@ -95,7 +133,7 @@
 }
 
 .fasefinal-title p{
-    margin-top:8px; /* 🔥 antes 12px */
+    margin-top:8px;
     color:#d8e7df;
     font-size:18px;
     font-weight:500;
@@ -302,13 +340,34 @@
 }
 
 /* TROFEO */
+.champion-trophy{
 
-.worldcup-trophy{
+    width:140px;
+    height:140px;
 
-    font-size:48px;
+    margin:0 auto;
 
-    text-shadow:
-        0 0 20px rgba(255,215,0,.5);
+    display:block;
+
+    background:
+        url("https://png.pngtree.com/png-clipart/20250628/original/pngtree-golden-fifa-2026-trophy-isolated-on-clean-white-background-png-image_21215061.png")
+        center/contain no-repeat;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,215,0,.7))
+        drop-shadow(0 0 25px rgba(255,200,0,.4));
+
+    transition:.3s ease;
+
+    animation: goldGlow 2.5s infinite ease-in-out;
+}
+
+/* 🔥 hover mejorado (solo mejora visual, no rompe nada) */
+.champion-trophy:hover{
+    transform:scale(1.08);
+    filter:
+        drop-shadow(0 0 14px rgba(255,215,0,.9))
+        drop-shadow(0 0 30px rgba(255,200,0,.6));
 }
 
 /* FINAL */
@@ -345,4 +404,23 @@
         padding:15px;
     }
 
+}
+
+/* ANIMACIÓN GLOW DORADO */
+@keyframes goldGlow {
+    0% {
+        filter:
+            drop-shadow(0 0 8px rgba(255,215,0,.5))
+            drop-shadow(0 0 18px rgba(255,200,0,.3));
+    }
+    50% {
+        filter:
+            drop-shadow(0 0 18px rgba(255,215,0,.9))
+            drop-shadow(0 0 35px rgba(255,200,0,.6));
+    }
+    100% {
+        filter:
+            drop-shadow(0 0 8px rgba(255,215,0,.5))
+            drop-shadow(0 0 18px rgba(255,200,0,.3));
+    }
 }
