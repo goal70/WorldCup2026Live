@@ -145,7 +145,7 @@
     "id": 3,
     "group": "L",
     "date": "2026-06-23",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Inglaterra",
     "team2": "Ghana",
@@ -153,7 +153,8 @@
     "flag1": "gb",
     "flag2": "gh",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "AT&T Stadium",
     "city": "Dallas",
