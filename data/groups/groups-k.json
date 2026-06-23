@@ -128,7 +128,7 @@
     "flag1": "pt",
     "flag2": "uz",
 
-    "homeScore": 3,
+    "homeScore": 4,
     "awayScore": 0,
 
     "stadium": "NRG Stadium",
@@ -150,6 +150,11 @@
       {
         "player": "Cristiano Ronaldo",
         "minute": 39,
+        "team": "home"
+        },
+      {
+        "player": "Nematov (E.C)",
+        "minute": 60,
         "team": "home"
         }
        ],
