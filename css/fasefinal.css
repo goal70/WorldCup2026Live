@@ -1,4 +1,89 @@
 /* =========================================
+   ESTILOS DE PARTIDOS
+========================================= */
+
+.round-title{
+    text-align:center;
+    font-weight:900;
+    font-size:14px;
+    color:#fff;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:15px;
+}
+
+.fasefinal-match{
+
+    width:180px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10,45,31,.95),
+            rgba(5,25,17,.95)
+        );
+
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:8px;
+
+    padding:8px;
+
+    box-shadow:
+        0 0 10px rgba(0,210,106,.08);
+}
+
+.match-meta{
+
+    font-size:10px;
+    color:#fff;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    padding-bottom:4px;
+    margin-bottom:6px;
+}
+
+.team-row{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:4px 0;
+
+    color:#fff;
+    font-weight:700;
+}
+
+.team-row img{
+
+    width:22px;
+    height:16px;
+
+    object-fit:cover;
+    border-radius:2px;
+}
+
+.seed{
+
+    color:#00D26A;
+    font-size:10px;
+    font-weight:800;
+}
+
+.placeholder{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:110px;
+
+    text-align:center;
+}
+
+/* =========================================
    FIFA BRACKET LAYOUT
 ========================================= */
 
