@@ -1,186 +1,125 @@
 /* =========================================
-   WORLD GOAL 2026
-   FASE FINAL - AISLADO (FIXED)
+   FIFA BRACKET LAYOUT
 ========================================= */
 
-.fasefinal-bracket{
+.fasefinal-layout{
+
     display:flex;
     justify-content:center;
-    gap:25px;
+    align-items:center;
+    gap:40px;
 
-    padding:30px 20px 80px;
+    padding:40px;
 
     overflow-x:auto;
-    min-width:max-content;
-
-    position:relative;
 
     background:
-        radial-gradient(circle at center,
-        rgba(0,210,106,.12),
-        transparent 55%),
-        linear-gradient(90deg,
-        #02130d,#05261a,#073021,#05261a,#02130d);
+        radial-gradient(
+            circle at center,
+            rgba(0,210,106,.12),
+            transparent 55%
+        ),
+        linear-gradient(
+            90deg,
+            #02130d,
+            #05261a,
+            #073021,
+            #05261a,
+            #02130d
+        );
 }
 
-/* COLUMNAS */
+/* LADOS */
+
+.bracket-side{
+
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+/* RONDAS */
+
 .fasefinal-round{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    min-width:210px;
-    position:relative;
-
-    gap:18px;
-}
-
-/* TITULOS */
-.fasefinal-bracket .round-title{
-    text-align:center;
-    font-weight:900;
-    font-size:14px;
-    color:#fff;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:20px;
-    text-shadow:0 0 10px rgba(0,210,106,.4);
-}
-
-/* PARTIDOS */
-.fasefinal-match{
-    width:180px;
-
-    background:
-        linear-gradient(135deg,
-        rgba(10,45,31,.95),
-        rgba(5,25,17,.95));
-
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:8px;
-
-    padding:8px;
-
-    position:relative;
-
-    box-shadow:0 0 10px rgba(0,210,106,.08);
-
-    transition:.25s;
 
     display:flex;
     flex-direction:column;
-    gap:6px;
-}
-
-.fasefinal-match:hover{
-    border-color:#00D26A;
-    box-shadow:0 0 18px rgba(0,210,106,.25);
-}
-
-/* META */
-.fasefinal-match .match-meta{
-    display:flex;
-    justify-content:space-between;
     align-items:center;
-
-    font-size:10px;
-    color:#fff;
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-    padding-bottom:4px;
+    gap:20px;
 }
 
-/* EQUIPOS */
-.fasefinal-match .team-row{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    padding:4px 0;
-    font-weight:700;
-    color:white;
+/* ALTURAS FIFA */
+
+.round16{
+    gap:14px;
 }
 
-/* FLAGS */
-.fasefinal-match .team-row img{
-    width:22px;
-    height:16px;
-    object-fit:cover;
-    border-radius:2px;
-    box-shadow:0 0 4px rgba(255,255,255,.2);
+.round8{
+    gap:70px;
 }
 
-/* SEED */
-.fasefinal-match .seed{
-    font-size:10px;
-    color:#00D26A;
-    font-weight:800;
+.round4{
+    gap:180px;
 }
 
-/* PLACEHOLDER */
-.fasefinal-match.placeholder{
+.round2{
+    gap:380px;
+}
+
+/* CENTRO */
+
+.bracket-center{
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    height:110px;
-    opacity:.7;
-    text-align:center;
+
+    gap:30px;
+
+    min-width:260px;
 }
 
-/* =========================================
-   RONDAS (SIN MARGIN-BOTTOM FIJO)
-   USAMOS GAP EN COLUMNAS
-========================================= */
+/* TROFEO */
 
-.fasefinal-round.octavos{
-    padding-top:40px;
-}
+.worldcup-trophy{
 
-.fasefinal-round.cuartos{
-    padding-top:90px;
-}
+    font-size:48px;
 
-.fasefinal-round.semis{
-    padding-top:150px;
+    text-shadow:
+        0 0 20px rgba(255,215,0,.5);
 }
 
 /* FINAL */
-.fasefinal-round.final .fasefinal-match{
-    width:200px;
+
+.fasefinal-final .fasefinal-match{
+
+    width:220px;
+
     border:2px solid #ffd700;
-    box-shadow:0 0 20px rgba(255,215,0,.25);
+
+    box-shadow:
+        0 0 20px rgba(255,215,0,.35);
 }
 
-/* THIRD PLACE */
-.fasefinal-round.third-place .fasefinal-match{
-    width:200px;
-    border:1px solid rgba(255,255,255,.35);
-}
+/* TERCER PUESTO */
 
-/* LINEA VISUAL ENTRE COLUMNAS */
-.fasefinal-round::after{
-    content:"";
-    position:absolute;
-    top:0;
-    right:-13px;
-    width:1px;
-    height:100%;
-    background:rgba(255,255,255,.06);
+.fasefinal-third .fasefinal-match{
+
+    width:220px;
+
+    border:1px solid rgba(255,255,255,.3);
 }
 
 /* =========================================
    RESPONSIVE
 ========================================= */
 
-@media(max-width:900px){
-    .fasefinal-bracket{
+@media(max-width:1200px){
+
+    .fasefinal-layout{
         justify-content:flex-start;
+        padding:20px;
     }
 
-    .fasefinal-round{
-        min-width:190px;
-    }
-
-    .fasefinal-match{
-        width:170px;
-    }
 }
