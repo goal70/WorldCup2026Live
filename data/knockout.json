@@ -1,33 +1,178 @@
+[
 {
-  "round16": [
-
-    {
-      "id": 1,
-      "team1": "Alemania",
-      "flag1": "de",
-      "position1": "1° A",
-
-      "team2": "Escocia",
-      "flag2": "gb-sct",
-      "position2": "3° C",
-
-      "date": "05 Jul",
-      "time": "16:00"
-    },
-
-    {
-      "id": 2,
-      "team1": "Noruega",
-      "flag1": "no",
-      "position1": "2° B",
-
-      "team2": "Suecia",
-      "flag2": "se",
-      "position2": "2° F",
-
-      "date": "05 Jul",
-      "time": "20:00"
-    }
-
-  ]
+"id":"M1",
+"date":"05 Jul",
+"time":"16:00",
+"team1":"Argentina",
+"flag1":"ar",
+"seed1":"1° A",
+"team2":"Uruguay",
+"flag2":"uy",
+"seed2":"3° F"
+},
+{
+"id":"M2",
+"date":"05 Jul",
+"time":"20:00",
+"team1":"Brasil",
+"flag1":"br",
+"seed1":"1° B",
+"team2":"Chile",
+"flag2":"cl",
+"seed2":"3° H"
+},
+{
+"id":"M3",
+"date":"06 Jul",
+"time":"16:00",
+"team1":"Francia",
+"flag1":"fr",
+"seed1":"1° C",
+"team2":"Senegal",
+"flag2":"sn",
+"seed2":"3° J"
+},
+{
+"id":"M4",
+"date":"06 Jul",
+"time":"20:00",
+"team1":"España",
+"flag1":"es",
+"seed1":"1° D",
+"team2":"Japón",
+"flag2":"jp",
+"seed2":"3° K"
+},
+{
+"id":"M5",
+"date":"07 Jul",
+"time":"16:00",
+"team1":"Alemania",
+"flag1":"de",
+"seed1":"1° E",
+"team2":"Australia",
+"flag2":"au",
+"seed2":"3° L"
+},
+{
+"id":"M6",
+"date":"07 Jul",
+"time":"20:00",
+"team1":"Inglaterra",
+"flag1":"gb",
+"seed1":"1° F",
+"team2":"Irán",
+"flag2":"ir",
+"seed2":"3° I"
+},
+{
+"id":"M7",
+"date":"08 Jul",
+"time":"16:00",
+"team1":"Portugal",
+"flag1":"pt",
+"seed1":"1° G",
+"team2":"Corea del Sur",
+"flag2":"kr",
+"seed2":"3° D"
+},
+{
+"id":"M8",
+"date":"08 Jul",
+"time":"20:00",
+"team1":"Países Bajos",
+"flag1":"nl",
+"seed1":"1° H",
+"team2":"Marruecos",
+"flag2":"ma",
+"seed2":"3° E"
+},
+{
+"id":"M9",
+"date":"09 Jul",
+"time":"16:00",
+"team1":"México",
+"flag1":"mx",
+"seed1":"2° A",
+"team2":"Canadá",
+"flag2":"ca",
+"seed2":"2° B"
+},
+{
+"id":"M10",
+"date":"09 Jul",
+"time":"20:00",
+"team1":"Estados Unidos",
+"flag1":"us",
+"seed1":"2° C",
+"team2":"Colombia",
+"flag2":"co",
+"seed2":"2° D"
+},
+{
+"id":"M11",
+"date":"10 Jul",
+"time":"16:00",
+"team1":"Paraguay",
+"flag1":"py",
+"seed1":"2° E",
+"team2":"Ecuador",
+"flag2":"ec",
+"seed2":"2° F"
+},
+{
+"id":"M12",
+"date":"10 Jul",
+"time":"20:00",
+"team1":"Italia",
+"flag1":"it",
+"seed1":"2° G",
+"team2":"Bélgica",
+"flag2":"be",
+"seed2":"2° H"
+},
+{
+"id":"M13",
+"date":"11 Jul",
+"time":"16:00",
+"team1":"Croacia",
+"flag1":"hr",
+"seed1":"2° I",
+"team2":"Suiza",
+"flag2":"ch",
+"seed2":"2° J"
+},
+{
+"id":"M14",
+"date":"11 Jul",
+"time":"20:00",
+"team1":"Dinamarca",
+"flag1":"dk",
+"seed1":"2° K",
+"team2":"Suecia",
+"flag2":"se",
+"seed2":"2° L"
+},
+{
+"id":"M15",
+"date":"12 Jul",
+"time":"16:00",
+"team1":"Noruega",
+"flag1":"no",
+"seed1":"3° A",
+"team2":"Serbia",
+"flag2":"rs",
+"seed2":"3° B"
+},
+{
+"id":"M16",
+"date":"12 Jul",
+"time":"20:00",
+"team1":"Perú",
+"flag1":"pe",
+"seed1":"3° C",
+"team2":"Costa Rica",
+"flag2":"cr",
+"seed2":"3° G"
 }
+]
