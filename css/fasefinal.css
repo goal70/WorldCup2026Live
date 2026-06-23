@@ -119,7 +119,7 @@
 .bracket-side{
 
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     gap:30px;
 }
 
@@ -151,6 +151,24 @@
     gap:380px;
 }
 
+/* POSICIONAMIENTO DE RONDAS */
+
+.round16{
+    justify-content:flex-start;
+}
+
+.round8{
+    padding-top:75px;
+}
+
+.round4{
+    padding-top:190px;
+}
+
+.round2{
+    padding-top:420px;
+}
+
 /* CENTRO */
 
 .bracket-center{
@@ -160,7 +178,7 @@
     justify-content:center;
     align-items:center;
 
-    gap:30px;
+    gap:50px;
 
     min-width:260px;
 }
