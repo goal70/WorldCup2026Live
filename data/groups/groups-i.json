@@ -212,7 +212,7 @@
     "flag2": "sn",
 
     "homeScore": 2,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
@@ -229,6 +229,11 @@
         "player": "Haaland",
         "minute": 48,
         "team": "home"
+        },
+      {
+        "player": "Ismaila Sarr",
+        "minute": 53,
+        "team": "away"
         }
     ],
 
