@@ -1,6 +1,6 @@
 /* =========================================
    WORLD GOAL 2026
-   FASE FINAL - AISLADO
+   FASE FINAL - AISLADO (FIXED)
 ========================================= */
 
 .fasefinal-bracket{
@@ -24,17 +24,17 @@
 }
 
 /* COLUMNAS */
-
-.fasefinal-bracket .round{
+.fasefinal-round{
     display:flex;
     flex-direction:column;
     align-items:center;
     min-width:210px;
     position:relative;
+
+    gap:18px;
 }
 
 /* TITULOS */
-
 .fasefinal-bracket .round-title{
     text-align:center;
     font-weight:900;
@@ -47,9 +47,7 @@
 }
 
 /* PARTIDOS */
-
 .fasefinal-match{
-
     width:180px;
 
     background:
@@ -67,6 +65,10 @@
     box-shadow:0 0 10px rgba(0,210,106,.08);
 
     transition:.25s;
+
+    display:flex;
+    flex-direction:column;
+    gap:6px;
 }
 
 .fasefinal-match:hover{
@@ -75,7 +77,6 @@
 }
 
 /* META */
-
 .fasefinal-match .match-meta{
     display:flex;
     justify-content:space-between;
@@ -84,26 +85,21 @@
     font-size:10px;
     color:#fff;
 
-    margin-bottom:8px;
-
     border-bottom:1px solid rgba(255,255,255,.08);
-
     padding-bottom:4px;
 }
 
 /* EQUIPOS */
-
 .fasefinal-match .team-row{
     display:flex;
     align-items:center;
     gap:8px;
-    padding:5px 0;
+    padding:4px 0;
     font-weight:700;
     color:white;
 }
 
 /* FLAGS */
-
 .fasefinal-match .team-row img{
     width:22px;
     height:16px;
@@ -113,7 +109,6 @@
 }
 
 /* SEED */
-
 .fasefinal-match .seed{
     font-size:10px;
     color:#00D26A;
@@ -121,62 +116,48 @@
 }
 
 /* PLACEHOLDER */
-
 .fasefinal-match.placeholder{
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     height:110px;
-    opacity:.75;
+    opacity:.7;
+    text-align:center;
 }
 
-/* RONDAS */
+/* =========================================
+   RONDAS (SIN MARGIN-BOTTOM FIJO)
+   USAMOS GAP EN COLUMNAS
+========================================= */
 
-.fasefinal-bracket .round.octavos{
-    padding-top:55px;
+.fasefinal-round.octavos{
+    padding-top:40px;
 }
 
-.fasefinal-bracket .round.octavos .fasefinal-match{
-    margin-bottom:110px;
+.fasefinal-round.cuartos{
+    padding-top:90px;
 }
 
-.fasefinal-bracket .round.cuartos{
-    padding-top:135px;
-}
-
-.fasefinal-bracket .round.cuartos .fasefinal-match{
-    margin-bottom:240px;
-}
-
-.fasefinal-bracket .round.semis{
-    padding-top:270px;
-}
-
-.fasefinal-bracket .round.semis .fasefinal-match{
-    margin-bottom:520px;
+.fasefinal-round.semis{
+    padding-top:150px;
 }
 
 /* FINAL */
-
-.fasefinal-bracket .round.final .fasefinal-match{
+.fasefinal-round.final .fasefinal-match{
     width:200px;
     border:2px solid #ffd700;
     box-shadow:0 0 20px rgba(255,215,0,.25);
-    margin-top:360px;
 }
 
 /* THIRD PLACE */
-
-.fasefinal-bracket .round.third-place .fasefinal-match{
+.fasefinal-round.third-place .fasefinal-match{
     width:200px;
-    margin-bottom:50px;
     border:1px solid rgba(255,255,255,.35);
 }
 
-/* LINEAS */
-
-.fasefinal-bracket .round::after{
+/* LINEA VISUAL ENTRE COLUMNAS */
+.fasefinal-round::after{
     content:"";
     position:absolute;
     top:0;
@@ -186,14 +167,16 @@
     background:rgba(255,255,255,.06);
 }
 
-/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE
+========================================= */
 
 @media(max-width:900px){
     .fasefinal-bracket{
         justify-content:flex-start;
     }
 
-    .fasefinal-bracket .round{
+    .fasefinal-round{
         min-width:190px;
     }
 
