@@ -1,85 +1,96 @@
-async function loadKnockout(){
+async function loadKnockout() {
+    try {
 
-    const res = await fetch("data/knockout.json");
-    const matches = await res.json();
+        const res = await fetch("data/knockout.json");
 
-    const container =
-        document.getElementById("knockoutBracket");
+        if (!res.ok) {
+            throw new Error("No se pudo cargar knockout.json");
+        }
 
-    container.innerHTML = `
+        const matches = await res.json();
 
-    <div class="round dieciseisavos">
-        <div class="round-title">16AVOS</div>
+        const container = document.getElementById("knockoutBracket");
 
-        ${matches.map(m=>`
-        <div class="knockout-match">
+        if (!container) return;
 
-            <div class="match-meta">
-                ${m.date} • ${m.time}
+        // 🔥 16avos
+        const round16 = matches.filter(m => m.stage === "round16" || !m.stage);
+
+        container.innerHTML = `
+        <div class="round dieciseisavos">
+            <div class="round-title">16AVOS</div>
+
+            ${round16.map(m => `
+                <div class="knockout-match">
+
+                    <div class="match-meta">
+                        ${m.date} • ${m.time}
+                    </div>
+
+                    <div class="team-row">
+                        <span class="seed">${m.seed1 || ""}</span>
+                        <img src="https://flagcdn.com/w40/${m.flag1}.png">
+                        <span>${m.team1}</span>
+                    </div>
+
+                    <div class="team-row">
+                        <span class="seed">${m.seed2 || ""}</span>
+                        <img src="https://flagcdn.com/w40/${m.flag2}.png">
+                        <span>${m.team2}</span>
+                    </div>
+
+                </div>
+            `).join("")}
+        </div>
+
+        <div class="round octavos">
+            <div class="round-title">OCTAVOS</div>
+
+            ${Array.from({ length: 8 }).map((_, i) => `
+                <div class="knockout-match placeholder">
+                    Ganador M${i * 2 + 1}<br>
+                    vs<br>
+                    Ganador M${i * 2 + 2}
+                </div>
+            `).join("")}
+        </div>
+
+        <div class="round cuartos">
+            <div class="round-title">CUARTOS</div>
+
+            ${Array.from({ length: 4 }).map(() => `
+                <div class="knockout-match placeholder">
+                    Clasificado
+                </div>
+            `).join("")}
+        </div>
+
+        <div class="round semis">
+            <div class="round-title">SEMIFINAL</div>
+
+            ${Array.from({ length: 2 }).map(() => `
+                <div class="knockout-match placeholder">
+                    Clasificado
+                </div>
+            `).join("")}
+        </div>
+
+        <div class="round final">
+            <div class="round-title">FINAL</div>
+
+            <div class="knockout-match placeholder">
+                GRAN FINAL
             </div>
 
-            <div class="team-row">
-                <span class="seed">${m.seed1}</span>
-                <img src="https://flagcdn.com/w40/${m.flag1}.png">
-                <span>${m.team1}</span>
+            <div class="knockout-match placeholder">
+                TERCER PUESTO
             </div>
-
-            <div class="team-row">
-                <span class="seed">${m.seed2}</span>
-                <img src="https://flagcdn.com/w40/${m.flag2}.png">
-                <span>${m.team2}</span>
-            </div>
-
         </div>
-        `).join("")}
+        `;
 
-    </div>
-
-    <div class="round octavos">
-        <div class="round-title">OCTAVOS</div>
-
-        ${Array.from({length:8}).map((_,i)=>`
-        <div class="knockout-match placeholder">
-            Ganador M${i*2+1}<br>
-            vs<br>
-            Ganador M${i*2+2}
-        </div>
-        `).join("")}
-    </div>
-
-    <div class="round cuartos">
-        <div class="round-title">CUARTOS</div>
-
-        ${Array.from({length:4}).map(()=>`
-        <div class="knockout-match placeholder">
-            Clasificado
-        </div>
-        `).join("")}
-    </div>
-
-    <div class="round semis">
-        <div class="round-title">SEMIFINAL</div>
-
-        ${Array.from({length:2}).map(()=>`
-        <div class="knockout-match placeholder">
-            Clasificado
-        </div>
-        `).join("")}
-    </div>
-
-    <div class="round final">
-        <div class="round-title">FINAL</div>
-
-        <div class="knockout-match placeholder">
-            GRAN FINAL
-        </div>
-
-        <div class="knockout-match placeholder">
-            TERCER PUESTO
-        </div>
-
-    </div>
-    `;
+    } catch (error) {
+        console.error("Error loading knockout:", error);
+    }
 }
 
 loadKnockout();
