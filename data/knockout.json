@@ -1,1 +1,33 @@
-[]
+{
+  "round16": [
+
+    {
+      "id": 1,
+      "team1": "Alemania",
+      "flag1": "de",
+      "position1": "1° A",
+
+      "team2": "Escocia",
+      "flag2": "gb-sct",
+      "position2": "3° C",
+
+      "date": "05 Jul",
+      "time": "16:00"
+    },
+
+    {
+      "id": 2,
+      "team1": "Noruega",
+      "flag1": "no",
+      "position1": "2° B",
+
+      "team2": "Suecia",
+      "flag2": "se",
+      "position2": "2° F",
+
+      "date": "05 Jul",
+      "time": "20:00"
+    }
+
+  ]
+}
