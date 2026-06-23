@@ -60,6 +60,11 @@
     z-index:1;
 }
 
+.fasefinal-header::before,
+.fasefinal-header::after{
+    pointer-events:none;
+}
+
 /* 🔥 TODO EL CONTENIDO ENCIMA */
 .fasefinal-header > *{
 
@@ -70,11 +75,13 @@
 /* BOTON HOME */
 
 .home-button{
+
     position:absolute;
+
     left:20px;
     top:20px;
 
-    display:inline-flex;
+    display:flex;
     align-items:center;
     justify-content:center;
 
@@ -82,23 +89,36 @@
 
     padding:10px 18px;
 
-    background:linear-gradient(135deg,#00D26A,#00A854);
-    color:#fff;
+    min-width:120px;
+    min-height:44px;
 
+    background:
+        linear-gradient(
+            135deg,
+            #00D26A,
+            #00A854
+        );
+
+    color:#fff;
     text-decoration:none;
     font-weight:800;
 
     border-radius:10px;
 
+    cursor:pointer;
+
+    z-index:9999; /* 🔥 MUY IMPORTANTE */
+
     transition:.25s;
 
-    box-shadow:0 0 15px rgba(0,210,106,.25);
-
-    cursor:pointer; /* 🔥 clave */
+    box-shadow:
+        0 0 15px rgba(0,210,106,.25);
 }
 
-.home-button *{
-    pointer-events:none; /* 🔥 todo el botón clickeable, no solo texto */
+.home-button:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 0 25px rgba(0,210,106,.45);
 }
 
 /* TITULO */
