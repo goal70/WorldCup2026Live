@@ -285,7 +285,7 @@
 .fasefinal-layout{
 
     display:flex;
-    justify-content:flex-start;
+    justify-content:center;
     align-items:center;
 
     gap:20px;
@@ -488,4 +488,12 @@
             drop-shadow(0 0 8px rgba(255,215,0,.5))
             drop-shadow(0 0 18px rgba(255,200,0,.3));
     }
+}
+.page-container{
+    max-width:none;
+    width:100%;
+}
+
+.page-section{
+    width:100%;
 }
