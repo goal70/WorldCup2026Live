@@ -239,6 +239,11 @@
         "player": "Haaland",
         "minute": 58,
         "team": "home"
+        },
+      {
+        "player": "Ismaila Sarr",
+        "minute": "90+3",
+        "team": "away"
         }
     ],
 
