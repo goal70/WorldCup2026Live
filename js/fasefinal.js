@@ -87,7 +87,7 @@ container.innerHTML = `
 
 <div class="bracket-center">
 
-    <div class="worldcup-trophy">🏆</div>
+    <div class="champion-trophy"></div>
 
     <div class="fasefinal-final">
 
