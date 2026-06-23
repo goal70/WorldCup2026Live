@@ -128,13 +128,31 @@
     "flag1": "pt",
     "flag2": "uz",
 
-    "homeScore": 0,
+    "homeScore": 3,
     "awayScore": 0,
 
     "stadium": "NRG Stadium",
     "city": "Houston",
 
     "timeAR": "14:00",
+
+    "goals": [
+      {
+        "player": "Cristiano Ronaldo (Primer jugador en marcar gol en 6 Mundiales)",
+        "minute": 6,
+        "team": "home"
+        },
+      {
+        "player": "Nuno Mendes",
+        "minute": 17,
+        "team": "home"
+        },
+      {
+        "player": "Cristiano Ronaldo",
+        "minute": 39,
+        "team": "home"
+        }
+       ],
 
     "links": [
   {
