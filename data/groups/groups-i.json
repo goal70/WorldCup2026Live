@@ -147,7 +147,7 @@
     "id": 3,
     "group": "I",
     "date": "2026-06-22",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Francia",
     "team2": "Irak",
@@ -162,6 +162,24 @@
     "city": "Philadelphia",
 
     "timeAR": "18:00",
+
+    "goals": [
+      {
+        "player": "Mbappe",
+        "minute": 14,
+        "team": "home"
+        },
+      {
+        "player": "Mbappe",
+        "minute": 54,
+        "team": "home"
+        },
+      {
+        "player": "Dembélé",
+        "minute": 66,
+        "team": "home"
+        }
+    ],
 
     "links": [
   {
@@ -200,6 +218,14 @@
     "city": "New York/New Jersey",
 
     "timeAR": "21:00",
+
+    "goals": [
+      {
+        "player": "Pedersen",
+        "minute": 43,
+        "team": "home"
+        }
+    ],
 
     "links": [
   {
