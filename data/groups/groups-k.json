@@ -128,7 +128,7 @@
     "flag1": "pt",
     "flag2": "uz",
 
-    "homeScore": 4,
+    "homeScore": 5,
     "awayScore": 0,
 
     "stadium": "NRG Stadium",
@@ -155,6 +155,11 @@
       {
         "player": "Nematov (E.C)",
         "minute": 60,
+        "team": "home"
+        },
+      {
+        "player": "Rafa Leao",
+        "minute": 87,
         "team": "home"
         }
        ],
