@@ -1,74 +1,277 @@
+/* =========================================
+   WORLD GOAL 2026
+   FASE FINAL - FIFA BRACKET PRO
+========================================= */
+
 .knockout-bracket{
     display:flex;
-    gap:40px;
-    padding:30px;
+    justify-content:center;
+    gap:25px;
+
+    padding:30px 20px 80px;
+
     overflow-x:auto;
     min-width:max-content;
+
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,210,106,.12),
+            transparent 55%
+        ),
+        linear-gradient(
+            90deg,
+            #02130d,
+            #05261a,
+            #073021,
+            #05261a,
+            #02130d
+        );
 }
+
+/* COLUMNAS */
 
 .round{
     display:flex;
     flex-direction:column;
-    gap:20px;
-    min-width:240px;
+    align-items:center;
+    min-width:210px;
+    position:relative;
 }
+
+/* TITULOS */
 
 .round-title{
     text-align:center;
     font-weight:900;
-    color:#00D26A;
-    margin-bottom:10px;
+    font-size:14px;
+    color:#ffffff;
+    text-transform:uppercase;
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+
+    text-shadow:
+        0 0 10px rgba(0,210,106,.4);
 }
+
+/* PARTIDOS */
 
 .knockout-match{
-    background:#0b1d16;
-    border:1px solid rgba(0,210,106,.25);
-    border-radius:12px;
-    padding:10px;
+
+    width:180px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10,45,31,.95),
+            rgba(5,25,17,.95)
+        );
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:8px;
+
+    padding:8px;
+
+    position:relative;
+
+    box-shadow:
+        0 0 10px rgba(0,210,106,.08);
+
+    transition:.25s;
 }
 
-.match-meta{
-    font-size:11px;
-    opacity:.8;
-    text-align:center;
-    margin-bottom:8px;
+.knockout-match:hover{
+    border-color:#00D26A;
+
+    box-shadow:
+        0 0 18px rgba(0,210,106,.25);
 }
+
+/* DATOS */
+
+.match-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:10px;
+    color:#ffffff;
+
+    margin-bottom:8px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    padding-bottom:4px;
+}
+
+/* EQUIPOS */
 
 .team-row{
     display:flex;
     align-items:center;
-    justify-content:space-between;
     gap:8px;
-    padding:6px 0;
+
+    padding:5px 0;
+
+    font-weight:700;
+    color:white;
 }
 
 .team-row img{
     width:22px;
     height:16px;
+
+    object-fit:cover;
+
+    border-radius:2px;
+
+    box-shadow:
+        0 0 4px rgba(255,255,255,.2);
 }
+
+/* VS */
+
+.vs{
+    text-align:center;
+
+    font-size:12px;
+
+    color:#9eb5ab;
+
+    margin:2px 0;
+}
+
+/* CLASIFICACION */
 
 .seed{
     font-size:10px;
     color:#00D26A;
+    font-weight:800;
 }
 
+/* VACIOS */
+
 .placeholder{
-    opacity:.5;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    height:110px;
+
+    opacity:.75;
+}
+
+/* =========================================
+   SEPARACION POR RONDAS
+========================================= */
+
+/* OCTAVOS */
+
+.round.octavos{
+    padding-top:55px;
 }
 
 .round.octavos .knockout-match{
-    margin-top:50px;
+    margin-bottom:110px;
+}
+
+/* CUARTOS */
+
+.round.cuartos{
+    padding-top:135px;
 }
 
 .round.cuartos .knockout-match{
-    margin-top:110px;
+    margin-bottom:240px;
+}
+
+/* SEMIFINALES */
+
+.round.semis{
+    padding-top:270px;
 }
 
 .round.semis .knockout-match{
-    margin-top:230px;
+    margin-bottom:520px;
+}
+
+/* FINAL */
+
+.round.final{
+    justify-content:center;
 }
 
 .round.final .knockout-match{
-    margin-top:330px;
-    border:2px solid gold;
+
+    width:200px;
+
+    border:2px solid #ffd700;
+
+    box-shadow:
+        0 0 20px rgba(255,215,0,.25);
+
+    margin-top:360px;
+}
+
+/* TERCER PUESTO */
+
+.round.third-place{
+    justify-content:flex-end;
+}
+
+.round.third-place .knockout-match{
+
+    width:200px;
+
+    margin-bottom:50px;
+
+    border:1px solid
+    rgba(255,255,255,.35);
+}
+
+/* =========================================
+   LINEAS VERTICALES DE FONDO
+========================================= */
+
+.round::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:-13px;
+
+    width:1px;
+    height:100%;
+
+    background:
+        rgba(255,255,255,.06);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:900px){
+
+    .knockout-bracket{
+        justify-content:flex-start;
+    }
+
+    .round{
+        min-width:190px;
+    }
+
+    .knockout-match{
+        width:170px;
+    }
+
 }
