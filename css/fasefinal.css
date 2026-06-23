@@ -113,7 +113,7 @@
     color:#fff;
     text-transform:uppercase;
     letter-spacing:1px;
-    margin-bottom:10px; /* 🔥 antes 15px */
+    margin-bottom:15px;
 }
 
 .fasefinal-match{
@@ -137,33 +137,54 @@
 }
 
 .match-meta{
+
     font-size:10px;
     color:#fff;
-    border-bottom:1px solid rgba(255,255,255,.08);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
     padding-bottom:4px;
     margin-bottom:6px;
 }
 
 .team-row{
+
     display:flex;
     align-items:center;
     gap:8px;
+
     padding:4px 0;
+
     color:#fff;
     font-weight:700;
 }
 
 .team-row img{
+
     width:22px;
     height:16px;
+
     object-fit:cover;
     border-radius:2px;
 }
 
 .seed{
+
     color:#00D26A;
     font-size:10px;
     font-weight:800;
+}
+
+.placeholder{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:110px;
+
+    text-align:center;
 }
 
 /* =========================================
@@ -188,12 +209,12 @@
     justify-content:flex-start;
     align-items:center;
 
-    gap:14px; /* 🔥 antes 20px */
+    gap:20px;
 
     width:100%;
     box-sizing:border-box;
 
-    padding:15px; /* 🔥 antes 20px */
+    padding:20px;
 
     overflow-x:auto;
 
@@ -213,62 +234,115 @@
         );
 }
 
+/* LADOS */
+
+.bracket-side{
+
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+}
+
 /* RONDAS */
 
 .fasefinal-round{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:16px; /* 🔥 más compacto */
 }
 
-/* ALTURAS FIFA (ajustadas) */
+/* ALTURAS FIFA */
 
-.round16{ gap:12px; }
-.round8{ gap:38px; }
-.round4{ gap:95px; }
-.round2{ gap:200px; }
+.round16{
+    gap:14px;
+}
+
+.round8{
+    gap:45px;
+}
+
+.round4{
+    gap:110px;
+}
+
+.round2{
+    gap:220px;
+}
+
+/* POSICIONAMIENTO DE RONDAS */
+
+.round16{
+    justify-content:flex-start;
+}
+
+.round8{
+    padding-top:55px;
+}
+
+.round4{
+    padding-top:120px;
+}
+
+.round2{
+    padding-top:240px;
+}
 
 /* CENTRO */
 
 .bracket-center{
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    gap:30px; /* 🔥 antes 50px */
+
+    gap:50px;
+
     min-width:120px;
 }
 
 /* TROFEO */
 
 .worldcup-trophy{
+
     font-size:48px;
-    text-shadow:0 0 20px rgba(255,215,0,.5);
+
+    text-shadow:
+        0 0 20px rgba(255,215,0,.5);
 }
 
 /* FINAL */
 
 .fasefinal-final .fasefinal-match{
+
     width:140px;
+
     border:2px solid #ffd700;
-    box-shadow:0 0 20px rgba(255,215,0,.35);
+
+    box-shadow:
+        0 0 20px rgba(255,215,0,.35);
 }
 
 /* TERCER PUESTO */
 
 .fasefinal-third .fasefinal-match{
+
     width:140px;
+
     border:1px solid rgba(255,255,255,.3);
 }
 
-/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE
+========================================= */
 
 @media(max-width:1200px){
 
     .fasefinal-layout{
+
         justify-content:flex-start;
-        padding:12px;
-        gap:12px;
+
+        padding:15px;
     }
+
 }
