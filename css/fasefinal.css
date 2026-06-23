@@ -272,24 +272,34 @@
 
 .fasefinal-layout{
 
-    width:100%;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+
+    gap:20px;
+
+    width:max-content;
     min-width:100%;
+
+    box-sizing:border-box;
+
+    padding:20px;
 
     overflow-x:auto;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(0,210,106,.18),
-            transparent 60%
+            rgba(0,210,106,.12),
+            transparent 55%
         ),
         linear-gradient(
             90deg,
-            #02130d 0%,
-            #05261a 25%,
-            #073021 50%,
-            #05261a 75%,
-            #02130d 100%
+            #02130d,
+            #05261a,
+            #073021,
+            #05261a,
+            #02130d
         );
 }
 
