@@ -345,6 +345,9 @@
     width:140px;
     height:140px;
 
+    max-width:140px;
+    max-height:140px;
+
     margin:0 auto;
 
     display:block;
@@ -362,7 +365,7 @@
     animation: goldGlow 2.5s infinite ease-in-out;
 }
 
-/* 🔥 hover mejorado (solo mejora visual, no rompe nada) */
+/* hover */
 .champion-trophy:hover{
     transform:scale(1.08);
     filter:
@@ -375,6 +378,7 @@
 .fasefinal-final .fasefinal-match{
 
     width:140px;
+    max-width:140px;
 
     border:2px solid #ffd700;
 
@@ -387,26 +391,47 @@
 .fasefinal-third .fasefinal-match{
 
     width:140px;
+    max-width:140px;
 
     border:1px solid rgba(255,255,255,.3);
 }
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE REAL (IMPORTANTE)
 ========================================= */
 
-@media(max-width:1200px){
+@media(max-width:768px){
 
-    .fasefinal-layout{
-
-        justify-content:flex-start;
-
-        padding:15px;
+    .champion-trophy{
+        width:110px;
+        height:110px;
     }
 
+    .fasefinal-final .fasefinal-match,
+    .fasefinal-third .fasefinal-match{
+        width:120px;
+    }
+
+    .fasefinal-layout{
+        gap:12px;
+        padding:10px;
+    }
 }
 
-/* ANIMACIÓN GLOW DORADO */
+@media(max-width:480px){
+
+    .champion-trophy{
+        width:90px;
+        height:90px;
+    }
+
+    .fasefinal-final .fasefinal-match,
+    .fasefinal-third .fasefinal-match{
+        width:105px;
+    }
+}
+
+/* ANIMACIÓN */
 @keyframes goldGlow {
     0% {
         filter:
