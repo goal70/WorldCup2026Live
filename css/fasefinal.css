@@ -31,11 +31,11 @@
 
     background:
         url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=80")
-        center center / cover no-repeat; /* 🔥 mejora clave */
+        center center / cover no-repeat;
 
-    transform:scale(1.02); /* 🔥 elimina bordes vacíos */
+    transform:scale(1.02);
 
-    opacity:0.18;
+    opacity:0.40;
 
     filter:brightness(0.45) contrast(1.15);
 
@@ -60,6 +60,7 @@
     z-index:1;
 }
 
+/* 🔥 DEJA PASAR LOS CLICKS */
 .fasefinal-header::before,
 .fasefinal-header::after{
     pointer-events:none;
@@ -70,6 +71,19 @@
 
     position:relative;
     z-index:2;
+}
+
+/* 🔥 LINEA AZUL BRILLANTE DE SEPARACION */
+.fasefinal-header{
+    position:relative;
+}
+
+.fasefinal-header{
+    box-shadow:
+        0 0 30px rgba(0,210,106,.08),
+        0 3px 0 rgba(0,170,255,.9),
+        0 0 15px rgba(0,170,255,.8),
+        0 0 30px rgba(0,170,255,.5);
 }
 
 /* BOTON HOME */
@@ -84,6 +98,8 @@
     display:flex;
     align-items:center;
     justify-content:center;
+
+    width:max-content;
 
     gap:8px;
 
@@ -107,7 +123,7 @@
 
     cursor:pointer;
 
-    z-index:9999; /* 🔥 MUY IMPORTANTE */
+    z-index:9999;
 
     transition:.25s;
 
@@ -152,7 +168,6 @@
     font-weight:500;
     letter-spacing:.5px;
 }
-
 /* =========================================
    ESTILOS DE PARTIDOS
 ========================================= */
@@ -458,4 +473,14 @@
             drop-shadow(0 0 8px rgba(255,215,0,.5))
             drop-shadow(0 0 18px rgba(255,200,0,.3));
     }
+}
+.page-container{
+
+    max-width:none;
+    width:100%;
+}
+
+.page-section{
+
+    width:100%;
 }
