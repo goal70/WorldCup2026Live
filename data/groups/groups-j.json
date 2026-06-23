@@ -176,12 +176,31 @@
     "flag1": "jo",
     "flag2": "dz",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
 
-    "timeAR": "00:00"
+    "timeAR": "00:00",
+
+    "links": [
+  {
+    "name": "Direct TV",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRzcG9ydHM="
+  },
+       {
+    "name": "FOX Sports",
+    "logo": "https://w7.pngwing.com/pngs/855/273/png-transparent-fox-sports-networks-sportsouth-television-fox-action-movies-logo-television-emblem-text.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZm94MXVzLnBocA=="
+  },
+       {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXRlbGVtdW5kb3VzYQ=="
+      }
+    ]
   },
   {
     "id": 5,
