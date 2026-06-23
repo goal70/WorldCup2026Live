@@ -1,0 +1,74 @@
+.knockout-bracket{
+    display:flex;
+    gap:40px;
+    padding:30px;
+    overflow-x:auto;
+    min-width:max-content;
+}
+
+.round{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    min-width:240px;
+}
+
+.round-title{
+    text-align:center;
+    font-weight:900;
+    color:#00D26A;
+    margin-bottom:10px;
+}
+
+.knockout-match{
+    background:#0b1d16;
+    border:1px solid rgba(0,210,106,.25);
+    border-radius:12px;
+    padding:10px;
+}
+
+.match-meta{
+    font-size:11px;
+    opacity:.8;
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.team-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    padding:6px 0;
+}
+
+.team-row img{
+    width:22px;
+    height:16px;
+}
+
+.seed{
+    font-size:10px;
+    color:#00D26A;
+}
+
+.placeholder{
+    opacity:.5;
+}
+
+.round.octavos .knockout-match{
+    margin-top:50px;
+}
+
+.round.cuartos .knockout-match{
+    margin-top:110px;
+}
+
+.round.semis .knockout-match{
+    margin-top:230px;
+}
+
+.round.final .knockout-match{
+    margin-top:330px;
+    border:2px solid gold;
+}
