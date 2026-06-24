@@ -248,7 +248,7 @@
     "flag1": "ch",
     "flag2": "ca",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 0,
 
     "stadium": "BC Place",
@@ -260,6 +260,11 @@
       {
         "player": "Vargas",
         "minute": 46,
+        "team": "home"
+        },
+      {
+        "player": "Manzambi",
+        "minute": 57,
         "team": "home"
         }
        ],
