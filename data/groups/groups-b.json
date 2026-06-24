@@ -249,7 +249,7 @@
     "flag2": "ca",
 
     "homeScore": 2,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "BC Place",
     "city": "Vancouver",
@@ -266,6 +266,11 @@
         "player": "Manzambi",
         "minute": 57,
         "team": "home"
+        },
+      {
+        "player": "P. David",
+        "minute": 76,
+        "team": "away"
         }
        ],
 
