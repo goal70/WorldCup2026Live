@@ -248,13 +248,21 @@
     "flag1": "ch",
     "flag2": "ca",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 0,
 
     "stadium": "BC Place",
     "city": "Vancouver",
 
     "timeAR": "16:00",
+
+    "goals": [
+      {
+        "player": "Vargas",
+        "minute": 46,
+        "team": "home"
+        }
+       ],
 
     "links": [
   {
