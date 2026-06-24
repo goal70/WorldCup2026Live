@@ -259,10 +259,39 @@
 
     "timeAR": "22:00",
 
-    "goals": [],
-    "redCards": [],
-    "links": []
+    "links": [
+  {
+    "name": "DirecTV",
+    "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
   },
+  {
+    "name": "Telemundo",
+    "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyP0ik0UB0dl-6jZIiqHKZcxEi_xqqJlk8m0mb9TcQnSZpgtNDE8cb8cs02s0OLcMNystOt702BlVKUyjNtFrC3vwAqgz63ZeUK2YHgB6EKGikNn_aYz1t8Qbv-6LTS2vcOdr-kgRy7hw/s1600/GDG.+Telemundo+internacional+4.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXRlbGVtdW5kb3VzYQ=="
+  },
+  {
+    "name": "CazeTV (Br)",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Caz%C3%A9TV_logo.svg/1280px-Caz%C3%A9TV_logo.svg.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTMucGhw"
+  },  
+  {
+    "name": "TUDN (Mx)",
+    "logo": "https://static.wikia.nocookie.net/youtubepedia/images/3/32/TUDN_M%C3%A9xico.jpg/revision/latest?cb=20211120191946&path-prefix=es",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHVkbm14LnBocA=="
+  },
+  {
+    "name": "Win Sports",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Win_Sports%2B_logo.svg/3840px-Win_Sports%2B_logo.svg.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXdpbnNwb3J0cw=="
+  },
+  {
+    "name": "Canal 5 MX",
+    "logo": "https://logosandtypes.com/wp-content/uploads/2020/11/Channel-5-Mexico.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2FuYWw1bXgucGhw"
+  }
+]
+},
 
   {
     "id": 6,
