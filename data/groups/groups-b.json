@@ -240,7 +240,7 @@
     "id": 5,
     "group": "B",
     "date": "2026-06-24",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Suiza",
     "team2": "Canada",
@@ -307,7 +307,7 @@
     "id": 6,
     "group": "B",
     "date": "2026-06-24",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Bosnia y Herzegovina",
     "team2": "Qatar",
