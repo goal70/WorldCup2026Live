@@ -338,6 +338,11 @@
         "player": "Al-Haydos",
         "minute": 42,
         "team": "away"
+        },
+      {
+        "player": "Mahmic",
+        "minute": 80,
+        "team": "home"
         }
        ],
 
