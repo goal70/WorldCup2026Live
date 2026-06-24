@@ -298,12 +298,30 @@
     "flag2": "qa",
 
     "homeScore": 2,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "Lumen Field",
     "city": "Seattle",
 
     "timeAR": "16:00",
+
+    "goals": [
+      {
+        "player": "Alajbegovic",
+        "minute": 29,
+        "team": "home"
+        },
+      {
+        "player": "Brake (E.C)",
+        "minute": 34,
+        "team": "home"
+        },
+      {
+        "player": "Al-Haydos",
+        "minute": 42,
+        "team": "away"
+        }
+       ],
 
     "links": [
    {
