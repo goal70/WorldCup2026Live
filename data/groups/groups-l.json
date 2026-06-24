@@ -201,8 +201,9 @@
     "flag1": "hr",
     "flag2": "pa",
 
-    "score": "-",
-
+    "homeScore": 1,
+    "awayScore": 0,
+    
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
 
