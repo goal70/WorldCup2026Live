@@ -198,7 +198,8 @@
     "flag1": "ma",
     "flag2": "ht",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 1,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
@@ -241,7 +242,8 @@
     "flag1": "sc",
     "flag2": "br",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 1,
 
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
