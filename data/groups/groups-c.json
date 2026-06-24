@@ -203,8 +203,32 @@
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
 
-    "timeAR": "19:00"
+    "timeAR": "19:00",
+
+    "links": [
+   {
+    "name": "TyC Sports",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1jDJZ3W3xam3lzHjQEaFP2R1Rj5Y6ob2ooJVRPvSgMzIOnm5QNQXbjRk&s=10",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXR5Y3Nwb3J0cw=="
+  },   
+  {
+    "name": "FOX Sports",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Fox_Sports_Premium_%28Argentina%29_-_2018_logo.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZm94MXVzLnBocA=="
   },
+  {
+    "name": "Unicanal",
+    "logo": "https://yt3.googleusercontent.com/dlr_FmbDta1i7yhfrDQx3Zx51VhyCq5U6uAtpv8zE1uK_hFNv6mnU5i5TKnGDROUqkY977ueDA=s900-c-k-c0x00ffffff-no-rj",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
+  },  
+  {
+    "name": "Universo",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/70/UNIVERSO_LOGO_color_black.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXVuaXZlcnNvX3VzYQ=="
+   }
+]
+},
+      
   {
     "id": 6,
     "group": "C",
@@ -222,6 +246,34 @@
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
 
-    "timeAR": "19:00"
-  }
+    "timeAR": "19:00",
+
+    "links": [
+  {
+    "name": "DSports",
+    "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0cy5waHA="
+  },
+  {
+    "name": "Telemundo",
+    "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyP0ik0UB0dl-6jZIiqHKZcxEi_xqqJlk8m0mb9TcQnSZpgtNDE8cb8cs02s0OLcMNystOt702BlVKUyjNtFrC3vwAqgz63ZeUK2YHgB6EKGikNn_aYz1t8Qbv-6LTS2vcOdr-kgRy7hw/s1600/GDG.+Telemundo+internacional+4.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXRlbGVtdW5kb3VzYQ=="
+  },
+  {
+    "name": "CazeTV (Br)",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Caz%C3%A9TV_logo.svg/1280px-Caz%C3%A9TV_logo.svg.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTMucGhw"
+  },  
+  {
+    "name": "Disney+",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgaL9B6zDy8tzFnWVwXfo_dpUMr0iFgDjDaCYe8Oy7YvU8oc6NgvfLwQyR&s=10",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRpc25leTE="
+  },
+  {
+    "name": "Trece",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Canal_Trece_logo.svg/1280px-Canal_Trece_logo.svg.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHJlY2UucGhw"
+   }
+]
+}
 ]
