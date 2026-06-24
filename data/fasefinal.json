@@ -34,8 +34,8 @@
     "team1": "-",
     "flag1": "-",
     "seed1": "2 A",
-    "team2": "-",
-    "flag2": "-",
+    "team2": "Canadá",
+    "flag2": "ca",
     "seed2": "2 B"
   },
   {
@@ -187,8 +187,8 @@
     "stage": "round16",
     "date": "02 Julio",
     "time": "16:00",
-    "team1": "-",
-    "flag1": "-",
+    "team1": "Suiza",
+    "flag1": "ch",
     "seed1": "1 B",
     "team2": "-",
     "flag2": "-",
