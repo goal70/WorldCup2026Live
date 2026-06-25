@@ -235,7 +235,8 @@
     "flag1": "nl",
     "flag2": "tn",
 
-    "score": "-",
+    "homeScore": 2,
+    "awayScore": 0,
 
     "stadium": "SoFi Stadium",
     "city": "Los Angeles",
