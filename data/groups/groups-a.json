@@ -251,8 +251,8 @@
     "flag1": "cz",
     "flag2": "mx",
 
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 0,
+    "awayScore": 3,
 
     "stadium": "Estadio Azteca",
     "city": "Mexico City",
@@ -305,8 +305,8 @@
     "flag1": "za",
     "flag2": "kr",
 
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 1,
+    "awayScore": 0,
 
     "stadium": "Monterrey Stadium",
     "city": "Monterrey",
