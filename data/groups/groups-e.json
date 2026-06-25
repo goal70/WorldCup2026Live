@@ -181,14 +181,14 @@
 
   "links": [
   {
-    "name": "DSports",
+    "name": "DSports2",
     "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRzcG9ydHM="
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRzcG9ydHMy"
     },
   {
-    "name": "Telemundo",
+    "name": "SporTV2",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOZ85nn2xwnWxoY4wH5K92aOqFKrujywct_H4UiP3rQ2dZ4NDt3KPFjCE&s=10",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXRlbGVtdW5kb3VzYQ=="
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvc3BvcnR2Mi5waHA="
   },
       {
     "name": "FOX Sports",
@@ -196,9 +196,9 @@
     "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZm94MXVzLnBocA=="
   },
   {
-    "name": "Disney+",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRXEOBt658oYJST_Loao2XwgNMnPF10E8a7Q&s",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPWRpc25leTM="
+    "name": "Universo",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/70/UNIVERSO_LOGO_color_black.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXVuaXZlcnNvX3VzYQ=="
   }
 ]
 },
