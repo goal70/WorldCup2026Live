@@ -218,7 +218,29 @@
     "stadium": "SoFi Stadium",
     "city": "Los Angeles",
 
-    "timeET": "19:00",
-    "timeAR": "20:00"
+    "timeAR": "20:00",
+
+    "links": [
+    {
+    "name": "DirecTV",
+    "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0cy5waHA="
+  },
+   {
+    "name": "Telemundo",
+    "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyP0ik0UB0dl-6jZIiqHKZcxEi_xqqJlk8m0mb9TcQnSZpgtNDE8cb8cs02s0OLcMNystOt702BlVKUyjNtFrC3vwAqgz63ZeUK2YHgB6EKGikNn_aYz1t8Qbv-6LTS2vcOdr-kgRy7hw/s1600/GDG.+Telemundo+internacional+4.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXRlbGVtdW5kb3VzYQ=="
+  },   
+  {
+    "name": "Unicanal",
+    "logo": "https://yt3.googleusercontent.com/dlr_FmbDta1i7yhfrDQx3Zx51VhyCq5U6uAtpv8zE1uK_hFNv6mnU5i5TKnGDROUqkY977ueDA=s900-c-k-c0x00ffffff-no-rj",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
+  },  
+  {
+    "name": "CazeTV (Br)",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Caz%C3%A9TV_logo.svg/1280px-Caz%C3%A9TV_logo.svg.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTIucGhw"
   }
+]
+}
 ]
