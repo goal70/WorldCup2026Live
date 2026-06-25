@@ -214,7 +214,8 @@
     "flag1": "ec",
     "flag2": "cw",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Arrowhead Stadium",
     "city": "Kansas City",
@@ -256,7 +257,8 @@
     "flag1": "cw",
     "flag2": "ci",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 2,
 
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
@@ -308,7 +310,8 @@
     "flag1": "ec",
     "flag2": "de",
 
-    "score": "-",
+    "homeScore": 1,
+    "awayScore": 1,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
