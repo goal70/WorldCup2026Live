@@ -249,7 +249,7 @@
     "id": 5,
     "group": "E",
     "date": "2026-06-25",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Curazao",
     "team2": "Costa de Marfil",
@@ -302,7 +302,7 @@
     "id": 6,
     "group": "E",
     "date": "2026-06-25",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Ecuador",
     "team2": "Alemania",
@@ -310,7 +310,7 @@
     "flag1": "ec",
     "flag2": "de",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 1,
 
     "stadium": "MetLife Stadium",
