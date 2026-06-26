@@ -287,7 +287,7 @@
     "flag1": "no",
     "flag2": "fr",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 3,
 
     "stadium": "Gillette Stadium",
@@ -305,6 +305,11 @@
         "player": "Dembélé",
         "minute": 20,
         "team": "away"
+        },
+      {
+        "player": "Aasgaard",
+        "minute": 21,
+        "team": "home"
         },
        {
         "player": "Dembélé",
