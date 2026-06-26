@@ -288,7 +288,7 @@
     "flag2": "fr",
 
     "homeScore": 1,
-    "awayScore": 3,
+    "awayScore": 4,
 
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -314,6 +314,11 @@
        {
         "player": "Dembélé",
         "minute": 32,
+        "team": "away"
+        },
+      {
+        "player": "Doué",
+        "minute": "90+4",
         "team": "away"
         }
     ],
