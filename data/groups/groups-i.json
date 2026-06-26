@@ -359,7 +359,7 @@
     "flag1": "sn",
     "flag2": "iq",
 
-    "homeScore": 1,
+    "homeScore": 3,
     "awayScore": 0,
 
     "stadium": "BMO Field",
@@ -371,6 +371,15 @@
       {
         "player": "Diarra",
         "minute": 4,
+        "team": "home"
+        {
+        "player": "I. Sarr",
+        "minute": 56,
+        "team": "home"
+        },
+       {
+        "player": "P. Gueye",
+        "minute": 59,
         "team": "home"
         }
     ],
