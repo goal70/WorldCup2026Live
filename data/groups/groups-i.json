@@ -279,7 +279,7 @@
     "id": 5,
     "group": "I",
     "date": "2026-06-26",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Noruega",
     "team2": "Francia",
@@ -287,7 +287,8 @@
     "flag1": "no",
     "flag2": "fr",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Gillette Stadium",
     "city": "Boston",
@@ -326,7 +327,7 @@
     "id": 6,
     "group": "I",
     "date": "2026-06-26",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Senegal",
     "team2": "Irak",
@@ -334,7 +335,8 @@
     "flag1": "sn",
     "flag2": "iq",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "BMO Field",
     "city": "Toronto",
