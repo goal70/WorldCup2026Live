@@ -159,6 +159,46 @@ function setupNavigation() {
         setActive("prevDateBtn6");
         showCustomDate("2026-06-16");
     });
+
+    bind("prevDateBtn7", () => {
+        setActive("prevDateBtn7");
+        showCustomDate("2026-06-17");
+    });
+
+    bind("prevDateBtn8", () => {
+        setActive("prevDateBtn8");
+        showCustomDate("2026-06-18");
+    });
+
+    bind("prevDateBtn9", () => {
+        setActive("prevDateBtn9");
+        showCustomDate("2026-06-19");
+    });
+
+    bind("prevDateBtn10", () => {
+        setActive("prevDateBtn10");
+        showCustomDate("2026-06-20");
+    });
+
+    bind("prevDateBtn11", () => {
+        setActive("prevDateBtn11");
+        showCustomDate("2026-06-21");
+    });
+
+    bind("prevDateBtn12", () => {
+        setActive("prevDateBtn12");
+        showCustomDate("2026-06-22");
+    });
+
+    bind("prevDateBtn13", () => {
+        setActive("prevDateBtn13");
+        showCustomDate("2026-06-23");
+    });
+
+    bind("prevDateBtn14", () => {
+        setActive("prevDateBtn14");
+        showCustomDate("2026-06-24");
+    });
 }
 
 /* =========================
