@@ -224,7 +224,7 @@
     "id": 5,
     "group": "D",
     "date": "2026-06-25",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Paraguay",
     "team2": "Australia",
@@ -232,8 +232,8 @@
     "flag1": "py",
     "flag2": "au",
 
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
@@ -268,7 +268,7 @@
     "id": 6,
     "group": "D",
     "date": "2026-06-25",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Turquia",
     "team2": "Estados Unidos",
@@ -276,8 +276,8 @@
     "flag1": "tr",
     "flag2": "us",
 
-    "homeScore": null,
-    "awayScore": null,
+    "homeScore": 3,
+    "awayScore": 2,
 
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
