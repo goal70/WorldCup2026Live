@@ -279,7 +279,7 @@
     "id": 5,
     "group": "I",
     "date": "2026-06-26",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Noruega",
     "team2": "Francia",
@@ -356,7 +356,7 @@
     "id": 6,
     "group": "I",
     "date": "2026-06-26",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Senegal",
     "team2": "Irak",
