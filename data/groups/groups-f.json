@@ -193,7 +193,8 @@
     "flag1": "jp",
     "flag2": "se",
 
-    "score": "-",
+    "homeScore": 1,
+    "awayScore": 0,
 
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -236,7 +237,7 @@
     "flag2": "tn",
 
     "homeScore": 2,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "SoFi Stadium",
     "city": "Los Angeles",
