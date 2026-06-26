@@ -191,7 +191,7 @@
   {
     "id": 5,
     "group": "H",
-    "date": "2026-06-27",
+    "date": "2026-06-26",
     "status": "UPCOMING",
 
     "team1": "Cabo Verde",
@@ -205,12 +205,12 @@
     "stadium": "NRG Stadium",
     "city": "Houston",
 
-    "timeAR": "03:00"
+    "timeAR": "21:00"
   },
   {
     "id": 6,
     "group": "H",
-    "date": "2026-06-27",
+    "date": "2026-06-26",
     "status": "UPCOMING",
 
     "team1": "Uruguay",
@@ -224,6 +224,6 @@
     "stadium": "Estadio Akron",
     "city": "Guadalajara",
 
-    "timeAR": "03:00"
+    "timeAR": "21:00"
   }
 ]
