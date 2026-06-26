@@ -185,7 +185,7 @@
     "id": 5,
     "group": "F",
     "date": "2026-06-25",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Japon",
     "team2": "Suecia",
@@ -228,7 +228,7 @@
     "id": 6,
     "group": "F",
     "date": "2026-06-25",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Paises Bajos",
     "team2": "Tunez",
