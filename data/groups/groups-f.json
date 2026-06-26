@@ -194,7 +194,7 @@
     "flag2": "se",
 
     "homeScore": 1,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "Lumen Field",
     "city": "Seattle",
@@ -236,7 +236,7 @@
     "flag1": "nl",
     "flag2": "tn",
 
-    "homeScore": 2,
+    "homeScore": 3,
     "awayScore": 1,
 
     "stadium": "SoFi Stadium",
