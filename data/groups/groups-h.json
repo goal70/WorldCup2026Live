@@ -192,7 +192,7 @@
     "id": 5,
     "group": "H",
     "date": "2026-06-26",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Cabo Verde",
     "team2": "Arabia Saudita",
@@ -200,7 +200,8 @@
     "flag1": "cv",
     "flag2": "sa",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "NRG Stadium",
     "city": "Houston",
@@ -234,7 +235,7 @@
     "id": 6,
     "group": "H",
     "date": "2026-06-26",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Uruguay",
     "team2": "España",
@@ -242,7 +243,8 @@
     "flag1": "uy",
     "flag2": "es",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Estadio Akron",
     "city": "Guadalajara",
