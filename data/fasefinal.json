@@ -21,9 +21,9 @@
     "team1": "Francia",
     "flag1": "fr",
     "seed1": "1I",
-    "team2": "-",
-    "flag2": "-",
-    "seed2": "3C/D/F/G/H"
+    "team2": "Suecia",
+    "flag2": "se",
+    "seed2": "-"
   },
   {
     "id": "M3",
@@ -70,8 +70,8 @@
     "stage": "round16",
     "date": "02 Julio",
     "time": "20:00",
-    "team1": "-",
-    "flag1": "-",
+    "team1": "España",
+    "flag1": "es",
     "seed1": "1 H",
     "team2": "-",
     "flag2": "-",
@@ -85,10 +85,10 @@
     "time": "16:00",
     "team1": "Estados Unidos",
     "flag1": "us",
-    "seed1": "1 D",
+    "seed1": "-",
     "team2": "Bosnia Herzegovina",
     "flag2": "ba",
-    "seed2": "3B/E/F/I/J"
+    "seed2": "-"
   },
   {
     "id": "M8",
@@ -164,8 +164,8 @@
     "team1": "Argentina",
     "flag1": "ar",
     "seed1": "1 J",
-    "team2": "-",
-    "flag2": "-",
+    "team2": "Cabo Verde",
+    "flag2": "cv",
     "seed2": "2 H"
   },
   {
