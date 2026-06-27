@@ -1,0 +1,41 @@
+[
+  {
+    "id": "M3",
+    "stage": "round16",
+    "side": "left",
+
+    "date": "2026-06-28",
+    "status": "UPCOMING",
+
+    "team1": "Sudáfrica",
+    "team2": "Canadá",
+
+    "flag1": "za",
+    "flag2": "ca",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "Hard Rock Stadium",
+    "city": "Miami",
+
+    "timeAR": "16:00",
+
+    "goals": [],
+
+    "redCards": [],
+
+    "links": [
+      {
+        "name": "DSports",
+        "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
+        "url": "https://..."
+      },
+      {
+        "name": "TyC Sports",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9av3BMXwBjs247UtPbCYJXXbEJBGHAEQhGQ&s",
+        "url": "https://..."
+      }
+    ]
+  }
+]
