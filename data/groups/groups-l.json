@@ -236,7 +236,7 @@
     "id": 5,
     "group": "L",
     "date": "2026-06-27",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Croacia",
     "team2": "Ghana",
@@ -274,7 +274,7 @@
     "id": 6,
     "group": "L",
     "date": "2026-06-27",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Inglaterra",
     "team2": "Panama",
@@ -282,7 +282,8 @@
     "flag1": "gb",
     "flag2": "pa",
 
-    "score": "-",
+    "homeScore": 1,
+    "awayScore": 0,
 
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
