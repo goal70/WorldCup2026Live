@@ -71,6 +71,57 @@ async function loadMatches() {
             });
         }
 
+       // 🔥 FASE FINAL LOAD
+try {
+
+    const resFinal = await fetch("data/fasefinal.json");
+
+    if (resFinal.ok) {
+
+        const finalMatches = await resFinal.json();
+
+        finalMatches.forEach(m => {
+
+    allMatches.push({
+        id: m.id,
+
+        type: "knockout",   // 👈 AQUÍ VA
+        group: "FASE FINAL",
+
+        stage: m.stage,
+        side: m.side,
+
+                date: m.date,
+                status: m.status || "UPCOMING",
+
+                team1: m.team1,
+                team2: m.team2,
+
+                flag1: m.flag1,
+                flag2: m.flag2,
+
+                homeScore: m.homeScore ?? 0,
+                awayScore: m.awayScore ?? 0,
+
+                stadium: m.stadium,
+                city: m.city,
+
+                timeAR: m.timeAR,
+
+                links: m.links || [],
+                goals: m.goals || [],
+                redCards: m.redCards || []
+
+            });
+
+        });
+
+    }
+
+} catch (e) {
+    console.log("FASE FINAL no cargada aún");
+}
+        
         showToday();
         renderTables();
 
@@ -259,8 +310,9 @@ function render(containerId, date) {
     container.style.display = "grid";
 
     const matches = allMatches.filter(m =>
-        (m.date || "").slice(0,10) === date
-    );
+    (m.date || "").slice(0,10) === date &&
+    (!m.stage || m.stage !== "round16")
+);
 
     if (!matches.length) {
         container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
