@@ -314,10 +314,28 @@ function render(containerId, date) {
 
     container.style.display = "grid";
 
-    const matches = allMatches.filter(m =>
-    (m.date || "").slice(0,10) === date &&
-    (!m.stage || m.stage !== "round16")
-);
+    const matches = allMatches.filter(m => {
+    const matchDate = (m.date || "").slice(0,10);
+
+    if (date === "TODAY") {
+        const d = new Date();
+        return matchDate === d.toISOString().slice(0,10);
+    }
+
+    if (date === "YESTERDAY") {
+        const d = new Date();
+        d.setDate(d.getDate() - 1);
+        return matchDate === d.toISOString().slice(0,10);
+    }
+
+    if (date === "TOMORROW") {
+        const d = new Date();
+        d.setDate(d.getDate() + 1);
+        return matchDate === d.toISOString().slice(0,10);
+    }
+
+    return matchDate === date;
+});
 
     if (!matches.length) {
         container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
