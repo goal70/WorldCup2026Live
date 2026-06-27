@@ -18,8 +18,8 @@
     "stage": "round16",
     "date": "30 Junio",
     "time": "20:00",
-    "team1": "-",
-    "flag1": "-",
+    "team1": "Francia",
+    "flag1": "fr",
     "seed1": "1I",
     "team2": "-",
     "flag2": "-",
@@ -86,8 +86,8 @@
     "team1": "Estados Unidos",
     "flag1": "us",
     "seed1": "1 D",
-    "team2": "-",
-    "flag2": "-",
+    "team2": "Bosnia Herzegovina",
+    "flag2": "ba",
     "seed2": "3B/E/F/I/J"
   },
   {
@@ -125,8 +125,8 @@
     "team1": "Costa de Marfil",
     "flag1": "ci",
     "seed1": "2 E",
-    "team2": "-",
-    "flag2": "-",
+    "team2": "Noruega",
+    "flag2": "no",
     "seed2": "2 I"
   },
   {
