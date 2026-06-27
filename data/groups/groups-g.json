@@ -133,7 +133,7 @@
     "id": 5,
     "group": "G",
     "date": "2026-06-27",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Egipto",
     "team2": "Iran",
@@ -176,7 +176,7 @@
     "id": 6,
     "group": "G",
     "date": "2026-06-27",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Nueva Zelanda",
     "team2": "Belgica",
