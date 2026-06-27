@@ -133,7 +133,7 @@
     "id": 5,
     "group": "G",
     "date": "2026-06-27",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Egipto",
     "team2": "Iran",
@@ -176,7 +176,7 @@
     "id": 6,
     "group": "G",
     "date": "2026-06-27",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Nueva Zelanda",
     "team2": "Belgica",
@@ -184,7 +184,8 @@
     "flag1": "nz",
     "flag2": "be",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
