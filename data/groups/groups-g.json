@@ -185,7 +185,7 @@
     "flag2": "be",
 
     "homeScore": 0,
-    "awayScore": 0,
+    "awayScore":1,
 
     "stadium": "MetLife Stadium",
     "city": "New York/New Jersey",
