@@ -252,7 +252,8 @@
     "flag1": "co",
     "flag2": "pt",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
@@ -300,7 +301,8 @@
     "flag1": "cd",
     "flag2": "uz",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 1,
 
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
