@@ -387,8 +387,20 @@ function render(containerId, date) {
             </div>
 
             <div style="text-align:center;font-weight:900;color:#00D26A;margin-bottom:6px;">
-                GRUPO ${m.group}
-            </div>
+    ${
+        m.type === "knockout"
+            ? ({
+                round16: "16avos de Final",
+                round8: "Octavos de Final",
+                round4: "Cuartos de Final",
+                semifinal: "Semifinal",
+                final: "Final",
+                third: "Tercer Puesto"
+            }[m.stage] || "Fase Final")
+            : `Grupo ${m.group}`
+    }
+</div>
+</div>
 
             <div class="match-header">
 
