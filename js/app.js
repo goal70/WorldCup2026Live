@@ -382,27 +382,19 @@ function render(containerId, date) {
         return `
         <div class="match-card">
 
-            <div class="match-status ${m.status.toLowerCase()}">
-                ${m.status}
-            </div>
+    <div class="match-status ${m.status.toLowerCase()}">
+        ${m.status}
+    </div>
 
-            <div style="text-align:center;font-weight:900;color:#00D26A;margin-bottom:6px;">
-    ${
-        m.type === "knockout"
-            ? ({
-                round16: "16avos de Final",
-                round8: "Octavos de Final",
-                round4: "Cuartos de Final",
-                semifinal: "Semifinal",
-                final: "Final",
-                third: "Tercer Puesto"
-            }[m.stage] || "Fase Final")
-            : `Grupo ${m.group}`
-    }
-</div>
-</div>
+    <div style="text-align:center;font-weight:900;color:#00D26A;margin-bottom:6px;">
+        ${
+            m.type === "knockout"
+                ? "16avos de Final"
+                : `Grupo ${m.group}`
+        }
+    </div>
 
-            <div class="match-header">
+    <div class="match-header">
 
                 <div class="team">
                     <img src="${flagUrl(m.flag1)}" class="flag">
