@@ -206,7 +206,7 @@
     "id": 5,
     "group": "J",
     "date": "2026-06-27",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Jordania",
     "team2": "Argentina",
@@ -277,7 +277,7 @@
     "id": 6,
     "group": "J",
     "date": "2026-06-27",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Argelia",
     "team2": "Austria",
@@ -313,6 +313,16 @@
         "player": "Mahrez",
         "minute": 60,
         "team": "home"
+        },
+      {
+        "player": "Mahrez",
+        "minute": "90+3",
+        "team": "home"
+        },
+      {
+        "player": "Kalajdzic",
+        "minute": "90+6",
+        "team": "away"
         }
        ],
 
