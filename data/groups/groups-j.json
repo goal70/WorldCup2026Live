@@ -280,7 +280,7 @@
     "flag1": "dz",
     "flag2": "at",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 2,
 
     "stadium": "GEHA Field at Arrowhead Stadium",
@@ -303,6 +303,11 @@
         "player": "Sabitzer",
         "minute": 55,
         "team": "away"
+        },
+      {
+        "player": "Mahrez",
+        "minute": 60,
+        "team": "home"
         }
        ],
 
