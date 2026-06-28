@@ -232,6 +232,11 @@
         "player": "Lautaro Martinez (pen.)",
         "minute": 31,
         "team": "away"
+        },
+      {
+        "player": "Al-Taamari",
+        "minute": 55,
+        "team": "home"
         }
        ],
 
@@ -276,7 +281,7 @@
     "flag2": "at",
 
     "homeScore": 1,
-    "awayScore": 1,
+    "awayScore": 2,
 
     "stadium": "GEHA Field at Arrowhead Stadium",
     "city": "Kansas City",
@@ -293,6 +298,11 @@
         "player": "Belghali",
         "minute": 45,
         "team": "home"
+        },
+      {
+        "player": "Sabitzer",
+        "minute": 55,
+        "team": "away"
         }
        ],
 
