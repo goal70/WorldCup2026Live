@@ -177,7 +177,7 @@
     "flag2": "dz",
 
     "homeScore": 1,
-    "awayScore":2,
+    "awayScore": 2,
 
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
@@ -206,7 +206,7 @@
     "id": 5,
     "group": "J",
     "date": "2026-06-27",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Jordania",
     "team2": "Argentina",
@@ -214,12 +214,21 @@
     "flag1": "jo",
     "flag2": "ar",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "AT&T Stadium",
     "city": "Dallas",
 
     "timeAR": "23:00",
+
+    "goals": [
+      {
+        "player": "Lo Celso",
+        "minute": 19,
+        "team": "away"
+        }
+       ],
 
     "links": [
   {
@@ -253,7 +262,7 @@
     "id": 6,
     "group": "J",
     "date": "2026-06-27",
-    "status": "UPCOMING",
+    "status": "LIVE",
 
     "team1": "Argelia",
     "team2": "Austria",
@@ -261,7 +270,8 @@
     "flag1": "dz",
     "flag2": "at",
 
-    "score": "-",
+    "homeScore": 0,
+    "awayScore": 0,
 
     "stadium": "GEHA Field at Arrowhead Stadium",
     "city": "Kansas City",
