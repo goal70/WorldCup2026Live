@@ -215,7 +215,7 @@
     "flag2": "ar",
 
     "homeScore": 0,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "AT&T Stadium",
     "city": "Dallas",
