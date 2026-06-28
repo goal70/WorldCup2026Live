@@ -19,24 +19,36 @@ const rightMatches =
 
         if (!container) return;
 
-        // 🔥 16avos
-        const renderMatch = (m) => `
+      // 🔥 16avos
+const renderMatch = (m) => `
 <div class="fasefinal-match">
 
     <div class="match-meta">
-        ${m.date} • ${m.time}
+        ${m.displayDate || m.date} • ${m.timeAR || m.time}
     </div>
 
     <div class="team-row">
         <span class="seed">${m.seed1 || ""}</span>
         <img src="https://flagcdn.com/w40/${m.flag1}.png">
         <span>${m.team1}</span>
+
+        ${
+            m.status !== "UPCOMING"
+                ? `<span class="match-score">${m.homeScore}</span>`
+                : ""
+        }
     </div>
 
     <div class="team-row">
         <span class="seed">${m.seed2 || ""}</span>
         <img src="https://flagcdn.com/w40/${m.flag2}.png">
         <span>${m.team2}</span>
+
+        ${
+            m.status !== "UPCOMING"
+                ? `<span class="match-score">${m.awayScore}</span>`
+                : ""
+        }
     </div>
 
 </div>
