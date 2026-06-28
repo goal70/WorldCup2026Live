@@ -8,9 +8,9 @@
     "team1": "Alemania",
     "flag1": "de",
     "seed1": "1 E",
-    "team2": "-",
-    "flag2": "-",
-    "seed2": "3A/B/C/D/F"
+    "team2": "Paraguay",
+    "flag2": "py",
+    "seed2": "-"
   },
   {
     "id": "M2",
@@ -57,8 +57,8 @@
     "stage": "round16",
     "date": "02 Julio",
     "time": "16:00",
-    "team1": "-",
-    "flag1": "-",
+    "team1": "Portugal",
+    "flag1": "pt",
     "seed1": "2 K",
     "team2": "Croacia",
     "flag2": "hr",
@@ -73,8 +73,8 @@
     "team1": "España",
     "flag1": "es",
     "seed1": "1 H",
-    "team2": "-",
-    "flag2": "-",
+    "team2": "Austria",
+    "flag2": "at",
     "seed2": "2 J"
   },
   {
@@ -99,9 +99,9 @@
     "team1": "Belgica",
     "flag1": "be",
     "seed1": "1 G",
-    "team2": "-",
-    "flag2": "-",
-    "seed2": "3A/E/H/I/J"
+    "team2": "Senegal",
+    "flag2": "sn",
+    "seed2": "-"
   },
   {
     "id": "M9",
@@ -138,9 +138,9 @@
     "team1": "Mexico",
     "flag1": "mx",
     "seed1": "1 A",
-    "team2": "-",
-    "flag2": "-",
-    "seed2": "3C/E/F/H/I"
+    "team2": "Ecuador",
+    "flag2": "ec",
+    "seed2": "-"
   },
   {
     "id": "M12",
@@ -151,9 +151,9 @@
     "team1": "Inglaterra",
     "flag1": "gb",
     "seed1": "1 L",
-    "team2": "-",
-    "flag2": "-",
-    "seed2": "3E/H/I/J/K"
+    "team2": "RD Congo",
+    "flag2": "cd",
+    "seed2": "-"
   },
   {
     "id": "M13",
@@ -190,9 +190,9 @@
     "team1": "Suiza",
     "flag1": "ch",
     "seed1": "1 B",
-    "team2": "-",
-    "flag2": "-",
-    "seed2": "3E/F/G/I/J"
+    "team2": "Argelia",
+    "flag2": "dz",
+    "seed2": "-"
   },
   {
     "id": "M16",
@@ -200,11 +200,11 @@
     "stage": "round16",
     "date": "03 Julio",
     "time": "20:00",
-    "team1": "-",
-    "flag1": "-",
+    "team1": "Colombia",
+    "flag1": "co",
     "seed1": "1 K",
-    "team2": "-",
-    "flag2": "-",
-    "seed2": "3D/E/I/J/L"
+    "team2": "Ghana",
+    "flag2": "gh",
+    "seed2": "-"
   }
 ]
