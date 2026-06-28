@@ -1,7 +1,7 @@
 async function loadFaseFinal() {
     try {
 
-        const res = await fetch("data/fasefinal.json");
+        const res = await fetch("data/fasefinal-matches.json");
 
         if (!res.ok) {
             throw new Error("No se pudo cargar fasefinal.json");
