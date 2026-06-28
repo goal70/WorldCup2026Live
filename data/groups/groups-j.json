@@ -266,6 +266,34 @@
     "stadium": "GEHA Field at Arrowhead Stadium",
     "city": "Kansas City",
 
-    "timeAR": "23:00"
+    "timeAR": "23:00",
+
+    "links": [
+  {
+    "name": "DirecTV",
+    "logo": "https://i.ytimg.com/vi/DmhzwwEpTtM/maxresdefault.jpg",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0czIucGhw"
+  },
+  {
+    "name": "CazeTV (Br)",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Caz%C3%A9TV_logo.svg/1280px-Caz%C3%A9TV_logo.svg.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTMucGhw"
+  },
+  {
+    "name": "Universo",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/70/UNIVERSO_LOGO_color_black.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXVuaXZlcnNvX3VzYQ=="
+  },
+  {
+    "name": "Unicanal",
+    "logo": "https://i0.wp.com/television.com.py/wp-content/uploads/2015/03/UnicanalLogotvpy.jpg?fit=620%2C350&ssl=1",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
+  },
+  {
+    "name": "FOX Sports",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Fox_Sports_Premium_%28Argentina%29_-_2018_logo.png",
+    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZm94MXVzLnBocA=="
   }
+]
+}
 ]
