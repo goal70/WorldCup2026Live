@@ -79,6 +79,7 @@ try {
     if (resFinal.ok) {
 
         const finalMatches = await resFinal.json();
+        console.log(finalMatches);
 
         finalMatches.forEach(m => {
 
