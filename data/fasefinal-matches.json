@@ -14,15 +14,20 @@
     "flag2": "ca",
 
     "homeScore": 0,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
 
     "timeAR": "16:00",
 
-    "goals": [],
-    "redCards": [],
+    "goals": [
+      {
+        "player": "Eustáquio",
+        "minute": "90+2",
+        "team": "away"
+      }
+    ],
 
     "links": [
   {
