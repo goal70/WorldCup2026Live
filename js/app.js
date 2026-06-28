@@ -74,7 +74,7 @@ async function loadMatches() {
        // 🔥 FASE FINAL LOAD
 try {
 
-    const resFinal = await fetch("data/fasefinal.json");
+    const resFinal = await fetch("data/fasefinal-matches.json");
 
     if (resFinal.ok) {
 
