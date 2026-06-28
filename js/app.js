@@ -35,14 +35,14 @@ async function loadMatches() {
 
         for (const group of groups) {
 
-            const res = await fetch("data/fasefinal.json");
+    const res = await fetch(`data/groups/groups-${group}.json`);
 
-            if (!res.ok) {
-                console.warn(`Missing group ${group}`);
-                continue;
-            }
+    if (!res.ok) {
+        console.warn(`Missing group ${group}`);
+        continue;
+    }
 
-            const matches = await res.json();
+    const matches = await res.json();
 
             matches.forEach(m => {
                 allMatches.push({
