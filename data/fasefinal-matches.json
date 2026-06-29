@@ -141,16 +141,20 @@
     "flag2": "py",
 
     "homeScore": 0,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "Gillette Stadium",
     "city": "Foxborough",
 
     "timeAR": "17:30",
 
-    "goals": [],
-    "redCards": [],
-
+    "goals": [
+      {
+        "player": "Enciso",
+        "minute": 42,
+        "team": "away"
+      }
+    ],
     "links": [
   {
     "name": "Direct TV",
