@@ -90,7 +90,7 @@
         "team": "home"
       },
       {
-        "player": "Martinelli (Brasil gana sin merecerlo)",
+        "player": "Martinelli",
         "minute": "90+5",
         "team": "home"
       }
@@ -143,8 +143,8 @@
     "homeScore": 0,
     "awayScore": 0,
 
-    "stadium": "",
-    "city": "",
+    "stadium": "Gillette Stadium",
+    "city": "Foxborough",
 
     "timeAR": "17:30",
 
