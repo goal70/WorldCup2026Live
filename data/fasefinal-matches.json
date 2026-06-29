@@ -140,8 +140,8 @@
     "flag1": "de",
     "flag2": "py",
 
-    "homeScore": 1,
-    "awayScore": 1,
+    "homeScore": 1 (3),
+    "awayScore": 1 (4),
 
     "stadium": "Gillette Stadium",
     "city": "Foxborough",
@@ -168,29 +168,8 @@
     "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
   },
        {
-    "name": "Caracol TV",
-    "logo": "https://i.pinimg.com/736x/e9/ea/9a/e9ea9a7c1bd535cd7f16f415fa855957.jpg",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vY2FyYWNvbHR2LnBocA=="
-  },
-       {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-       {
-        "name": "TyC Sports",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1jDJZ3W3xam3lzHjQEaFP2R1Rj5Y6ob2ooJVRPvSgMzIOnm5QNQXbjRk&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dHljc3BvcnRz"
-      },
-      {
-        "name": "Unicanal",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG-12FDlWzYlvRPIIFV2YusCKIZT81L8jZMTCD03Sbmii5d5OD2ZuDRafG&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTIucGhw"
+    "name": "El Milagro de Foxborough",
+         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxvKXw45r0CvWz_BtPytflGCNGUJzn3GGaIfUo38g_-X6yKbmp_iXCIJlB&s=10"
       }
     ]
   },
