@@ -248,7 +248,7 @@
     "flag2": "no",
 
     "homeScore": 0,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "AT&T Stadium",
     "city": "Arlington",
