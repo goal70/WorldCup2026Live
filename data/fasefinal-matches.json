@@ -168,7 +168,7 @@
     
     "links": [
   {
-    "name": "El Milagro de Foxborough",
+    "name": "El Milagro de Boston",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxvKXw45r0CvWz_BtPytflGCNGUJzn3GGaIfUo38g_-X6yKbmp_iXCIJlB&s=10",
     "url": "https://www.youtube.com/watch?v=qrDufkehZGY"
       }
@@ -329,6 +329,11 @@
         "name": "Telemundo",
         "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
+      },
+      {
+        "name": "TyC Sports",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9av3BMXwBjs247UtPbCYJXXbEJBGHAEQhGQ&s",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dHljc3BvcnRz"
       },
       {
         "name": "Unicanal",
