@@ -402,8 +402,16 @@ function render(containerId, date) {
                 </div>
 
                 <div class="score">
-                    ${m.homeScore} - ${m.awayScore}
-                </div>
+    ${m.homeScore} - ${m.awayScore}
+
+    ${
+        m.penalties
+            ? `<div class="penalties">
+                   (${m.penalties.home}) - (${m.penalties.away})
+               </div>`
+            : ""
+    }
+</div>
 
                 <div class="team">
                     <span>${m.team2}</span>
