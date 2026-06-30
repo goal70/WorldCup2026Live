@@ -600,7 +600,12 @@ footer{
     text-align:center;
     min-width:70px;
 }
-
+.penalties{
+    margin-top:4px;
+    font-size:14px;
+    font-weight:700;
+    color:#ffd54a;
+}
 /* =========================
    EVENTS FIX (PROMIEDOS STYLE)
    HOME IZQUIERDA / AWAY DERECHA
