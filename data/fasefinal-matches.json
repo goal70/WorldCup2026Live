@@ -312,14 +312,27 @@
     "flag1": "fr",
     "flag2": "se",
 
-    "homeScore": 0,
+    "homeScore": 2,
     "awayScore": 0,
 
     "stadium": "MetLife Stadium",
     "city": "New Jersey",
 
     "timeAR": "18:00",
-    
+
+    "goals": [
+      {
+        "player": "Mbappe",
+        "minute": 45,
+        "team": "home"
+      },
+      {
+        "player": "Barcola",
+        "minute": 53,
+        "team": "home"
+      }
+    ],
+          
     "links": [
       {
         "name": "Direct TV",
