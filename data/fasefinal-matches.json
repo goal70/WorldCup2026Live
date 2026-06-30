@@ -145,7 +145,7 @@
 
 "penalties": 
   "home": 3,
-  "away": 4
+  "away": 4,
 
     "stadium": "Gillette Stadium",
     "city": "Foxborough",
@@ -199,6 +199,30 @@
     "goals": [],
     "redCards": [],
 
-    "links": []
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
+      },
+      {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
+      },
+      {
+        "name": "Canal 5 MX",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Canal_5_2016.svg/500px-Canal_5_2016.svg.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2FuYWw1bXgucGhw"
+      },
+      {
+        "name": "Unicanal",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
+      },
+      {
+        "name": "Caze TV",
+        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
   }
 ]
