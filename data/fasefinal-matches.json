@@ -250,6 +250,23 @@
     "homeScore": 1,
     "awayScore": 2,
 
+    "goals": [
+      {
+        "player": "Nusa",
+        "minute": 39,
+        "team": "away"
+      },
+      {
+        "player": "Diallo",
+        "minute": 74,
+        "team": "home"
+      },
+      {
+        "player": "Haaland",
+        "minute": 86,
+        "team": "away"
+    ],
+
     "stadium": "AT&T Stadium",
     "city": "Arlington",
 
