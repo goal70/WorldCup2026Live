@@ -182,7 +182,7 @@
 
     "date": "2026-06-29",
     "displayDate": "29 Junio",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Países Bajos",
     "team2": "Marruecos",
@@ -190,16 +190,18 @@
     "flag1": "nl",
     "flag2": "ma",
 
-    "homeScore": 0,
-    "awayScore": 0,
+    "homeScore": 1,
+    "awayScore": 1,
+
+    "penalties": {
+  "home": 2,
+  "away": 3
+},
 
     "stadium": "Estadio BBVA",
     "city": "Guadalupe",
 
     "timeAR": "22:00",
-
-    "goals": [],
-    "redCards": [],
 
     "links": [
       {
@@ -251,7 +253,7 @@
     "stadium": "AT&T Stadium",
     "city": "Arlington",
 
-    "timeAR": "17:30",
+    "timeAR": "14:00",
     
     "links": [
       {
@@ -273,7 +275,100 @@
         "name": "Caze TV",
         "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
- }
+        }
+    ]
+  },
+
+        {
+    "id": "M1",
+    "stage": "round16",
+    "side": "left",
+
+    "date": "2026-06-30",
+    "displayDate": "30 Junio",
+    "status": "UPCOMING",
+
+    "team1": "Francia",
+    "team2": "Suecia",
+
+    "flag1": "fr",
+    "flag2": "se",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "MetLife Stadium",
+    "city": "New Jersey",
+
+    "timeAR": "18:00",
+    
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
+      },
+      {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
+      },
+      {
+        "name": "Unicanal",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
+      },
+      {
+        "name": "Caze TV",
+        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
+}
+    ]
+  },
+        
+ }{
+    "id": "M1",
+    "stage": "round16",
+    "side": "left",
+
+    "date": "2026-06-30",
+    "displayDate": "30 Junio",
+    "status": "UPCOMING",
+
+    "team1": "Mexico",
+    "team2": "Ecuador",
+
+    "flag1": "mx",
+    "flag2": "ec",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "Estadio Azteca",
+    "city": "Ciudad de Mexico",
+
+    "timeAR": "22:00",
+    
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
+      },
+      {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
+      },
+      {
+        "name": "Unicanal",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
+      },
+      {
+        "name": "Caze TV",
+        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
     ]
   }
 ]
