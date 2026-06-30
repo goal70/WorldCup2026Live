@@ -226,6 +226,53 @@
         "name": "Caze TV",
         "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
+        }
+    ]
+  },
+
+        {
+    "id": "M1",
+    "stage": "round16",
+    "side": "left",
+
+    "date": "2026-06-30",
+    "displayDate": "30 Junio",
+    "status": "UPCOMING",
+
+    "team1": "Costa de Marfil",
+    "team2": "Noruega",
+
+    "flag1": "ci",
+    "flag2": "no",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "AT&T Stadium",
+    "city": "Arlington",
+
+    "timeAR": "17:30",
+    
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
+      },
+      {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
+      },
+      {
+        "name": "Unicanal",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
+      },
+      {
+        "name": "Caze TV",
+        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
  }
     ]
   }
