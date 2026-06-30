@@ -84,36 +84,37 @@ try {
         finalMatches.forEach(m => {
 
     allMatches.push({
-        id: m.id,
+    id: m.id,
 
-        type: "knockout",   // 👈 AQUÍ VA
-        group: "FASE FINAL",
+    type: "knockout",
+    group: "FASE FINAL",
 
-        stage: m.stage,
-        side: m.side,
+    stage: m.stage,
+    side: m.side,
 
-                date: m.date,
-                status: m.status || "UPCOMING",
+    date: m.date,
+    status: m.status || "UPCOMING",
 
-                team1: m.team1,
-                team2: m.team2,
+    team1: m.team1,
+    team2: m.team2,
 
-                flag1: m.flag1,
-                flag2: m.flag2,
+    flag1: m.flag1,
+    flag2: m.flag2,
 
-                homeScore: m.homeScore ?? 0,
-                awayScore: m.awayScore ?? 0,
+    homeScore: m.homeScore ?? 0,
+    awayScore: m.awayScore ?? 0,
 
-                stadium: m.stadium,
-                city: m.city,
+    penalties: m.penalties || null,
 
-                timeAR: m.timeAR,
+    stadium: m.stadium,
+    city: m.city,
 
-                links: m.links || [],
-                goals: m.goals || [],
-                redCards: m.redCards || []
+    timeAR: m.timeAR,
 
-            });
+    links: m.links || [],
+    goals: m.goals || [],
+    redCards: m.redCards || []
+});
 
         });
 
