@@ -235,7 +235,7 @@
         {
     "id": "M10",
     "stage": "round16",
-    "side": "left",
+    "side": "right",
 
     "date": "2026-06-30",
     "displayDate": "30 Junio",
@@ -329,7 +329,7 @@
  {
     "id": "M11",
     "stage": "round16",
-    "side": "left",
+    "side": "right",
 
     "date": "2026-06-30",
     "displayDate": "30 Junio",
