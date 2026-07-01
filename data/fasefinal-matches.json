@@ -503,7 +503,7 @@
 
     "date": "2026-07-01",
     "displayDate": "01 Julio",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Belgica",
     "team2": "Senegal",
@@ -511,7 +511,7 @@
     "flag1": "be",
     "flag2": "sn",
 
-    "homeScore": 2,
+    "homeScore": 3,
     "awayScore": 2,
 
     "stadium": "Lumen Field",
@@ -539,34 +539,19 @@
         "player": "Tielemans",
         "minute": 89,
         "team": "home"
+      },
+      {
+        "player": "Tielemans (pen.)",
+        "minute": "90+5",
+        "team": "home"
       }
     ],
           
     "links": [
       {
-        "name": "Direct TV",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "TyC Sports",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9av3BMXwBjs247UtPbCYJXXbEJBGHAEQhGQ&s",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dHljc3BvcnRz"
-      },
-      {
-        "name": "Unicanal",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
+        "name": "El Robo de Seattle",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6JuPIetQrT3yhbXCWeSjgjVQC43fpHhtSrR6kVmBWA&s",
+        "url": "https://www.youtube.com/watch?v=c5SO9B0BQz8"
  }
     ]
   },        
