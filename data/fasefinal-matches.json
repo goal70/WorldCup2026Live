@@ -431,7 +431,7 @@
     "flag1": "gb",
     "flag2": "cd",
 
-    "homeScore": 1,
+    "homeScore": 2,
     "awayScore": 1,
 
     "stadium": "Mercedes-Benz Stadium",
@@ -448,6 +448,11 @@
       {
         "player": "Kane",
         "minute": 75,
+        "team": "home"
+      },
+      {
+        "player": "Kane",
+        "minute": 86,
         "team": "home"
       }
     ],
