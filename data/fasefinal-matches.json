@@ -432,7 +432,7 @@
     "flag2": "cd",
 
     "homeScore": 0,
-    "awayScore": 0,
+    "awayScore": 1,
 
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
