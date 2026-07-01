@@ -431,7 +431,7 @@
     "flag1": "gb",
     "flag2": "cd",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 1,
 
     "stadium": "Mercedes-Benz Stadium",
@@ -444,6 +444,11 @@
         "player": "Cipenga",
         "minute": 7,
         "team": "away"
+      },
+      {
+        "player": "Kane",
+        "minute": 75,
+        "team": "home"
       }
     ],
     
