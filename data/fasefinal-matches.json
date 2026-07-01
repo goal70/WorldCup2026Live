@@ -438,6 +438,14 @@
     "city": "Atlanta",
 
     "timeAR": "13:00",
+
+    "goals": [
+      {
+        "player": "Cipenga",
+        "minute": 7,
+        "team": "away"
+      }
+    ],
     
     "links": [
       {
