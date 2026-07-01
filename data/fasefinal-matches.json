@@ -512,12 +512,25 @@
     "flag2": "sn",
 
     "homeScore": 0,
-    "awayScore": 0,
+    "awayScore": 2,
 
     "stadium": "Lumen Field",
     "city": "Seattle",
 
     "timeAR": "17:00",
+
+    "goals": [
+      {
+        "player": "Diarra",
+        "minute": 25,
+        "team": "away"
+      },
+      {
+        "player": "I. Sarr",
+        "minute": 51,
+        "team": "away"
+      }
+    ],
           
     "links": [
       {
