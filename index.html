@@ -14,11 +14,16 @@
 
 <!-- MONETAG IN-PAGE PUSH -->
 <script>
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
+
     const s = document.createElement("script");
+
     s.dataset.zone = "11153586";
+    s.async = true;
     s.src = "https://nap5k.com/tag.min.js";
+
     document.body.appendChild(s);
+
 });
 </script>
 
@@ -135,6 +140,52 @@ window.addEventListener("DOMContentLoaded", () => {
     </div>
 </footer>
 
+<div id="adblockOverlay">
+
+    <div id="adblockBox">
+
+        <h2>❤️ Ayúdanos a mantener World Goal 2026</h2>
+
+        <p>
+            Hemos detectado que estás utilizando un bloqueador de anuncios.
+        </p>
+
+        <p>
+            Gracias a la publicidad podemos mantener gratuitamente:
+        </p>
+
+        <ul>
+            <li>⚽ Resultados en vivo</li>
+            <li>🏆 Fixture completo</li>
+            <li>📊 Simulador</li>
+            <li>⭐ Fase Final</li>
+            <li>📈 Estadísticas</li>
+        </ul>
+
+        <p>
+
+            Si disfrutas del sitio, por favor agrega
+            <strong>World Goal 2026</strong>
+            a la lista de sitios permitidos.
+
+        </p>
+
+        <div id="adblockButtons">
+
+            <button id="adblockReload">
+                Ya lo desactivé
+            </button>
+
+            <button id="adblockClose">
+                Continuar igualmente
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+    
 <!-- ADS -->
 <script>
 window.addEventListener("load", () => {
@@ -154,6 +205,7 @@ window.addEventListener("load", () => {
 
 <!-- APP CORE -->
 <script src="./js/app.js"></script>
+<script src="js/adblock.js"></script>
 
 </body>
 </html>
