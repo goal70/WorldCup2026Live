@@ -1749,3 +1749,183 @@ SIMULATOR ESPN PRO
 .reddit{background:#FF4500;}
 .threads{background:#111;}
 .quora{background:#B92B27;}
+
+/* ==========================================
+   ADBLOCK OVERLAY
+========================================== */
+
+#adblockOverlay{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.82);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    z-index:999999;
+
+}
+
+#adblockBox{
+
+    width:100%;
+    max-width:520px;
+
+    background:#101010;
+
+    border:3px solid #00d26a;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    color:#fff;
+
+    box-shadow:0 0 35px rgba(0,0,0,.6);
+
+}
+
+#adblockBox h2{
+
+    margin-top:0;
+
+    color:#00d26a;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+#adblockBox p{
+
+    line-height:1.7;
+
+    color:#ddd;
+
+    margin:15px 0;
+
+    font-size:17px;
+
+}
+
+#adblockBox ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:25px 0;
+
+}
+
+#adblockBox li{
+
+    margin:12px 0;
+
+    font-size:18px;
+
+}
+
+#adblockButtons{
+
+    display:flex;
+
+    gap:15px;
+
+    justify-content:center;
+
+    margin-top:30px;
+
+    flex-wrap:wrap;
+
+}
+
+#adblockButtons button{
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:14px 22px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#adblockReload{
+
+    background:#00d26a;
+
+    color:#fff;
+
+}
+
+#adblockReload:hover{
+
+    transform:translateY(-2px);
+
+    background:#00b65c;
+
+}
+
+#adblockClose{
+
+    background:#444;
+
+    color:#fff;
+
+}
+
+#adblockClose:hover{
+
+    background:#666;
+
+}
+
+@media(max-width:600px){
+
+    #adblockBox{
+
+        padding:25px;
+
+    }
+
+    #adblockBox h2{
+
+        font-size:24px;
+
+    }
+
+    #adblockButtons{
+
+        flex-direction:column;
+
+    }
+
+    #adblockButtons button{
+
+        width:100%;
+
+    }
+
+}
