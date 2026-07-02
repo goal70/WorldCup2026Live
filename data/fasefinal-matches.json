@@ -554,7 +554,8 @@
         "url": "https://www.youtube.com/watch?v=c5SO9B0BQz8"
  }
     ]
-  },        
+  },  
+  
  {
     "id": "M7",
     "stage": "round16",
@@ -562,7 +563,7 @@
 
     "date": "2026-07-01",
     "displayDate": "01 Julio",
-    "status": "UPCOMING",
+    "status": "FINISHED",
 
     "team1": "Estados Unidos",
     "team2": "Bosnia y Herzegovina",
