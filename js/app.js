@@ -267,6 +267,26 @@ function setupNavigation() {
         setActive("prevDateBtn17");
         showCustomDate("2026-06-27");
     });
+
+    bind("prevDateBtn18", () => {
+        setActive("prevDateBtn18");
+        showCustomDate("2026-06-28");
+    });
+
+    bind("prevDateBtn19", () => {
+        setActive("prevDateBtn19");
+        showCustomDate("2026-06-29");
+    });
+
+    bind("prevDateBtn20", () => {
+        setActive("prevDateBtn20");
+        showCustomDate("2026-06-30");
+    });
+
+    bind("prevDateBtn21", () => {
+        setActive("prevDateBtn21");
+        showCustomDate("2026-07-01");
+    });
 }
 
 /* =========================
