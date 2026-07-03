@@ -700,10 +700,15 @@
         "team": "away"
       },
       {
-        "player": "Cristiano Ronaldo (pen.) (primer gol en fase de eliminación directa en Mundiales) [No era penal; pero se lo regalaron]",
+        "player": "Cristiano Ronaldo (pen.) (primer gol en fase de eliminación directa en Mundiales)",
         "minute": 68,
         "team": "home"
-      }
+      },
+      {
+        "player": "Ramos",
+        "minute": "90+4",
+        "team": "home"
+      },
     ],
 
     "links": [
