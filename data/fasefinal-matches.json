@@ -788,7 +788,7 @@
 
     "date": "2026-07-03",
     "displayDate": "03 Julio",
-    "status": "UPCOMING",
+    "status": "FINISHED",
 
     "team1": "Australia",
     "team2": "Egipto",
@@ -796,8 +796,13 @@
     "flag1": "au",
     "flag2": "eg",
 
-    "homeScore": 0,
-    "awayScore": 0,
+    "homeScore": 1,
+    "awayScore": 1,
+
+    "penalties": {
+  "home": 2,
+  "away": 4
+},
 
     "stadium": "AT&T Stadium",
     "city": "Arlington",
