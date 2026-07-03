@@ -853,7 +853,7 @@
     "flag1": "ar",
     "flag2": "cv",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 0,
 
     "stadium": "Hard Rock Stadium",
@@ -861,6 +861,13 @@
 
     "timeAR": "19:00",
 
+    "goals": [
+      {
+        "player": "MESSI",
+        "minute": 29,
+        "team": "home"
+      }
+    ],
 
     "links": [
       {
