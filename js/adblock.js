@@ -1,79 +1,101 @@
 (() => {
+    "use strict";
 
-const STORAGE_KEY = "wg26_adblock_until";
+    const STORAGE_KEY = "wg26_adblock_until";
+    const REMIND_DAYS = 15;
+    const OVERLAY_DELAY = 20000;
+    const DETECT_DELAY = 150;
 
-function shouldShowAgain() {
-    const until = localStorage.getItem(STORAGE_KEY);
-    if (!until) return true;
-    return Date.now() > Number(until);
-}
+    function getOverlay() {
+        return document.getElementById("adblockOverlay");
+    }
 
-if (!shouldShowAgain()) return;
+    function shouldShowAgain() {
+        const until = Number(localStorage.getItem(STORAGE_KEY) || 0);
+        return Date.now() > until;
+    }
 
-function detect() {
+    function rememberDismiss() {
+        const expires =
+            Date.now() + REMIND_DAYS * 24 * 60 * 60 * 1000;
 
-    const bait = document.createElement("div");
+        localStorage.setItem(STORAGE_KEY, String(expires));
+    }
 
-    bait.className = "adsbox";
-    bait.style.position = "absolute";
-    bait.style.left = "-9999px";
-    bait.innerHTML = "&nbsp;";
+    function showOverlay() {
+        const overlay = getOverlay();
 
-    document.body.appendChild(bait);
+        if (!overlay) {
+            console.warn("No se encontró #adblockOverlay");
+            return;
+        }
 
-    setTimeout(() => {
+        overlay.style.display = "flex";
+    }
 
-        const style = getComputedStyle(bait);
+    function hideOverlay() {
+        const overlay = getOverlay();
 
-        const blocked =
-            bait.offsetParent === null ||
-            bait.offsetHeight === 0 ||
-            bait.offsetWidth === 0 ||
-            style.display === "none" ||
-            style.visibility === "hidden";
+        if (!overlay) return;
 
-        bait.remove();
+        overlay.style.display = "none";
+    }
 
-        if (!blocked) return;
+    function createBait() {
+        const bait = document.createElement("div");
+
+        bait.className = "adsbox";
+        bait.style.position = "absolute";
+        bait.style.left = "-9999px";
+        bait.innerHTML = "&nbsp;";
+
+        document.body.appendChild(bait);
+
+        return bait;
+    }
+
+    function detect() {
+
+        if (!shouldShowAgain()) return;
+
+        const bait = createBait();
 
         setTimeout(() => {
 
-            const overlay = document.getElementById("adblockOverlay");
+            const style = getComputedStyle(bait);
 
-            if (!overlay) return;
+            const blocked =
+                bait.offsetParent === null ||
+                bait.offsetHeight === 0 ||
+                bait.offsetWidth === 0 ||
+                style.display === "none" ||
+                style.visibility === "hidden";
 
-            overlay.style.display = "flex";
+            bait.remove();
 
-        }, 20000);
+            if (!blocked) return;
 
-    }, 150);
+            setTimeout(showOverlay, OVERLAY_DELAY);
 
-}
-
-window.addEventListener("load", detect);
-
-document.addEventListener("click", e => {
-
-    if (e.target.id === "adblockReload") {
-        location.reload();
+        }, DETECT_DELAY);
     }
 
-    if (e.target.id === "adblockClose") {
+    window.addEventListener("load", detect);
 
-        const overlay = document.getElementById("adblockOverlay");
+    document.addEventListener("click", (e) => {
 
-        if (overlay) {
-            overlay.style.display = "none";
+        switch (e.target.id) {
+
+            case "adblockReload":
+                location.reload();
+                break;
+
+            case "adblockClose":
+                hideOverlay();
+                rememberDismiss();
+                break;
         }
 
-        const fifteenDays = 15 * 24 * 60 * 60 * 1000;
-
-        localStorage.setItem(
-            STORAGE_KEY,
-            String(Date.now() + fifteenDays)
-        );
-    }
-
-});
+    });
 
 })();
