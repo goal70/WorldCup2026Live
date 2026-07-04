@@ -845,7 +845,7 @@
 
     "date": "2026-07-03",
     "displayDate": "03 Julio",
-    "status": "LIVE",
+    "status": "FINISHED",
 
     "team1": "Argentina",
     "team2": "Cabo Verde",
@@ -853,8 +853,8 @@
     "flag1": "ar",
     "flag2": "cv",
 
-    "homeScore": 1,
-    "awayScore": 0,
+    "homeScore": 3,
+    "awayScore": 2,
 
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
@@ -865,6 +865,26 @@
       {
         "player": "MESSI",
         "minute": 29,
+        "team": "home"
+      },
+      {
+        "player": "D. Duarte",
+        "minute": 59,
+        "team": "away"
+      },
+      {
+        "player": "Lissandro Martinez",
+        "minute": 92,
+        "team": "home"
+      },
+      {
+        "player": "S. Cabral",
+        "minute": 103,
+        "team": "away"
+      },
+      {
+        "player": "Borges (E.C)",
+        "minute": 111,
         "team": "home"
       }
     ],
@@ -924,7 +944,7 @@
 
     "date": "2026-07-03",
     "displayDate": "03 Julio",
-    "status": "UPCOMING",
+    "status": "FINISHED",
 
     "team1": "Colombia",
     "team2": "Ghana",
@@ -932,13 +952,21 @@
     "flag1": "co",
     "flag2": "gh",
 
-    "homeScore": 0,
+    "homeScore": 1,
     "awayScore": 0,
 
     "stadium": "Arrowhead Stadium",
     "city": "Kansas City",
 
     "timeAR": "22:30",
+
+   "goals": [
+      {
+        "player": "Arias",
+        "minute": 14,
+        "team": "home"
+      }
+    ],
     
     "links": [
       {
