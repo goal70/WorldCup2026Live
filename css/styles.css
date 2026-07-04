@@ -1885,33 +1885,4 @@ SIMULATOR ESPN PRO
         width:100%;
     }
 }
-/* =========================
-   MATCH LINKS FIX
-========================= */
 
-.match-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.match-link {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 10px;
-    background: #111;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.match-link img {
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
-    object-fit: cover;
-}
