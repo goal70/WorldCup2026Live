@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 <meta charset="UTF-8">
@@ -83,34 +83,34 @@ window.addEventListener("load", () => {
     <!-- NAV DÍAS -->
     <section class="match-navigation">
 
-        <button class="day-btn date-btn" id="prevDateBtn1">11/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn2">12/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn3">13/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn4">14/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn5">15/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn6">16/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn7">17/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn8">18/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn9">19/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn10">20/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn11">21/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn12">22/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn13">23/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn14">24/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn15">25/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn16">26/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn17">27/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn18">28/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn19">29/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn20">30/6</button>
-        <button class="day-btn date-btn" id="prevDateBtn21">01/7</button>
-        <button class="day-btn date-btn" id="prevDateBtn22">02/7</button>
-        <button class="day-btn date-btn" id="prevDateBtn23">03/7</button>
-        <button class="day-btn date-btn" id="prevDateBtn24">04/7</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn1">11/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn2">12/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn3">13/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn4">14/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn5">15/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn6">16/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn7">17/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn8">18/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn9">19/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn10">20/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn11">21/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn12">22/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn13">23/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn14">24/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn15">25/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn16">26/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn17">27/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn18">28/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn19">29/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn20">30/6</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn21">01/7</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn22">02/7</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn23">03/7</button>
+        <button type="button" class="day-btn date-btn" id="prevDateBtn24">04/7</button>
 
-        <button class="day-btn" id="yesterdayBtn">YESTERDAY</button>
-        <button class="day-btn active" id="todayBtn">TODAY</button>
-        <button class="day-btn" id="tomorrowBtn">TOMORROW</button>
+        <button type="button" class="day-btn" id="yesterdayBtn">YESTERDAY</button>
+        <button type="button" class="day-btn active" id="todayBtn">TODAY</button>
+        <button type="button" class="day-btn" id="tomorrowBtn">TOMORROW</button>
 
     </section>
 
@@ -143,24 +143,11 @@ window.addEventListener("load", () => {
     </div>
 </footer>
 
-<!-- =========================
-     🔥 MATCH MODAL (AGREGADO)
-========================= -->
-<div id="matchModal" style="
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-"></div>
+<!-- MATCH MODAL -->
+<div id="matchModal" class="match-modal"></div>
 
 <!-- ADBLOCK OVERLAY -->
-<div id="adblockOverlay">
+<div id="adblockOverlay" style="display:none;">
 
     <div id="adblockBox">
 
@@ -186,8 +173,8 @@ window.addEventListener("load", () => {
 
         <div id="adblockButtons">
 
-            <button id="adblockReload">Ya lo desactivé</button>
-            <button id="adblockClose">Continuar igualmente</button>
+            <button type="button" id="adblockReload">Ya lo desactivé</button>
+            <button type="button" id="adblockClose">Continuar igualmente</button>
 
         </div>
 
