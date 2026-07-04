@@ -1,11 +1,11 @@
 /*************************************************
- * WORLD GOAL 2026 - STABLE CORE ENGINE (FIXED)
+ * WORLD GOAL 2026 - STABLE CORE ENGINE (FIXED + MODAL)
  *************************************************/
 
 let allMatches = [];
 
 /* =========================
-   INIT (SOLO 1 FLUJO)
+   INIT
 ========================= */
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await loadMatches();
 
-    showToday(); // render inicial seguro
+    showToday();
+
+    setupGlobalClicks(); // 🔥 CLICK SYSTEM GLOBAL
 });
 
 /* =========================
@@ -27,7 +29,7 @@ function flagUrl(code) {
 }
 
 /* =========================
-   SAFE DATE NORMALIZER
+   SAFE DATE
 ========================= */
 
 function normalizeDate(date) {
@@ -58,6 +60,42 @@ async function loadMatches() {
                 allMatches.push({
                     id: m.id,
                     group: m.group,
+                    date: normalizeDate(m.date),
+                    status: (m.status || "UPCOMING").toString(),
+
+                    team1: m.team1 || "",
+                    team2: m.team2 || "",
+
+                    flag1: m.flag1 || "",
+                    flag2: m.flag2 || "",
+
+                    homeScore: m.homeScore ?? 0,
+                    awayScore: m.awayScore ?? 0,
+
+                    stadium: m.stadium || "",
+                    city: m.city || "",
+                    timeAR: m.timeAR || m.time || "-",
+
+                    links: Array.isArray(m.links) ? m.links : [],
+                    goals: Array.isArray(m.goals) ? m.goals : []
+                });
+
+            });
+        }
+
+        const resFinal = await fetch("data/fasefinal.json");
+
+        if (resFinal.ok) {
+
+            const finalMatches = await resFinal.json();
+
+            finalMatches.forEach(m => {
+
+                allMatches.push({
+                    id: m.id,
+                    type: "knockout",
+                    stage: m.stage || "Octavos de Final",
+                    side: m.side,
 
                     date: normalizeDate(m.date),
                     status: (m.status || "UPCOMING").toString(),
@@ -73,7 +111,6 @@ async function loadMatches() {
 
                     stadium: m.stadium || "",
                     city: m.city || "",
-
                     timeAR: m.timeAR || m.time || "-",
 
                     links: Array.isArray(m.links) ? m.links : [],
@@ -83,56 +120,10 @@ async function loadMatches() {
             });
         }
 
-        /* ========= FASE FINAL ========= */
-
-        try {
-
-            const resFinal = await fetch("data/fasefinal.json");
-            if (resFinal.ok) {
-
-                const finalMatches = await resFinal.json();
-
-                finalMatches.forEach(m => {
-
-                    allMatches.push({
-                        id: m.id,
-                        type: "knockout",
-
-                        stage: m.stage || "Octavos de Final",
-                        side: m.side,
-
-                        date: normalizeDate(m.date),
-                        status: (m.status || "UPCOMING").toString(),
-
-                        team1: m.team1 || "",
-                        team2: m.team2 || "",
-
-                        flag1: m.flag1 || "",
-                        flag2: m.flag2 || "",
-
-                        homeScore: m.homeScore ?? 0,
-                        awayScore: m.awayScore ?? 0,
-
-                        stadium: m.stadium || "",
-                        city: m.city || "",
-
-                        timeAR: m.timeAR || m.time || "-",
-
-                        links: Array.isArray(m.links) ? m.links : [],
-                        goals: Array.isArray(m.goals) ? m.goals : []
-                    });
-
-                });
-            }
-
-        } catch (e) {
-            console.error("Fase final error:", e);
-        }
-
         console.log("MATCHES LOADED:", allMatches.length);
 
     } catch (err) {
-        console.error("LOAD ERROR:", err);
+        console.error(err);
     }
 }
 
@@ -141,11 +132,9 @@ async function loadMatches() {
 ========================= */
 
 function getLocalDate(offset = 0) {
-
     const d = new Date();
     d.setHours(0,0,0,0);
     d.setDate(d.getDate() + offset);
-
     return d.toISOString().slice(0,10);
 }
 
@@ -206,7 +195,6 @@ function setupNavigation() {
 ========================= */
 
 function setActive(id) {
-
     document.querySelectorAll(".day-btn")
         .forEach(b => b.classList.remove("active"));
 
@@ -215,22 +203,20 @@ function setActive(id) {
 }
 
 /* =========================
-   SAFE RENDER LINKS (FIX CLAVE)
+   LINKS
 ========================= */
 
 function renderLinks(links) {
 
     if (!Array.isArray(links)) return "";
 
-    return links
-        .filter(l => l && l.url)
-        .map(l => `
+    return links.map(l => `
         <a class="match-link"
            href="${l.url}"
            target="_blank"
            rel="noopener noreferrer">
 
-            <img src="${l.logo || ''}" alt="">
+            <img src="${l.logo || ''}">
             <span>${l.name || ''}</span>
 
         </a>
@@ -238,23 +224,19 @@ function renderLinks(links) {
 }
 
 /* =========================
-   RENDER ENGINE
+   RENDER
 ========================= */
 
 function render(containerId, date) {
 
-    const containers = [
-        "yesterdayMatches",
-        "todayMatches",
-        "tomorrowMatches",
-        "customDateMatches"
-    ];
+    const containers = ["yesterdayMatches","todayMatches","tomorrowMatches","customDateMatches"];
 
     containers.forEach(id => {
         const el = document.getElementById(id);
-        if (!el) return;
-        el.style.display = "none";
-        el.innerHTML = "";
+        if (el) {
+            el.style.display = "none";
+            el.innerHTML = "";
+        }
     });
 
     const container = document.getElementById(containerId);
@@ -262,56 +244,52 @@ function render(containerId, date) {
 
     container.style.display = "grid";
 
-    const matches = allMatches.filter(m =>
-        (m.date || "").slice(0,10) === date
-    );
+    const matches = allMatches.filter(m => (m.date || "").slice(0,10) === date);
 
     if (!matches.length) {
-        container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
+        container.innerHTML = `<div class="no-matches">No matches</div>`;
         return;
     }
 
     container.innerHTML = matches.map(m => {
 
-        const status = (m.status || "UPCOMING").toString();
-        const stadium = m.stadium || "-";
-        const city = m.city || "-";
+        const status = (m.status || "UPCOMING").toLowerCase();
         const stage = m.type === "knockout"
             ? (m.stage || "Octavos de Final")
             : `Grupo ${m.group || "-"}`;
 
         return `
-        <div class="match-card">
+        <div class="match-card" data-id="${m.id}">
 
-            <div class="match-status ${status.toLowerCase()}">
-                ${status}
+            <div class="match-status ${status}">
+                ${m.status}
             </div>
 
-            <div style="text-align:center;font-weight:900;margin-bottom:6px;">
+            <div class="match-stage">
                 ${stage}
             </div>
 
             <div class="match-header">
 
                 <div class="team">
-                    <img src="${flagUrl(m.flag1)}" class="flag">
-                    <span>${m.team1 || ""}</span>
+                    <img src="${flagUrl(m.flag1)}">
+                    <span>${m.team1}</span>
                 </div>
 
                 <div class="score">
-                    ${m.homeScore ?? 0} - ${m.awayScore ?? 0}
+                    ${m.homeScore} - ${m.awayScore}
                 </div>
 
                 <div class="team">
-                    <span>${m.team2 || ""}</span>
-                    <img src="${flagUrl(m.flag2)}" class="flag">
+                    <span>${m.team2}</span>
+                    <img src="${flagUrl(m.flag2)}">
                 </div>
 
             </div>
 
             <div class="match-footer">
-                🏟 ${stadium} • ${city} <br>
-                🕒 ${m.timeAR || "-"}
+                🏟 ${m.stadium} • ${m.city} <br>
+                🕒 ${m.timeAR}
             </div>
 
             <div class="match-links">
@@ -324,7 +302,75 @@ function render(containerId, date) {
 }
 
 /* =========================
-   SHARE FIX
+   GLOBAL CLICK SYSTEM
+========================= */
+
+function setupGlobalClicks() {
+
+    document.addEventListener("click", (e) => {
+
+        const card = e.target.closest(".match-card");
+
+        if (card) {
+            const id = card.dataset.id;
+            if (id) openMatchModal(id);
+        }
+
+        const link = e.target.closest(".match-link");
+
+        if (link) {
+            e.stopPropagation();
+        }
+
+    });
+}
+
+/* =========================
+   MODAL SYSTEM
+========================= */
+
+function openMatchModal(id) {
+
+    const match = allMatches.find(m => m.id === id);
+    if (!match) return;
+
+    let modal = document.getElementById("matchModal");
+
+    if (!modal) {
+        modal = document.createElement("div");
+        modal.id = "matchModal";
+        modal.innerHTML = `<div id="modalContent"></div>`;
+        document.body.appendChild(modal);
+    }
+
+    const content = `
+        <div class="modal-box">
+
+            <h2>${match.team1} vs ${match.team2}</h2>
+
+            <p>${match.stadium} • ${match.city}</p>
+            <p>${match.timeAR}</p>
+
+            <div class="modal-score">
+                ${match.homeScore} - ${match.awayScore}
+            </div>
+
+            <button onclick="closeModal()">Close</button>
+
+        </div>
+    `;
+
+    document.getElementById("matchModal").innerHTML = content;
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    const m = document.getElementById("matchModal");
+    if (m) m.style.display = "none";
+}
+
+/* =========================
+   SHARE
 ========================= */
 
 function setShareHome() {
