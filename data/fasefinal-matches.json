@@ -722,8 +722,23 @@
     "stadium": "Houston Stadium",
     "city": "Houston",
     "timeAR": "14:00",
-    "goals": [],
-    "redCards": [],
+    "goals": [
+      {
+        "player": "Ounahi",
+        "minute": 50,
+        "team": "away"
+      },
+      {
+        "player": "Ounahi",
+        "minute": 82,
+        "team": "away"
+      },
+      {
+        "player": "Rahimi",
+        "minute": "90+8",
+        "team": "away"
+      }
+    ],
     "links": [
       {
         "name": "Direct TV",
