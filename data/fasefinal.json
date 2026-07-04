@@ -206,5 +206,117 @@
     "team2": "Ghana",
     "flag2": "gh",
     "seed2": "-"
-  }
+  },
+{
+    "id": "Q1",
+    "side": "left",
+    "stage": "quarterfinal",
+
+    "date": "2026-07-04",
+    "time": "14:00",
+
+    "team1": "Paraguay",
+    "flag1": "py",
+
+    "team2": "Francia",
+    "flag2": "fr"
+},
+{
+    "id": "Q2",
+    "side": "left",
+    "stage": "quarterfinal",
+
+    "date": "2026-07-04",
+    "time": "18:00",
+
+    "team1": "Canadá",
+    "flag1": "ca",
+
+    "team2": "Marruecos",
+    "flag2": "ma"
+},
+{
+    "id": "Q3",
+    "side": "right",
+    "stage": "quarterfinal",
+
+    "date": "2026-07-05",
+    "time": "17:00",
+
+    "team1": "Brasil",
+    "flag1": "br",
+
+    "team2": "Noruega",
+    "flag2": "no"
+},
+{
+    "id": "Q4",
+    "side": "right",
+    "stage": "quarterfinal",
+
+    "date": "2026-07-05",
+    "time": "21:00",
+
+    "team1": "Mexico",
+    "flag1": "mx",
+
+    "team2": "Inglaterra",
+    "flag2": "gb"
+},
+{
+    "id": "Q5",
+    "side": "left",
+    "stage": "quarterfinal",
+
+    "date": "2026-07-06",
+    "time": "16:00",
+
+    "team1": "Portugal",
+    "flag1": "pt",
+
+    "team2": "España",
+    "flag2": "es"
+},
+{
+    "id": "Q6",
+    "side": "left",
+    "stage": "quarterfinal",
+
+    "date": "2026-07-06",
+    "time": "21:00",
+
+    "team1": "Estados Unidos",
+    "flag1": "us",
+
+    "team2": "Belgica",
+    "flag2": "be"
+},
+{
+    "id": "Q7",
+    "side": "right",
+    "stage": "quarterfinal",
+
+    "date": "2026-07-07",
+    "time": "13:00",
+
+    "team1": "Argentina",
+    "flag1": "ar",
+
+    "team2": "Egipto",
+    "flag2": "eg"
+},
+{
+    "id": "Q8",
+    "side": "right",
+    "stage": "quarterfinal",
+
+    "date": "2026-07-07",
+    "time": "17:00",
+
+    "team1": "Suiza",
+    "flag1": "ch",
+
+    "team2": "Colombia",
+    "flag2": "co"
+}
 ]
