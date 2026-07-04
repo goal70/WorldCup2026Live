@@ -1,307 +1,222 @@
-/*************************************************
- * WORLD GOAL 2026 - FIXED CORE ENGINE (STABLE)
- *************************************************/
-
-let allMatches = [];
-
-/* =========================
-   INIT
-========================= */
-
-document.addEventListener("DOMContentLoaded", async () => {
-    setupNavigation();
-    await loadMatches();
-    showToday();
-});
-
-/* =========================
-   FLAG SYSTEM
-========================= */
-
-function flagUrl(code) {
-    if (!code) return "";
-    return `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
-}
-
-/* =========================
-   NORMALIZE DATE (CRÍTICO FIX)
-========================= */
-
-function normalizeDate(date) {
-    if (!date) return "";
-
-    // ya viene en ISO
-    if (date.includes("-")) return date.slice(0, 10);
-
-    // convierte "29 Junio" → fallback seguro (NO rompe pero no compara)
-    return date;
-}
-
-/* =========================
-   LOAD MATCHES
-========================= */
-
-async function loadMatches() {
+async function loadFaseFinal() {
     try {
 
-        const groups = ["a","b","c","d","e","f","g","h","i","j","k","l"];
-        allMatches = [];
+        const res = await fetch("data/fasefinal-matches.json");
 
-        /* ========= GROUPS ========= */
-        for (const group of groups) {
-
-            const res = await fetch(`data/groups/groups-${group}.json`);
-            if (!res.ok) continue;
-
-            const matches = await res.json();
-
-            matches.forEach(m => {
-
-                allMatches.push({
-                    id: m.id,
-                    group: m.group,
-
-                    date: normalizeDate(m.date),
-                    status: m.status || "UPCOMING",
-
-                    team1: m.team1,
-                    team2: m.team2,
-
-                    flag1: m.flag1,
-                    flag2: m.flag2,
-
-                    homeScore: m.homeScore ?? 0,
-                    awayScore: m.awayScore ?? 0,
-
-                    stadium: m.stadium || "",
-                    city: m.city || "",
-
-                    timeAR: m.timeAR || m.time || "-",
-
-                    links: m.links || [],
-                    goals: m.goals || []
-                });
-
-            });
-
+        if (!res.ok) {
+            throw new Error("No se pudo cargar fasefinal.json");
         }
 
-        /* ========= FASE FINAL ========= */
-        try {
+        const matches = await res.json();
 
-            const resFinal = await fetch("data/fasefinal.json"); // 🔥 FIX IMPORTANTE
+        // =========================
+        // FILTROS POR RONDA
+        // =========================
 
-            if (resFinal.ok) {
+        const round16Left = matches.filter(
+            m => m.stage === "round16" && m.side === "left"
+        );
 
-                const finalMatches = await resFinal.json();
+        const round16Right = matches.filter(
+            m => m.stage === "round16" && m.side === "right"
+        );
 
-                finalMatches.forEach(m => {
+        const quarterLeft = matches.filter(
+            m => m.stage === "quarterfinal" && m.side === "left"
+        );
 
-                    allMatches.push({
-                        id: m.id,
-                        type: "knockout",
+        const quarterRight = matches.filter(
+            m => m.stage === "quarterfinal" && m.side === "right"
+        );
 
-                        stage: m.stage, // "Octavos de Final"
-                        side: m.side,
+        const semiLeft = matches.filter(
+            m => m.stage === "semifinal" && m.side === "left"
+        );
 
-                        date: normalizeDate(m.date),
-                        status: m.status || "UPCOMING",
+        const semiRight = matches.filter(
+            m => m.stage === "semifinal" && m.side === "right"
+        );
 
-                        team1: m.team1,
-                        team2: m.team2,
+        const finalMatch = matches.filter(
+            m => m.stage === "final"
+        );
 
-                        flag1: m.flag1,
-                        flag2: m.flag2,
+        const thirdMatch = matches.filter(
+            m => m.stage === "thirdplace"
+        );
 
-                        homeScore: m.homeScore ?? 0,
-                        awayScore: m.awayScore ?? 0,
+        const container = document.getElementById("fasefinalBracket");
 
-                        penalties: m.penalties || null,
+        if (!container) return;
 
-                        stadium: m.stadium || "",
-                        city: m.city || "",
+        // =========================
+        // RENDER MATCH
+        // =========================
 
-                        timeAR: m.timeAR || m.time || "-",
+        const renderMatch = (m) => `
+        <div class="fasefinal-match">
 
-                        links: m.links || [],
-                        goals: m.goals || []
-                    });
-
-                });
-
-            }
-
-        } catch (err) {
-            console.error("Error fase final:", err);
-        }
-
-        console.log("MATCHES LOADED:", allMatches.length);
-
-    } catch (err) {
-        console.error("LOAD ERROR:", err);
-    }
-}
-
-/* =========================
-   DATE HELPERS
-========================= */
-
-function getLocalDate(offset = 0) {
-
-    const d = new Date();
-    d.setHours(0,0,0,0);
-    d.setDate(d.getDate() + offset);
-
-    return d.toISOString().slice(0,10);
-}
-
-/* =========================
-   FILTERS
-========================= */
-
-function showToday() {
-    render("todayMatches", getLocalDate(0));
-    setActive("todayBtn");
-}
-
-function showYesterday() {
-    render("yesterdayMatches", getLocalDate(-1));
-    setActive("yesterdayBtn");
-}
-
-function showTomorrow() {
-    render("tomorrowMatches", getLocalDate(1));
-    setActive("tomorrowBtn");
-}
-
-/* =========================
-   NAVIGATION
-========================= */
-
-function setupNavigation() {
-
-    const bind = (id, fn) => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.addEventListener("click", fn);
-    };
-
-    bind("yesterdayBtn", showYesterday);
-    bind("todayBtn", showToday);
-    bind("tomorrowBtn", showTomorrow);
-
-    for (let i = 1; i <= 21; i++) {
-
-        bind(`prevDateBtn${i}`, () => {
-
-            const day = String(i + 10).padStart(2,"0");
-
-            const date = `2026-06-${day}`;
-
-            showCustomDate(date);
-            setActive(`prevDateBtn${i}`);
-        });
-
-    }
-}
-
-/* =========================
-   RENDER
-========================= */
-
-function render(containerId, date) {
-
-    const containers = [
-        "yesterdayMatches",
-        "todayMatches",
-        "tomorrowMatches",
-        "customDateMatches"
-    ];
-
-    containers.forEach(id => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.style.display = "none";
-        el.innerHTML = "";
-    });
-
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    container.style.display = "grid";
-
-    const matches = allMatches.filter(m => {
-        return (m.date || "").slice(0,10) === date;
-    });
-
-    if (!matches.length) {
-        container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
-        return;
-    }
-
-    container.innerHTML = matches.map(m => {
-
-        const linksHTML = (m.links || []).map(l => `
-            <a class="match-link" href="${l.url}" target="_blank" rel="noopener">
-                <img src="${l.logo}" alt="">
-                <span>${l.name}</span>
-            </a>
-        `).join("");
-
-        return `
-        <div class="match-card">
-
-            <div class="match-status ${(m.status || "UPCOMING").toLowerCase()}">
-                ${m.status || "UPCOMING"}
+            <div class="match-meta">
+                ${m.displayDate || m.date} • ${m.timeAR || m.time || ""}
             </div>
 
-            <div style="text-align:center;font-weight:900;margin-bottom:6px;">
-                ${m.type === "knockout" ? (m.stage || "Octavos de Final") : `Grupo ${m.group || "-"}`}
+            <div class="team-row">
+                <span class="seed">${m.seed1 || ""}</span>
+                <img src="https://flagcdn.com/w40/${m.flag1}.png">
+                <span>${m.team1}</span>
+
+                ${
+                    m.status !== "UPCOMING"
+                        ? `<span class="match-score">${m.homeScore ?? ""}</span>`
+                        : ""
+                }
             </div>
 
-            <div class="match-header">
+            <div class="team-row">
+                <span class="seed">${m.seed2 || ""}</span>
+                <img src="https://flagcdn.com/w40/${m.flag2}.png">
+                <span>${m.team2}</span>
 
-                <div class="team">
-                    <img src="${flagUrl(m.flag1)}" class="flag">
-                    <span>${m.team1}</span>
-                </div>
-
-                <div class="score">
-                    ${m.homeScore ?? 0} - ${m.awayScore ?? 0}
-                </div>
-
-                <div class="team">
-                    <span>${m.team2}</span>
-                    <img src="${flagUrl(m.flag2)}" class="flag">
-                </div>
-
-            </div>
-
-            <div class="match-footer">
-                🏟 ${m.stadium || "-"} • ${m.city || "-"} <br>
-                🕒 ${m.timeAR || "-"}
-            </div>
-
-            <div class="match-links">
-                ${linksHTML}
+                ${
+                    m.status !== "UPCOMING"
+                        ? `<span class="match-score">${m.awayScore ?? ""}</span>`
+                        : ""
+                }
             </div>
 
         </div>
         `;
-    }).join("");
+
+        // =========================
+        // RENDER GENERAL
+        // =========================
+
+        container.innerHTML = `
+
+        <div class="bracket-side left">
+
+            <div class="fasefinal-round round16">
+                <div class="round-title">16AVOS</div>
+                ${round16Left.map(renderMatch).join("")}
+            </div>
+
+            <div class="fasefinal-round round8">
+                <div class="round-title">OCTAVOS</div>
+
+                ${Array.from({length:4}).map((_,i)=>`
+                    <div class="fasefinal-match placeholder">
+                        Ganador M${i*2+1}<br>
+                        vs<br>
+                        Ganador M${i*2+2}
+                    </div>
+                `).join("")}
+            </div>
+
+            <div class="fasefinal-round round4">
+                <div class="round-title">CUARTOS</div>
+
+                ${Array.from({length:2}).map(()=>`
+                    <div class="fasefinal-match placeholder">
+                        Clasificado
+                    </div>
+                `).join("")}
+            </div>
+
+            <div class="fasefinal-round round2">
+                <div class="round-title">SEMIFINAL</div>
+
+                <div class="fasefinal-match placeholder">
+                    Clasificado
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="bracket-center">
+
+            <div class="champion-trophy"></div>
+
+            <div class="fasefinal-final">
+
+                <div class="round-title">
+                    GRAN FINAL
+                </div>
+
+                <div class="fasefinal-match placeholder">
+                    Ganador SF1
+                    <br>
+                    vs
+                    <br>
+                    Ganador SF2
+                </div>
+
+            </div>
+
+            <div class="fasefinal-third">
+
+                <div class="round-title">
+                    TERCER PUESTO
+                </div>
+
+                <div class="fasefinal-match placeholder">
+                    Perdedor SF1
+                    <br>
+                    vs
+                    <br>
+                    Perdedor SF2
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="bracket-side right">
+
+            <div class="fasefinal-round round2">
+                <div class="round-title">SEMIFINAL</div>
+
+                <div class="fasefinal-match placeholder">
+                    Clasificado
+                </div>
+            </div>
+
+            <div class="fasefinal-round round4">
+                <div class="round-title">CUARTOS</div>
+
+                ${Array.from({length:2}).map(()=>`
+                    <div class="fasefinal-match placeholder">
+                        Clasificado
+                    </div>
+                `).join("")}
+            </div>
+
+            <div class="fasefinal-round round8">
+                <div class="round-title">OCTAVOS</div>
+
+                ${Array.from({length:4}).map((_,i)=>`
+                    <div class="fasefinal-match placeholder">
+                        Ganador M${i+9}<br>
+                        vs<br>
+                        Ganador M${i+10}
+                    </div>
+                `).join("")}
+            </div>
+
+            <div class="fasefinal-round round16">
+                <div class="round-title">16AVOS</div>
+                ${round16Right.map(renderMatch).join("")}
+            </div>
+
+        </div>
+
+        `;
+        
+    } catch (error) {
+        console.error("Error loading fasefinal:", error);
+    }
 }
 
-/* =========================
-   SHARE FIX
-========================= */
-
-function setShareHome() {
-
-    const url = window.location.href;
-
-    ["share-wa","share-tw","share-fb","share-re","share-th"]
-        .forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.href = url;
-        });
-}
+loadFaseFinal();
