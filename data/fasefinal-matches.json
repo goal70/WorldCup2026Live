@@ -1003,6 +1003,242 @@
         "name": "Caze TV",
         "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
+
+      {
+    "id": "Q1",
+    "stage": "quarterfinal",
+    "side": "left",
+
+    "date": "2026-07-04",
+    "displayDate": "04 Julio",
+    "status": "UPCOMING",
+
+    "team1": "Paraguay",
+    "team2": "Francia",
+
+    "flag1": "py",
+    "flag2": "fr",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "",
+    "city": "",
+
+    "timeAR": "14:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
+}
+    ]
+  },
+{
+    "id": "Q2",
+    "stage": "quarterfinal",
+    "side": "left",
+
+    "date": "2026-07-04",
+    "displayDate": "04 Julio",
+    "status": "UPCOMING",
+
+    "team1": "Canadá",
+    "team2": "Marruecos",
+
+    "flag1": "ca",
+    "flag2": "ma",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "",
+    "city": "",
+
+    "timeAR": "18:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
+}
+    ]
+  },
+
+{
+    "id": "Q3",
+    "stage": "quarterfinal",
+    "side": "right",
+
+    "date": "2026-07-05",
+    "displayDate": "05 Julio",
+    "status": "UPCOMING",
+
+    "team1": "Brasil",
+    "team2": "Noruega",
+
+    "flag1": "br",
+    "flag2": "no",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "",
+    "city": "",
+
+    "timeAR": "17:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
+}
+    ]
+  },
+
+{
+    "id": "Q4",
+    "stage": "quarterfinal",
+    "side": "right",
+
+    "date": "2026-07-05",
+    "displayDate": "05 Julio",
+    "status": "UPCOMING",
+
+    "team1": "Mexico",
+    "team2": "Inglaterra",
+
+    "flag1": "mx",
+    "flag2": "gb",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "",
+    "city": "",
+
+    "timeAR": "21:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
+}
+    ]
+  },
+
+{
+    "id": "Q5",
+    "stage": "quarterfinal",
+    "side": "left",
+
+    "date": "2026-07-06",
+    "displayDate": "06 Julio",
+    "status": "UPCOMING",
+
+    "team1": "Portugal",
+    "team2": "España",
+
+    "flag1": "pt",
+    "flag2": "es",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "",
+    "city": "",
+
+    "timeAR": "16:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
+}
+    ]
+  },
+
+{
+    "id": "Q6",
+    "stage": "quarterfinal",
+    "side": "left",
+
+    "date": "2026-07-06",
+    "displayDate": "06 Julio",
+    "status": "UPCOMING",
+
+    "team1": "Estados Unidos",
+    "team2": "Belgica",
+
+    "flag1": "us",
+    "flag2": "be",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "",
+    "city": "",
+
+    "timeAR": "21:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
+}
+    ]
+  },
+
+{
+    "id": "Q7",
+    "stage": "quarterfinal",
+    "side": "right",
+
+    "date": "2026-07-07",
+    "displayDate": "07 Julio",
+    "status": "UPCOMING",
+
+    "team1": "Argentina",
+    "team2": "Egipto",
+
+    "flag1": "ar",
+    "flag2": "eg",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "",
+    "city": "",
+
+    "timeAR": "13:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
+}
+    ]
+  },
+
+{
+    "id": "Q8",
+    "stage": "quarterfinal",
+    "side": "right",
+
+    "date": "2026-07-07",
+    "displayDate": "07 Julio",
+    "status": "UPCOMING",
+
+    "team1": "Suiza",
+    "team2": "Colombia",
+
+    "flag1": "ch",
+    "flag2": "co",
+
+    "homeScore": 0,
+    "awayScore": 0,
+
+    "stadium": "",
+    "city": "",
+
+    "timeAR": "17:00",
+
+    "goals": [],
+    "redCards": [],
+    "links": []
       }
     ]
   }
