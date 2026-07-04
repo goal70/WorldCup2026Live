@@ -1,22 +1,16 @@
 /*************************************************
- * WORLD GOAL 2026 - STABLE CORE ENGINE (FIXED + MODAL)
+ * WORLD GOAL 2026 - ENTERPRISE APP ENGINE
+ * SHARE SYSTEM + FIXED VERSION
  *************************************************/
 
 let allMatches = [];
 
-/* =========================
-   INIT
-========================= */
-
 document.addEventListener("DOMContentLoaded", async () => {
-
-    setupNavigation();
-
     await loadMatches();
+    setupNavigation();
+    renderTables();
 
-    showToday();
-
-    setupGlobalClicks(); // 🔥 CLICK SYSTEM GLOBAL
+    setShareHome(); // 👈 ESTO ES LO QUE TE FALTABA
 });
 
 /* =========================
@@ -29,15 +23,6 @@ function flagUrl(code) {
 }
 
 /* =========================
-   SAFE DATE
-========================= */
-
-function normalizeDate(date) {
-    if (!date) return "";
-    return date.includes("-") ? date.slice(0,10) : date;
-}
-
-/* =========================
    LOAD MATCHES
 ========================= */
 
@@ -46,119 +31,163 @@ async function loadMatches() {
     try {
 
         const groups = ["a","b","c","d","e","f","g","h","i","j","k","l"];
+
         allMatches = [];
+
+        /* ========= FASE DE GRUPOS ========= */
 
         for (const group of groups) {
 
             const res = await fetch(`data/groups/groups-${group}.json`);
-            if (!res.ok) continue;
+
+            if (!res.ok) {
+                console.warn(`Missing group ${group}`);
+                continue;
+            }
 
             const matches = await res.json();
 
             matches.forEach(m => {
 
                 allMatches.push({
+
                     id: m.id,
+
                     group: m.group,
-                    date: normalizeDate(m.date),
-                    status: (m.status || "UPCOMING").toString(),
 
-                    team1: m.team1 || "",
-                    team2: m.team2 || "",
+                    date: m.date,
 
-                    flag1: m.flag1 || "",
-                    flag2: m.flag2 || "",
+                    status: m.status || "UPCOMING",
 
-                    homeScore: m.homeScore ?? 0,
-                    awayScore: m.awayScore ?? 0,
+                    team1: m.team1,
+                    team2: m.team2,
 
-                    stadium: m.stadium || "",
-                    city: m.city || "",
-                    timeAR: m.timeAR || m.time || "-",
-
-                    links: Array.isArray(m.links) ? m.links : [],
-                    goals: Array.isArray(m.goals) ? m.goals : []
-                });
-
-            });
-        }
-
-        const resFinal = await fetch("data/fasefinal.json");
-
-        if (resFinal.ok) {
-
-            const finalMatches = await resFinal.json();
-
-            finalMatches.forEach(m => {
-
-                allMatches.push({
-                    id: m.id,
-                    type: "knockout",
-                    stage: m.stage || "Octavos de Final",
-                    side: m.side,
-
-                    date: normalizeDate(m.date),
-                    status: (m.status || "UPCOMING").toString(),
-
-                    team1: m.team1 || "",
-                    team2: m.team2 || "",
-
-                    flag1: m.flag1 || "",
-                    flag2: m.flag2 || "",
+                    flag1: m.flag1,
+                    flag2: m.flag2,
 
                     homeScore: m.homeScore ?? 0,
                     awayScore: m.awayScore ?? 0,
 
                     stadium: m.stadium || "",
                     city: m.city || "",
-                    timeAR: m.timeAR || m.time || "-",
+                    timeAR: m.timeAR || "-",
 
-                    links: Array.isArray(m.links) ? m.links : [],
-                    goals: Array.isArray(m.goals) ? m.goals : []
+                    links: m.links || [],
+                    goals: m.goals || [],
+                    redCards: m.redCards || []
+
                 });
 
             });
+
         }
 
-        console.log("MATCHES LOADED:", allMatches.length);
+        /* ========= FASE FINAL ========= */
+
+        try {
+
+            const resFinal = await fetch("data/fasefinal-matches.json");
+
+            if (resFinal.ok) {
+
+                const finalMatches = await resFinal.json();
+
+                finalMatches.forEach(m => {
+
+                    allMatches.push({
+
+                        id: m.id,
+
+                        type: "knockout",
+
+                        group: "FASE FINAL",
+
+                        stage: m.stage,
+                        side: m.side,
+
+                        date: m.date,
+
+                        status: m.status || "UPCOMING",
+
+                        team1: m.team1,
+                        team2: m.team2,
+
+                        flag1: m.flag1,
+                        flag2: m.flag2,
+
+                        homeScore: m.homeScore ?? 0,
+                        awayScore: m.awayScore ?? 0,
+
+                        penalties: m.penalties ?? null,
+
+                        stadium: m.stadium || "",
+                        city: m.city || "",
+                        timeAR: m.timeAR || "-",
+
+                        links: m.links || [],
+                        goals: m.goals || [],
+                        redCards: m.redCards || []
+
+                    });
+
+                });
+
+            } else {
+
+                console.warn("No se encontró fasefinal-matches.json");
+
+            }
+
+        } catch (err) {
+
+            console.error("Error cargando Fase Final:", err);
+
+        }
+
+        showToday();
+
+        renderTables();
 
     } catch (err) {
-        console.error(err);
-    }
-}
 
+        console.error("LOAD ERROR:", err);
+
+    }
+
+}
 /* =========================
    DATE HELPERS
 ========================= */
 
 function getLocalDate(offset = 0) {
+
     const d = new Date();
-    d.setHours(0,0,0,0);
+
+    d.setHours(0, 0, 0, 0);
+
     d.setDate(d.getDate() + offset);
-    return d.toISOString().slice(0,10);
+
+    const year = d.getFullYear();
+
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+
+    const day = String(d.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+
 }
 
 /* =========================
    FILTERS
 ========================= */
 
-function showToday() {
-    setActive("todayBtn");
-    render("todayMatches", getLocalDate(0));
-}
+function showToday(){ render("todayMatches", getLocalDate(0)); renderTables(); }
+function showYesterday(){ render("yesterdayMatches", getLocalDate(-1)); renderTables(); }
+function showTomorrow(){ render("tomorrowMatches", getLocalDate(1)); renderTables(); }
 
-function showYesterday() {
-    setActive("yesterdayBtn");
-    render("yesterdayMatches", getLocalDate(-1));
-}
-
-function showTomorrow() {
-    setActive("tomorrowBtn");
-    render("tomorrowMatches", getLocalDate(1));
-}
-
-function showCustomDate(date) {
+function showCustomDate(date){
     render("customDateMatches", date);
+    renderTables();
 }
 
 /* =========================
@@ -169,25 +198,129 @@ function setupNavigation() {
 
     const bind = (id, fn) => {
         const el = document.getElementById(id);
-        if (!el) return;
+        if (!el) return console.warn("Missing button:", id);
         el.addEventListener("click", fn);
     };
 
-    bind("yesterdayBtn", showYesterday);
-    bind("todayBtn", showToday);
-    bind("tomorrowBtn", showTomorrow);
+    bind("yesterdayBtn", () => {
+        setActive("yesterdayBtn");
+        showYesterday();
+    });
 
-    for (let i = 1; i <= 21; i++) {
+    bind("todayBtn", () => {
+        setActive("todayBtn");
+        showToday();
+    });
 
-        bind(`prevDateBtn${i}`, () => {
+    bind("tomorrowBtn", () => {
+        setActive("tomorrowBtn");
+        showTomorrow();
+    });
 
-            const day = String(i + 10).padStart(2,"0");
-            const date = `2026-06-${day}`;
+    bind("prevDateBtn", () => {
+        setActive("prevDateBtn");
+        showCustomDate("2026-06-11");
+    });
 
-            setActive(`prevDateBtn${i}`);
-            showCustomDate(date);
-        });
-    }
+    bind("prevDateBtn2", () => {
+        setActive("prevDateBtn2");
+        showCustomDate("2026-06-12");
+    });
+
+    bind("prevDateBtn3", () => {
+        setActive("prevDateBtn3");
+        showCustomDate("2026-06-13");
+    });
+
+    bind("prevDateBtn4", () => {
+        setActive("prevDateBtn4");
+        showCustomDate("2026-06-14");
+    });
+
+    bind("prevDateBtn5", () => {
+        setActive("prevDateBtn5");
+        showCustomDate("2026-06-15");
+    });
+
+    bind("prevDateBtn6", () => {
+        setActive("prevDateBtn6");
+        showCustomDate("2026-06-16");
+    });
+
+    bind("prevDateBtn7", () => {
+        setActive("prevDateBtn7");
+        showCustomDate("2026-06-17");
+    });
+
+    bind("prevDateBtn8", () => {
+        setActive("prevDateBtn8");
+        showCustomDate("2026-06-18");
+    });
+
+    bind("prevDateBtn9", () => {
+        setActive("prevDateBtn9");
+        showCustomDate("2026-06-19");
+    });
+
+    bind("prevDateBtn10", () => {
+        setActive("prevDateBtn10");
+        showCustomDate("2026-06-20");
+    });
+
+    bind("prevDateBtn11", () => {
+        setActive("prevDateBtn11");
+        showCustomDate("2026-06-21");
+    });
+
+    bind("prevDateBtn12", () => {
+        setActive("prevDateBtn12");
+        showCustomDate("2026-06-22");
+    });
+
+    bind("prevDateBtn13", () => {
+        setActive("prevDateBtn13");
+        showCustomDate("2026-06-23");
+    });
+
+    bind("prevDateBtn14", () => {
+        setActive("prevDateBtn14");
+        showCustomDate("2026-06-24");
+    });
+
+    bind("prevDateBtn15", () => {
+        setActive("prevDateBtn15");
+        showCustomDate("2026-06-25");
+    });
+
+    bind("prevDateBtn16", () => {
+        setActive("prevDateBtn16");
+        showCustomDate("2026-06-26");
+    });
+
+    bind("prevDateBtn17", () => {
+        setActive("prevDateBtn17");
+        showCustomDate("2026-06-27");
+    });
+
+    bind("prevDateBtn18", () => {
+        setActive("prevDateBtn18");
+        showCustomDate("2026-06-28");
+    });
+
+    bind("prevDateBtn19", () => {
+        setActive("prevDateBtn19");
+        showCustomDate("2026-06-29");
+    });
+
+    bind("prevDateBtn20", () => {
+        setActive("prevDateBtn20");
+        showCustomDate("2026-06-30");
+    });
+
+    bind("prevDateBtn21", () => {
+        setActive("prevDateBtn21");
+        showCustomDate("2026-07-01");
+    });
 }
 
 /* =========================
@@ -195,191 +328,256 @@ function setupNavigation() {
 ========================= */
 
 function setActive(id) {
-    document.querySelectorAll(".day-btn")
-        .forEach(b => b.classList.remove("active"));
 
-    const el = document.getElementById(id);
-    if (el) el.classList.add("active");
+    document.querySelectorAll(".day-btn")
+        .forEach(button => button.classList.remove("active"));
+
+    const activeButton = document.getElementById(id);
+
+    if (activeButton) {
+        activeButton.classList.add("active");
+    }
+
 }
 
 /* =========================
-   LINKS
+   SHARE SYSTEM
 ========================= */
 
-function renderLinks(links) {
+function getShareLinks(match) {
 
-    if (!Array.isArray(links)) return "";
+    const url = window.location.href;
 
-    return links.map(l => `
-        <a class="match-link"
-           href="${l.url}"
-           target="_blank"
-           rel="noopener noreferrer">
+    const text = `⚽ ${match.team1} ${match.homeScore ?? 0} - ${match.awayScore ?? 0} ${match.team2} | World Goal 2026`;
 
-            <img src="${l.logo || ''}">
-            <span>${l.name || ''}</span>
+    const encodedUrl = encodeURIComponent(url);
+    const encodedText = encodeURIComponent(text);
 
-        </a>
-    `).join("");
+    return {
+
+        whatsapp:
+            `https://wa.me/?text=${encodedText}%20${encodedUrl}`,
+
+        twitter:
+            `https://twitter.com/intent/tweet?text=${encodedText}%20${encodedUrl}`,
+
+        facebook:
+            `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+
+        reddit:
+            `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedText}`,
+
+        threads:
+            `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`,
+
+        quora:
+            `https://www.quora.com/share?url=${encodedUrl}`,
+
+        youtube:
+            (match.links && match.links.length)
+                ? match.links[0].url
+                : url
+
+    };
+
 }
 
 /* =========================
-   RENDER
+   RENDER MATCHES
 ========================= */
 
 function render(containerId, date) {
 
-    const containers = ["yesterdayMatches","todayMatches","tomorrowMatches","customDateMatches"];
+    const containers = [
+        "yesterdayMatches",
+        "todayMatches",
+        "tomorrowMatches",
+        "customDateMatches"
+    ];
 
     containers.forEach(id => {
+
         const el = document.getElementById(id);
-        if (el) {
-            el.style.display = "none";
-            el.innerHTML = "";
-        }
+
+        if (!el) return;
+
+        el.style.display = "none";
+        el.innerHTML = "";
+
     });
 
     const container = document.getElementById(containerId);
+
     if (!container) return;
 
     container.style.display = "grid";
 
-    const matches = allMatches.filter(m => (m.date || "").slice(0,10) === date);
+    const matches = allMatches.filter(m => {
+
+        const matchDate = (m.date || "").slice(0, 10);
+
+        return matchDate === date;
+
+    });
 
     if (!matches.length) {
-        container.innerHTML = `<div class="no-matches">No matches</div>`;
+
+        container.innerHTML =
+            `<div class="no-matches">No matches for this day</div>`;
+
         return;
+
     }
 
     container.innerHTML = matches.map(m => {
 
-        const status = (m.status || "UPCOMING").toLowerCase();
-        const stage = m.type === "knockout"
-            ? (m.stage || "Octavos de Final")
-            : `Grupo ${m.group || "-"}`;
+        const linksHTML = (m.links || []).map(l => `
 
-        return `
-        <div class="match-card" data-id="${m.id}">
+            <a class="match-link"
+               href="${l.url}"
+               target="_blank"
+               rel="noopener noreferrer">
 
-            <div class="match-status ${status}">
-                ${m.status}
+                <img src="${l.logo}" alt="${l.name}">
+
+                <span>${l.name}</span>
+
+            </a>
+
+        `).join("");
+
+        const homeGoals = (m.goals || [])
+            .filter(g => g.team === "home");
+
+        const awayGoals = (m.goals || [])
+            .filter(g => g.team === "away");
+
+        const homeGoalsHTML = homeGoals.map(g => `
+
+            <div class="goal left">
+                ⚽ ${g.player}
+                <span class="minute">${g.minute}</span>
             </div>
 
-            <div class="match-stage">
-                ${stage}
+        `).join("");
+
+        const awayGoalsHTML = awayGoals.map(g => `
+
+            <div class="goal right">
+                <span class="minute">${g.minute}</span>
+                ${g.player} ⚽
+            </div>
+
+        `).join("");
+
+        return `
+
+        <div class="match-card">
+
+            <div class="match-status ${(m.status || "UPCOMING").toLowerCase()}">
+                ${m.status || "UPCOMING"}
+            </div>
+
+            <div style="text-align:center;font-weight:900;color:#00D26A;margin-bottom:6px;">
+
+                ${
+                    m.type === "knockout"
+                        ? (m.stage || "Fase Final")
+                        : `Grupo ${m.group}`
+                }
+
             </div>
 
             <div class="match-header">
 
                 <div class="team">
-                    <img src="${flagUrl(m.flag1)}">
+
+                    <img
+                        src="${flagUrl(m.flag1)}"
+                        class="flag"
+                        alt="${m.team1}">
+
                     <span>${m.team1}</span>
+
                 </div>
 
                 <div class="score">
-                    ${m.homeScore} - ${m.awayScore}
+
+                    ${m.homeScore ?? 0} - ${m.awayScore ?? 0}
+
+                    ${
+                        m.penalties
+                        ? `
+                        <div class="penalties">
+                            (${m.penalties.home}) - (${m.penalties.away})
+                        </div>
+                        `
+                        : ""
+                    }
+
                 </div>
 
                 <div class="team">
+
                     <span>${m.team2}</span>
-                    <img src="${flagUrl(m.flag2)}">
+
+                    <img
+                        src="${flagUrl(m.flag2)}"
+                        class="flag"
+                        alt="${m.team2}">
+
+                </div>
+
+            </div>
+
+            <div class="events">
+
+                <div class="events-column left">
+
+                    ${homeGoalsHTML}
+
+                </div>
+
+                <div class="events-column right">
+
+                    ${awayGoalsHTML}
+
                 </div>
 
             </div>
 
             <div class="match-footer">
-                🏟 ${m.stadium} • ${m.city} <br>
-                🕒 ${m.timeAR}
+
+                🏟 ${m.stadium || "-"} • ${m.city || "-"}
+
+                <br>
+
+                🕒 ${m.timeAR || "-"}
+
             </div>
 
             <div class="match-links">
-                ${renderLinks(m.links)}
+
+                ${linksHTML}
+
             </div>
 
         </div>
+
         `;
+
     }).join("");
+
 }
 
-/* =========================
-   GLOBAL CLICK SYSTEM
-========================= */
+document.addEventListener("DOMContentLoaded", async () => {
 
-function setupGlobalClicks() {
+    await loadMatches();
 
-    document.addEventListener("click", (e) => {
+    setupNavigation();
 
-        const card = e.target.closest(".match-card");
+    renderTables();
 
-        if (card) {
-            const id = card.dataset.id;
-            if (id) openMatchModal(id);
-        }
+    setShareLinks();
 
-        const link = e.target.closest(".match-link");
-
-        if (link) {
-            e.stopPropagation();
-        }
-
-    });
-}
-
-/* =========================
-   MODAL SYSTEM
-========================= */
-
-function openMatchModal(id) {
-
-    const match = allMatches.find(m => m.id === id);
-    if (!match) return;
-
-    let modal = document.getElementById("matchModal");
-
-    if (!modal) {
-        modal = document.createElement("div");
-        modal.id = "matchModal";
-        modal.innerHTML = `<div id="modalContent"></div>`;
-        document.body.appendChild(modal);
-    }
-
-    const content = `
-        <div class="modal-box">
-
-            <h2>${match.team1} vs ${match.team2}</h2>
-
-            <p>${match.stadium} • ${match.city}</p>
-            <p>${match.timeAR}</p>
-
-            <div class="modal-score">
-                ${match.homeScore} - ${match.awayScore}
-            </div>
-
-            <button onclick="closeModal()">Close</button>
-
-        </div>
-    `;
-
-    document.getElementById("matchModal").innerHTML = content;
-    modal.style.display = "flex";
-}
-
-function closeModal() {
-    const m = document.getElementById("matchModal");
-    if (m) m.style.display = "none";
-}
-
-/* =========================
-   SHARE
-========================= */
-
-function setShareHome() {
-
-    const url = window.location.href;
-
-    ["share-wa","share-tw","share-fb","share-re","share-th"]
-        .forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.href = url;
-        });
-}
+});
