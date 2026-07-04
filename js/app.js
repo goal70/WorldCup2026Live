@@ -60,13 +60,13 @@ async function loadMatches() {
                     group: m.group,
 
                     date: normalizeDate(m.date),
-                    status: m.status || "UPCOMING",
+                    status: (m.status || "UPCOMING").toString(),
 
-                    team1: m.team1,
-                    team2: m.team2,
+                    team1: m.team1 || "",
+                    team2: m.team2 || "",
 
-                    flag1: m.flag1,
-                    flag2: m.flag2,
+                    flag1: m.flag1 || "",
+                    flag2: m.flag2 || "",
 
                     homeScore: m.homeScore ?? 0,
                     awayScore: m.awayScore ?? 0,
@@ -102,13 +102,13 @@ async function loadMatches() {
                         side: m.side,
 
                         date: normalizeDate(m.date),
-                        status: m.status || "UPCOMING",
+                        status: (m.status || "UPCOMING").toString(),
 
-                        team1: m.team1,
-                        team2: m.team2,
+                        team1: m.team1 || "",
+                        team2: m.team2 || "",
 
-                        flag1: m.flag1,
-                        flag2: m.flag2,
+                        flag1: m.flag1 || "",
+                        flag2: m.flag2 || "",
 
                         homeScore: m.homeScore ?? 0,
                         awayScore: m.awayScore ?? 0,
@@ -222,9 +222,11 @@ function renderLinks(links) {
 
     if (!Array.isArray(links)) return "";
 
-    return links.map(l => `
+    return links
+        .filter(l => l && l.url)
+        .map(l => `
         <a class="match-link"
-           href="${l.url || '#'}"
+           href="${l.url}"
            target="_blank"
            rel="noopener noreferrer">
 
@@ -269,23 +271,31 @@ function render(containerId, date) {
         return;
     }
 
-    container.innerHTML = matches.map(m => `
+    container.innerHTML = matches.map(m => {
 
+        const status = (m.status || "UPCOMING").toString();
+        const stadium = m.stadium || "-";
+        const city = m.city || "-";
+        const stage = m.type === "knockout"
+            ? (m.stage || "Octavos de Final")
+            : `Grupo ${m.group || "-"}`;
+
+        return `
         <div class="match-card">
 
-            <div class="match-status ${(m.status || "UPCOMING").toLowerCase()}">
-                ${m.status || "UPCOMING"}
+            <div class="match-status ${status.toLowerCase()}">
+                ${status}
             </div>
 
             <div style="text-align:center;font-weight:900;margin-bottom:6px;">
-                ${m.type === "knockout" ? (m.stage || "Octavos de Final") : `Grupo ${m.group || "-"}`}
+                ${stage}
             </div>
 
             <div class="match-header">
 
                 <div class="team">
                     <img src="${flagUrl(m.flag1)}" class="flag">
-                    <span>${m.team1}</span>
+                    <span>${m.team1 || ""}</span>
                 </div>
 
                 <div class="score">
@@ -293,14 +303,14 @@ function render(containerId, date) {
                 </div>
 
                 <div class="team">
-                    <span>${m.team2}</span>
+                    <span>${m.team2 || ""}</span>
                     <img src="${flagUrl(m.flag2)}" class="flag">
                 </div>
 
             </div>
 
             <div class="match-footer">
-                🏟 ${m.stadium || "-"} • ${m.city || "-"} <br>
+                🏟 ${stadium} • ${city} <br>
                 🕒 ${m.timeAR || "-"}
             </div>
 
@@ -309,8 +319,8 @@ function render(containerId, date) {
             </div>
 
         </div>
-
-    `).join("");
+        `;
+    }).join("");
 }
 
 /* =========================
