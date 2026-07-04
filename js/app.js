@@ -1,5 +1,5 @@
 /*************************************************
- * WORLD GOAL 2026 - FIXED CORE ENGINE
+ * WORLD GOAL 2026 - FIXED CORE ENGINE (CLEAN)
  *************************************************/
 
 let allMatches = [];
@@ -28,13 +28,16 @@ function flagUrl(code) {
 
 async function loadMatches() {
     try {
+
         const groups = ["a","b","c","d","e","f","g","h","i","j","k","l"];
         allMatches = [];
 
-        /* ========= GROUPS ========= */
+        /* =========================
+           GROUPS
+        ========================= */
         for (const group of groups) {
-            const res = await fetch(`data/groups/groups-${group}.json`);
 
+            const res = await fetch(`data/groups/groups-${group}.json`);
             if (!res.ok) continue;
 
             const matches = await res.json();
@@ -43,7 +46,9 @@ async function loadMatches() {
                 allMatches.push({
                     id: m.id,
                     group: m.group,
-                    date: m.date, // IMPORTANTE: debe ser YYYY-MM-DD
+
+                    date: normalizeDate(m.date),
+
                     status: m.status || "UPCOMING",
 
                     team1: m.team1,
@@ -66,21 +71,29 @@ async function loadMatches() {
             });
         }
 
-        /* ========= FINAL PHASE ========= */
-        try {
-            const resFinal = await fetch("data/fasefinal.json");
+        /* =========================
+           FASE FINAL
+        ========================= */
 
+        try {
+
+            const resFinal = await fetch("data/fasefinal-matches.json");
             if (resFinal.ok) {
+
                 const finalMatches = await resFinal.json();
 
                 finalMatches.forEach(m => {
                     allMatches.push({
                         id: m.id,
                         type: "knockout",
+
                         stage: m.stage,
                         side: m.side,
 
-                        date: m.date,
+                        date: normalizeDate(m.date),
+
+                        displayDate: m.displayDate || "",
+
                         status: m.status || "UPCOMING",
 
                         team1: m.team1,
@@ -96,10 +109,13 @@ async function loadMatches() {
 
                         stadium: m.stadium || "",
                         city: m.city || "",
-                        timeAR: m.time || "-"
+                        timeAR: m.timeAR || m.time || "-",
+
+                        links: m.links || []
                     });
                 });
             }
+
         } catch (err) {
             console.error("Error fase final:", err);
         }
@@ -112,6 +128,32 @@ async function loadMatches() {
 }
 
 /* =========================
+   DATE NORMALIZER
+========================= */
+
+function normalizeDate(date) {
+
+    if (!date) return "";
+
+    if (date.includes("-")) return date.slice(0, 10);
+
+    const map = {
+        "Junio": "06",
+        "Julio": "07"
+    };
+
+    const parts = date.split(" ");
+    if (parts.length < 2) return "";
+
+    const day = parts[0].padStart(2, "0");
+    const month = map[parts[1]];
+
+    if (!month) return "";
+
+    return `2026-${month}-${day}`;
+}
+
+/* =========================
    DATE HELPERS
 ========================= */
 
@@ -119,7 +161,6 @@ function getLocalDate(offset = 0) {
     const d = new Date();
     d.setHours(0,0,0,0);
     d.setDate(d.getDate() + offset);
-
     return d.toISOString().slice(0,10);
 }
 
@@ -164,7 +205,7 @@ function setupNavigation() {
 
     for (let i = 1; i <= 21; i++) {
         bind(`prevDateBtn${i}`, () => {
-            const day = String(i + 10).padStart(2,"0"); // ajusta base si quieres
+            const day = String(i + 10).padStart(2,"0");
             showCustomDate(`2026-06-${day}`);
             setActive(`prevDateBtn${i}`);
         });
@@ -208,10 +249,9 @@ function render(containerId, date) {
 
     container.style.display = "grid";
 
-    const matches = allMatches.filter(m => {
-        const d = (m.date || "").slice(0,10);
-        return d === date;
-    });
+    const matches = allMatches.filter(m =>
+        (m.date || "").slice(0,10) === date
+    );
 
     if (!matches.length) {
         container.innerHTML = `<div class="no-matches">No matches for this day</div>`;
@@ -221,8 +261,8 @@ function render(containerId, date) {
     container.innerHTML = matches.map(m => {
 
         const linksHTML = (m.links || []).map(l => `
-            <a class="match-link" href="${l.url}" target="_blank">
-                <img src="${l.logo}" alt="">
+            <a class="match-link" href="${l.url}" target="_blank" rel="noopener noreferrer">
+                <img src="${l.logo || 'https://via.placeholder.com/40'}">
                 <span>${l.name}</span>
             </a>
         `).join("");
@@ -235,7 +275,11 @@ function render(containerId, date) {
             </div>
 
             <div style="text-align:center;font-weight:900;margin-bottom:6px;">
-                ${m.type === "knockout" ? m.stage : `Grupo ${m.group || "-"}`}
+                ${
+                    m.type === "knockout"
+                        ? (m.displayDate || m.stage)
+                        : `Grupo ${m.group || "-"}`
+                }
             </div>
 
             <div class="match-header">
@@ -257,7 +301,7 @@ function render(containerId, date) {
             </div>
 
             <div class="match-footer">
-                🏟 ${m.stadium || "-"} • ${m.city || "-"} <br>
+                🏟 ${m.stadium || "TBA"} • ${m.city || "TBA"} <br>
                 🕒 ${m.timeAR || "-"}
             </div>
 
@@ -271,16 +315,15 @@ function render(containerId, date) {
 }
 
 /* =========================
-   SHARE (BÁSICO FIX)
+   SHARE FIX
 ========================= */
 
 function setShareHome() {
     const url = window.location.href;
 
-    const ids = ["share-wa","share-tw","share-fb","share-re","share-th"];
-
-    ids.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.href = url;
-    });
+    ["share-wa","share-tw","share-fb","share-re","share-th"]
+        .forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.href = url;
+        });
 }
