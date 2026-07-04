@@ -3,24 +3,17 @@
     "id": "M3",
     "stage": "round16",
     "side": "left",
-
     "date": "2026-06-28",
     "status": "FINISHED",
-
     "team1": "Sudáfrica",
     "team2": "Canadá",
-
     "flag1": "za",
     "flag2": "ca",
-
     "homeScore": 0,
     "awayScore": 1,
-
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
-
     "timeAR": "16:00",
-
     "goals": [
       {
         "player": "Eustáquio",
@@ -28,7 +21,6 @@
         "team": "away"
       }
     ],
-
     "links": [
       {
         "name": "Direct TV",
@@ -52,30 +44,22 @@
       }
     ]
   },
-
   {
     "id": "M9",
     "stage": "round16",
     "side": "right",
-
     "date": "2026-06-29",
     "displayDate": "29 Junio",
     "status": "FINISHED",
-
     "team1": "Brasil",
     "team2": "Japón",
-
     "flag1": "br",
     "flag2": "jp",
-
     "homeScore": 2,
     "awayScore": 1,
-
     "stadium": "NRG Stadium",
     "city": "Houston",
-
     "timeAR": "14:00",
-
     "goals": [
       {
         "player": "Sano",
@@ -93,24 +77,23 @@
         "team": "home"
       }
     ],
-
     "links": [
-  {
-    "name": "Direct TV",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-  },
-       {
-    "name": "Caracol TV",
-    "logo": "https://i.pinimg.com/736x/e9/ea/9a/e9ea9a7c1bd535cd7f16f415fa855957.jpg",
-    "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vY2FyYWNvbHR2LnBocA=="
-  },
-       {
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
+      },
+      {
+        "name": "Caracol TV",
+        "logo": "https://i.pinimg.com/736x/e9/ea/9a/e9ea9a7c1bd535cd7f16f415fa855957.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vY2FyYWNvbHR2LnBocA=="
+      },
+      {
         "name": "Telemundo",
         "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpzLm9yZy9jYW5hbC5waHA/c3RyZWFtPXRlbGVtdW5kb3VzYQ=="
       },
-       {
+      {
         "name": "Disney+",
         "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdhsY8X-02mpMvDgZea_Je-bPG8qnqFLb4bHrLpQ5Gluam6M-jMUm8rsXigVpzz6dDV-Mc-kVUtvqovFn2T3S1cZ15yOE2MAMu6f_ng-jxkv-oXHGeVv4JajAT0KimCb5-LImrnxd23Le4/s1600/disney%252B.jpg",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09ZGlzbmV5MQ=="
@@ -127,30 +110,22 @@
     "id": "M1",
     "stage": "round16",
     "side": "left",
-
     "date": "2026-06-29",
     "displayDate": "29 Junio",
     "status": "FINISHED",
-
     "team1": "Alemania",
     "team2": "Paraguay",
-
     "flag1": "de",
     "flag2": "py",
-
     "homeScore": 1,
     "awayScore": 1,
-
     "penalties": {
-  "home": 3,
-  "away": 4
-},
-
+      "home": 3,
+      "away": 4
+    },
     "stadium": "Gillette Stadium",
     "city": "Foxborough",
-
     "timeAR": "17:30",
-
     "goals": [
       {
         "player": "Enciso",
@@ -163,12 +138,11 @@
         "team": "home"
       }
     ],
-    
     "links": [
-  {
-    "name": "El Milagro de Boston",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxvKXw45r0CvWz_BtPytflGCNGUJzn3GGaIfUo38g_-X6yKbmp_iXCIJlB&s=10",
-    "url": "https://www.youtube.com/watch?v=qrDufkehZGY"
+      {
+        "name": "El Milagro de Boston",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxvKXw45r0CvWz_BtPytflGCNGUJzn3GGaIfUo38g_-X6yKbmp_iXCIJlB&s=10",
+        "url": "https://www.youtube.com/watch?v=qrDufkehZGY"
       }
     ]
   },
@@ -177,77 +151,47 @@
     "id": "M4",
     "stage": "round16",
     "side": "left",
-
     "date": "2026-06-29",
     "displayDate": "29 Junio",
     "status": "FINISHED",
-
     "team1": "Países Bajos",
     "team2": "Marruecos",
-
     "flag1": "nl",
     "flag2": "ma",
-
     "homeScore": 1,
     "awayScore": 1,
-
     "penalties": {
-  "home": 2,
-  "away": 3
-},
-
+      "home": 2,
+      "away": 3
+    },
     "stadium": "Estadio BBVA",
     "city": "Guadalupe",
-
     "timeAR": "22:00",
-
     "links": [
       {
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "Canal 5 MX",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Canal_5_2016.svg/500px-Canal_5_2016.svg.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2FuYWw1bXgucGhw"
-      },
-      {
-        "name": "Unicanal",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
-        }
+      }
     ]
   },
 
-        {
+  {
     "id": "M10",
     "stage": "round16",
     "side": "right",
-
     "date": "2026-06-30",
     "displayDate": "30 Junio",
     "status": "FINISHED",
-
     "team1": "Costa de Marfil",
     "team2": "Noruega",
-
     "flag1": "ci",
     "flag2": "no",
-
     "homeScore": 1,
     "awayScore": 2,
-
+    "stadium": "AT&T Stadium",
+    "city": "Arlington",
+    "timeAR": "14:00",
     "goals": [
       {
         "player": "Nusa",
@@ -263,61 +207,33 @@
         "player": "Haaland",
         "minute": 86,
         "team": "away"
-    }
+      }
     ],
-
-    "stadium": "AT&T Stadium",
-    "city": "Arlington",
-
-    "timeAR": "14:00",
-    
     "links": [
       {
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "Unicanal",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
-        }
+      }
     ]
   },
 
-        {
+  {
     "id": "M2",
     "stage": "round16",
     "side": "left",
-
     "date": "2026-06-30",
     "displayDate": "30 Junio",
     "status": "FINISHED",
-
     "team1": "Francia",
     "team2": "Suecia",
-
     "flag1": "fr",
     "flag2": "se",
-
     "homeScore": 3,
     "awayScore": 0,
-
     "stadium": "MetLife Stadium",
     "city": "New Jersey",
-
     "timeAR": "18:00",
-
     "goals": [
       {
         "player": "Mbappe",
@@ -335,110 +251,56 @@
         "team": "home"
       }
     ],
-          
     "links": [
       {
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "TyC Sports",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9av3BMXwBjs247UtPbCYJXXbEJBGHAEQhGQ&s",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dHljc3BvcnRz"
-      },
-      {
-        "name": "Unicanal",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
- }
-    ]
-  },        
- {
-    "id": "M11",
-    "stage": "round16",
-    "side": "right",
-
-    "date": "2026-06-30",
-    "displayDate": "30 Junio",
-    "status": "FINISHED",
-
-    "team1": "Mexico",
-    "team2": "Ecuador",
-
-    "flag1": "mx",
-    "flag2": "ec",
-
-    "homeScore": 2,
-    "awayScore": 0,
-
-    "stadium": "Estadio Azteca",
-    "city": "Ciudad de Mexico",
-
-    "timeAR": "22:00",
-    
-    "links": [
-      {
-        "name": "Direct TV",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "Unicanal",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
-      },
-      {
-        "name": "TUDN MX",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/TUDN_Logo.svg/1280px-TUDN_Logo.svg.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHVkbm14LnBocA=="
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
-         }
+      }
     ]
   },
 
-        {
+  {
+    "id": "M11",
+    "stage": "round16",
+    "side": "right",
+    "date": "2026-06-30",
+    "displayDate": "30 Junio",
+    "status": "FINISHED",
+    "team1": "Mexico",
+    "team2": "Ecuador",
+    "flag1": "mx",
+    "flag2": "ec",
+    "homeScore": 2,
+    "awayScore": 0,
+    "stadium": "Estadio Azteca",
+    "city": "Ciudad de Mexico",
+    "timeAR": "22:00",
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
+      }
+    ]
+  },
+
+  {
     "id": "M12",
     "stage": "round16",
     "side": "right",
-
     "date": "2026-07-01",
     "displayDate": "01 Julio",
     "status": "FINISHED",
-
     "team1": "Inglaterra",
     "team2": "RD Congo",
-
     "flag1": "gb",
     "flag2": "cd",
-
     "homeScore": 2,
     "awayScore": 1,
-
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
-
     "timeAR": "13:00",
-
     "goals": [
       {
         "player": "Cipenga",
@@ -456,69 +318,31 @@
         "team": "home"
       }
     ],
-    
     "links": [
       {
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "Caracol TV",
-        "logo": "https://i.pinimg.com/736x/e9/ea/9a/e9ea9a7c1bd535cd7f16f415fa855957.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vY2FyYWNvbHR2LnBocA=="
-      },
-      {
-        "name": "TV La 1 Español",
-        "logo": "https://static.wikia.nocookie.net/logopedia/images/5/5a/Logo_TVE--1_%281982-1991%29.png/revision/latest?cb=20210527130935&path-prefix=es",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHZlbGExLnBocA=="
-      },
-      {
-        "name": "VIX+",
-        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4MQ=="
-      },
-      {
-        "name": "Unicanal",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
-        }
+      }
     ]
   },
 
-        {
+  {
     "id": "M8",
     "stage": "round16",
     "side": "left",
-
     "date": "2026-07-01",
     "displayDate": "01 Julio",
     "status": "FINISHED",
-
     "team1": "Belgica",
     "team2": "Senegal",
-
     "flag1": "be",
     "flag2": "sn",
-
     "homeScore": 3,
     "awayScore": 2,
-
     "stadium": "Lumen Field",
     "city": "Seattle",
-
     "timeAR": "17:00",
-
     "goals": [
       {
         "player": "Diarra",
@@ -546,153 +370,81 @@
         "team": "home"
       }
     ],
-          
     "links": [
       {
         "name": "El Robo de Seattle",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6JuPIetQrT3yhbXCWeSjgjVQC43fpHhtSrR6kVmBWA&s",
         "url": "https://www.youtube.com/watch?v=c5SO9B0BQz8"
- }
+      }
     ]
-  },  
-  
- {
+  },
+
+  {
     "id": "M7",
     "stage": "round16",
     "side": "left",
-
     "date": "2026-07-01",
     "displayDate": "01 Julio",
     "status": "FINISHED",
-
     "team1": "Estados Unidos",
     "team2": "Bosnia y Herzegovina",
-
     "flag1": "us",
     "flag2": "ba",
-
     "homeScore": 2,
     "awayScore": 0,
-
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
-
     "timeAR": "21:00",
-    
     "links": [
       {
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "Unicanal",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
-      },
-      {
-        "name": "TUDN MX",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/TUDN_Logo.svg/1280px-TUDN_Logo.svg.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHVkbm14LnBocA=="
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
-     }
+      }
     ]
   },
 
-        {
+  {
     "id": "M6",
     "stage": "round16",
     "side": "left",
-
     "date": "2026-07-02",
     "displayDate": "02 Julio",
     "status": "FINISHED",
-
     "team1": "España",
     "team2": "Austria",
-
     "flag1": "es",
     "flag2": "at",
-
     "homeScore": 3,
     "awayScore": 0,
-
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
-
     "timeAR": "16:00",
-    
     "links": [
       {
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "Caracol TV",
-        "logo": "https://i.pinimg.com/736x/e9/ea/9a/e9ea9a7c1bd535cd7f16f415fa855957.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vY2FyYWNvbHR2LnBocA=="
-      },
-      {
-        "name": "TV La 1 Español",
-        "logo": "https://static.wikia.nocookie.net/logopedia/images/5/5a/Logo_TVE--1_%281982-1991%29.png/revision/latest?cb=20210527130935&path-prefix=es",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHZlbGExLnBocA=="
-      },
-      {
-        "name": "VIX+",
-        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4MQ=="
-      },
-      {
-        "name": "Unicanal",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
-        }
+      }
     ]
   },
 
-        {
+  {
     "id": "M5",
     "stage": "round16",
     "side": "left",
-
     "date": "2026-07-02",
     "displayDate": "02 Julio",
     "status": "FINISHED",
-
     "team1": "Portugal",
     "team2": "Croacia",
-
     "flag1": "pt",
     "flag2": "hr",
-
     "homeScore": 2,
     "awayScore": 1,
-
     "stadium": "Lumen Field",
     "city": "Seattle",
-
     "timeAR": "20:00",
-
     "goals": [
       {
         "player": "Perisic",
@@ -710,157 +462,85 @@
         "team": "home"
       }
     ],
-
     "links": [
       {
         "name": "El Robo de Toronto",
         "logo": "https://media.bolavip.com/wp-content/uploads/sites/23/2026/07/02154235/cristiano-ronaldo-e1783028576768-740x416.webp",
         "url": "https://www.youtube.com/watch?v=zFek03eyHUQ"
-        }
+      }
     ]
   },
- {
+
+  {
     "id": "M15",
     "stage": "round16",
     "side": "right",
-
     "date": "2026-07-03",
     "displayDate": "03 Julio",
     "status": "FINISHED",
-
     "team1": "Suiza",
     "team2": "Argelia",
-
     "flag1": "ch",
     "flag2": "dz",
-
     "homeScore": 2,
     "awayScore": 0,
-
     "stadium": "Levi's Stadium",
     "city": "Santa Clara",
-
     "timeAR": "00:00",
-    
     "links": [
       {
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvZHNwb3J0c2FyLnBocA=="
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "Caracol TV",
-        "logo": "https://i.pinimg.com/736x/e9/ea/9a/e9ea9a7c1bd535cd7f16f415fa855957.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vY2FyYWNvbHR2LnBocA=="
-      },
-      {
-        "name": "TV La 1 Español",
-        "logo": "https://static.wikia.nocookie.net/logopedia/images/5/5a/Logo_TVE--1_%281982-1991%29.png/revision/latest?cb=20210527130935&path-prefix=es",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdHZlbGExLnBocA=="
-      },
-      {
-        "name": "VIX+",
-        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4MQ=="
-      },
-      {
-        "name": "Unicanal",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzskMLnDrhvuKELh2Fxau-98leq2huFZV9WlK1PkYoHnkG3q_xmh8RdBE&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvdW5pY2FuYWwucGhw"
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
-        }
+      }
     ]
   },
 
-        {
+  {
     "id": "M14",
     "stage": "round16",
     "side": "right",
-
     "date": "2026-07-03",
     "displayDate": "03 Julio",
     "status": "FINISHED",
-
     "team1": "Australia",
     "team2": "Egipto",
-
     "flag1": "au",
     "flag2": "eg",
-
     "homeScore": 1,
     "awayScore": 1,
-
     "penalties": {
-  "home": 2,
-  "away": 4
-},
-
+      "home": 2,
+      "away": 4
+    },
     "stadium": "AT&T Stadium",
     "city": "Arlington",
-
     "timeAR": "15:00",
-    
     "links": [
       {
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "TyC Sports",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1jDJZ3W3xam3lzHjQEaFP2R1Rj5Y6ob2ooJVRPvSgMzIOnm5QNQXbjRk&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dHljc3BvcnRz"
-      },
-      {
-        "name": "VIX+",
-        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4MQ=="
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4MQ=="
-        }
+      }
     ]
   },
 
-        {
+  {
     "id": "M13",
     "stage": "round16",
     "side": "right",
-
     "date": "2026-07-03",
     "displayDate": "03 Julio",
     "status": "FINISHED",
-
     "team1": "Argentina",
     "team2": "Cabo Verde",
-
     "flag1": "ar",
     "flag2": "cv",
-
     "homeScore": 3,
     "awayScore": 2,
-
     "stadium": "Hard Rock Stadium",
     "city": "Miami",
-
     "timeAR": "19:00",
-
     "goals": [
       {
         "player": "MESSI",
@@ -888,86 +568,38 @@
         "team": "home"
       }
     ],
-
     "links": [
       {
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
-      },
-      {
-        "name": "TyC Sports",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1jDJZ3W3xam3lzHjQEaFP2R1Rj5Y6ob2ooJVRPvSgMzIOnm5QNQXbjRk&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dHljc3BvcnRz"
-      },
-      {
-        "name": "Disney+",
-        "logo": "https://lumiere-a.akamaihd.net/v1/images/disney_logo_1_68be10ab.jpeg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09ZGlzbmV5MQ=="
-      },
-      {
-        "name": "Caracol TV",
-        "logo": "https://i.pinimg.com/736x/e9/ea/9a/e9ea9a7c1bd535cd7f16f415fa855957.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vY2FyYWNvbHR2LnBocA=="
-      },
-      {
-        "name": "TV La 1 Español",
-        "logo": "https://static.wikia.nocookie.net/logopedia/images/5/5a/Logo_TVE--1_%281982-1991%29.png/revision/latest?cb=20210527130935&path-prefix=es",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy90dmVsYTEucGhw"
-      },
-      {
-        "name": "VIX+",
-        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4Mg=="
-      },
-      {
-        "name": "Canal 5 MX",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Canal_5_2016.svg/500px-Canal_5_2016.svg.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYW5hbDVteC5waHA="
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMS5waHA="
-        }
+      }
     ]
   },
- {
+
+  {
     "id": "M16",
     "stage": "round16",
     "side": "right",
-
     "date": "2026-07-03",
     "displayDate": "03 Julio",
     "status": "FINISHED",
-
     "team1": "Colombia",
     "team2": "Ghana",
-
     "flag1": "co",
     "flag2": "gh",
-
     "homeScore": 1,
     "awayScore": 0,
-
     "stadium": "Arrowhead Stadium",
     "city": "Kansas City",
-
     "timeAR": "22:30",
-
-   "goals": [
+    "goals": [
       {
         "player": "Arias",
         "minute": 14,
         "team": "home"
       }
     ],
-    
     "links": [
       {
         "name": "Direct TV",
@@ -1003,8 +635,10 @@
         "name": "Caze TV",
         "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYXRhbXZpZHpmeS5vcmcvY2F6ZTEucGhw"
-}
-,
+      }
+    ]
+  },
+
   {
     "id": "Q1",
     "stage": "Octavos de Final",
@@ -1048,7 +682,7 @@
         "name": "Caze TV",
         "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMS5waHA="
-        }
+      }
     ]
   },
 
@@ -1095,7 +729,7 @@
         "name": "Caze TV",
         "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMS5waHA="
-        }
+      }
     ]
   },
 
