@@ -1018,12 +1018,38 @@
     "flag2": "fr",
     "homeScore": 0,
     "awayScore": 0,
-    "stadium": "",
-    "city": "",
-    "timeAR": "14:00",
+    "stadium": "Lincoln Financial Field",
+    "city": "Philadelphia",
+    "timeAR": "18:00",
     "goals": [],
     "redCards": [],
-    "links": []
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
+      },
+      {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
+      },
+      {
+        "name": "Win Sports",
+        "logo": "https://static.wikia.nocookie.net/logopedia/images/6/6f/WinSports2018.png/revision/latest?cb=20210307135254&path-prefix=es",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09d2luc3BvcnRz"
+      },
+      {
+        "name": "VIX+",
+        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4MQ=="
+      },
+      {
+        "name": "Caze TV",
+        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMS5waHA="
+        }
+    ]
   },
 
   {
@@ -1039,9 +1065,9 @@
     "flag2": "ma",
     "homeScore": 0,
     "awayScore": 0,
-    "stadium": "",
-    "city": "",
-    "timeAR": "18:00",
+    "stadium": "Houston Stadium",
+    "city": "Houston",
+    "timeAR": "14:00",
     "goals": [],
     "redCards": [],
     "links": []
