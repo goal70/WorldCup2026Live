@@ -1007,7 +1007,7 @@
 ,
   {
     "id": "Q1",
-    "stage": "quarterfinal",
+    "stage": "Octavos de Final",
     "side": "left",
     "date": "2026-07-04",
     "displayDate": "04 Julio",
@@ -1054,7 +1054,7 @@
 
   {
     "id": "Q2",
-    "stage": "quarterfinal",
+    "stage": "Octavos de Final",
     "side": "left",
     "date": "2026-07-04",
     "displayDate": "04 Julio",
@@ -1075,7 +1075,7 @@
 
   {
     "id": "Q3",
-    "stage": "quarterfinal",
+    "stage": "Octavos de Final",
     "side": "right",
     "date": "2026-07-05",
     "displayDate": "05 Julio",
@@ -1096,7 +1096,7 @@
 
   {
     "id": "Q4",
-    "stage": "quarterfinal",
+    "stage": "Octavos de Final",
     "side": "right",
     "date": "2026-07-05",
     "displayDate": "05 Julio",
@@ -1117,7 +1117,7 @@
 
   {
     "id": "Q5",
-    "stage": "quarterfinal",
+    "stage": "Octavos de Final",
     "side": "left",
     "date": "2026-07-06",
     "displayDate": "06 Julio",
@@ -1138,7 +1138,7 @@
 
   {
     "id": "Q6",
-    "stage": "quarterfinal",
+    "stage": "Octavos de Final",
     "side": "left",
     "date": "2026-07-06",
     "displayDate": "06 Julio",
@@ -1159,7 +1159,7 @@
 
   {
     "id": "Q7",
-    "stage": "quarterfinal",
+    "stage": "Octavos de Final",
     "side": "right",
     "date": "2026-07-07",
     "displayDate": "07 Julio",
@@ -1180,7 +1180,7 @@
 
   {
     "id": "Q8",
-    "stage": "quarterfinal",
+    "stage": "Octavos de Final",
     "side": "right",
     "date": "2026-07-07",
     "displayDate": "07 Julio",
