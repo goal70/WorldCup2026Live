@@ -321,6 +321,21 @@ function setupNavigation() {
         setActive("prevDateBtn21");
         showCustomDate("2026-07-01");
     });
+
+    bind("prevDateBtn22", () => {
+        setActive("prevDateBtn22");
+        showCustomDate("2026-07-02");
+    });
+
+    bind("prevDateBtn23", () => {
+        setActive("prevDateBtn23");
+        showCustomDate("2026-07-03");
+    });
+
+    bind("prevDateBtn24", () => {
+        setActive("prevDateBtn24");
+        showCustomDate("2026-07-04");
+    });
 }
 
 /* =========================
