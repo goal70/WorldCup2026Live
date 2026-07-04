@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" href="css/styles.css">
 
-<!-- ICONOS (IMPORTANTE PARA QUE SE VEAN LOS LOGOS) -->
+<!-- ICONOS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- MONETAG IN-PAGE PUSH -->
@@ -38,30 +38,30 @@ window.addEventListener("load", () => {
             ⚽ <span>WORLD GOAL 2026</span>
         </a>
 
-        <!-- 🔥 SHARE HOME (SOLO AQUÍ) -->
+        <!-- SHARE -->
         <div class="share-box">
 
-    <a class="share-btn whatsapp" id="share-wa" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+            <a class="share-btn whatsapp" id="share-wa" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i>
+            </a>
 
-    <a class="share-btn twitter" id="share-tw" target="_blank">
-        <i class="fa-brands fa-x-twitter"></i>
-    </a>
+            <a class="share-btn twitter" id="share-tw" target="_blank" rel="noopener">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
 
-    <a class="share-btn facebook" id="share-fb" target="_blank">
-        <i class="fab fa-facebook-f"></i>
-    </a>
+            <a class="share-btn facebook" id="share-fb" target="_blank" rel="noopener">
+                <i class="fab fa-facebook-f"></i>
+            </a>
 
-    <a class="share-btn reddit" id="share-re" target="_blank">
-        <i class="fab fa-reddit-alien"></i>
-    </a>
+            <a class="share-btn reddit" id="share-re" target="_blank" rel="noopener">
+                <i class="fab fa-reddit-alien"></i>
+            </a>
 
-    <a class="share-btn threads" id="share-th" target="_blank">
-        <i class="fa-brands fa-threads"></i>
-    </a>
+            <a class="share-btn threads" id="share-th" target="_blank" rel="noopener">
+                <i class="fa-brands fa-threads"></i>
+            </a>
 
-</div>
+        </div>
 
         <nav>
             <a href="index.html" class="active">HOME</a>
@@ -81,6 +81,7 @@ window.addEventListener("load", () => {
         <p>Live Scores • Fixtures • Standings</p>
     </section>
 
+    <!-- NAV DÍAS -->
     <section class="match-navigation">
 
         <button class="day-btn date-btn" id="prevDateBtn">11/6</button>
@@ -117,10 +118,10 @@ window.addEventListener("load", () => {
 
     <section class="matches-wrapper">
 
-        <div class="matches-grid" id="yesterdayMatches" style="display:none;"></div>
+        <div class="matches-grid" id="yesterdayMatches" hidden></div>
         <div class="matches-grid" id="todayMatches"></div>
-        <div class="matches-grid" id="tomorrowMatches" style="display:none;"></div>
-        <div class="matches-grid" id="customDateMatches" style="display:none;"></div>
+        <div class="matches-grid" id="tomorrowMatches" hidden></div>
+        <div class="matches-grid" id="customDateMatches" hidden></div>
 
     </section>
 
@@ -140,19 +141,16 @@ window.addEventListener("load", () => {
     </div>
 </footer>
 
+<!-- ADBLOCK OVERLAY -->
 <div id="adblockOverlay">
 
     <div id="adblockBox">
 
         <h2>❤️ Ayúdanos a mantener World Goal 2026</h2>
 
-        <p>
-            Hemos detectado que estás utilizando un bloqueador de anuncios.
-        </p>
+        <p>Hemos detectado que estás utilizando un bloqueador de anuncios.</p>
 
-        <p>
-            Gracias a la publicidad podemos mantener gratuitamente:
-        </p>
+        <p>Gracias a la publicidad podemos mantener gratuitamente:</p>
 
         <ul>
             <li>⚽ Resultados en vivo</li>
@@ -163,29 +161,22 @@ window.addEventListener("load", () => {
         </ul>
 
         <p>
-
             Si disfrutas del sitio, por favor agrega
             <strong>World Goal 2026</strong>
             a la lista de sitios permitidos.
-
         </p>
 
         <div id="adblockButtons">
 
-            <button id="adblockReload">
-                Ya lo desactivé
-            </button>
-
-            <button id="adblockClose">
-                Continuar igualmente
-            </button>
+            <button id="adblockReload">Ya lo desactivé</button>
+            <button id="adblockClose">Continuar igualmente</button>
 
         </div>
 
     </div>
 
 </div>
-    
+
 <!-- ADS -->
 <script>
 window.addEventListener("load", () => {
