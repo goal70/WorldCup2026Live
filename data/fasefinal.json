@@ -2,8 +2,8 @@
   {
     "id": "M1",
     "side": "left",
-    "stage": "round16",
-    "date": "29 Junio",
+    "stage": "Octavos de Final",
+    "date": "2026-06-29",
     "time": "16:00",
     "team1": "Alemania",
     "flag1": "de",
@@ -15,8 +15,8 @@
   {
     "id": "M2",
     "side": "left",
-    "stage": "round16",
-    "date": "30 Junio",
+    "stage": "Octavos de Final",
+    "date": "2026-06-30",
     "time": "20:00",
     "team1": "Francia",
     "flag1": "fr",
@@ -28,10 +28,10 @@
   {
     "id": "M3",
     "side": "left",
-    "stage": "round16",
+    "stage": "Octavos de Final",
     "date": "2026-06-29",
     "time": "16:00",
-    "team1": "Sudàfrica",
+    "team1": "Sudáfrica",
     "flag1": "za",
     "seed1": "2 A",
     "team2": "Canadá",
@@ -41,10 +41,10 @@
   {
     "id": "M4",
     "side": "left",
-    "stage": "round16",
-    "date": "29 Junio",
+    "stage": "Octavos de Final",
+    "date": "2026-06-29",
     "time": "20:00",
-    "team1": "Paises Bajos",
+    "team1": "Países Bajos",
     "flag1": "nl",
     "seed1": "1 F",
     "team2": "Marruecos",
@@ -54,8 +54,8 @@
   {
     "id": "M5",
     "side": "left",
-    "stage": "round16",
-    "date": "02 Julio",
+    "stage": "Octavos de Final",
+    "date": "2026-07-02",
     "time": "20:00",
     "team1": "Portugal",
     "flag1": "pt",
@@ -67,8 +67,8 @@
   {
     "id": "M6",
     "side": "left",
-    "stage": "round16",
-    "date": "02 Julio",
+    "stage": "Octavos de Final",
+    "date": "2026-07-02",
     "time": "16:00",
     "team1": "España",
     "flag1": "es",
@@ -80,23 +80,23 @@
   {
     "id": "M7",
     "side": "left",
-    "stage": "round16",
-    "date": "01 Julio",
+    "stage": "Octavos de Final",
+    "date": "2026-07-01",
     "time": "16:00",
     "team1": "Estados Unidos",
     "flag1": "us",
     "seed1": "-",
-    "team2": "Bosnia Herzegovina",
+    "team2": "Bosnia y Herzegovina",
     "flag2": "ba",
     "seed2": "-"
   },
   {
     "id": "M8",
     "side": "left",
-    "stage": "round16",
-    "date": "01 Julio",
+    "stage": "Octavos de Final",
+    "date": "2026-07-01",
     "time": "20:00",
-    "team1": "Belgica",
+    "team1": "Bélgica",
     "flag1": "be",
     "seed1": "1 G",
     "team2": "Senegal",
@@ -106,21 +106,21 @@
   {
     "id": "M9",
     "side": "right",
-    "stage": "round16",
-    "date": "29 Junio",
+    "stage": "Octavos de Final",
+    "date": "2026-06-29",
     "time": "16:00",
     "team1": "Brasil",
     "flag1": "br",
     "seed1": "1 C",
-    "team2": "Japon",
+    "team2": "Japón",
     "flag2": "jp",
     "seed2": "2 F"
   },
   {
     "id": "M10",
     "side": "right",
-    "stage": "round16",
-    "date": "30 Junio",
+    "stage": "Octavos de Final",
+    "date": "2026-06-30",
     "time": "20:00",
     "team1": "Costa de Marfil",
     "flag1": "ci",
@@ -132,10 +132,10 @@
   {
     "id": "M11",
     "side": "right",
-    "stage": "round16",
-    "date": "30 Junio",
+    "stage": "Octavos de Final",
+    "date": "2026-06-30",
     "time": "16:00",
-    "team1": "Mexico",
+    "team1": "México",
     "flag1": "mx",
     "seed1": "1 A",
     "team2": "Ecuador",
@@ -145,8 +145,8 @@
   {
     "id": "M12",
     "side": "right",
-    "stage": "round16",
-    "date": "01 Julio",
+    "stage": "Octavos de Final",
+    "date": "2026-07-01",
     "time": "20:00",
     "team1": "Inglaterra",
     "flag1": "gb",
@@ -158,8 +158,8 @@
   {
     "id": "M13",
     "side": "right",
-    "stage": "round16",
-    "date": "03 Julio",
+    "stage": "Octavos de Final",
+    "date": "2026-07-03",
     "time": "19:00",
     "team1": "Argentina",
     "flag1": "ar",
@@ -171,8 +171,8 @@
   {
     "id": "M14",
     "side": "right",
-    "stage": "round16",
-    "date": "03 Julio",
+    "stage": "Octavos de Final",
+    "date": "2026-07-03",
     "time": "15:00",
     "team1": "Australia",
     "flag1": "au",
@@ -184,8 +184,8 @@
   {
     "id": "M15",
     "side": "right",
-    "stage": "round16",
-    "date": "3 Julio",
+    "stage": "Octavos de Final",
+    "date": "2026-07-03",
     "time": "00:00",
     "team1": "Suiza",
     "flag1": "ch",
@@ -197,8 +197,8 @@
   {
     "id": "M16",
     "side": "right",
-    "stage": "round16",
-    "date": "03 Julio",
+    "stage": "Octavos de Final",
+    "date": "2026-07-03",
     "time": "22:30",
     "team1": "Colombia",
     "flag1": "co",
@@ -207,119 +207,95 @@
     "flag2": "gh",
     "seed2": "-"
   },
-{
+
+  {
     "id": "Q1",
     "side": "left",
     "stage": "Octavos de Final",
-
     "date": "2026-07-04",
     "time": "18:00",
-
     "team1": "Paraguay",
     "flag1": "py",
-
     "team2": "Francia",
     "flag2": "fr"
-},
-{
+  },
+  {
     "id": "Q2",
     "side": "left",
     "stage": "Octavos de Final",
-
     "date": "2026-07-04",
     "time": "14:00",
-
     "team1": "Canadá",
     "flag1": "ca",
-
     "team2": "Marruecos",
     "flag2": "ma"
-},
-{
+  },
+  {
     "id": "Q3",
     "side": "right",
     "stage": "Octavos de Final",
-
     "date": "2026-07-05",
     "time": "17:00",
-
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
-
     "team1": "Brasil",
     "flag1": "br",
-
     "team2": "Noruega",
     "flag2": "no"
-},
-{
+  },
+  {
     "id": "Q4",
     "side": "right",
     "stage": "Octavos de Final",
-
     "date": "2026-07-05",
     "time": "21:00",
-
-    "team1": "Mexico",
+    "team1": "México",
     "flag1": "mx",
-
     "team2": "Inglaterra",
     "flag2": "gb"
-},
-{
+  },
+  {
     "id": "Q5",
     "side": "left",
     "stage": "Octavos de Final",
-
     "date": "2026-07-06",
     "time": "16:00",
-
     "team1": "Portugal",
     "flag1": "pt",
-
     "team2": "España",
     "flag2": "es"
-},
-{
+  },
+  {
     "id": "Q6",
     "side": "left",
     "stage": "Octavos de Final",
-
     "date": "2026-07-06",
     "time": "21:00",
-
     "team1": "Estados Unidos",
     "flag1": "us",
-
-    "team2": "Belgica",
+    "team2": "Bélgica",
     "flag2": "be"
-},
-{
+  },
+  {
     "id": "Q7",
     "side": "right",
     "stage": "Octavos de Final",
-
     "date": "2026-07-07",
     "time": "13:00",
-
     "team1": "Argentina",
     "flag1": "ar",
-
     "team2": "Egipto",
     "flag2": "eg"
-},
-{
+  },
+  {
     "id": "Q8",
     "side": "right",
     "stage": "Octavos de Final",
-
     "date": "2026-07-07",
     "time": "17:00",
-
     "team1": "Suiza",
     "flag1": "ch",
-
     "team2": "Colombia",
     "flag2": "co"
-}
+  }
 ]
