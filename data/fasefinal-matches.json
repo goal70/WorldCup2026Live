@@ -651,7 +651,7 @@
     "flag1": "py",
     "flag2": "fr",
     "homeScore": 0,
-    "awayScore": 0,
+    "awayScore": 1,
     "stadium": "Lincoln Financial Field",
     "city": "Philadelphia",
     "timeAR": "18:00",
