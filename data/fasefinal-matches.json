@@ -786,12 +786,53 @@
     "flag2": "no",
     "homeScore": 0,
     "awayScore": 0,
-    "stadium": "",
-    "city": "",
+    "stadium": "MetLife Stadium",
+    "city": "New Jersey",
     "timeAR": "17:00",
     "goals": [],
     "redCards": [],
-    "links": []
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
+      },
+      {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
+      },
+      {
+        "name": "TyC Sports",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1jDJZ3W3xam3lzHjQEaFP2R1Rj5Y6ob2ooJVRPvSgMzIOnm5QNQXbjRk&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dHljc3BvcnRz"
+      },
+      {
+        "name": "Caracol TV",
+        "logo": "https://i.pinimg.com/736x/e9/ea/9a/e9ea9a7c1bd535cd7f16f415fa855957.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5OTkuY28vY2FyYWNvbHR2LnBocA=="
+      },
+      {
+        "name": "TV La 1 Español",
+        "logo": "https://static.wikia.nocookie.net/logopedia/images/5/5a/Logo_TVE--1_%281982-1991%29.png/revision/latest?cb=20210527130935&path-prefix=es",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy90dmVsYTEucGhw"
+      },
+      {
+        "name": "Disney+",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyVEjyW1yFEAWB4Ty59bJ9uGh2EjJcIRzq25k595rets4EF865jCsZAXk&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09ZGlzbmV5Mw=="
+      },
+      {
+        "name": "VIX+",
+        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4MQ=="
+      },
+      {
+        "name": "Caze TV",
+        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMS5waHA="
+      }
+    ]
   },
 
   {
@@ -807,8 +848,8 @@
     "flag2": "gb",
     "homeScore": 0,
     "awayScore": 0,
-    "stadium": "",
-    "city": "",
+    "stadium": "Estadio Azteca",
+    "city": "Ciudad de Mexico",
     "timeAR": "21:00",
     "goals": [],
     "redCards": [],
