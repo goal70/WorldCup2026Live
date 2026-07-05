@@ -779,18 +779,33 @@
     "side": "right",
     "date": "2026-07-05",
     "displayDate": "05 Julio",
-    "status": "LIVE",
+    "status": "FINISHED",
     "team1": "Brasil",
     "team2": "Noruega",
     "flag1": "br",
     "flag2": "no",
-    "homeScore": 0,
-    "awayScore": 0,
+    "homeScore": 1,
+    "awayScore": 2,
     "stadium": "MetLife Stadium",
     "city": "New Jersey",
     "timeAR": "17:00",
-    "goals": [],
-    "redCards": [],
+    "goals": [
+      {
+        "player": "Haaland",
+        "minute": 79,
+        "team": "away"
+      },
+      {
+        "player": "Haaland",
+        "minute": 90,
+        "team": "away"
+      },
+      {
+        "player": "Neymar (pen.)",
+        "minute": "90+10",
+        "team": "home"
+      }
+    ],
     "links": [
       {
         "name": "Direct TV",
