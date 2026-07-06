@@ -913,18 +913,23 @@
     "side": "left",
     "date": "2026-07-06",
     "displayDate": "06 Julio",
-    "status": "LIVE",
+    "status": "FINISHED",
     "team1": "Portugal",
     "team2": "España",
     "flag1": "pt",
     "flag2": "es",
     "homeScore": 0,
-    "awayScore": 0,
+    "awayScore": 1,
     "stadium": "AT&T Stadium",
     "city": "Arlington",
     "timeAR": "16:00",
-    "goals": [],
-    "redCards": [],
+    "goals": [
+      {
+        "player": "Merino",
+        "minute": "90+1",
+        "team": "away"
+      }
+    ],
     "links": [
       {
         "name": "Direct TV",
