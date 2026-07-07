@@ -1026,18 +1026,43 @@
     "side": "right",
     "date": "2026-07-07",
     "displayDate": "07 Julio",
-    "status": "LIVE",
+    "status": "FINISHED",
     "team1": "Argentina",
     "team2": "Egipto",
     "flag1": "ar",
     "flag2": "eg",
-    "homeScore": 0,
-    "awayScore": 0,
+    "homeScore": 3,
+    "awayScore": 2,
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
     "timeAR": "13:00",
-    "goals": [],
-    "redCards": [],
+    "goals": [
+      {
+        "player": "Ibrahim",
+        "minute": 15,
+        "team": "away"
+      },
+      {
+        "player": "Ziko",
+        "minute": 67,
+        "team": "away"
+      },
+      {
+        "player": "Cuti Romero",
+        "minute": 79,
+        "team": "home"
+      },
+      {
+        "player": "MESSI",
+        "minute": 84,
+        "team": "home"
+      },
+      {
+        "player": "Enzo Fernandez",
+        "minute": "90+2",
+        "team": "home"
+      }
+    ],
     "links": [
       {
         "name": "Direct TV",
