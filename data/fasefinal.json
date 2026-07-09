@@ -297,5 +297,95 @@
     "flag1": "ch",
     "team2": "Colombia",
     "flag2": "co"
+    {
+  "id": "Q1",
+  "side": "left",
+  "stage": "Cuartos de Final",
+  "date": "2026-07-09",
+  "time": "17:00",
+  "team1": "Francia",
+  "flag1": "fr",
+  "team2": "Marruecos",
+  "flag2": "ma"
+},
+{
+  "id": "Q2",
+  "side": "left",
+  "stage": "Cuartos de Final",
+  "date": "2026-07-10",
+  "time": "20:00",
+  "team1": "España",
+  "flag1": "es",
+  "team2": "Bélgica",
+  "flag2": "be"
+},
+{
+  "id": "Q3",
+  "side": "right",
+  "stage": "Cuartos de Final",
+  "date": "2026-07-11",
+  "time": "16:00",
+  "team1": "Inglaterra",
+  "flag1": "gb",
+  "team2": "Noruega",
+  "flag2": "no"
+},
+{
+  "id": "Q4",
+  "side": "right",
+  "stage": "Cuartos de Final",
+  "date": "2026-07-11",
+  "time": "20:00",
+  "team1": "Argentina",
+  "flag1": "ar",
+  "team2": "Suiza",
+  "flag2": "ch"
+},
+
+{
+  "id": "S1",
+  "side": "left",
+  "stage": "Semifinal",
+  "date": "2026-07-14",
+  "time": "20:00",
+  "team1": "Ganador Francia / Marruecos",
+  "flag1": "",
+  "team2": "Ganador España / Bélgica",
+  "flag2": ""
+},
+{
+  "id": "S2",
+  "side": "right",
+  "stage": "Semifinal",
+  "date": "2026-07-15",
+  "time": "20:00",
+  "team1": "Ganador Inglaterra / Noruega",
+  "flag1": "",
+  "team2": "Ganador Argentina / Suiza",
+  "flag2": ""
+},
+
+{
+  "id": "TP",
+  "side": "center",
+  "stage": "Tercer Puesto",
+  "date": "2026-07-18",
+  "time": "16:00",
+  "team1": "Perdedor Semifinal 1",
+  "flag1": "",
+  "team2": "Perdedor Semifinal 2",
+  "flag2": ""
+},
+
+{
+  "id": "F",
+  "side": "center",
+  "stage": "Gran Final",
+  "date": "2026-07-19",
+  "time": "19:00",
+  "team1": "Ganador Semifinal 1",
+  "flag1": "",
+  "team2": "Ganador Semifinal 2",
+  "flag2": ""
   }
 ]
