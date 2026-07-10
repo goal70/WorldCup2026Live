@@ -1166,6 +1166,84 @@
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
+         }
+    ]
+  },
+  {
+    "id": "Q2",
+    "stage": "Cuartos de Final",
+    "side": "left",
+    "date": "2026-07-10",
+    "displayDate": "10 Julio",
+    "status": "UPCOMING",
+    "team1": "España",
+    "team2": "Belgica",
+    "flag1": "es",
+    "flag2": "be",
+    "homeScore": 0,
+    "awayScore": 0,
+    "stadium": "",
+    "city": "",
+    "timeAR": "16:00",
+    "goals": [],
+    "redCards": [],
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
+        }
+    ]
+  },
+  {
+    "id": "Q3",
+    "stage": "Cuartos de Final",
+    "side": "right",
+    "date": "2026-07-11",
+    "displayDate": "11 Julio",
+    "status": "UPCOMING",
+    "team1": "Inglaterra",
+    "team2": "Noruega",
+    "flag1": "gb",
+    "flag2": "no",
+    "homeScore": 0,
+    "awayScore": 0,
+    "stadium": "",
+    "city": "",
+    "timeAR": "18:00",
+    "goals": [],
+    "redCards": [],
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
+         }
+    ]
+  },
+  {
+    "id": "Q4",
+    "stage": "Cuartos de Final",
+    "side": "right",
+    "date": "2026-07-11",
+    "displayDate": "11 Julio",
+    "status": "UPCOMING",
+    "team1": "Argentina",
+    "team2": "Suiza",
+    "flag1": "ar",
+    "flag2": "ch",
+    "homeScore": 0,
+    "awayScore": 0,
+    "stadium": "",
+    "city": "",
+    "timeAR": "22:00",
+    "goals": [],
+    "redCards": [],
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
      }
     ]
   }
