@@ -1175,7 +1175,7 @@
     "side": "left",
     "date": "2026-07-10",
     "displayDate": "10 Julio",
-    "status": "UPCOMING",
+    "status": "LIVE",
     "team1": "España",
     "team2": "Belgica",
     "flag1": "es",
@@ -1192,7 +1192,22 @@
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
-        }
+      },
+      {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
+      },
+      {
+        "name": "VIX+",
+        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4MQ=="
+      },
+      {
+        "name": "Caze TV",
+        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMS5waHA="
+          }
     ]
   },
   {
