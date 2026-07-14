@@ -1309,6 +1309,108 @@
         "name": "Caze TV",
         "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
         "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMi5waHA="
+        }
+    ]
+  },
+  {
+    "id": "S1",
+    "stage": "Semifinal",
+    "side": "leftt",
+    "date": "2026-07-14",
+    "displayDate": "14 Julio",
+    "status": "UPCOMING",
+    "team1": "Francia",
+    "team2": "España",
+    "flag1": "fr",
+    "flag2": "es",
+    "homeScore": 0,
+    "awayScore": 0,
+    "stadium": "AT&T Stadium",
+    "city": "Arlington",
+    "timeAR": "16:00",
+    "goals": [],
+    "redCards": [],
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09ZHNwb3J0cw=="
+      },
+      {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
+      },
+      {
+        "name": "TUDN MX",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/TUDN_Logo.svg/1280px-TUDN_Logo.svg.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy90dWRubXgucGhw"
+      },
+      {
+        "name": "Canal 5 MX",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Canal_5_2016.svg/500px-Canal_5_2016.svg.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYW5hbDVteC5waHA="
+      },
+      {
+        "name": "VIX+",
+        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4MQ=="
+      },
+      {
+        "name": "Caze TV",
+        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMS5waHA="
+      }
+    ]
+  },
+  {
+    "id": "S2",
+    "stage": "Semifinal",
+    "side": "right",
+    "date": "2026-07-15",
+    "displayDate": "15 Julio",
+    "status": "UPCOMING",
+    "team1": "Inglaterra",
+    "team2": "Argentina",
+    "flag1": "gb",
+    "flag2": "ar",
+    "homeScore": 0,
+    "awayScore": 0,
+    "stadium": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+    "timeAR": "16:00",
+    "goals": [],
+    "redCards": [],
+    "links": [
+      {
+        "name": "Direct TV",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
+      },
+      {
+        "name": "Telemundo",
+        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYTIwaGQuY29tL3Zpdm8vY2FuYWwucGhwP3N0cmVhbT10ZWxlbXVuZG8="
+      },
+      {
+        "name": "TyC Sports",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1jDJZ3W3xam3lzHjQEaFP2R1Rj5Y6ob2ooJVRPvSgMzIOnm5QNQXbjRk&s=10",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dHljc3BvcnRz"
+      },
+      {
+        "name": "VIX+",
+        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9zdHJlYW10cC5zYnMvZ2xvYmFsMS5waHA/c3RyZWFtPXZpeDE="
+      },
+      {
+        "name": "Disney+",
+        "logo": "https://assets.puzzlefactory.com/puzzle/489/760/original.jpg",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYTE4aGQuc3Uvdml2by9jYW5hbC5waHA/c3RyZWFtPWRpc25leTE="
+      },
+      {
+        "name": "Caze TV",
+        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMi5waHA="
      }
     ]
   }
