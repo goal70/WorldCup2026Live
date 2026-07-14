@@ -1318,7 +1318,7 @@
     "side": "leftt",
     "date": "2026-07-14",
     "displayDate": "14 Julio",
-    "status": "UPCOMING",
+    "status": "LIVE",
     "team1": "Francia",
     "team2": "España",
     "flag1": "fr",
@@ -1334,12 +1334,12 @@
       {
         "name": "Direct TV",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09ZHNwb3J0cw=="
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
       },
       {
         "name": "Telemundo",
         "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dGVsZW11bmRvdXNh"
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYTE4aGQuc3Uvdml2by9jYW5hbC5waHA/c3RyZWFtPXRlbGVtdW5kbw=="
       },
       {
         "name": "TUDN MX",
@@ -1354,7 +1354,7 @@
       {
         "name": "VIX+",
         "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dml4MQ=="
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9zdHJlYW10cC5zYnMvZ2xvYmFsMS5waHA/c3RyZWFtPXZpeDE="
       },
       {
         "name": "Caze TV",
