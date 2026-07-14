@@ -348,22 +348,22 @@
   "side": "left",
   "stage": "Semifinal",
   "date": "2026-07-14",
-  "time": "20:00",
-  "team1": "Ganador Francia / Marruecos",
-  "flag1": "",
-  "team2": "Ganador España / Bélgica",
-  "flag2": ""
+  "time": "16:00",
+  "team1": "Francia",
+  "flag1": "fr",
+  "team2": "España",
+  "flag2": "es"
 },
 {
   "id": "S2",
   "side": "right",
   "stage": "Semifinal",
   "date": "2026-07-15",
-  "time": "20:00",
-  "team1": "Ganador Inglaterra / Noruega",
-  "flag1": "",
-  "team2": "Ganador Argentina / Suiza",
-  "flag2": ""
+  "time": "16:00",
+  "team1": "Inglaterra",
+  "flag1": "gb",
+  "team2": "Argentina",
+  "flag2": "ar"
 },
 
 {
