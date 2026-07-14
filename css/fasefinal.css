@@ -498,10 +498,6 @@
 }
 
 .fasefinal-match{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
     text-align:center;
 }
 
@@ -510,14 +506,18 @@
 }
 
 .team-row{
-    width:100%;
     display:flex;
     justify-content:center;
-    align-items:center;
-    gap:8px;
-    text-align:center;
+    width:100%;
 }
 
-.team-row span{
+.team-content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.team-name{
     text-align:center;
 }
