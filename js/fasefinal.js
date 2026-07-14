@@ -30,18 +30,21 @@ async function loadFaseFinal() {
                 </div>
 
                 <div class="team-row">
-                    <span class="seed">${m.seed1 || ""}</span>
-                    <img src="https://flagcdn.com/w40/${m.flag1}.png">
-                    <span>${m.team1}</span>
-                </div>
+    <div class="team-content">
+        <span class="seed">${m.seed1 || ""}</span>
+        <img src="https://flagcdn.com/w40/${m.flag1}.png">
+        <span class="team-name">${m.team1}</span>
+    </div>
+</div>
 
-                <div class="team-row">
-                    <span class="seed">${m.seed2 || ""}</span>
-                    <img src="https://flagcdn.com/w40/${m.flag2}.png">
-                    <span>${m.team2}</span>
-                </div>
+<div class="team-row">
+    <div class="team-content">
+        <span class="seed">${m.seed2 || ""}</span>
+        <img src="https://flagcdn.com/w40/${m.flag2}.png">
+        <span class="team-name">${m.team2}</span>
+    </div>
+</div>
 
-            </div>
         `;
 
         container.innerHTML = `
