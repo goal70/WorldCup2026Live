@@ -1369,13 +1369,13 @@
     "side": "right",
     "date": "2026-07-15",
     "displayDate": "15 Julio",
-    "status": "LIVE",
+    "status": "FINISHED",
     "team1": "Inglaterra",
     "team2": "Argentina",
     "flag1": "gb",
     "flag2": "ar",
-    "homeScore": 0,
-    "awayScore": 0,
+    "homeScore": 1,
+    "awayScore": 2,
     "stadium": "Mercedes-Benz Stadium",
     "city": "Atlanta",
     "timeAR": "16:00",
@@ -1383,34 +1383,9 @@
     "redCards": [],
     "links": [
       {
-        "name": "Direct TV",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmbW57VwcmWQ1QDJPrAiLwdgITb4Mfnhf4gad8kS3qXnlKdCZdzFbhZQR3&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9kc3BvcnRzYXIucGhw"
-      },
-      {
-        "name": "Telemundo",
-        "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYTE4aGQuc3Uvdml2by9jYW5hbC5waHA/c3RyZWFtPXRlbGVtdW5kbw=="
-      },
-      {
-        "name": "TyC Sports",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1jDJZ3W3xam3lzHjQEaFP2R1Rj5Y6ob2ooJVRPvSgMzIOnm5QNQXbjRk&s=10",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09dHljc3BvcnRz"
-      },
-      {
-        "name": "VIX+",
-        "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy92aXgucGhw"
-      },
-      {
-        "name": "Disney+",
-        "logo": "https://assets.puzzlefactory.com/puzzle/489/760/original.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09ZGlzbmV5MQ=="
-      },
-      {
-        "name": "Caze TV",
-        "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMS5waHA="
+        "name": "La Batalla de Atlanta",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9P5sHhq5gCCEnE5tnJ7TMOsfQrl2SJFYvU8xRsExOwo9WbHAjBZnYWl8&s=10",
+        "url": "https://www.youtube.com/watch?v=BCnsZEEFnUk"
      }
     ]
   }
