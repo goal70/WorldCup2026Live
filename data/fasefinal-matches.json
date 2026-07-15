@@ -1369,7 +1369,7 @@
     "side": "right",
     "date": "2026-07-15",
     "displayDate": "15 Julio",
-    "status": "UPCOMING",
+    "status": "LIVE",
     "team1": "Inglaterra",
     "team2": "Argentina",
     "flag1": "gb",
@@ -1390,7 +1390,7 @@
       {
         "name": "Telemundo",
         "logo": "https://www.thedailytelevision.com/sites/default/files/notas/imagenes/telemundo.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYTIwaGQuY29tL3Zpdm8vY2FuYWwucGhwP3N0cmVhbT10ZWxlbXVuZG8="
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYTE4aGQuc3Uvdml2by9jYW5hbC5waHA/c3RyZWFtPXRlbGVtdW5kbw=="
       },
       {
         "name": "TyC Sports",
@@ -1400,17 +1400,17 @@
       {
         "name": "VIX+",
         "logo": "https://corporate.televisaunivision.com/wp-content/uploads/sites/5/2022/06/ViX_logo.jpg?w=1024",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9zdHJlYW10cC5zYnMvZ2xvYmFsMS5waHA/c3RyZWFtPXZpeDE="
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy92aXgucGhw"
       },
       {
         "name": "Disney+",
         "logo": "https://assets.puzzlefactory.com/puzzle/489/760/original.jpg",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9sYTE4aGQuc3Uvdml2by9jYW5hbC5waHA/c3RyZWFtPWRpc25leTE="
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly92aWR6ZW52aXZvLmNjL2NhbmFsLnBocD9zdHJlYW09ZGlzbmV5MQ=="
       },
       {
         "name": "Caze TV",
         "logo": "https://images.seeklogo.com/logo-png/61/1/cazetv-logo-png_seeklogo-619708.png",
-        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMi5waHA="
+        "url": "https://futbol-libres.su/eventos.html?r=aHR0cHM6Ly9lc3ZpZHp5cHJvLnNicy9jYXplMS5waHA="
      }
     ]
   }
