@@ -371,11 +371,11 @@
   "side": "center",
   "stage": "Tercer Puesto",
   "date": "2026-07-18",
-  "time": "16:00",
-  "team1": "Perdedor Semifinal 1",
-  "flag1": "",
-  "team2": "Perdedor Semifinal 2",
-  "flag2": ""
+  "time": "18:00",
+  "team1": "Francia",
+  "flag1": "fr",
+  "team2": "Inglaterra",
+  "flag2": "gb"
 },
 
 {
@@ -383,10 +383,10 @@
   "side": "center",
   "stage": "Gran Final",
   "date": "2026-07-19",
-  "time": "19:00",
-  "team1": "Ganador Semifinal 1",
-  "flag1": "",
-  "team2": "Ganador Semifinal 2",
-  "flag2": ""
+  "time": "16:00",
+  "team1": "España",
+  "flag1": "es",
+  "team2": "Argentina",
+  "flag2": "ar"
   }
 ]
